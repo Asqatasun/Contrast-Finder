@@ -19,3 +19,6 @@ nbactions.xml
 nb-configuration.xml
 build.xml
 build.properties
+
+# saved files
+*~
