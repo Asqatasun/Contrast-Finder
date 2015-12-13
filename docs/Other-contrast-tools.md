@@ -7,10 +7,12 @@ Contrast tools we love:
 * [Color Contrast Tool (snook.ca)](http://snook.ca/technical/colour_contrast/colour.html)
 
 Other contrast tools (which are actually good, but it appears we don't them)
-
 * http://webaim.org/resources/contrastchecker/
 * http://contrastchecker.com/
 * http://leaverou.github.io/contrast-ratio
 * http://juicystudio.com/services/luminositycontrastratio.php
 * http://vanisoft.pl/~lopuszanski/public/colors/
+
+Other contrast tools 
+* http://www.visionaustralia.org/digital-access-determinator
 
