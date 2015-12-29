@@ -1,19 +1,12 @@
 # Asqatasun Contrast-Finder
 
-## Why another contrast tool ?
+Tool to provide color combination for a good (accessible, WCAG-compliant) contrast.
 
-Just to **provide contrast solutions** !
 
-All tools just tell you whether the contrast is good or not, which is fine... but insufficient. Webdesigners / webdevelopers need to easily have a good contrast. That's the purpose of Contrast-Finder
+## Documentation
+* [Howto build & install](Howto-build-and-install.md)
+* [Howto use](Howto-use.md)
 
-## Howto build
-
-[Howto build](Howto-build-and-install.md)
-
-## Howto use
-
-[Howto use](Howto-use.md)
-
-## Other tools
-
-[Other contrast tools](Other-contrast-tools.md)
+---
+* More informations about the [algorithms](The-algorithms.md) here.
+* [Other contrast tools](Other-contrast-tools.md)
