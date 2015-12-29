@@ -4,6 +4,12 @@
 
 Tool to provide color combination for a good (accessible, WCAG-compliant) contrast.
 
+This helps you in satisfying web accessibility (a11y) tests on contrasts:
+
+* [WCAG Success Criteria 1.4.3](http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
+* [AccessiWeb criteria 3.3](http://www.accessiweb.org/index.php/accessiweb-22-english-version.html#crit-3-3)
+* [RGAA test 2.5 (in french)](http://rgaa.net/Valeur-du-rapport-de-contraste-du.html)
+
 
 ## Why another contrast tool ?
 
