@@ -20,5 +20,9 @@ nb-configuration.xml
 build.xml
 build.properties
 
+
 # saved files
 *~
+
+# Git - Merge temp file
+*.orig
