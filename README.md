@@ -1,4 +1,5 @@
-
+[![License : AGPL v3](https://img.shields.io/badge/License-AGPL3-blue.svg)](LICENSE) 
+[![Build Status](https://travis-ci.org/Asqatasun/Contrast-Finder.svg)](https://travis-ci.org/Asqatasun/Contrast-Finder)
 
 # Asqatasun Contrast-Finder
 
@@ -30,9 +31,6 @@ Go to the [documentation](docs/en/) !
 
 ## License
 
- [AGPL v3](LICENCE.txt) 
+ [AGPL v3](LICENSE) 
 
 
-
-
-@@@TODO  Build Status - travis-ci.org
