@@ -20,6 +20,9 @@ nb-configuration.xml
 build.xml
 build.properties
 
+# Intellij
+.idea
+*.iml
 
 # saved files
 *~
