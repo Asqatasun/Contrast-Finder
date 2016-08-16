@@ -27,7 +27,7 @@ That's the purpose of Contrast-Finder
 
 ## Documentation
 How to build, install and use ? 
-Go to the [documentation](docs/en/) !
+Go to the [documentation](documentation/en/) !
 
 
 ## License
