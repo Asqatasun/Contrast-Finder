@@ -18,6 +18,8 @@ Other contrast tools
 * http://colorsafe.co/
 * https://github.com/johnotander/get-contrast
 * http://www.randoma11y.com/
+* https://www.joedolson.com/tools/color-contrast-tester.php
+* https://www.joedolson.com/tools/color-contrast.php
 * http://jxnblk.com/colorable/
   * http://jxnblk.com/hello-color/
   * http://jxnblk.com/colorable/demos/text/
