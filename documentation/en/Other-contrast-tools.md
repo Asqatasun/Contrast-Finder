@@ -15,6 +15,7 @@ Other contrast tools (which are actually good, but it appears we don't them)
 
 Other contrast tools 
 * http://www.visionaustralia.org/digital-access-determinator
+* http://a11yrocks.com/colorPalette/
 * http://colorsafe.co/
 * https://github.com/johnotander/get-contrast
 * http://www.randoma11y.com/
