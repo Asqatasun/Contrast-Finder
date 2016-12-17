@@ -4,12 +4,9 @@
 <jsp:useBean id="now" class="java.util.Date" scope="page" />
 <footer class="container">
     <div id="footer-msg">
-        <p><fmt:message key="footer.paragraphe"/></p>
-        <ul>
-            <li><strong>Asqatasun: </strong><fmt:message key="footer.tanaguru"/></li>
-        </ul>
+        <p><fmt:message key="footer.LikedCf"/></p>
     </div>
-    <p id="footer-copyright"><fmt:formatDate value="${now}" pattern="yyyy" /> <a href="http://asqatasun.org/">Asqatasun</a> - Version 0.3.5-dev - Contact <a href="https://twitter.com/Asqatasun">@Asqatasun</a></p>
+    <p id="footer-copyright">&copy; 2013-<fmt:formatDate value="${now}" pattern="yyyy" /> <a href="http://asqatasun.org/">Asqatasun</a> - Version 0.3.5-dev - Contact <a href="https://twitter.com/Asqatasun">@Asqatasun</a></p>
 </footer>
 
 <c:set var="piwikSiteId" value="${piwikKey}"/>
