@@ -363,8 +363,8 @@
                 </div>  <!-- class="container' -->
                 <%@include file='/WEB-INF/template/footer.jspf' %>
                 <!-- From  -->
-                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-                <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+                <script src="Js/jquery.min.js"></script>
+                <script src="Js/jquery-ui.min.js"></script>
                 <c:if test="${colorResult.numberOfSuggestedColors > 0}">
                     <script src="Js/jquery.tablesorter.min.js"></script>
                     <script src="Js/accessible-min.js"></script>
