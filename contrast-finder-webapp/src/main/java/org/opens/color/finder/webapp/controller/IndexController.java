@@ -20,10 +20,6 @@
 package org.opens.color.finder.webapp.controller;
 
 
-import java.awt.Color;
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import org.apache.log4j.Logger;
 import org.opens.color.finder.webapp.model.ColorModel;
 import org.opens.color.finder.webapp.validator.ColorModelValidator;
 import org.opens.colorfinder.ColorFinder;
@@ -33,7 +29,6 @@ import org.opens.utils.colorconvertor.ColorConverter;
 import org.opens.utils.contrastchecker.ContrastChecker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -42,8 +37,11 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+import java.awt.*;
+
 /**
- *
  * @author alingua
  */
 @Controller
@@ -62,11 +60,7 @@ public class IndexController {
      */
     @Value("${piwik_analytics_key}")
     private String piwikAnalyticsKey;
-    /**
-     * google analyticskey
-     */
-    @Value("${google_analytics_key}")
-    private String googleAnalyticsKey;
+
     @Autowired
     private ColorFinderFactory colorFinderFactory;
 
@@ -88,13 +82,11 @@ public class IndexController {
     public String initAccueil(final Model model) {
         ColorModel colorModel = new ColorModel();
         model.addAttribute("piwikKey", piwikAnalyticsKey);
-        model.addAttribute("googleKey", googleAnalyticsKey);
         model.addAttribute(commandName, colorModel);
         return mainPageView;
     }
 
     /**
-     *
      * @param model
      * @param colorModel
      * @param result
@@ -138,14 +130,12 @@ public class IndexController {
             model.addAttribute("otherAlgo", getOppositeAlgo(colorModel.getAlgo())); 
             /* Analytics Keys*/
             model.addAttribute("piwikKey", piwikAnalyticsKey);
-            model.addAttribute("googleKey", googleAnalyticsKey);
             return mainPageView;
         }
 
     }
 
     /**
-     *
      * @param algo
      * @return the other algorithm
      */
