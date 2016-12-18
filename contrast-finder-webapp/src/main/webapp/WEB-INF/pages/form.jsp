@@ -18,7 +18,7 @@
         </c:otherwise>
     </c:choose>
     <html lang="${lang}">
-        <c:set var="title" value="Asqatasun Contrast-Finder"/>
+        <c:set var="title" value="Contrast-Finder"/>
         <%@include file='/WEB-INF/template/head.jspf' %>
         <body id="contrast-finder-page">
             <div class="container">
