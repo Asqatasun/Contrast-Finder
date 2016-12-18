@@ -18,12 +18,12 @@
         </c:otherwise>
     </c:choose>
     <html lang="${lang}">
-        <c:set var="title" value="Asqatasun Contrast-Finder"/>
+        <c:set var="title" value="Contrast-Finder"/>
         <%@include file='/WEB-INF/template/head.jspf' %>
         <body id="contrast-finder-page">
             <div class="container">
                 <%@include file='/WEB-INF/template/header.jspf' %>
-                <%@include file='/WEB-INF/template/cf-message.jspf' %>
+                <%--<%@include file='/WEB-INF/template/cf-message.jspf' %>--%>
                 <div id="set-up-form" class="row">
                     <div class="col-lg-12">
                         <h2><fmt:message key="form.fillInFields"/></h2>
@@ -363,8 +363,8 @@
                 </div>  <!-- class="container' -->
                 <%@include file='/WEB-INF/template/footer.jspf' %>
                 <!-- From  -->
-                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-                <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+                <script src="Js/jquery.min.js"></script>
+                <script src="Js/jquery-ui.min.js"></script>
                 <c:if test="${colorResult.numberOfSuggestedColors > 0}">
                     <script src="Js/jquery.tablesorter.min.js"></script>
                     <script src="Js/accessible-min.js"></script>

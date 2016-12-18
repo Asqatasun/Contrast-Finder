@@ -4,52 +4,28 @@
 <jsp:useBean id="now" class="java.util.Date" scope="page" />
 <footer class="container">
     <div id="footer-msg">
-        <p><fmt:message key="footer.paragraphe"/></p>
-        <ul>
-            <li><strong>Asqatasun: </strong><fmt:message key="footer.tanaguru"/></li>
-        </ul>
+        <p><fmt:message key="footer.LikedCf"/></p>
     </div>
-    <p id="footer-copyright"><fmt:formatDate value="${now}" pattern="yyyy" /> <a href="http://asqatasun.org/">Asqatasun</a> - Version 0.3.4 - Contact <a href="http://twitter.com/mfaure">@mfaure</a> - <a href="https://twitter.com/Asqatasun">@Asqatasun</a></p>
+    <p id="footer-copyright">&copy; 2013-<fmt:formatDate value="${now}" pattern="yyyy" /> <a href="http://asqatasun.org/">Asqatasun</a> - Version 0.3.5 - Contact <a href="https://twitter.com/Asqatasun">@Asqatasun</a></p>
 </footer>
-<c:set var="analytics" value="${googleKey}"/>
-<c:if test="${not empty analytics}">
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', '${analytics}', 'tanaguru.com');
-        ga('send', 'pageview');
-
-    </script>
-</c:if>
 
 <c:set var="piwikSiteId" value="${piwikKey}"/>
 <c:if test="${not empty piwikSiteId}">
     <!-- Piwik -->
     <script type="text/javascript">
         var _paq = _paq || [];
-        _paq.push(["trackPageView"]);
-        _paq.push(["enableLinkTracking"]);
+        _paq.push(["setDomains", ["*.contrast-finder.org","*.www.contrast-finder.org"]]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
         (function() {
-            var u = (("https:" == document.location.protocol) ? "https" : "http") + "://stats.open-s.com/";
-            _paq.push(["setTrackerUrl", u + "piwik.php"]);
-            _paq.push(["setSiteId", "${piwikSiteId}"]);
-            var d = document, g = d.createElement("script"), s = d.getElementsByTagName("script")[0];
-            g.type = "text/javascript";
-            g.defer = true;
-            g.async = true;
-            g.src = u + "piwik.js";
-            s.parentNode.insertBefore(g, s);
+            var u="//stats.taqamaqa.com/piwik/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', '${piwikSiteId}']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
         })();
     </script>
-    <!-- End Piwik Code --> 
+    <noscript><p><img src="//stats.taqamaqa.com/piwik/piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
 </c:if>
