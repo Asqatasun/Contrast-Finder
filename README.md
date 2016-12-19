@@ -31,7 +31,7 @@ How to build, install and use ?
 Go to the [documentation](documentation/en/) !
 
 ## Screenshots
-![Screenshot - Contrast-Finder v0.3.5](images/screenshot--contrast-finder--v0.3.5--2016-12-19.png)
+![Screenshot - Contrast-Finder v0.3.5](documentation/en/images/screenshot--contrast-finder--v0.3.5--2016-12-19.png)
 
 
 ---
