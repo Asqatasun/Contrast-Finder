@@ -14,6 +14,7 @@ When the contrast is not valid, the main target is to suggest some correct color
 ## How to use this tool ?
 
 The interface is a form, with five fields.
+![Screenshot - Contrast-Finder v0.3.5](images/screenshot--contrast-finder--v0.3.5--2016-12-19.png)
 
 ###   The foreground
 
@@ -40,9 +41,7 @@ Three possible values 3, 4.5 and 7.
 All details about the contrast ratio :
 
 * http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
-
 * http://www.w3.org/TR/WCAG20/#contrast-ratiodef
-
 * http://www.w3.org/TR/WCAG20/relative-luminance.xml
 
 ###  The algorithms
