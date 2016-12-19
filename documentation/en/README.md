@@ -24,5 +24,5 @@ This helps you in satisfying web accessibility (a11y) tests on contrasts:
 
 
 ## Screenshots
-![Screenshot - Contrast-Finder v0.3.5](images/screenshot--contrast-finder--v0.3.5--2016-12-19.png)
+![Screenshot - Contrast-Finder v0.3.5](images/screenshot.EN_contrast-finder.v0.3.5_2016-12-19.png)
 

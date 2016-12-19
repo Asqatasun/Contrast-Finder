@@ -14,7 +14,7 @@ When the contrast is not valid, the main target is to suggest some correct color
 ## How to use this tool ?
 
 The interface is a form, with five fields.
-![Screenshot - Contrast-Finder v0.3.5](images/screenshot--contrast-finder--v0.3.5--2016-12-19.png)
+![Screenshot - Contrast-Finder v0.3.5](images/screenshot.EN_contrast-finder.v0.3.5_2016-12-19.png)
 
 ###   The foreground
 

@@ -31,7 +31,7 @@ How to build, install and use ?
 Go to the [documentation](documentation/en/) !
 
 ## Screenshots
-![Screenshot - Contrast-Finder v0.3.5](documentation/en/images/screenshot--contrast-finder--v0.3.5--2016-12-19.png)
+![Screenshot - Contrast-Finder v0.3.5](documentation/en/images/screenshot.EN_contrast-finder.v0.3.5_2016-12-19.png)
 
 
 ---
@@ -47,7 +47,7 @@ Go to the [documentation](documentation/en/) !
 We would be really glad to have you on board! You can help in many ways:
 
 1. Use Contrast-Finder !
-1. [Help translate Asqatasun](#) @@@TODO 
+1. Help translate Contrast-Finder
 1. Give us [feedback on the forum](http://forum.asqatasun.org) or [fill in bug report](https://github.com/Asqatasun/Contrast-Finder/issues)
 1. Help us in improving the SEO rules: come, code or [discuss](http://forum.asqatasun.org/c/english)!
 
