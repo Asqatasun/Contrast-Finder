@@ -1,7 +1,7 @@
 
---------------------------------
+
 Contrast-Finder 0.3.6, 2016-xx-xx
---------------------------------
+---------------------------------
 
 Features:
 None
@@ -19,7 +19,7 @@ Documentation:
 None
 
 
----------------------------------
+
 Contrast-Finder 0.3.5, 2016-12-18
 ---------------------------------
 
@@ -28,13 +28,14 @@ Contrast-Finder 0.3.5, 2016-12-18
 - Updated install doc 
 
 
-----------------------------------
+
 Fork from Tanaguru/Contrast-Finder
 ----------------------------------
-Contrast-Finder 0.3.4, 2014-06-11
-Contrast-Finder 0.3.3, 2014-05-22
-Contrast-Finder 0.3.2, 2014-04-28
-Contrast-Finder 0.3.1, 2014-03-27
-Contrast-Finder 0.3.0, 2013-12-20
-Contrast-Finder 0.2.0, 2013-12-12
+
+- Contrast-Finder 0.3.4, 2014-06-11
+- Contrast-Finder 0.3.3, 2014-05-22
+- Contrast-Finder 0.3.2, 2014-04-28
+- Contrast-Finder 0.3.1, 2014-03-27
+- Contrast-Finder 0.3.0, 2013-12-20
+- Contrast-Finder 0.2.0, 2013-12-12
 
