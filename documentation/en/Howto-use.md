@@ -52,3 +52,5 @@ This algorithm is very helpful if you are not sure about the hue of your initial
 The second one is "valid colors and very close to initial color". The result is a list of colors close to the original color. The aim is to have a valid color with a contrast as close to the selected ratio as possible (At the 0.001 range). 
 
 More informations about  [the algorithms](The-algorithms.md) here.
+
+

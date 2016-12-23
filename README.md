@@ -15,8 +15,7 @@ This helps you in satisfying web accessibility (a11y) tests on contrasts:
 * [AccessiWeb criteria 3.3](http://www.accessiweb.org/index.php/accessiweb-22-english-version.html#crit-3-3)
 
 ## Demo
-
-@@@TODO 
+http://contrast-finder.org/
 
 ## Why another contrast tool ?
 

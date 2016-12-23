@@ -1,5 +1,4 @@
 
-
 Contrast-Finder 0.3.6, 2016-xx-xx
 ---------------------------------
 
@@ -19,14 +18,12 @@ Documentation:
 None
 
 
-
 Contrast-Finder 0.3.5, 2016-12-18
 ---------------------------------
 
 - [#7 Paths to CSS files should be relative](https://github.com/Asqatasun/Contrast-Finder/issues/7)
 - Added locally JQuery & JQuery-UI 
 - Updated install doc 
-
 
 
 Fork from Tanaguru/Contrast-Finder
