@@ -1,4 +1,23 @@
 
+Contrast-Finder 0.4.x, 2017-xx-xx
+---------------------------------
+
+Features:
+None
+
+Security:
+None
+
+Bugs:
+None
+
+Configuration:
+None
+
+Documentation:
+None
+
+
 Contrast-Finder 0.4.0, 2016-12-30
 ---------------------------------
 

@@ -19,7 +19,7 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.4.0"
+ENV CONTRAST_FINDER_RELEASE="0.4.1-dev"
 
 # Add contrast-finder .war
 ADD contrast-finder-webapp-${CONTRAST_FINDER_RELEASE}.war /root
