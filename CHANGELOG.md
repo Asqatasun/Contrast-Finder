@@ -1,9 +1,12 @@
 
-Contrast-Finder 0.3.6, 2016-xx-xx
+Contrast-Finder 0.4.0, 2016-12-30
 ---------------------------------
 
 Features:
-None
+- Added compile_and_build_docker_image.sh
+- Added pre-requisites_from-Ubuntu/Dockerfile
+- Added SNAPSHOT-local_from-Ubuntu/Dockerfile
+- Added RELEASE/Dockerfile
 
 Security:
 - [#1 Upgrade Apache Commons Collections to v3.2.2](https://github.com/Asqatasun/Contrast-Finder/issues/1)
