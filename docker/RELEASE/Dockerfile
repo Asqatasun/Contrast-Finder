@@ -27,7 +27,7 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 ###################################################################
 
 # build variables
-ARG CONTRAST_FINDER_RELEASE="0.3.6-dev"
+ARG CONTRAST_FINDER_RELEASE="0.4.0"
 ARG SRC_URL_PREFIX="https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}"
 ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder-webapp-${CONTRAST_FINDER_RELEASE}.war"
 
