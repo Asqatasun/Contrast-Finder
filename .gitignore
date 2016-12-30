@@ -1,15 +1,31 @@
+
+##### Build
+
 *.class
 
-# Package Files #
+# Package Files 
 *.jar
 *.war
 *.ear
 
 # maven
-target/
+target
 
 
-### NetBeans ###
+##### GIT
+
+# Git - Merge temp file
+*.orig
+
+# git shortlog -s -n
+#  	file for map author and committer names and email addresses
+#  	to canonical real names and email addresses
+/.mailmap
+
+
+##### IDE / Text editor
+
+# NetBeans
 nbproject/
 build/
 nbbuild/
@@ -27,5 +43,4 @@ build.properties
 # saved files
 *~
 
-# Git - Merge temp file
-*.orig
+

@@ -14,6 +14,7 @@ When the contrast is not valid, the main target is to suggest some correct color
 ## How to use this tool ?
 
 The interface is a form, with five fields.
+![Screenshot - Contrast-Finder v0.3.5](images/screenshot.EN_contrast-finder.v0.3.5_2016-12-19.png)
 
 ###   The foreground
 
@@ -40,9 +41,7 @@ Three possible values 3, 4.5 and 7.
 All details about the contrast ratio :
 
 * http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
-
 * http://www.w3.org/TR/WCAG20/#contrast-ratiodef
-
 * http://www.w3.org/TR/WCAG20/relative-luminance.xml
 
 ###  The algorithms
@@ -53,3 +52,5 @@ This algorithm is very helpful if you are not sure about the hue of your initial
 The second one is "valid colors and very close to initial color". The result is a list of colors close to the original color. The aim is to have a valid color with a contrast as close to the selected ratio as possible (At the 0.001 range). 
 
 More informations about  [the algorithms](The-algorithms.md) here.
+
+

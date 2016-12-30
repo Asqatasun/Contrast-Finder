@@ -1,7 +1,7 @@
 [![License : AGPL v3](https://img.shields.io/badge/License-AGPL3-blue.svg)](https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE) 
 [![Build Status](https://travis-ci.org/Asqatasun/Contrast-Finder.svg)](https://travis-ci.org/Asqatasun/Contrast-Finder)
 
-# Asqatasun Contrast-Finder
+# Contrast-Finder
 
 Tool to provide color combination for a good (accessible, WCAG-compliant) contrast.
 
@@ -21,3 +21,8 @@ This helps you in satisfying web accessibility (a11y) tests on contrasts:
 ---
 * More informations about the [algorithms](The-algorithms.md) here.
 * [Other contrast tools](Other-contrast-tools.md)
+
+
+## Screenshots
+![Screenshot - Contrast-Finder v0.3.5](images/screenshot.EN_contrast-finder.v0.3.5_2016-12-19.png)
+

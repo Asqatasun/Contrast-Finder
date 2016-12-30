@@ -204,15 +204,15 @@ footer {
     padding-top: 0;
     text-align: center;
     margin-top: 120px;
-    margin-bottom: 20px;
+    margin-bottom: 3em;
     border-top: none;
     font-size: 13px;
 }
 
 #footer-msg {
-    text-align: left;
+    /* text-align: left; */
     font-size: 18px;
 }
 #footer-copyright {
-    margin-top: 50px;
+    margin-top: 6em;
 }
