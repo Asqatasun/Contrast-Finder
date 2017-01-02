@@ -23,16 +23,26 @@
             <includes>
                 <include>contrast-finder.conf</include>
             </includes>
-            <fileMode>666</fileMode>
-            <outputDirectory>/install/conf</outputDirectory>
+            <fileMode>664</fileMode>
+            <outputDirectory>/install/etc/contrast-finder</outputDirectory>
         </fileSet>
+        <!-- Install web-app conf -->
+        <fileSet>
+            <directory>${basedir}/../contrast-finder-resources/src/main/resources</directory>
+            <includes>
+                <include>contrast-finder.log</include>
+            </includes>
+            <fileMode>664</fileMode>
+            <outputDirectory>/install/var/log/contrast-finder</outputDirectory>
+        </fileSet>
+
         <!-- WEB APP .war -->
         <fileSet>
             <directory>${basedir}/target</directory>
             <includes>
                 <include>*.war</include>
             </includes>
-            <fileMode>666</fileMode>
+            <fileMode>664</fileMode>
             <outputDirectory>/install/</outputDirectory>
         </fileSet>
         <!-- Docs -->
