@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.opens</groupId>
+    <groupId>org.asqatasun</groupId>
     <artifactId>contrast-finder</artifactId>
     <version>0.4.1-dev</version>
   </parent>

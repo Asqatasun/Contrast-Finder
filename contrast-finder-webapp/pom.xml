@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.opens</groupId>
+        <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
         <version>0.4.1-dev</version>
     </parent>
@@ -81,20 +81,20 @@
             <version>1.1.0.Final</version>
         </dependency>
         <dependency>
-            <groupId>org.opens</groupId>
+            <groupId>org.asqatasun</groupId>
             <artifactId>contrast-finder-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.opens</groupId>
+            <groupId>org.asqatasun</groupId>
             <artifactId>contrast-finder-utils</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.opens</groupId>
+            <groupId>org.asqatasun</groupId>
             <artifactId>contrast-finder-impl</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>org.opens</groupId>
+            <groupId>org.asqatasun</groupId>
             <artifactId>contrast-finder-hsv</artifactId>
             <type>jar</type>
         </dependency>

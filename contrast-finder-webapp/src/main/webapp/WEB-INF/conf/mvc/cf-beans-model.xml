@@ -8,10 +8,10 @@
    http://www.springframework.org/schema/context/spring-context-2.5.xsd">
     
     <bean name="colorFinderHsvFactory"
-          class="org.opens.colorfinder.factory.ColorFinderHsvFactory"/>
+          class="org.asqatasun.colorfinder.factory.ColorFinderHsvFactory"/>
 
     <bean name="colorFinderHsvPsychoFactory"
-          class="org.opens.colorfinder.factory.ColorFinderHsvPsychoFactory">
+          class="org.asqatasun.colorfinder.factory.ColorFinderHsvPsychoFactory">
         <property name="hueBounder" value="15.0"/>
         <property name="maxCoefficient" value="0.01"/>
         <property name="maxRed" value="60.0"/>
@@ -20,7 +20,7 @@
     </bean>
 
     <bean name="colorFinderRgbFactory"
-          class="org.opens.colorfinder.factory.ColorFinderRgbFactory">
+          class="org.asqatasun.colorfinder.factory.ColorFinderRgbFactory">
         <property name="hueBounder" value="5.0"/>
         <property name="maxCoefficient" value="0.001"/>
         <property name="maxMove" value="60"/>
@@ -34,7 +34,7 @@
     </bean>
     
     <bean name="colorFinderFactory"
-          class="org.opens.colorfinder.factory.ColorFinderFactoryImpl">
+          class="org.asqatasun.colorfinder.factory.ColorFinderFactoryImpl">
         <property name="colorFinderMap">
             <map>
                 <entry key="HSV" value-ref="colorFinderHsvFactory"/>
@@ -46,19 +46,19 @@
     </bean>
     
     <bean name="boundaryFrom0To1"
-          class="org.opens.color.finder.hsv.Boundary">
+          class="org.asqatasun.color.finder.hsv.Boundary">
         <property name="minValue" value="0"/>
         <property name="maxValue" value="1"/>
     </bean>
     
     <bean name="boundaryFrom1To2"
-          class="org.opens.color.finder.hsv.Boundary">
+          class="org.asqatasun.color.finder.hsv.Boundary">
         <property name="minValue" value="1"/>
         <property name="maxValue" value="2"/>
     </bean>
     
     <bean name="boundaryFrom2To3"
-          class="org.opens.color.finder.hsv.Boundary">
+          class="org.asqatasun.color.finder.hsv.Boundary">
         <property name="minValue" value="2"/>
         <property name="maxValue" value="3"/>
     </bean>
