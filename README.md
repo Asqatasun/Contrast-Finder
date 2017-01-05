@@ -24,7 +24,7 @@ Just to **provide contrast solutions** !
 
 All tools just tell you whether the contrast is good or not, which is fine... 
 but insufficient. Webdesigners / webdevelopers need to easily have a good contrast. 
-That's the purpose of [Contrast-Finder](https://contrast-finder.org/)
+That's the purpose of [Contrast-Finder.org](https://contrast-finder.org/)
 
 ## Documentation
 How to build, install and use ? 
