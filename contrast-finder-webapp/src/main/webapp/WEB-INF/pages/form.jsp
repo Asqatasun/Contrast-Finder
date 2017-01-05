@@ -44,7 +44,7 @@
                             <div class="form-group ${foregroundOnError}">
                                 <label for="foreground-input" class="col-lg-3 control-label"><fmt:message key="form.foregroundColor"/></label>
                                 <div class="col-lg-4">
-                                    <form:input id="foreground-input" path="foreground" type="text" class="form-control"/>
+                                    <form:input id="foreground-input" path="foreground" type="color" class="form-control"/>
                                     <span class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
                                 <div id="foreground-sample" class="col-lg-2 color-sample sample-bordered">
@@ -64,7 +64,7 @@
                             <div class="form-group ${backgroundOnError}">
                                 <label for="background-input" class="col-lg-3 control-label"><fmt:message key="form.backgroundColor"/></label>
                                 <div class="col-lg-4">
-                                    <form:input id="background-input" path="background" type="text" class="form-control"/>
+                                    <form:input id="background-input" path="background" type="color" class="form-control"/>
                                     <span class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
                                 <div id="background-sample" class="col-lg-2 color-sample sample-bordered">
