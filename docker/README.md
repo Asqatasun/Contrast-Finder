@@ -1,7 +1,4 @@
-
-
 # Docker
-
 
 ## Builds and runs a container
 
