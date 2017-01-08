@@ -48,15 +48,15 @@ import java.awt.*;
 public class IndexController {
 
     /**
-     * Nom du model
+     * model name
      */
     private String commandName;
     /**
-     * Vue contenant le formulaire
+     * View containing the form
      */
     private String mainPageView;
     /**
-     * piwik analyticskey
+     * piwik analytics key
      */
     @Value("${piwik_analytics_key}")
     private String piwikAnalyticsKey;
@@ -65,7 +65,7 @@ public class IndexController {
     private ColorFinderFactory colorFinderFactory;
 
     /**
-     * Initialisation du validateur
+     * Validator initialisation
      */
     @InitBinder("colorModel")
     protected void initBinder(WebDataBinder binder) {
@@ -73,10 +73,10 @@ public class IndexController {
     }
 
     /**
-     * Initialisation de la page de formulaire
+     * Form initialisation
      *
-     * @param model modele de la page
-     * @return le nom de la page à afficher
+     * @param model model of the page
+     * @return      page name to display
      */
     @RequestMapping(value = "form.html")
     public String initAccueil(final Model model) {
@@ -98,19 +98,19 @@ public class IndexController {
             return mainPageView;
         } else {
 
-            /* get user's color selection*/
+            /* get user's color selection */
             Color foregroundColor =
                     ColorConverter.hex2Rgb(colorModel.getForeground());
             Color backgroundColor =
                     ColorConverter.hex2Rgb(colorModel.getBackground());
 
-            /* call the color finder with user's selection*/
+            /* call the color finder with user's selection */
             ColorResult colorResult = getColorFinderAndExecute(
                     colorModel,
                     foregroundColor,
-                    backgroundColor)
-                    .getColorResult();
-            /* Preparing the data and populating the model before returning the view*/
+                    backgroundColor).getColorResult();
+
+            /* Preparing the data and populating the model before returning the view */
             model.addAttribute("colorResult", colorResult);
             model.addAttribute("backgroundColor",
                     ColorConverter.hex2Rgb(backgroundColor));
@@ -136,8 +136,8 @@ public class IndexController {
     }
 
     /**
-     * @param algo
-     * @return the other algorithm
+     * @param algo  The algorithm used to compute (can be HSV or RGB)
+     * @return      The other algorithm
      */
     private String getOppositeAlgo(String algo) {
         if (algo.equals("HSV")) {
@@ -169,7 +169,8 @@ public class IndexController {
                 foregroundColor,
                 backgroundColor,
                 colorModel.getIsBackgroundTested(),
-                Float.valueOf(colorModel.getRatio()));
+                Float.valueOf(colorModel.getRatio())
+        );
 
         return colorFinder;
     }

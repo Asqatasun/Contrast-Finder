@@ -22,7 +22,6 @@ package org.asqatasun.color.finder.webapp.model;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- *
  * @author alingua
  */
 public class ColorModel {
@@ -31,27 +30,27 @@ public class ColorModel {
     private static final String DEFAULT_BACKGROUND = "#DFF0D8";
     private static final String DEFAULT_RATIO = "4.5";
     private String foreground = DEFAULT_FOREGROUND;
-    private boolean highratio = false;
+    private String background = DEFAULT_BACKGROUND;
+    private String ratio = DEFAULT_RATIO;
     private String algo = "HSV";
+    private boolean highratio = false;
+    private boolean isBackgroundTested = false;
 
     /**
-     *
-     * @return
+     * @return The algorithm used to compute (can be HSV or RGB)
      */
     public String getAlgo() {
         return algo;
     }
 
     /**
-     *
-     * @param algo
+     * @param algo The algorithm used to compute (can be HSV or RGB)
      */
     public void setAlgo(String algo) {
         this.algo = algo;
     }
 
     /**
-     *
      * @return
      */
     public boolean isHighratio() {
@@ -59,7 +58,6 @@ public class ColorModel {
     }
 
     /**
-     *
      * @param highratio
      */
     public void setHighratio(boolean highratio) {
@@ -67,8 +65,7 @@ public class ColorModel {
     }
 
     /**
-     *
-     * @return
+     * @return Foreground color in hexadecimal with '#' appended if necessary
      */
     public String getForeground() {
         if (StringUtils.isBlank(foreground)) {
@@ -81,17 +78,14 @@ public class ColorModel {
     }
 
     /**
-     *
-     * @param foreground
+     * @param foreground Set foregound color (expected as string) in hexadecimal format, beginning with '#'
      */
     public void setForeground(String foreground) {
         this.foreground = foreground;
     }
-    private String background = DEFAULT_BACKGROUND;
 
     /**
-     *
-     * @return
+     * @return Background color in hexadecimal with '#' appended if necessary
      */
     public String getBackground() {
         if (StringUtils.isBlank(background)) {
@@ -106,7 +100,6 @@ public class ColorModel {
     public void setBackground(String background) {
         this.background = background;
     }
-    private boolean isBackgroundTested = false;
 
     public boolean getIsBackgroundTested() {
         return isBackgroundTested;
@@ -115,7 +108,6 @@ public class ColorModel {
     public void setIsBackgroundTested(boolean isBackgroundTested) {
         this.isBackgroundTested = isBackgroundTested;
     }
-    private String ratio = DEFAULT_RATIO;
 
     public String getRatio() {
         return ratio;

@@ -27,7 +27,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 /**
- * Validateur pour le contenu de notre formulaire.
+ * Validate form content
  *
  * @author Scub-Foundation
  */
