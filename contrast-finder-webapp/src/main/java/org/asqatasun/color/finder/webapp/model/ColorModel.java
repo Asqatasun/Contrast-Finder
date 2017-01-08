@@ -33,7 +33,6 @@ public class ColorModel {
     private String background = DEFAULT_BACKGROUND;
     private String ratio = DEFAULT_RATIO;
     private String algo = "HSV";
-    private boolean highratio = false;
     private boolean isBackgroundTested = false;
 
     /**
@@ -48,20 +47,6 @@ public class ColorModel {
      */
     public void setAlgo(String algo) {
         this.algo = algo;
-    }
-
-    /**
-     * @return
-     */
-    public boolean isHighratio() {
-        return highratio;
-    }
-
-    /**
-     * @param highratio
-     */
-    public void setHighratio(boolean highratio) {
-        this.highratio = highratio;
     }
 
     /**
