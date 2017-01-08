@@ -162,8 +162,6 @@ function do_docker_build() {
         fail "Error building container"
 }
 
-
-
 function do_docker_run() {
     kill_previous_container
 
@@ -176,7 +174,6 @@ function do_docker_run() {
     else 
         fail  "${CONTAINER_EXPOSED_PORT} port is already allocated"
     fi
-
 
     # wait a bit to let container start
     # test if URL responds with 200
