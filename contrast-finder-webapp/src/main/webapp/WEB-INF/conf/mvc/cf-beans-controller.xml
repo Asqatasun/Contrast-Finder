@@ -10,7 +10,7 @@
     <!-- Définition du controller qui va gérer le formulaire de la page d'index
     pour accéder à la page de bienvenue -->
     <bean name="indexController"
-          class="org.asqatasun.color.finder.webapp.controller.IndexController">
+          class="org.asqatasun.contrastFinder.webapp.controller.IndexController">
         <property name="mainPageView" value="pages/form" /> 
         <property name="commandName" value="colorModel" />
     </bean>
