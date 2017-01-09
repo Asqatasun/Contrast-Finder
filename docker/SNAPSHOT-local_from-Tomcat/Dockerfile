@@ -1,15 +1,24 @@
 FROM tomcat:7.0-jre7
-MAINTAINER Fabrice Gangler <fabrice@asqatasun.org>
 
 # ##########################################################
 #
 #                      DISCLAIMER
 #
 # #### usage ######################################################
-# 
+#
+#   --- Building this docker image
+#   docker build -t asqatasun/contrast-finder:SNAPSHOT_local_tomcat  .
+#
+#   --- Launch a container
+#   docker run -p 127.0.0.1:8087:8080 --name contrast.finder -d asqatasun/contrast-finder:SNAPSHOT_local_tomcat
+#
+#   --- Playing with this docker image
+#   docker exec -ti contrast.finder  /bin/bash
+#   docker logs -f  contrast.finder
+#
 #
 # #### FROM  ######################################################
-#   tomcat:7.0-jre7                     https://github.com/docker-library/tomcat/blob/master/7.0/jre7/Dockerfile
+#   tomcat:7.0-jre7                     https://github.com/docker-library/tomcat/blob/master/7/jre7/Dockerfile
 #   |-- openjdk:7-jre                   https://github.com/docker-library/openjdk/blob/master/7-jre/Dockerfile
 #       |-- buildpack-deps:jessie-curl  https://github.com/docker-library/buildpack-deps/blob/master/jessie/curl/Dockerfile
 #         |-- debian:jessie             https://github.com/tianon/docker-brew-debian/blob/master/jessie/Dockerfile
