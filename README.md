@@ -15,7 +15,8 @@ This helps you in satisfying web accessibility (a11y) tests on contrasts:
 * [AccessiWeb criteria 3.3](http://www.accessiweb.org/index.php/accessiweb-22-english-version.html#crit-3-3)
 
 ## Demo
-http://contrast-finder.org/
+https://app.contrast-finder.org
+
 
 ## Why another contrast tool ?
 
@@ -23,7 +24,7 @@ Just to **provide contrast solutions** !
 
 All tools just tell you whether the contrast is good or not, which is fine... 
 but insufficient. Webdesigners / webdevelopers need to easily have a good contrast. 
-That's the purpose of Contrast-Finder
+That's the purpose of [Contrast-Finder.org](https://contrast-finder.org/)
 
 ## Documentation
 How to build, install and use ? 

@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.opens</groupId>
+        <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.4.0</version>
+        <version>0.4.1</version>
     </parent>
     <artifactId>contrast-finder-webapp</artifactId>
-    <version>0.4.0</version>
+    <version>0.4.1</version>
     <packaging>war</packaging>
 
     <name>contrast-finder-webapp</name>
@@ -81,20 +81,20 @@
             <version>1.1.0.Final</version>
         </dependency>
         <dependency>
-            <groupId>org.opens</groupId>
+            <groupId>org.asqatasun</groupId>
             <artifactId>contrast-finder-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.opens</groupId>
+            <groupId>org.asqatasun</groupId>
             <artifactId>contrast-finder-utils</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.opens</groupId>
+            <groupId>org.asqatasun</groupId>
             <artifactId>contrast-finder-impl</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>org.opens</groupId>
+            <groupId>org.asqatasun</groupId>
             <artifactId>contrast-finder-hsv</artifactId>
             <type>jar</type>
         </dependency>
@@ -174,6 +174,28 @@
                     </excludes>
                     <failOnWarning>false</failOnWarning>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <tarLongFileMode>gnu</tarLongFileMode>
+                    <descriptors>
+                        <descriptor>src/main/resources/descriptor.xml</descriptor>
+                    </descriptors>
+                    <outputDirectory>target</outputDirectory>
+                    <finalName>contrast-finder_${project.version}.i386</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                        <phase>package</phase> <!-- append to the packaging phase. -->
+                        <goals>
+                            <goal>assembly</goal> <!-- goals == mojos -->
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

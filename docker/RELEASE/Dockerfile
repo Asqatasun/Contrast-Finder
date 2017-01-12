@@ -4,9 +4,9 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 #
 #   --- Building this docker image
 #   docker build -t asqatasun/contrast-finder  .
-#   docker build -t asqatasun/contrast-finder  --build-arg CONTRAST_FINDER_RELEASE=0.3.5  .
-#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL_PREFIX=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.3.5/   .
-#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.3.5/contrast-finder-webapp-0.3.5.war   .
+#   docker build -t asqatasun/contrast-finder  --build-arg CONTRAST_FINDER_RELEASE=0.4.1  .
+#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL_PREFIX=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.4.1/   .
+#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.4.1/contrast-finder-webapp-0.4.1.war   .
 #
 #   --- Launch a container
 #   docker run -p 127.0.0.1:8087:8080 --name contrast.finder -d asqatasun/contrast-finder
@@ -27,16 +27,18 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 ###################################################################
 
 # build variables
-ARG CONTRAST_FINDER_RELEASE="0.4.0"
+ARG CONTRAST_FINDER_RELEASE="0.4.1"
 ARG SRC_URL_PREFIX="https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}"
-ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder-webapp-${CONTRAST_FINDER_RELEASE}.war"
+ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz"
 
 # Install contrast-finder
-RUN cd      /root/                                                && \
-    wget    ${SRC_URL}                                            && \
-    mv  -v  /root/contrast-*.war      /root/contrast-finder.war   && \
-    mv  -v  /root/contrast-finder.war /var/lib/tomcat7/webapps
-
+RUN  cd         /root/                                      && \
+     wget       ${SRC_URL}                                  && \
+     tar  -xzvf contrast-*.tar.gz                           && \
+     cd         /root/contrast-*/install/                   && \
+     mv   -v    contrast-*.war    contrast-finder.war       && \
+     mv   -v    contrast-*.war    /var/lib/tomcat7/webapps  && \
+     rm   -rf   /root/contrast-*  && echo "-- Install: Ok"
 
 # environment variables
 ENV CONTRAST_FINDER=${CONTRAST_FINDER_RELEASE}

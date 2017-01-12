@@ -19,15 +19,16 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.4.0"
+ENV CONTRAST_FINDER_RELEASE="0.4.1"
 
 # Add contrast-finder .war
-ADD contrast-finder-webapp-${CONTRAST_FINDER_RELEASE}.war /root
+ADD contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz  /root
 
 # Install contrast-finder
-RUN mv -v /root/contrast-*.war      /root/contrast-finder.war   && \
-    mv -v /root/contrast-finder.war /var/lib/tomcat7/webapps
-
+RUN  cd      /root/contrast-*/install/                   && \
+     mv -v   contrast-*.war contrast-finder.war          && \
+     mv -v   contrast-*.war /var/lib/tomcat7/webapps     && \
+     rm -rf  /root/contrast-*
 
 CMD  service tomcat7 start                                  ;      \
      tail -f /var/log/tomcat7/catalina.out                         \

@@ -113,9 +113,8 @@ fail() {
 #############################################
 
 
-TGZ_BASENAME="contrast-finder-webapp/target/contrast-finder-webapp-"
-TGZ_EXT=".war"
-# TGZ_EXT=".tar.gz"
+TGZ_BASENAME="contrast-finder-webapp/target/contrast-finder"
+TGZ_EXT=".tar.gz"
 ADD_IP=''
 URL="http://localhost:${CONTAINER_EXPOSED_PORT}/contrast-finder/"
 if ${ONLY_LOCALHOST} ; then  
@@ -136,10 +135,10 @@ function kill_previous_container() {
     RUNNING=$(${SUDO} docker inspect --format="{{ .State.Status }}" ${CONTAINER_NAME} 2>/dev/null)
     set -e
 
-    if [ ${RUNNING} == "running" ]; then
+    if [ "${RUNNING}" == "running" ]; then
         ${SUDO} docker stop ${CONTAINER_NAME}
         ${SUDO} docker rm ${CONTAINER_NAME}
-    elif [ ${RUNNING} == "exited" ]; then
+    elif [ "${RUNNING}" == "exited" ]; then
         ${SUDO} docker rm ${CONTAINER_NAME}
     fi
 }
@@ -163,21 +162,18 @@ function do_docker_build() {
         fail "Error building container"
 }
 
-
-
 function do_docker_run() {
     kill_previous_container
 
     set +e
     RESULT=$(curl -o /dev/null --silent --write-out '%{http_code}\n' ${URL})
     set -e
-    if [ ${RESULT} == "000" ]; then
+    if [ "${RESULT}" == "000" ]; then
         DOCKER_RUN="${SUDO} docker run -p ${ADD_IP}${CONTAINER_EXPOSED_PORT}:8080 --name ${CONTAINER_NAME} -d ${IMAGE_NAME}:${TAG_NAME}"
         eval ${DOCKER_RUN}
     else 
         fail  "${CONTAINER_EXPOSED_PORT} port is already allocated"
     fi
-
 
     # wait a bit to let container start
     # test if URL responds with 200
@@ -187,7 +183,7 @@ function do_docker_run() {
         set +e
         RESULT=$(curl -o /dev/null --silent --write-out '%{http_code}\n' ${URL})
         set -e
-        if [ ${RESULT} == "200" ]; then
+        if [ "${RESULT}" == "200" ]; then
             echo "... it's done ... ${RESULT}"
         else 
             ((time+=1))

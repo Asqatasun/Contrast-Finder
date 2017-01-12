@@ -1,0 +1,63 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-resources-plugin/resources/1.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-resources-plugin/resources/1.1.0 http://maven.apache.org/xsd/resources-1.1.0.xsd">
+    <id>contrast-finder_webapp</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <fileSets>
+        <!-- text FILES -->
+        <fileSet>
+            <directory>${basedir}/../</directory>
+            <includes>
+                <include>README.md</include>
+                <include>CHANGELOG.md</include>
+                <include>LICENSE</include>
+            </includes>
+            <fileMode>644</fileMode>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+        <!-- Install web-app conf -->
+        <fileSet>
+            <directory>${basedir}/../contrast-finder-resources/src/main/resources</directory>
+            <includes>
+                <include>contrast-finder.conf</include>
+            </includes>
+            <fileMode>664</fileMode>
+            <outputDirectory>/install/etc/contrast-finder</outputDirectory>
+        </fileSet>
+        <!-- Install web-app conf -->
+        <fileSet>
+            <directory>${basedir}/../contrast-finder-resources/src/main/resources</directory>
+            <includes>
+                <include>contrast-finder.log</include>
+            </includes>
+            <fileMode>664</fileMode>
+            <outputDirectory>/install/var/log/contrast-finder</outputDirectory>
+        </fileSet>
+
+        <!-- WEB APP .war -->
+        <fileSet>
+            <directory>${basedir}/target</directory>
+            <includes>
+                <include>*.war</include>
+            </includes>
+            <fileMode>664</fileMode>
+            <outputDirectory>/install/</outputDirectory>
+        </fileSet>
+        <!-- Docs -->
+        <fileSet>
+            <directory>${basedir}/../documentation/en/</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <excludes>
+                <exclude>nbproject/**/*</exclude>
+                <exclude>SUMMARY.md</exclude>
+            </excludes>
+            <fileMode>644</fileMode>
+            <outputDirectory>/documentation</outputDirectory>
+        </fileSet>
+
+    </fileSets>
+</assembly>

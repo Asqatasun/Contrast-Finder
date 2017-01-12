@@ -10,7 +10,7 @@
  
     <!-- Les balises suivantes permettent de préciser que la configuration passe par les annotations  -->
     <context:annotation-config/> 
-    <context:component-scan base-package= "org.opens" />
+    <context:component-scan base-package= "org.asqatasun" />
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
     <bean id="exposedPropertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
