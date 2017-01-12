@@ -6,7 +6,7 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 #   docker build -t asqatasun/contrast-finder  .
 #   docker build -t asqatasun/contrast-finder  --build-arg CONTRAST_FINDER_RELEASE=0.4.2-dev  .
 #   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL_PREFIX=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.4.2-dev/   .
-#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.4.2-dev/contrast-finder-webapp-0.4.2-dev.war   .
+#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.4.2-dev/contrast-finder_0.4.2.i386.tar.gz   .
 #
 #   --- Launch a container
 #   docker run -p 127.0.0.1:8087:8080 --name contrast.finder -d asqatasun/contrast-finder
@@ -16,7 +16,7 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 #   docker logs -f contrast.finder
 #
 # #### source code  ###############################################
-#   https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}/contrast-finder-webapp-${CONTRAST_FINDER_RELEASE}.war
+#   https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}/contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz
 #     could be overridden with  --build-arg CONTRAST_FINDER_RELEASE=<release>
 #     could be overridden with  --build-arg SRC_URL_PREFIX=<url_prefix>
 #     could be overridden with  --build-arg SRC_URL=<url>
