@@ -1,12 +1,14 @@
 
-Contrast-Finder 0.4.x, 2017-xx-xx
+Contrast-Finder 0.4.1, 2017-01-12
 ---------------------------------
 
 Features:
-None
+- [#2 Webapp - Used input tag type=color instead off type=text](https://github.com/Asqatasun/Contrast-Finder/issues/2)
+- Added descriptor.xml (building tar.gz with maven)
+- Added SNAPSHOT-local_from-Tomcat/Dockerfile
 
 Security:
-- [#9 don't expose session ID in the URL](https://github.com/Asqatasun/Contrast-Finder/issues/9)
+- [#9 Webapp - Don't expose session ID in the URL](https://github.com/Asqatasun/Contrast-Finder/issues/9)
 
 Bugs:
 None
@@ -16,6 +18,9 @@ None
 
 Documentation:
 None
+
+Upgrade-o-meter:
+just replace the .war file and restart Tomcat
 
 
 Contrast-Finder 0.4.0, 2016-12-30
