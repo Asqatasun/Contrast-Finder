@@ -145,6 +145,11 @@
                     </div><!-- class="col-lg-12' -->
                 </div><!-- class="row' -->
 
+
+                <c:if test="${empty colorResult}">
+                    <fmt:message key="home.noResultTxt"/>
+                </c:if>
+
                 <c:if test="${not empty colorResult}">
                     <c:choose> 
                         <%-- Good contrast: nothing to do --%>

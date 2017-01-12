@@ -13,7 +13,7 @@
         <a href="http://www.gnu.org/licenses/agpl-3.0.html">GNU AGPL v3</a>
         <br><br>
         &copy; 2013-<fmt:formatDate value="${now}" pattern="yyyy" />
-        - <a href="http://contrast-finder.org/">Contrast-Finder.org</a>
+        - <a href="https://contrast-finder.org/">Contrast-Finder.org</a>
         - Contact <a title="<fmt:message key="footer.link-twitter"/>"
                         href="https://twitter.com/Asqatasun">@Asqatasun</a>
     </p>

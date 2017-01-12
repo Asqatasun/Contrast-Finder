@@ -6,7 +6,7 @@ Features:
 None
 
 Security:
-None
+- [#9 don't expose session ID in the URL](https://github.com/Asqatasun/Contrast-Finder/issues/9)
 
 Bugs:
 None
