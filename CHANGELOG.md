@@ -9,7 +9,8 @@ Security:
 None
 
 Bugs:
-None
+- [#10 Webapp - Color contrast falling for links](https://github.com/Asqatasun/Contrast-Finder/issues/10)
+- [#11 Webapp - Color contrast failing for "the color should be between (…)"](https://github.com/Asqatasun/Contrast-Finder/issues/11)
 
 Configuration:
 None

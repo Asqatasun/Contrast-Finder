@@ -1,4 +1,4 @@
-[![License : AGPL v3](https://img.shields.io/badge/License-AGPL3-blue.svg)](LICENSE) 
+[![License : AGPL v3](https://img.shields.io/badge/License-AGPL3-blue.svg)](https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE) 
 [![Release](https://img.shields.io/github/release/asqatasun/Contrast-Finder.svg)](https://github.com/Asqatasun/Contrast-Finder/releases/latest)
 [![Build Status](https://travis-ci.org/Asqatasun/Contrast-Finder.svg)](https://travis-ci.org/Asqatasun/Contrast-Finder)
 
@@ -28,10 +28,10 @@ That's the purpose of [Contrast-Finder.org](https://contrast-finder.org/)
 
 ## Documentation
 How to build, install and use ? 
-Go to the [documentation](documentation/en/) !
+Go to the [documentation](https://github.com/Asqatasun/Contrast-Finder/blob/master/documentation/en/) !
 
 ## Screenshots
-![Screenshot - Contrast-Finder v0.3.5](documentation/en/images/screenshot.EN_contrast-finder.v0.3.5_2016-12-19.png)
+![Screenshot - Contrast-Finder v0.3.5](https://github.com/Asqatasun/Contrast-Finder/blob/master/documentation/en/images/screenshot.EN_contrast-finder.v0.3.5_2016-12-19.png)
 
 
 ---
@@ -49,7 +49,6 @@ We would be really glad to have you on board! You can help in many ways:
 1. Use Contrast-Finder !
 1. Help translate Contrast-Finder
 1. Give us [feedback on the forum](http://forum.asqatasun.org) or [fill in bug report](https://github.com/Asqatasun/Contrast-Finder/issues)
-1. Help us in improving the SEO rules: come, code or [discuss](http://forum.asqatasun.org/c/english)!
 
 [Pull Requests](https://github.com/Asqatasun/Contrast-Finder/pulls) are always welcome! 
 Everything is summarized in the [CONTRIBUTING](https://github.com/Asqatasun/Contrast-Finder/blob/master/CONTRIBUTING.md) file.
@@ -57,7 +56,7 @@ Everything is summarized in the [CONTRIBUTING](https://github.com/Asqatasun/Cont
 
 ## License
 
- [AGPL v3](LICENSE) 
+ [AGPL v3](https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE) 
 
 
 
