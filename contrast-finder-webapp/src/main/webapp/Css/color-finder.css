@@ -4,7 +4,8 @@ body {
 }
 
 a {
-    color : #3173BD;
+    color : #3173BD;   /* AA  */
+    color : #0A52A4;   /* AAA */
 }
 
 /* Bootstrap override */ 
