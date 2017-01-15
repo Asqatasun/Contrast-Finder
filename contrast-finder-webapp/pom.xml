@@ -66,9 +66,9 @@
             <version>3.2.12.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-jstlel</artifactId>
+            <version>1.2.5</version>
         </dependency>
         <dependency>
             <groupId>javax.validation</groupId>
