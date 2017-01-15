@@ -3,23 +3,26 @@ Contrast-Finder 0.4.x, 2017-xx-xx
 ---------------------------------
 
 Features:
-None
+none
 
 Security:
-None
+- [#13 - Upgraded Apache.HttpComponents HttpClient to v4.3.6](https://github.com/Asqatasun/Contrast-Finder/issues/13)
+- [#14 - Upgraded SpringFrameworkt to v3.2.12 and remove spring-asm](https://github.com/Asqatasun/Contrast-Finder/issues/14)
+- [#15 - Removed commons-httpclient dependency](https://github.com/Asqatasun/Contrast-Finder/issues/15)
+- [#16 - Changed JSTL artifact : jstl --> taglibs-standard-jstlel](https://github.com/Asqatasun/Contrast-Finder/issues/16)
 
 Bugs:
 - [#10 Webapp - Color contrast falling for links](https://github.com/Asqatasun/Contrast-Finder/issues/10)
 - [#11 Webapp - Color contrast failing for "the color should be between (…)"](https://github.com/Asqatasun/Contrast-Finder/issues/11)
 
 Configuration:
-None
+none
 
 Documentation:
-None
+none
 
 Upgrade-o-meter:
-None
+just replace the .war file and restart Tomcat
 
 
 Contrast-Finder 0.4.1, 2017-01-12
@@ -34,13 +37,13 @@ Security:
 - [#9 Webapp - Don't expose session ID in the URL](https://github.com/Asqatasun/Contrast-Finder/issues/9)
 
 Bugs:
-None
+none
 
 Configuration:
-None
+none
 
 Documentation:
-None
+none
 
 Upgrade-o-meter:
 just replace the .war file and restart Tomcat
@@ -59,13 +62,13 @@ Security:
 - [#1 Upgrade Apache Commons Collections to v3.2.2](https://github.com/Asqatasun/Contrast-Finder/issues/1)
 
 Bugs:
-None
+none
 
 Configuration:
-None
+none
 
 Documentation:
-None
+none
 
 
 Contrast-Finder 0.3.5, 2016-12-18
