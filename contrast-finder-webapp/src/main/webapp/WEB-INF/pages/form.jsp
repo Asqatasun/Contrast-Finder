@@ -368,17 +368,17 @@
                 </div>  <!-- class="container' -->
                 <%@include file='/WEB-INF/template/footer.jspf' %>
                 <!-- From  -->
-                <script src="Js/10-jquery.min.js"></script>
-                <script src="Js/11-jquery-ui.min.js"></script>
+                <script src="<c:url value="Js/10-jquery.min.js"/>"></script>
+                <script src="<c:url value="Js/11-jquery-ui.min.js"/>"></script>
                 <c:if test="${colorResult.numberOfSuggestedColors > 0}">
-                    <script src="Js/20-jquery.tablesorter.min.js"></script>
-                    <script src="Js/25-accessible-min.js"></script>
+                    <script src="<c:url value="Js/20-jquery.tablesorter.min.js"/>"></script>
+                    <script src="<c:url value="Js/25-accessible-min.js"/>"></script>
                 </c:if>
-                <script src="Js/30-bootstrap.min.js"></script>
-                <script src="Js/35-affix.js"></script>
-                <script src="Js/36-sample.color.js"></script>
+                <script src="<c:url value="Js/30-bootstrap.min.js"/>"></script>
+                <script src="<c:url value="Js/35-affix.js"/>"></script>
+                <script src="<c:url value="Js/36-sample.color.js"/>"></script>
                 <!--
-                    <script src="Js/_contrast-finder.all.min.js"></script>
+                    <script src="<c:url value="Js/_contrast-finder.all.min.js"/>"></script>
                 -->
         </body>
 
