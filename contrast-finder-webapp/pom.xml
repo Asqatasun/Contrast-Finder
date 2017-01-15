@@ -168,6 +168,22 @@
                         <exclude>**/*min.css</exclude>
                     </excludes>
                     <failOnWarning>false</failOnWarning>
+                    <aggregations>
+                        <aggregation>
+                            <insertNewLine>true</insertNewLine>
+                            <output>${project.build.directory}/${project.build.finalName}/Js/_contrast-finder.all.min.js</output>
+                            <includes>
+                                <include>**/*min.js</include>
+                            </includes>
+                        </aggregation>
+                        <aggregation>
+                            <insertNewLine>true</insertNewLine>
+                            <output>${project.build.directory}/${project.build.finalName}/Css/_contrast-finder.all.min.css</output>
+                            <includes>
+                                <include>**/*min.css</include>
+                            </includes>
+                        </aggregation>
+                    </aggregations>
                 </configuration>
             </plugin>
 
