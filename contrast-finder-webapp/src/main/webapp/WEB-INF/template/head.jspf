@@ -2,7 +2,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><fmt:message key="home.titleTag"/></title>
-    <link rel="Shortcut Icon" href="<c:url value="Images/favicon.ico"/>" type="image/x-icon">
+    <link rel="shortcut icon" href="<c:url value="Images/favicon.ico"/>" type="image/x-icon">
+
     <link rel="stylesheet" type="text/css" href="<c:url value="Css/_contrast-finder.all.min.css"/>">
 <!--
     <link rel="stylesheet" type="text/css" href="<c:url value="Css/10-bootstrap.min.css"/>">
