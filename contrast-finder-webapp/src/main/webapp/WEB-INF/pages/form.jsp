@@ -370,7 +370,7 @@
 
 
                 <!-- Javascript - Webapp -->
-                <script defer src="<c:url value="Js/_contrast-finder.all.min.js"/>"></script>
+                <script src="<c:url value="Js/_contrast-finder.all.min.js"/>"></script>
                    <!-- <script src="<c:url value="Js/10-jquery.min.js"/>"></script>
                         <script src="<c:url value="Js/11-jquery-ui.min.js"/>"></script>
                         <c:if test="${colorResult.numberOfSuggestedColors > 0}">
@@ -392,13 +392,16 @@
                             _paq.push(["setDomains", ["*.contrast-finder.org","*.www.contrast-finder.org"]]);
                             _paq.push(['trackPageView']);
                             _paq.push(['enableLinkTracking']);
-                            (function() {
+                            function loadPiwikAfterOnload(){
                                 var u='${piwikServer}';
                                 _paq.push(['setTrackerUrl', u+'piwik.php']);
                                 _paq.push(['setSiteId', '${piwikSiteId}']);
                                 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
                                 g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-                            })();
+                            }
+                            if (window.addEventListener){ window.addEventListener("load", loadPiwikAfterOnload, false); }
+                            else if (window.attachEvent){ window.attachEvent("onload", loadPiwikAfterOnload);           }
+                            else                        { window.onload = loadPiwikAfterOnload();                       }
                         </script>
                         <noscript><p><img src="${piwikServer}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></p></noscript>
                         <!-- End Piwik code -->
