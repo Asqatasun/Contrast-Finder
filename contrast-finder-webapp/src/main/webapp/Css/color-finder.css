@@ -4,12 +4,15 @@ body {
 }
 
 a {
-    color : #3173BD;
+    color : #3173BD;   /* AA  */
+    color : #0A52A4;   /* AAA */
 }
 
 /* Bootstrap override */ 
 .help-block {
     font-size : 12px;
+    color: #5A5A5A; /* AA */
+    color: #5A5151; /* AAA */
 }
 .alert-warning {
     color: #6c4a1e; 
