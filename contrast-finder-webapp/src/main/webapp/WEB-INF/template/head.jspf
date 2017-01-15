@@ -3,9 +3,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><fmt:message key="home.titleTag"/></title>
     <link rel="Shortcut Icon" href="<c:url value="Images/favicon.ico"/>" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="<c:url value="Css/bootstrap.min.css"/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value="Css/bootstrap-theme.min.css"/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value="Css/color-finder-min.css"/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value="Css/accessible-table-sorter-min.css"/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value="Css/10-bootstrap.min.css"/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value="Css/20-bootstrap-theme.min.css"/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value="Css/30-color-finder-min.css"/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value="Css/40-accessible-table-sorter-min.css"/>">
+<!--
+    <link rel="stylesheet" type="text/css" href="<c:url value="Css/_contrast-finder.all.min.css"/>">
+-->
     <meta name="description" content="<fmt:message key="home.metaDescription"/>">
 </head>
