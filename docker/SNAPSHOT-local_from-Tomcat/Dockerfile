@@ -33,8 +33,8 @@ RUN mkdir -p /var/log/contrast-finder/ \
     && mkdir -p /etc/contrast-finder/ \
     && touch /var/log/contrast-finder/contrast-finder.log \
     && touch /etc/contrast-finder/contrast-finder.conf \
-    && echo "piwik_analytics_key=\"\""  >> /etc/contrast-finder/contrast-finder.conf \
-    && echo "google_analytics_key=\"\"" >> /etc/contrast-finder/contrast-finder.conf
+    && echo "piwik_analytics_key="  >> /etc/contrast-finder/contrast-finder.conf \
+    && echo "google_analytics_key=" >> /etc/contrast-finder/contrast-finder.conf
 
 # Add Spring Instrument Tomcat for Tomcat 7 (as this image is based on Tomcat7)
 #
