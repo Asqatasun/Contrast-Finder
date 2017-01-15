@@ -1,15 +1,53 @@
 <%@page pageEncoding="UTF-8"%>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title><fmt:message key="home.titleTag"/></title>
-    <link rel="shortcut icon" href="<c:url value="Images/favicon.ico"/>" type="image/x-icon">
+    <title>${titleTag}</title>
+    <link rel="stylesheet" type="text/css"         href="<c:url value="Css/_contrast-finder.all.min.css"/>">
+    <!--    <link rel="stylesheet" type="text/css" href="<c:url value="Css/10-bootstrap.min.css"/>">
+            <link rel="stylesheet" type="text/css" href="<c:url value="Css/20-bootstrap-theme.min.css"/>">
+            <link rel="stylesheet" type="text/css" href="<c:url value="Css/30-color-finder-min.css"/>">
+            <link rel="stylesheet" type="text/css" href="<c:url value="Css/40-accessible-table-sorter-min.css"/>">
+    -->
 
-    <link rel="stylesheet" type="text/css" href="<c:url value="Css/_contrast-finder.all.min.css"/>">
-<!--
-    <link rel="stylesheet" type="text/css" href="<c:url value="Css/10-bootstrap.min.css"/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value="Css/20-bootstrap-theme.min.css"/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value="Css/30-color-finder-min.css"/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value="Css/40-accessible-table-sorter-min.css"/>">
--->
+    <!-- Favicon  -->
+    <link rel="apple-touch-icon"            href="<c:url value="Images/logo/favicon/apple-touch-icon.png?v=E6bNL5M5Mb"/>"       sizes="180x180" >
+    <link rel="icon"    type="image/png"    href="<c:url value="Images/logo/favicon/favicon-32x32.png?v=E6bNL5M5Mb"/>"          sizes="32x32">
+    <link rel="icon"    type="image/png"    href="<c:url value="Images/logo/favicon/favicon-194x194.png?v=E6bNL5M5Mb"/>"        sizes="194x194">
+    <link rel="icon"    type="image/png"    href="<c:url value="Images/logo/favicon/android-chrome-192x192.png?v=E6bNL5M5Mb"/>" sizes="192x192">
+    <link rel="icon"    type="image/png"    href="<c:url value="Images/logo/favicon/favicon-16x16.png?v=E6bNL5M5Mb"/>"          sizes="16x16">
+    <link rel="manifest"                    href="<c:url value="Images/logo/favicon/manifest.json?v=E6bNL5M5Mb"/>">
+    <link rel="mask-icon"                   href="<c:url value="Images/logo/favicon/safari-pinned-tab.svg?v=E6bNL5M5Mb"/>">
+<!--<link rel="shortcut icon"               href="<c:url value="Images/logo/favicon/favicon.ico?v=E6bNL5M5Mb"/>"> -->
+    <link rel="shortcut icon" type="image/x-icon"  href="<c:url value="Images/favicon.ico"/>" >
+    <meta name="msapplication-TileImage"    content="<c:url value="Images/logo/favicon/mstile-144x144.png?v=E6bNL5M5Mb"/>">
+    <meta name="msapplication-config"       content="<c:url value="Images/logo/favicon/browserconfig.xml?v=E6bNL5M5Mb"/>">
+    <meta name="msapplication-TileColor"    content="#2d89ef">
+    <meta name="theme-color"                content="#ffffff">
+    <meta name="apple-mobile-web-app-title" content="Contrast Finder">
+    <meta name="application-name"           content="Contrast Finder">
+
+
+    <!--  Description / Canonical URL   -->
     <meta name="description" content="<fmt:message key="home.metaDescription"/>">
+    <link rel="canonical"    href="${canonicalURL}" />
+
+    <!-- Social network - Facebook -->
+    <meta property="author"         content="Contrast-finder.org" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:site_name"   content="Contrast-Finder"/>
+    <meta property="og:title"       content="<fmt:message key="home.titleTag"/>" />
+    <meta property="og:description" content="<fmt:message key="home.metaDescription"/>" />
+    <meta property="og:url"         content="${canonicalURL}" />
+    <meta property="og:image"       content="https://app.contrast-finder.org/Images/contrast_finder_logo.png" />
+
+    <!-- Social network - Twitter -->
+    <meta name="twitter:card"        content="summary">
+    <meta name="twitter:site"        content="@Asqatasun">
+    <meta name="twitter:url"         content="${canonicalURL}" />
+    <meta name="twitter:domain"      content="https://app.contrast-finder.org/" />
+    <meta name="twitter:creator"     content="@Asqatasun">
+    <meta name="twitter:title"       content="<fmt:message key="home.titleTag"/>" />
+    <meta name="twitter:description" content="<fmt:message key="home.metaDescription"/>" />
+    <meta name="twitter:image:src"   content="https://app.contrast-finder.org/Images/contrast_finder_logo.png" />
+
 </head>

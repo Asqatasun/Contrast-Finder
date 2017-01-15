@@ -1,0 +1,39 @@
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page pageEncoding="UTF-8" %>
+
+    <%-- APP Name --%>
+    <c:set var="appName" value="Contrast-Finder"/>
+
+    <%-- LANG --%>
+    <c:choose>
+        <c:when test="${fn:contains(pageContext.response.locale, '_')}">
+            <c:set var="lang">
+                ${fn:substringBefore(pageContext.response.locale, "_")}
+            </c:set>
+        </c:when>
+        <c:otherwise>
+            <c:set var="lang" value="${pageContext.response.locale}"/>
+        </c:otherwise>
+    </c:choose>
+
+    <%-- Canonical URL --%>
+    <c:set var="prefixURL" value="https://app.contrast-finder.org/"/>
+    <c:choose>
+        <c:when test="${lang == 'en'}">
+            <c:set var="canonicalURL" value="${prefixURL}"/>
+        </c:when>
+        <c:otherwise>
+            <c:set var="canonicalURL" value="${prefixURL}?lang=${lang}"/>
+        </c:otherwise>
+    </c:choose>
+
+    <%-- TITLE tag --%>
+    <c:choose>
+        <c:when test="${not empty colorResult}">
+            <c:set var="titleTag" value="${appName}"/>
+        </c:when>
+        <c:otherwise>
+            <c:set var="titleTag"><fmt:message key="home.titleTag"/></c:set>
+        </c:otherwise>
+    </c:choose>
+

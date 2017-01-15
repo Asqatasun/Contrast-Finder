@@ -39,7 +39,7 @@
                         <abbr title="Français">FR</abbr>
                     </a>
                 </div> 
-                <h1>${title}</h1>
+                <h1>${appName}</h1>
                 <p><fmt:message key="form.description"/></p>
                 <p>
                     <a href="<fmt:message key="form.wcagLink"/>">

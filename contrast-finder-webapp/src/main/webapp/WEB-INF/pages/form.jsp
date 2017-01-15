@@ -1,24 +1,14 @@
 <%@ taglib uri="http://htmlcompressor.googlecode.com/taglib/compressor" prefix="compress" %>
 <compress:html>
-    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+    <%@ taglib prefix="fmt"    uri="http://java.sun.com/jsp/jstl/fmt" %>
+    <%@ taglib prefix="fn"     uri="http://java.sun.com/jsp/jstl/functions" %>
     <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-    <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib  prefix="form"   uri="http://www.springframework.org/tags/form" %>
+    <%@taglib  prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
     <%@page pageEncoding="UTF-8"%>
     <!DOCTYPE html>
-    <c:choose>
-        <c:when test="${fn:contains(pageContext.response.locale, '_')}">
-            <c:set var="lang">
-                ${fn:substringBefore(pageContext.response.locale, "_")}
-            </c:set>
-        </c:when>
-        <c:otherwise>
-            <c:set var="lang" value="${pageContext.response.locale}"/>
-        </c:otherwise>
-    </c:choose>
+    <%@include file='/WEB-INF/template/template_variables.jspf' %>
     <html lang="${lang}">
-        <c:set var="title" value="Contrast-Finder"/>
         <%@include file='/WEB-INF/template/head.jspf' %>
         <body id="contrast-finder-page">
             <div class="container">
