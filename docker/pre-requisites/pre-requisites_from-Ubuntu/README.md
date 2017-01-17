@@ -1,1 +1,1 @@
-../../README.md
+../../RELEASE/README.md
