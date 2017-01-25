@@ -1,24 +1,14 @@
 <%@ taglib uri="http://htmlcompressor.googlecode.com/taglib/compressor" prefix="compress" %>
 <compress:html>
-    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+    <%@ taglib prefix="fmt"    uri="http://java.sun.com/jsp/jstl/fmt" %>
+    <%@ taglib prefix="fn"     uri="http://java.sun.com/jsp/jstl/functions" %>
     <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-    <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib  prefix="form"   uri="http://www.springframework.org/tags/form" %>
+    <%@taglib  prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
     <%@page pageEncoding="UTF-8"%>
     <!DOCTYPE html>
-    <c:choose>
-        <c:when test="${fn:contains(pageContext.response.locale, '_')}">
-            <c:set var="lang">
-                ${fn:substringBefore(pageContext.response.locale, "_")}
-            </c:set>
-        </c:when>
-        <c:otherwise>
-            <c:set var="lang" value="${pageContext.response.locale}"/>
-        </c:otherwise>
-    </c:choose>
+    <%@include file='/WEB-INF/template/template_variables.jspf' %>
     <html lang="${lang}">
-        <c:set var="title" value="Contrast-Finder"/>
         <%@include file='/WEB-INF/template/head.jspf' %>
         <body id="contrast-finder-page">
             <div class="container">
@@ -44,7 +34,7 @@
                             <div class="form-group ${foregroundOnError}">
                                 <label for="foreground-input" class="col-lg-3 control-label"><fmt:message key="form.foregroundColor"/></label>
                                 <div class="col-lg-4">
-                                    <form:input id="foreground-input" path="foreground" type="color" class="form-control"/>
+                                    <form:input id="foreground-input" path="foreground" type="text" class="form-control"/>
                                     <span class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
                                 <div id="foreground-sample" class="col-lg-2 color-sample sample-bordered">
@@ -64,7 +54,7 @@
                             <div class="form-group ${backgroundOnError}">
                                 <label for="background-input" class="col-lg-3 control-label"><fmt:message key="form.backgroundColor"/></label>
                                 <div class="col-lg-4">
-                                    <form:input id="background-input" path="background" type="color" class="form-control"/>
+                                    <form:input id="background-input" path="background" type="text" class="form-control"/>
                                     <span class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
                                 <div id="background-sample" class="col-lg-2 color-sample sample-bordered">
@@ -353,7 +343,7 @@
                                                 <c:url value="result.html?foreground=${colorModel.foreground}&amp;background=${colorModel.background}&amp;algo=${algo}&amp;ratio=${colorModel.ratio}&amp;isBackgroundTested=${!colorModel.isBackgroundTested}"></c:url>
                                             </c:set>
                                             <div class="noResult">
-                                                <fmt:message key="form.anyResult"/><a href="${fn:replace(retryUrl, '#', '%23')}"><fmt:message key="form.changeComponent"/>
+                                                <fmt:message key="form.anyResult"/> <a href="${fn:replace(retryUrl, '#', '%23')}"><fmt:message key="form.changeComponent"/>
                                                     <c:if test="${colorModel.isBackgroundTested}"><strong><fmt:message key="form.oppositeComponentBackground"/></strong></a>.</c:if>
                                                 <c:if test="${!colorModel.isBackgroundTested}"><strong><fmt:message key="form.oppositeComponentForeground"/></strong></a>.</c:if>
                                                 </div>
@@ -367,17 +357,45 @@
 
                 </div>  <!-- class="container' -->
                 <%@include file='/WEB-INF/template/footer.jspf' %>
-                <!-- From  -->
-                <script src="Js/jquery.min.js"></script>
-                <script src="Js/jquery-ui.min.js"></script>
-                <c:if test="${colorResult.numberOfSuggestedColors > 0}">
-                    <script src="Js/jquery.tablesorter.min.js"></script>
-                    <script src="Js/accessible-min.js"></script>
-                </c:if>
-                <script src="Js/bootstrap.min.js"></script>
-                <script src="Js/affix.js"></script>
-                <script src="Js/sample.color.js"></script>
-        </body>
 
+
+                <!-- Javascript - Webapp -->
+                <script src="<c:url value="Js/_contrast-finder.all.min.js"/>"></script>
+                   <!-- <script src="<c:url value="Js/10-jquery.min.js"/>"></script>
+                        <script src="<c:url value="Js/11-jquery-ui.min.js"/>"></script>
+                        <c:if test="${colorResult.numberOfSuggestedColors > 0}">
+                            <script src="<c:url value="Js/20-jquery.tablesorter.min.js"/>"></script>
+                            <script src="<c:url value="Js/25-accessible-min.js"/>"></script>
+                        </c:if>
+                        <script src="<c:url value="Js/30-bootstrap.min.js"/>"></script>
+                        <script src="<c:url value="Js/35-affix.js"/>"></script>
+                        <script src="<c:url value="Js/36-sample.color.js"/>"></script>
+                   -->
+
+                    <!-- Javascript - Web analytics -->
+                    <c:set var="piwikSiteId"  value="${piwikKey}"/>
+                    <c:set var="piwikServer"  value="https://stats.taqamaqa.com/piwik/"/>
+                    <c:if test="${not empty piwikSiteId}">
+                        <!-- Piwik code-->
+                        <script type="text/javascript">
+                            var _paq = _paq || [];
+                            _paq.push(["setDomains", ["*.contrast-finder.org","*.www.contrast-finder.org"]]);
+                            _paq.push(['trackPageView']);
+                            _paq.push(['enableLinkTracking']);
+                            function loadPiwikAfterOnload(){
+                                var u='${piwikServer}';
+                                _paq.push(['setTrackerUrl', u+'piwik.php']);
+                                _paq.push(['setSiteId', '${piwikSiteId}']);
+                                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                            }
+                            if (window.addEventListener){ window.addEventListener("load", loadPiwikAfterOnload, false); }
+                            else if (window.attachEvent){ window.attachEvent("onload", loadPiwikAfterOnload);           }
+                            else                        { window.onload = loadPiwikAfterOnload();                       }
+                        </script>
+                        <noscript><p><img src="${piwikServer}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></p></noscript>
+                        <!-- End Piwik code -->
+                    </c:if>
+        </body>
     </html>
 </compress:html>

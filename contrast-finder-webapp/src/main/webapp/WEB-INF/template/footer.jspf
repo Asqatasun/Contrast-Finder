@@ -8,7 +8,7 @@
     </div>
     <p id="footer-copyright">
         <fmt:message key="footer.poweredBy"/>
-        <a href="https://github.com/Asqatasun/Contrast-Finder/releases/"><em>Contrast Finder</em> v0.4.2</a>,
+        <a href="https://github.com/Asqatasun/Contrast-Finder/releases/"><em>Contrast Finder</em> v0.4.3</a>,
         <fmt:message key="footer.availableUnder"/>
         <a href="http://www.gnu.org/licenses/agpl-3.0.html">GNU AGPL v3</a>
         <br><br>
@@ -18,29 +18,5 @@
                         href="https://twitter.com/Asqatasun">@Asqatasun</a>
     </p>
 
-
-
-
-
 </footer>
 
-<c:set var="piwikSiteId" value="${piwikKey}"/>
-<c:if test="${not empty piwikSiteId}">
-    <!-- Piwik -->
-    <script type="text/javascript">
-        var _paq = _paq || [];
-        _paq.push(["setDomains", ["*.contrast-finder.org","*.www.contrast-finder.org"]]);
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//stats.taqamaqa.com/piwik/";
-            _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['setSiteId', '${piwikSiteId}']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-        })();
-    </script>
-    <noscript><p><img src="//stats.taqamaqa.com/piwik/piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></p></noscript>
-    <!-- End Piwik Code -->
-
-</c:if>

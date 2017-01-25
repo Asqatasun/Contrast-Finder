@@ -1,4 +1,27 @@
 
+Contrast-Finder 0.4.3, 2017-01-25
+---------------------------------
+
+Features:
+- [#18 - Webperf - Aggregate JS and CSS files](https://github.com/Asqatasun/Contrast-Finder/issues/18)
+
+Security:
+none
+
+Bugs:
+- [#17 - Revert "Webapp - Used input tag type=color instead off type=text"](https://github.com/Asqatasun/Contrast-Finder/issues/17)
+
+Configuration:
+none
+
+Documentation:
+- added docker/RELEASE/README.md for Docker Hub
+
+Upgrade-o-meter:
+just replace the .war file and restart Tomcat
+
+
+
 Contrast-Finder 0.4.2, 2017-01-15
 ---------------------------------
 

@@ -24,6 +24,8 @@ Other contrast tools
 * http://www.randoma11y.com/
 * https://www.joedolson.com/tools/color-contrast-tester.php
 * https://www.joedolson.com/tools/color-contrast.php
+* https://github.com/toolness/accessible-color-matrix
+* https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/
 * https://hexnaw.com/
 * http://jxnblk.com/colorable/
   * https://colorable.jxnblk.com/
@@ -31,5 +33,4 @@ Other contrast tools
   * http://jxnblk.com/colorable/demos/text/
   * http://jxnblk.com/colorable/demos/matrix/
   * http://www.aremycoloursaccessible.com/
-
 
