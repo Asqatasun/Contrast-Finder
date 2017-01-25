@@ -343,7 +343,7 @@
                                                 <c:url value="result.html?foreground=${colorModel.foreground}&amp;background=${colorModel.background}&amp;algo=${algo}&amp;ratio=${colorModel.ratio}&amp;isBackgroundTested=${!colorModel.isBackgroundTested}"></c:url>
                                             </c:set>
                                             <div class="noResult">
-                                                <fmt:message key="form.anyResult"/><a href="${fn:replace(retryUrl, '#', '%23')}"><fmt:message key="form.changeComponent"/>
+                                                <fmt:message key="form.anyResult"/> <a href="${fn:replace(retryUrl, '#', '%23')}"><fmt:message key="form.changeComponent"/>
                                                     <c:if test="${colorModel.isBackgroundTested}"><strong><fmt:message key="form.oppositeComponentBackground"/></strong></a>.</c:if>
                                                 <c:if test="${!colorModel.isBackgroundTested}"><strong><fmt:message key="form.oppositeComponentForeground"/></strong></a>.</c:if>
                                                 </div>
