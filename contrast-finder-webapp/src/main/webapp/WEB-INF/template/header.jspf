@@ -1,8 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page pageEncoding="UTF-8"%>
-<div><span id="forkongithub" lang="en"><a href="https://github.com/Asqatasun/Contrast-Finder">Fork me on GitHub</a></span></div>
-            
+
             <div id="header" class="page-header">
                 <div id="contrast-finder-logo">
                 </div>
