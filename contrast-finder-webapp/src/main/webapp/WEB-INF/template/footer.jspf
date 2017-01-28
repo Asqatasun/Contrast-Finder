@@ -15,7 +15,7 @@
         &copy; 2013-<fmt:formatDate value="${now}" pattern="yyyy" />
         - <a href="https://contrast-finder.org/">Contrast-Finder.org</a>
         - Contact <a title="<fmt:message key="footer.link-twitter"/>"
-                        href="https://twitter.com/Asqatasun">@Asqatasun</a>
+                        href="https://twitter.com/Contrast_Finder">@Contrast_Finder</a>
     </p>
 
 </footer>

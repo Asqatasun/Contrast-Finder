@@ -42,10 +42,10 @@
 
     <!-- Social network - Twitter -->
     <meta name="twitter:card"        content="summary">
-    <meta name="twitter:site"        content="@Asqatasun">
+    <meta name="twitter:site"        content="@Contrast_Finder">
     <meta name="twitter:url"         content="${canonicalURL}" />
     <meta name="twitter:domain"      content="https://app.contrast-finder.org/" />
-    <meta name="twitter:creator"     content="@Asqatasun">
+    <meta name="twitter:creator"     content="@Contrast_Finder">
     <meta name="twitter:title"       content="<fmt:message key="home.titleTag"/>" />
     <meta name="twitter:description" content="<fmt:message key="home.metaDescription"/>" />
     <meta name="twitter:image:src"   content="https://app.contrast-finder.org/Images/contrast_finder_logo.png" />
