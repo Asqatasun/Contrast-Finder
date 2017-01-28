@@ -3,8 +3,6 @@
 <%@page pageEncoding="UTF-8"%>
 
             <div id="header" class="page-header">
-                <div id="contrast-finder-logo">
-                </div>
                 <c:set var="properQueryString" scope="page" value="${fn:replace(pageContext.request.queryString, '&', '&amp;')}"/>
                 <c:choose>
                     <c:when test="${not empty pageContext.request.queryString}">
@@ -31,13 +29,27 @@
                     </c:otherwise>
                 </c:choose>
                 <div id="lang-switcher">
-                    <a href="${enUrl}" title="Switch to english" lang="en">
-                        <abbr title="English">EN</abbr>
-                    </a>
-                    <a href="${frUrl}" title="Passer en français" lang="fr">
-                        <abbr title="Français">FR</abbr>
-                    </a>
-                </div> 
+                    <c:choose>
+                        <c:when test="${lang == 'en'}">
+                            <strong lang="en">english</strong>
+                        </c:when>
+                        <c:otherwise>
+                            <a href="${enUrl}" title="Switch to english">english</a>
+                        </c:otherwise>
+                    </c:choose>
+                    &nbsp;
+                    <c:choose>
+                        <c:when test="${lang == 'fr'}">
+                            <strong lang="en">français</strong>
+                        </c:when>
+                        <c:otherwise>
+                            <a href="${frUrl}" title="Passer en français" lang="fr">français</a>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+
+                <div id="contrast-finder-logo">
+                </div>
                 <h1>${appName}</h1>
                 <p><fmt:message key="form.description"/></p>
                 <p>

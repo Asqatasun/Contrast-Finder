@@ -24,7 +24,8 @@ a {
 
 #lang-switcher {
     text-align: right;
-    float:right;
+    position:relative;
+    top: -2em;
 }
 
 .noResult {
@@ -204,4 +205,9 @@ footer {
 }
 #footer-copyright {
     margin-top: 6em;
+}
+
+/* header template */
+#header h1 {
+    margin-top: 0;
 }
