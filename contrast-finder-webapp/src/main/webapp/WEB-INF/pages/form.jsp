@@ -200,10 +200,12 @@
                                             </td>
                                             <td  class="text-sample" style="color:${colorModel.foreground};background-color:${colorModel.background}">
                                                 <p style="font-size:20px;">
-                                                    <fmt:message key="form.sampleTitle"/><span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
+                                                    <fmt:message key="form.sampleTitle"/>
+                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
                                                 </p>
                                                 <p>
-                                                    <fmt:message key="form.sampleText"/><span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
+                                                    <fmt:message key="form.sampleText"/>
+                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
                                                     <fmt:message key="form.sampleText2"/>
                                                 </p>
                                             </td>
@@ -265,10 +267,12 @@
                                                                  background-color:rgb(${result.color.red}, ${result.color.green}, ${result.color.blue})">
 
                                                                 <p style="font-size:20px;">
-                                                                    <fmt:message key="form.sampleTitle"/><span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
+                                                                    <fmt:message key="form.sampleTitle"/>
+                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
                                                                 </p>
                                                                 <p>
-                                                                    <fmt:message key="form.sampleText"/><span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
+                                                                    <fmt:message key="form.sampleText"/>
+                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
                                                                     <fmt:message key="form.sampleText2"/>
                                                                 </p> 
                                                             </td>
@@ -304,10 +308,12 @@
                                                                  color:rgb(${result.color.red}, ${result.color.green}, ${result.color.blue});
                                                                  background-color:rgb(${result.comparisonColor.red}, ${result.comparisonColor.green}, ${result.comparisonColor.blue})">
                                                                 <p style="font-size:20px;">
-                                                                    <fmt:message key="form.sampleTitle"/><span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
+                                                                    <fmt:message key="form.sampleTitle"/>
+                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
                                                                 </p>
                                                                 <p>
-                                                                    <fmt:message key="form.sampleText"/><span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
+                                                                    <fmt:message key="form.sampleText"/>
+                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
                                                                     <fmt:message key="form.sampleText2"/>
                                                                 </p> 
                                                             </td>
