@@ -1,15 +1,16 @@
 
-Contrast-Finder 0.4.x, 2017-xx-xx
+Contrast-Finder 0.4.4, 2017-xx-xx
 ---------------------------------
 
 Features:
-none
+- [#20 - Added cookieMaxAge (2 months) for lang cookie](https://github.com/Asqatasun/Contrast-Finder/issues/20)
 
 Security:
-none
+- [#22 - Upgraded SpringFramework to v4.3.6](https://github.com/Asqatasun/Contrast-Finder/issues/22)
 
 Bugs:
-none
+- [#19 - Paths to image files should be relative](https://github.com/Asqatasun/Contrast-Finder/issues/19)
+- [#21 - Added space between sampleText and sampleTextBold](https://github.com/Asqatasun/Contrast-Finder/issues/21)
 
 Configuration:
 none
