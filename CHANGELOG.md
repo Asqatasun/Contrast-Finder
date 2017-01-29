@@ -7,6 +7,7 @@ Features:
 
 Security:
 - [#22 - Upgraded SpringFramework to v4.3.6](https://github.com/Asqatasun/Contrast-Finder/issues/22)
+- [#23 - Added HTTP security headers](https://github.com/Asqatasun/Contrast-Finder/issues/23)
 
 Bugs:
 - [#19 - Paths to image files should be relative](https://github.com/Asqatasun/Contrast-Finder/issues/19)
