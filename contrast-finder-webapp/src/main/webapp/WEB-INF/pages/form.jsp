@@ -12,8 +12,12 @@
         <%@include file='/WEB-INF/template/head.jspf' %>
         <body id="contrast-finder-page">
             <div class="container">
-                <%@include file='/WEB-INF/template/header.jspf' %>
+
+            <%-- ===== HEADER ========================================================================================= --%>
+            <%@include file='/WEB-INF/template/header.jspf' %>
                 <%--<%@include file='/WEB-INF/template/cf-message.jspf' %>--%>
+
+                <%-- ===== FORM ========================================================================================= --%>
                 <div id="set-up-form" class="row">
                     <div class="col-lg-12">
                         <h2><fmt:message key="form.fillInFields"/></h2>
@@ -21,6 +25,8 @@
                             <c:url value="result.html"></c:url>
                         </c:set>
                         <form:form class="form-horizontal" name="formulaire" commandName="colorModel" method="GET" role="form" action="${actionUrl}">
+
+                            <%-- Foregound --%>
                             <c:set var="foregroundOnError">
                                 <form:errors path="foreground"/>
                             </c:set>
@@ -41,6 +47,8 @@
                                     <span id="foreground-sample-invalid" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
                                 </div>
                             </div>
+
+                            <%-- Background --%>
                             <c:set var="backgroundOnError">
                                 <form:errors path="background"/>
                             </c:set>
@@ -61,6 +69,8 @@
                                     <span id="background-sample-invalid" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
                                 </div>
                             </div>
+
+                            <%-- Component to modify --%>
                             <div class="form-group">
                                 <label for='isBackgroundTested' class="col-lg-3 control-label"><fmt:message key="form.component"/></label>
                                 <div class="col-lg-4">
@@ -70,6 +80,8 @@
                                     </form:select>
                                 </div>
                             </div>
+
+                            <%-- Ratio --%>
                             <c:set var="ratioOnError">
                                 <form:errors path="ratio"/>
                             </c:set>
@@ -90,7 +102,10 @@
                                     </form:select>
                                     <form:errors path="ratio" cssClass="help-block"/>
                                 </div>
-                            </div><!-- /col-lg-4 -->
+                            </div>
+                            <!-- /col-lg-4 -->
+
+                            <%-- Choose alorithm --%>
                             <c:set var="algoOnError">
                                 <form:errors path="algo"/>
                             </c:set>
