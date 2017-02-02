@@ -40,7 +40,7 @@ Three possible values 3, 4.5 and 7.
 
 How to choose a ratio ? It depends on the following elements:
 
-* Level of accessibility wanted: AA ou AAA.
+* Level of accessibility wanted: AA or AAA.
 * Size of the text.
 * Is the text bold or not.
 
