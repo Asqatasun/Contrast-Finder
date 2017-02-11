@@ -1,9 +1,10 @@
 
-Contrast-Finder 0.4.4, 2017-xx-xx
+Contrast-Finder 0.4.4, 2017-02-xx
 ---------------------------------
 
 Features:
 - [#20 - Added cookieMaxAge (2 months) for lang cookie](https://github.com/Asqatasun/Contrast-Finder/issues/20)
+- [#26 - compile_and_build_docker_image.sh : added --build-only-* options]](https://github.com/Asqatasun/Contrast-Finder/issues/26)
 
 Security:
 - [#22 - Upgraded SpringFramework to v4.3.6](https://github.com/Asqatasun/Contrast-Finder/issues/22)
@@ -20,7 +21,7 @@ Documentation:
 none
 
 Upgrade-o-meter:
-none
+just replace the .war file and restart Tomcat
 
 
 Contrast-Finder 0.4.3, 2017-01-25
@@ -44,7 +45,6 @@ Documentation:
 
 Upgrade-o-meter:
 just replace the .war file and restart Tomcat
-
 
 
 Contrast-Finder 0.4.2, 2017-01-15
