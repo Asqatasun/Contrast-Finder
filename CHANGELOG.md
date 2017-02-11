@@ -4,7 +4,8 @@ Contrast-Finder 0.4.4, 2017-02-xx
 
 Features:
 - [#20 - Added cookieMaxAge (2 months) for lang cookie](https://github.com/Asqatasun/Contrast-Finder/issues/20)
-- [#26 - compile_and_build_docker_image.sh : added --build-only-* options]](https://github.com/Asqatasun/Contrast-Finder/issues/26)
+- [#26 - compile_and_build_docker_image.sh : added --build-only-* options](https://github.com/Asqatasun/Contrast-Finder/issues/26)
+- [#27 - compile_and_build_docker_image.sh : added option to skip unit tests](https://github.com/Asqatasun/Contrast-Finder/issues/27)
 
 Security:
 - [#22 - Upgraded SpringFramework to v4.3.6](https://github.com/Asqatasun/Contrast-Finder/issues/22)

@@ -20,7 +20,6 @@ $0 launches a sequence that:
 - builds Contrast-Finder from sources,
 - builds a Docker image
 - runs a container based the freshly built image
-- execute functional tests
 
 usage: $0 -s <directory> -d <directory> [OPTIONS]
 
@@ -36,6 +35,7 @@ usage: $0 -s <directory> -d <directory> [OPTIONS]
   -w | --build-only-webapp          Build only webapp (relies on previous build)
   -l | --only-localhost             Container available only on localhost
        --use-sudo-docker            Use "sudo docker" instead of "docker"
+       --skip-build-test            Skip unit tests on Maven build
        --skip-build                 Skip Maven build (relies on previous build, that must exists)
        --skip-copy                  Skip copying .war (relies on previous .war, that must exist)
        --skip-docker-build          Skip docker build
@@ -50,7 +50,7 @@ EOF
 #############################################
 # Manage options and usage
 #############################################
-TEMP=`getopt -o s:d:p:n:i:t:b:lwht --long source-dir:,docker-dir:,port:,container-name:,image-name:,tag-name:,build-only-dir:,only-localhost,build-only-webapp,help,functional-tests,skip-build,skip-copy,skip-docker-build,skip-docker-run,use-sudo-docker -- "$@"`
+TEMP=`getopt -o s:d:p:n:i:t:b:lwht --long source-dir:,docker-dir:,port:,container-name:,image-name:,tag-name:,build-only-dir:,only-localhost,build-only-webapp,help,functional-tests,skip-build-test,skip-build,skip-copy,skip-docker-build,skip-docker-run,use-sudo-docker -- "$@"`
 
 if [[ $? != 0 ]] ; then
     echo "Terminating..." >&2 ;
@@ -65,6 +65,7 @@ declare DOCKER_DIR
 declare HELP=false
 declare FTESTS=false
 declare SKIP_BUILD=false
+declare SKIP_BUILD_TEST=false
 declare SKIP_COPY=false
 declare SKIP_DOCKER_BUILD=false
 declare SKIP_DOCKER_RUN=false
@@ -92,7 +93,7 @@ while true; do
     -t | --functional-tests )   FTESTS=true; shift ;;
     -l | --only-localhost )     ONLY_LOCALHOST=true; shift ;;
 
-
+    --skip-build-test )         SKIP_BUILD_TEST=true; shift ;;
     --skip-build )              SKIP_BUILD=true; shift ;;
     --skip-copy )               SKIP_COPY=true; shift ;;
     --skip-docker-build )       SKIP_DOCKER_BUILD=true; shift ;;
@@ -154,22 +155,28 @@ function kill_previous_container() {
 }
 
 function do_build() {
+    MAVEN_OPTION=''
+    if ${SKIP_BUILD_TEST} ; then
+        MAVEN_OPTION=' -Dmaven.test.skip=true '; # skip unit tests
+    fi
+
+
     if [[ -n "$BUILD_ONLY_DIR" && "$BUILD_ONLY_DIR" != "false" ]]  ; then
         if [[ -d "${SOURCE_DIR}/${BUILD_ONLY_DIR}" ]] ; then
             # clean and build $BUILD_ONLY_DIR directory and webapp
-            (   cd "${SOURCE_DIR}/${BUILD_ONLY_DIR}"; mvn clean install ; \
-                cd "${SOURCE_DIR}/${WEBAPP_DIR}";     mvn clean install) ||
+            (   cd "${SOURCE_DIR}/${BUILD_ONLY_DIR}"; mvn clean install ${MAVEN_OPTION}; \
+                cd "${SOURCE_DIR}/${WEBAPP_DIR}";     mvn clean install ${MAVEN_OPTION}) ||
                    fail "Error at build"
         else
             fail "not valid directory ${SOURCE_DIR}/${BUILD_ONLY_DIR}"
         fi
     elif ${BUILD_ONLY_WEBAPP} ; then
         # clean and build only webapp
-        (cd "${SOURCE_DIR}/${WEBAPP_DIR}"; mvn clean install) ||
+        (cd "${SOURCE_DIR}/${WEBAPP_DIR}"; mvn clean install ${MAVEN_OPTION}) ||
             fail "Error at build"
     else
         # clean and build
-        (cd "$SOURCE_DIR"; mvn clean install) ||
+        (cd "$SOURCE_DIR"; mvn clean install ${MAVEN_OPTION}) ||
             fail "Error at build"
     fi
 }
