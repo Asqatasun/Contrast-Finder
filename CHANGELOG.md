@@ -1,4 +1,26 @@
 
+Contrast-Finder 0.4.5, 2017-xx-xx
+---------------------------------
+
+Features:
+none
+
+Security:
+none
+
+Bugs:
+none
+
+Configuration:
+none
+
+Documentation:
+none
+
+Upgrade-o-meter:
+none
+
+
 Contrast-Finder 0.4.4, 2017-02-12
 ---------------------------------
 
@@ -20,7 +42,7 @@ Configuration:
 none
 
 Documentation:
-none
+- explained ratio
 
 Upgrade-o-meter:
 just replace the .war file and restart Tomcat
