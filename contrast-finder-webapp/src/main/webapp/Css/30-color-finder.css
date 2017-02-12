@@ -8,6 +8,11 @@ a {
     color : #0A52A4;   /* AAA */
 }
 
+a:hover, a:focus {
+    color : #23537D;   /* AAA */
+}
+
+
 /* Bootstrap override */ 
 .help-block {
     font-size : 12px;
@@ -187,6 +192,10 @@ a {
     #image-reference {
         margin-left: 56.633333%;
     }
+}
+
+.help h2{
+    margin-top: 1.4em;
 }
 
 /* footer template */

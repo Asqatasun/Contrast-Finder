@@ -14,6 +14,7 @@ Security:
 Bugs:
 - [#19 - Paths to image files should be relative](https://github.com/Asqatasun/Contrast-Finder/issues/19)
 - [#21 - Added space between sampleText and sampleTextBold](https://github.com/Asqatasun/Contrast-Finder/issues/21)
+- [#28 - Fixed color contrast falling for links :hover + :focus](https://github.com/Asqatasun/Contrast-Finder/issues/28)
 
 Configuration:
 none

@@ -151,9 +151,6 @@
                 </div><!-- class="row' -->
 
 
-                <c:if test="${empty colorResult}">
-                    <fmt:message key="home.noResultTxt"/>
-                </c:if>
 
                 <c:if test="${not empty colorResult}">
                     <c:choose> 
@@ -375,7 +372,11 @@
                         </c:choose>        
                     </c:if>
 
-
+                    <div class="help">
+                        <c:if test="${empty colorResult}">
+                            <fmt:message key="home.noResultTxt"/>
+                        </c:if>
+                    </div>
                 </div>  <!-- class="container' -->
                 <%@include file='/WEB-INF/template/footer.jspf' %>
 
