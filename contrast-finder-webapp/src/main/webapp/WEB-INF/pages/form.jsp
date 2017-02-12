@@ -12,8 +12,12 @@
         <%@include file='/WEB-INF/template/head.jspf' %>
         <body id="contrast-finder-page">
             <div class="container">
-                <%@include file='/WEB-INF/template/header.jspf' %>
+
+            <%-- ===== HEADER ========================================================================================= --%>
+            <%@include file='/WEB-INF/template/header.jspf' %>
                 <%--<%@include file='/WEB-INF/template/cf-message.jspf' %>--%>
+
+                <%-- ===== FORM ========================================================================================= --%>
                 <div id="set-up-form" class="row">
                     <div class="col-lg-12">
                         <h2><fmt:message key="form.fillInFields"/></h2>
@@ -21,6 +25,8 @@
                             <c:url value="result.html"></c:url>
                         </c:set>
                         <form:form class="form-horizontal" name="formulaire" commandName="colorModel" method="GET" role="form" action="${actionUrl}">
+
+                            <%-- Foregound --%>
                             <c:set var="foregroundOnError">
                                 <form:errors path="foreground"/>
                             </c:set>
@@ -41,6 +47,8 @@
                                     <span id="foreground-sample-invalid" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
                                 </div>
                             </div>
+
+                            <%-- Background --%>
                             <c:set var="backgroundOnError">
                                 <form:errors path="background"/>
                             </c:set>
@@ -61,6 +69,8 @@
                                     <span id="background-sample-invalid" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
                                 </div>
                             </div>
+
+                            <%-- Component to modify --%>
                             <div class="form-group">
                                 <label for='isBackgroundTested' class="col-lg-3 control-label"><fmt:message key="form.component"/></label>
                                 <div class="col-lg-4">
@@ -70,6 +80,8 @@
                                     </form:select>
                                 </div>
                             </div>
+
+                            <%-- Ratio --%>
                             <c:set var="ratioOnError">
                                 <form:errors path="ratio"/>
                             </c:set>
@@ -90,7 +102,10 @@
                                     </form:select>
                                     <form:errors path="ratio" cssClass="help-block"/>
                                 </div>
-                            </div><!-- /col-lg-4 -->
+                            </div>
+                            <!-- /col-lg-4 -->
+
+                            <%-- Choose alorithm --%>
                             <c:set var="algoOnError">
                                 <form:errors path="algo"/>
                             </c:set>
@@ -136,9 +151,6 @@
                 </div><!-- class="row' -->
 
 
-                <c:if test="${empty colorResult}">
-                    <fmt:message key="home.noResultTxt"/>
-                </c:if>
 
                 <c:if test="${not empty colorResult}">
                     <c:choose> 
@@ -154,14 +166,14 @@
                             </div>
                             <div class="row">
                                 <div class="result col-lg-12">
-                                    <img src="<c:url value="/Images/good.jpg"/>" alt="Correct contrast"/>
+                                    <img src="<c:url value="Images/good.jpg"/>" alt="Correct contrast"/>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12" id="image-reference">
-                                    <a title="Creative Commons Attribution 3.0 License" href="http://creativecommons.org/licenses/by/3.0/">
-                                        <img src="<c:url value="/Images/creative_common_logo.png"/>" alt="License"> </a>
-                                    <a title="Flickr: Galerie de Thomas Hawk" href="http://www.flickr.com/photos/thomashawk">Thomas Hawk</a>
+                                    <a rel="nofollow" title="Creative Commons Attribution 3.0 License" href="https://creativecommons.org/licenses/by/3.0/">
+                                        <img src="<c:url value="Images/creative_common_logo.png"/>" alt="License"> </a>
+                                    <a rel="nofollow" title="Flickr: Galerie de Thomas Hawk" href="https://www.flickr.com/photos/thomashawk">Thomas Hawk</a>
                                 </div>
                             </div>
                         </c:when>
@@ -200,10 +212,12 @@
                                             </td>
                                             <td  class="text-sample" style="color:${colorModel.foreground};background-color:${colorModel.background}">
                                                 <p style="font-size:20px;">
-                                                    <fmt:message key="form.sampleTitle"/><span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
+                                                    <fmt:message key="form.sampleTitle"/>
+                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
                                                 </p>
                                                 <p>
-                                                    <fmt:message key="form.sampleText"/><span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
+                                                    <fmt:message key="form.sampleText"/>
+                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
                                                     <fmt:message key="form.sampleText2"/>
                                                 </p>
                                             </td>
@@ -265,10 +279,12 @@
                                                                  background-color:rgb(${result.color.red}, ${result.color.green}, ${result.color.blue})">
 
                                                                 <p style="font-size:20px;">
-                                                                    <fmt:message key="form.sampleTitle"/><span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
+                                                                    <fmt:message key="form.sampleTitle"/>
+                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
                                                                 </p>
                                                                 <p>
-                                                                    <fmt:message key="form.sampleText"/><span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
+                                                                    <fmt:message key="form.sampleText"/>
+                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
                                                                     <fmt:message key="form.sampleText2"/>
                                                                 </p> 
                                                             </td>
@@ -304,10 +320,12 @@
                                                                  color:rgb(${result.color.red}, ${result.color.green}, ${result.color.blue});
                                                                  background-color:rgb(${result.comparisonColor.red}, ${result.comparisonColor.green}, ${result.comparisonColor.blue})">
                                                                 <p style="font-size:20px;">
-                                                                    <fmt:message key="form.sampleTitle"/><span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
+                                                                    <fmt:message key="form.sampleTitle"/>
+                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
                                                                 </p>
                                                                 <p>
-                                                                    <fmt:message key="form.sampleText"/><span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
+                                                                    <fmt:message key="form.sampleText"/>
+                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
                                                                     <fmt:message key="form.sampleText2"/>
                                                                 </p> 
                                                             </td>
@@ -354,7 +372,11 @@
                         </c:choose>        
                     </c:if>
 
-
+                    <div class="help">
+                        <c:if test="${empty colorResult}">
+                            <fmt:message key="home.noResultTxt"/>
+                        </c:if>
+                    </div>
                 </div>  <!-- class="container' -->
                 <%@include file='/WEB-INF/template/footer.jspf' %>
 

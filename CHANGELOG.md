@@ -1,4 +1,31 @@
 
+Contrast-Finder 0.4.4, 2017-02-12
+---------------------------------
+
+Features:
+- [#20 - Added cookieMaxAge (2 months) for lang cookie](https://github.com/Asqatasun/Contrast-Finder/issues/20)
+- [#26 - compile_and_build_docker_image.sh : added --build-only-* options](https://github.com/Asqatasun/Contrast-Finder/issues/26)
+- [#27 - compile_and_build_docker_image.sh : added option to skip unit tests](https://github.com/Asqatasun/Contrast-Finder/issues/27)
+
+Security:
+- [#22 - Upgraded SpringFramework to v4.3.6](https://github.com/Asqatasun/Contrast-Finder/issues/22)
+- [#23 - Added HTTP security headers](https://github.com/Asqatasun/Contrast-Finder/issues/23)
+
+Bugs:
+- [#19 - Paths to image files should be relative](https://github.com/Asqatasun/Contrast-Finder/issues/19)
+- [#21 - Added space between sampleText and sampleTextBold](https://github.com/Asqatasun/Contrast-Finder/issues/21)
+- [#28 - Fixed color contrast falling for links :hover + :focus](https://github.com/Asqatasun/Contrast-Finder/issues/28)
+
+Configuration:
+none
+
+Documentation:
+none
+
+Upgrade-o-meter:
+just replace the .war file and restart Tomcat
+
+
 Contrast-Finder 0.4.3, 2017-01-25
 ---------------------------------
 
@@ -6,10 +33,11 @@ Features:
 - [#18 - Webperf - Aggregate JS and CSS files](https://github.com/Asqatasun/Contrast-Finder/issues/18)
 
 Security:
-none
+- [#9 Webapp - Don't expose session ID in the URL](https://github.com/Asqatasun/Contrast-Finder/issues/9)
 
 Bugs:
 - [#17 - Revert "Webapp - Used input tag type=color instead off type=text"](https://github.com/Asqatasun/Contrast-Finder/issues/17)
+
 
 Configuration:
 none
@@ -19,7 +47,6 @@ Documentation:
 
 Upgrade-o-meter:
 just replace the .war file and restart Tomcat
-
 
 
 Contrast-Finder 0.4.2, 2017-01-15

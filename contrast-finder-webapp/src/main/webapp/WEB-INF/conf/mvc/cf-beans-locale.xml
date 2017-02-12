@@ -16,7 +16,7 @@
     
     <bean id="localeResolver"
           class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
-        <property name="cookieName" value="lang"/>
+        <property name="cookieName"   value="lang"/>
+        <property name="cookieMaxAge" value="5184000"/> <!-- maxAge is 2 months: 2*30*24*60*60 -->
     </bean>
-
 </beans>

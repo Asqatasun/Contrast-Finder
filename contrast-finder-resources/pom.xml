@@ -5,10 +5,10 @@
   <parent>
     <groupId>org.asqatasun</groupId>
     <artifactId>contrast-finder</artifactId>
-    <version>0.4.3</version>
+    <version>0.4.4</version>
   </parent>
   <artifactId>contrast-finder-resources</artifactId>
-  <version>0.4.3</version>
+  <version>0.4.4</version>
   <name>contrast-finder-resources</name>
   <url>http://maven.apache.org</url>
   <properties>

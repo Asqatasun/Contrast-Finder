@@ -3,21 +3,52 @@
          xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 
-    <!-- On déclare notre dispatcher -->
+
+
+    <!--
+      - Location of the XML file that defines the root application context
+      - Applied by ContextLoaderListener.
+      -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/spring/*.xml
+        </param-value>
+    </context-param>
+
+
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--
+      - Loads the root application context of this web app at startup.
+      - The application context is then available via
+      - WebApplicationContextUtils.getWebApplicationContext(servletContext).
+    -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+
+    <!-- session configuration -->
+    <session-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
+    <!-- servlet dispatcher declaration -->
     <servlet>
         <servlet-name>contrast-finder</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <session-config>
-        <tracking-mode>COOKIE</tracking-mode>
-    </session-config>
-
-    <!--
-            On définit le modèle des url qui seront réparties par le dispatcher,
-            dans notre exemple on filtre toutes les url se terminant par .mvc
-    -->
+    <!-- servlet mapping declaration -->
     <servlet-mapping>
         <servlet-name>contrast-finder</servlet-name>
         <url-pattern>/form.html</url-pattern>
@@ -26,12 +57,79 @@
         <servlet-name>contrast-finder</servlet-name>
         <url-pattern>/result.html</url-pattern>
     </servlet-mapping>
- 
-<!--      On liste les pages d'accueil 
-    
-    -->    
+
     <welcome-file-list>
         <welcome-file>form.html</welcome-file>
     </welcome-file-list>
- 
+<!--
+    <error-page>
+        <error-code>400</error-code>
+        <location>/access-denied.html</location>
+    </error-page>
+    <error-page>
+        <error-code>401</error-code>
+        <location>/access-denied.html</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/access-denied.html</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/access-denied.html</location>
+    </error-page>
+    <error-page>
+        <error-code>405</error-code>
+        <location>/access-denied.html</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/oups.html</location>
+    </error-page>
+    <error-page>
+        <error-code>501</error-code>
+        <location>/oups.html</location>
+    </error-page>
+    <error-page>
+        <error-code>502</error-code>
+        <location>/oups.html</location>
+    </error-page>
+    <error-page>
+        <error-code>503</error-code>
+        <location>/oups.html</location>
+    </error-page>
+    <error-page>
+        <error-code>504</error-code>
+        <location>/oups.html</location>
+    </error-page>
+    <error-page>
+        <error-code>505</error-code>
+        <location>/oups.html</location>
+    </error-page>
+    <error-page>
+        <error-code>506</error-code>
+        <location>/oups.html</location>
+    </error-page>
+    <error-page>
+        <error-code>507</error-code>
+        <location>/oups.html</location>
+    </error-page>
+    <error-page>
+        <error-code>508</error-code>
+        <location>/oups.html</location>
+    </error-page>
+    <error-page>
+        <error-code>509</error-code>
+        <location>/oups.html</location>
+    </error-page>
+    <error-page>
+        <error-code>510</error-code>
+        <location>/oups.html</location>
+    </error-page>
+    <error-page>
+        <error-code>520</error-code>
+        <location>/oups.html</location>
+    </error-page>
+ -->
+
 </web-app>

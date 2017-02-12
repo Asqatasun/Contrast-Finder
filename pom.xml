@@ -4,7 +4,7 @@
     <groupId>org.asqatasun</groupId>
     <artifactId>contrast-finder</artifactId>
     <packaging>pom</packaging>
-    <version>0.4.3</version>
+    <version>0.4.4</version>
     <name>contrast-finder</name>
     <modules>
         <module>contrast-finder-api</module>
