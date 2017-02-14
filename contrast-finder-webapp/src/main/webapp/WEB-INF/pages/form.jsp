@@ -13,8 +13,8 @@
         <body id="contrast-finder-page">
             <div class="container">
 
-            <%-- ===== HEADER ========================================================================================= --%>
-            <%@include file='/WEB-INF/template/header.jspf' %>
+                <%-- ===== HEADER ========================================================================================= --%>
+                <%@include file='/WEB-INF/template/header.jspf' %>
                 <%--<%@include file='/WEB-INF/template/cf-message.jspf' %>--%>
 
                 <%-- ===== FORM ========================================================================================= --%>
@@ -153,7 +153,8 @@
 
 
                 <c:if test="${not empty colorResult}">
-                    <c:choose> 
+                    <c:choose>
+                        <%-- ===== Contrast OK ========================================================================================= --%>
                         <%-- Good contrast: nothing to do --%>
                         <c:when test="${colorResult.combinaisonValid}">
                             <div class="row">
@@ -177,6 +178,8 @@
                                 </div>
                             </div>
                         </c:when>
+
+                        <%-- ===== Contrast not OK ========================================================================================= --%>
                         <%-- Invalid contrast: present solutions --%>
                         <c:otherwise>
                             <div class="row">
@@ -372,52 +375,55 @@
                         </c:choose>        
                     </c:if>
 
-                    <div class="help">
-                        <c:if test="${empty colorResult}">
-                            <fmt:message key="home.noResultTxt"/>
-                        </c:if>
-                    </div>
-                </div>  <!-- class="container' -->
-                <%@include file='/WEB-INF/template/footer.jspf' %>
-
-
-                <!-- Javascript - Webapp -->
-                <script src="<c:url value="Js/_contrast-finder.all.min.js"/>"></script>
-                   <!-- <script src="<c:url value="Js/10-jquery.min.js"/>"></script>
-                        <script src="<c:url value="Js/11-jquery-ui.min.js"/>"></script>
-                        <c:if test="${colorResult.numberOfSuggestedColors > 0}">
-                            <script src="<c:url value="Js/20-jquery.tablesorter.min.js"/>"></script>
-                            <script src="<c:url value="Js/25-accessible-min.js"/>"></script>
-                        </c:if>
-                        <script src="<c:url value="Js/30-bootstrap.min.js"/>"></script>
-                        <script src="<c:url value="Js/35-affix.js"/>"></script>
-                        <script src="<c:url value="Js/36-sample.color.js"/>"></script>
-                   -->
-
-                    <!-- Javascript - Web analytics -->
-                    <c:set var="piwikSiteId"  value="${piwikKey}"/>
-                    <c:set var="piwikServer"  value="https://stats.taqamaqa.com/piwik/"/>
-                    <c:if test="${not empty piwikSiteId}">
-                        <!-- Piwik code-->
-                        <script type="text/javascript">
-                            var _paq = _paq || [];
-                            _paq.push(["setDomains", ["*.contrast-finder.org","*.www.contrast-finder.org"]]);
-                            _paq.push(['trackPageView']);
-                            _paq.push(['enableLinkTracking']);
-                            function loadPiwikAfterOnload(){
-                                var u='${piwikServer}';
-                                _paq.push(['setTrackerUrl', u+'piwik.php']);
-                                _paq.push(['setSiteId', '${piwikSiteId}']);
-                                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-                            }
-                            if (window.addEventListener){ window.addEventListener("load", loadPiwikAfterOnload, false); }
-                            else if (window.attachEvent){ window.attachEvent("onload", loadPiwikAfterOnload);           }
-                            else                        { window.onload = loadPiwikAfterOnload();                       }
-                        </script>
-                        <noscript><p><img src="${piwikServer}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></p></noscript>
-                        <!-- End Piwik code -->
+                <%-- ===== USER HELP ========================================================================================= --%>
+                <div class="help"> <%-- only on HomePage --%>
+                    <c:if test="${empty colorResult}">
+                        <fmt:message key="home.noResultTxt"/>
                     </c:if>
+                </div>
+            </div>  <!-- class="container' -->
+
+
+            <%-- ===== FOOTER ========================================================================================= --%>
+            <%@include file='/WEB-INF/template/footer.jspf' %>
+
+            <!-- Javascript - Webapp -->
+            <script src="<c:url value="Js/_contrast-finder.all.min.js"/>"></script>
+               <!-- <script src="<c:url value="Js/10-jquery.min.js"/>"></script>
+                    <script src="<c:url value="Js/11-jquery-ui.min.js"/>"></script>
+                    <c:if test="${colorResult.numberOfSuggestedColors > 0}">
+                        <script src="<c:url value="Js/20-jquery.tablesorter.min.js"/>"></script>
+                        <script src="<c:url value="Js/25-accessible-min.js"/>"></script>
+                    </c:if>
+                    <script src="<c:url value="Js/30-bootstrap.min.js"/>"></script>
+                    <script src="<c:url value="Js/35-affix.js"/>"></script>
+                    <script src="<c:url value="Js/36-sample.color.js"/>"></script>
+               -->
+
+            <!-- Javascript - Web analytics -->
+            <c:set var="piwikSiteId"  value="${piwikKey}"/>
+            <c:set var="piwikServer"  value="https://stats.taqamaqa.com/piwik/"/>
+            <c:if test="${not empty piwikSiteId}">
+                <!-- Piwik code-->
+                <script type="text/javascript">
+                    var _paq = _paq || [];
+                    _paq.push(["setDomains", ["*.contrast-finder.org","*.www.contrast-finder.org"]]);
+                    _paq.push(['trackPageView']);
+                    _paq.push(['enableLinkTracking']);
+                    function loadPiwikAfterOnload(){
+                        var u='${piwikServer}';
+                        _paq.push(['setTrackerUrl', u+'piwik.php']);
+                        _paq.push(['setSiteId', '${piwikSiteId}']);
+                        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                    }
+                    if (window.addEventListener){ window.addEventListener("load", loadPiwikAfterOnload, false); }
+                    else if (window.attachEvent){ window.attachEvent("onload", loadPiwikAfterOnload);           }
+                    else                        { window.onload = loadPiwikAfterOnload();                       }
+                </script>
+                <noscript><p><img src="${piwikServer}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></p></noscript>
+                <!-- End Piwik code -->
+            </c:if>
         </body>
     </html>
 </compress:html>
