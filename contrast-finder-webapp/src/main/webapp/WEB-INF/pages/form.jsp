@@ -70,17 +70,6 @@
                                 </div>
                             </div>
 
-                            <%-- Component to modify --%>
-                            <div class="form-group">
-                                <label for='isBackgroundTested' class="col-lg-3 control-label"><fmt:message key="form.component"/></label>
-                                <div class="col-lg-4">
-                                    <form:select class="form-control" path="isBackgroundTested">
-                                        <form:option value="false"><fmt:message key="form.componentForeground"/></form:option>
-                                        <form:option value="true"><fmt:message key="form.componentBackground"/></form:option>
-                                    </form:select>
-                                </div>
-                            </div>
-
                             <%-- Ratio --%>
                             <c:set var="ratioOnError">
                                 <form:errors path="ratio"/>
@@ -104,6 +93,17 @@
                                 </div>
                             </div>
                             <!-- /col-lg-4 -->
+
+                            <%-- Component to modify --%>
+                            <div class="form-group">
+                                <label for='isBackgroundTested' class="col-lg-3 control-label"><fmt:message key="form.component"/></label>
+                                <div class="col-lg-4">
+                                    <form:select class="form-control" path="isBackgroundTested">
+                                        <form:option value="false"><fmt:message key="form.componentForeground"/></form:option>
+                                        <form:option value="true"><fmt:message key="form.componentBackground"/></form:option>
+                                    </form:select>
+                                </div>
+                            </div>
 
                             <%-- Choose alorithm --%>
                             <c:set var="algoOnError">
@@ -324,11 +324,11 @@
                                                                  background-color:rgb(${result.comparisonColor.red}, ${result.comparisonColor.green}, ${result.comparisonColor.blue})">
                                                                 <p style="font-size:20px;">
                                                                     <fmt:message key="form.sampleTitle"/>
-                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
+                                                                    <span style="font-weight:bold;"> <fmt:message key="form.sampleTitleBold"/> </span>
                                                                 </p>
                                                                 <p>
                                                                     <fmt:message key="form.sampleText"/>
-                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
+                                                                    <span style="font-weight:bold;"> <fmt:message key="form.sampleTextBold"/> </span>
                                                                     <fmt:message key="form.sampleText2"/>
                                                                 </p> 
                                                             </td>
@@ -388,16 +388,16 @@
             <%@include file='/WEB-INF/template/footer.jspf' %>
 
             <!-- Javascript - Webapp -->
-            <script src="<c:url value="Js/_contrast-finder.all.min.js"/>"></script>
-               <!-- <script src="<c:url value="Js/10-jquery.min.js"/>"></script>
-                    <script src="<c:url value="Js/11-jquery-ui.min.js"/>"></script>
+            <script src="<c:url value="Js/_contrast-finder.all.min.js?v=${appVersion}"/>"></script>
+               <!-- <script src="<c:url value="Js/10-jquery.min.js?v=${appVersion}"/>"></script>
+                    <script src="<c:url value="Js/11-jquery-ui.min.js?v=${appVersion}"/>"></script>
                     <c:if test="${colorResult.numberOfSuggestedColors > 0}">
-                        <script src="<c:url value="Js/20-jquery.tablesorter.min.js"/>"></script>
-                        <script src="<c:url value="Js/25-accessible-min.js"/>"></script>
+                        <script src="<c:url value="Js/20-jquery.tablesorter.min.js?v=${appVersion}"/>"></script>
+                        <script src="<c:url value="Js/25-accessible-min.js?v=${appVersion}"/>"></script>
                     </c:if>
-                    <script src="<c:url value="Js/30-bootstrap.min.js"/>"></script>
-                    <script src="<c:url value="Js/35-affix.js"/>"></script>
-                    <script src="<c:url value="Js/36-sample.color.js"/>"></script>
+                    <script src="<c:url value="Js/30-bootstrap.min.js?v=${appVersion}"/>"></script>
+                    <script src="<c:url value="Js/35-affix.js?v=${appVersion}"/>"></script>
+                    <script src="<c:url value="Js/36-sample.color.js?v=${appVersion}"/>"></script>
                -->
 
             <!-- Javascript - Web analytics -->
