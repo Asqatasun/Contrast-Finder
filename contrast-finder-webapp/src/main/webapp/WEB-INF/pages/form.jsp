@@ -15,7 +15,9 @@
 
                 <%-- ===== HEADER ========================================================================================= --%>
                 <%@include file='/WEB-INF/template/header.jspf' %>
-                <%--<%@include file='/WEB-INF/template/cf-message.jspf' %>--%>
+
+                <%-- Firefox addon --%>
+                <%-- <%@include file='/WEB-INF/template/cf-message.jspf' %>--%>
 
                 <%-- ===== FORM ========================================================================================= --%>
                 <div id="set-up-form" class="row">
