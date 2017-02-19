@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css"         href="<c:url value="Css/_contrast-finder.all.min.css?v=${appVersion}"/>">
     <!--    <link rel="stylesheet" type="text/css" href="<c:url value="Css/10-bootstrap.min.css?v=${appVersion}"/>">
             <link rel="stylesheet" type="text/css" href="<c:url value="Css/20-bootstrap-theme.min.css?v=${appVersion}"/>">
-            <link rel="stylesheet" type="text/css" href="<c:url value="Css/30-color-finder-min.css?v=${appVersion}"/>">
+            <link rel="stylesheet" type="text/css" href="<c:url value="Css/30-contrast-finder-min.css?v=${appVersion}"/>">
             <link rel="stylesheet" type="text/css" href="<c:url value="Css/40-accessible-table-sorter-min.css?v=${appVersion}"/>">
     -->
 

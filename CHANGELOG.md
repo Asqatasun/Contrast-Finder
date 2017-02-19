@@ -9,7 +9,8 @@ Security:
 none
 
 Bugs:
-none
+- [#29 - Fixed lang-switcher: error on the lang attribute](https://github.com/Asqatasun/Contrast-Finder/issues/29)
+- [#30 - Fixed punctuation errors in english](https://github.com/Asqatasun/Contrast-Finder/issues/30)
 
 Configuration:
 none
@@ -18,7 +19,7 @@ Documentation:
 none
 
 Upgrade-o-meter:
-none
+just replace the .war file and restart Tomcat
 
 
 Contrast-Finder 0.4.4, 2017-02-12

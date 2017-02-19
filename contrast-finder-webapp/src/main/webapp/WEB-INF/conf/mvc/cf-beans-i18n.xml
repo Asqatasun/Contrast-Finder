@@ -11,7 +11,7 @@
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basenames">
             <list>
-                <value>i18n/color-finder</value>
+                <value>i18n/contrast-finder</value>
             </list>
         </property>
     </bean>
