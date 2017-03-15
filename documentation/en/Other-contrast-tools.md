@@ -1,12 +1,12 @@
 # Other contrast tools
 
-Contrast tools we love:
+## Contrast tools we love:
 
 * [Contrast-A](http://www.dasplankton.de/ContrastA/)
 * [WCAG Contrast Checker (firefox addon) v1.2](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/versions/?page=1#version-1.2) Especially v1.2 because you can select a given text (functionnality has disappeared in further versions)
 * [Color Contrast Tool (snook.ca)](http://snook.ca/technical/colour_contrast/colour.html)
 
-Other contrast tools (which are actually good, but it appears we don't them)
+## Other contrast tools (which are actually good, but it appears we don't them)
 * http://webaim.org/resources/contrastchecker/
 * http://contrastchecker.com/
 * http://leaverou.github.io/contrast-ratio/
@@ -16,7 +16,7 @@ Other contrast tools (which are actually good, but it appears we don't them)
 * http://www.brandwood.com/a11y/ 
   * src: https://github.com/andrewbrandwood/a11y-image-text
 
-Other contrast tools 
+### Other contrast tools 
 * http://www.visionaustralia.org/digital-access-determinator
 * http://a11yrocks.com/colorPalette/
 * http://colorsafe.co/
@@ -35,7 +35,7 @@ Other contrast tools
   * http://jxnblk.com/colorable/demos/matrix/
   * http://www.aremycoloursaccessible.com/
 
-vision simulation
+### Vision simulation
 * http://paletton.com/
 
 
