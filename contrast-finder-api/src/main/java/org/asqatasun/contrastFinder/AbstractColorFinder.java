@@ -20,7 +20,8 @@
 package org.asqatasun.contrastFinder;
 
 import java.awt.Color;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.asqatasun.contrastFinder.result.ColorCombinaison;
 import org.asqatasun.contrastFinder.result.ColorResult;
 import org.asqatasun.contrastFinder.result.factory.ColorCombinaisonFactory;
@@ -33,7 +34,7 @@ import org.asqatasun.utils.contrastchecker.ContrastChecker;
  */
 public abstract class AbstractColorFinder implements ColorFinder {
 
-    private static final Logger LOGGER = Logger.getLogger(AbstractColorFinder.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractColorFinder.class);
     private static final float MAX_HUE = 360.0f;
     private static final float MIN_HUE = 1.0f;
     private static final float MAX_COEFFICIENT_LEVEL = 2.5f;
