@@ -1,20 +1,22 @@
 
-Contrast-Finder 0.4.5, 2017-xx-xx
+Contrast-Finder 0.4.5, 2017-03-xx
 ---------------------------------
 
 Features:
 none
 
 Security:
-none
-
+- [#33 - Upgraded SpringFramework to v4.3.7](https://github.com/Asqatasun/Contrast-Finder/issues/33)
+- [#33 - Upgraded SpringFramework-Security to v4.2.2](https://github.com/Asqatasun/Contrast-Finder/issues/33)
+    
 Bugs:
 - [#29 - Fixed lang-switcher: error on the lang attribute](https://github.com/Asqatasun/Contrast-Finder/issues/29)
 - [#30 - Fixed punctuation errors in english](https://github.com/Asqatasun/Contrast-Finder/issues/30)
 
 Configuration:
-none
-
+- [#32 - Changed LOG dependency: logback + slf4j instead of log4j](https://github.com/Asqatasun/Contrast-Finder/issues/32)
+- .jsp - Added appVersion
+      
 Documentation:
 none
 
