@@ -18,17 +18,12 @@
             <pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
         </encoder>
         <file>/var/log/contrast-finder/contrast-finder.log</file>
-
         <!-- daily rollover -->
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>/var/log/contrast-finder/contrast-finder.%d{yyyy-MM-dd}_%i.log.zip</fileNamePattern>
-            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>50MB</maxFileSize>         <!-- or whenever the file size reaches 50MB -->
-            </timeBasedFileNamingAndTriggeringPolicy>
-
-            <!-- keep 10 days' worth of history capped at 450 MB total size -->
-            <maxHistory>10</maxHistory>
-            <totalSizeCap>450MB</totalSizeCap>
+            <maxFileSize>50MB</maxFileSize>     <!-- or whenever the file size reaches 50 MB -->
+            <maxHistory>10</maxHistory>         <!-- keep 10 days' worth of history          -->
+            <totalSizeCap>450MB</totalSizeCap>  <!-- capped at 450 MB total size             -->
         </rollingPolicy>
     </appender>
 
