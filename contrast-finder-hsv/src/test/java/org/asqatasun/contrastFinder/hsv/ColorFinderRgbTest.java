@@ -8,7 +8,8 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import junit.framework.TestCase;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.asqatasun.contrastFinder.result.ColorCombinaison;
 
 /**
@@ -17,7 +18,7 @@ import org.asqatasun.contrastFinder.result.ColorCombinaison;
  */
 public class ColorFinderRgbTest extends TestCase {
 
-    private static final Logger LOGGER = Logger.getLogger(ColorFinderRgbTest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ColorFinderRgbTest.class);
 
     public ColorFinderRgbTest(String testName) {
         super(testName);
@@ -41,7 +42,7 @@ public class ColorFinderRgbTest extends TestCase {
         ColorFinderRgb instance = new ColorFinderRgb();
         List<ColorCombinaison> colorCombinaison = new ArrayList<ColorCombinaison>();
         instance.findColors(foregroundColor, backgroundColor, true, coefficientLevel);
-        LOGGER.info(instance.getColorResult().getSuggestedColors().size());
+        LOGGER.info("nb SuggestedColors: " + instance.getColorResult().getSuggestedColors().size());
         for (ColorCombinaison combinaisons : instance.getColorResult().getSuggestedColors()) {
             LOGGER.info("Color found " + combinaisons.getHexaColor());
         }

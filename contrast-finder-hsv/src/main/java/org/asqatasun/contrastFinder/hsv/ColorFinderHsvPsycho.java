@@ -20,7 +20,8 @@
 package org.asqatasun.contrastFinder.hsv;
 
 import java.awt.Color;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.asqatasun.contrastFinder.AbstractColorFinder;
 import org.asqatasun.contrastFinder.result.ColorCombinaison;
 import org.asqatasun.contrastFinder.result.factory.ColorCombinaisonFactoryImpl;
@@ -33,7 +34,7 @@ import org.asqatasun.utils.colorconvertor.ColorConverter;
  */
 public class ColorFinderHsvPsycho extends AbstractColorFinder {
 
-    private static final Logger LOGGER = Logger.getLogger(ColorFinderHsvPsycho.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ColorFinderHsvPsycho.class);
     private static final float STEP_BRIGHTNESS = 0.01f;
     private static final float STEP_SATURATION = 0.01f;
     private static final float NO_CHANGE_COMPONENT = 0.0f;

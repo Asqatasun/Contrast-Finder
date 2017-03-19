@@ -25,10 +25,11 @@ ENV CONTRAST_FINDER_RELEASE="0.4.5-dev"
 ADD contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz  /root
 
 # Install contrast-finder
-RUN  cd      /root/contrast-*/install/                   && \
-     mv -v   contrast-*.war contrast-finder.war          && \
-     mv -v   contrast-*.war /var/lib/tomcat7/webapps     && \
-     rm -rf  /root/contrast-*
+RUN  cd      /root/contrast-*/install/                      && \
+     mv -v   contrast-*.war contrast-finder.war             && \
+     mv -v   contrast-*.war /var/lib/tomcat7/webapps        && \
+     touch   /var/log/contrast-finder/contrast-finder.log   && \
+     rm -rf  /root/contrast-*  && echo "-- Install: Ok"
 
 CMD  service tomcat7 start                                  ;      \
      tail -f /var/log/tomcat7/catalina.out                         \

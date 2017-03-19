@@ -32,12 +32,13 @@ ARG SRC_URL_PREFIX="https://github.com/Asqatasun/Contrast-Finder/releases/downlo
 ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz"
 
 # Install contrast-finder
-RUN  cd         /root/                                      && \
-     wget       ${SRC_URL}                                  && \
-     tar  -xzvf contrast-*.tar.gz                           && \
-     cd         /root/contrast-*/install/                   && \
-     mv   -v    contrast-*.war    contrast-finder.war       && \
-     mv   -v    contrast-*.war    /var/lib/tomcat7/webapps  && \
+RUN  cd         /root/                                        && \
+     wget       ${SRC_URL}                                    && \
+     tar  -xzvf contrast-*.tar.gz                             && \
+     cd         /root/contrast-*/install/                     && \
+     mv   -v    contrast-*.war    contrast-finder.war         && \
+     mv   -v    contrast-*.war    /var/lib/tomcat7/webapps    && \
+     touch      /var/log/contrast-finder/contrast-finder.log  && \
      rm   -rf   /root/contrast-*  && echo "-- Install: Ok"
 
 # environment variables
