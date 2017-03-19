@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
+    <!-- Documentation
+         https://logback.qos.ch/manual/appenders.html
+    -->
+
     <!-- CONSOLE -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -14,12 +18,17 @@
             <pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
         </encoder>
         <file>/var/log/contrast-finder/contrast-finder.log</file>
+
+        <!-- daily rollover -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/var/log/contrast-finder/contrast-finder.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <fileNamePattern>/var/log/contrast-finder/contrast-finder.%d{yyyy-MM-dd}_%i.log.zip</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>50MB</maxFileSize>
+                <maxFileSize>50MB</maxFileSize>         <!-- or whenever the file size reaches 50MB -->
             </timeBasedFileNamingAndTriggeringPolicy>
+
+            <!-- keep 10 days' worth of history capped at 450 MB total size -->
             <maxHistory>10</maxHistory>
+            <totalSizeCap>450MB</totalSizeCap>
         </rollingPolicy>
     </appender>
 
@@ -30,7 +39,7 @@
     <!-- Setting the root level of logging to INFO -->
     <root level="info">
         <appender-ref ref="FILE" />
-        <appender-ref ref="CONSOLE" />
+        <!-- <appender-ref ref="CONSOLE" /> -->
     </root>
 </configuration>
 
