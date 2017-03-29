@@ -1,5 +1,5 @@
 
-Contrast-Finder 0.4.5, 2017-03-xx
+Contrast-Finder 0.4.5, 2017-03-30
 ---------------------------------
 
 Features:
@@ -10,6 +10,7 @@ Security:
 - revert [#23 - Added HTTP security headers](https://github.com/Asqatasun/Contrast-Finder/issues/23)
 
 Bugs:
+- [#33 - Fixed HTML errors](https://github.com/Asqatasun/Contrast-Finder/issues/33)
 - [#29 - Fixed lang-switcher: error on the lang attribute](https://github.com/Asqatasun/Contrast-Finder/issues/29)
 - [#30 - Fixed punctuation errors in english](https://github.com/Asqatasun/Contrast-Finder/issues/30)
 - [#31 - Fixed front-end webperf regression (repeat view)](https://github.com/Asqatasun/Contrast-Finder/issues/31)
