@@ -1,11 +1,11 @@
 
 # Howto use
 
-## What is Asqatasun Contrast Finder ?
+## What is Contrast Finder ?
 
 There are lot of tools to find a good contrast on the web, but no one to suggest valid contrasts.
 
-Asqatasun Contrast Finder is a tool which computes the contrast between two colors (background, foreground) and checks if the contrast is valid.
+Contrast Finder is a tool which computes the contrast between two colors (background, foreground) and checks if the contrast is valid.
 
 Contrast finder is designed to be used by webdesigner, webdeveloppers or e-accessibility professionals.
 

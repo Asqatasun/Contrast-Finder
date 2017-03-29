@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import static junit.framework.Assert.assertEquals;
 import junit.framework.TestCase;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.asqatasun.contrastFinder.result.ColorCombinaison;
 import org.asqatasun.utils.colorconvertor.ColorConverter;
 
@@ -19,7 +20,7 @@ import org.asqatasun.utils.colorconvertor.ColorConverter;
  */
 public class ColorFinderHsvPsychoTest extends TestCase {
     private static final float STEP_HUE = (1.0f/360.0f);
-    private static final Logger LOGGER = Logger.getLogger(ColorFinderHsvPsychoTest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ColorFinderHsvPsychoTest.class);
     
     public ColorFinderHsvPsychoTest(String testName) {
         super(testName);
@@ -49,7 +50,7 @@ public class ColorFinderHsvPsychoTest extends TestCase {
         instance.setMaxGreen(60.0f);
         instance.setMaxRed(60.0f);
         instance.findColors(foregroundColor, backgroundColor, false, coefficientLevel);
-        LOGGER.info(instance.getColorResult().getSuggestedColors().size());
+        LOGGER.info("Nb SuggestedColors:" + instance.getColorResult().getSuggestedColors().size());
         Float initialHue = ColorConverter.getHue(foregroundColor);
         int counter = 0;
         for (ColorCombinaison combinaisons : instance.getColorResult().getSuggestedColors()) {

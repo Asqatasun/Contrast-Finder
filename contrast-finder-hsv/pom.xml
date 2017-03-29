@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.4.4</version>
+        <version>0.4.5</version>
     </parent>
     <artifactId>contrast-finder-hsv</artifactId>
-    <version>0.4.4</version>
+    <version>0.4.5</version>
     <packaging>jar</packaging>
     <name>contrast-finder-hsv</name>
     <build>
@@ -55,8 +55,8 @@
             <artifactId>contrast-finder-impl</artifactId>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
         </dependency>
     </dependencies>
 </project>

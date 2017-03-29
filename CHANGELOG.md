@@ -1,4 +1,32 @@
 
+Contrast-Finder 0.4.5, 2017-03-30
+---------------------------------
+
+Features:
+none
+
+Security:
+- [#33 - Upgraded SpringFramework to v4.3.7](https://github.com/Asqatasun/Contrast-Finder/issues/33)
+- revert [#23 - Added HTTP security headers](https://github.com/Asqatasun/Contrast-Finder/issues/23)
+
+Bugs:
+- [#34 - Fixed HTML errors](https://github.com/Asqatasun/Contrast-Finder/issues/34)
+- [#29 - Fixed lang-switcher: error on the lang attribute](https://github.com/Asqatasun/Contrast-Finder/issues/29)
+- [#30 - Fixed punctuation errors in english](https://github.com/Asqatasun/Contrast-Finder/issues/30)
+- [#31 - Fixed front-end webperf regression (repeat view)](https://github.com/Asqatasun/Contrast-Finder/issues/31)
+  - revert [#23 - Added HTTP security headers](https://github.com/Asqatasun/Contrast-Finder/issues/23)
+
+Configuration:
+- [#32 - Changed LOG dependency: logback + slf4j instead of log4j](https://github.com/Asqatasun/Contrast-Finder/issues/32)
+- .jsp - Added appVersion
+      
+Documentation:
+none
+
+Upgrade-o-meter:
+just replace the .war file and restart Tomcat
+
+
 Contrast-Finder 0.4.4, 2017-02-12
 ---------------------------------
 
@@ -20,7 +48,7 @@ Configuration:
 none
 
 Documentation:
-none
+- explained ratio
 
 Upgrade-o-meter:
 just replace the .war file and restart Tomcat

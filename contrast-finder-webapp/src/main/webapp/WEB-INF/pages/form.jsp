@@ -13,9 +13,11 @@
         <body id="contrast-finder-page">
             <div class="container">
 
-            <%-- ===== HEADER ========================================================================================= --%>
-            <%@include file='/WEB-INF/template/header.jspf' %>
-                <%--<%@include file='/WEB-INF/template/cf-message.jspf' %>--%>
+                <%-- ===== HEADER ========================================================================================= --%>
+                <%@include file='/WEB-INF/template/header.jspf' %>
+
+                <%-- Firefox addon --%>
+                <%-- <%@include file='/WEB-INF/template/cf-message.jspf' %>--%>
 
                 <%-- ===== FORM ========================================================================================= --%>
                 <div id="set-up-form" class="row">
@@ -24,7 +26,7 @@
                         <c:set var="actionUrl">
                             <c:url value="result.html"></c:url>
                         </c:set>
-                        <form:form class="form-horizontal" name="formulaire" commandName="colorModel" method="GET" role="form" action="${actionUrl}">
+                        <form:form class="form-horizontal" name="formulaire" commandName="colorModel" method="GET"  action="${actionUrl}">
 
                             <%-- Foregound --%>
                             <c:set var="foregroundOnError">
@@ -70,17 +72,6 @@
                                 </div>
                             </div>
 
-                            <%-- Component to modify --%>
-                            <div class="form-group">
-                                <label for='isBackgroundTested' class="col-lg-3 control-label"><fmt:message key="form.component"/></label>
-                                <div class="col-lg-4">
-                                    <form:select class="form-control" path="isBackgroundTested">
-                                        <form:option value="false"><fmt:message key="form.componentForeground"/></form:option>
-                                        <form:option value="true"><fmt:message key="form.componentBackground"/></form:option>
-                                    </form:select>
-                                </div>
-                            </div>
-
                             <%-- Ratio --%>
                             <c:set var="ratioOnError">
                                 <form:errors path="ratio"/>
@@ -105,6 +96,18 @@
                             </div>
                             <!-- /col-lg-4 -->
 
+
+                            <%-- Component to modify --%>
+                            <div class="form-group">
+                                <label for='isBackgroundTested' class="col-lg-3 control-label"><fmt:message key="form.component"/></label>
+                                <div class="col-lg-4">
+                                    <form:select class="form-control" path="isBackgroundTested">
+                                        <form:option value="false"><fmt:message key="form.componentForeground"/></form:option>
+                                        <form:option value="true"><fmt:message key="form.componentBackground"/></form:option>
+                                    </form:select>
+                                </div>
+                            </div>
+
                             <%-- Choose alorithm --%>
                             <c:set var="algoOnError">
                                 <form:errors path="algo"/>
@@ -118,20 +121,18 @@
                             </c:choose>
                             <div class="form-group ${algoOnError}">
                                 <fieldset>
-                                    <div class="col-lg-3 control-fieldset">
-                                        <legend><fmt:message key="form.objectifs"/></legend>
-                                    </div>
+                                    <legend class="col-lg-3 control-fieldset"><fmt:message key="form.objectifs"/></legend>
                                     <div class="col-lg-4">
                                         <div class="cf-group-fields">
                                             <div class="radio first-radio">
                                                 <label for="algo1">
-                                                    <form:radiobutton name="algo1" path="algo" value="HSV" checked="checked"/>
+                                                    <form:radiobutton id="algo1" path="algo" value="HSV" checked="checked"/>
                                                     <fmt:message key="form.algoHSV"/>
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label for="algo2">
-                                                    <form:radiobutton name="algo2" path="algo" value="Rgb"/>
+                                                    <form:radiobutton id="algo2" path="algo" value="Rgb"/>
                                                     <fmt:message key="form.algoRGB"/>
                                                 </label>
                                             </div>
@@ -142,9 +143,12 @@
                                     </div>
                                 </fieldset>
                             </div>
+
+
+
                             <div class="form-group">
                                 <fmt:message key="form.validate" var="validateButton"/>
-                                <input id="submit-button" type="submit" class="btn btn-default col-lg-offset-3 col-lg-3" value="${validateButton}"/>
+                                <input id="submit-button" type="submit" class="btn btn-default btn-lg col-lg-offset-3 col-lg-3" value="${validateButton}"/>
                             </div>
                         </form:form>
                     </div><!-- class="col-lg-12' -->
@@ -153,7 +157,8 @@
 
 
                 <c:if test="${not empty colorResult}">
-                    <c:choose> 
+                    <c:choose>
+                        <%-- ===== Contrast OK ========================================================================================= --%>
                         <%-- Good contrast: nothing to do --%>
                         <c:when test="${colorResult.combinaisonValid}">
                             <div class="row">
@@ -177,6 +182,8 @@
                                 </div>
                             </div>
                         </c:when>
+
+                        <%-- ===== Contrast not OK ========================================================================================= --%>
                         <%-- Invalid contrast: present solutions --%>
                         <c:otherwise>
                             <div class="row">
@@ -321,11 +328,11 @@
                                                                  background-color:rgb(${result.comparisonColor.red}, ${result.comparisonColor.green}, ${result.comparisonColor.blue})">
                                                                 <p style="font-size:20px;">
                                                                     <fmt:message key="form.sampleTitle"/>
-                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTitleBold"/></span>
+                                                                    <span style="font-weight:bold;"> <fmt:message key="form.sampleTitleBold"/> </span>
                                                                 </p>
                                                                 <p>
                                                                     <fmt:message key="form.sampleText"/>
-                                                                    <span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
+                                                                    <span style="font-weight:bold;"> <fmt:message key="form.sampleTextBold"/> </span>
                                                                     <fmt:message key="form.sampleText2"/>
                                                                 </p> 
                                                             </td>
@@ -372,52 +379,55 @@
                         </c:choose>        
                     </c:if>
 
-                    <div class="help">
-                        <c:if test="${empty colorResult}">
-                            <fmt:message key="home.noResultTxt"/>
-                        </c:if>
-                    </div>
-                </div>  <!-- class="container' -->
-                <%@include file='/WEB-INF/template/footer.jspf' %>
-
-
-                <!-- Javascript - Webapp -->
-                <script src="<c:url value="Js/_contrast-finder.all.min.js"/>"></script>
-                   <!-- <script src="<c:url value="Js/10-jquery.min.js"/>"></script>
-                        <script src="<c:url value="Js/11-jquery-ui.min.js"/>"></script>
-                        <c:if test="${colorResult.numberOfSuggestedColors > 0}">
-                            <script src="<c:url value="Js/20-jquery.tablesorter.min.js"/>"></script>
-                            <script src="<c:url value="Js/25-accessible-min.js"/>"></script>
-                        </c:if>
-                        <script src="<c:url value="Js/30-bootstrap.min.js"/>"></script>
-                        <script src="<c:url value="Js/35-affix.js"/>"></script>
-                        <script src="<c:url value="Js/36-sample.color.js"/>"></script>
-                   -->
-
-                    <!-- Javascript - Web analytics -->
-                    <c:set var="piwikSiteId"  value="${piwikKey}"/>
-                    <c:set var="piwikServer"  value="https://stats.taqamaqa.com/piwik/"/>
-                    <c:if test="${not empty piwikSiteId}">
-                        <!-- Piwik code-->
-                        <script type="text/javascript">
-                            var _paq = _paq || [];
-                            _paq.push(["setDomains", ["*.contrast-finder.org","*.www.contrast-finder.org"]]);
-                            _paq.push(['trackPageView']);
-                            _paq.push(['enableLinkTracking']);
-                            function loadPiwikAfterOnload(){
-                                var u='${piwikServer}';
-                                _paq.push(['setTrackerUrl', u+'piwik.php']);
-                                _paq.push(['setSiteId', '${piwikSiteId}']);
-                                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-                            }
-                            if (window.addEventListener){ window.addEventListener("load", loadPiwikAfterOnload, false); }
-                            else if (window.attachEvent){ window.attachEvent("onload", loadPiwikAfterOnload);           }
-                            else                        { window.onload = loadPiwikAfterOnload();                       }
-                        </script>
-                        <noscript><p><img src="${piwikServer}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></p></noscript>
-                        <!-- End Piwik code -->
+                <%-- ===== USER HELP ========================================================================================= --%>
+                <div class="help"> <%-- only on HomePage --%>
+                    <c:if test="${empty colorResult}">
+                        <fmt:message key="home.noResultTxt"/>
                     </c:if>
+                </div>
+            </div>  <!-- class="container' -->
+
+
+            <%-- ===== FOOTER ========================================================================================= --%>
+            <%@include file='/WEB-INF/template/footer.jspf' %>
+
+            <!-- Javascript - Webapp -->
+            <script src="<c:url value="Js/_contrast-finder.all.min.js?v=${appVersion}"/>"></script>
+               <!-- <script src="<c:url value="Js/10-jquery.min.js?v=${appVersion}"/>"></script>
+                    <script src="<c:url value="Js/11-jquery-ui.min.js?v=${appVersion}"/>"></script>
+                    <c:if test="${colorResult.numberOfSuggestedColors > 0}">
+                        <script src="<c:url value="Js/20-jquery.tablesorter.min.js?v=${appVersion}"/>"></script>
+                        <script src="<c:url value="Js/25-accessible-min.js?v=${appVersion}"/>"></script>
+                    </c:if>
+                    <script src="<c:url value="Js/30-bootstrap.min.js?v=${appVersion}"/>"></script>
+                    <script src="<c:url value="Js/35-affix.js?v=${appVersion}"/>"></script>
+                    <script src="<c:url value="Js/36-sample.color.js?v=${appVersion}"/>"></script>
+               -->
+
+            <!-- Javascript - Web analytics -->
+            <c:set var="piwikSiteId"  value="${piwikKey}"/>
+            <c:set var="piwikServer"  value="https://stats.taqamaqa.com/piwik/"/>
+            <c:if test="${not empty piwikSiteId}">
+                <!-- Piwik code-->
+                <script type="text/javascript">
+                    var _paq = _paq || [];
+                    _paq.push(["setDomains", ["*.contrast-finder.org","*.www.contrast-finder.org"]]);
+                    _paq.push(['trackPageView']);
+                    _paq.push(['enableLinkTracking']);
+                    function loadPiwikAfterOnload(){
+                        var u='${piwikServer}';
+                        _paq.push(['setTrackerUrl', u+'piwik.php']);
+                        _paq.push(['setSiteId', '${piwikSiteId}']);
+                        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                    }
+                    if (window.addEventListener){ window.addEventListener("load", loadPiwikAfterOnload, false); }
+                    else if (window.attachEvent){ window.attachEvent("onload", loadPiwikAfterOnload);           }
+                    else                        { window.onload = loadPiwikAfterOnload();                       }
+                </script>
+                <noscript><p><img src="${piwikServer}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></p></noscript>
+                <!-- End Piwik code -->
+            </c:if>
         </body>
     </html>
 </compress:html>

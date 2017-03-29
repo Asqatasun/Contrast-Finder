@@ -24,4 +24,4 @@
 ## Screenshots (if appropriate)
 
 
-(by the way, thank you **very** much for contributing to Asqatasun!)
+(by the way, thank you **very** much for contributing to Contrast-Finder!)

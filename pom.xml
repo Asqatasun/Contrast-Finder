@@ -4,7 +4,7 @@
     <groupId>org.asqatasun</groupId>
     <artifactId>contrast-finder</artifactId>
     <packaging>pom</packaging>
-    <version>0.4.4</version>
+    <version>0.4.5</version>
     <name>contrast-finder</name>
     <modules>
         <module>contrast-finder-api</module>
@@ -97,9 +97,9 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
-                <version>1.2.17</version>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.2.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

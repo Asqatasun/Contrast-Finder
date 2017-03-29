@@ -21,7 +21,8 @@ package org.asqatasun.contrastFinder.hsv;
 
 import java.awt.Color;
 import java.util.Map;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.asqatasun.contrastFinder.AbstractColorFinder;
 import org.asqatasun.contrastFinder.result.ColorCombinaison;
 import org.asqatasun.contrastFinder.result.factory.ColorCombinaisonFactoryImpl;
@@ -34,7 +35,7 @@ import org.asqatasun.utils.colorconvertor.ColorConverter;
  */
 public class ColorFinderRgb extends AbstractColorFinder {
 
-    private static final Logger LOGGER = Logger.getLogger(ColorFinderRgb.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ColorFinderRgb.class);
     private static final int STEP = 1;
     private static final int NO_CHANGE_COMPONENT = 0;
     private static final int MAX_POSSIBLE_VALUE = 255;

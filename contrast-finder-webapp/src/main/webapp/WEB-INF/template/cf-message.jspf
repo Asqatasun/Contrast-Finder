@@ -4,7 +4,14 @@
     <div class="col-lg-12">
         <p class="alert alert-warning">
             <fmt:message key="message.addon">
-                <fmt:param value="https://addons.mozilla.org/en-US/firefox/addon/tanaguru-contrast-finder/"/>
+                <c:choose>
+                    <c:when test="${lang == 'fr'}">
+                        <fmt:param value="https://addons.mozilla.org/fr/firefox/addon/contrast-finder/"/>
+                    </c:when>
+                    <c:otherwise>
+                        <fmt:param value="https://addons.mozilla.org/en-US/firefox/addon/contrast-finder/"/>
+                    </c:otherwise>
+                </c:choose>
             </fmt:message>
         </p>
     </div>

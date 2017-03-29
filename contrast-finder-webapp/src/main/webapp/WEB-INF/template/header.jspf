@@ -2,7 +2,7 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page pageEncoding="UTF-8"%>
 
-            <div id="header" class="page-header">
+            <header id="header" class="page-header">
                 <c:set var="properQueryString" scope="page" value="${fn:replace(pageContext.request.queryString, '&', '&amp;')}"/>
                 <c:choose>
                     <c:when test="${not empty pageContext.request.queryString}">
@@ -28,35 +28,35 @@
                         <c:set var="enUrl" scope="request" value="?lang=en"/>
                     </c:otherwise>
                 </c:choose>
-                <div id="lang-switcher">
+                <nav id="lang-switcher">
                     <c:choose>
                         <c:when test="${lang == 'en'}">
-                            <strong lang="en">english</strong>
+                            <strong>english</strong>
                         </c:when>
                         <c:otherwise>
-                            <a href="${enUrl}" title="Switch to english">english</a>
+                            <a href="${enUrl}" title="Switch to english" lang="en">english</a>
                         </c:otherwise>
                     </c:choose>
                     &nbsp;
                     <c:choose>
                         <c:when test="${lang == 'fr'}">
-                            <strong lang="en">français</strong>
+                            <strong>français</strong>
                         </c:when>
                         <c:otherwise>
                             <a href="${frUrl}" title="Passer en français" lang="fr">français</a>
                         </c:otherwise>
                     </c:choose>
-                </div>
+                </nav>
 
-                <div id="contrast-finder-logo">
-                </div>
-                <h1>${appName}</h1>
-                <p><fmt:message key="form.description"/></p>
-                <p>
-                    <a href="<fmt:message key="form.wcagLink"/>">
-                        <span lang="en"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr></span> <fmt:message key="form.sc"/> 1.4.3
-                    </a>
-                    <fmt:message key="form.sc-info"/>
-                </p>
-
-            </div><!-- id="header' class="page-header"-->
+                <div id="contrast-finder-logo"></div>
+                <div id="header_title">
+                    <h1>${appName_v2}</h1>
+                    <p><fmt:message key="form.description"/></p>
+                    <p>
+                        <a href="<fmt:message key="form.wcagLink"/>">
+                            <span lang="en"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr></span> <fmt:message key="form.sc"/> 1.4.3
+                        </a>
+                        <fmt:message key="form.sc-info"/>
+                    </p>
+                </div>  <!-- id="header_title'-->
+            </header><!-- id="header' class="page-header"-->

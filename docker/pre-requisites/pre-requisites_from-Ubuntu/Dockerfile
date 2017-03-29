@@ -29,8 +29,8 @@ RUN  apt-get update                                         && \
      mkdir   -p  /etc/contrast-finder/                      && \
      touch   /var/log/contrast-finder/contrast-finder.log   && \
      touch   ${CONF_FILE}                                   && \
-     chown   -R tomcat7 /var/log/contrast-finder/           && \
-     chown   -R tomcat7 /etc/contrast-finder/               && \
+     chown   -R tomcat7:tomcat7 /var/log/contrast-finder/   && \
+     chown   -R tomcat7:tomcat7 /etc/contrast-finder/       && \
      echo    "piwik_analytics_key="  >> ${CONF_FILE}        && \
      echo    "google_analytics_key=" >> ${CONF_FILE}        && \
      ln -s   /usr/share/java/spring3-instrument-tomcat.jar          \
