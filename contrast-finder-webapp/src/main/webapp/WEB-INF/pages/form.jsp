@@ -96,6 +96,7 @@
                             </div>
                             <!-- /col-lg-4 -->
 
+
                             <%-- Component to modify --%>
                             <div class="form-group">
                                 <label for='isBackgroundTested' class="col-lg-3 control-label"><fmt:message key="form.component"/></label>
@@ -144,9 +145,12 @@
                                     </div>
                                 </fieldset>
                             </div>
+
+
+
                             <div class="form-group">
                                 <fmt:message key="form.validate" var="validateButton"/>
-                                <input id="submit-button" type="submit" class="btn btn-default col-lg-offset-3 col-lg-3" value="${validateButton}"/>
+                                <input id="submit-button" type="submit" class="btn btn-default btn-lg col-lg-offset-3 col-lg-3" value="${validateButton}"/>
                             </div>
                         </form:form>
                     </div><!-- class="col-lg-12' -->
