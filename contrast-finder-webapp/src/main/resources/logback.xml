@@ -22,8 +22,8 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>/var/log/contrast-finder/contrast-finder.%d{yyyy-MM-dd}_%i.log.zip</fileNamePattern>
             <maxFileSize>50MB</maxFileSize>     <!-- or whenever the file size reaches 50 MB -->
-            <maxHistory>10</maxHistory>         <!-- keep 10 days' worth of history          -->
-            <totalSizeCap>450MB</totalSizeCap>  <!-- capped at 450 MB total size             -->
+            <maxHistory>4</maxHistory>          <!-- keep 4 days' worth of history          -->
+            <totalSizeCap>300MB</totalSizeCap>  <!-- capped at 300 MB total size             -->
         </rollingPolicy>
     </appender>
 
