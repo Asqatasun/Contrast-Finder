@@ -26,7 +26,7 @@
                         <c:set var="actionUrl">
                             <c:url value="result.html"></c:url>
                         </c:set>
-                        <form:form class="form-horizontal" name="formulaire" commandName="colorModel" method="GET" role="form" action="${actionUrl}">
+                        <form:form class="form-horizontal" name="formulaire" commandName="colorModel" method="GET"  action="${actionUrl}">
 
                             <%-- Foregound --%>
                             <c:set var="foregroundOnError">
@@ -121,20 +121,18 @@
                             </c:choose>
                             <div class="form-group ${algoOnError}">
                                 <fieldset>
-                                    <div class="col-lg-3 control-fieldset">
-                                        <legend><fmt:message key="form.objectifs"/></legend>
-                                    </div>
+                                    <legend class="col-lg-3 control-fieldset"><fmt:message key="form.objectifs"/></legend>
                                     <div class="col-lg-4">
                                         <div class="cf-group-fields">
                                             <div class="radio first-radio">
                                                 <label for="algo1">
-                                                    <form:radiobutton name="algo1" path="algo" value="HSV" checked="checked"/>
+                                                    <form:radiobutton id="algo1" path="algo" value="HSV" checked="checked"/>
                                                     <fmt:message key="form.algoHSV"/>
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label for="algo2">
-                                                    <form:radiobutton name="algo2" path="algo" value="Rgb"/>
+                                                    <form:radiobutton id="algo2" path="algo" value="Rgb"/>
                                                     <fmt:message key="form.algoRGB"/>
                                                 </label>
                                             </div>

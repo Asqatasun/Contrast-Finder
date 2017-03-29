@@ -12,6 +12,10 @@ a:hover, a:focus {
     color : #23537D;   /* AAA */
 }
 
+code {
+    color: #C7254E;
+    color: #A6083B; /* AAA */
+}
 
 /* Bootstrap override */ 
 .help-block {
@@ -94,12 +98,13 @@ a:hover, a:focus {
     margin-right: 5px;
 }
 
-.control-fieldset legend {
+legend.control-fieldset  {
     border: none;
     font-size: 14px;
     font-weight: bold;
     text-align: right;
 }
+
 
 .cf-group-fields {
     border: 1px solid #CCC;
@@ -137,7 +142,7 @@ a:hover, a:focus {
     }
 }
 @media (max-width: 1199px) {
-    .control-fieldset legend {
+    legend.control-fieldset  {
         text-align: left;
         margin-bottom: 0;
     }
