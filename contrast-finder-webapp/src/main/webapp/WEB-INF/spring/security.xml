@@ -1,0 +1,93 @@
+<b:beans xmlns="http://www.springframework.org/schema/security"
+         xmlns:b="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <!-- added the following HTTP security headers:
+               X-Frame-Options:         DENY
+               X-Content-Type-Options:  nosniff
+               X-XSS-Protection:        1; mode=block
+               referrer-policy:         same-origin         -->
+    <http>
+        <headers>
+            <!-- default HTTP security headers-->
+            <content-type-options />                  <!--  added HTTP header:     X-Content-Type-Options: nosniff  -->
+            <xss-protection block="false"/>           <!--  added HTTP header:     X-XSS-Protection: 1; mode=block  -->
+            <frame-options  policy="DENY" />          <!--  added HTTP header:     X-Frame-Options: DENY            -->
+
+            <!-- added some others HTTP security headers-->
+            <referrer-policy policy="same-origin" />  <!--  added HTTP header:  referrer-policy: same-origin        -->
+                <!--   <content-security-policy  policy-directives="default-src 'none'; script-src *; img-src *; style-src 'self';" />         -->
+
+            <!-- disabled no-cache HTTP headers -->
+            <cache-control  disabled="true" />        <!--  NOT added HTTP header: Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+                                                                                   Pragma: no-cache
+                                                                                   Expires: 0                       -->
+        </headers>
+        <form-login />
+    </http>
+    <user-service>
+        <user name="user_1" password="password_1" authorities="ROLE_USER" />
+    </user-service>
+
+
+    <!--    Documentation
+            http://docs.spring.io/spring-security/site/docs/current/reference/html/headers.html
+            ___________________________________________________
+            // Works with HTTP headers (X-FRAME, ...) without HTTP non-cache headers
+            <http>
+                <headers>
+                    <content-type-options />
+                    <xss-protection block="false"/>
+                    <frame-options  policy="DENY" />
+                    <referrer-policy policy="same-origin" />
+                    <cache-control  disabled="true" />
+                </headers>
+                <form-login />
+            </http>
+            <user-service>
+                <user name="user_1" password="password_1" authorities="ROLE_USER" />
+            </user-service>
+            ___________________________________________________
+            // works with HTTP headers (X-FRAME, ...) but added no-cache HTTP headers
+            // Css/Js/image  : not added HTTP headers / 304 for repeat view
+            <http security="none" pattern="/Css/**"/>
+            <http security="none" pattern="/Js/**"/>
+            <http security="none" pattern="/Image/**"/>
+            <http>
+                <form-login />
+            </http>
+            <user-service>
+                <user name="user_1" password="password_1" authorities="ROLE_USER" />
+            </user-service>
+            ___________________________________________________
+                // works with HTTP headers (X-FRAME, ...) but added no-cache HTTP headers
+                <http>
+                    <form-login />
+                </http>
+                <user-service>
+                    <user name="user_1" password="password_1" authorities="ROLE_USER" />
+                </user-service>
+            ___________________________________________________
+                // works but without HTTP headers (X-FRAME, ...)
+                <http security="none" />
+            ___________________________________________________
+                // works with HTTP headers (X-FRAME, ...)
+                // but login/pass form
+                <http />
+                <user-service>
+                    <user name="user" password="password" authorities="ROLE_USER" />
+                </user-service>
+            ___________________________________________________
+                // don't work
+                <http />
+            ___________________________________________________
+                // don't work
+                <http>
+                    <form-login />
+                </http>
+                <user-service></user-service>
+            ___________________________________________________    -->
+</b:beans>
+

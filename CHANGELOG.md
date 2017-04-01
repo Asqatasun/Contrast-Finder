@@ -6,7 +6,7 @@ Features:
 none
 
 Security:
-none
+- [#35 Added HTTP security headers without HTTP no-cache headers](https://github.com/Asqatasun/Contrast-Finder/issues/35)
 
 Bugs:
 none
