@@ -411,7 +411,7 @@
                 <!-- Piwik code-->
                 <script type="text/javascript">
                     var _paq = _paq || [];
-                    _paq.push(["setDomains", ["*.contrast-finder.org","*.www.contrast-finder.org"]]);
+                    _paq.push(["setDomains", ["*.app.contrast-finder.org","*.app.contrast-finder.org"]]);
                     _paq.push(['trackPageView']);
                     _paq.push(['enableLinkTracking']);
                     function loadPiwikAfterOnload(){
@@ -424,8 +424,7 @@
                     if (window.addEventListener){ window.addEventListener("load", loadPiwikAfterOnload, false); }
                     else if (window.attachEvent){ window.attachEvent("onload", loadPiwikAfterOnload);           }
                     else                        { window.onload = loadPiwikAfterOnload();                       }
-                </script>
-                <noscript><p><img src="${piwikServer}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></p></noscript>
+                </script><noscript><img src="${piwikServer}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></noscript>
                 <!-- End Piwik code -->
             </c:if>
         </body>
