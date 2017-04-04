@@ -60,21 +60,19 @@
         </plugins>
     </build>
 
-    <reporting>
+<!-- Reporting
+     http://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_reporting_Tag_VS_build_Tag -->
+    <reporting> <!-- usage: mvn site  -->
         <plugins>
-            <!-- OWASP Dependency-Check
-                 https://www.owasp.org/index.php/OWASP_Dependency_Check
-                 http://jeremylong.github.io/DependencyCheck/
-                 http://jeremylong.github.io/DependencyCheck/dependency-check-maven/
-
-                 usage:
-                 mvn clean site
-                 mvn clean org.owasp:dependency-check-maven:help
-                 mvn clean org.owasp:dependency-check-maven:help -Ddetail=true -Dgoal=aggregate
-                 mvn clean org.owasp:dependency-check-maven:check
-                 mvn clean org.owasp:dependency-check-maven:aggregate
-                     // aggregated report: target/dependency-check-report.html    -->
-            <plugin>
+    <!--    OWASP Dependency-Check
+                https://www.owasp.org/index.php/OWASP_Dependency_Check
+                http://jeremylong.github.io/DependencyCheck/
+                http://jeremylong.github.io/DependencyCheck/dependency-check-maven/
+                usage:  mvn site
+                        mvn org.owasp:dependency-check-maven:help -Ddetail=true -Dgoal=aggregate
+                        mvn org.owasp:dependency-check-maven:check
+                        mvn org.owasp:dependency-check-maven:aggregate              -->
+            <plugin> <!-- aggregated report: target/dependency-check-report.html    -->
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
                 <version>1.4.5</version>
@@ -85,6 +83,19 @@
                         </reports>
                     </reportSet>
                 </reportSets>
+            </plugin>
+
+     <!--   Generate JavaDocs as part of project reports
+                https://maven.apache.org/plugins/maven-javadoc-plugin/
+                https://maven.apache.org/plugins/maven-javadoc-plugin/usage.html
+                https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html     -->
+            <plugin> <!-- usage: mvn site  -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <configuration>
+                    <show>public</show>
+                </configuration>
             </plugin>
         </plugins>
     </reporting>

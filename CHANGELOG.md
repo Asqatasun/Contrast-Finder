@@ -13,7 +13,7 @@ Bugs:
 none
 
 Configuration:
-none
+- [#37 - Added maven-javadoc-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/37)
       
 Documentation:
 none
