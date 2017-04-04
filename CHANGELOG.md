@@ -14,7 +14,9 @@ none
 
 Configuration:
 - [#37 - Added maven-javadoc-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/37)
-      
+- [#38 - Upgraded maven-compiler-plugin and maven-surefire-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/38) 
+- [#39 - Changed source and target of the Java compiler: 1.7 instead of 1.6](https://github.com/Asqatasun/Contrast-Finder/issues/39)
+  
 Documentation:
 none
 
