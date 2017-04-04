@@ -1,5 +1,5 @@
 
-Contrast-Finder 0.4.6, 2017-xx-xx
+Contrast-Finder 0.4.6, 2017-04-xx
 ---------------------------------
 
 Features:
@@ -7,6 +7,7 @@ none
 
 Security:
 - [#35 Added HTTP security headers without HTTP no-cache headers](https://github.com/Asqatasun/Contrast-Finder/issues/35)
+- [#36 Added the maven plugin "OWASP Dependency-Check"](https://github.com/Asqatasun/Contrast-Finder/issues/36)
 
 Bugs:
 none

@@ -12,8 +12,8 @@
         <module>contrast-finder-hsv</module>
         <module>contrast-finder-impl</module>
         <module>contrast-finder-webapp</module>
-    <module>contrast-finder-resources</module>
-  </modules>
+        <module>contrast-finder-resources</module>
+    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -40,14 +40,55 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
             </plugin>
-
-<!--            <plugin>
+<!--        <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>1.4.5</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>   -->
+<!--        <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>1.0</version>
-            </plugin>-->
+            </plugin>   -->
         </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <!-- OWASP Dependency-Check
+                 https://www.owasp.org/index.php/OWASP_Dependency_Check
+                 http://jeremylong.github.io/DependencyCheck/
+                 http://jeremylong.github.io/DependencyCheck/dependency-check-maven/
+
+                 usage:
+                 mvn clean site
+                 mvn clean org.owasp:dependency-check-maven:help
+                 mvn clean org.owasp:dependency-check-maven:help -Ddetail=true -Dgoal=aggregate
+                 mvn clean org.owasp:dependency-check-maven:check
+                 mvn clean org.owasp:dependency-check-maven:aggregate
+                     // aggregated report: target/dependency-check-report.html    -->
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>1.4.5</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
