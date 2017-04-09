@@ -18,7 +18,7 @@ Configuration:
 - [#39 - Changed source and target of the Java compiler: 1.7 instead of 1.6](https://github.com/Asqatasun/Contrast-Finder/issues/39)
   
 Documentation:
-none
+- [#8 - Howto build & install: missing libspring-instrument-java](https://github.com/Asqatasun/Contrast-Finder/issues/8)
 
 Upgrade-o-meter:
 none
