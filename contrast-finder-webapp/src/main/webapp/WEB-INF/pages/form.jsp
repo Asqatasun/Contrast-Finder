@@ -394,7 +394,6 @@
             <!-- Javascript - Webapp -->
             <script src="<c:url value="Js/_contrast-finder.all.min.js?v=${appVersion}"/>"></script>
                <!-- <script src="<c:url value="Js/10-jquery.min.js?v=${appVersion}"/>"></script>
-                    <script src="<c:url value="Js/11-jquery-ui.min.js?v=${appVersion}"/>"></script>
                     <c:if test="${colorResult.numberOfSuggestedColors > 0}">
                         <script src="<c:url value="Js/20-jquery.tablesorter.min.js?v=${appVersion}"/>"></script>
                         <script src="<c:url value="Js/25-accessible-min.js?v=${appVersion}"/>"></script>
