@@ -7,7 +7,7 @@
         <version>0.4.6-dev</version>
     </parent>
     <artifactId>contrast-finder-webapp</artifactId>
-    <version>0.4.6-dev</version>
+    <version>${project.parent.version}</version>
     <packaging>war</packaging>
 
     <name>contrast-finder-webapp</name>

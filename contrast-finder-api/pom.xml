@@ -7,7 +7,7 @@
         <version>0.4.6-dev</version>
     </parent>
     <artifactId>contrast-finder-api</artifactId>
-    <version>0.4.6-dev</version>
+    <version>${project.parent.version}</version>
     <packaging>jar</packaging>
 
     <name>contrast-finder-api</name>
