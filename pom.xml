@@ -5,7 +5,24 @@
     <artifactId>contrast-finder</artifactId>
     <packaging>pom</packaging>
     <version>0.4.6-dev</version>
-    <name>contrast-finder</name>
+
+    <name>Contrast-Finder</name>
+    <url>https://contrast-finder.org</url>
+    <description>
+        Find valid background / foreground color contrast for accessibility (a11y, WCAG)
+    </description>
+    <organization>
+        <name>Asqatasun.org</name>
+        <url>http://asqatasun.org</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>GNU Affero General Public License v3.0</name>
+            <url>https://www.gnu.org/licenses/agpl-3.0.txt</url>
+            <distribution>manual</distribution>
+        </license>
+    </licenses>
+
     <modules>
         <module>contrast-finder-api</module>
         <module>contrast-finder-utils</module>
@@ -38,18 +55,61 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
             </plugin>
-<!--        <plugin>
+
+    <!--    Generate standalone Javadocs
+               https://maven.apache.org/plugins/maven-javadoc-plugin/
+               https://maven.apache.org/plugins/maven-javadoc-plugin/usage.html
+               https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html
+               JavaDoc: target/site/apidocs
+                        target/site/testapidocs
+               Usage:   mvn javadoc:javadoc
+                        mvn javadoc:aggregate
+                        mvn javadoc:test-javadoc
+                        mvn javadoc:test-aggregate           -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <configuration>
+                    <show>private</show>
+                    <author>false</author>
+                    <linksource>true</linksource> <!-- Creates an HTML version of each source file (with line numbers) -->
+                    <doctitle> --  Javadocs for ${project.name} ${project.version}</doctitle>
+                    <windowtitle>Javadocs for ${project.name} ${project.version}</windowtitle>
+                    <header> -- ${project.name} v${project.version}</header>
+                    <footer>${project.name} v${project.version}  -- </footer>
+                    <bottom>
+                        <![CDATA[
+                            &#169; 2013&#x2013;{currentYear}
+                            <a href="https://constrast-finder.org">Constrast-Finder.org<a>
+                        ]]>
+                    </bottom>
+                </configuration>
+            </plugin>
+
+    <!--    OWASP Dependency-Check
+                https://www.owasp.org/index.php/OWASP_Dependency_Check
+                http://jeremylong.github.io/DependencyCheck/
+                http://jeremylong.github.io/DependencyCheck/dependency-check-maven/
+                report: target/dependency-check-report.html
+                usage:  mvn dependency-check:check
+                        mvn dependency-check:aggregate
+                        mvn dependency-check:help -Ddetail=true -Dgoal=aggregate       -->
+            <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
                 <version>1.4.5</version>
+        <!--    <configuration>
+                    <failBuildOnCVSS>8</failBuildOnCVSS>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
                             <goal>aggregate</goal>
                         </goals>
                     </execution>
-                </executions>
-            </plugin>   -->
+                </executions>       -->
+            </plugin>
 <!--        <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
@@ -62,15 +122,22 @@
      http://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_reporting_Tag_VS_build_Tag -->
     <reporting> <!-- usage: mvn site  -->
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.9</version>
+            </plugin>
+
     <!--    OWASP Dependency-Check
                 https://www.owasp.org/index.php/OWASP_Dependency_Check
                 http://jeremylong.github.io/DependencyCheck/
                 http://jeremylong.github.io/DependencyCheck/dependency-check-maven/
+                report: target/dependency-check-report.html
                 usage:  mvn site
                         mvn org.owasp:dependency-check-maven:help -Ddetail=true -Dgoal=aggregate
                         mvn org.owasp:dependency-check-maven:check
-                        mvn org.owasp:dependency-check-maven:aggregate              -->
-            <plugin> <!-- aggregated report: target/dependency-check-report.html    -->
+                        mvn org.owasp:dependency-check-maven:aggregate          -->
+            <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
                 <version>1.4.5</version>
@@ -86,13 +153,28 @@
      <!--   Generate JavaDocs as part of project reports
                 https://maven.apache.org/plugins/maven-javadoc-plugin/
                 https://maven.apache.org/plugins/maven-javadoc-plugin/usage.html
-                https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html     -->
-            <plugin> <!-- usage: mvn site  -->
+                https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html
+                usage:   mvn site
+                JavaDoc: target/site/apidocs
+                         target/site/testapidocs              -->
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.10.4</version>
                 <configuration>
                     <show>public</show>
+                    <author>false</author>
+                    <linksource>true</linksource> <!-- Creates an HTML version of each source file (with line numbers) -->
+                    <doctitle>Javadocs for ${project.name} ${project.version}</doctitle>
+                    <windowtitle>Javadocs for ${project.name} ${project.version}</windowtitle>
+                    <header>${project.name} v${project.version}</header>
+                    <footer>${project.name} v${project.version}</footer>
+                    <bottom>
+                        <![CDATA[
+                            &#169; 2013&#x2013;{currentYear} &nbsp;
+                            <a href="https://contrast-finder.org">Contrast-Finder.org<a>
+                        ]]>
+                    </bottom>
                 </configuration>
             </plugin>
         </plugins>
