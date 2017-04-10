@@ -1,4 +1,13 @@
 FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
+LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                            \
+      org.label-schema.name           = "Contrast-Finder - WebApp"                              \
+      org.label-schema.version        = "0.4.6-dev"                                             \
+      org.label-schema.url            = "https://contrast-finder.org"                           \
+      org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"          \
+      org.label-schema.docker.cmd     = "docker run -p 8087:8080 -d asqatasun/contrast-finder"  \
+      org.label-schema.usage          = "https://github.com/Asqatasun/Contrast-Finder/tree/develop/documentation/" \
+      org.label-schema.description    = "Contrast-Finder finds correct color contrasts for web accessibility."
+          # ----> documentation  http://label-schema.org/
 
 # #### usage ######################################################
 #
