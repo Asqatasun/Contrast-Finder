@@ -16,12 +16,26 @@ cd        contrast-finder_*.i386/
 mv  -v    install/contrast-*.war contrast-finder.war
 
 sudo cp -v     contrast-finder.war               /var/lib/tomcat7/webapps/
-sudo cp -rv    install/etc/contrast-finder/      /etc/
 sudo cp -rv    install/var/log/contrast-finder/  /var/log/
 
 sudo chown -Rv tomcat7 /var/log/contrast-finder/ 
-sudo chown -Rv tomcat7 /etc/contrast-finder/
 sudo service   tomcat7 restart
 ```
 
 Contrast-finder should be available at `http://localhost:8080/contrast-finder/`
+
+
+#### Optional contract-finder.conf file 
+
+```bash
+tar -xzvf      contrast-finder*.tar.gz  
+cd             contrast-finder_*.i386/
+sudo cp -rv    install/etc/contrast-finder/      /etc/
+
+cd             /etc/contrast-finder/
+sudo cp -v     contrast-finder.conf.dist  contrast-finder.conf
+sudo vim       contrast-finder.conf 
+    (...)
+sudo chown -Rv tomcat7 /etc/contrast-finder/
+sudo service   tomcat7 restart
+```

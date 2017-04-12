@@ -21,7 +21,7 @@
         <fileSet>
             <directory>${basedir}/../contrast-finder-resources/src/main/resources</directory>
             <includes>
-                <include>contrast-finder.conf</include>
+                <include>contrast-finder.conf.dist</include>
             </includes>
             <fileMode>664</fileMode>
             <outputDirectory>/install/etc/contrast-finder</outputDirectory>

@@ -37,8 +37,6 @@ RUN  apt-get update                                         && \
      touch   ${CONF_FILE}                                   && \
      chown   -R tomcat7:tomcat7 /var/log/contrast-finder/   && \
      chown   -R tomcat7:tomcat7 /etc/contrast-finder/       && \
-     echo    "piwik_analytics_key="  >> ${CONF_FILE}        && \
-     echo    "google_analytics_key=" >> ${CONF_FILE}        && \
      ln -s   /usr/share/java/spring3-instrument-tomcat.jar          \
              /usr/share/tomcat7/lib/spring3-instrument-tomcat.jar
 
