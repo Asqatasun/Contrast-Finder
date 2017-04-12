@@ -1,5 +1,5 @@
 
-Contrast-Finder 0.4.6, 2017-04-xx
+Contrast-Finder 0.4.6, 2017-04-12
 ---------------------------------
 
 Features:
