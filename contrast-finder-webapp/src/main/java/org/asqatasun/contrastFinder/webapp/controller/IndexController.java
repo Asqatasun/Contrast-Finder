@@ -55,10 +55,14 @@ public class IndexController {
      * View containing the form
      */
     private String mainPageView;
+
     /**
      * piwik analytics key
+     *      default is ''
+     *      can be override in the following file:
+     *      /etc/contrast-finder/contrast-finder.conf
      */
-    @Value("${piwik_analytics_key}")
+    @Value("${piwik_analytics_key:}")
     private String piwikAnalyticsKey;
 
     @Autowired
