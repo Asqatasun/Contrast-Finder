@@ -42,7 +42,7 @@ cd Contrast-finder
 One of the following command lines:
 ```bash
 mvn dependency-check:check
-mvn dependency-check:agregated
+mvn dependency-check:aggregate
 mvn site
 ```
 
