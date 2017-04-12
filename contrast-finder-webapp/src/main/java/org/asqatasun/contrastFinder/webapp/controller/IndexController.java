@@ -65,6 +65,15 @@ public class IndexController {
     @Value("${piwik_analytics_key:}")
     private String piwikAnalyticsKey;
 
+    /**
+     * piwik analytics server URL
+     *      default is ''
+     *      can be override in the following file:
+     *      /etc/contrast-finder/contrast-finder.conf
+     */
+    @Value("${piwik_analytics_server:}")
+    private String piwikAnalyticServer;
+
     @Autowired
     private ColorFinderFactory colorFinderFactory;
 
@@ -85,7 +94,8 @@ public class IndexController {
     @RequestMapping(value = "form.html")
     public String initAccueil(final Model model) {
         ColorModel colorModel = new ColorModel();
-        model.addAttribute("piwikKey", piwikAnalyticsKey);
+        model.addAttribute("piwikKey",    piwikAnalyticsKey);
+        model.addAttribute("piwikServer", piwikAnalyticServer);
         model.addAttribute(commandName, colorModel);
         return mainPageView;
     }
@@ -133,7 +143,8 @@ public class IndexController {
             model.addAttribute("algo", colorModel.getAlgo());
             model.addAttribute("otherAlgo", getOppositeAlgo(colorModel.getAlgo())); 
             /* Analytics Keys*/
-            model.addAttribute("piwikKey", piwikAnalyticsKey);
+            model.addAttribute("piwikKey",    piwikAnalyticsKey);
+            model.addAttribute("piwikServer", piwikAnalyticServer);
             return mainPageView;
         }
 

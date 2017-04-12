@@ -404,9 +404,9 @@
                -->
 
             <!-- Javascript - Web analytics -->
-            <c:set var="piwikSiteId"  value="${piwikKey}"/>
-            <c:set var="piwikServer"  value="https://stats.taqamaqa.com/piwik/"/>
-            <c:if test="${not empty piwikSiteId}">
+            <c:set var="piwikSiteId"     value="${piwikKey}"/>
+            <c:set var="piwikServerURL"  value="${piwikServer}"/>
+            <c:if test="${not empty piwikSiteId and not empty piwikServerURL}">
                 <!-- Piwik code-->
                 <script type="text/javascript">
                     var _paq = _paq || [];
@@ -414,7 +414,7 @@
                     _paq.push(['trackPageView']);
                     _paq.push(['enableLinkTracking']);
                     function loadPiwikAfterOnload(){
-                        var u='${piwikServer}';
+                        var u='${piwikServerURL}';
                         _paq.push(['setTrackerUrl', u+'piwik.php']);
                         _paq.push(['setSiteId', '${piwikSiteId}']);
                         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
@@ -423,7 +423,7 @@
                     if (window.addEventListener){ window.addEventListener("load", loadPiwikAfterOnload, false); }
                     else if (window.attachEvent){ window.attachEvent("onload", loadPiwikAfterOnload);           }
                     else                        { window.onload = loadPiwikAfterOnload();                       }
-                </script><noscript><img src="${piwikServer}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></noscript>
+                </script><noscript><img src="${piwikServerURL}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></noscript>
                 <!-- End Piwik code -->
             </c:if>
         </body>
