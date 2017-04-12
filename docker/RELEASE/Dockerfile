@@ -1,12 +1,21 @@
 FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
+LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                            \
+      org.label-schema.name           = "Contrast-Finder - WebApp"                              \
+      org.label-schema.version        = "0.4.6"                                             \
+      org.label-schema.url            = "https://contrast-finder.org"                           \
+      org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"          \
+      org.label-schema.docker.cmd     = "docker run -p 8087:8080 -d asqatasun/contrast-finder"  \
+      org.label-schema.usage          = "https://github.com/Asqatasun/Contrast-Finder/tree/develop/documentation/" \
+      org.label-schema.description    = "Contrast-Finder finds correct color contrasts for web accessibility."
+          # ----> documentation  http://label-schema.org/
 
 # #### usage ######################################################
 #
 #   --- Building this docker image
 #   docker build -t asqatasun/contrast-finder  .
-#   docker build -t asqatasun/contrast-finder  --build-arg CONTRAST_FINDER_RELEASE=0.4.5  .
-#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL_PREFIX=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.4.5/   .
-#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.4.5/contrast-finder_0.4.5.i386.tar.gz   .
+#   docker build -t asqatasun/contrast-finder  --build-arg CONTRAST_FINDER_RELEASE=0.4.6  .
+#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL_PREFIX=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.4.6/   .
+#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.4.6/contrast-finder_0.4.6.i386.tar.gz   .
 #
 #   --- Launch a container
 #   docker run -p 127.0.0.1:8087:8080 --name contrast.finder -d asqatasun/contrast-finder
@@ -27,7 +36,7 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 ###################################################################
 
 # build variables
-ARG CONTRAST_FINDER_RELEASE="0.4.5"
+ARG CONTRAST_FINDER_RELEASE="0.4.6"
 ARG SRC_URL_PREFIX="https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}"
 ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz"
 

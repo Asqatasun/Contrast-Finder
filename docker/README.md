@@ -19,5 +19,5 @@ docker/compile_and_build_docker_image.sh -l -s ${PWD} -d docker/SNAPSHOT-local_f
 ```
 
 In your browser, go to
-`http://127.0.0.1:8085/asqatasun/`
+`http://127.0.0.1:8087/contrast-finder/`
 

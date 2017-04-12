@@ -20,6 +20,8 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 
 # environment variables
 ENV CONTRAST_FINDER_RELEASE="0.4.6"
+ENV PIWIK_KEY="9"
+ENV PIWIK_URL="http://localhost/piwik/"
 
 # Add contrast-finder .war
 ADD contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz  /root
@@ -29,6 +31,8 @@ RUN  cd      /root/contrast-*/install/                      && \
      mv -v   contrast-*.war contrast-finder.war             && \
      mv -v   contrast-*.war /var/lib/tomcat7/webapps        && \
      touch   /var/log/contrast-finder/contrast-finder.log   && \
+     echo "piwik_analytics_key=${PIWIK_KEY}"     > /etc/contrast-finder/contrast-finder.conf  && \
+     echo "piwik_analytics_server=${PIWIK_URL}" >> /etc/contrast-finder/contrast-finder.conf  && \
      rm -rf  /root/contrast-*  && echo "-- Install: Ok"
 
 CMD  service tomcat7 start                                  ;      \

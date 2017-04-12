@@ -394,7 +394,6 @@
             <!-- Javascript - Webapp -->
             <script src="<c:url value="Js/_contrast-finder.all.min.js?v=${appVersion}"/>"></script>
                <!-- <script src="<c:url value="Js/10-jquery.min.js?v=${appVersion}"/>"></script>
-                    <script src="<c:url value="Js/11-jquery-ui.min.js?v=${appVersion}"/>"></script>
                     <c:if test="${colorResult.numberOfSuggestedColors > 0}">
                         <script src="<c:url value="Js/20-jquery.tablesorter.min.js?v=${appVersion}"/>"></script>
                         <script src="<c:url value="Js/25-accessible-min.js?v=${appVersion}"/>"></script>
@@ -405,17 +404,17 @@
                -->
 
             <!-- Javascript - Web analytics -->
-            <c:set var="piwikSiteId"  value="${piwikKey}"/>
-            <c:set var="piwikServer"  value="https://stats.taqamaqa.com/piwik/"/>
-            <c:if test="${not empty piwikSiteId}">
+            <c:set var="piwikSiteId"     value="${piwikKey}"/>
+            <c:set var="piwikServerURL"  value="${piwikServer}"/>
+            <c:if test="${not empty piwikSiteId and not empty piwikServerURL}">
                 <!-- Piwik code-->
                 <script type="text/javascript">
                     var _paq = _paq || [];
-                    _paq.push(["setDomains", ["*.contrast-finder.org","*.www.contrast-finder.org"]]);
+                    _paq.push(["setDomains", ["*.app.contrast-finder.org","*.app.contrast-finder.org"]]);
                     _paq.push(['trackPageView']);
                     _paq.push(['enableLinkTracking']);
                     function loadPiwikAfterOnload(){
-                        var u='${piwikServer}';
+                        var u='${piwikServerURL}';
                         _paq.push(['setTrackerUrl', u+'piwik.php']);
                         _paq.push(['setSiteId', '${piwikSiteId}']);
                         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
@@ -424,8 +423,7 @@
                     if (window.addEventListener){ window.addEventListener("load", loadPiwikAfterOnload, false); }
                     else if (window.attachEvent){ window.attachEvent("onload", loadPiwikAfterOnload);           }
                     else                        { window.onload = loadPiwikAfterOnload();                       }
-                </script>
-                <noscript><p><img src="${piwikServer}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></p></noscript>
+                </script><noscript><img src="${piwikServerURL}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></noscript>
                 <!-- End Piwik code -->
             </c:if>
         </body>

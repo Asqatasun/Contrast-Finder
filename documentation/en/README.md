@@ -15,8 +15,9 @@ This helps you in satisfying web accessibility (a11y) tests on contrasts:
 
 
 ## Documentation
-* [Howto build & install](Howto-build-and-install.md)
 * [Howto use](Howto-use.md)
+* [Howto install](10_Install_doc/README.md)
+* [Howto build](30_Contributor_doc/Build/README.md)
 
 ---
 * More informations about the [algorithms](The-algorithms.md) here.
