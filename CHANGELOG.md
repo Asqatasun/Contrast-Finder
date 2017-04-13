@@ -1,4 +1,26 @@
 
+Contrast-Finder 0.4.7, 2017-0x-xx
+---------------------------------
+
+Features:
+none
+
+Security:
+none
+
+Bugs:
+none
+
+Configuration:
+none
+
+Documentation:
+none
+
+Upgrade-o-meter:
+none
+
+
 Contrast-Finder 0.4.6, 2017-04-12
 ---------------------------------
 
@@ -22,7 +44,7 @@ Documentation:
 - [#8 - Howto build & install: missing libspring-instrument-java](https://github.com/Asqatasun/Contrast-Finder/issues/8)
 
 Upgrade-o-meter:
-none
+just replace the .war file and restart Tomcat
 
 
 Contrast-Finder 0.4.5, 2017-03-30
