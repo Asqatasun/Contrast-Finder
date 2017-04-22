@@ -18,6 +18,7 @@ Configuration:
 
 Documentation:
 - [#42 - Fixed Javadoc warnings](https://github.com/Asqatasun/Contrast-Finder/issues/42) 
+- [#12 - Added documentation for releasing a new version](https://github.com/Asqatasun/Contrast-Finder/issues/12) 
 
 Upgrade-o-meter:
 none
