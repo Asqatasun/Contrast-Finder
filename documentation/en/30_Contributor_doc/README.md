@@ -1,9 +1,13 @@
 #  Developer documentation 
 
+* [Building Contrast-Finder](Build/README.md)
+* [Release a version of Contrast-Finder](Release/README.md) 
+
+-----
+
 * JavaDoc
 * OWASP Dependency-Check
 * Checking for new dependency / plugin updates
-* [Release a version of Contrast-Finder](Release/README.md) 
 
 ## JavaDoc
 
