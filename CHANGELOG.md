@@ -2,14 +2,15 @@
 Contrast-Finder 0.4.7, 2017-0x-xx
 ---------------------------------
 
+
 Features:
 none
 
 Security:
-none
+- [#44 - Upgrade outdated dependencies: SpringFramework, maven-surefire-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/44)
 
 Bugs:
-none
+- [#45 - Fixed docker/pre-requisites: syntax error](https://github.com/Asqatasun/Contrast-Finder/issues/45)
 
 Configuration:
 none
