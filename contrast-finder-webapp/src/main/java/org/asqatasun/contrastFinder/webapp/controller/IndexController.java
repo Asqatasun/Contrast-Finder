@@ -89,7 +89,7 @@ public class IndexController {
      * Form initialisation
      *
      * @param model model of the page
-     * @return      page name to display
+     * @return HTML
      */
     @RequestMapping(value = "form.html")
     public String initAccueil(final Model model) {
@@ -104,7 +104,7 @@ public class IndexController {
      * @param model
      * @param colorModel
      * @param result
-     * @return
+     * @return HTML
      */
     @RequestMapping(value = "result.html", method = RequestMethod.GET)
     public String getPageResultFromGet(final Model model, @Valid ColorModel colorModel, BindingResult result, HttpServletRequest request) {

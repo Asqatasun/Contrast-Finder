@@ -56,6 +56,11 @@ public final class ContrastChecker {
     private ContrastChecker() {
     }
 
+    /**
+     * @param fgColor
+     * @param bgColor
+     * @return distance color
+     */
     public static double distanceColor(final Color fgColor, final Color bgColor) {
         int redFg = fgColor.getRed();
         int redBg = bgColor.getRed();
@@ -67,11 +72,10 @@ public final class ContrastChecker {
     }
 
     /**
-     *
      * @param fgColor
      * @param bgColor
      * @param coefficientLevel
-     * @return
+     * @return true if is valid contrast
      */
     public static boolean isContrastValid(final Color fgColor, final Color bgColor, Float coefficientLevel) {
         return getConstrastRatio(fgColor, bgColor) > coefficientLevel;
@@ -95,6 +99,11 @@ public final class ContrastChecker {
         }
     }
 
+    /**
+     * @param fgColor
+     * @param bgColor
+     * @return the contrast ratio between the 2 colors, rounded to 5 digits
+     */
     public static double getConstrastRatio5DigitRound(final Color fgColor, final Color bgColor) {
         double fgLuminosity = getLuminosity(fgColor);
         double bgLuminosity = getLuminosity(bgColor);
@@ -106,7 +115,6 @@ public final class ContrastChecker {
     }
 
     /**
-     *
      * @param lighter
      * @param darker
      * @return
@@ -116,9 +124,8 @@ public final class ContrastChecker {
     }
 
     /**
-     *
      * @param color
-     * @return
+     * @return Luminosity
      */
     public static double getLuminosity(Color color) {
         double luminosity =

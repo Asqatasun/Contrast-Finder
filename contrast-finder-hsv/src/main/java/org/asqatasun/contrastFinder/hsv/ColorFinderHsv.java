@@ -56,11 +56,9 @@ public class ColorFinderHsv extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
      * @param colorToKeep
      * @param coefficientLevel
-     * @return
      */
     @Override
     protected void findColors() {
@@ -78,9 +76,7 @@ public class ColorFinderHsv extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
-     * @param colorToKeep
      * @param increment
      */
     private void changeHue(final Color colorToChange, boolean increment) {
@@ -129,9 +125,7 @@ public class ColorFinderHsv extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
-     * @param colorToKeep
      * @param increment
      */
     private void changeSaturation(final Color colorToChange, boolean increment) {
@@ -170,7 +164,6 @@ public class ColorFinderHsv extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
      * @param colorToKeep
      * @param increment
@@ -206,7 +199,6 @@ public class ColorFinderHsv extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param currentValue
      * @param offset
      * @return whether the next color is bounded
@@ -217,8 +209,7 @@ public class ColorFinderHsv extends AbstractColorFinder {
     }
 
     /**
-     *
-     * @return
+     * @return "HSV"
      */
     @Override
     public String getColorFinderKey() {

@@ -29,12 +29,10 @@ import org.asqatasun.contrastFinder.result.ColorResult;
 public interface ColorFinder {
 
     /**
-     * 
      * @param foregroundColor
      * @param backgroundColor
      * @param isBackgroundTested
      * @param coefficientLevel
-     * @return 
      */
     void findColors (
             Color foregroundColor, 
@@ -43,13 +41,11 @@ public interface ColorFinder {
             Float coefficientLevel);
 
     /**
-     * 
-     * @return 
+     * @return ColorResult object
      */
     ColorResult getColorResult();
     
     /**
-     *
      * @return a key that represents the colorFinder
      */
     String getColorFinderKey();

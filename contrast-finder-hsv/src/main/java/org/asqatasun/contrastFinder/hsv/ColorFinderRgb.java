@@ -75,11 +75,9 @@ public class ColorFinderRgb extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
      * @param colorToKeep
      * @param coefficientLevel
-     * @return
      */
     @Override
     protected void findColors() {
@@ -105,7 +103,6 @@ public class ColorFinderRgb extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
      * @param colorToKeep
      * @param increment
@@ -138,7 +135,6 @@ public class ColorFinderRgb extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
      * @param colorToKeep
      * @param increment
@@ -170,7 +166,6 @@ public class ColorFinderRgb extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
      * @param colorToKeep
      * @param increment
@@ -200,6 +195,12 @@ public class ColorFinderRgb extends AbstractColorFinder {
         }
     }
 
+    /**
+     * @param currentValue
+     * @param offset
+     * @param initialComponent
+     * @return
+     */
     private boolean isNextColorBounded(int currentValue, int offset, int initialComponent) {
         float current = currentValue + offset;
         float minBound = initialComponent - maxMove;
@@ -211,9 +212,7 @@ public class ColorFinderRgb extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param newColor
-     * @return
      */
     private void addNewColorValid(Color newColor) {
         ColorCombinaison colorCombinaison =
@@ -238,8 +237,7 @@ public class ColorFinderRgb extends AbstractColorFinder {
     }
 
     /**
-     *
-     * @return
+     * @return "Rgb"
      */
     @Override
     public String getColorFinderKey() {

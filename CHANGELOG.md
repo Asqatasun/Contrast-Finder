@@ -11,13 +11,13 @@ Security:
 
 Bugs:
 - [#45 - Fixed docker/pre-requisites: syntax error](https://github.com/Asqatasun/Contrast-Finder/issues/45)
-- [#46 - Fixed maven WARNING: 'version' contains an expression but should be a constant](https://github.com/Asqatasun/Contrast-Finder/issues/46)
+- [#46 - Fixed maven warnings: 'version' contains an expression but should be a constant](https://github.com/Asqatasun/Contrast-Finder/issues/46)
 
 Configuration:
 none
 
 Documentation:
-none
+- [#42 - Fixed Javadoc warnings](https://github.com/Asqatasun/Contrast-Finder/issues/42) 
 
 Upgrade-o-meter:
 none
