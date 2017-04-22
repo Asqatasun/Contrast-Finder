@@ -7,7 +7,7 @@
         <version>0.4.7-dev</version>
     </parent>
     <artifactId>contrast-finder-hsv</artifactId>
-    <version>${project.parent.version}</version>
+    <version>0.4.7-dev</version>
     <packaging>jar</packaging>
 
     <name>contrast-finder-hsv</name>

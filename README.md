@@ -1,7 +1,7 @@
 [![License : AGPL v3](https://img.shields.io/badge/License-AGPL3-blue.svg)](https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE) 
 [![Build Status](https://travis-ci.org/Asqatasun/Contrast-Finder.svg)](https://travis-ci.org/Asqatasun/Contrast-Finder)
 [![Release](https://img.shields.io/github/release/asqatasun/Contrast-Finder.svg)](https://github.com/Asqatasun/Contrast-Finder/releases/latest)
-[![Dependency Status](https://www.versioneye.com/user/projects/58fb3e17c2ef423822580804/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58fb3e17c2ef423822580804)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fb3e17c2ef423822580804/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58fb3e17c2ef423822580804?child=summary#tab-dependencies)
 
 # Contrast-Finder
 

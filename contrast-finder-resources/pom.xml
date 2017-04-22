@@ -9,7 +9,7 @@
         <version>0.4.7-dev</version>
     </parent>
     <artifactId>contrast-finder-resources</artifactId>
-    <version>${project.parent.version}</version>
+    <version>0.4.7-dev</version>
     <name>contrast-finder-resources</name>
     <url>https://contrast-finder.org</url>
     <organization>
