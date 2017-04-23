@@ -2,7 +2,6 @@
 Contrast-Finder 0.4.7, 2017-0x-xx
 ---------------------------------
 
-
 Features:
 none
 
@@ -21,7 +20,7 @@ Documentation:
 - [#12 - Added documentation for releasing a new version](https://github.com/Asqatasun/Contrast-Finder/issues/12) 
 
 Upgrade-o-meter:
-none
+just replace the .war file and restart Tomcat
 
 
 Contrast-Finder 0.4.6, 2017-04-12

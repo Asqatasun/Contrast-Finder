@@ -22,12 +22,11 @@
             <distribution>manual</distribution>
         </license>
     </licenses>
-
-    <prerequisites>
-        <maven>3.1</maven>
-            <!-- to use the following plugin
-                 org.owasp:dependency-check-maven -->
-    </prerequisites>
+    <prerequisites>         <!--    Maven 3.1 is required to use the following plugin:   -->
+        <maven>3.1</maven>  <!--    ............  org.owasp:dependency-check-maven       -->
+    </prerequisites>        <!--    The following command line indicates
+                                    the minimum version of Maven for maven plugins
+                                    ............  mvn versions:display-plugin-updates     -->
     <modules>
         <module>contrast-finder-api</module>
         <module>contrast-finder-utils</module>

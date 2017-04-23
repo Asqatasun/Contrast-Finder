@@ -19,4 +19,69 @@
 </p>
 
 </footer>
+<%-- i18n
+
+<div style="color:green">
+    NOT_A_VALID_COLOR                     </div>   <fmt:message key="NOT_A_VALID_COLOR"/>                    <hr><div style="color:green">
+    NOT_A_VALID_RATIO.colorModel.ratio    </div>   <fmt:message key="NOT_A_VALID_RATIO.colorModel.ratio"/>   <hr><div style="color:green">
+    home.titleTag                   </div>   <fmt:message key="home.titleTag"/>                      <hr><div style="color:green">
+    home.metaDescription            </div>   <fmt:message key="home.metaDescription"/>               <hr><div style="color:green">
+    result.title.colors             </div>   <fmt:message key="result.title.colors"/>                <hr><div style="color:green">
+    result.title.foregroundColor    </div>   <fmt:message key="result.title.foregroundColor"/>       <hr><div style="color:green">
+    result.title.backgroundColor    </div>   <fmt:message key="result.title.backgroundColor"/>       <hr><div style="color:green">
+    result.title.minRation          </div>   <fmt:message key="result.title.minRation"/>             <hr><div style="color:green">
+    form.fillInFields               </div>   <fmt:message key="form.fillInFields"/>                  <hr><div style="color:green">
+    form.description                </div>   <fmt:message key="form.description"/>                   <hr><div style="color:green">
+    form.help                       </div>   <fmt:message key="form.help"/>                          <hr><div style="color:green">
+    form.foregroundColor            </div>   <fmt:message key="form.foregroundColor"/>               <hr><div style="color:green">
+    form.backgroundColor            </div>   <fmt:message key="form.backgroundColor"/>               <hr><div style="color:green">
+    form.component                  </div>   <fmt:message key="form.component"/>                     <hr><div style="color:green">
+    form.componentForeground        </div>   <fmt:message key="form.componentForeground"/>           <hr><div style="color:green">
+    form.componentBackground        </div>   <fmt:message key="form.componentBackground"/>           <hr><div style="color:green">
+    form.ratio                      </div>   <fmt:message key="form.ratio"/>                         <hr><div style="color:green">
+    form.contrastOld                </div>   <fmt:message key="form.contrastOld"/>                   <hr><div style="color:green">
+    form.contrastNew                </div>   <fmt:message key="form.contrastNew"/>                   <hr><div style="color:green">
+    form.validate                   </div>   <fmt:message key="form.validate"/>                      <hr><div style="color:green">
+    form.validContrast              </div>   <fmt:message key="form.validContrast"/>                 <hr><div style="color:green">
+    form.validContrastDesc          </div>   <fmt:message key="form.validContrastDesc"/>             <hr><div style="color:green">
+    <!-- form.resultNumber               </div>   <fmt:message key="form.resultNumber"/>                  <hr><div style="color:green"> -->
+    form.contrastSolutionCaption    </div>   <fmt:message key="form.contrastSolutionCaption"/>       <hr><div style="color:green">
+    form.contrastSolutionForeground </div>   <fmt:message key="form.contrastSolutionForeground"/>    <hr><div style="color:green">
+    form.contrastSolutionBackground </div>   <fmt:message key="form.contrastSolutionBackground"/>    <hr><div style="color:green">
+    form.contrastSolutionRatio      </div>   <fmt:message key="form.contrastSolutionRatio"/>         <hr><div style="color:green">
+    form.contrastSolutionSample     </div>   <fmt:message key="form.contrastSolutionSample"/>        <hr><div style="color:green">
+    form.initialContrastCaption     </div>   <fmt:message key="form.initialContrastCaption"/>        <hr><div style="color:green">
+    form.sampleTitle                </div>   <fmt:message key="form.sampleTitle"/>                   <hr><div style="color:green">
+    form.sampleTitleBold            </div>   <fmt:message key="form.sampleTitleBold"/>               <hr><div style="color:green">
+    form.sampleText                 </div>   <fmt:message key="form.sampleText"/>                    <hr><div style="color:green">
+    form.sampleTextBold             </div>   <fmt:message key="form.sampleTextBold"/>                <hr><div style="color:green">
+    form.sampleText2                </div>   <fmt:message key="form.sampleText2"/>                   <hr><div style="color:green">
+    form.wcagLink                   </div>   <fmt:message key="form.wcagLink"/>                      <hr><div style="color:green">
+    form.sc                         </div>   <fmt:message key="form.sc"/>                            <hr><div style="color:green">
+    form.sc-info                    </div>   <fmt:message key="form.sc-info"/>                       <hr><div style="color:green">
+    <hr><hr>
+    footer.LikedCf                  </div>   <fmt:message key="footer.LikedCf"/>                    <hr><div style="color:green">
+    form.contrastSolutionDistance   </div>   <fmt:message key="form.contrastSolutionDistance"/>     <hr><div style="color:green">
+    form.contrastSolutionDistanceEx </div>   <fmt:message key="form.contrastSolutionDistanceEx"/>   <hr><div style="color:green">
+    form.objectifs                  </div>   <fmt:message key="form.objectifs"/>                    <hr><div style="color:green">
+    form.algoHSV                    </div>   <fmt:message key="form.algoHSV"/>                      <hr><div style="color:green">
+    form.algoRGB                    </div>   <fmt:message key="form.algoRGB"/>                      <hr><div style="color:green">
+    form.invalidColor               </div>   <fmt:message key="form.invalidColor"/>                 <hr><div style="color:green">
+    form.changeComponent            </div>   <fmt:message key="form.changeComponent"/>              <hr><div style="color:green">
+    form.invalidAlgo                </div>   <fmt:message key="form.invalidAlgo"/>                  <hr><div style="color:green">
+    form.tryHsv                     </div>   <fmt:message key="form.tryHsv"/>                       <hr><div style="color:green">
+    form.tryRgb                     </div>   <fmt:message key="form.tryRgb"/>                       <hr><div style="color:green">
+    form.testedColors               </div>   <fmt:message key="form.testedColors"/>                 <hr><div style="color:green">
+    form.notSatisfied               </div>   <fmt:message key="form.notSatisfied"/>                 <hr><div style="color:green">
+    form.anyResult                  </div>   <fmt:message key="form.anyResult"/>                    <hr><div style="color:green">
+    form.oppositeComponentForeground</div>   <fmt:message key="form.oppositeComponentForeground"/>  <hr><div style="color:green">
+    form.oppositeComponentBackground</div>   <fmt:message key="form.oppositeComponentBackground"/>  <hr><div style="color:green">
+    message.addon                   </div>   <fmt:message key="message.addon"/>                     <hr><div style="color:green">
+    footer.poweredBy                </div>   <fmt:message key="footer.poweredBy"/>                  <hr><div style="color:green">
+    footer.availableUnder           </div>   <fmt:message key="footer.availableUnder"/>             <hr><div style="color:green">
+    footer.link-twitter             </div>   <fmt:message key="footer.link-twitter"/>              <hr><div style="color:green">
+    footer.link-git                 </div>   <fmt:message key="footer.link-git"/>                  <hr>
+
+ --%>
+
 

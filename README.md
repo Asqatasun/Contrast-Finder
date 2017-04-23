@@ -18,7 +18,6 @@ This helps you in satisfying web accessibility (a11y) tests on contrasts:
 ## Demo
 https://app.contrast-finder.org
 
-
 ## Why another contrast tool ?
 
 Just to **provide contrast solutions** !
@@ -33,7 +32,6 @@ Go to the [documentation](https://github.com/Asqatasun/Contrast-Finder/blob/mast
 
 ## Screenshots
 ![Screenshot - Contrast-Finder v0.3.5](https://github.com/Asqatasun/Contrast-Finder/blob/master/documentation/en/images/screenshot.EN_contrast-finder.v0.3.5_2016-12-19.png)
-
 
 ---
 
