@@ -35,7 +35,9 @@
   * http://jxnblk.com/colorable/demos/matrix/
   * http://www.aremycoloursaccessible.com/
 
-### Vision simulation
-* http://paletton.com/
+### Color scheme generation
+
+* http://paletton.com/ very popular but n real option for accessibility (as of 2016), and not opensource
+* [Palat](https://dobtco.github.io/palat/) generate accessible color scheme
 
 
