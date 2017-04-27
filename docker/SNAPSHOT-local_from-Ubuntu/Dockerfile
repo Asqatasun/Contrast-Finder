@@ -31,6 +31,9 @@ RUN  cd      /root/contrast-*/install/                      && \
      touch   /var/log/contrast-finder/contrast-finder.log   && \
      rm -rf  /root/contrast-*  && echo "-- Install: Ok"
 
+# Health Check of the Docker Container
+# ----> see asqatasun/contrast-finder:pre-requisites_from-Ubuntu
+
 CMD  service tomcat7 start                                  ;      \
      tail -f /var/log/tomcat7/catalina.out                         \
              /var/log/contrast-finder/contrast-finder.log

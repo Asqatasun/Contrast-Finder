@@ -54,6 +54,9 @@ RUN  cd         /root/                                        && \
 ENV CONTRAST_FINDER=${CONTRAST_FINDER_RELEASE}
 ENV SRC=${SRC_URL}
 
+# Health Check of the Docker Container
+# ----> see asqatasun/contrast-finder:pre-requisites_from-Ubuntu
+
 CMD  service tomcat7 start                                  ;      \
      tail -f /var/log/tomcat7/catalina.out                         \
              /var/log/contrast-finder/contrast-finder.log
