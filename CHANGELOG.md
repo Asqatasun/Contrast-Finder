@@ -6,7 +6,7 @@ Features:
 none
 
 Security:
-- [#44 - Upgrade outdated dependencies: SpringFramework, maven-surefire-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/44)
+- [#44 - Upgrade outdated dependencies: SpringFramework, maven-surefire-plugin, maven-war-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/44)
 
 Bugs:
 - [#45 - Fixed docker/pre-requisites: syntax error](https://github.com/Asqatasun/Contrast-Finder/issues/45)
