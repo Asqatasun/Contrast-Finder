@@ -1,2 +1,14 @@
-piwik_analytics_server=
-piwik_analytics_key=
+
+# Default algorithm  ("HSV" or "Rgb")
+# ---> option to override the compile default value ("HSV")
+#      HSV = a range of valid colors
+#      Rgb = valid colors and very close to initial color
+###############################################
+# default_algorithm=HSV
+# default_algorithm=Rgb
+
+
+# Web analytics Piwik
+###############################################
+# piwik_analytics_server=
+# piwik_analytics_key=

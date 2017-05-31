@@ -74,6 +74,23 @@ public class IndexController {
     @Value("${piwik_analytics_server:}")
     private String piwikAnalyticServer;
 
+    /**
+     * default algorithm  ("HSV")
+     * used only in this.initAccueil()
+     *      HSV = a range of valid colors
+     *      Rgb = valid colors and very close to initial color
+     *
+     *      can be override in the following file:
+     *      /etc/contrast-finder/contrast-finder.conf
+     *
+     *      a bad value is fixed by the default algo ("HSV") in ColorModel class
+     */
+    @Value("${default_algorithm:HSV}")
+    // @Value("${default_algorithm:HSV}")
+    // @Value("${default_algorithm:Rgb}")
+    private String defaultAlgorithm;
+
+
     @Autowired
     private ColorFinderFactory colorFinderFactory;
 
@@ -94,6 +111,12 @@ public class IndexController {
     @RequestMapping(value = "form.html")
     public String initAccueil(final Model model) {
         ColorModel colorModel = new ColorModel();
+        if (defaultAlgorithm.equals("HSV") || defaultAlgorithm.equals("Rgb")) {
+            colorModel.setAlgo(defaultAlgorithm);
+        }  // Default algo in ColorModel class is "HSV"
+        model.addAttribute("defaultAlgorithm", defaultAlgorithm);
+        model.addAttribute("algo", colorModel.getAlgo());
+
         model.addAttribute("piwikKey",    piwikAnalyticsKey);
         model.addAttribute("piwikServer", piwikAnalyticServer);
         model.addAttribute(commandName, colorModel);

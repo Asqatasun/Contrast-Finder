@@ -12,7 +12,8 @@ Bugs:
 - [#45 - Fixed docker/pre-requisites: syntax error](https://github.com/Asqatasun/Contrast-Finder/issues/45)
 - [#46 - Fixed maven warnings: 'version' contains an expression but should be a constant](https://github.com/Asqatasun/Contrast-Finder/issues/46)
 
-Configuration:
+Configuration: 
+- [#50 - contrast-finder.conf file: added option to override the default algorithm](https://github.com/Asqatasun/Contrast-Finder/issues/50) 
 - [#47 - Added prerequisites for maven (version 3.1)](https://github.com/Asqatasun/Contrast-Finder/issues/47) 
 - [#49 - Dockerfile: added HEALTHCHECK instruction](https://github.com/Asqatasun/Contrast-Finder/issues/49) 
 
