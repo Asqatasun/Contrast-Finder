@@ -52,7 +52,7 @@ public final class ColorConverter {
      * @param offsetHue
      * @param offsetSaturation
      * @param offsetBrightness
-     * @return
+     * @return Color object
      */
     public static Color offsetHsbColor(Color color, float offsetHue, float offsetSaturation, float offsetBrightness) {
         float[] hsbValues = new float[MAX_COMPONENT];
@@ -68,7 +68,6 @@ public final class ColorConverter {
     }
 
     /**
-     * 
      * @param color
      * @return the brightness of the given color
      */
@@ -81,7 +80,6 @@ public final class ColorConverter {
     }
 
     /**
-     * 
      * @param color
      * @return the saturation of the given color
      */
@@ -94,7 +92,6 @@ public final class ColorConverter {
     }
 
     /**
-     * 
      * @param color
      * @return the hue of the given color
      */
@@ -107,20 +104,18 @@ public final class ColorConverter {
     }
 
     /**
-     *
      * @param bgColor
      * @param offsetRed
      * @param offsetGreen
      * @param offsetBlue
-     * @return
+     * @return Color object
      */
     public static Color offsetRgbColor(Color bgColor, int offsetRed, int offsetGreen, int offsetBlue) {
         return new Color(bgColor.getRed() + offsetRed, bgColor.getGreen() + offsetGreen, bgColor.getBlue() + offsetBlue);
     }
 
     /**
-     *
-     * @param colorStr
+     * @param colorStr color in short hexadecimal format, example: #FFF or #FFFFFF
      * @return the RGB Color from hex Color
      */
     public static Color hex2Rgb(String colorStr) {
@@ -144,9 +139,8 @@ public final class ColorConverter {
     }
 
     /**
-     * 
-     * @param colorStr
-     * @return 
+     * @param colorStr color in short hexadecimal format, example: #FFF
+     * @return Color object
      */
     private static Color getNewColorShortHexa(String colorStr) {
         StringBuilder newColor = new StringBuilder();
@@ -157,9 +151,8 @@ public final class ColorConverter {
     }
 
     /**
-     * 
      * @param colorStr
-     * @return 
+     * @return Color object
      */
     private static Color getNewColor(String colorStr) {
         return new Color(
@@ -169,9 +162,8 @@ public final class ColorConverter {
     }
 
     /**
-     * 
      * @param color
-     * @return 
+     * @return color in RGB format, example: rgb(255, 255, 255)
      */
     public static String hex2Rgb(Color color) {
         Integer red = color.getRed();
@@ -181,9 +173,8 @@ public final class ColorConverter {
     }
 
     /**
-     * 
      * @param color
-     * @return 
+     * @return color in hexadecimal format, example: #FFFFFF
      */
     public static String rgb2Hex(Color color) {
         return (String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue())).toUpperCase();
@@ -194,10 +185,10 @@ public final class ColorConverter {
     private static final int CONSTANT_S_COMPONENTS_TWO_HUNDRED = 200;
     private static final int CONSTANT_SL_COMPONENTS_TWO = 2;
     private static final int CONSTANT_S_COMPONENTS_FIFTY = 50;
+
     /**
-     * 
      * @param color
-     * @return 
+     * @return color in HSL format, example: hsl(0, 0%, 100%)
      */
     public static String rgb2Hsl(Color color) {
         float[] hsvTab = new float[MAX_COMPONENT];

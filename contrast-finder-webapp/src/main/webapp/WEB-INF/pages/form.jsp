@@ -19,6 +19,11 @@
                 <%-- Firefox addon --%>
                 <%-- <%@include file='/WEB-INF/template/cf-message.jspf' %>--%>
 
+                <%-- DEBUG   contrast-finder.conf
+                     defaultAlgorithm <strong> ${defaultAlgorithm}           </strong> <br>
+                     cookie.algo      <strong> ${cookie.algo.value}          </strong> <br>
+                     algo             <strong> ${algo}                       </strong> <br>     --%>
+                    
                 <%-- ===== FORM ========================================================================================= --%>
                 <div id="set-up-form" class="row">
                     <div class="col-lg-12">
@@ -126,7 +131,7 @@
                                         <div class="cf-group-fields">
                                             <div class="radio first-radio">
                                                 <label for="algo1">
-                                                    <form:radiobutton id="algo1" path="algo" value="HSV" checked="checked"/>
+                                                    <form:radiobutton id="algo1" path="algo" value="HSV"/>
                                                     <fmt:message key="form.algoHSV"/>
                                                 </label>
                                             </div>

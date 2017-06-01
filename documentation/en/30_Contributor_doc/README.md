@@ -1,8 +1,13 @@
 #  Developer documentation 
 
+* [Building Contrast-Finder](Build/README.md)
+* [Release a version of Contrast-Finder](Release/README.md) 
+
+-----
+
 * JavaDoc
 * OWASP Dependency-Check
-* [Release a version of Contrast-Finder](Release/README.md) 
+* Checking for new dependency / plugin updates
 
 ## JavaDoc
 
@@ -30,6 +35,8 @@ target/site/testapidocs
 * [Apache Maven Javadoc Plugin](https://maven.apache.org/plugins/maven-javadoc-plugin/)
 * [Generate Javadocs](https://maven.apache.org/plugins/maven-javadoc-plugin/usage.html)
 * [Javadoc Plugin Documentation](https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html)
+
+
 
 ##  OWASP Dependency-Check
 Scan Contrast-Finder to identify the use of known vulnerable components. 
@@ -61,3 +68,19 @@ mvn dependency-check:help -Ddetail=true -Dgoal=aggregate
 * https://www.owasp.org/index.php/OWASP_Dependency_Check
 * http://jeremylong.github.io/DependencyCheck/
 * http://jeremylong.github.io/DependencyCheck/dependency-check-maven/
+
+## Checking for new dependency / plugin updates
+```bash
+# Checking for new dependency updates
+mvn versions:display-dependency-updates 
+
+# Checking for new plugin updates
+mvn versions:display-plugin-updates  
+
+# Checking for new property-linked updates
+mvn versions:display-property-updates 
+```
+### Documentation
+* http://www.mojohaus.org/versions-maven-plugin/examples/display-dependency-updates.html
+* http://www.mojohaus.org/versions-maven-plugin/examples/display-plugin-updates.html
+* http://www.mojohaus.org/versions-maven-plugin/examples/display-property-updates.html

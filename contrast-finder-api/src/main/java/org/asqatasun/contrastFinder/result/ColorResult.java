@@ -30,7 +30,6 @@ import java.util.Collection;
 public interface ColorResult {
 
     /**
-     * 
      * @param foreground
      * @param backgroud
      * @param threashold 
@@ -38,49 +37,44 @@ public interface ColorResult {
     void setSubmittedColors(Color foreground, Color backgroud, Float threashold);
     
     /**
-     * 
-     * @return 
+     * @return ColorCombinaison object
      */
     ColorCombinaison getSubmittedCombinaisonColor();
     
     /**
-     * 
-     * @return 
+     * @return true if is valid combinaison
      */
     boolean isCombinaisonValid();
     
     /**
-     * 
-     * @return 
+     *
+     * @return Collection object of ColorCombinaison objects
      */
     Collection<ColorCombinaison> getSuggestedColors();
     
     /**
-     * 
-     * @return 
+     * @return the number of suggested colors
      */
     int getNumberOfSuggestedColors();
     
     /**
-     * 
-     * @param combinaison 
+     * @param combinaison
      */
     void addSuggestedColor(ColorCombinaison combinaison);
     
     /**
-     * 
-     * @return 
+     * @return Threashold
      */
     Float getThreashold();
     
     /**
-     * 
      * @return the number of tested colors
      */
     int getNumberOfTestedColors();
 
     /**
      * set the number of tested colors
+     * @param testedColors
      */
     void setNumberOfTestedColors(int testedColors);
 

@@ -29,10 +29,7 @@ import org.asqatasun.contrastFinder.result.ColorResult;
 public interface ColorResultFactory {
 
     /**
-     * 
-     * @param foundColor
-     * @param comparisonColor
-     * @return 
+     * @return ColorResult object
      */
     ColorResult getColorResult();
     

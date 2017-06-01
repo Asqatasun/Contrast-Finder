@@ -20,6 +20,10 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 
 # environment variables
 ENV CONTRAST_FINDER_RELEASE="0.4.7"
+ENV CONF_DEFAULT_ALGO="Rgb"
+    # ENV CONF_DEFAULT_ALGO="Rgb"
+    # ENV CONF_DEFAULT_ALGO="HSV"
+    # ENV CONF_DEFAULT_ALGO="Bad_Algo"
 
 # Add contrast-finder .war
 ADD contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz  /root
@@ -31,12 +35,7 @@ RUN  cd      /root/contrast-*/install/                      && \
      touch   /var/log/contrast-finder/contrast-finder.log   && \
      rm -rf  /root/contrast-*  && echo "-- Install: Ok"
 
-# Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_from-Ubuntu
-
-CMD  service tomcat7 start                                  ;      \
-     tail -f /var/log/tomcat7/catalina.out                         \
+CMD  echo "default_algorithm=${CONF_DEFAULT_ALGO}" >> /etc/contrast-finder/contrast-finder.conf     ; \
+     service tomcat7 start                                                                           ; \
+     tail -f /var/log/tomcat7/catalina.out                 \
              /var/log/contrast-finder/contrast-finder.log
-
-
-

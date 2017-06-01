@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.4.6</version>
+        <version>0.4.7</version>
     </parent>
     <artifactId>contrast-finder-hsv</artifactId>
-    <version>${project.parent.version}</version>
+    <version>0.4.7</version>
     <packaging>jar</packaging>
 
     <name>contrast-finder-hsv</name>

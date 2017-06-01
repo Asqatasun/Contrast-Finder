@@ -58,8 +58,7 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
-     * @return
+     * @return Color object
      */
     @Override
     public Color getColor() {
@@ -67,7 +66,6 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
      * @param color
      */
     @Override
@@ -76,16 +74,14 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     * 
-     * @return 
+     * @return gap = threashold - contrastRatio
      */
     public Float getGap() {
         return  threashold.floatValue() - contrastRatio.floatValue();
     }
     
     /**
-     *
-     * @return
+     * @return contrast ratio
      */
     @Override
     public Double getContrast() {
@@ -99,17 +95,21 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
         return (double) Math.round(contrastRatio * ROUND_VALUE) / ROUND_VALUE;
     }
 
-    
+    /**
+     * @param distance
+     */
     public void setDistanceFromInitialColor(Double distance) {
         this.distance = distance;
     }
 
+    /**
+     * @return distance
+     */
     public Double getDistance() {
         return distance;
     }
     
     /**
-     *
      * @param threshold
      */
     @Override
@@ -118,8 +118,7 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
-     * @param threshold
+     * @return threshold
      */
     @Override
     public Double getThreshold() {
@@ -127,8 +126,7 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
-     * @return
+     * @return true if is valid contrast
      */
     @Override
     public boolean isContrastValid() {
@@ -136,8 +134,7 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
-     * @return
+     * @return Color object
      */
     @Override
     public Color getComparisonColor() {
@@ -145,7 +142,6 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
      * @param color
      */
     @Override
@@ -154,8 +150,7 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
-     * @return
+     * @return color in hexadecimal format, example: #FFFFFF
      */
     @Override
     public String getHexaColor() {
@@ -163,8 +158,7 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
-     * @return
+     * @return color in hexadecimal format, example: #FFFFFF
      */
     @Override
     public String getHexaColorComp() {
@@ -172,8 +166,7 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
-     * @return
+     * @return color in HSL format, example: hsl(0, 0%, 100%)
      */
     @Override
     public String getHslColor() {
@@ -181,8 +174,7 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
-     * @return
+     * @return color in HSL format, example: hsl(0, 0%, 100%)
      */
     @Override
     public String getHslColorComp() {
@@ -190,9 +182,7 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
      * @param obj
-     * @return
      */
     @Override
     public boolean equals(Object obj) {
@@ -213,8 +203,7 @@ public class ColorCombinaisonImpl implements ColorCombinaison {
     }
 
     /**
-     *
-     * @return
+     * @return hash code
      */
     @Override
     public int hashCode() {

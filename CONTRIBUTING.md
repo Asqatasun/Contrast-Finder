@@ -41,8 +41,6 @@ git checkout develop
 docker/compile_and_build_docker_image.sh -l -s ${PWD} -d docker/SNAPSHOT-local_from-Ubuntu
 ```
 
-
-
 ## Sources of inspiration for CONTRIBUTING.md
 
 * For contributors doc [Gitlab Workflow](https://about.gitlab.com/handbook/#gitlab-workflow)

@@ -1,9 +1,9 @@
 FROM ubuntu:14.04
 LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                            \
-      org.label-schema.name           = "Contrast-Finder - WebApp pre-requisites"                              \
-      org.label-schema.version        = "0.4.6"                                             \
+      org.label-schema.name           = "Contrast-Finder - WebApp pre-requisites"               \
+      org.label-schema.version        = "0.4.7"                                             \
       org.label-schema.url            = "https://contrast-finder.org"                           \
-      org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"          \
+      org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"
           # ----> documentation  http://label-schema.org/
 
 # #### usage ######################################################
@@ -25,6 +25,7 @@ EXPOSE  $WWWPORT
 RUN  apt-get update                                         && \
      apt-get -y --no-install-recommends                             \
              install wget                                           \
+                     curl                                           \
                      ca-certificates                                \
                      tomcat7                                        \
                      libspring-instrument-java              && \
@@ -41,7 +42,18 @@ RUN  apt-get update                                         && \
              /usr/share/tomcat7/lib/spring3-instrument-tomcat.jar
 
 
-
+# Health Check of the Docker Container
+HEALTHCHECK --timeout=3s    \
+            CMD curl --fail http://localhost:8080/contrast-finder/ || exit 1
+            ######################################################################
+            # doc: https://docs.docker.com/engine/reference/builder/#healthcheck
+            # options:  --interval=DURATION (default: 30s)
+            #           --timeout=DURATION (default: 30s)
+            #           --retries=N (default: 3)
+            # can be overridden at the command line 'docker run --health-cmd (...)'
+            ######################################################################
 
 CMD  service tomcat7 start                      ;  \
      tail -f /var/log/tomcat7/catalina.out
+
+

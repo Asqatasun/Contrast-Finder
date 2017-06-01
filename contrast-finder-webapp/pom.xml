@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.4.6</version>
+        <version>0.4.7</version>
     </parent>
     <artifactId>contrast-finder-webapp</artifactId>
-    <version>${project.parent.version}</version>
+    <version>0.4.7</version>
     <packaging>war</packaging>
 
     <name>contrast-finder-webapp</name>
@@ -27,7 +27,7 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <springVersion>4.3.7.RELEASE</springVersion>
+        <springVersion>4.3.8.RELEASE</springVersion>
         <springSecurityVersion>4.2.2.RELEASE</springSecurityVersion>
     </properties>
 
@@ -146,15 +146,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                </configuration>
+                <version>3.1.0</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
                         <phase>validate</phase>

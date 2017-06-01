@@ -36,8 +36,11 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.CookieValue;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Cookie;
 import javax.validation.Valid;
 import java.awt.*;
 
@@ -74,6 +77,23 @@ public class IndexController {
     @Value("${piwik_analytics_server:}")
     private String piwikAnalyticServer;
 
+    /**
+     * default algorithm  ("HSV")
+     * used only in this.initAccueil()
+     *      HSV = a range of valid colors
+     *      Rgb = valid colors and very close to initial color
+     *
+     *      can be override in the following file:
+     *      /etc/contrast-finder/contrast-finder.conf
+     *
+     *      a bad value is fixed by the default algo ("HSV") in ColorModel class
+     */
+    @Value("${default_algorithm:HSV}")
+    // @Value("${default_algorithm:HSV}")
+    // @Value("${default_algorithm:Rgb}")
+    private String defaultAlgorithm;
+
+
     @Autowired
     private ColorFinderFactory colorFinderFactory;
 
@@ -89,28 +109,54 @@ public class IndexController {
      * Form initialisation
      *
      * @param model model of the page
-     * @return      page name to display
+     * @return HTML
      */
     @RequestMapping(value = "form.html")
-    public String initAccueil(final Model model) {
+    public String initAccueil(final Model model,
+                              @CookieValue(value = "algo", defaultValue = "") String algoCookie) {
         ColorModel colorModel = new ColorModel();
+        if (algoCookie.equals("HSV") || algoCookie.equals("Rgb")) {
+            colorModel.setAlgo(algoCookie);
+        }
+        else if (defaultAlgorithm.equals("HSV") || defaultAlgorithm.equals("Rgb")) {
+            colorModel.setAlgo(defaultAlgorithm);
+        }  // Default algo in ColorModel class is "HSV"
+        model.addAttribute("defaultAlgorithm", defaultAlgorithm);
+        model.addAttribute("algo", colorModel.getAlgo());
+
         model.addAttribute("piwikKey",    piwikAnalyticsKey);
         model.addAttribute("piwikServer", piwikAnalyticServer);
         model.addAttribute(commandName, colorModel);
         return mainPageView;
     }
 
+
+
+
     /**
      * @param model
      * @param colorModel
      * @param result
-     * @return
+     * @return HTML
      */
     @RequestMapping(value = "result.html", method = RequestMethod.GET)
-    public String getPageResultFromGet(final Model model, @Valid ColorModel colorModel, BindingResult result, HttpServletRequest request) {
+    public String getPageResultFromGet( final Model model,
+                                        @Valid ColorModel colorModel,
+                                        BindingResult result,
+                                        @CookieValue(value = "algo", defaultValue = "") String algoCookie,
+                                        HttpServletRequest request,
+                                        HttpServletResponse response) {
         if (result.hasErrors()) {
             return mainPageView;
         } else {
+
+            // Add cookie
+            if(!(algoCookie.equals(colorModel.getAlgo()))){
+                Cookie cookie = new Cookie("algo", colorModel.getAlgo());
+                cookie.setMaxAge(30*24*60*60); // set expire time to 30 days
+                response.addCookie(cookie);
+            }
+
 
             /* get user's color selection */
             Color foregroundColor =

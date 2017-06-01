@@ -34,8 +34,17 @@
   * http://jxnblk.com/colorable/demos/text/
   * http://jxnblk.com/colorable/demos/matrix/
   * http://www.aremycoloursaccessible.com/
+* [Sass Contrast Functions](https://codepen.io/giana/project/full/ZWbGzD)
+
+### Color scheme generation
+
+* [Palat](https://dobtco.github.io/palat/) generate accessible color scheme
+  * Ruby gem - https://github.com/dobtco/palat/
 
 ### Vision simulation
-* http://paletton.com/
+
+* http://paletton.com/ very popular but n real option for accessibility (as of 2016), and not opensource
+* http://www.getstark.co/
+  * https://github.com/stark-contrast/stark-sketch-plugin
 
 

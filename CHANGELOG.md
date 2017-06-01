@@ -1,4 +1,29 @@
 
+Contrast-Finder 0.4.7, 2017-06-01
+---------------------------------
+
+Features:
+- [#51 - Added a cookie to keep the user's choice on the algorithm to use](https://github.com/Asqatasun/Contrast-Finder/issues/51)
+
+Security:
+- [#44 - Upgrade outdated dependencies: SpringFramework, maven-surefire, maven-war, maven-dependency](https://github.com/Asqatasun/Contrast-Finder/issues/44)
+
+Bugs:
+- [#45 - Fixed docker/pre-requisites: syntax error](https://github.com/Asqatasun/Contrast-Finder/issues/45)
+- [#46 - Fixed maven warnings: 'version' contains an expression but should be a constant](https://github.com/Asqatasun/Contrast-Finder/issues/46)
+
+Configuration: 
+- [#50 - contrast-finder.conf file: added option to override the default algorithm](https://github.com/Asqatasun/Contrast-Finder/issues/50) 
+- [#47 - Added prerequisites for maven (version 3.1)](https://github.com/Asqatasun/Contrast-Finder/issues/47) 
+- [#49 - Dockerfile: added HEALTHCHECK instruction](https://github.com/Asqatasun/Contrast-Finder/issues/49) 
+
+Documentation:
+- [#42 - Fixed Javadoc warnings](https://github.com/Asqatasun/Contrast-Finder/issues/42) 
+- [#12 - Added documentation for releasing a new version](https://github.com/Asqatasun/Contrast-Finder/issues/12) 
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+
 Contrast-Finder 0.4.6, 2017-04-12
 ---------------------------------
 
@@ -22,7 +47,7 @@ Documentation:
 - [#8 - Howto build & install: missing libspring-instrument-java](https://github.com/Asqatasun/Contrast-Finder/issues/8)
 
 Upgrade-o-meter:
-none
+just replace the .war file and restart Tomcat
 
 
 Contrast-Finder 0.4.5, 2017-03-30

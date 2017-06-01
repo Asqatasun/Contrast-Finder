@@ -1,7 +1,7 @@
 [![License : AGPL v3](https://img.shields.io/badge/License-AGPL3-blue.svg)](https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE) 
 [![Build Status](https://travis-ci.org/Asqatasun/Contrast-Finder.svg)](https://travis-ci.org/Asqatasun/Contrast-Finder)
 [![Release](https://img.shields.io/github/release/asqatasun/Contrast-Finder.svg)](https://github.com/Asqatasun/Contrast-Finder/releases/latest)
-[![Dependency Status](https://www.versioneye.com/user/projects/58eae8f4dff1cd000eaa3fb4/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58eae8f4dff1cd000eaa3fb4)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fb3e17c2ef423822580804/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58fb3e17c2ef423822580804?child=summary#tab-dependencies)
 
 # Contrast-Finder
 
@@ -18,7 +18,6 @@ This helps you in satisfying web accessibility (a11y) tests on contrasts:
 ## Demo
 https://app.contrast-finder.org
 
-
 ## Why another contrast tool ?
 
 Just to **provide contrast solutions** !
@@ -33,7 +32,6 @@ Go to the [documentation](https://github.com/Asqatasun/Contrast-Finder/blob/mast
 
 ## Screenshots
 ![Screenshot - Contrast-Finder v0.3.5](https://github.com/Asqatasun/Contrast-Finder/blob/master/documentation/en/images/screenshot.EN_contrast-finder.v0.3.5_2016-12-19.png)
-
 
 ---
 

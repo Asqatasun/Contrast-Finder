@@ -31,92 +31,78 @@ public interface ColorCombinaison {
     
     
     /**
-     * 
-     * @return 
+     * @return Gap
      */
     Float getGap();
     
     /**
-     *
-     * @return
+     * @return Color object
      */
     Color getColor();
 
     /**
-     *
      * @param color
      */
     void setColor(Color color);
 
     /**
-     *
-     * @return
+     * @return contrast
      */
     Double getContrast();
     
     /**
-     * 
-     * @param distance 
+     * @param distance from initial color
      */
     void setDistanceFromInitialColor(Double distance);
     
     /**
-     * 
-     * @return 
+     * @return distance
      */
     Double getDistance();
     
     /**
-     * 
-     * @param threshold 
+     * @param threshold
      */
     void setThreshold(Double threshold);
     
     /**
-     * 
-     * @return 
+     * @return threshold
      */
     Double getThreshold();
     
     /**
-     * 
-     * @return 
+     * @return true if is valid contrast
      */
     boolean isContrastValid();
 
     /**
-     *
-     * @return
+     * @return Color object
      */
     Color getComparisonColor();
 
     /**
-     *
      * @param color
      */
     void setComparisonColor(Color color);
     
     /**
-     * 
-     * @param color 
+     * @return color in hexadecimal format, example: #FFFFFF
      */
     String getHexaColor();
     
     /**
      * 
-     * @return 
+     * @return color in HSL format, example: hsl(0, 0%, 100%)
      */
     String getHslColor();
     
     /**
-     * 
-     * @param color 
+     * @return color in hexadecimal format, example: #FFFFFF
      */
     String getHexaColorComp();
     
     /**
-     * 
-     * @return 
+     * @return color in HSL format, example: hsl(0, 0%, 100%)
      */
     String getHslColorComp();
 }

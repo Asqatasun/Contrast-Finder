@@ -53,9 +53,8 @@ public class Boundary {
     }
 
     /**
-     *
      * @param gap
-     * @return
+     * @return true if minValue < gap < maxValue
      */
     public boolean isBounded(Float gap) {
         if (gap >= minValue && gap < maxValue) {

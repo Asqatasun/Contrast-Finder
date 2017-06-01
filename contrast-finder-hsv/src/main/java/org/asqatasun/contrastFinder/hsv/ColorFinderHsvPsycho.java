@@ -82,11 +82,9 @@ public class ColorFinderHsvPsycho extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
      * @param colorToKeep
      * @param coefficientLevel
-     * @return
      */
     @Override
     protected void findColors() {
@@ -99,9 +97,7 @@ public class ColorFinderHsvPsycho extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
-     * @param colorToKeep
      * @param increment
      */
     private void changeHue(final Color colorToChange, boolean increment) {
@@ -142,9 +138,7 @@ public class ColorFinderHsvPsycho extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
-     * @param colorToKeep
      * @param increment
      */
     private void changeSaturation(final Color colorToChange, boolean increment) {
@@ -181,9 +175,7 @@ public class ColorFinderHsvPsycho extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param colorToChange
-     * @param colorToKeep
      * @param increment
      */
     private void changeBrightness(final Color colorToChange, boolean increment) {
@@ -222,7 +214,6 @@ public class ColorFinderHsvPsycho extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param currentValue
      * @param offset
      * @return whether the next color is bounded
@@ -233,7 +224,6 @@ public class ColorFinderHsvPsycho extends AbstractColorFinder {
     }
 
     /**
-     * 
      * @param currentValue
      * @param offset
      * @param initialHue
@@ -251,9 +241,7 @@ public class ColorFinderHsvPsycho extends AbstractColorFinder {
     }
 
     /**
-     *
      * @param newColor
-     * @return
      */
     private void addNewColorValid(Color newColor) {
         ColorCombinaison colorCombinaison =
@@ -295,8 +283,7 @@ public class ColorFinderHsvPsycho extends AbstractColorFinder {
     }
 
     /**
-     *
-     * @return
+     * @return "Psycho"
      */
     @Override
     public String getColorFinderKey() {
