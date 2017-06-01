@@ -19,11 +19,11 @@
                 <%-- Firefox addon --%>
                 <%-- <%@include file='/WEB-INF/template/cf-message.jspf' %>--%>
 
-                    <%-- DEBUG   contrast-finder.conf  --%>
-                    <%-- defaultAlgorithm <strong> ${defaultAlgorithm} </strong> <br> --%>
-                    <%-- algo             <strong> ${algo}             </strong> <br> --%>
-
-
+                <%-- DEBUG   contrast-finder.conf
+                     defaultAlgorithm <strong> ${defaultAlgorithm}           </strong> <br>
+                     cookie.algo      <strong> ${cookie.algo.value}          </strong> <br>
+                     algo             <strong> ${algo}                       </strong> <br>     --%>
+                    
                 <%-- ===== FORM ========================================================================================= --%>
                 <div id="set-up-form" class="row">
                     <div class="col-lg-12">

@@ -36,8 +36,11 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.CookieValue;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Cookie;
 import javax.validation.Valid;
 import java.awt.*;
 
@@ -109,9 +112,13 @@ public class IndexController {
      * @return HTML
      */
     @RequestMapping(value = "form.html")
-    public String initAccueil(final Model model) {
+    public String initAccueil(final Model model,
+                              @CookieValue(value = "algo", defaultValue = "") String algoCookie) {
         ColorModel colorModel = new ColorModel();
-        if (defaultAlgorithm.equals("HSV") || defaultAlgorithm.equals("Rgb")) {
+        if (algoCookie.equals("HSV") || algoCookie.equals("Rgb")) {
+            colorModel.setAlgo(algoCookie);
+        }
+        else if (defaultAlgorithm.equals("HSV") || defaultAlgorithm.equals("Rgb")) {
             colorModel.setAlgo(defaultAlgorithm);
         }  // Default algo in ColorModel class is "HSV"
         model.addAttribute("defaultAlgorithm", defaultAlgorithm);
@@ -123,6 +130,9 @@ public class IndexController {
         return mainPageView;
     }
 
+
+
+
     /**
      * @param model
      * @param colorModel
@@ -130,10 +140,23 @@ public class IndexController {
      * @return HTML
      */
     @RequestMapping(value = "result.html", method = RequestMethod.GET)
-    public String getPageResultFromGet(final Model model, @Valid ColorModel colorModel, BindingResult result, HttpServletRequest request) {
+    public String getPageResultFromGet( final Model model,
+                                        @Valid ColorModel colorModel,
+                                        BindingResult result,
+                                        @CookieValue(value = "algo", defaultValue = "") String algoCookie,
+                                        HttpServletRequest request,
+                                        HttpServletResponse response) {
         if (result.hasErrors()) {
             return mainPageView;
         } else {
+
+            // Add cookie
+            if(!(algoCookie.equals(colorModel.getAlgo()))){
+                Cookie cookie = new Cookie("algo", colorModel.getAlgo());
+                cookie.setMaxAge(30*24*60*60); // set expire time to 30 days
+                response.addCookie(cookie);
+            }
+
 
             /* get user's color selection */
             Color foregroundColor =

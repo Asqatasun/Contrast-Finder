@@ -1,12 +1,12 @@
 
-Contrast-Finder 0.4.7, 2017-0x-xx
+Contrast-Finder 0.4.7, 2017-06-02
 ---------------------------------
 
 Features:
-none
+- [#51 - Added a cookie to keep the user's choice on the algorithm to use](https://github.com/Asqatasun/Contrast-Finder/issues/51)
 
 Security:
-- [#44 - Upgrade outdated dependencies: SpringFramework, maven-surefire-plugin, maven-war-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/44)
+- [#44 - Upgrade outdated dependencies: SpringFramework, maven-surefire, maven-war, maven-dependency](https://github.com/Asqatasun/Contrast-Finder/issues/44)
 
 Bugs:
 - [#45 - Fixed docker/pre-requisites: syntax error](https://github.com/Asqatasun/Contrast-Finder/issues/45)
