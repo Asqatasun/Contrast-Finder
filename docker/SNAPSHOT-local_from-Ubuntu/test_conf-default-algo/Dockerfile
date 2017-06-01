@@ -19,7 +19,7 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.4.7"
+ENV CONTRAST_FINDER_RELEASE="0.4.8-dev"
 ENV CONF_DEFAULT_ALGO="Rgb"
     # ENV CONF_DEFAULT_ALGO="Rgb"
     # ENV CONF_DEFAULT_ALGO="HSV"
