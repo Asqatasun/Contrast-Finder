@@ -19,7 +19,7 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.4.7-dev"
+ENV CONTRAST_FINDER_RELEASE="0.4.7"
 ENV PIWIK_KEY="9"
 ENV PIWIK_URL="http://localhost/piwik/"
 

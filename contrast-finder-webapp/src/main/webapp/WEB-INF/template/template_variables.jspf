@@ -2,7 +2,7 @@
 <%@ page pageEncoding="UTF-8" %>
 
     <%-- APP version --%>
-    <c:set var="appVersion"    value="0.4.7-dev"/>
+    <c:set var="appVersion"    value="0.4.7"/>
 
     <%-- APP Name --%>
     <c:set var="appName"    value="Contrast-Finder"/>

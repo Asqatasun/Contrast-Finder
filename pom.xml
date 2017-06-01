@@ -4,7 +4,7 @@
     <groupId>org.asqatasun</groupId>
     <artifactId>contrast-finder</artifactId>
     <packaging>pom</packaging>
-    <version>0.4.7-dev</version>
+    <version>0.4.7</version>
 
     <name>Contrast-Finder</name>
     <url>https://contrast-finder.org</url>

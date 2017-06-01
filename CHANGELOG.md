@@ -1,5 +1,5 @@
 
-Contrast-Finder 0.4.7, 2017-06-02
+Contrast-Finder 0.4.7, 2017-06-01
 ---------------------------------
 
 Features:
@@ -21,8 +21,7 @@ Documentation:
 - [#42 - Fixed Javadoc warnings](https://github.com/Asqatasun/Contrast-Finder/issues/42) 
 - [#12 - Added documentation for releasing a new version](https://github.com/Asqatasun/Contrast-Finder/issues/12) 
 
-Upgrade-o-meter:
-just replace the .war file and restart Tomcat
+Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 
 Contrast-Finder 0.4.6, 2017-04-12
