@@ -94,6 +94,18 @@ public class IndexController {
     private String defaultAlgorithm;
 
 
+    /**
+     * environment
+     *      env = debug
+     *      env = prod    (default)
+     *
+     *      can be override in the following file:
+     *      /etc/contrast-finder/contrast-finder.conf
+     */
+    @Value("${env:prod}")
+    private String env;
+
+
     @Autowired
     private ColorFinderFactory colorFinderFactory;
 
@@ -123,7 +135,7 @@ public class IndexController {
         }  // Default algo in ColorModel class is "HSV"
         model.addAttribute("defaultAlgorithm", defaultAlgorithm);
         model.addAttribute("algo", colorModel.getAlgo());
-
+        model.addAttribute("env",  env);
         model.addAttribute("piwikKey",    piwikAnalyticsKey);
         model.addAttribute("piwikServer", piwikAnalyticServer);
         model.addAttribute(commandName, colorModel);
@@ -187,7 +199,9 @@ public class IndexController {
             model.addAttribute("oldDistance",
                     colorResult.getSubmittedCombinaisonColor().getDistance());
             model.addAttribute("algo", colorModel.getAlgo());
-            model.addAttribute("otherAlgo", getOppositeAlgo(colorModel.getAlgo())); 
+            model.addAttribute("otherAlgo", getOppositeAlgo(colorModel.getAlgo()));
+
+            model.addAttribute("env",  env);
             /* Analytics Keys*/
             model.addAttribute("piwikKey",    piwikAnalyticsKey);
             model.addAttribute("piwikServer", piwikAnalyticServer);
