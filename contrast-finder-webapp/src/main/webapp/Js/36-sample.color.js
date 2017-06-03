@@ -13,10 +13,9 @@ $(document).ready(function() {
 
 function changeColorSample(colorPrefix) {
     var input = document.getElementById(colorPrefix + "-input");
-    var color = input.value;
+    var color = input.value.toLowerCase();
     var sample = document.getElementById(colorPrefix + "-sample");
-    color = color.toString().trim();
- // color = color.toString().replace(/\s/g,""); // replace ' ', \t, \n, ...
+    color = color.toString().replace(/\s/g,""); // replace ' ', \t, \n, ...
     color = isValidateColor(color.toString());
     if (color !== "false") {
         sample.style.backgroundColor = color;
@@ -34,9 +33,14 @@ function changeColorSample(colorPrefix) {
 }
 
 function isValidateColor(str) {
-    if (str.match(/^#[a-fA-F0-9]{6}$/i) !== null
-            || str.match(/^#[a-fA-F0-9]{3}$/i) !== null)
-    {
+    if(str.match(/^rgb\((\d{1,3}),(\d{1,3}),(\d{1,3})\)$/) !== null){
+        return str;
+    }
+    else if (str.match(/^(\d{1,3}),(\d{1,3}),(\d{1,3})$/) !== null){
+        return "rgb("+ str + ")";
+    }
+    else if (str.match(/^#[a-fA-F0-9]{6}$/i) !== null
+            || str.match(/^#[a-fA-F0-9]{3}$/i) !== null){
         return str;
     }
     else if (str.match(/^#?([a-fA-F0-9]{6})$/) !== null
