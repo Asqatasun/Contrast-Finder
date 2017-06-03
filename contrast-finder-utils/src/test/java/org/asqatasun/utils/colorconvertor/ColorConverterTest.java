@@ -138,7 +138,53 @@ public class ColorConverterTest extends TestCase {
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
-    
+
+
+// formatColor()
+/////////////////////////////////////////////////////////////////////
+    public void testFormatColorHexAddHash() {
+        System.out.println("formatColorHexAddHash [000000]");
+        String colorStr  = "000000"; // # must be added
+        String expResult = "#000000";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    public void testFormatColorHexNotAddHash() {
+        System.out.println("formatColorHexNotAddHash [#000000]");
+        String colorStr  = "#000000"; // # must not be added
+        String expResult = "#000000";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    public void testFormatColorHexTrim() {
+        System.out.println("formatColorHexTrim [ #000000 ]");
+        String colorStr  = " #000000 ";
+        String expResult = "#000000";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    public void testFormatColorHexToUpperCase() {
+        System.out.println("formatColorHexToUpperCase [#ffffff]");
+        String colorStr  = "#ffffff";
+        String expResult = "#FFFFFF";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+
+    public void testFormatColorHex() {
+        System.out.println("formatColorHex [ ffffff ]");
+        String colorStr  = " ffffff ";
+        String expResult = "#FFFFFF";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+// String   rgb2Hex()
+/////////////////////////////////////////////////////////////////////
     public void testRgb2hexBlack() {
         System.out.println("Rgb2hexBlack");
         Color color = Color.BLACK;

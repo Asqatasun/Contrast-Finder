@@ -115,6 +115,19 @@ public final class ColorConverter {
     }
 
     /**
+     * @param  colorStr ex: fff, FFF, #fff, #FFF, ffffff, (...)
+     * @return color in hexadecimal, with '#' appended if necessary, in upper case
+     */
+    public static String formatColorStr(String colorStr) {
+        colorStr = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
+        if (colorStr.charAt(0) != '#') {
+            colorStr = "#" + colorStr;
+        }
+        colorStr  = colorStr.toUpperCase();
+        return colorStr;
+    }
+
+    /**
      * @param colorStr color in short hexadecimal format, example: #FFF or #FFFFFF
      * @return the RGB Color from hex Color
      */

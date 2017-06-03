@@ -20,6 +20,7 @@
 package org.asqatasun.contrastFinder.webapp.model;
 
 import org.apache.commons.lang3.StringUtils;
+import org.asqatasun.utils.colorconvertor.ColorConverter;
 
 /**
  * @author alingua
@@ -63,7 +64,7 @@ public class ColorModel {
      * @param foreground Set foregound color (expected as string) in hexadecimal format, beginning with '#'
      */
     public void setForeground(String foreground) {
-        this.foreground = formatColor(foreground);
+        this.foreground = ColorConverter.formatColorStr(foreground);
     }
 
     /**
@@ -77,24 +78,8 @@ public class ColorModel {
     }
 
     public void setBackground(String background) {
-        this.background = formatColor(background);
+        this.background = ColorConverter.formatColorStr(background);
     }
-
-    /**
-     * @param  colorValue
-     * @return color in hexadecimal with '#' appended if necessary
-     */
-    private String formatColor(String colorValue) {
-        colorValue = colorValue.trim();
-     // colorValue = colorValue.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
-        if (colorValue.charAt(0) != '#') {
-            colorValue = "#" + colorValue;
-        }
-        colorValue  = colorValue.toUpperCase();
-        return colorValue;
-    }
-
-
 
     public boolean getIsBackgroundTested() {
         return isBackgroundTested;
