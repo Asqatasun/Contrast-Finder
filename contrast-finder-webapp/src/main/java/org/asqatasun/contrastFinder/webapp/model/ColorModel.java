@@ -56,19 +56,19 @@ public class ColorModel {
         if (StringUtils.isBlank(foreground)) {
             return null;
         }
-        if (foreground.charAt(0) != '#') {
-            setForeground("#" + foreground);
-        }
-        return foreground.toUpperCase();
+        return foreground;
     }
 
     /**
      * @param foreground Set foregound color (expected as string) in hexadecimal format, beginning with '#'
      */
     public void setForeground(String foreground) {
-        foreground      = foreground.trim();
-     // foreground      = foreground.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
-        this.foreground = foreground;
+        foreground = foreground.trim();
+     // foreground = foreground.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
+        if (foreground.charAt(0) != '#') {
+            foreground = "#" + foreground;
+        }
+        this.foreground = foreground.toUpperCase();
     }
 
     /**
@@ -78,16 +78,16 @@ public class ColorModel {
         if (StringUtils.isBlank(background)) {
             return null;
         }
-        if (background.charAt(0) != '#') {
-            setBackground("#" + background);
-        }
-        return background.toUpperCase();
+        return background;
     }
 
     public void setBackground(String background) {
-        background      = background.trim();
-     // background      = background.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
-        this.background = background;
+        background = background.trim();
+     // background = background.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
+        if (background.charAt(0) != '#') {
+            background = "#" + background;
+        }
+        this.background = background.toUpperCase();
     }
 
     public boolean getIsBackgroundTested() {
