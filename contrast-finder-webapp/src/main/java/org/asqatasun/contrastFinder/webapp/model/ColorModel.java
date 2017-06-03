@@ -81,17 +81,17 @@ public class ColorModel {
     }
 
     /**
-     * @param color
+     * @param  colorValue
      * @return color in hexadecimal with '#' appended if necessary
      */
-    private String formatColor(String color) {
-        color = color.trim();
-     // color = color.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
-        if (color.charAt(0) != '#') {
-            color = "#" + color;
+    private String formatColor(String colorValue) {
+        colorValue = colorValue.trim();
+     // colorValue = colorValue.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
+        if (colorValue.charAt(0) != '#') {
+            colorValue = "#" + colorValue;
         }
-        color  = color.toUpperCase();
-        return = color;
+        colorValue  = colorValue.toUpperCase();
+        return colorValue;
     }
 
 
