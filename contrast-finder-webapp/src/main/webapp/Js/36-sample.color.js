@@ -14,6 +14,8 @@ function changeForegroundSample() {
     var input = document.getElementById("foreground-input");
     var color = input.value;
     var sample = document.getElementById("foreground-sample");
+    color = color.toString().trim();
+ // color = color.toString().replace(/\s/g,""); // replace ' ', \t, \n, ...
     color = isValidateColor(color.toString());
     if (color !== "false") {
         sample.style.backgroundColor = color;
@@ -34,6 +36,8 @@ function changeBackgroundSample() {
     var input = document.getElementById("background-input");
     var color = input.value;
     var sample = document.getElementById("background-sample");
+ // color = color.toString().trim();
+    color = color.toString().replace(/\s/g,""); // replace ' ', \t, \n, ...
     color = isValidateColor(color.toString());
     if (color !== "false") {
         sample.style.backgroundColor = color;

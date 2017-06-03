@@ -66,6 +66,8 @@ public class ColorModel {
      * @param foreground Set foregound color (expected as string) in hexadecimal format, beginning with '#'
      */
     public void setForeground(String foreground) {
+        foreground      = foreground.trim();
+     // foreground      = foreground.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
         this.foreground = foreground;
     }
 
@@ -83,6 +85,8 @@ public class ColorModel {
     }
 
     public void setBackground(String background) {
+        background      = background.trim();
+     // background      = background.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
         this.background = background;
     }
 
