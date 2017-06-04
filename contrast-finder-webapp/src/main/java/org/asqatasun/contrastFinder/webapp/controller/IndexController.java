@@ -182,6 +182,11 @@ public class IndexController {
 
             /* Preparing the data and populating the model before returning the view */
             model.addAttribute("colorResult", colorResult);
+
+            model.addAttribute("backgroundHEX",
+                ColorConverter.rgb2Hex(backgroundColor));
+            model.addAttribute("foregroundHEX",
+                ColorConverter.rgb2Hex(foregroundColor));
             model.addAttribute("backgroundColor",
                     ColorConverter.hex2Rgb(backgroundColor));
             model.addAttribute("foregroundColor",
