@@ -142,22 +142,72 @@ public class ColorConverterTest extends TestCase {
 
 // formatColor()
 /////////////////////////////////////////////////////////////////////
-    public void testFormatColorNotValidHex2() {
-        System.out.println("formatColorNotValidHex2 [#ZZZ]");
-        String colorStr  = "#ZZZ"; // # must be added
-        String expResult = "#zzz";
+    public void testFormatColorRgbToLowerCase() {
+        System.out.println("formatColorRgbToLowerCase [RGB(255,255,255)]");
+        String colorStr  = "RGB(255,255,255)"; // # must be added
+        String expResult = "rgb(255,255,255)";
         String result    = ColorConverter.formatColorStr(colorStr);
         assertEquals(expResult, result);
     }
+
+    public void testFormatColorRgb() {
+        System.out.println("formatColorRgb [ rgb( 255, 255, 255 ) ]");
+        String colorStr  = " rgb( 255, 255, 255 ) "; // # must be added
+        String expResult = "rgb(255,255,255)";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+
+
+    public void testFormatColorRgbShortWidthSpace() {
+        System.out.println("formatColorRgbShortWidthSpace [ 255, 255, 255  ]");
+        String colorStr  = " 255, 255, 255  "; // # must be added
+        String expResult = "rgb(255,255,255)";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    public void testFormatColorRgbShort() {
+        System.out.println("formatColorRgbShort [255,255,255]");
+        String colorStr  = "255,255,255"; // # must be added
+        String expResult = "rgb(255,255,255)";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
 
     public void testFormatColorNotValidHex() {
-        System.out.println("formatColorNotValidHex [ZZZ]");
-        String colorStr  = "ZZZ"; // # must be added
-        String expResult = "zzz";
+        System.out.println("formatColorNotValidHex [Ff]");
+        String colorStr  = "Ff"; // # must be added
+        String expResult = "Ff";
         String result    = ColorConverter.formatColorStr(colorStr);
         assertEquals(expResult, result);
     }
 
+    public void testFormatColorNotValidHex2() {
+        System.out.println("formatColorNotValidHex2 [FfFf]");
+        String colorStr  = "FfFf"; // # must be added
+        String expResult = "FfFf";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    public void testFormatColorNotValidHexLetter2() {
+        System.out.println("formatColorNotValidHexLetter2 [#ZzZ]");
+        String colorStr  = "#ZzZ"; // # must be added
+        String expResult = "#ZzZ";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    public void testFormatColorNotValidHexLetter() {
+        System.out.println("formatColorNotValidHexLetter [ZzZ]");
+        String colorStr  = "ZzZ"; // # must be added
+        String expResult = "ZzZ";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
 
     public void testFormatColorHexAddHash() {
         System.out.println("formatColorHexAddHash [000000]");

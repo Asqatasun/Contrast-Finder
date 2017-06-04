@@ -39,7 +39,9 @@ public final class ColorConverter {
     private static final int CONVERT_TO_BASE_16 = 16;
     private static final int MAX_ANGLE = 360;
     private static final String HEXADECIMAL_DICTIONNARY    = "[0-9A-Fa-f]+";   //  FFF,  FFFFFF
-    private static final String HEXADECIMAL_DICTIONNARY_V2 = "#?[0-9A-Fa-f]+"; // #FFF, #FFFFFF
+    private static final String HEXADECIMAL_DICTIONNARY_V2 = "^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"; // #FFF, #FFFFFF, FFF, FFFFFF (but not FF or FFFF)
+    private static final String SHORT_RGB_DICTIONNARY      = "^[0-9]{1,3},[0-9]{1,3},[0-9]{1,3}$";          // ex: 255,255,255
+    private static final String RGB_DICTIONNARY            = "^rgb\\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\\)$"; // ex: rgb(255,255,255)
 
     /**
      * Private constructor, utility class
@@ -116,19 +118,22 @@ public final class ColorConverter {
     }
 
     /**
-     * @param  colorStr ex: fff, FFF, #fff, #FFF, ffffff, (...)
+     * @param  colorStr ex: fff, FFF, #fff, #FFF, ffffff, rgb(255,255,255) or 255,255,255
      * @return color in hexadecimal, with '#' appended if necessary, in upper case
      */
     public static String formatColorStr(String colorStr) {
-        colorStr = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
-        if(colorStr.matches(HEXADECIMAL_DICTIONNARY_V2)) {
-            if (colorStr.charAt(0) != '#') {
-                colorStr = "#" + colorStr;
-            }
-            colorStr = colorStr.toUpperCase();
+        String str = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
+        if (str.toLowerCase().matches(RGB_DICTIONNARY)){  // ex: rgb(255,255,255)
+            colorStr = str.toLowerCase();
         }
-        else {
-            colorStr = colorStr.toLowerCase();
+        else if(str.matches(SHORT_RGB_DICTIONNARY)){ // ex: 255,255,255
+            colorStr = "rgb(" + str + ")";
+        }
+        else if(str.matches(HEXADECIMAL_DICTIONNARY_V2)) {
+            if (str.charAt(0) != '#') {
+                str = "#" + str;
+            }
+            colorStr = str.toUpperCase();
         }
         return colorStr;
     }
