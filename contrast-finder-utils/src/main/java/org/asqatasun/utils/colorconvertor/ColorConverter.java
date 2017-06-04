@@ -38,7 +38,8 @@ public final class ColorConverter {
     private static final int RGB_SHORT_HEXA_LENGTH = 3;
     private static final int CONVERT_TO_BASE_16 = 16;
     private static final int MAX_ANGLE = 360;
-    private static final String HEXADECIMAL_DICTIONNARY = "[0-9A-Fa-f]+";
+    private static final String HEXADECIMAL_DICTIONNARY    = "[0-9A-Fa-f]+";   //  FFF,  FFFFFF
+    private static final String HEXADECIMAL_DICTIONNARY_V2 = "#?[0-9A-Fa-f]+"; // #FFF, #FFFFFF
 
     /**
      * Private constructor, utility class
@@ -120,10 +121,15 @@ public final class ColorConverter {
      */
     public static String formatColorStr(String colorStr) {
         colorStr = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
-        if (colorStr.charAt(0) != '#') {
-            colorStr = "#" + colorStr;
+        if(colorStr.matches(HEXADECIMAL_DICTIONNARY_V2)) {
+            if (colorStr.charAt(0) != '#') {
+                colorStr = "#" + colorStr;
+            }
+            colorStr = colorStr.toUpperCase();
         }
-        colorStr  = colorStr.toUpperCase();
+        else {
+            colorStr = colorStr.toLowerCase();
+        }
         return colorStr;
     }
 

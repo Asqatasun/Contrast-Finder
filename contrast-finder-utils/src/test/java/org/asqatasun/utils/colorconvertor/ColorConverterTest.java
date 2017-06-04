@@ -142,6 +142,23 @@ public class ColorConverterTest extends TestCase {
 
 // formatColor()
 /////////////////////////////////////////////////////////////////////
+    public void testFormatColorNotValidHex2() {
+        System.out.println("formatColorNotValidHex2 [#ZZZ]");
+        String colorStr  = "#ZZZ"; // # must be added
+        String expResult = "#zzz";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    public void testFormatColorNotValidHex() {
+        System.out.println("formatColorNotValidHex [ZZZ]");
+        String colorStr  = "ZZZ"; // # must be added
+        String expResult = "zzz";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+
     public void testFormatColorHexAddHash() {
         System.out.println("formatColorHexAddHash [000000]");
         String colorStr  = "000000"; // # must be added
