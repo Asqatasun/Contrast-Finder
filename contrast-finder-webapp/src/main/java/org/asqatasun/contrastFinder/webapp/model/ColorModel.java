@@ -27,7 +27,8 @@ import org.asqatasun.utils.colorconvertor.ColorConverter;
  */
 public class ColorModel {
 
-    private static final String DEFAULT_FOREGROUND = "#468847";
+ // private static final String DEFAULT_FOREGROUND = "#468847";
+    private static final String DEFAULT_FOREGROUND = "rgb(70, 136, 71)"; // = #468847
     private static final String DEFAULT_BACKGROUND = "#DFF0D8";
     private static final String DEFAULT_RATIO = "4.5";
     private String foreground = DEFAULT_FOREGROUND;
