@@ -217,7 +217,7 @@
                                                 <ul class="color-codes">
                                                     <li class="color-value-hsl">${foregroundHSLColor}</li>
                                                     <li class="color-value-rgb">${foregroundColor}</li>
-                                                    <li class="color-value-hexa">${colorModel.foreground}</li>
+                                                    <li class="color-value-hexa">${foregroundHEX}</li>
                                                 </ul>
                                             </td>
                                             <td class="col02">
@@ -225,7 +225,7 @@
                                                 <ul class="color-codes">
                                                     <li class="color-value-hsl">${backgroundHSLColor}</li>
                                                     <li class="color-value-rgb">${backgroundColor}</li>
-                                                    <li class="color-value-hexa">${colorModel.background}</li>
+                                                    <li class="color-value-hexa">${backgroundHEX}</li>
                                                 </ul>
                                             </td>
                                             <td  class="text-sample" style="color:${colorModel.foreground};background-color:${colorModel.background}">

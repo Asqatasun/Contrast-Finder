@@ -38,8 +38,12 @@ public final class ColorConverter {
     private static final int RGB_SHORT_HEXA_LENGTH = 3;
     private static final int CONVERT_TO_BASE_16 = 16;
     private static final int MAX_ANGLE = 360;
+    private static final int RGB_MIN = 0;
+    private static final int RGB_MAX = 255;
     private static final String HEXADECIMAL_DICTIONNARY    = "[0-9A-Fa-f]+";   //  FFF,  FFFFFF
-    private static final String HEXADECIMAL_DICTIONNARY_V2 = "#?[0-9A-Fa-f]+"; // #FFF, #FFFFFF
+    private static final String HEXADECIMAL_DICTIONNARY_V2 = "^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"; // #FFF, #FFFFFF, FFF, FFFFFF (but not FF or FFFF)
+    private static final String SHORT_RGB_DICTIONNARY      = "^[0-9]{1,3},[0-9]{1,3},[0-9]{1,3}$";          // ex: 255,255,255
+    private static final String RGB_DICTIONNARY            = "^rgb\\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\\)$"; // ex: rgb(255,255,255)
 
     /**
      * Private constructor, utility class
@@ -116,22 +120,62 @@ public final class ColorConverter {
     }
 
     /**
-     * @param  colorStr ex: fff, FFF, #fff, #FFF, ffffff, (...)
+     * @param  colorStr ex: fff, FFF, #fff, #FFF, ffffff, rgb(255,255,255) or 255,255,255
      * @return color in hexadecimal, with '#' appended if necessary, in upper case
      */
     public static String formatColorStr(String colorStr) {
-        colorStr = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
-        if(colorStr.matches(HEXADECIMAL_DICTIONNARY_V2)) {
-            if (colorStr.charAt(0) != '#') {
-                colorStr = "#" + colorStr;
-            }
-            colorStr = colorStr.toUpperCase();
+        String str = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
+        if (str.toLowerCase().matches(RGB_DICTIONNARY)){  // ex: rgb(255,255,255)
+            colorStr = str.toLowerCase();
         }
-        else {
-            colorStr = colorStr.toLowerCase();
+        else if(str.matches(SHORT_RGB_DICTIONNARY)){ // ex: 255,255,255
+            colorStr = "rgb(" + str + ")";
+        }
+        else if(str.matches(HEXADECIMAL_DICTIONNARY_V2)) {
+            if (str.charAt(0) != '#') {
+                str = "#" + str;
+            }
+            colorStr = str.toUpperCase();
         }
         return colorStr;
     }
+
+
+    /**
+     * @param  colorStr ex: fff, FFF, #fff, #FFF, ffffff, rgb(255,255,255) or 255,255,255
+     * @return Color object or NULL
+     */
+    public static Color colorFromStr(String colorStr) {
+        Color  color = hex2Rgb(colorStr);
+        if (color == null) {
+            color = colorFromRgbStr(colorStr);
+        }
+        return color;
+    }
+
+
+    /**
+     * @param  colorStr ex: rgb(255,255,255) or 255,255,255
+     * @return Color object or NULL
+     */
+    public static Color colorFromRgbStr(String colorStr) {
+        Color  color = null;
+        colorStr = colorStr.toLowerCase().replaceAll("\\s", ""); // replace ' ', \t, \n, ...
+        if (colorStr.matches(RGB_DICTIONNARY) | colorStr.matches(SHORT_RGB_DICTIONNARY)){  // ex: rgb(255,255,255) or 255,255,255
+            colorStr = colorStr.replaceAll("rgb\\(","");
+            colorStr = colorStr.replaceAll("\\)","");
+            String[] strList = colorStr.split(",");
+            int r = Integer.parseInt(strList[0]);
+            int g = Integer.parseInt(strList[1]);
+            int b = Integer.parseInt(strList[2]);
+            if(     r <= RGB_MAX && g <= RGB_MAX && b <= RGB_MAX
+                &&  r >= RGB_MIN && g >= RGB_MIN && b >= RGB_MIN){
+                color = new Color(r, g, b);
+            }
+        }
+        return color;
+    }
+
 
     /**
      * @param colorStr color in short hexadecimal format, example: #FFF or #FFFFFF
