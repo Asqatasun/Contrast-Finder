@@ -171,10 +171,8 @@ public class IndexController {
 
 
             /* get user's color selection */
-            Color foregroundColor =
-                    ColorConverter.hex2Rgb(colorModel.getForeground());
-            Color backgroundColor =
-                    ColorConverter.hex2Rgb(colorModel.getBackground());
+            Color foregroundColor = ColorConverter.colorFromStr(colorModel.getForeground());
+            Color backgroundColor = ColorConverter.colorFromStr(colorModel.getBackground());
 
             /* call the color finder with user's selection */
             ColorResult colorResult = getColorFinderAndExecute(
