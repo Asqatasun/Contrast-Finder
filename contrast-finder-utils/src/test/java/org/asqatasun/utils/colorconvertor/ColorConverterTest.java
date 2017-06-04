@@ -252,6 +252,48 @@ public class ColorConverterTest extends TestCase {
 
 // Color  colorFromRgbStr()
 /////////////////////////////////////////////////////////////////////
+
+
+    public void testColorFromRgbStrBadRedValue() {
+        String colorStr = "256, 0, 0";
+        System.out.println("colorFromRgbStrBadRedValue ["+ colorStr +"]");
+        Color expResult = null;
+        Color result = ColorConverter.colorFromRgbStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    public void testColorFromRgbStrBadGreenValue() {
+        String colorStr = "0, 256, 0";
+        System.out.println("colorFromRgbStrBadGreenValue ["+ colorStr +"]");
+        Color expResult = null;
+        Color result = ColorConverter.colorFromRgbStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    public void testColorFromRgbStrBadBlueValue() {
+        String colorStr = "0, 0, 256";
+        System.out.println("colorFromRgbStrBadBlueValue ["+ colorStr +"]");
+        Color expResult = null;
+        Color result = ColorConverter.colorFromRgbStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    public void testColorFromRgbStr() {
+        String colorStr = " rgb(175, 175, 175) ";
+        System.out.println("colorFromRgbStr ["+ colorStr +"]");
+        Color expResult = new Color(175,175,175);
+        Color result = ColorConverter.colorFromRgbStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    public void testColorFromRgbStrShort() {
+        String colorStr = "175, 175, 175";
+        System.out.println("colorFromRgbStrShort ["+ colorStr +"]");
+        Color expResult = new Color(175,175,175);
+        Color result = ColorConverter.colorFromRgbStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
     public void testColorFromRgbStrBlack() {
         String colorStr = "rgb(0,0,0)";
         System.out.println("colorFromRgbStrBlack ["+ colorStr +"]");
