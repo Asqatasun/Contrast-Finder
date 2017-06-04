@@ -15,6 +15,10 @@ a:hover, a:focus {
 code {
     color: #C7254E;
     color: #A6083B; /* AAA */
+  /*  letter-spacing: 0.1em; */
+    font-size: 1em;
+    padding:0;
+
 }
 
 /* Bootstrap override */ 
