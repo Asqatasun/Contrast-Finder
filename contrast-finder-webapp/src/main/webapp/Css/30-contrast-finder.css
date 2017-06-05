@@ -21,8 +21,8 @@ code {
 
 }
 
-/* Bootstrap override */ 
-.help-block {
+/* Bootstrap override */
+.help-block, .has-error .help-block  {
     font-size : 12px;
     color: #5A5A5A; /* AA */
     color: #5A5151; /* AAA */
