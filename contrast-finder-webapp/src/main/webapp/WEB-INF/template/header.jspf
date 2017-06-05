@@ -48,7 +48,22 @@
                     </c:choose>
                 </nav>
 
-                <div id="contrast-finder-logo"></div>
+                <div id="contrast-finder-logo">
+                    <c:choose>
+                        <c:when test="${empty colorResult}">
+                            <img src="Images/contrast_finder_logo.png"
+                                 alt="" />
+                        </c:when>
+                        <c:otherwise>
+                            <a title=" <fmt:message key="logo.link.title"/> " href="./?lang=${lang}">
+                                <img src="Images/contrast_finder_logo.png"
+                                     alt=" <fmt:message key="logo.link.title"/> " />
+                            </a>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+
+
                 <div id="header_title">
                     <h1>${appName_v2}</h1>
                     <p><fmt:message key="form.description"/></p>
