@@ -158,6 +158,11 @@ public class IndexController {
                                         @CookieValue(value = "algo", defaultValue = "") String algoCookie,
                                         HttpServletRequest request,
                                         HttpServletResponse response) {
+        model.addAttribute("env",  env);
+        model.addAttribute("piwikKey",    piwikAnalyticsKey);   /* Analytics Keys*/
+        model.addAttribute("piwikServer", piwikAnalyticServer);
+        model.addAttribute("defaultAlgorithm", defaultAlgorithm);
+        model.addAttribute("algo", colorModel.getAlgo());
         if (result.hasErrors()) {
             return mainPageView;
         } else {
@@ -201,13 +206,8 @@ public class IndexController {
                     ContrastChecker.getConstrastRatio5DigitRound(foregroundColor, backgroundColor));
             model.addAttribute("oldDistance",
                     colorResult.getSubmittedCombinaisonColor().getDistance());
-            model.addAttribute("algo", colorModel.getAlgo());
+            // model.addAttribute("algo", colorModel.getAlgo());
             model.addAttribute("otherAlgo", getOppositeAlgo(colorModel.getAlgo()));
-
-            model.addAttribute("env",  env);
-            /* Analytics Keys*/
-            model.addAttribute("piwikKey",    piwikAnalyticsKey);
-            model.addAttribute("piwikServer", piwikAnalyticServer);
             return mainPageView;
         }
 
