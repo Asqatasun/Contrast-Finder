@@ -1,9 +1,8 @@
 $(document).ready(function() {
-    changeColorSample("foreground");
-    changeColorSample("background");
+    // changeColorSample("foreground");
+    // changeColorSample("background");
     document.getElementById("foreground-input").onchange = function() {
         changeColorSample("foreground");
-        console.log("change foreground Appel");
     };
     document.getElementById("background-input").onchange = function() {
         changeColorSample("background");

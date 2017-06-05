@@ -46,8 +46,14 @@
                             <c:choose>
                                 <c:when test="${not empty foregroundOnError}">
                                     <c:set var="foregroundOnError" value="has-error"/>
+                                    <c:set var="foregroundSampleClass"  value=""/>
+                                    <c:set var="foregroundSampleStyle"  value="background-color:rgba(0,0,0,0);"/>
+                                    <c:set var="foregroundInvalidStyle" value="display:inherit;"/>
                                 </c:when>
                                 <c:otherwise>
+                                    <c:set var="foregroundSampleClass"  value="color-sample sample-bordered"/>
+                                    <c:set var="foregroundSampleStyle"  value="background-color:${colorModel.foreground};"/>
+                                    <c:set var="foregroundInvalidStyle" value="display:none;"/>
                                 </c:otherwise>
                             </c:choose>
                             <div class="form-group ${foregroundOnError}">
@@ -56,8 +62,8 @@
                                     <form:input id="foreground-input" path="foreground" type="text" class="form-control"/>
                                     <span class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
-                                <div id="foreground-sample" class="col-lg-2 color-sample sample-bordered">
-                                    <span id="foreground-sample-invalid" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
+                                <div id="foreground-sample" class="col-lg-2 ${foregroundSampleClass}" style="${foregroundSampleStyle}">
+                                    <span id="foreground-sample-invalid" style="${foregroundInvalidStyle}" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
                                 </div>
                             </div>
 
@@ -68,8 +74,14 @@
                             <c:choose>
                                 <c:when test="${not empty backgroundOnError}">
                                     <c:set var="backgroundOnError" value="has-error"/>
+                                    <c:set var="backgroundSampleClass"  value=""/>
+                                    <c:set var="backgroundSampleStyle"  value="background-color:rgba(0,0,0,0);"/>
+                                    <c:set var="backgroundInvalidStyle" value="display:inherit;"/>
                                 </c:when>
                                 <c:otherwise>
+                                    <c:set var="backgroundSampleClass"  value="color-sample sample-bordered"/>
+                                    <c:set var="backgroundSampleStyle"  value="background-color:${colorModel.background};"/>
+                                    <c:set var="backgroundInvalidStyle" value="display:none;"/>
                                 </c:otherwise>
                             </c:choose>
                             <div class="form-group ${backgroundOnError}">
@@ -78,8 +90,8 @@
                                     <form:input id="background-input" path="background" type="text" class="form-control"/>
                                     <span class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
-                                <div id="background-sample" class="col-lg-2 color-sample sample-bordered">
-                                    <span id="background-sample-invalid" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
+                                <div id="background-sample" class="col-lg-2 ${backgroundSampleClass}" style="${backgroundSampleStyle}">
+                                    <span id="background-sample-invalid" style="${backgroundInvalidStyle}" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
                                 </div>
                             </div>
 
