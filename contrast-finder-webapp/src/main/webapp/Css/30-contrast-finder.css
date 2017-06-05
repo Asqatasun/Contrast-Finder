@@ -153,6 +153,9 @@ legend.control-fieldset  {
     .color-sample {
         margin-left: 15px;
     }
+    #submit-button {
+        margin-left: 15px;
+    }
 }
 /*#scroll-test.affix {
     z-index: 1;
@@ -203,9 +206,15 @@ legend.control-fieldset  {
     }
 }
 
-.help h2{
-    margin-top: 1.4em;
+.help{
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 50em;
 }
+
+    .help h2{
+        margin-top: 1.4em;
+    }
 
 /* footer template */
 footer {
