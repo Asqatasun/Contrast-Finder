@@ -50,7 +50,7 @@
 
                 <div id="contrast-finder-logo">
                     <c:choose>
-                        <c:when test="${empty colorResult}">
+                        <c:when test="${empty colorResult && empty errorResult}">
                             <img src="Images/contrast_finder_logo.png"
                                  alt="" />
                         </c:when>

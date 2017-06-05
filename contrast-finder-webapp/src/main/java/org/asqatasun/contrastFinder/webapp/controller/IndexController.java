@@ -164,6 +164,7 @@ public class IndexController {
         model.addAttribute("defaultAlgorithm", defaultAlgorithm);
         model.addAttribute("algo", colorModel.getAlgo());
         if (result.hasErrors()) {
+            model.addAttribute("errorResult", "result.hasErrors");
             return mainPageView;
         } else {
 
