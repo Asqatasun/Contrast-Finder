@@ -1,15 +1,19 @@
 
-Contrast-Finder 0.4.8, 2017-0x-xx
+Contrast-Finder 0.5.0, 2017-06-09
 ---------------------------------
 
 Features:
-none
+- [#25 - Allowed RGB values in the form](https://github.com/Asqatasun/Contrast-Finder/issues/25)
+- [#57 - Allowed color names (CSS3) in the form](https://github.com/Asqatasun/Contrast-Finder/issues/57)
 
 Security:
-none
+- [#54 - Upgraded SpringFramework to v4.3.9](https://github.com/Asqatasun/Contrast-Finder/issues/54)
 
 Bugs:
-- [#53 - White space allowed around the color in the form](https://github.com/Asqatasun/Contrast-Finder/issues/53)
+- [#53 - White spaces allowed around the color in the form](https://github.com/Asqatasun/Contrast-Finder/issues/53)
+- [#55 - Added "back to the homepage" link](https://github.com/Asqatasun/Contrast-Finder/issues/55)
+- [#58 - Associated the user tips with the color fields](https://github.com/Asqatasun/Contrast-Finder/issues/58)
+- [#60 - Added the "required" attribute to the color fields](https://github.com/Asqatasun/Contrast-Finder/issues/60)
 
 Configuration: 
 - [#52 - contrast-finder.conf: added option for debugging](https://github.com/Asqatasun/Contrast-Finder/issues/52)
@@ -17,8 +21,7 @@ Configuration:
 Documentation:
 none
 
-Upgrade-o-meter:
-just replace the .war file and restart Tomcat
+Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 
 Contrast-Finder 0.4.7, 2017-06-01

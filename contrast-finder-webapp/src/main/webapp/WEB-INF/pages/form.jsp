@@ -59,7 +59,7 @@
                             <div class="form-group ${foregroundOnError}">
                                 <label for="foreground-input" class="col-lg-3 control-label"><fmt:message key="form.foregroundColor"/></label>
                                 <div class="col-lg-4">
-                                    <form:input path="foreground"
+                                    <form:input path="foreground"       required="required"
                                                 id="foreground-input"   aria-describedby="help-block-foreground"
                                                 type="text"             class="form-control"/>
                                     <span id="help-block-foreground" class="help-block"><fmt:message key="form.help"/></span>
@@ -89,7 +89,7 @@
                             <div class="form-group ${backgroundOnError}">
                                 <label for="background-input" class="col-lg-3 control-label"><fmt:message key="form.backgroundColor"/></label>
                                 <div class="col-lg-4">
-                                    <form:input path="background"
+                                    <form:input path="background"       required="required"
                                                 id="background-input"   aria-describedby="help-block-background"
                                                 type="text"             class="form-control"/>
                                     <span id="help-block-background" class="help-block"><fmt:message key="form.help"/></span>
