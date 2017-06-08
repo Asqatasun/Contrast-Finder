@@ -61,7 +61,7 @@
                                 <div class="col-lg-4">
                                     <form:input path="foreground"       required="required"
                                                 id="foreground-input"   aria-describedby="help-block-foreground"
-                                                type="text"             class="form-control"/>
+                                                type="text"             class="form-control form-color-input"/>
                                     <span id="help-block-foreground" class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
                                 <div id="foreground-sample" class="col-lg-2 ${foregroundSampleClass}" style="${foregroundSampleStyle}">
@@ -91,7 +91,7 @@
                                 <div class="col-lg-4">
                                     <form:input path="background"       required="required"
                                                 id="background-input"   aria-describedby="help-block-background"
-                                                type="text"             class="form-control"/>
+                                                type="text"             class="form-control form-color-input"/>
                                     <span id="help-block-background" class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
                                 <div id="background-sample" class="col-lg-2 ${backgroundSampleClass}" style="${backgroundSampleStyle}">
