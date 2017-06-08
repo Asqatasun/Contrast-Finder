@@ -86,7 +86,7 @@ public class ColorModelValidator implements Validator {
             errors.rejectValue(colorKey, "NOT_A_VALID_COLOR", "La couleur doit être entre #000000 à #FFFFFF");
             return;
         }
-        Color color = ColorConverter.hex2Rgb(colorValue);
+        Color color = ColorConverter.colorFromStr(colorValue);
         if (color == null) {
             errors.rejectValue(colorKey, "NOT_A_VALID_COLOR", "La couleur doit être entre #000000 à #FFFFFF");
         }

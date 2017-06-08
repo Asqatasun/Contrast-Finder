@@ -94,6 +94,18 @@ public class IndexController {
     private String defaultAlgorithm;
 
 
+    /**
+     * environment
+     *      env = debug
+     *      env = prod    (default)
+     *
+     *      can be override in the following file:
+     *      /etc/contrast-finder/contrast-finder.conf
+     */
+    @Value("${env:prod}")
+    private String env;
+
+
     @Autowired
     private ColorFinderFactory colorFinderFactory;
 
@@ -123,7 +135,7 @@ public class IndexController {
         }  // Default algo in ColorModel class is "HSV"
         model.addAttribute("defaultAlgorithm", defaultAlgorithm);
         model.addAttribute("algo", colorModel.getAlgo());
-
+        model.addAttribute("env",  env);
         model.addAttribute("piwikKey",    piwikAnalyticsKey);
         model.addAttribute("piwikServer", piwikAnalyticServer);
         model.addAttribute(commandName, colorModel);
@@ -146,7 +158,13 @@ public class IndexController {
                                         @CookieValue(value = "algo", defaultValue = "") String algoCookie,
                                         HttpServletRequest request,
                                         HttpServletResponse response) {
+        model.addAttribute("env",  env);
+        model.addAttribute("piwikKey",    piwikAnalyticsKey);   /* Analytics Keys*/
+        model.addAttribute("piwikServer", piwikAnalyticServer);
+        model.addAttribute("defaultAlgorithm", defaultAlgorithm);
+        model.addAttribute("algo", colorModel.getAlgo());
         if (result.hasErrors()) {
+            model.addAttribute("errorResult", "result.hasErrors");
             return mainPageView;
         } else {
 
@@ -159,10 +177,8 @@ public class IndexController {
 
 
             /* get user's color selection */
-            Color foregroundColor =
-                    ColorConverter.hex2Rgb(colorModel.getForeground());
-            Color backgroundColor =
-                    ColorConverter.hex2Rgb(colorModel.getBackground());
+            Color foregroundColor = ColorConverter.colorFromStr(colorModel.getForeground());
+            Color backgroundColor = ColorConverter.colorFromStr(colorModel.getBackground());
 
             /* call the color finder with user's selection */
             ColorResult colorResult = getColorFinderAndExecute(
@@ -172,6 +188,11 @@ public class IndexController {
 
             /* Preparing the data and populating the model before returning the view */
             model.addAttribute("colorResult", colorResult);
+
+            model.addAttribute("backgroundHEX",
+                ColorConverter.rgb2Hex(backgroundColor));
+            model.addAttribute("foregroundHEX",
+                ColorConverter.rgb2Hex(foregroundColor));
             model.addAttribute("backgroundColor",
                     ColorConverter.hex2Rgb(backgroundColor));
             model.addAttribute("foregroundColor",
@@ -186,11 +207,8 @@ public class IndexController {
                     ContrastChecker.getConstrastRatio5DigitRound(foregroundColor, backgroundColor));
             model.addAttribute("oldDistance",
                     colorResult.getSubmittedCombinaisonColor().getDistance());
-            model.addAttribute("algo", colorModel.getAlgo());
-            model.addAttribute("otherAlgo", getOppositeAlgo(colorModel.getAlgo())); 
-            /* Analytics Keys*/
-            model.addAttribute("piwikKey",    piwikAnalyticsKey);
-            model.addAttribute("piwikServer", piwikAnalyticServer);
+            // model.addAttribute("algo", colorModel.getAlgo());
+            model.addAttribute("otherAlgo", getOppositeAlgo(colorModel.getAlgo()));
             return mainPageView;
         }
 

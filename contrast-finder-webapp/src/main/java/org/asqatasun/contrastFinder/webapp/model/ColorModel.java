@@ -20,13 +20,15 @@
 package org.asqatasun.contrastFinder.webapp.model;
 
 import org.apache.commons.lang3.StringUtils;
+import org.asqatasun.utils.colorconvertor.ColorConverter;
 
 /**
  * @author alingua
  */
 public class ColorModel {
 
-    private static final String DEFAULT_FOREGROUND = "#468847";
+ // private static final String DEFAULT_FOREGROUND = "#468847";
+    private static final String DEFAULT_FOREGROUND = "rgb(70,136,71)"; // = #468847
     private static final String DEFAULT_BACKGROUND = "#DFF0D8";
     private static final String DEFAULT_RATIO = "4.5";
     private String foreground = DEFAULT_FOREGROUND;
@@ -56,17 +58,14 @@ public class ColorModel {
         if (StringUtils.isBlank(foreground)) {
             return null;
         }
-        if (foreground.charAt(0) != '#') {
-            setForeground("#" + foreground);
-        }
-        return foreground.toUpperCase();
+        return foreground;
     }
 
     /**
      * @param foreground Set foregound color (expected as string) in hexadecimal format, beginning with '#'
      */
     public void setForeground(String foreground) {
-        this.foreground = foreground;
+        this.foreground = ColorConverter.formatColorStr(foreground);
     }
 
     /**
@@ -76,14 +75,11 @@ public class ColorModel {
         if (StringUtils.isBlank(background)) {
             return null;
         }
-        if (background.charAt(0) != '#') {
-            setBackground("#" + background);
-        }
-        return background.toUpperCase();
+        return background;
     }
 
     public void setBackground(String background) {
-        this.background = background;
+        this.background = ColorConverter.formatColorStr(background);
     }
 
     public boolean getIsBackgroundTested() {

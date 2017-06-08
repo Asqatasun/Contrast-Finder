@@ -19,11 +19,17 @@
                 <%-- Firefox addon --%>
                 <%-- <%@include file='/WEB-INF/template/cf-message.jspf' %>--%>
 
-                <%-- DEBUG   contrast-finder.conf
-                     defaultAlgorithm <strong> ${defaultAlgorithm}           </strong> <br>
-                     cookie.algo      <strong> ${cookie.algo.value}          </strong> <br>
-                     algo             <strong> ${algo}                       </strong> <br>     --%>
-                    
+                <%-- DEBUG   contrast-finder.conf  --%>
+                <c:if test="${env == 'debug'}">
+                    <div style="background-color:pink; padding: 0.4em;">
+                        env              <strong> ${env}                        </strong> <br>
+                        defaultAlgorithm <strong> ${defaultAlgorithm}           </strong> <br>
+                        cookie.algo      <strong> ${cookie.algo.value}          </strong> <br>
+                        algo             <strong> ${algo}                       </strong> <br>
+                    </div>
+                </c:if>
+
+
                 <%-- ===== FORM ========================================================================================= --%>
                 <div id="set-up-form" class="row">
                     <div class="col-lg-12">
@@ -40,18 +46,26 @@
                             <c:choose>
                                 <c:when test="${not empty foregroundOnError}">
                                     <c:set var="foregroundOnError" value="has-error"/>
+                                    <c:set var="foregroundSampleClass"  value=""/>
+                                    <c:set var="foregroundSampleStyle"  value="background-color:rgba(0,0,0,0);"/>
+                                    <c:set var="foregroundInvalidStyle" value="display:inherit;"/>
                                 </c:when>
                                 <c:otherwise>
+                                    <c:set var="foregroundSampleClass"  value="color-sample sample-bordered"/>
+                                    <c:set var="foregroundSampleStyle"  value="background-color:${colorModel.foreground};"/>
+                                    <c:set var="foregroundInvalidStyle" value="display:none;"/>
                                 </c:otherwise>
                             </c:choose>
                             <div class="form-group ${foregroundOnError}">
                                 <label for="foreground-input" class="col-lg-3 control-label"><fmt:message key="form.foregroundColor"/></label>
                                 <div class="col-lg-4">
-                                    <form:input id="foreground-input" path="foreground" type="text" class="form-control"/>
-                                    <span class="help-block"><fmt:message key="form.help"/></span>
+                                    <form:input path="foreground"       required="required"
+                                                id="foreground-input"   aria-describedby="help-block-foreground"
+                                                type="text"             class="form-control form-color-input"/>
+                                    <span id="help-block-foreground" class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
-                                <div id="foreground-sample" class="col-lg-2 color-sample sample-bordered">
-                                    <span id="foreground-sample-invalid" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
+                                <div id="foreground-sample" class="col-lg-2 ${foregroundSampleClass}" style="${foregroundSampleStyle}">
+                                    <span id="foreground-sample-invalid" style="${foregroundInvalidStyle}" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
                                 </div>
                             </div>
 
@@ -62,18 +76,26 @@
                             <c:choose>
                                 <c:when test="${not empty backgroundOnError}">
                                     <c:set var="backgroundOnError" value="has-error"/>
+                                    <c:set var="backgroundSampleClass"  value=""/>
+                                    <c:set var="backgroundSampleStyle"  value="background-color:rgba(0,0,0,0);"/>
+                                    <c:set var="backgroundInvalidStyle" value="display:inherit;"/>
                                 </c:when>
                                 <c:otherwise>
+                                    <c:set var="backgroundSampleClass"  value="color-sample sample-bordered"/>
+                                    <c:set var="backgroundSampleStyle"  value="background-color:${colorModel.background};"/>
+                                    <c:set var="backgroundInvalidStyle" value="display:none;"/>
                                 </c:otherwise>
                             </c:choose>
                             <div class="form-group ${backgroundOnError}">
                                 <label for="background-input" class="col-lg-3 control-label"><fmt:message key="form.backgroundColor"/></label>
                                 <div class="col-lg-4">
-                                    <form:input id="background-input" path="background" type="text" class="form-control"/>
-                                    <span class="help-block"><fmt:message key="form.help"/></span>
+                                    <form:input path="background"       required="required"
+                                                id="background-input"   aria-describedby="help-block-background"
+                                                type="text"             class="form-control form-color-input"/>
+                                    <span id="help-block-background" class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
-                                <div id="background-sample" class="col-lg-2 color-sample sample-bordered">
-                                    <span id="background-sample-invalid" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
+                                <div id="background-sample" class="col-lg-2 ${backgroundSampleClass}" style="${backgroundSampleStyle}">
+                                    <span id="background-sample-invalid" style="${backgroundInvalidStyle}" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
                                 </div>
                             </div>
 
@@ -211,7 +233,7 @@
                                                 <ul class="color-codes">
                                                     <li class="color-value-hsl">${foregroundHSLColor}</li>
                                                     <li class="color-value-rgb">${foregroundColor}</li>
-                                                    <li class="color-value-hexa">${colorModel.foreground}</li>
+                                                    <li class="color-value-hexa">${foregroundHEX}</li>
                                                 </ul>
                                             </td>
                                             <td class="col02">
@@ -219,7 +241,7 @@
                                                 <ul class="color-codes">
                                                     <li class="color-value-hsl">${backgroundHSLColor}</li>
                                                     <li class="color-value-rgb">${backgroundColor}</li>
-                                                    <li class="color-value-hexa">${colorModel.background}</li>
+                                                    <li class="color-value-hexa">${backgroundHEX}</li>
                                                 </ul>
                                             </td>
                                             <td  class="text-sample" style="color:${colorModel.foreground};background-color:${colorModel.background}">

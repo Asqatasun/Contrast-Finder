@@ -15,10 +15,14 @@ a:hover, a:focus {
 code {
     color: #C7254E;
     color: #A6083B; /* AAA */
+  /*  letter-spacing: 0.1em; */
+    font-size: 1em;
+    padding:0;
+
 }
 
-/* Bootstrap override */ 
-.help-block {
+/* Bootstrap override */
+.help-block, .has-error .help-block  {
     font-size : 12px;
     color: #5A5A5A; /* AA */
     color: #5A5151; /* AAA */
@@ -64,15 +68,21 @@ code {
 }
 
 #contrast-finder-logo {
-    background-image: url("../Images/contrast_finder_logo.png");
-    background-size: 100%;
     float: left;
     width: 150px;
     height: 150px;
-    background-repeat: no-repeat;
     margin-right: 15px;
     margin-top: -35px;
 }
+
+    #contrast-finder-logo a:hover {
+        opacity: .75;
+    }
+    #contrast-finder-logo img  {
+        width: 100%;
+        height: 100%;
+        border:0;
+    }
 
 #initial-contrast {
     margin-bottom: 3px;
@@ -135,6 +145,13 @@ legend.control-fieldset  {
 .form-control.error {
     border-color: #b94a48;
 }
+.form-color-input {
+    /* font-family: Cousine,monospace;  */
+    /* font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; */
+    /* font: 150% Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace; */
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+}
+
 @media (min-width: 1200px) {
     .invalid-color {
         margin-left: -15px;
@@ -147,6 +164,9 @@ legend.control-fieldset  {
         margin-bottom: 0;
     }
     .color-sample {
+        margin-left: 15px;
+    }
+    #submit-button {
         margin-left: 15px;
     }
 }
@@ -199,9 +219,23 @@ legend.control-fieldset  {
     }
 }
 
-.help h2{
-    margin-top: 1.4em;
+.help{
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 50em;
 }
+
+    .help h2{
+        margin-top: 1.4em;
+    }
+
+    .help h3{
+        margin-top: 1.4em;
+    }
+
+    .help h4{
+        margin-top: 1.2em;
+    }
 
 /* footer template */
 footer {

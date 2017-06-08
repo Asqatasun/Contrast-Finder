@@ -1,4 +1,29 @@
 
+Contrast-Finder 0.5.0, 2017-06-09
+---------------------------------
+
+Features:
+- [#25 - Allowed RGB values in the form](https://github.com/Asqatasun/Contrast-Finder/issues/25)
+- [#57 - Allowed color names (CSS3) in the form](https://github.com/Asqatasun/Contrast-Finder/issues/57)
+
+Security:
+- [#54 - Upgraded SpringFramework to v4.3.9](https://github.com/Asqatasun/Contrast-Finder/issues/54)
+
+Bugs:
+- [#53 - White spaces allowed around the color in the form](https://github.com/Asqatasun/Contrast-Finder/issues/53)
+- [#55 - Added "back to the homepage" link](https://github.com/Asqatasun/Contrast-Finder/issues/55)
+- [#58 - Associated the user tips with the color fields](https://github.com/Asqatasun/Contrast-Finder/issues/58)
+- [#60 - Added the "required" attribute to the color fields](https://github.com/Asqatasun/Contrast-Finder/issues/60)
+
+Configuration: 
+- [#52 - contrast-finder.conf: added option for debugging](https://github.com/Asqatasun/Contrast-Finder/issues/52)
+
+Documentation:
+none
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+
 Contrast-Finder 0.4.7, 2017-06-01
 ---------------------------------
 
@@ -13,7 +38,7 @@ Bugs:
 - [#46 - Fixed maven warnings: 'version' contains an expression but should be a constant](https://github.com/Asqatasun/Contrast-Finder/issues/46)
 
 Configuration: 
-- [#50 - contrast-finder.conf file: added option to override the default algorithm](https://github.com/Asqatasun/Contrast-Finder/issues/50) 
+- [#50 - contrast-finder.conf: added option to override the default algorithm](https://github.com/Asqatasun/Contrast-Finder/issues/50) 
 - [#47 - Added prerequisites for maven (version 3.1)](https://github.com/Asqatasun/Contrast-Finder/issues/47) 
 - [#49 - Dockerfile: added HEALTHCHECK instruction](https://github.com/Asqatasun/Contrast-Finder/issues/49) 
 

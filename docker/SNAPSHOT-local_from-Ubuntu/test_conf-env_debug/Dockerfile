@@ -20,6 +20,7 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 
 # environment variables
 ENV CONTRAST_FINDER_RELEASE="0.5.0"
+ENV CONF_ENV="debug"
 
 # Add contrast-finder .war
 ADD contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz  /root
@@ -31,12 +32,7 @@ RUN  cd      /root/contrast-*/install/                      && \
      touch   /var/log/contrast-finder/contrast-finder.log   && \
      rm -rf  /root/contrast-*  && echo "-- Install: Ok"
 
-# Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_from-Ubuntu
-
-CMD  service tomcat7 start                                  ;      \
-     tail -f /var/log/tomcat7/catalina.out                         \
+CMD  echo "env=${CONF_ENV}" >> /etc/contrast-finder/contrast-finder.conf     ; \
+     service tomcat7 start                                                                           ; \
+     tail -f /var/log/tomcat7/catalina.out                 \
              /var/log/contrast-finder/contrast-finder.log
-
-
-

@@ -6,10 +6,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.4.7</version>
+        <version>0.5.0</version>
     </parent>
     <artifactId>contrast-finder-resources</artifactId>
-    <version>0.4.7</version>
+    <version>0.5.0</version>
     <name>contrast-finder-resources</name>
     <url>https://contrast-finder.org</url>
     <organization>

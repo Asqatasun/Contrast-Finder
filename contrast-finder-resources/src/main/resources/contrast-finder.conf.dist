@@ -7,8 +7,12 @@
 # default_algorithm=HSV
 # default_algorithm=Rgb
 
+# environment
+###############################################
+# env=debug
 
 # Web analytics Piwik
 ###############################################
 # piwik_analytics_server=
 # piwik_analytics_key=
+
