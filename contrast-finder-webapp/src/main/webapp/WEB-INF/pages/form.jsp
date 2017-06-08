@@ -59,8 +59,10 @@
                             <div class="form-group ${foregroundOnError}">
                                 <label for="foreground-input" class="col-lg-3 control-label"><fmt:message key="form.foregroundColor"/></label>
                                 <div class="col-lg-4">
-                                    <form:input id="foreground-input" path="foreground" type="text" class="form-control"/>
-                                    <span class="help-block"><fmt:message key="form.help"/></span>
+                                    <form:input path="foreground"
+                                                id="foreground-input"   aria-describedby="help-block-foreground"
+                                                type="text"             class="form-control"/>
+                                    <span id="help-block-foreground" class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
                                 <div id="foreground-sample" class="col-lg-2 ${foregroundSampleClass}" style="${foregroundSampleStyle}">
                                     <span id="foreground-sample-invalid" style="${foregroundInvalidStyle}" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
@@ -87,8 +89,10 @@
                             <div class="form-group ${backgroundOnError}">
                                 <label for="background-input" class="col-lg-3 control-label"><fmt:message key="form.backgroundColor"/></label>
                                 <div class="col-lg-4">
-                                    <form:input id="background-input" path="background" type="text" class="form-control"/>
-                                    <span class="help-block"><fmt:message key="form.help"/></span>
+                                    <form:input path="background"
+                                                id="background-input"   aria-describedby="help-block-background"
+                                                type="text"             class="form-control"/>
+                                    <span id="help-block-background" class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
                                 <div id="background-sample" class="col-lg-2 ${backgroundSampleClass}" style="${backgroundSampleStyle}">
                                     <span id="background-sample-invalid" style="${backgroundInvalidStyle}" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
