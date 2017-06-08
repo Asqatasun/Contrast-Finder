@@ -25,7 +25,7 @@ FROM tomcat:7.0-jre7
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.4.8-dev"
+ENV CONTRAST_FINDER_RELEASE="0.5.0"
 ENV TOMCAT_WEBAPP_DIR="/usr/local/tomcat/webapps"
 
 # Prepare Contrast-Finder
