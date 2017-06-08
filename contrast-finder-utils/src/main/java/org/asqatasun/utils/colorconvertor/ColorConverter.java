@@ -20,9 +20,9 @@
 package org.asqatasun.utils.colorconvertor;
 
 import java.awt.Color;
+import org.asqatasun.utils.colornamelookup.ColorNameLookup;
 
 /**
- *
  * @author alingua
  */
 public final class ColorConverter {
@@ -120,7 +120,7 @@ public final class ColorConverter {
     }
 
     /**
-     * @param  colorStr ex: fff, FFF, #fff, #FFF, ffffff, rgb(255,255,255) or 255,255,255
+     * @param  colorStr ex: fff, FFF, #fff, #FFF, ffffff, rgb(255,255,255) or 255,255,255, color name (black, darkmagenta, ...)
      * @return color in hexadecimal, with '#' appended if necessary, in upper case
      */
     public static String formatColorStr(String colorStr) {
@@ -137,20 +137,41 @@ public final class ColorConverter {
             }
             colorStr = str.toUpperCase();
         }
+        else {
+            ColorNameLookup c = new ColorNameLookup();
+            String name = c.getColorNameFromStr(str);
+            if(name != ""){
+                colorStr = name;
+            }
+        }
         return colorStr;
     }
 
 
     /**
-     * @param  colorStr ex: fff, FFF, #fff, #FFF, ffffff, rgb(255,255,255) or 255,255,255
+     * @param  colorStr ex: fff, FFF, #fff, #FFF, ffffff, rgb(255,255,255) or 255,255,255, color name (black, darkmagenta, ...)
      * @return Color object or NULL
      */
     public static Color colorFromStr(String colorStr) {
         Color  color = hex2Rgb(colorStr);
         if (color == null) {
             color = colorFromRgbStr(colorStr);
+            if (color == null) {
+                color = colorFromColorName(colorStr);
+            }
         }
         return color;
+    }
+
+
+    /**
+     * @param  colorStr ex: silver, red, SteelBlue, ...
+     * @return Color object or NULL
+     */
+    public static Color colorFromColorName(String colorStr) {
+        colorStr          = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
+        ColorNameLookup c = new ColorNameLookup();
+        return c.getColorFromName(colorStr);
     }
 
 
