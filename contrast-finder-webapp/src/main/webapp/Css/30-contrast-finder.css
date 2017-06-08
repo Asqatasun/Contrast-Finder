@@ -229,6 +229,14 @@ legend.control-fieldset  {
         margin-top: 1.4em;
     }
 
+    .help h3{
+        margin-top: 1.4em;
+    }
+
+    .help h4{
+        margin-top: 1.2em;
+    }
+
 /* footer template */
 footer {
     padding-top: 0;
