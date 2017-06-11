@@ -1,5 +1,5 @@
 function setValidColor(str) {
-    var result = str.splice(0, 0, "#")
+    var result = str.splice(0, 0, "#");
     return result;
 }
 
@@ -39,7 +39,7 @@ function isValidateColor(str) {
         if(colorName !== ""){
             return colorName;
         }
-        return "false"
+        return "false";
     }
 }
 

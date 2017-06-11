@@ -56,8 +56,12 @@
 		.bind( "keypress keyup keydown", function(e) {
 			var keyCode;
 			var special = (e.ctrlKey || e.shiftKey || e.metaKey || e.altKey);
-			if ( !e.keyCode && "which" in e && e.which) keyCode = e.which;
-			else keyCode = e.keyCode;
+			if ( !e.keyCode && "which" in e && e.which){
+                keyCode = e.which;
+            }
+			else {
+                keyCode = e.keyCode;
+            }
 			// Whenever a header cell is active, pressing the spacebar or enter
 			// will trigger the sort
 			if ( keyCode == 13 || keyCode == 32) {
