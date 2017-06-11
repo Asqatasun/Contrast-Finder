@@ -51,16 +51,16 @@ function changeColorSample(colorPrefix) {
     color = isValidateColor(color.toString());
     if (color !== "false") {
         sample.style.backgroundColor = color;
-        sample.classList.add('color-sample');
-        sample.classList.add('sample-bordered');
+        sample.classList.add("color-sample");
+        sample.classList.add("sample-bordered");
         document.getElementById(colorPrefix + "-sample-invalid").style.display = "none";
-        input.classList.remove('error');
+        input.classList.remove("error");
     } else {
         sample.style.backgroundColor = "rgba(0,0,0,0)";
-        sample.classList.remove('color-sample');
-        sample.classList.remove('sample-bordered');
+        sample.classList.remove("color-sample");
+        sample.classList.remove("sample-bordered");
         document.getElementById(colorPrefix + "-sample-invalid").style.display = "inherit";
-        input.classList.add('error');
+        input.classList.add("error");
     }
 }
 
