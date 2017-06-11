@@ -142,9 +142,22 @@ public class ColorConverterTest extends TestCase {
 
 // formatColor()
 /////////////////////////////////////////////////////////////////////
+    public void testFormatColorRgbLastParenthesisIsMissing() {
+        String expResult = "rgb(255,255,255)";
+        String colorStr  = "rgb(255,255,255"; // # must be added
+        System.out.println("formatColorRgblastParenthesisIsMissing ["+ colorStr  +"]");
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+
+        colorStr  = " rgb( 255, 255, 255  "; // # must be added
+        System.out.println("formatColorRgblastParenthesisIsMissing ["+ colorStr  +"]");
+        result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
     public void testFormatColorRgbToLowerCase() {
         System.out.println("formatColorRgbToLowerCase [RGB(255,255,255)]");
-        String colorStr  = "RGB(255,255,255)"; // # must be added
+        String colorStr  = "RGB(255,255,255)";
         String expResult = "rgb(255,255,255)";
         String result    = ColorConverter.formatColorStr(colorStr);
         assertEquals(expResult, result);
@@ -152,7 +165,7 @@ public class ColorConverterTest extends TestCase {
 
     public void testFormatColorRgb() {
         System.out.println("formatColorRgb [ rgb( 255, 255, 255 ) ]");
-        String colorStr  = " rgb( 255, 255, 255 ) "; // # must be added
+        String colorStr  = " rgb( 255, 255, 255 ) ";
         String expResult = "rgb(255,255,255)";
         String result    = ColorConverter.formatColorStr(colorStr);
         assertEquals(expResult, result);
@@ -162,7 +175,7 @@ public class ColorConverterTest extends TestCase {
 
     public void testFormatColorRgbShortWidthSpace() {
         System.out.println("formatColorRgbShortWidthSpace [ 255, 255, 255  ]");
-        String colorStr  = " 255, 255, 255  "; // # must be added
+        String colorStr  = " 255, 255, 255  ";
         String expResult = "rgb(255,255,255)";
         String result    = ColorConverter.formatColorStr(colorStr);
         assertEquals(expResult, result);
@@ -170,7 +183,7 @@ public class ColorConverterTest extends TestCase {
 
     public void testFormatColorRgbShort() {
         System.out.println("formatColorRgbShort [255,255,255]");
-        String colorStr  = "255,255,255"; // # must be added
+        String colorStr  = "255,255,255";
         String expResult = "rgb(255,255,255)";
         String result    = ColorConverter.formatColorStr(colorStr);
         assertEquals(expResult, result);

@@ -1,15 +1,42 @@
-function setValidColor(str) {
-    var result = str.splice(0, 0, "#");
-    return result;
-}
+
 
 String.prototype.splice = function(idx, rem, s) {
     return (this.slice(0, idx) + s + this.slice(idx + Math.abs(rem)));
 };
 
+// only run when the substr() function is broken
+//      Microsoft's JScript does not support negative values for the start index.
+//      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+if ("ab".substr(-1) !== 'b') {
+    /**
+     *  Get the substring of a string
+     *  @param  {integer}  start   where to start the substring
+     *  @param  {integer}  length  how many characters to return
+     *  @return {string}
+     */
+    String.prototype.substr = function(substr) {
+        return function(start, length) {
+            // call the original method
+            return substr.call(this,
+                // did we get a negative start, calculate how much it is from the beginning of the string
+                // adjust the start parameter for negative value
+                start < 0 ? this.length + start : start,
+                length);
+        };
+    }(String.prototype.substr);
+}
+
+function setValidColor(str) {
+    var result = str.splice(0, 0, "#");
+    return result;
+}
+
 function isValidateColor(str) {
     str = str.trim();
-    if(str.match(/^rgb\((\d{1,3}),(\d{1,3}),(\d{1,3})\)$/) !== null){
+    if(str.match(/^rgb\((\d{1,3}),(\d{1,3}),(\d{1,3})\)?$/) !== null){
+        if(str.substr(-1) !== ")"){
+            str = str + ")";
+        }
         return str;
     }
     else if (str.match(/^(\d{1,3}),(\d{1,3}),(\d{1,3})$/) !== null){

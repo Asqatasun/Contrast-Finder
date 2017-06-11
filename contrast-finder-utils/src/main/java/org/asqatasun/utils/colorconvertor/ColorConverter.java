@@ -46,8 +46,8 @@ public final class ColorConverter {
     private static final int CONSTANT_S_COMPONENTS_FIFTY        = 50;
     private static final String HEXADECIMAL_DICTIONNARY    = "[0-9A-Fa-f]+";   //  FFF,  FFFFFF
     private static final String HEXADECIMAL_DICTIONNARY_V2 = "^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"; // #FFF, #FFFFFF, FFF, FFFFFF (but not FF or FFFF)
-    private static final String SHORT_RGB_DICTIONNARY      = "^[0-9]{1,3},[0-9]{1,3},[0-9]{1,3}$";          // ex: 255,255,255
-    private static final String RGB_DICTIONNARY            = "^rgb\\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\\)$"; // ex: rgb(255,255,255)
+    private static final String SHORT_RGB_DICTIONNARY      = "^[0-9]{1,3},[0-9]{1,3},[0-9]{1,3}$";          // ex: "255,255,255"
+    private static final String RGB_DICTIONNARY            = "^rgb\\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\\)?$"; // ex: "rgb(255,255,255)" and "rgb(255,255,255"
 
     /**
      * Private constructor, utility class
@@ -131,10 +131,13 @@ public final class ColorConverter {
      */
     public static String formatColorStr(String colorStr) {
         String str = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
-        if (str.toLowerCase().matches(RGB_DICTIONNARY)){  // ex: rgb(255,255,255)
+        if (str.toLowerCase().matches(RGB_DICTIONNARY)){  // ex: "rgb(255,255,255)" and "rgb(255,255,255"
             str = str.toLowerCase();
+            if(!str.endsWith(")")){
+                str = str + ")";
+            }
         }
-        else if(str.matches(SHORT_RGB_DICTIONNARY)){ // ex: 255,255,255
+        else if(str.matches(SHORT_RGB_DICTIONNARY)){ // ex: "255,255,255"
             str = "rgb(" + str + ")";
         }
         else if(str.matches(HEXADECIMAL_DICTIONNARY_V2)) {
