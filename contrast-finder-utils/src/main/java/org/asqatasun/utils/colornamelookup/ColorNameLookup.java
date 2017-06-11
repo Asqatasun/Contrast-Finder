@@ -59,9 +59,9 @@ public class ColorNameLookup {
         return null;
     }
 
+
     /**
      * Initialize the color list
-     * @@@TODO missing some alias (ex: grey = gray, ...) = 10 alis missing
      *      https://developer.mozilla.org/fr/docs/Web/CSS/Type_color
      *      https://www.w3schools.com/colors/colors_names.asp
      *      http://htmlcolorcodes.com/fr/noms-de-couleur/
@@ -93,6 +93,7 @@ public class ColorNameLookup {
         colors.add( new ColorName("DarkCyan",0x00,0x8B,0x8B));
         colors.add( new ColorName("DarkGoldenRod",0xB8,0x86,0x0B));
         colors.add( new ColorName("DarkGray",0xA9,0xA9,0xA9));
+        colors.add( new ColorName("DarkGrey",0xA9,0xA9,0xA9));
         colors.add( new ColorName("DarkGreen",0x00,0x64,0x00));
         colors.add( new ColorName("DarkKhaki",0xBD,0xB7,0x6B));
         colors.add( new ColorName("DarkMagenta",0x8B,0x00,0x8B));
@@ -104,11 +105,13 @@ public class ColorNameLookup {
         colors.add( new ColorName("DarkSeaGreen",0x8F,0xBC,0x8F));
         colors.add( new ColorName("DarkSlateBlue",0x48,0x3D,0x8B));
         colors.add( new ColorName("DarkSlateGray",0x2F,0x4F,0x4F));
+        colors.add( new ColorName("DarkSlateGrey",0x2F,0x4F,0x4F));
         colors.add( new ColorName("DarkTurquoise",0x00,0xCE,0xD1));
         colors.add( new ColorName("DarkViolet",0x94,0x00,0xD3));
         colors.add( new ColorName("DeepPink",0xFF,0x14,0x93));
         colors.add( new ColorName("DeepSkyBlue",0x00,0xBF,0xFF));
         colors.add( new ColorName("DimGray",0x69,0x69,0x69));
+        colors.add( new ColorName("DimGrey",0x69,0x69,0x69));
         colors.add( new ColorName("DodgerBlue",0x1E,0x90,0xFF));
         colors.add( new ColorName("FireBrick",0xB2,0x22,0x22));
         colors.add( new ColorName("FloralWhite",0xFF,0xFA,0xF0));
@@ -119,6 +122,7 @@ public class ColorNameLookup {
         colors.add( new ColorName("Gold",0xFF,0xD7,0x00));
         colors.add( new ColorName("GoldenRod",0xDA,0xA5,0x20));
         colors.add( new ColorName("Gray",0x80,0x80,0x80));
+        colors.add( new ColorName("Grey",0x80,0x80,0x80));
         colors.add( new ColorName("Green",0x00,0x80,0x00));
         colors.add( new ColorName("GreenYellow",0xAD,0xFF,0x2F));
         colors.add( new ColorName("HoneyDew",0xF0,0xFF,0xF0));
@@ -136,12 +140,14 @@ public class ColorNameLookup {
         colors.add( new ColorName("LightCyan",0xE0,0xFF,0xFF));
         colors.add( new ColorName("LightGoldenRodYellow",0xFA,0xFA,0xD2));
         colors.add( new ColorName("LightGray",0xD3,0xD3,0xD3));
+        colors.add( new ColorName("LightGrey",0xD3,0xD3,0xD3));
         colors.add( new ColorName("LightGreen",0x90,0xEE,0x90));
         colors.add( new ColorName("LightPink",0xFF,0xB6,0xC1));
         colors.add( new ColorName("LightSalmon",0xFF,0xA0,0x7A));
         colors.add( new ColorName("LightSeaGreen",0x20,0xB2,0xAA));
         colors.add( new ColorName("LightSkyBlue",0x87,0xCE,0xFA));
         colors.add( new ColorName("LightSlateGray",0x77,0x88,0x99));
+        colors.add( new ColorName("LightSlateGrey",0x77,0x88,0x99));
         colors.add( new ColorName("LightSteelBlue",0xB0,0xC4,0xDE));
         colors.add( new ColorName("LightYellow",0xFF,0xFF,0xE0));
         colors.add( new ColorName("Lime",0x00,0xFF,0x00));
@@ -194,6 +200,7 @@ public class ColorNameLookup {
         colors.add( new ColorName("SkyBlue",0x87,0xCE,0xEB));
         colors.add( new ColorName("SlateBlue",0x6A,0x5A,0xCD));
         colors.add( new ColorName("SlateGray",0x70,0x80,0x90));
+        colors.add( new ColorName("SlateGrey",0x70,0x80,0x90));
         colors.add( new ColorName("Snow",0xFF,0xFA,0xFA));
         colors.add( new ColorName("SpringGreen",0x00,0xFF,0x7F));
         colors.add( new ColorName("SteelBlue",0x46,0x82,0xB4));
@@ -208,6 +215,7 @@ public class ColorNameLookup {
         colors.add( new ColorName("WhiteSmoke",0xF5,0xF5,0xF5));
         colors.add( new ColorName("Yellow",0xFF,0xFF,0x00));
         colors.add( new ColorName("YellowGreen",0x9A,0xCD,0x32));
+        colors.add( new ColorName("RebeccaPurple",0x66,0x33,0x99)); // CCS 4 #663399
         return colors;
     }
 
