@@ -94,7 +94,7 @@ public class AbstractColorFinderImplTest extends TestCase {
      */
     public class AbstractColorFinderImplImpl extends AbstractColorFinder {
 
-        boolean isFindColorsCalled = false;
+        private boolean isFindColorsCalled = false;
         
         public AbstractColorFinderImplImpl() {
             super(null, null);

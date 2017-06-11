@@ -9,7 +9,9 @@ Security:
 none
 
 Bugs:
-none
+- [#61 - Added missing color names (*Grey + RebeccaPurple)](https://github.com/Asqatasun/Contrast-Finder/issues/61)
+- [#63 - Allowed "rgb(255,255,255" for "rgb(255,255,255)" in the form](https://github.com/Asqatasun/Contrast-Finder/issues/63)
+- Fixed some codacy "error prone" + "code style" 
 
 Configuration: 
 none
