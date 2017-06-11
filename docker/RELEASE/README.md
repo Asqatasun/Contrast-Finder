@@ -11,10 +11,6 @@ Supported tags and respective `Dockerfile` links :
 * [v0.5.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.5.0/docker/RELEASE/Dockerfile)
 * [v0.4.7](https://github.com/Asqatasun/Contrast-Finder/blob/v0.4.7/docker/RELEASE/Dockerfile)
 * [v0.4.6](https://github.com/Asqatasun/Contrast-Finder/blob/v0.4.6/docker/RELEASE/Dockerfile)
-* [v0.4.5](https://github.com/Asqatasun/Contrast-Finder/blob/v0.4.5/docker/RELEASE/Dockerfile)
-* [v0.4.4](https://github.com/Asqatasun/Contrast-Finder/blob/v0.4.4/docker/RELEASE/Dockerfile)
-* [v0.4.3](https://github.com/Asqatasun/Contrast-Finder/blob/v0.4.3/docker/RELEASE/Dockerfile)
-* [v0.4.2](https://github.com/Asqatasun/Contrast-Finder/blob/v0.4.2/docker/RELEASE/Dockerfile)
 
 ## How to use this image
 `docker pull asqatasun/contrast-finder` 

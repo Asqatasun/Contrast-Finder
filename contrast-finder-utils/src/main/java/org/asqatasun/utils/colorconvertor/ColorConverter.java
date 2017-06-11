@@ -140,7 +140,7 @@ public final class ColorConverter {
         else {
             ColorNameLookup c = new ColorNameLookup();
             String name = c.getColorNameFromStr(str);
-            if(name != ""){
+            if(!name.equals("")){
                 colorStr = name;
             }
         }
