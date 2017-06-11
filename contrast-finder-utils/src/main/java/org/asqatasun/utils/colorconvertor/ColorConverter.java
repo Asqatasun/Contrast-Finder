@@ -40,6 +40,10 @@ public final class ColorConverter {
     private static final int MAX_ANGLE = 360;
     private static final int RGB_MIN = 0;
     private static final int RGB_MAX = 255;
+    private static final int CONSTANT_SL_COMPONENTS_HUNDRED     = 100;
+    private static final int CONSTANT_S_COMPONENTS_TWO_HUNDRED  = 200;
+    private static final int CONSTANT_SL_COMPONENTS_TWO         = 2;
+    private static final int CONSTANT_S_COMPONENTS_FIFTY        = 50;
     private static final String HEXADECIMAL_DICTIONNARY    = "[0-9A-Fa-f]+";   //  FFF,  FFFFFF
     private static final String HEXADECIMAL_DICTIONNARY_V2 = "^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"; // #FFF, #FFFFFF, FFF, FFFFFF (but not FF or FFFF)
     private static final String SHORT_RGB_DICTIONNARY      = "^[0-9]{1,3},[0-9]{1,3},[0-9]{1,3}$";          // ex: 255,255,255
@@ -61,7 +65,9 @@ public final class ColorConverter {
      */
     public static Color offsetHsbColor(Color color, float offsetHue, float offsetSaturation, float offsetBrightness) {
         float[] hsbValues = new float[MAX_COMPONENT];
-        Float hue, saturation, brightness;
+        Float brightness;
+        Float saturation;
+        Float hue;
 
         Color.RGBtoHSB(color.getRed(), color.getGreen(), color.getBlue(), hsbValues);
 
@@ -139,8 +145,9 @@ public final class ColorConverter {
         }
         else {
             ColorNameLookup c = new ColorNameLookup();
-            String name = c.getColorNameFromStr(str);
-            if(!name.equals("")){
+            String name  = c.getColorNameFromStr(str);
+            String empty = "";
+            if(!name.equals(empty)){
                 colorStr = name;
             }
         }
@@ -264,11 +271,6 @@ public final class ColorConverter {
         return (String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue())).toUpperCase();
     }
 
-    
-    private static final int CONSTANT_SL_COMPONENTS_HUNDRED = 100;
-    private static final int CONSTANT_S_COMPONENTS_TWO_HUNDRED = 200;
-    private static final int CONSTANT_SL_COMPONENTS_TWO = 2;
-    private static final int CONSTANT_S_COMPONENTS_FIFTY = 50;
 
     /**
      * @param color

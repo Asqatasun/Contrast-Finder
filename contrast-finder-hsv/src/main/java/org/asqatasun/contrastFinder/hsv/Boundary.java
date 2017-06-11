@@ -26,6 +26,7 @@ package org.asqatasun.contrastFinder.hsv;
 public class Boundary {
 
     private Float minValue;
+    private Float maxValue;
 
     public Float getMinValue() {
         return minValue;
@@ -34,7 +35,7 @@ public class Boundary {
     public Float getMaxValue() {
         return maxValue;
     }
-    private Float maxValue;
+
 
     /**
      *

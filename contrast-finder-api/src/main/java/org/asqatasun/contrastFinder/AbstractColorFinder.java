@@ -40,31 +40,26 @@ public abstract class AbstractColorFinder implements ColorFinder {
     private static final float MAX_COEFFICIENT_LEVEL = 2.5f;
     protected static final float UNITARY_STEP_HUE = (MIN_HUE / MAX_HUE);
     private ColorResultFactory colorResultFactory;
+    private ColorCombinaisonFactory colorCombinaisonFactory;
+    private Color colorToKeep;       /* the color to keep, will not be modified during test */
+    private Float coefficientLevel;  /* the coefficient level to apply*/
+    private ColorResult colorResult; /* the colorResult that handles the results of the test*/
 
     public ColorResultFactory getColorResultFactory() {
             return colorResultFactory;
-        }
-    
-    
-    private ColorCombinaisonFactory colorCombinaisonFactory;
+    }
 
     public ColorCombinaisonFactory getColorCombinaisonFactory() {
         return colorCombinaisonFactory;
     }
-    /* the color to keep, will not be modified during test */
-    private Color colorToKeep;
 
     public Color getColorToKeep() {
         return colorToKeep;
     }
-    /* the coefficient level to apply*/
-    private Float coefficientLevel;
 
     public Float getCoefficientLevel() {
         return coefficientLevel;
     }
-    /* the colorResult that handles the results of the test*/
-    private ColorResult colorResult;
 
     @Override
     public ColorResult getColorResult() {

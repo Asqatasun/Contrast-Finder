@@ -127,10 +127,10 @@ public class IndexController {
     public String initAccueil(final Model model,
                               @CookieValue(value = "algo", defaultValue = "") String algoCookie) {
         ColorModel colorModel = new ColorModel();
-        if (algoCookie.equals("HSV") || algoCookie.equals("Rgb")) {
+        if ("HSV".equals(algoCookie) || "Rgb".equals(algoCookie)) {
             colorModel.setAlgo(algoCookie);
         }
-        else if (defaultAlgorithm.equals("HSV") || defaultAlgorithm.equals("Rgb")) {
+        else if ("HSV".equals(defaultAlgorithm) || "Rgb".equals(defaultAlgorithm)) {
             colorModel.setAlgo(defaultAlgorithm);
         }  // Default algo in ColorModel class is "HSV"
         model.addAttribute("defaultAlgorithm", defaultAlgorithm);
@@ -219,9 +219,9 @@ public class IndexController {
      * @return      The other algorithm
      */
     private String getOppositeAlgo(String algo) {
-        if (algo.equals("HSV")) {
+        if ("HSV".equals(algo)) {
             return "Rgb";
-        } else if (algo.equals("Rgb")) {
+        } else if ("Rgb".equals(algo)) {
             return "HSV";
         }
         return algo;

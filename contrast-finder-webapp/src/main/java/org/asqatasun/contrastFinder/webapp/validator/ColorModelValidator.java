@@ -93,7 +93,7 @@ public class ColorModelValidator implements Validator {
     }
 
     private void validateAlgo(String algo, Errors errors) {
-        if (!(algo.equals("HSV") || algo.equals("Rgb"))) {
+        if (!("HSV".equals(algo) || "Rgb".equals(algo))) {
             errors.rejectValue("algo", "NOT_A_VALID_ALGO", "La valeur de l'algorithm est invalide");
         }
     }

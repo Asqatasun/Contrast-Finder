@@ -1,35 +1,11 @@
-$(document).ready(function() {
-    // changeColorSample("foreground");
-    // changeColorSample("background");
-    document.getElementById("foreground-input").onchange = function() {
-        changeColorSample("foreground");
-    };
-    document.getElementById("background-input").onchange = function() {
-        changeColorSample("background");
-    };
-});
-
-
-function changeColorSample(colorPrefix) {
-    var input = document.getElementById(colorPrefix + "-input");
-    var color = input.value.toLowerCase();
-    var sample = document.getElementById(colorPrefix + "-sample");
-    color = color.toString().replace(/\s/g,""); // replace ' ', \t, \n, ...
-    color = isValidateColor(color.toString());
-    if (color !== "false") {
-        sample.style.backgroundColor = color;
-        sample.classList.add('color-sample');
-        sample.classList.add('sample-bordered');
-        document.getElementById(colorPrefix + "-sample-invalid").style.display = "none";
-        input.classList.remove('error');
-    } else {
-        sample.style.backgroundColor = "rgba(0,0,0,0)";
-        sample.classList.remove('color-sample');
-        sample.classList.remove('sample-bordered');
-        document.getElementById(colorPrefix + "-sample-invalid").style.display = "inherit";
-        input.classList.add('error');
-    }
+function setValidColor(str) {
+    var result = str.splice(0, 0, "#")
+    return result;
 }
+
+String.prototype.splice = function(idx, rem, s) {
+    return (this.slice(0, idx) + s + this.slice(idx + Math.abs(rem)));
+};
 
 function isValidateColor(str) {
     str = str.trim();
@@ -67,11 +43,35 @@ function isValidateColor(str) {
     }
 }
 
-function setValidColor(str) {
-    var result = str.splice(0, 0, "#")
-    return result;
+function changeColorSample(colorPrefix) {
+    var input = document.getElementById(colorPrefix + "-input");
+    var color = input.value.toLowerCase();
+    var sample = document.getElementById(colorPrefix + "-sample");
+    color = color.toString().replace(/\s/g,""); // replace ' ', \t, \n, ...
+    color = isValidateColor(color.toString());
+    if (color !== "false") {
+        sample.style.backgroundColor = color;
+        sample.classList.add('color-sample');
+        sample.classList.add('sample-bordered');
+        document.getElementById(colorPrefix + "-sample-invalid").style.display = "none";
+        input.classList.remove('error');
+    } else {
+        sample.style.backgroundColor = "rgba(0,0,0,0)";
+        sample.classList.remove('color-sample');
+        sample.classList.remove('sample-bordered');
+        document.getElementById(colorPrefix + "-sample-invalid").style.display = "inherit";
+        input.classList.add('error');
+    }
 }
 
-String.prototype.splice = function(idx, rem, s) {
-    return (this.slice(0, idx) + s + this.slice(idx + Math.abs(rem)));
-};
+
+$(document).ready(function() {
+    // changeColorSample("foreground");
+    // changeColorSample("background");
+    document.getElementById("foreground-input").onchange = function() {
+        changeColorSample("foreground");
+    };
+    document.getElementById("background-input").onchange = function() {
+        changeColorSample("background");
+    };
+});
