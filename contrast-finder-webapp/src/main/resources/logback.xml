@@ -29,7 +29,7 @@
 
     <!-- Change the level of messages for various packages  -->
     <logger name="org.springframework"              level="info" />
-    <logger name="org.asqatasun.contrastFinder.hsv" level="info"/>
+    <logger name="org.asqatasun.contrastfinder.hsv" level="info"/>
 
     <!-- Setting the root level of logging to INFO -->
     <root level="info">

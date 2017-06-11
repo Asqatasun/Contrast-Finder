@@ -5,10 +5,10 @@
                            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
     
     <bean name="colorFinderHsvFactory"
-          class="org.asqatasun.contrastFinder.factory.ColorFinderHsvFactory"/>
+          class="org.asqatasun.contrastfinder.factory.ColorFinderHsvFactory"/>
 
     <bean name="colorFinderHsvPsychoFactory"
-          class="org.asqatasun.contrastFinder.factory.ColorFinderHsvPsychoFactory">
+          class="org.asqatasun.contrastfinder.factory.ColorFinderHsvPsychoFactory">
         <property name="hueBounder" value="15.0"/>
         <property name="maxCoefficient" value="0.01"/>
         <property name="maxRed" value="60.0"/>
@@ -17,7 +17,7 @@
     </bean>
 
     <bean name="colorFinderRgbFactory"
-          class="org.asqatasun.contrastFinder.factory.ColorFinderRgbFactory">
+          class="org.asqatasun.contrastfinder.factory.ColorFinderRgbFactory">
         <property name="hueBounder" value="5.0"/>
         <property name="maxCoefficient" value="0.001"/>
         <property name="maxMove" value="60"/>
@@ -31,7 +31,7 @@
     </bean>
     
     <bean name="colorFinderFactory"
-          class="org.asqatasun.contrastFinder.factory.ColorFinderFactoryImpl">
+          class="org.asqatasun.contrastfinder.factory.ColorFinderFactoryImpl">
         <property name="colorFinderMap">
             <map>
                 <entry key="HSV" value-ref="colorFinderHsvFactory"/>
@@ -43,19 +43,19 @@
     </bean>
     
     <bean name="boundaryFrom0To1"
-          class="org.asqatasun.contrastFinder.hsv.Boundary">
+          class="org.asqatasun.contrastfinder.hsv.Boundary">
         <property name="minValue" value="0"/>
         <property name="maxValue" value="1"/>
     </bean>
     
     <bean name="boundaryFrom1To2"
-          class="org.asqatasun.contrastFinder.hsv.Boundary">
+          class="org.asqatasun.contrastfinder.hsv.Boundary">
         <property name="minValue" value="1"/>
         <property name="maxValue" value="2"/>
     </bean>
     
     <bean name="boundaryFrom2To3"
-          class="org.asqatasun.contrastFinder.hsv.Boundary">
+          class="org.asqatasun.contrastfinder.hsv.Boundary">
         <property name="minValue" value="2"/>
         <property name="maxValue" value="3"/>
     </bean>
