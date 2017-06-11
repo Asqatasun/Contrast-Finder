@@ -34,10 +34,10 @@ public class ColorNameLookup {
      * @return empty or color name width correct case (ex: Silver, DarkMagenta, Silver, ...)
      */
     public String getColorNameFromStr(String colorStr) {
-        colorStr = colorStr.trim();
+        String str = colorStr.trim();
         for (ColorName c : colorList) {
             String name = c.getName();  // .toLowerCase()
-            if ( name.equalsIgnoreCase(colorStr)) {
+            if ( name.equalsIgnoreCase(str)) {
                 return name;
             }
         }
@@ -49,10 +49,10 @@ public class ColorNameLookup {
      * @return Color object or NULL
      */
     public Color getColorFromName(String colorStr) {
-        colorStr = colorStr.trim();
+        String str = colorStr.trim();
         for (ColorName c : colorList) {
             String name = c.getName();
-            if ( name.equalsIgnoreCase(colorStr)) {
+            if ( name.equalsIgnoreCase(str)) {
                 return new Color(c.getRed(), c.getGreen(), c.getBlue());
             }
         }

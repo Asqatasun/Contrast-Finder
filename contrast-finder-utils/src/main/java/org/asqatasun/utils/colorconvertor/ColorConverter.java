@@ -132,26 +132,26 @@ public final class ColorConverter {
     public static String formatColorStr(String colorStr) {
         String str = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
         if (str.toLowerCase().matches(RGB_DICTIONNARY)){  // ex: rgb(255,255,255)
-            colorStr = str.toLowerCase();
+            str = str.toLowerCase();
         }
         else if(str.matches(SHORT_RGB_DICTIONNARY)){ // ex: 255,255,255
-            colorStr = "rgb(" + str + ")";
+            str = "rgb(" + str + ")";
         }
         else if(str.matches(HEXADECIMAL_DICTIONNARY_V2)) {
             if (str.charAt(0) != '#') {
                 str = "#" + str;
             }
-            colorStr = str.toUpperCase();
+            str = str.toUpperCase();
         }
         else {
             ColorNameLookup c = new ColorNameLookup();
             String name  = c.getColorNameFromStr(str);
             String empty = "";
             if(!name.equals(empty)){
-                colorStr = name;
+                str = name;
             }
         }
-        return colorStr;
+        return str;
     }
 
 
@@ -176,9 +176,9 @@ public final class ColorConverter {
      * @return Color object or NULL
      */
     public static Color colorFromColorName(String colorStr) {
-        colorStr          = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
+        String str        = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
         ColorNameLookup c = new ColorNameLookup();
-        return c.getColorFromName(colorStr);
+        return c.getColorFromName(str);
     }
 
 
@@ -188,11 +188,11 @@ public final class ColorConverter {
      */
     public static Color colorFromRgbStr(String colorStr) {
         Color  color = null;
-        colorStr = colorStr.toLowerCase().replaceAll("\\s", ""); // replace ' ', \t, \n, ...
-        if (colorStr.matches(RGB_DICTIONNARY) | colorStr.matches(SHORT_RGB_DICTIONNARY)){  // ex: rgb(255,255,255) or 255,255,255
-            colorStr = colorStr.replaceAll("rgb\\(","");
-            colorStr = colorStr.replaceAll("\\)","");
-            String[] strList = colorStr.split(",");
+        String str   = colorStr.toLowerCase().replaceAll("\\s", ""); // replace ' ', \t, \n, ...
+        if (str.matches(RGB_DICTIONNARY) | str.matches(SHORT_RGB_DICTIONNARY)){  // ex: rgb(255,255,255) or 255,255,255
+            str = str.replaceAll("rgb\\(","");
+            str = str.replaceAll("\\)","");
+            String[] strList = str.split(",");
             int r = Integer.parseInt(strList[0]);
             int g = Integer.parseInt(strList[1]);
             int b = Integer.parseInt(strList[2]);
