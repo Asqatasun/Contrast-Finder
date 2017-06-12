@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.asqatasun</groupId>
-        <artifactId>contrast-finder</artifactId>
+        <artifactId>engine</artifactId>
         <version>0.5.1-dev</version>
     </parent>
-    <artifactId>contrast-finder-utils</artifactId>
+    <artifactId>contrast-finder-api</artifactId>
     <version>0.5.1-dev</version>
+    <name>api</name>
     <packaging>jar</packaging>
 
-    <name>contrast-finder-utils</name>
     <url>https://contrast-finder.org</url>
     <organization>
         <name>Asqatasun.org</name>
@@ -26,27 +26,18 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20160810</version>
+            <groupId>org.asqatasun</groupId>
+            <artifactId>contrast-finder-utils</artifactId>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
+            <!-- <version>1.2.3</version> -->
+            <type>jar</type>
         </dependency>
     </dependencies>
 </project>
