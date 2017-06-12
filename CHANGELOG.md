@@ -10,11 +10,11 @@ none
 
 Bugs:
 - [#61 - Added missing color names (*Grey + RebeccaPurple)](https://github.com/Asqatasun/Contrast-Finder/issues/61)
-- [#63 - Allowed "rgb(255,255,255" for "rgb(255,255,255)" in the form](https://github.com/Asqatasun/Contrast-Finder/issues/63)
+- [#63 - Allowed "rgb(255,255,255" value for "rgb(255,255,255)" in the form](https://github.com/Asqatasun/Contrast-Finder/issues/63)
 - Fixed some codacy "error prone" + "code style" 
 
 Configuration: 
-none
+- [#64 - Moved contrast-finder.log|.conf files into webapp directory](https://github.com/Asqatasun/Contrast-Finder/issues/64) 
 
 Documentation:
 none
