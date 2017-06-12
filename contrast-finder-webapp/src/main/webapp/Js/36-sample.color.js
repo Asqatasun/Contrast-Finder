@@ -7,14 +7,14 @@ String.prototype.splice = function(idx, rem, s) {
 // only run when the substr() function is broken
 //      Microsoft's JScript does not support negative values for the start index.
 //      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr
-if ("ab".substr(-1) !== 'b') {
+if ("ab".substr(-1) !== "b") {
     /**
      *  Get the substring of a string
      *  @param  {integer}  start   where to start the substring
      *  @param  {integer}  length  how many characters to return
      *  @return {string}
      */
-    String.prototype.substr = function(substr) {
+    String.prototype.substr = (function(substr) {
         return function(start, length) {
             // call the original method
             return substr.call(this,
@@ -23,7 +23,7 @@ if ("ab".substr(-1) !== 'b') {
                 start < 0 ? this.length + start : start,
                 length);
         };
-    }(String.prototype.substr);
+    }(String.prototype.substr));
 }
 
 function setValidColor(str) {
