@@ -19,7 +19,7 @@
         </fileSet>
         <!-- Install web-app conf -->
         <fileSet>
-            <directory>${basedir}/../contrast-finder-resources/src/main/resources</directory>
+            <directory>${basedir}/src/main/resources/conf</directory>
             <includes>
                 <include>contrast-finder.conf.dist</include>
             </includes>
@@ -28,7 +28,7 @@
         </fileSet>
         <!-- Install web-app conf -->
         <fileSet>
-            <directory>${basedir}/../contrast-finder-resources/src/main/resources</directory>
+            <directory>${basedir}/src/main/resources/conf</directory>
             <includes>
                 <include>contrast-finder.log</include>
             </includes>
