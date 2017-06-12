@@ -124,7 +124,7 @@ fail() {
 #############################################
 
 
-TGZ_BASENAME="contrast-finder-webapp/target/contrast-finder"
+TGZ_BASENAME="webapp/target/contrast-finder"
 TGZ_EXT=".tar.gz"
 ADD_IP=''
 URL="http://localhost:${CONTAINER_EXPOSED_PORT}/contrast-finder/"

@@ -28,11 +28,8 @@
                                     the minimum version of Maven for maven plugins
                                     ............  mvn versions:display-plugin-updates     -->
     <modules>
-        <module>contrast-finder-api</module>
-        <module>contrast-finder-utils</module>
-        <module>contrast-finder-hsv</module>
-        <module>contrast-finder-impl</module>
-        <module>contrast-finder-webapp</module>
+        <module>engine</module>
+        <module>webapp</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

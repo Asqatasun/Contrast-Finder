@@ -1,16 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
         <version>0.5.1-dev</version>
     </parent>
-    <artifactId>contrast-finder-impl</artifactId>
+    <artifactId>engine</artifactId>
     <version>0.5.1-dev</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
-    <name>contrast-finder-impl</name>
+    <name>contrast-finder-engine</name>
     <url>https://contrast-finder.org</url>
     <organization>
         <name>Asqatasun.org</name>
@@ -24,14 +24,11 @@
         </license>
     </licenses>
 
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.asqatasun</groupId>
-            <artifactId>contrast-finder-api</artifactId>
-        </dependency>
-    </dependencies>
+
+    <modules>
+        <module>api</module>
+        <module>utils</module>
+        <module>hsv</module>
+        <module>impl</module>
+    </modules>
 </project>

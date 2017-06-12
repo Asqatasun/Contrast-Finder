@@ -6,7 +6,7 @@
         <artifactId>contrast-finder</artifactId>
         <version>0.5.1-dev</version>
     </parent>
-    <artifactId>contrast-finder-webapp</artifactId>
+    <artifactId>webapp</artifactId>
     <version>0.5.1-dev</version>
     <packaging>war</packaging>
 
@@ -231,6 +231,7 @@
                 </executions>
             </plugin>
         </plugins>
+        <finalName>contrast-finder-webapp-${project.version}</finalName>
     </build>
 
 </project>
