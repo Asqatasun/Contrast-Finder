@@ -6,11 +6,11 @@
         <artifactId>engine</artifactId>
         <version>0.5.1-dev</version>
     </parent>
-    <artifactId>api</artifactId>
+    <artifactId>contrast-finder-api</artifactId>
     <version>0.5.1-dev</version>
+    <name>api</name>
     <packaging>jar</packaging>
 
-    <name>contrast-finder-api</name>
     <url>https://contrast-finder.org</url>
     <organization>
         <name>Asqatasun.org</name>
