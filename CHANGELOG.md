@@ -1,12 +1,9 @@
 
-Contrast-Finder 0.5.1, 2017-0x-xx
----------------------------------
-
-Features:
-none
+Contrast-Finder 0.5.1, 2017-06-x
+--------------------------------
 
 Security:
-none
+- [#65 - Upgraded spring-security to v4.2.3](https://github.com/Asqatasun/Contrast-Finder/issues/65) 
 
 Bugs:
 - [#61 - Added missing color names (*Grey + RebeccaPurple)](https://github.com/Asqatasun/Contrast-Finder/issues/61)
@@ -15,9 +12,6 @@ Bugs:
 
 Configuration: 
 - [#64 - Moved contrast-finder.log|.conf files into webapp directory](https://github.com/Asqatasun/Contrast-Finder/issues/64) 
-
-Documentation:
-none
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
