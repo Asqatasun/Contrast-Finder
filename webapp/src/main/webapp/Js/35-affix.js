@@ -7,4 +7,4 @@ $("#old-contrast").affix(
                     return (this.top = header + setUpForm + 135);
                 }
             }
-        })
+        });
