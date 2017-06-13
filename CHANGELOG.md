@@ -1,4 +1,31 @@
 
+Contrast-Finder 0.5.1, 2017-06-14
+---------------------------------
+
+Features:
+none
+
+Security:
+- [#65 - Upgraded spring-security to v4.2.3](https://github.com/Asqatasun/Contrast-Finder/issues/65) 
+
+Bugs:
+- [#61 - Added missing color names (*Grey + RebeccaPurple)](https://github.com/Asqatasun/Contrast-Finder/issues/61)
+- [#63 - Allowed "rgb(255,255,255" value for "rgb(255,255,255)" in the form](https://github.com/Asqatasun/Contrast-Finder/issues/63)
+- Fixed some codacy "error prone" + "code style" 
+
+Refactoring:
+- [#66 - Modified project directories](https://github.com/Asqatasun/Contrast-Finder/issues/66)  
+- [#64 - Moved contrast-finder.log|.conf files into webapp directory](https://github.com/Asqatasun/Contrast-Finder/issues/64) 
+
+Configuration: 
+none
+
+Documentation:
+none
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+
 Contrast-Finder 0.5.0, 2017-06-09
 ---------------------------------
 

@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/Asqatasun/Contrast-Finder.svg)](https://travis-ci.org/Asqatasun/Contrast-Finder)
 [![Release](https://img.shields.io/github/release/asqatasun/Contrast-Finder.svg)](https://github.com/Asqatasun/Contrast-Finder/releases/latest)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fb3e17c2ef423822580804/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58fb3e17c2ef423822580804?child=summary#tab-dependencies)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c3374c9913d24a9c91e91552f1796672)](https://www.codacy.com/app/Asqatasun/Contrast-Finder)
 
 # Contrast-Finder
 
