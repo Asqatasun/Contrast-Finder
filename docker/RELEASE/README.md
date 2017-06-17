@@ -28,7 +28,7 @@ In your browser, go to `http://localhost:8080/contrast-finder/`
 * More information on the website [Contrast-Finder.org](https://contrast-finder.org)
 * Demo : https://app.contrast-finder.org
 
-![Screenshot - Contrast-Finder v0.3.5](https://raw.githubusercontent.com/Asqatasun/Contrast-Finder/master/documentation/en/images/screenshot.EN_contrast-finder.v0.3.5_2016-12-19.png)
+![Screenshot - Contrast-Finder v0.5.1](https://raw.githubusercontent.com/Asqatasun/Contrast-Finder/develop/documentation/en/images/screenshot/screenshot.EN_contrast-finder.v0.5.1_2017-06-15_grey_kranken.io-lossy.png)
 
 ## Tips and tricks
 ### Container available only on 127.0.0.1 (Linux users) #### 
@@ -43,7 +43,7 @@ Add the option **--restart always**
 ## User Feedback
 
 If you have any problems with or questions about this image or Contrast-Finder itself, please contact us :
-* [Asqatasun forum](http://forum.asqatasun.org/) 
+* [Asqatasun forum](https://forum.asqatasun.org/c/contrast-finder) 
 * [Twitter @Asqatasun](https://twitter.com/Asqatasun)
 
 ## Contributing

@@ -54,6 +54,7 @@
             <excludes>
                 <exclude>nbproject/**/*</exclude>
                 <exclude>SUMMARY.md</exclude>
+                <exclude>images/Archive/</exclude>
             </excludes>
             <fileMode>644</fileMode>
             <outputDirectory>/documentation</outputDirectory>

@@ -18,7 +18,7 @@
     <link rel="manifest"                    href="<c:url value="Images/logo/favicon/manifest.json?v=${appVersion}"/>">
     <link rel="mask-icon"                   href="<c:url value="Images/logo/favicon/safari-pinned-tab.svg?v=${appVersion}"/>">
 <!--<link rel="shortcut icon"               href="<c:url value="Images/logo/favicon/favicon.ico?v=${appVersion}"/>"> -->
-    <link rel="shortcut icon" type="image/x-icon"  href="<c:url value="Images/favicon.ico?v=${appVersion}"/>" >
+    <link rel="shortcut icon" type="image/x-icon"  href="<c:url value="Images/logo/favicon/favicon.ico?v=${appVersion}"/>" >
     <meta name="msapplication-TileImage"    content="<c:url value="Images/logo/favicon/mstile-144x144.png?v=${appVersion}"/>">
     <meta name="msapplication-config"       content="<c:url value="Images/logo/favicon/browserconfig.xml?v=${appVersion}"/>">
     <meta name="msapplication-TileColor"    content="#2d89ef">
@@ -38,7 +38,7 @@
     <meta property="og:title"       content="<fmt:message key="home.titleTag"/>" />
     <meta property="og:description" content="<fmt:message key="home.metaDescription"/>" />
     <meta property="og:url"         content="${canonicalURL}" />
-    <meta property="og:image"       content="https://app.contrast-finder.org/Images/contrast_finder_logo.png?v=${appVersion}" />
+    <meta property="og:image"       content="https://app.contrast-finder.org/Images/logo/contrast-finder_logo_1051x1053.png?v=${appVersion}" />
 
     <!-- Social network - Twitter -->
     <meta name="twitter:card"        content="summary">
@@ -48,6 +48,6 @@
     <meta name="twitter:creator"     content="@Contrast_Finder">
     <meta name="twitter:title"       content="<fmt:message key="home.titleTag"/>" />
     <meta name="twitter:description" content="<fmt:message key="home.metaDescription"/>" />
-    <meta name="twitter:image:src"   content="https://app.contrast-finder.org/Images/contrast_finder_logo.png?v=${appVersion}" />
+    <meta name="twitter:image:src"   content="https://app.contrast-finder.org/Images/logo/contrast-finder_logo_1051x1053.png?v=${appVersion}" />
 
 </head>
