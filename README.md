@@ -6,17 +6,20 @@
 
 # Contrast-Finder
 ![Contrast-Finder logo](https://raw.githubusercontent.com/Asqatasun/Contrast-Finder/develop/documentation/en/images/logo_contrast-finder/contrast-finder_logo_250x250.png)
+
 * Tool to provide color combination for a good (accessible, WCAG-compliant) contrast.
 * This helps you in satisfying web accessibility (a11y) tests on contrasts:
-  * [WCAG Success Criteria 1.4.3](http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
-  * [WCAG Success Criteria 1.4.6](http://www.w3.org/TR/WCAG20/#visual-audio-contrast7)
-  * [RGAA test 3.3 (in french)](http://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#crit-3-3)
-  * [RGAA test 3.4 (in french)](http://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#crit-3-4)
+    * [WCAG Success Criteria 1.4.3](http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
+    * [WCAG Success Criteria 1.4.6](http://www.w3.org/TR/WCAG20/#visual-audio-contrast7)
+    * [RGAA test 3.3 (in french)](http://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#crit-3-3)
+    * [RGAA test 3.4 (in french)](http://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#crit-3-4)
+
 
 ## Demo
 https://app.contrast-finder.org
 
 [![Try Contrast-Finder](https://raw.githubusercontent.com/Asqatasun/Contrast-Finder/develop/documentation/en/images/screenshot/screenshot.EN_contrast-finder.v0.5.1_2017-06-15_grey_kranken.io-lossy.png)](https://app.contrast-finder.org/?lang=en "Try Contrast-Finder : find good color for web accessibility")
+
 
 ## Why another contrast tool ?
 
@@ -30,18 +33,22 @@ That's the purpose of [Contrast-Finder.org](https://contrast-finder.org/)
 
 **Contrast-Finder** is a tool which computes the contrast between two colors (background, foreground) and checks if the contrast is valid. When the contrast is not valid, the main target is to suggest some correct colors contrasts. 
 
+
 ## Contact and discussions
 
 * [Asqatasun forum](https://forum.asqatasun.org/c/contrast-finder) 
 * [Twitter @Asqatasun](https://twitter.com/Asqatasun)
 * email to `asqatasun AT asqatasun dot org` (only English, French and klingon is spoken :) ) 
 
+
 ## Documentation
+
 * How to use ? 
 * How to install ?
 * How to build ?
 
 Go to the [documentation](https://github.com/Asqatasun/Contrast-Finder/blob/master/documentation/en/) !
+
 
 ## We want you! (aka Contribute)
 
