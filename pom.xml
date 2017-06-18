@@ -28,7 +28,7 @@
                                     the minimum version of Maven for maven plugins
                                     ............  mvn versions:display-plugin-updates     -->
     <modules>
-  <!--  <module>documentation</module>  -->
+        <module>documentation</module>
         <module>engine</module>
         <module>webapp</module>
     </modules>

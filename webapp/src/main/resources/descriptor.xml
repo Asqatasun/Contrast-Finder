@@ -55,8 +55,18 @@
             <fileMode>664</fileMode>
             <outputDirectory>/install/</outputDirectory>
         </fileSet>
-        <!-- Docs -->
+        <!-- Docs .html -->
         <fileSet>
+            <directory>${basedir}/../documentation/target/doc_html/</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <fileMode>644</fileMode>
+            <outputDirectory>/documentation</outputDirectory>
+        </fileSet>
+
+        <!-- Docs .md-->
+ <!--   <fileSet>
             <directory>${basedir}/../documentation/en/</directory>
             <includes>
                 <include>**/*</include>
@@ -68,7 +78,6 @@
             </excludes>
             <fileMode>644</fileMode>
             <outputDirectory>/documentation</outputDirectory>
-        </fileSet>
-
+        </fileSet>    -->
     </fileSets>
 </assembly>

@@ -27,7 +27,8 @@ none
 none
 
 ### Task
-none
+- [#68 - tar.gz - Changelog and readme files in html format](https://github.com/Asqatasun/Contrast-Finder/issues/68) 
+- [#69 - tar.gz - Documentation files in html format](https://github.com/Asqatasun/Contrast-Finder/issues/69) 
 
 
 Contrast-Finder 0.5.1, 2017-06-14
