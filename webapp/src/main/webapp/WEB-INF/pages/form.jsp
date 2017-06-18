@@ -147,31 +147,15 @@
                                 </c:otherwise>
                             </c:choose>
                             <div class="form-group ${algoOnError}">
-                                <fieldset>
-                                    <legend class="col-lg-3 control-fieldset"><fmt:message key="form.objectifs"/></legend>
-                                    <div class="col-lg-4">
-                                        <div class="cf-group-fields">
-                                            <div class="radio first-radio">
-                                                <label for="algo1">
-                                                    <form:radiobutton id="algo1" path="algo" value="HSV"/>
-                                                    <fmt:message key="form.algoHSV"/>
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label for="algo2">
-                                                    <form:radiobutton id="algo2" path="algo" value="Rgb"/>
-                                                    <fmt:message key="form.algoRGB"/>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <c:if test="${algoOnError == 'has-error'}">
-                                            <span class="help-block"><fmt:message key="form.invalidAlgo"/></span>
-                                        </c:if>
-                                    </div>
-                                </fieldset>
+                                <label for="algo" class="col-lg-3 control-label"><fmt:message key="form.objectifs"/></label>
+                                <div class="col-lg-4">
+                                    <form:select class="form-control" path="algo">
+                                        <form:option value="Rgb"><fmt:message key="form.algoRGB"/></form:option>
+                                        <form:option value="HSV"><fmt:message key="form.algoHSV"/></form:option>
+                                    </form:select>
+                                    <form:errors path="algo" cssClass="help-block"/>
+                                </div> <!-- /col-lg-4 -->
                             </div>
-
-
 
                             <div class="form-group">
                                 <fmt:message key="form.validate" var="validateButton"/>
