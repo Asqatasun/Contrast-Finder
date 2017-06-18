@@ -159,7 +159,8 @@
 
                             <div class="form-group">
                                 <fmt:message key="form.validate" var="validateButton"/>
-                                <input id="submit-button" type="submit" class="btn btn-default btn-lg col-lg-offset-3 col-lg-3" value="${validateButton}"/>
+                           <%-- <input id="submit-button" type="submit" class="btn btn-default btn-lg col-lg-offset-2 col-lg-6" value="${validateButton}"/> --%>
+                                <input id="submit-button" type="submit" class="btn btn-default btn-lg btn-outline-success col-lg-offset-2" value="${validateButton}"/>
                             </div>
                         </form:form>
                     </div><!-- class="col-lg-12' -->

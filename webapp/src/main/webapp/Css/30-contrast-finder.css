@@ -151,6 +151,10 @@ legend.control-fieldset  {
     /* font: 150% Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace; */
     font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
 }
+#submit-button {
+    padding-left: 25px;
+    padding-right: 25px;
+}
 
 @media (min-width: 1200px) {
     .invalid-color {
