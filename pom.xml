@@ -28,6 +28,7 @@
                                     the minimum version of Maven for maven plugins
                                     ............  mvn versions:display-plugin-updates     -->
     <modules>
+  <!--  <module>documentation</module>  -->
         <module>engine</module>
         <module>webapp</module>
     </modules>
@@ -37,6 +38,7 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -115,6 +117,34 @@
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>1.0</version>
             </plugin>   -->
+
+    <!--    Generate HTML files (README, CHANGELOG, ...)
+            in target/html/ directory  (used in tar.gz)
+               https://github.com/walokra/markdown-page-generator-plugin
+               https://github.com/sirthias/pegdown                         -->
+            <plugin>
+                <groupId>com.ruleoftech</groupId>
+                <artifactId>markdown-page-generator-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <inputDirectory>${project.basedir}</inputDirectory>
+                    <outputDirectory>${project.build.directory}/html/</outputDirectory>
+                    <inputEncoding>UTF-8</inputEncoding>
+                    <outputEncoding>UTF-8</outputEncoding>
+                    <pegdownExtensions>TABLES,FENCED_CODE_BLOCKS,AUTOLINKS, ANCHORLINKS</pegdownExtensions>
+                    <!-- <pegdownExtensions>TABLES,FENCED_CODE_BLOCKS,AUTOLINKS, ANCHORLINKS, EXTANCHORLINKS</pegdownExtensions>  -->
+                    <!-- <transformRelativeMarkdownLinks>true</transformRelativeMarkdownLinks> -->
+                    <headerHtmlFile>${project.basedir}/engine/resources/src/main/resources/markdown/html/header.html</headerHtmlFile>
+                    <footerHtmlFile>${project.basedir}/engine/resources/src/main/resources/markdown/html/footer.html</footerHtmlFile>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -232,6 +262,11 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>1.2.3</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ruleoftech</groupId>
+                <artifactId>markdown-page-generator-plugin</artifactId>
+                <version>1.0.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
