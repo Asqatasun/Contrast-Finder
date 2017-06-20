@@ -125,6 +125,7 @@
             <plugin>
                 <groupId>com.ruleoftech</groupId>
                 <artifactId>markdown-page-generator-plugin</artifactId>
+                <version>1.0.0</version>
                 <executions>
                     <execution>
                         <phase>process-sources</phase>
