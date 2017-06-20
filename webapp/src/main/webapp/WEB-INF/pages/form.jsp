@@ -33,7 +33,7 @@
                 <%-- ===== FORM ========================================================================================= --%>
                 <div id="set-up-form" class="row">
                     <div class="col-lg-12">
-                        <h2><fmt:message key="form.fillInFields"/></h2>
+                        <%-- <h2><fmt:message key="form.fillInFields"/></h2> --%>
                         <c:set var="actionUrl">
                             <c:url value="result.html"></c:url>
                         </c:set>
