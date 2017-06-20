@@ -9,7 +9,7 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 none
 
 ### Security
-none
+- [#70 - Upgraded commons-lang3: 3.6 instead of 3.5](https://github.com/Asqatasun/Contrast-Finder/issues/70) 
 
 ### Bug
 none
