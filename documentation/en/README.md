@@ -23,6 +23,6 @@
 
 
 ## Screenshots
-![Screenshot - Contrast-Finder v0.5.1](images/screenshot/screenshot.EN_contrast-finder.v0.5.1_2017-06-15_grey_kranken.io-lossy.png)
+![Screenshot - Contrast-Finder v0.5.2](images/screenshot/screenshot.EN_contrast-finder.v0.5.2_2017-07-27_grey_kraken.io-lossy.png)
 
 

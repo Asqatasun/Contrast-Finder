@@ -5,16 +5,7 @@
     <artifactId>contrast-finder</artifactId>
     <packaging>pom</packaging>
     <version>0.5.2-dev</version>
-
     <name>Contrast-Finder</name>
-    <url>https://contrast-finder.org</url>
-    <description>
-        Find valid background / foreground color contrast for accessibility (a11y, WCAG)
-    </description>
-    <organization>
-        <name>Asqatasun.org</name>
-        <url>http://asqatasun.org</url>
-    </organization>
     <licenses>
         <license>
             <name>GNU Affero General Public License v3.0</name>
@@ -22,11 +13,15 @@
             <distribution>manual</distribution>
         </license>
     </licenses>
-    <prerequisites>         <!--    Maven 3.1 is required to use the following plugin:   -->
-        <maven>3.1</maven>  <!--    ............  org.owasp:dependency-check-maven       -->
-    </prerequisites>        <!--    The following command line indicates
-                                    the minimum version of Maven for maven plugins
-                                    ............  mvn versions:display-plugin-updates     -->
+    <url>https://contrast-finder.org</url>
+    <organization>
+        <name>Asqatasun.org</name>
+        <url>http://asqatasun.org</url>
+    </organization>    
+    <description>
+        Find valid background / foreground color contrast for accessibility (a11y, WCAG)
+    </description>
+
     <modules>
         <module>documentation</module>
         <module>engine</module>
@@ -38,7 +33,11 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
-
+    <prerequisites>         <!--    Maven 3.1 is required to use the following plugin:   -->
+        <maven>3.1</maven>  <!--    ............  org.owasp:dependency-check-maven       -->
+    </prerequisites>        <!--    The following command line indicates
+                                    the minimum version of Maven for maven plugins
+                                    ............  mvn versions:display-plugin-updates     -->
     <build>
         <plugins>
             <plugin>

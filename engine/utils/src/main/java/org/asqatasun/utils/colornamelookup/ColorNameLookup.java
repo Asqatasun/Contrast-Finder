@@ -36,9 +36,8 @@ public class ColorNameLookup {
     public String getColorNameFromStr(String colorStr) {
         String str = colorStr.trim();
         for (ColorName c : colorList) {
-            String name = c.getName();  // .toLowerCase()
-            if ( name.equalsIgnoreCase(str)) {
-                return name;
+            if ( c.getName().equalsIgnoreCase(str)) {
+                return c.getName();
             }
         }
         return "";
@@ -51,8 +50,7 @@ public class ColorNameLookup {
     public Color getColorFromName(String colorStr) {
         String str = colorStr.trim();
         for (ColorName c : colorList) {
-            String name = c.getName();
-            if ( name.equalsIgnoreCase(str)) {
+            if ( c.getName().equalsIgnoreCase(str)) {
                 return new Color(c.getRed(), c.getGreen(), c.getBlue());
             }
         }
@@ -232,18 +230,10 @@ public class ColorNameLookup {
             this.b = b;
             this.name = name;
         }
-        public String getName() {
-            return name;
-        }
-        public int getRed() {
-            return r;
-        }
-        public int getGreen() {
-            return g;
-        }
-        public int getBlue() {
-            return b;
-        }
+        public String getName() { return name; }
+        public int getRed()     { return r;    }
+        public int getGreen()   { return g;    }
+        public int getBlue()    { return b;    }
     }
 
 }

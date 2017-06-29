@@ -8,15 +8,8 @@
     </parent>
     <artifactId>contrast-finder-impl</artifactId>
     <version>0.5.2-dev</version>
-    <name>impl</name>
     <packaging>jar</packaging>
-
-
-    <url>https://contrast-finder.org</url>
-    <organization>
-        <name>Asqatasun.org</name>
-        <url>http://asqatasun.org</url>
-    </organization>
+    <name>impl</name>
     <licenses>
         <license>
             <name>GNU Affero General Public License v3.0</name>
@@ -24,6 +17,11 @@
             <distribution>manual</distribution>
         </license>
     </licenses>
+    <url>https://contrast-finder.org</url>
+    <organization>
+        <name>Asqatasun.org</name>
+        <url>http://asqatasun.org</url>
+    </organization>  
 
     <dependencies>
         <dependency>

@@ -60,9 +60,9 @@
                                 <label for="foreground-input" class="col-lg-3 control-label"><fmt:message key="form.foregroundColor"/></label>
                                 <div class="col-lg-4">
                                     <form:input path="foreground"       required="required"
-                                                id="foreground-input"   aria-describedby="help-block-colors"
-                                                type="text"             class="form-control form-color-input"/>
-                                    <%-- <span id="help-block-foreground" class="help-block"><fmt:message key="form.help"/></span> --%>
+                                                id="foreground-input"   type="text"
+                                                aria-describedby="foreground-sample-invalid  help-block-colors"
+                                                class="form-control form-color-input"/>
                                 </div>
                                 <div id="foreground-sample" class="col-lg-2 ${foregroundSampleClass}" style="${foregroundSampleStyle}">
                                     <span id="foreground-sample-invalid" style="${foregroundInvalidStyle}" class="invalid-color"><fmt:message key="form.invalidColor"/></span>
@@ -90,9 +90,9 @@
                                 <label for="background-input" class="col-lg-3 control-label"><fmt:message key="form.backgroundColor"/></label>
                                 <div class="col-lg-4">
                                     <form:input path="background"       required="required"
-                                                id="background-input"   aria-describedby="help-block-colors"
-                                                type="text"             class="form-control form-color-input"/>
-                           <%--     <span id="help-block-background" class="help-block"><fmt:message key="form.help"/></span> --%>
+                                                id="background-input"   type="text"
+                                                aria-describedby="background-sample-invalid  help-block-colors"
+                                                class="form-control form-color-input"/>
                                     <span id="help-block-colors" class="help-block"><fmt:message key="form.help"/></span>
                                 </div>
                                 <div id="background-sample" class="col-lg-2 ${backgroundSampleClass}" style="${backgroundSampleStyle}">
