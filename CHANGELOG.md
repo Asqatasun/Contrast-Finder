@@ -16,6 +16,7 @@ none
 
 ### Improvement 
 - [#67 - UI, replaced radio button by drop-down list for algo](https://github.com/Asqatasun/Contrast-Finder/issues/67) 
+- [#72 - UI, used the CSS "user-select:all" property for color result](https://github.com/Asqatasun/Contrast-Finder/issues/72) 
 
 ### Refactoring
 none
