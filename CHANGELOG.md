@@ -12,11 +12,12 @@ none
 - [#70 - Upgraded commons-lang3: 3.6 instead of 3.5](https://github.com/Asqatasun/Contrast-Finder/issues/70) 
 
 ### Bug
-none
+- [#74 - Javascript: allowed only valid RGB values](https://github.com/Asqatasun/Contrast-Finder/issues/74) 
 
 ### Improvement 
-- [#67 - UI, replaced radio button by drop-down list for algo](https://github.com/Asqatasun/Contrast-Finder/issues/67) 
 - [#72 - UI, used the CSS "user-select:all" property for color result](https://github.com/Asqatasun/Contrast-Finder/issues/72) 
+- [#67 - UI, replaced radio button by drop-down list for algo](https://github.com/Asqatasun/Contrast-Finder/issues/67) 
+- [#73 - UI, improved color sample when user use the color field](https://github.com/Asqatasun/Contrast-Finder/issues/73) 
 
 ### Refactoring
 none

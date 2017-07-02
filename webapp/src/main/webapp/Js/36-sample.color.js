@@ -41,16 +41,34 @@ function isValidateColorName(str) {
     return false;
 }
 
+function isValideRgbMaxValue(str) {
+    var numbers = str.match(/(\d{1,3})/g);
+    if(numbers !== null){
+        var isValid = true;
+        for (var i = 0, c = numbers.length; i < c; i++) {
+            if( numbers[i] > 255){
+                isValid = false;
+            }
+        }
+        return isValid;
+    }
+    return false;
+}
+
 function isValidateColorRgb(str) {
     str = str.trim();
     if(str.match(/^rgb\((\d{1,3}),(\d{1,3}),(\d{1,3})\)?$/i) !== null){ // "rbg(x,x,x)" or "rgb(x,x,x"
-        if(str.substr(-1) !== ")"){
-            str = str + ")";
+        if(isValideRgbMaxValue(str) === true){
+            if(str.substr(-1) !== ")"){
+                str = str + ")";
+            }
+            return str;
         }
-        return str;
     }
     else if (str.match(/^(\d{1,3}),(\d{1,3}),(\d{1,3})$/i) !== null){ // "x,x,x"
-        return "rgb("+ str + ")";
+        if(isValideRgbMaxValue(str) === true){
+            return "rgb("+ str + ")";
+        }
     }
     return false;
 }
