@@ -70,7 +70,7 @@ function isValidateColor(str) {
     }
 }
 
-function changeColorSample(colorPrefix) {
+function changeColorSample(colorPrefix, showError) {
     var input = document.getElementById(colorPrefix + "-input");
     var color = input.value.toLowerCase();
     var sample = document.getElementById(colorPrefix + "-sample");
@@ -82,7 +82,8 @@ function changeColorSample(colorPrefix) {
         sample.classList.add("sample-bordered");
         document.getElementById(colorPrefix + "-sample-invalid").style.display = "none";
         input.classList.remove("error");
-    } else {
+    }
+    else if(showError === true) {
         sample.style.backgroundColor = "rgba(0,0,0,0)";
         sample.classList.remove("color-sample");
         sample.classList.remove("sample-bordered");
@@ -93,12 +94,21 @@ function changeColorSample(colorPrefix) {
 
 
 $(document).ready(function() {
-    // changeColorSample("foreground");
-    // changeColorSample("background");
+
+    // when the color inputs lost focus
     document.getElementById("foreground-input").onchange = function() {
-        changeColorSample("foreground");
+        changeColorSample("foreground",true); // show error
     };
     document.getElementById("background-input").onchange = function() {
-        changeColorSample("background");
+        changeColorSample("background",true); // show error
     };
+
+    // when the user change the value of color inputs
+    $("#foreground-input").on("paste keyup", function() {
+        changeColorSample("foreground",false); // don't show error
+    });
+    $("#background-input").on("paste keyup", function() {
+        changeColorSample("background",false); // don't show error
+    });
+
 });
