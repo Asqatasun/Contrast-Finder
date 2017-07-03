@@ -43,15 +43,6 @@ That's the purpose of [Contrast-Finder.org](https://contrast-finder.org/)
 * email to `asqatasun AT asqatasun dot org` (only English, French and klingon is spoken :) ) 
 
 
-## Documentation
-
-* How to use ? 
-* How to install ?
-* How to build ?
-
-Go to the [documentation](https://github.com/Asqatasun/Contrast-Finder/blob/master/documentation/en/) !
-
-
 ## We want you! (aka Contribute)
 
 We would be really glad to have you on board! You can help in many ways:
@@ -63,6 +54,19 @@ We would be really glad to have you on board! You can help in many ways:
 
 Everything is summarized in the [CONTRIBUTING](https://github.com/Asqatasun/Contrast-Finder/blob/master/CONTRIBUTING.md) file.
 
+
+## Documentation
+
+* How to use ? 
+* How to install ?
+* How to build ?
+
+Go to the [documentation](https://github.com/Asqatasun/Contrast-Finder/blob/master/documentation/en/) !
+
+## Download
+
+* [lastest version of Contrast-Finder](https://github.com/Asqatasun/Contrast-Finder/releases/latest)
+* and also: [Contrast-Finder Docker images](https://hub.docker.com/r/asqatasun/contrast-finder/)
 
 ## License
 
