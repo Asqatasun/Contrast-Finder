@@ -1,5 +1,6 @@
 [![License : AGPL v3](https://img.shields.io/badge/License-AGPL3-blue.svg)](https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE) 
 [![Build Status](https://travis-ci.org/Asqatasun/Contrast-Finder.svg)](https://travis-ci.org/Asqatasun/Contrast-Finder)
+
 # Contrast-Finder documentation
 
 ## Contrast-Finder
@@ -18,6 +19,7 @@
 * [Howto build](30_Contributor_doc/Build/README.md)
 
 ---
+
 * More informations about the [algorithms](The-algorithms.md) here.
 * [Other contrast tools](Other-contrast-tools.md)
 
