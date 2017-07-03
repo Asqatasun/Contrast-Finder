@@ -20,7 +20,7 @@ none
 - [#73 - UI, improved color sample when user use the color field](https://github.com/Asqatasun/Contrast-Finder/issues/73) 
 
 ### Refactoring
-none
+- [#75 - Remove unused dependencies: httpclient + json](https://github.com/Asqatasun/Contrast-Finder/issues/75)  
 
 ### Configuration 
 none
