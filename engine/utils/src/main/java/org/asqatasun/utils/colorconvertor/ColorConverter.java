@@ -48,6 +48,13 @@ public final class ColorConverter {
     private static final String HEXADECIMAL_DICTIONNARY_V2 = "^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"; // #FFF, #FFFFFF, FFF, FFFFFF (but not FF or FFFF)
     private static final String SHORT_RGB_DICTIONNARY      = "^[0-9]{1,3},[0-9]{1,3},[0-9]{1,3}$";          // ex: "255,255,255"
     private static final String RGB_DICTIONNARY            = "^rgb\\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\\)?$"; // ex: "rgb(255,255,255)" and "rgb(255,255,255"
+    private static final String HSL_DICTIONNARY            = "^hsl\\([0-9]{1,3},[0-9]{1,3}%,[0-9]{1,3}%\\)?$"; // ex: "hsl(0, 0%, 100%)"
+    private static final int HUE_MIN        = 0;
+    private static final int HUE_MAX        = 360;
+    private static final int SATURATION_MIN = 0;
+    private static final int SATURATION_MAX = 100;
+    private static final int BRIGHTNESS_MIN = 0;
+    private static final int BRIGHTNESS_MAX = 100;
 
     /**
      * Private constructor, utility class
@@ -131,7 +138,13 @@ public final class ColorConverter {
      */
     public static String formatColorStr(String colorStr) {
         String str = colorStr.replaceAll("\\s", ""); // replace ' ', \t, \n, ...
-        if (str.toLowerCase().matches(RGB_DICTIONNARY)){  // ex: "rgb(255,255,255)" and "rgb(255,255,255"
+        if (str.toLowerCase().matches(HSL_DICTIONNARY)){  // ex: "hsl(0, 0%, 100%)"
+            str = str.toLowerCase();
+            if(!str.endsWith(")")){
+                str = str + ")";
+            }
+        }
+        else if (str.toLowerCase().matches(RGB_DICTIONNARY)){  // ex: "rgb(255,255,255)" and "rgb(255,255,255"
             str = str.toLowerCase();
             if(!str.endsWith(")")){
                 str = str + ")";
@@ -167,7 +180,10 @@ public final class ColorConverter {
         if (color == null) {
             color = colorFromRgbStr(colorStr);
             if (color == null) {
-                color = colorFromColorName(colorStr);
+                color = colorFromHslStr(colorStr);
+                if (color == null) {
+                    color = colorFromColorName(colorStr);
+                }
             }
         }
         return color;
@@ -202,6 +218,33 @@ public final class ColorConverter {
             if(     r <= RGB_MAX && g <= RGB_MAX && b <= RGB_MAX
                 &&  r >= RGB_MIN && g >= RGB_MIN && b >= RGB_MIN){
                 color = new Color(r, g, b);
+            }
+        }
+        return color;
+    }
+
+
+    /**
+     * @param  colorStr ex: hsl(0, 0%, 100%)
+     * @return Color object or NULL
+     */
+    public static Color colorFromHslStr(String colorStr) {
+        Color  color = null;
+        String str   = colorStr.toLowerCase().replaceAll("\\s", ""); // replace ' ', \t, \n, ...
+        if (str.matches(HSL_DICTIONNARY)){  // ex: rgb(255,255,255) or 255,255,255
+            str = str.replaceAll("hsl\\(","");
+            str = str.replaceAll("\\)","");
+            str = str.replaceAll("%","");
+            String[] strList = str.split(",");
+            int h = Integer.parseInt(strList[0]);
+            int s = Integer.parseInt(strList[1]);
+            int l = Integer.parseInt(strList[2]);
+            if(     h <= HUE_MAX && s <= SATURATION_MAX && l <= BRIGHTNESS_MAX
+                &&  h >= HUE_MIN && s >= SATURATION_MIN && l >= BRIGHTNESS_MIN){
+                // WIP      color = new Color(r, g, b);
+                // example:
+                //      https://github.com/jeffjianzhao/DAViewer/blob/master/src/daviewer/HSLColor.java
+                //      https://github.com/google/closure-stylesheets/blob/master/src/com/google/common/css/compiler/gssfunctions/ColorUtil.java
             }
         }
         return color;

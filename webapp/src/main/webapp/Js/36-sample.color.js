@@ -46,7 +46,7 @@ function isValideRgbMaxValue(str) {
     if(numbers !== null){
         var isValid = true;
         for (var i = 0, c = numbers.length; i < c; i++) {
-            if( numbers[i] > 255){
+            if( parseInt(numbers[i]) > 255){
                 isValid = false;
             }
         }
@@ -73,6 +73,39 @@ function isValidateColorRgb(str) {
     return false;
 }
 
+function isValideHslMaxValue(str) {
+    var hue = str.match(/(\d{1,3}),/);
+    // hue = hue.substring(0,hue.lenght-1);
+    if(parseInt(hue) > 360){
+        return false;
+    }
+
+    var percents = str.match(/(\d{1,3})%/g);
+    if(percents !== null){
+        var isValid = true;
+        for (var i = 0, c = percents.length; i < c; i++) {
+            if(parseInt(percents[i]) > 100){
+                isValid = false;
+            }
+        }
+        return isValid;
+    }
+    return false;
+}
+
+function isValidateColorHsl(str) {
+    str = str.trim();
+    if(str.match(/^hsl\((\d{1,3}),(\d{1,3})%,(\d{1,3})%\)?$/i) !== null){ // "hsl(90,100%,50%)" or "hsl(90,100%,50%"
+        if(isValideHslMaxValue(str) === true){
+            if(str.substr(-1) !== ")"){
+                str = str + ")";
+            }
+            return str;
+        }
+    }
+    return false;
+}
+
 function isValidateColor(str) {
     str = str.trim();
     var checkCommas = str.match(/,/g);
@@ -80,7 +113,13 @@ function isValidateColor(str) {
         if(checkCommas.length !== 2){
             return false;
         }
-        return isValidateColorRgb(str); // FALSE or rbg color string
+        var resultRgb = isValidateColorRgb(str); // FALSE or rbg color string
+        if(resultRgb !== false){
+            return resultRgb;
+        }
+        else {
+            return isValidateColorHsl(str); // FALSE or hsl color string
+        }
     }
     else if (str.match(/^#?[a-f0-9]{6}$/i) !== null
             || str.match(/^#?[a-f0-9]{3}$/i) !== null){
