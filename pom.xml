@@ -4,17 +4,8 @@
     <groupId>org.asqatasun</groupId>
     <artifactId>contrast-finder</artifactId>
     <packaging>pom</packaging>
-    <version>0.5.1</version>
-
+    <version>0.5.2</version>
     <name>Contrast-Finder</name>
-    <url>https://contrast-finder.org</url>
-    <description>
-        Find valid background / foreground color contrast for accessibility (a11y, WCAG)
-    </description>
-    <organization>
-        <name>Asqatasun.org</name>
-        <url>http://asqatasun.org</url>
-    </organization>
     <licenses>
         <license>
             <name>GNU Affero General Public License v3.0</name>
@@ -22,12 +13,17 @@
             <distribution>manual</distribution>
         </license>
     </licenses>
-    <prerequisites>         <!--    Maven 3.1 is required to use the following plugin:   -->
-        <maven>3.1</maven>  <!--    ............  org.owasp:dependency-check-maven       -->
-    </prerequisites>        <!--    The following command line indicates
-                                    the minimum version of Maven for maven plugins
-                                    ............  mvn versions:display-plugin-updates     -->
+    <url>https://contrast-finder.org</url>
+    <organization>
+        <name>Asqatasun.org</name>
+        <url>http://asqatasun.org</url>
+    </organization>    
+    <description>
+        Find valid background / foreground color contrast for accessibility (a11y, WCAG)
+    </description>
+
     <modules>
+        <module>documentation</module>
         <module>engine</module>
         <module>webapp</module>
     </modules>
@@ -37,6 +33,11 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
+    <prerequisites>         <!--    Maven 3.1 is required to use the following plugin:   -->
+        <maven>3.1</maven>  <!--    ............  org.owasp:dependency-check-maven       -->
+    </prerequisites>        <!--    The following command line indicates
+                                    the minimum version of Maven for maven plugins
+                                    ............  mvn versions:display-plugin-updates     -->
     <build>
         <plugins>
             <plugin>
@@ -115,6 +116,35 @@
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>1.0</version>
             </plugin>   -->
+
+    <!--    Generate HTML files (README, CHANGELOG, ...)
+            in target/html/ directory  (used in tar.gz)
+               https://github.com/walokra/markdown-page-generator-plugin
+               https://github.com/sirthias/pegdown                         -->
+            <plugin>
+                <groupId>com.ruleoftech</groupId>
+                <artifactId>markdown-page-generator-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <inputDirectory>${project.basedir}</inputDirectory>
+                    <outputDirectory>${project.build.directory}/html/</outputDirectory>
+                    <inputEncoding>UTF-8</inputEncoding>
+                    <outputEncoding>UTF-8</outputEncoding>
+                    <pegdownExtensions>TABLES,FENCED_CODE_BLOCKS,AUTOLINKS, ANCHORLINKS</pegdownExtensions>
+                    <!-- <pegdownExtensions>TABLES,FENCED_CODE_BLOCKS,AUTOLINKS, ANCHORLINKS, EXTANCHORLINKS</pegdownExtensions>  -->
+                    <!-- <transformRelativeMarkdownLinks>true</transformRelativeMarkdownLinks> -->
+                    <headerHtmlFile>${project.basedir}/engine/resources/src/main/resources/markdown/html/header.html</headerHtmlFile>
+                    <footerHtmlFile>${project.basedir}/engine/resources/src/main/resources/markdown/html/footer.html</footerHtmlFile>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -220,7 +250,7 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.5</version>
+                <version>3.6</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -232,6 +262,11 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>1.2.3</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ruleoftech</groupId>
+                <artifactId>markdown-page-generator-plugin</artifactId>
+                <version>1.0.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

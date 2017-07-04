@@ -7,7 +7,7 @@ You can help in many ways:
 
 1. Use Contrast-Finder !
 1. Help translate Contrast-Finder
-1. Give us [feedback on the forum](http://forum.asqatasun.org) or [fill in bug report](https://github.com/Asqatasun/Contrast-Finder/issues)
+1. Give us [feedback on the forum](https://forum.asqatasun.org/c/contrast-finder) or [fill in bug report](https://github.com/Asqatasun/Contrast-Finder/issues)
 
 [Pull Requests](https://github.com/Asqatasun/Contrast-Finder/pulls) are always welcome! 
 

@@ -18,7 +18,10 @@ code {
   /*  letter-spacing: 0.1em; */
     font-size: 1em;
     padding:0;
-
+    -webkit-user-select: all; /* Chrome, Opera, Safari */
+    -moz-user-select:    all; /* Firefox 2+ */
+    -ms-user-select:     all; /* IE 10+ */
+    user-select:         all; /* Standard syntax */
 }
 
 /* Bootstrap override */
@@ -34,6 +37,16 @@ code {
     color: #6b4b0a;
 }
 /* Form view*/
+
+.color-value-hsl,
+.color-value-rgb,
+.color-value-hexa {
+    -webkit-user-select: all; /* Chrome, Opera, Safari */
+    -moz-user-select:    all; /* Firefox 2+ */
+    -ms-user-select:     all; /* IE 10+ */
+    user-select:         all; /* Standard syntax */
+    /* font-family: Monaco,Menlo,Consolas,"Courier New",monospace; */
+}
 
 #lang-switcher {
     text-align: right;
@@ -150,6 +163,10 @@ legend.control-fieldset  {
     /* font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; */
     /* font: 150% Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace; */
     font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+}
+#submit-button {
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 @media (min-width: 1200px) {

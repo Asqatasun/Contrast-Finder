@@ -3,18 +3,15 @@
 
 ## What is Contrast Finder ?
 
-There are lot of tools to find a good contrast on the web, but no one to suggest valid contrasts.
-
-Contrast Finder is a tool which computes the contrast between two colors (background, foreground) and checks if the contrast is valid.
+* Contrast Finder is a tool which computes the contrast between two colors (background, foreground) and checks if the contrast is valid.
+* When the contrast is not valid, the main target is to suggest some correct colors contrasts.
 
 Contrast finder is designed to be used by webdesigner, webdeveloppers or e-accessibility professionals.
-
-When the contrast is not valid, the main target is to suggest some correct colors contrasts.
 
 ## How to use this tool ?
 
 The interface is a form, with five fields.
-![Screenshot - Contrast-Finder v0.3.5](images/screenshot.EN_contrast-finder.v0.3.5_2016-12-19.png)
+![Screenshot - Contrast-Finder v0.5.2](images/screenshot/screenshot.EN_contrast-finder.v0.5.2_2017-07-27_grey_kraken.io-lossy.png)
 
 ## The foreground
 

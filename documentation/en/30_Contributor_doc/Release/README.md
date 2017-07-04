@@ -65,3 +65,37 @@ docker run -d -p 8080:8080 asqatasun/contrast-finder
 ## Versioning
 
 We tend to follow the [semantic versioning](http://semver.org/) recommendations.
+
+## Changelog template
+
+```
+Contrast-Finder M.m.p, 2017-xx-xx
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+### New Feature
+none
+
+### Security
+none
+
+### Bug
+none
+
+### Improvement 
+none
+
+### Refactoring
+none
+
+### Configuration 
+none
+
+### Documentation
+none
+
+### Task
+none
+
+```

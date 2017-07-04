@@ -10,13 +10,23 @@
         <fileSet>
             <directory>${basedir}/../</directory>
             <includes>
-                <include>README.md</include>
-                <include>CHANGELOG.md</include>
                 <include>LICENSE</include>
             </includes>
             <fileMode>644</fileMode>
             <outputDirectory>/</outputDirectory>
         </fileSet>
+
+        <!-- html FILES -->
+        <fileSet>
+            <directory>${basedir}/../target/html/</directory>
+            <includes>
+                <include>README.html</include>
+                <include>CHANGELOG.html</include>
+            </includes>
+            <fileMode>644</fileMode>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+
         <!-- Install web-app conf -->
         <fileSet>
             <directory>${basedir}/src/main/resources/conf</directory>
@@ -45,8 +55,18 @@
             <fileMode>664</fileMode>
             <outputDirectory>/install/</outputDirectory>
         </fileSet>
-        <!-- Docs -->
+        <!-- Docs .html -->
         <fileSet>
+            <directory>${basedir}/../documentation/target/doc_html/</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <fileMode>644</fileMode>
+            <outputDirectory>/documentation</outputDirectory>
+        </fileSet>
+
+        <!-- Docs .md-->
+ <!--   <fileSet>
             <directory>${basedir}/../documentation/en/</directory>
             <includes>
                 <include>**/*</include>
@@ -54,10 +74,10 @@
             <excludes>
                 <exclude>nbproject/**/*</exclude>
                 <exclude>SUMMARY.md</exclude>
+                <exclude>images/screenshot/Archive/</exclude>
             </excludes>
             <fileMode>644</fileMode>
             <outputDirectory>/documentation</outputDirectory>
-        </fileSet>
-
+        </fileSet>    -->
     </fileSets>
 </assembly>

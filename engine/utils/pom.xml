@@ -4,18 +4,12 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>engine</artifactId>
-        <version>0.5.1</version>
+        <version>0.5.2</version>
     </parent>
     <artifactId>contrast-finder-utils</artifactId>
-    <version>0.5.1</version>
-    <name>utils</name>
+    <version>0.5.2</version>
     <packaging>jar</packaging>
-
-    <url>https://contrast-finder.org</url>
-    <organization>
-        <name>Asqatasun.org</name>
-        <url>http://asqatasun.org</url>
-    </organization>
+    <name>utils</name>
     <licenses>
         <license>
             <name>GNU Affero General Public License v3.0</name>
@@ -23,21 +17,16 @@
             <distribution>manual</distribution>
         </license>
     </licenses>
+    <url>https://contrast-finder.org</url>
+    <organization>
+        <name>Asqatasun.org</name>
+        <url>http://asqatasun.org</url>
+    </organization>  
 
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20160810</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
