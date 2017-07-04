@@ -1,12 +1,9 @@
 # CHANGELOG
 
-Contrast-Finder 0.5.2, 2017-xx-xx
+Contrast-Finder 0.5.2, 2017-07-04
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
-
-### New Feature
-none
 
 ### Security
 - [#70 - Upgraded commons-lang3: 3.6 instead of 3.5](https://github.com/Asqatasun/Contrast-Finder/issues/70) 
@@ -21,12 +18,6 @@ none
 
 ### Refactoring
 - [#75 - Remove unused dependencies: httpclient + json](https://github.com/Asqatasun/Contrast-Finder/issues/75)  
-
-### Configuration 
-none
-
-### Documentation
-none
 
 ### Task
 - [#68 - tar.gz - Changelog and readme files in html format](https://github.com/Asqatasun/Contrast-Finder/issues/68) 
