@@ -7,11 +7,11 @@ Tool to provide color combination for a good (accessible, WCAG-compliant) contra
 Supported tags and respective `Dockerfile` links :
 
 * [pre-requisites_from-Ubuntu](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_from-Ubuntu/Dockerfile)
-* [v0.5.2, latest](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/RELEASE/Dockerfile)
+* [v0.5.3-dev, latest](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/RELEASE/Dockerfile)
+* [v0.5.2](https://github.com/Asqatasun/Contrast-Finder/blob/v0.5.2/docker/RELEASE/Dockerfile)
 * [v0.5.1](https://github.com/Asqatasun/Contrast-Finder/blob/v0.5.1/docker/RELEASE/Dockerfile)
 * [v0.5.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.5.0/docker/RELEASE/Dockerfile)
 * [v0.4.7](https://github.com/Asqatasun/Contrast-Finder/blob/v0.4.7/docker/RELEASE/Dockerfile)
-* [v0.4.6](https://github.com/Asqatasun/Contrast-Finder/blob/v0.4.6/docker/RELEASE/Dockerfile)
 
 ## How to use this image
 `docker pull asqatasun/contrast-finder` 
@@ -28,7 +28,7 @@ In your browser, go to `http://localhost:8080/contrast-finder/`
 * More information on the website [Contrast-Finder.org](https://contrast-finder.org)
 * Demo : https://app.contrast-finder.org
 
-![Screenshot - Contrast-Finder v0.5.2](https://raw.githubusercontent.com/Asqatasun/Contrast-Finder/develop/documentation/en/images/screenshot/screenshot.EN_contrast-finder.v0.5.2_2017-07-27_grey_kraken.io-lossy.png)
+![Screenshot - Contrast-Finder v0.5.3-dev](https://raw.githubusercontent.com/Asqatasun/Contrast-Finder/develop/documentation/en/images/screenshot/screenshot.EN_contrast-finder.v0.5.3-dev_2017-07-27_grey_kraken.io-lossy.png)
 
 ## Tips and tricks
 ### Container available only on 127.0.0.1 (Linux users) #### 
