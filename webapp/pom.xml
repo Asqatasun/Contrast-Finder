@@ -182,7 +182,10 @@
                         </goals>
                         <configuration>
                             <encoding>UTF8</encoding>
-                            <includes>**/*_utf8*.properties</includes>
+                            <src>src/main/resources</src>
+                            <includes>
+                                <include>**/*_utf8*.properties</include>
+                            </includes>
                         </configuration>
                     </execution>
                 </executions>
