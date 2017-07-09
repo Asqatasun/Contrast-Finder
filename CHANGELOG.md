@@ -18,7 +18,7 @@ none
 none
 
 ### Refactoring
-none
+- [#76 - i18n files in UTF8 character encoding](https://github.com/Asqatasun/Contrast-Finder/issues/76) 
 
 ### Configuration 
 none
