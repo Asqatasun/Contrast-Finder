@@ -27,7 +27,9 @@ none
 none
 
 ### Task
-none
+- [#79 - Pom.xml: added maven-checkstyle-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/79) 
+
+
 
 
 Contrast-Finder 0.5.2, 2017-07-04
