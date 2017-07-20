@@ -2,76 +2,89 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page pageEncoding="UTF-8"%>
 
-            <header id="header" class="page-header">
-                <c:set var="properQueryString" scope="page" value="${fn:replace(pageContext.request.queryString, '&', '&amp;')}"/>
-                <c:choose>
-                    <c:when test="${not empty pageContext.request.queryString}">
-                        <c:choose>
-                            <c:when test="${fn:contains(pageContext.request.queryString, 'lang=en')}">
-                                <c:set var="enUrl" scope="request" value="?${properQueryString}"/>
-                                <c:set var="frUrl" scope="request" value="?${fn:replace(properQueryString,
-                                                                             'lang=en', 'lang=fr')}" />
-                            </c:when>
-                            <c:when test="${fn:contains(pageContext.request.queryString, 'lang=fr')}">
-                                <c:set var="frUrl" scope="request" value="?${properQueryString}"/>
-                                <c:set var="enUrl" scope="request" value="?${fn:replace(properQueryString,
-                                                                             'lang=fr', 'lang=en')}" />
-                            </c:when>
-                            <c:otherwise>
-                                <c:set var="frUrl" scope="request" value="?${properQueryString}&amp;lang=fr"/>
-                                <c:set var="enUrl" scope="request" value="?${properQueryString}&amp;lang=en"/>
-                            </c:otherwise>
-                        </c:choose>
-                    </c:when>
-                    <c:otherwise>
-                        <c:set var="frUrl" scope="request" value="?lang=fr"/>
-                        <c:set var="enUrl" scope="request" value="?lang=en"/>
-                    </c:otherwise>
-                </c:choose>
-                <nav id="lang-switcher">
-                    <c:choose>
-                        <c:when test="${lang == 'en'}">
-                            <strong>english</strong>
-                        </c:when>
-                        <c:otherwise>
-                            <a href="${enUrl}" title="Switch to english" lang="en">english</a>
-                        </c:otherwise>
-                    </c:choose>
-                    &nbsp;
-                    <c:choose>
-                        <c:when test="${lang == 'fr'}">
-                            <strong>français</strong>
-                        </c:when>
-                        <c:otherwise>
-                            <a href="${frUrl}" title="Passer en français" lang="fr">français</a>
-                        </c:otherwise>
-                    </c:choose>
-                </nav>
+<header id="header" class="page-header">
+    <c:set var="properQueryString" scope="page" value="${fn:replace(pageContext.request.queryString, '&', '&amp;')}"/>
+    <c:choose>
+        <c:when test="${not empty pageContext.request.queryString}">
+            <c:choose>
+                <c:when test="${fn:contains(pageContext.request.queryString, 'lang=en')}">
+                    <c:set var="frUrl" scope="request" value="?${fn:replace(properQueryString,'lang=en','lang=fr')}" />
+                    <c:set var="enUrl" scope="request" value="?${properQueryString}"/>
+                    <c:set var="ptUrl" scope="request" value="?${fn:replace(properQueryString,'lang=en','lang=pt')}" />
+                </c:when>
+                <c:when test="${fn:contains(pageContext.request.queryString, 'lang=fr')}">
+                    <c:set var="frUrl" scope="request" value="?${properQueryString}"/>
+                    <c:set var="enUrl" scope="request" value="?${fn:replace(properQueryString,'lang=fr','lang=en')}" />
+                    <c:set var="ptUrl" scope="request" value="?${fn:replace(properQueryString,'lang=fr','lang=pt')}" />
+                </c:when>
+                <c:when test="${fn:contains(pageContext.request.queryString, 'lang=pt')}">
+                    <c:set var="frUrl" scope="request" value="?${fn:replace(properQueryString,'lang=pt','lang=fr')}" />
+                    <c:set var="enUrl" scope="request" value="?${fn:replace(properQueryString,'lang=pt','lang=en')}" />
+                    <c:set var="ptUrl" scope="request" value="?${properQueryString}"/>
+                </c:when>
+                <c:otherwise>
+                    <c:set var="frUrl" scope="request" value="?${properQueryString}&amp;lang=fr"/>
+                    <c:set var="enUrl" scope="request" value="?${properQueryString}&amp;lang=en"/>
+                    <c:set var="ptUrl" scope="request" value="?${properQueryString}&amp;lang=pt"/>
+                </c:otherwise>
+            </c:choose>
+        </c:when>
+        <c:otherwise>
+            <c:set var="frUrl" scope="request" value="?lang=fr"/>
+            <c:set var="enUrl" scope="request" value="?lang=en"/>
+            <c:set var="ptUrl" scope="request" value="?lang=pt"/>
+        </c:otherwise>
+    </c:choose>
+    <nav id="lang-switcher">
+        <c:choose>
+            <c:when test="${lang == 'en'}">
+                <strong>english</strong>
+            </c:when>
+            <c:otherwise>
+                <a href="${enUrl}" title="Switch to english" lang="en">english</a>
+            </c:otherwise>
+        </c:choose>
+        &nbsp;
+        <c:choose>
+            <c:when test="${lang == 'fr'}">
+                <strong>français</strong>
+            </c:when>
+            <c:otherwise>
+                <a href="${frUrl}" title="Passer en français" lang="fr">français</a>
+            </c:otherwise>
+        </c:choose>
+        &nbsp;
+        <c:choose>
+            <c:when test="${lang == 'pt'}">
+                <strong>português</strong>
+            </c:when>
+            <c:otherwise>
+                <a href="${ptUrl}" title="em Português" lang="pt">português</a>
+            </c:otherwise>
+        </c:choose>
+    </nav>
 
-                <div id="contrast-finder-logo">
-                    <c:choose>
-                        <c:when test="${empty colorResult && empty errorResult}">
-                            <img src="Images/logo/contrast-finder_logo_1051x1053.png"
-                                 alt="" />
-                        </c:when>
-                        <c:otherwise>
-                            <a title=" <fmt:message key="logo.link.title"/> " href="./?lang=${lang}">
-                                <img src="Images/logo/contrast-finder_logo_1051x1053.png"
-                                     alt=" <fmt:message key="logo.link.title"/> " />
-                            </a>
-                        </c:otherwise>
-                    </c:choose>
-                </div>
+    <div id="contrast-finder-logo">
+        <c:choose>
+            <c:when test="${empty colorResult && empty errorResult}">
+                <img src="Images/logo/contrast-finder_logo_1051x1053.png"
+                     alt="" />
+            </c:when>
+            <c:otherwise>
+                <a title=" <fmt:message key="logo.link.title"/> " href="./?lang=${lang}">
+                    <img src="Images/logo/contrast-finder_logo_1051x1053.png"
+                         alt=" <fmt:message key="logo.link.title"/> " />
+                </a>
+            </c:otherwise>
+        </c:choose>
+    </div>
 
 
-                <div id="header_title">
-                    <h1>${appName_v2}</h1>
-                    <p><fmt:message key="form.description"/></p>
-                    <p>
-                        <a href="<fmt:message key="form.wcagLink"/>">
-                            <span lang="en"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr></span> <fmt:message key="form.sc"/> 1.4.3
-                        </a>
-                        <fmt:message key="form.sc-info"/>
-                    </p>
-                </div>  <!-- id="header_title'-->
-            </header><!-- id="header' class="page-header"-->
+    <div id="header_title">
+        <h1>${appName_v2}</h1>
+        <p><fmt:message key="form.description"/></p>
+        <p>
+            <fmt:message key="form.sc-info"/>
+        </p>
+    </div>  <!-- id="header_title'-->
+</header><!-- id="header' class="page-header"-->

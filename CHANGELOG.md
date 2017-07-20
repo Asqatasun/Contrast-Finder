@@ -1,5 +1,25 @@
 # CHANGELOG
 
+Contrast-Finder 0.6.0, 2017-07-21
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+### New Feature
+- [#80 - i18n: added portuguese](https://github.com/Asqatasun/Contrast-Finder/issues/80)
+
+### Outdated dependencies
+- [#59 - Upgraded SpringFramework to v4.3.10](https://github.com/Asqatasun/Contrast-Finder/issues/59)
+
+### Refactoring
+- [#76 - i18n files in UTF8 character encoding](https://github.com/Asqatasun/Contrast-Finder/issues/76) 
+
+### Task
+- [#79 - Pom.xml: added maven-checkstyle-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/79) 
+
+
+
+
 Contrast-Finder 0.5.2, 2017-07-04
 ---------------------------------
 

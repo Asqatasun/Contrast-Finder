@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.5.2</version>
+        <version>0.6.0</version>
     </parent>
     <artifactId>webapp</artifactId>
-    <version>0.5.2</version>
+    <version>0.6.0</version>
     <packaging>war</packaging>
     <name>contrast-finder-webapp</name>
     <licenses>
@@ -26,7 +26,7 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <springVersion>4.3.9.RELEASE</springVersion>
+        <springVersion>4.3.10.RELEASE</springVersion>
         <springSecurityVersion>4.2.3.RELEASE</springSecurityVersion>
     </properties>
     <dependencies>
@@ -166,6 +166,26 @@
                                     <type>jar</type>
                                 </artifactItem>
                             </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>native2ascii-maven-plugin</artifactId>
+                <version>1.0-beta-1</version>
+                <executions>
+                    <execution>
+                        <id>native2ascii-utf8-properties</id>
+                        <goals>
+                            <goal>native2ascii</goal>
+                        </goals>
+                        <configuration>
+                            <encoding>UTF8</encoding>
+                            <src>src/main/resources</src>
+                            <includes>
+                                <include>**/*_utf8*.properties</include>
+                            </includes>
                         </configuration>
                     </execution>
                 </executions>
