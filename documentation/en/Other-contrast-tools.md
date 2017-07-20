@@ -30,6 +30,7 @@
     * https://toolness.github.io/accessible-color-matrix/
 * https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/
 * https://hexnaw.com/
+
 * http://jxnblk.com/colorable/
     * https://colorable.jxnblk.com/
     * http://jxnblk.com/hello-color/
@@ -46,6 +47,7 @@
 ### Vision simulation
 
 * http://paletton.com/ very popular but n real option for accessibility (as of 2016), and not opensource
+* http://carlosrafaelgn.com.br/Aula/Cores.html (not opensource, in Portuguese)
 * http://www.getstark.co/
     * https://github.com/stark-contrast/stark-sketch-plugin
 
