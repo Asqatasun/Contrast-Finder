@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                            \
       org.label-schema.name           = "Contrast-Finder - WebApp pre-requisites"               \
-      org.label-schema.version        = "0.5.3-dev"                                             \
+      org.label-schema.version        = "0.6.0"                                             \
       org.label-schema.url            = "https://contrast-finder.org"                           \
       org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"
           # ----> documentation  http://label-schema.org/
