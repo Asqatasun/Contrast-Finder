@@ -80,6 +80,9 @@ none
 ### Security
 none
 
+### Outdated dependencies
+none
+
 ### Bug
 none
 

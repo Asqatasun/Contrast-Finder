@@ -1,6 +1,6 @@
 # CHANGELOG
 
-Contrast-Finder 0.5.3, 2017-07-xx
+Contrast-Finder 0.5.3, 2017-07-2x
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
@@ -8,23 +8,11 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 ### New Feature
 none
 
-### Security
-none
-
-### Bug
-none
-
-### Improvement 
-none
+### Outdated dependencies
+- [#59 - Upgraded SpringFramework to v4.3.10](https://github.com/Asqatasun/Contrast-Finder/issues/59)
 
 ### Refactoring
 - [#76 - i18n files in UTF8 character encoding](https://github.com/Asqatasun/Contrast-Finder/issues/76) 
-
-### Configuration 
-none
-
-### Documentation
-none
 
 ### Task
 - [#79 - Pom.xml: added maven-checkstyle-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/79) 
