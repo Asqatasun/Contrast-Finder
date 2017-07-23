@@ -279,7 +279,7 @@
                                 <data>
                                     <conffile>true</conffile>
                                     <type>file</type>
-                                    <src>${project.build.directory}/classes/conf/contrast-finder.conf.dist</src>
+                                    <src>${project.basedir}/src/main/resources/conf/contrast-finder.conf.dist</src>
                                     <dst>/etc/contrast-finder/contrast-finder.conf.dist</dst>
                                     <mapper>
                                       <type>perm</type>
@@ -288,7 +288,7 @@
                                 </data>
                                 <data>
                                     <type>file</type>
-                                    <src>${project.build.directory}/classes/conf/contrast-finder.log</src>
+                                    <src>${project.basedir}/src/main/resources/conf/contrast-finder.log</src>
                                     <mapper>
                                         <type>perm</type>
                                         <prefix>/var/log/contrast-finder</prefix>
