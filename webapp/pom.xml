@@ -259,29 +259,36 @@
                             <goal>jdeb</goal>
                         </goals>
                         <configuration>
+                            <deb>${project.build.directory}/contrast-finder_${project.version}.deb</deb>
                             <verbose>true</verbose>
                             <controlDir>${project.basedir}/src/deb/control</controlDir>
-                            <deb>${project.build.directory}/contrast-finder_${project.version}.deb</deb>
                             <dataSet>
                                 <data>
+                                    <type>template</type>
+                                    <paths>
+                                        <path>/etc/contrast-finder</path>
+                                        <path>/var/log/contrast-finder</path>
+                                    </paths>
+                                </data>
+                                <data> <!-- symlink-should-be-relative -->
                                     <type>link</type>
-                                    <linkName>/usr/share/tomcat7/lib/spring3-instrument-tomcat.jar</linkName>
-                                    <linkTarget>/usr/share/java/spring3-instrument-tomcat.jar</linkTarget>
                                     <symlink>true</symlink>
+                                    <linkName>/usr/share/tomcat7/lib/spring3-instrument-tomcat.jar</linkName>
+                                    <linkTarget>../../java/spring3-instrument-tomcat.jar</linkTarget>
                                 </data>
                                 <data>
-                                    <src>${project.build.directory}/classes/conf/contrast-finder.conf.dist</src>
-                                    <type>file</type>
                                     <conffile>true</conffile>
+                                    <type>file</type>
+                                    <src>${project.build.directory}/classes/conf/contrast-finder.conf.dist</src>
+                                    <dst>/etc/contrast-finder/contrast-finder.conf.dist</dst>
                                     <mapper>
                                       <type>perm</type>
-                                      <prefix>/etc/contrast-finder</prefix>
                                       <user>tomcat7</user>
                                     </mapper>
                                 </data>
                                 <data>
-                                    <src>${project.build.directory}/classes/conf/contrast-finder.log</src>
                                     <type>file</type>
+                                    <src>${project.build.directory}/classes/conf/contrast-finder.log</src>
                                     <mapper>
                                         <type>perm</type>
                                         <prefix>/var/log/contrast-finder</prefix>
@@ -289,13 +296,19 @@
                                     </mapper>
                                 </data>
                                 <data>
-                                    <src>${project.build.directory}/contrast-finder-webapp-${project.version}.war</src>
                                     <type>file</type>
+                                    <src>${project.build.directory}/contrast-finder-webapp-${project.version}.war</src>
+                                    <dst>contrast-finder.war</dst>
                                     <mapper>
                                         <type>perm</type>
-                                        <prefix>/var/lib/tomcat7/webapps/</prefix>
+                                        <prefix>/var/lib/tomcat7/webapps</prefix>
                                         <user>tomcat7</user>
                                     </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>${project.basedir}/src/deb/copyright</src>
+                                    <dst>/usr/share/doc/contrast-finder-webapp/copyright</dst>
                                 </data>
                             </dataSet>
                         </configuration>
