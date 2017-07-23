@@ -1,0 +1,22 @@
+Source: contrast-finder
+Package: contrast-finder
+Version: 0.6.0
+Section: web
+Priority: optional
+Maintainer: contrast-finder.org  <package-debian@contrast-finder.org>
+Architecture: amd64
+Build-Depends: debhelper (>=9)
+Depends: tomcat7, libspring-instrument-java
+Standards-Version: 3.9.6
+Homepage: https://contrast-finder.org
+Vcs-Git: git://github.com:Asqatasun/Contrast-Finder.git
+Vcs-Browser: https://github.com/Asqatasun/Contrast-Finder
+Description: Finds correct color contrasts for web accessibility
+ Tool to provide color combination
+ for a good (accessible, WCAG-compliant) contrast.
+ .
+ Contrast-Finder is a tool which computes the contrast
+ between two colors (background, foreground)
+ and checks if the contrast is valid.
+ When the contrast is not valid, the main target is
+ to suggest some correct colors contrasts.

@@ -21,7 +21,7 @@
     <organization>
         <name>Asqatasun.org</name>
         <url>http://asqatasun.org</url>
-    </organization>    
+    </organization>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -200,7 +200,7 @@
                         <goal>compress</goal>
                     </goals>
                 </execution>
-                </executions>        
+                </executions>
                 <configuration>
                     <excludes>
                         <exclude>**/*min.js</exclude>
@@ -244,6 +244,61 @@
                         <goals>
                             <goal>assembly</goal> <!-- goals == mojos -->
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>jdeb</artifactId>
+                <groupId>org.vafer</groupId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jdeb</goal>
+                        </goals>
+                        <configuration>
+                            <verbose>true</verbose>
+                            <controlDir>${project.basedir}/src/deb/control</controlDir>
+                            <deb>${project.build.directory}/contrast-finder_${project.version}.deb</deb>
+                            <dataSet>
+                                <data>
+                                    <type>link</type>
+                                    <linkName>/usr/share/tomcat7/lib/spring3-instrument-tomcat.jar</linkName>
+                                    <linkTarget>/usr/share/java/spring3-instrument-tomcat.jar</linkTarget>
+                                    <symlink>true</symlink>
+                                </data>
+                                <data>
+                                    <src>${project.build.directory}/classes/conf/contrast-finder.conf.dist</src>
+                                    <type>file</type>
+                                    <conffile>true</conffile>
+                                    <mapper>
+                                      <type>perm</type>
+                                      <prefix>/etc/contrast-finder</prefix>
+                                      <user>tomcat7</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <src>${project.build.directory}/classes/conf/contrast-finder.log</src>
+                                    <type>file</type>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/var/log/contrast-finder</prefix>
+                                        <user>tomcat7</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <src>${project.build.directory}/contrast-finder-webapp-${project.version}.war</src>
+                                    <type>file</type>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/var/lib/tomcat7/webapps/</prefix>
+                                        <user>tomcat7</user>
+                                    </mapper>
+                                </data>
+                            </dataSet>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
