@@ -18,7 +18,7 @@ none
 none
 
 ### Improvement 
-none
+- [#82 - Create a Debian package (.deb) at the maven build](https://github.com/Asqatasun/Contrast-Finder/issues/82)
 
 ### Refactoring
 none
