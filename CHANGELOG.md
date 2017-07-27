@@ -18,7 +18,7 @@ none
 none
 
 ### Improvement 
-- [#82 - Create a Debian package (.deb) at the maven build](https://github.com/Asqatasun/Contrast-Finder/issues/82)
+none
 
 ### Refactoring
 none
@@ -27,10 +27,11 @@ none
 none
 
 ### Documentation
-none
+- [#62 - Fixed of differences between documentation in English and French](https://github.com/Asqatasun/Contrast-Finder/issues/62)
 
 ### Task
-none
+- [#82 - Create a Debian package (.deb) at the maven build](https://github.com/Asqatasun/Contrast-Finder/issues/82)
+
 
 
 Contrast-Finder 0.6.0, 2017-07-21
