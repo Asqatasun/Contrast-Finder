@@ -184,7 +184,7 @@ legend.control-fieldset  {
         margin-left: 15px;
     }
     #submit-button {
-        margin-left: 15px;
+        /* margin-left: 15px; */
     }
 }
 /*#scroll-test.affix {
