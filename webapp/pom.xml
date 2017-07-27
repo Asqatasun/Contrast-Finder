@@ -205,6 +205,7 @@
                     <excludes>
                         <exclude>**/*min.js</exclude>
                         <exclude>**/*min.css</exclude>
+                        <exclude>*_src/*.css</exclude>
                     </excludes>
                     <failOnWarning>false</failOnWarning>
                     <aggregations>
@@ -221,6 +222,9 @@
                             <includes>
                                 <include>**/*min.css</include>
                             </includes>
+                            <excludes>
+                                 <exclude>*_src/*.css</exclude>
+                            </excludes>
                         </aggregation>
                     </aggregations>
                 </configuration>
