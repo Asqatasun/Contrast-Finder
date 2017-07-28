@@ -1,12 +1,12 @@
 # CHANGELOG
 
-Contrast-Finder 0.6.1, 2017-08-xx
-----------------------------------
+Contrast-Finder 0.7.0, 2017-07-xx
+---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 ### New Feature
-none
+- [#24 - Added color picker](https://github.com/Asqatasun/Contrast-Finder/issues/24)
 
 ### Security
 none

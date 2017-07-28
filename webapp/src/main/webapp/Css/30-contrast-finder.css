@@ -119,6 +119,7 @@ code {
     height:2.5em;
     border-radius: 0.3em;
     margin-right: 5px;
+    padding: 0;
 }
 
 legend.control-fieldset  {
@@ -279,4 +280,51 @@ footer {
     }
     #header_title {
         margin-left: 13.5em;
+    }
+
+
+
+/* Color picker */
+.colorPickerContainer {
+    display: block;
+    height: 100%;
+    position: relative;
+    -webkit-transition: opacity .1s;
+    transition: opacity .1s;
+    width: 100%;
+}
+    .colorPickerContainer svg {
+        position: absolute;
+        right: -2.8rem;
+        top:0.8rem;
+        pointer-events: none;
+  /*      -webkit-transform: scale3d(.8,.8,1);
+        transform: scale3d(.8,.8,1);*/
+        -webkit-transition: -webkit-transform .1s;
+        transition: -webkit-transform .1s;
+        transition: transform .1s;
+        transition: transform .1s,-webkit-transform .1s;
+    }
+    .colorPickerContainer input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        width: 140%;
+        padding: 0;
+        margin:  0;
+    }
+    .colorPickerContainer:focus,
+    .colorPickerContainer:hover {
+        opacity:.8
+    }
+    .colorPickerContainer:focus svg,
+    .colorPickerContainer:hover svg {
+        -webkit-transform:scale3d(1.5,1.5,1);
+        transform:scale3d(1.5,1.5,1)
     }
