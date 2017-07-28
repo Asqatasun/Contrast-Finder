@@ -22,6 +22,34 @@ if ("ab".substr(-1) !== "b") {
     }(String.prototype.substr));
 }
 
+var colorType = ""; // rgb, hex, name
+
+/**
+ * convert rgb to hex
+ *      before, use isValidateColorRgb()
+ * @param str  example: rgb(255,255,255)
+ * @returns {string}
+ */
+function rgbToHex(str){
+    a = str.replace(/[^\d,]/g,"").split(",");
+    return "#"+((1<<24)+(+a[0]<<16)+(+a[1]<<8)+ +a[2]).toString(16).slice(1)
+}
+
+/**
+ * convert color name to hex
+ *      before, use isValidateColorName()  *
+ * @param colorStr  color name
+ * @returns {string}   example: #FFFFFF
+ */
+function ColorNameToHex(str) {
+    str = str.trim().toLowerCase();
+    var e = document.createElement('div');
+    e.style.color = str;
+    var colors = window.getComputedStyle( document.body.appendChild(e) ).color.match(/\d+/g).map(function(e){ return parseInt(e,10); });
+    document.body.removeChild(e);
+    return (colors.length >= 3) ? '#' + (((1 << 24) + (colors[0] << 16) + (colors[1] << 8) + colors[2]).toString(16).substr(1)) : false;
+}
+
 
 function isValidateColorName(str) {
     // source: https://gist.github.com/bobspace/2712980
@@ -73,25 +101,44 @@ function isValidateColorRgb(str) {
     return false;
 }
 
-function isValidateColor(str) {
+function isValidateColorHex(str) {
     str = str.trim();
-    var checkCommas = str.match(/,/g);
-    if(checkCommas !== null){
-        if(checkCommas.length !== 2){
-            return false;
-        }
-        return isValidateColorRgb(str); // FALSE or rbg color string
-    }
-    else if (str.match(/^#?[a-f0-9]{6}$/i) !== null
-            || str.match(/^#?[a-f0-9]{3}$/i) !== null){
+    if (   str.match(/^#?[a-f0-9]{6}$/i) !== null
+        || str.match(/^#?[a-f0-9]{3}$/i) !== null){
         if(str.substr(0,1) !== "#"){
             str = "#" + str ;
         }
         return str;
     }
-    else {
-        return isValidateColorName(str); // FALSE or color name
+    return false;
+}
+
+
+function isValidateColor(str) {
+    str = str.trim();
+    var checkCommas = str.match(/,/g);
+    var color       = false;
+    if(checkCommas !== null){
+        if(checkCommas.length === 2){
+            color = isValidateColorRgb(str); // FALSE or rbg color string
+            if( color !== false) {
+                colorType = "rgb";
+            }
+        }
     }
+    else {
+        color = isValidateColorHex(str); // FALSE or hex color string
+        if( color !== false) {
+            colorType = "hex";
+        }
+        else  {
+            color = isValidateColorName(str); // FALSE or color name
+            if( color !== false) {
+                colorType = "name";
+            }
+        }
+    }
+    return color;
 }
 
 function changeColorSample(colorPrefix, showError) {
@@ -104,20 +151,58 @@ function changeColorSample(colorPrefix, showError) {
         sample.style.backgroundColor = color;
         sample.classList.add("color-sample");
         sample.classList.add("sample-bordered");
-        document.getElementById(colorPrefix + "-sample-invalid").style.display = "none";
         input.classList.remove("error");
+        document.getElementById(colorPrefix + "-sample-invalid").style.display = "none";
+        var colorHEX = color;
+        if(colorType === "rgb"){
+            colorHEX = rgbToHex(color);
+        }
+        else if(colorType === "name"){
+            colorHEX = ColorNameToHex(color);
+        }
+        var colorPicker = document.getElementById(colorPrefix + "_imputColorPicker");
+        colorPicker.value = colorHEX;
+        document.getElementById(colorPrefix + "_ColorPicker").style.display    = "inherit";
+
     }
     else if(showError === true) {
         sample.style.backgroundColor = "rgba(0,0,0,0)";
         sample.classList.remove("color-sample");
         sample.classList.remove("sample-bordered");
+        document.getElementById(colorPrefix + "_ColorPicker").style.display = "none";
         document.getElementById(colorPrefix + "-sample-invalid").style.display = "inherit";
         input.classList.add("error");
     }
 }
 
 
+function changeColorPicker(colorPrefix) {
+    var input       = document.getElementById(colorPrefix + "-input");
+    var sample      = document.getElementById(colorPrefix + "-sample");
+    var colorPicker = document.getElementById(colorPrefix + "_imputColorPicker");
+    var color       = colorPicker.value.toLowerCase();
+    color = color.toString().replace(/\s/g,""); // replace ' ', \t, \n, ...
+    color = isValidateColor(color.toString());
+    if (color !== false) {
+        input.value = color.toUpperCase();
+        sample.style.backgroundColor = color;
+        sample.classList.add("color-sample");
+        sample.classList.add("sample-bordered");
+        document.getElementById(colorPrefix + "-sample-invalid").style.display = "none";
+        input.classList.remove("error");
+    }
+}
+
+
 $(document).ready(function() {
+
+    // Color picker
+    document.getElementById("background_imputColorPicker").onchange = function() {
+        changeColorPicker("background");
+    };
+    document.getElementById("foreground_imputColorPicker").onchange = function() {
+        changeColorPicker("foreground");
+    };
 
     // when the color inputs lost focus
     document.getElementById("foreground-input").onchange = function() {
@@ -134,5 +219,8 @@ $(document).ready(function() {
     $("#background-input").on("paste keyup", function() {
         changeColorSample("background",false); // don't show error
     });
+
+    // changeColorSample("foreground",true); // show error
+    // changeColorSample("background",true); // show error
 
 });

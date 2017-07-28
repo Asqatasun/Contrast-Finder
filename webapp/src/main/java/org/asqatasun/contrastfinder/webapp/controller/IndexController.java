@@ -133,6 +133,14 @@ public class IndexController {
         else if ("HSV".equals(defaultAlgorithm) || "Rgb".equals(defaultAlgorithm)) {
             colorModel.setAlgo(defaultAlgorithm);
         }  // Default algo in ColorModel class is "HSV"
+
+        /* get default colors */
+        Color foregroundColor = ColorConverter.colorFromStr(colorModel.getForeground());
+        Color backgroundColor = ColorConverter.colorFromStr(colorModel.getBackground());
+
+        /* Preparing the data and populating the model before returning the view */
+        model.addAttribute("backgroundHEX", ColorConverter.rgb2Hex(backgroundColor));
+        model.addAttribute("foregroundHEX", ColorConverter.rgb2Hex(foregroundColor));
         model.addAttribute("defaultAlgorithm", defaultAlgorithm);
         model.addAttribute("algo", colorModel.getAlgo());
         model.addAttribute("env",  env);

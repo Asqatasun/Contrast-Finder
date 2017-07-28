@@ -46,6 +46,24 @@
             <outputDirectory>/install/var/log/contrast-finder</outputDirectory>
         </fileSet>
 
+        <!-- WEB APP .deb -->
+        <fileSet>
+            <directory>${basedir}/target</directory>
+            <includes>
+                <include>*.deb</include>
+            </includes>
+            <fileMode>664</fileMode>
+            <outputDirectory>/install.deb/</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${basedir}/src/deb</directory>
+            <includes>
+                <include>README.txt</include>
+            </includes>
+            <fileMode>664</fileMode>
+            <outputDirectory>/install.deb/</outputDirectory>
+        </fileSet>
+
         <!-- WEB APP .war -->
         <fileSet>
             <directory>${basedir}/target</directory>
