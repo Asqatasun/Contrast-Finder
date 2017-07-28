@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.6.1-dev</version>
+        <version>0.7.0</version>
     </parent>
     <artifactId>engine</artifactId>
-    <version>0.6.1-dev</version>
+    <version>0.7.0</version>
     <packaging>pom</packaging>
     <name>contrast-finder-engine</name>
     <licenses>

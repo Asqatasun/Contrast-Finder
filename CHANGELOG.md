@@ -1,6 +1,6 @@
 # CHANGELOG
 
-Contrast-Finder 0.7.0, 2017-07-xx
+Contrast-Finder 0.7.0, 2017-07-28
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
@@ -8,30 +8,11 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 ### New Feature
 - [#24 - Added color picker](https://github.com/Asqatasun/Contrast-Finder/issues/24)
 
-### Security
-none
-
-### Outdated dependencies
-none
-
-### Bug
-none
-
-### Improvement 
-none
-
-### Refactoring
-none
-
-### Configuration 
-none
-
 ### Documentation
 - [#62 - Fixed of differences between documentation in English and French](https://github.com/Asqatasun/Contrast-Finder/issues/62)
 
 ### Task
 - [#82 - Create a Debian package (.deb) at the maven build](https://github.com/Asqatasun/Contrast-Finder/issues/82)
-
 
 
 Contrast-Finder 0.6.0, 2017-07-21
@@ -50,8 +31,6 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 ### Task
 - [#79 - Pom.xml: added maven-checkstyle-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/79) 
-
-
 
 
 Contrast-Finder 0.5.2, 2017-07-04
