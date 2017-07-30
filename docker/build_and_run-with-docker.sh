@@ -13,8 +13,8 @@ SCRIPT=`basename ${BASH_SOURCE[0]}`
     #Set fonts for Help
         BOLD=$(tput bold)
       # STOT=$(tput smso)
-      # UNDR=$(tput smul)
-      # REV=$(tput rev)
+        UNDR=$(tput smul)
+        REV=$(tput rev)
         RED=$(tput setaf 1)
         GREEN=$(tput setaf 2)
       # YELLOW=$(tput setaf 3)
@@ -34,7 +34,7 @@ usage () {
   This script launches a sequence that:
     - builds ${BOLD}${APP_NAME}${NORM} from sources
     - builds a new Docker image
-    - runs a new Docker container
+    - runs   a new Docker container
   --------------------------------------------------------------
   ${BOLD}${SCRIPT}${NORM} ${BOLD}${GREEN}-s${NORM} <directory> ${BOLD}${GREEN}-d${NORM} <directory> [OPTIONS]
   --------------------------------------------------------------
@@ -55,8 +55,9 @@ usage () {
        --skip-copy                  Skip copying .war (relies on previous .war, that must exist)
        --skip-docker-build          Skip docker build
        --skip-docker-run            Skip docker run
+       --log-build                  Log maven build
 
-  ${BOLD}-h${NORM} | --help                       Show this help
+  ${BOLD}-h${NORM} | --help                      ${REV} Show this help ${NORM}
   ${BOLD}-t${NORM} | --functional-tests           Also execute functional tests. @@@TODO
 EOF
     exit 2
@@ -65,7 +66,7 @@ EOF
 #############################################
 # Manage options and usage
 #############################################
-TEMP=`getopt -o s:d:p:n:i:t:b:lwht --long source-dir:,docker-dir:,port:,container-name:,image-name:,tag-name:,build-only-dir:,only-localhost,build-only-webapp,help,functional-tests,skip-build-test,skip-build,skip-copy,skip-docker-build,skip-docker-run,use-sudo-docker -- "$@"`
+TEMP=`getopt -o s:d:p:n:i:t:b:lwht --long source-dir:,docker-dir:,port:,container-name:,image-name:,tag-name:,build-only-dir:,only-localhost,build-only-webapp,help,functional-tests,log-build,skip-build-test,skip-build,skip-copy,skip-docker-build,skip-docker-run,use-sudo-docker -- "$@"`
 
 if [[ $? != 0 ]] ; then
     echo "Terminating..." >&2 ;
@@ -88,6 +89,7 @@ declare USE_SUDO_DOCKER=false
 declare ONLY_LOCALHOST=false
 declare BUILD_ONLY_WEBAPP=false
 declare BUILD_ONLY_DIR=false
+declare LOG_BUILD=false
 declare WEBAPP_DIR="webapp"
 declare CONTAINER_EXPOSED_PORT="8087"
 declare CONTAINER_NAME="contrast.finder"
@@ -107,6 +109,7 @@ while true; do
     -h | --help )               HELP=true;                   shift ;;
     -t | --functional-tests )   FTESTS=true;                 shift ;;
     -l | --only-localhost )     ONLY_LOCALHOST=true;         shift ;;
+    --log-build )               LOG_BUILD=true;              shift ;;
     --skip-build-test )         SKIP_BUILD_TEST=true;        shift ;;
     --skip-build )              SKIP_BUILD=true;             shift ;;
     --skip-copy )               SKIP_COPY=true;              shift ;;
@@ -145,13 +148,13 @@ fi
 
 fail() {
     ERROR_MSG=$*
+    echo ""
     echo " ${RED}-----------------------------------------------------------${NORM}"
     echo " ${BOLD}FAILURE${NORM}: loading ${APP_NAME} is not possible."
     echo " ${RED}${ERROR_MSG}${NORM}"
     echo " ${RED}-----------------------------------------------------------${NORM}"
     exit -1
 }
-
 
 function kill_previous_container() {
     set +e
@@ -165,40 +168,45 @@ function kill_previous_container() {
     fi
 }
 
-function do_build() {
+function build() {
     MAVEN_OPTION=''
     if ${SKIP_BUILD_TEST} ; then
         MAVEN_OPTION=' -Dmaven.test.skip=true '; # skip unit tests
     fi
 
-    if [[ -n "$BUILD_ONLY_DIR" && "$BUILD_ONLY_DIR" != "false" ]]  ; then
-        if [[ -d "${SOURCE_DIR}/${BUILD_ONLY_DIR}" ]] ; then
-            # clean and build $BUILD_ONLY_DIR directory and webapp
-            (   cd "${SOURCE_DIR}/${BUILD_ONLY_DIR}"; mvn clean install ${MAVEN_OPTION}; \
-                cd "${SOURCE_DIR}/${WEBAPP_DIR}";     mvn clean install ${MAVEN_OPTION}) ||
-                   fail "Error at build"
-        else
-            fail "not valid directory ${SOURCE_DIR}/${BUILD_ONLY_DIR}"
-        fi
-    elif ${BUILD_ONLY_WEBAPP} ; then
-        # clean and build only webapp
-        (cd "${SOURCE_DIR}/${WEBAPP_DIR}"; mvn clean install ${MAVEN_OPTION}) ||
-            fail "Error at build"
+    MAVEN_LOG=''
+    if ${LOG_BUILD}; then
+        MAVEN_LOG=" | tee log_maven.log";
+    fi
+
+    BUILD_CMD="mvn clean install ${MAVEN_OPTION} ${MAVEN_LOG}"
+    BUILD_DIR=$*
+    if [[ -d "${BUILD_DIR}" ]] ; then
+        (cd  "${BUILD_DIR}"; eval ${BUILD_CMD}) || fail "Error at build ${BUILD_DIR}"
     else
-        # clean and build
-        (cd "$SOURCE_DIR"; mvn clean install ${MAVEN_OPTION}) ||
-            fail "Error at build"
+        fail "not valid directory ${BUILD_DIR}"
     fi
 }
 
+function do_build() {
+    if [[ -n "$BUILD_ONLY_DIR" && "$BUILD_ONLY_DIR" != "false" ]]  ; then
+        build "${SOURCE_DIR}/${BUILD_ONLY_DIR}"
+        build "${SOURCE_DIR}/${WEBAPP_DIR}"
+    elif ${BUILD_ONLY_WEBAPP} ; then
+        build "${SOURCE_DIR}/${WEBAPP_DIR}"
+    else
+        build "${SOURCE_DIR}"
+    fi
+}
+
+# copy .WAR to docker dir
 function do_copy_targz() {
-    # copy .WAR to docker dir
     cp "${SOURCE_DIR}/${TGZ_BASENAME}"*"${TGZ_EXT}" "${SOURCE_DIR}/${DOCKER_DIR}/" ||
         fail "Error copying ${SOURCE_DIR}/${TGZ_BASENAME}"
 }
 
+# build Docker container
 function do_docker_build() {
-    # build Docker container
     (cd "${SOURCE_DIR}/${DOCKER_DIR}" ; \
         ${SUDO} docker build -t ${IMAGE_NAME}:${TAG_NAME} "${SOURCE_DIR}/${DOCKER_DIR}" ) ||
         fail "Error building container"
@@ -206,7 +214,6 @@ function do_docker_build() {
 
 function do_docker_run() {
     kill_previous_container
-
     set +e
     RESULT=$(curl -o /dev/null --silent --write-out '%{http_code}\n' ${URL})
     set -e
@@ -231,7 +238,7 @@ function do_docker_run() {
             echo " ${APP_NAME} is now running ........ HTTP code = ${GREEN}${RESULT}${NORM}"
         else
             ((time+=1))
-            echo " ... ${time} ... loading Contrast-Finder ..."
+            echo " ... ${REV}${time}${NORM} ... loading Contrast-Finder ..."
             sleep 1
         fi
     done
@@ -243,15 +250,38 @@ function do_functional_testing() {
     echo " The functional tests are not yet implemented"
 }
 
+function do_maven_log_processing() {
+    if [[ ${LOG_BUILD} && "${SKIP_BUILD}" == "false" ]] ; then
+        LOG_DIR_SRC="${SOURCE_DIR}"
+        if ${BUILD_ONLY_WEBAPP} ; then
+            LOG_DIR_SRC="${SOURCE_DIR}/${WEBAPP_DIR}";
+        fi
+        LOG_DIR_SRC="${LOG_DIR_SRC}";
+        LOG_DIR="${LOG_DIR_SRC}/target";
+        mkdir -p "${LOG_DIR}"
+        mv    "${LOG_DIR_SRC}/log_maven.log" "${LOG_DIR}/"
+        echo " -------------------------------------------------------"
+        cat "${LOG_DIR}/log_maven.log" | grep "<<< FAILURE! -" | tee "${LOG_DIR}/log_maven-FAIL.log" ;
+        cat "${LOG_DIR}/log_maven.log" | grep "WARN"               > "${LOG_DIR}/log_maven-WARM.log" ;
+        FAIL=`cat "${LOG_DIR}/log_maven-FAIL.log" | wc -l` ;
+        WARM=`cat "${LOG_DIR}/log_maven-WARM.log" | wc -l` ;
+        echo " maven FAILURE ... ${FAIL} ";
+        echo " maven WARN ...... ${WARM} ";
+    fi
+}
+
+
+
 #############################################
 # Do the actual job
 #############################################
 
-if ! ${SKIP_BUILD};        then  do_build;              fi
-if ! ${SKIP_COPY};         then  do_copy_targz;         fi
-if ! ${SKIP_DOCKER_BUILD}; then  do_docker_build;       fi
-if ! ${SKIP_DOCKER_RUN};   then  do_docker_run;         fi
-if   ${FTESTS};            then  do_functional_testing; fi
+if ! ${SKIP_BUILD};        then  do_build;                  fi
+if ! ${SKIP_COPY};         then  do_copy_targz;             fi
+if ! ${SKIP_DOCKER_BUILD}; then  do_docker_build;           fi
+if ! ${SKIP_DOCKER_RUN};   then  do_docker_run;             fi
+if   ${LOG_BUILD};         then  do_maven_log_processing;   fi
+if   ${FTESTS};            then  do_functional_testing;     fi
 
 echo " -------------------------------------------------------"
 echo " Container .. ${CONTAINER_NAME}"
