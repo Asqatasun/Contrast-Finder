@@ -36,7 +36,7 @@ cd   /tmp
 git clone https://github.com/Asqatasun/Contrast-Finder
 cd  Contrast-finder
 git checkout develop
-docker/compile_and_build_docker_image.sh -l -s ${PWD} -d docker/SNAPSHOT-local_from-Ubuntu
+docker/build_and_run-with-docker.sh -l -s ${PWD} -d docker/SNAPSHOT-local_from-Ubuntu
 ```
 
 In your browser, go to
