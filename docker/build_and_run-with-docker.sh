@@ -38,7 +38,7 @@ usage () {
   --------------------------------------------------------------
   ${BOLD}${SCRIPT}${NORM} ${BOLD}${GREEN}-s${NORM} <directory> ${BOLD}${GREEN}-d${NORM} <directory> [OPTIONS]
   --------------------------------------------------------------
-  ${BOLD}${GREEN}-s${NORM} | --source-dir     <directory> MANDATORY Absolute path to Contrast-Finder sources directory
+  ${BOLD}${GREEN}-s${NORM} | --source-dir     <directory> MANDATORY Absolute path to ${APP_NAME} sources directory
   ${BOLD}${GREEN}-d${NORM} | --docker-dir     <directory> MANDATORY Path to directory containing the Dockerfile.
                                               Path must be relative to SOURCE_DIR
   ${BOLD}-p${NORM} | --port           <port>      Default value: 8087
@@ -235,10 +235,10 @@ function do_docker_run() {
         set -e
         if [ "${RESULT}" == "200" ]; then
             echo " -------------------------------------------------------"
-            echo " ${APP_NAME} is now running ........ HTTP code = ${GREEN}${RESULT}${NORM}"
+            echo " ${APP_NAME} is now running ........ HTTP code = ${BOLD}${GREEN}${RESULT}${NORM}"
         else
             ((time+=1))
-            echo " ... ${REV}${time}${NORM} ... loading Contrast-Finder ..."
+            echo " ... ${REV}${time}${NORM} ... loading ${APP_NAME} ..."
             sleep 1
         fi
     done
@@ -290,4 +290,4 @@ echo " CMD ........ ${DOCKER_RUN}"
 echo " -------------------------------------------------------"
 echo " Shell ...... ${SUDO}docker exec -ti ${CONTAINER_NAME} /bin/bash"
 echo " Log ........ ${SUDO}docker logs -f  ${CONTAINER_NAME}"
-echo " URL ........ ${GREEN}${URL}${NORM}"
+echo " URL ........ ${BOLD}${GREEN}${URL}${NORM}"
