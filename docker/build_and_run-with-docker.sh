@@ -209,7 +209,7 @@ function do_copy_targz() {
 function do_docker_build() {
     (cd "${SOURCE_DIR}/${DOCKER_DIR}" ; \
         ${SUDO} docker build -t ${IMAGE_NAME}:${TAG_NAME} "${SOURCE_DIR}/${DOCKER_DIR}" ) ||
-        fail "Error building container"
+        fail "Error building Docker image"
 }
 
 function do_docker_run() {
@@ -221,7 +221,7 @@ function do_docker_run() {
         DOCKER_RUN="${SUDO}docker run -p ${ADD_IP}${CONTAINER_EXPOSED_PORT}:8080 --name ${CONTAINER_NAME} -d ${IMAGE_NAME}:${TAG_NAME}"
         eval ${DOCKER_RUN}
     else
-        fail  "${CONTAINER_EXPOSED_PORT} port is already allocated"
+        fail  "Error running Docker container. ${CONTAINER_EXPOSED_PORT} port is already allocated"
     fi
 
     # wait a bit to let container start
@@ -246,8 +246,7 @@ function do_docker_run() {
 
 function do_functional_testing() {
     # functional testing
-    echo " -------------------------------------------------------"
-    echo " The functional tests are not yet implemented"
+    fail  " The functional tests are not yet implemented"
 }
 
 function do_maven_log_processing() {

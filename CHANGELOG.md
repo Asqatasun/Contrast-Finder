@@ -1,36 +1,22 @@
 # CHANGELOG
 
-Contrast-Finder 0.7.1-dev, 2017-08-xx
--------------------------------------
+Contrast-Finder 0.8.0, 2017-08-xx
+--------------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 ### New Feature
-none
-
-### Security
-none
-
-### Outdated dependencies
-none
+- [#85 - Added Korean translation](https://github.com/Asqatasun/Contrast-Finder/issues/85)
 
 ### Bug
-none
+- [#83 - i18n: fixed spelling error](https://github.com/Asqatasun/Contrast-Finder/issues/#83)
 
 ### Improvement 
-none
-
-### Refactoring
-none
-
-### Configuration 
-none
+- [#87 - build_and_run-with-docker.sh - Added new option (--log-build)](https://github.com/Asqatasun/Contrast-Finder/issues/#87)
 
 ### Documentation
-none
+- [#62 - Fixed of differences between documentation in English and French](https://github.com/Asqatasun/Contrast-Finder/issues/62)
 
-### Task
-none
 
 
 Contrast-Finder 0.7.0, 2017-07-28
