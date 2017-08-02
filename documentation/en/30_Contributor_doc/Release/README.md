@@ -11,7 +11,7 @@ As an end user, you won't need it, it is just for developers.
     mvn dependency-check:aggregate  
 
     # compile and test it
-    docker/compile_and_build_docker_image.sh -l -s ${PWD} -d docker/SNAPSHOT-local_from-Ubuntu
+    docker/build_and_run-with-docker.sh -l -s ${PWD} -d docker/SNAPSHOT-local_from-Ubuntu
 
 ```
 
@@ -43,7 +43,7 @@ http://maven.apache.org/maven-release/maven-release-plugin/index.html
 ### Test it
 ```bash
 # compile and test it
-docker/compile_and_build_docker_image.sh -l -s ${PWD} -d docker/SNAPSHOT-local_from-Ubuntu
+docker/build_and_run-with-docker.sh -l -s ${PWD} -d docker/SNAPSHOT-local_from-Ubuntu
 ```
  
 ### Release

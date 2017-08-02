@@ -38,7 +38,7 @@ thus only contains tagged releases.
 git clone https://github.com/Asqatasun/Contrast-Finder
 cd Contrast-finder
 git checkout develop
-docker/compile_and_build_docker_image.sh -l -s ${PWD} -d docker/SNAPSHOT-local_from-Ubuntu
+docker/build_and_run-with-docker.sh -l -s ${PWD} -d docker/SNAPSHOT-local_from-Ubuntu
 ```
 
 ## Sources of inspiration for CONTRIBUTING.md

@@ -9,6 +9,8 @@
 *.ear
 *.tar.gz
 *.tar.gz.*
+*.deb
+*.deb.*
 
 # maven
 target

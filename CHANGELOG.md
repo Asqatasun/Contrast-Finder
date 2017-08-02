@@ -1,5 +1,24 @@
 # CHANGELOG
 
+Contrast-Finder 0.8.0, 2017-08-xx
+--------------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+### New Feature
+- [#85 - Added Korean translation](https://github.com/Asqatasun/Contrast-Finder/issues/85)
+
+### Bug
+- [#83 - i18n: fixed spelling error](https://github.com/Asqatasun/Contrast-Finder/issues/#83)
+
+### Improvement 
+- [#87 - build_and_run-with-docker.sh - Added new option (--log-build)](https://github.com/Asqatasun/Contrast-Finder/issues/#87)
+
+### Documentation
+- [#62 - Fixed of differences between documentation in English and French](https://github.com/Asqatasun/Contrast-Finder/issues/62)
+
+
+
 Contrast-Finder 0.7.0, 2017-07-28
 ---------------------------------
 
@@ -173,8 +192,8 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 ### New Feature
 - [#20 - Added cookieMaxAge (2 months) for lang cookie](https://github.com/Asqatasun/Contrast-Finder/issues/20)
-- [#26 - compile_and_build_docker_image.sh : added --build-only-* options](https://github.com/Asqatasun/Contrast-Finder/issues/26)
-- [#27 - compile_and_build_docker_image.sh : added option to skip unit tests](https://github.com/Asqatasun/Contrast-Finder/issues/27)
+- [#26 - build_and_run-with-docker.sh : added --build-only-* options](https://github.com/Asqatasun/Contrast-Finder/issues/26)
+- [#27 - build_and_run-with-docker.sh : added option to skip unit tests](https://github.com/Asqatasun/Contrast-Finder/issues/27)
 
 ### Security
 - [#22 - Upgraded SpringFramework to v4.3.6](https://github.com/Asqatasun/Contrast-Finder/issues/22)
@@ -244,7 +263,7 @@ Contrast-Finder 0.4.0, 2016-12-30
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 ### New Feature
-- Added compile_and_build_docker_image.sh
+- Added build_and_run-with-docker.sh
 - Added pre-requisites_from-Ubuntu/Dockerfile
 - Added SNAPSHOT-local_from-Ubuntu/Dockerfile
 - Added RELEASE/Dockerfile
