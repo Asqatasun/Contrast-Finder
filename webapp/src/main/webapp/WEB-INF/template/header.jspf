@@ -10,21 +10,31 @@
                 <c:when test="${fn:contains(pageContext.request.queryString, 'lang=en')}">
                     <c:set var="frUrl" scope="request" value="?${fn:replace(properQueryString,'lang=en','lang=fr')}" />
                     <c:set var="enUrl" scope="request" value="?${properQueryString}"/>
+                    <c:set var="koUrl" scope="request" value="?${fn:replace(properQueryString,'lang=en','lang=ko')}" />
                     <c:set var="ptUrl" scope="request" value="?${fn:replace(properQueryString,'lang=en','lang=pt')}" />
                 </c:when>
                 <c:when test="${fn:contains(pageContext.request.queryString, 'lang=fr')}">
                     <c:set var="frUrl" scope="request" value="?${properQueryString}"/>
                     <c:set var="enUrl" scope="request" value="?${fn:replace(properQueryString,'lang=fr','lang=en')}" />
+                    <c:set var="koUrl" scope="request" value="?${fn:replace(properQueryString,'lang=fr','lang=ko')}" />
                     <c:set var="ptUrl" scope="request" value="?${fn:replace(properQueryString,'lang=fr','lang=pt')}" />
+                </c:when>
+                <c:when test="${fn:contains(pageContext.request.queryString, 'lang=ko')}">
+                    <c:set var="frUrl" scope="request" value="?${fn:replace(properQueryString,'lang=ko','lang=fr')}" />
+                    <c:set var="enUrl" scope="request" value="?${fn:replace(properQueryString,'lang=ko','lang=en')}" />
+                    <c:set var="koUrl" scope="request" value="?${properQueryString}"/>
+                    <c:set var="ptUrl" scope="request" value="?${fn:replace(properQueryString,'lang=ko','lang=pt')}" />
                 </c:when>
                 <c:when test="${fn:contains(pageContext.request.queryString, 'lang=pt')}">
                     <c:set var="frUrl" scope="request" value="?${fn:replace(properQueryString,'lang=pt','lang=fr')}" />
                     <c:set var="enUrl" scope="request" value="?${fn:replace(properQueryString,'lang=pt','lang=en')}" />
+                    <c:set var="koUrl" scope="request" value="?${fn:replace(properQueryString,'lang=pt','lang=ko')}" />
                     <c:set var="ptUrl" scope="request" value="?${properQueryString}"/>
                 </c:when>
                 <c:otherwise>
                     <c:set var="frUrl" scope="request" value="?${properQueryString}&amp;lang=fr"/>
                     <c:set var="enUrl" scope="request" value="?${properQueryString}&amp;lang=en"/>
+                    <c:set var="koUrl" scope="request" value="?${properQueryString}&amp;lang=ko"/>
                     <c:set var="ptUrl" scope="request" value="?${properQueryString}&amp;lang=pt"/>
                 </c:otherwise>
             </c:choose>
@@ -32,6 +42,7 @@
         <c:otherwise>
             <c:set var="frUrl" scope="request" value="?lang=fr"/>
             <c:set var="enUrl" scope="request" value="?lang=en"/>
+            <c:set var="koUrl" scope="request" value="?lang=ko"/>
             <c:set var="ptUrl" scope="request" value="?lang=pt"/>
         </c:otherwise>
     </c:choose>
@@ -60,6 +71,15 @@
             </c:when>
             <c:otherwise>
                 <a href="${ptUrl}" title="em Português" lang="pt">português</a>
+            </c:otherwise>
+        </c:choose>
+        &nbsp;
+        <c:choose>
+            <c:when test="${lang == 'ko'}">
+                <strong>한국어</strong>
+            </c:when>
+            <c:otherwise>
+                <a href="${koUrl}" title="한국어" lang="ko">한국어</a>
             </c:otherwise>
         </c:choose>
     </nav>
