@@ -79,7 +79,7 @@
                 <strong>한국어</strong>
             </c:when>
             <c:otherwise>
-                <a href="${koUrl}" title="한국어" lang="ko">한국어</a>
+                <a href="${koUrl}" title="한국어로 전환" lang="ko">한국어</a>
             </c:otherwise>
         </c:choose>
     </nav>
