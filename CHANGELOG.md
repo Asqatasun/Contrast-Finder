@@ -39,7 +39,7 @@ Contrast-Finder 0.8.1, 2017-08-05
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 ### Improvement 
-- [#90 - Added <link rel="alternate" hreflang=""> ](https://github.com/Asqatasun/Contrast-Finder/issues/90)
+- [#90 - Added `<link rel="alternate" hreflang="">`](https://github.com/Asqatasun/Contrast-Finder/issues/90)
 - [#88 - Added missing Korean translations](https://github.com/Asqatasun/Contrast-Finder/issues/88)
 
 
