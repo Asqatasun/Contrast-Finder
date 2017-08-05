@@ -27,9 +27,14 @@
     <meta name="application-name"           content="Contrast Finder">
 
 
-    <!--  Description / Canonical URL   -->
+    <!--  Description / Canonical URL / alternate  -->
     <meta name="description" content="${metaDescription}">
     <link rel="canonical"    href="${canonicalURL}" />
+    <link rel="alternate" hreflang="x-default" href="${prefixURL}" />
+    <link rel="alternate" hreflang="en" href="${prefixURL}?lang=en" />
+    <link rel="alternate" hreflang="fr" href="${prefixURL}?lang=fr" />
+    <link rel="alternate" hreflang="pt" href="${prefixURL}?lang=pt" />
+    <link rel="alternate" hreflang="ko" href="${prefixURL}?lang=ko" />
 
     <!-- Social network - Facebook -->
     <meta property="author"         content="Contrast-finder.org" />
