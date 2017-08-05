@@ -2,7 +2,7 @@
 <%@ page pageEncoding="UTF-8" %>
 
     <%-- APP version --%>
-    <c:set var="appVersion"    value="0.8.0"/>
+    <c:set var="appVersion"    value="0.8.1"/>
 
     <%-- APP Name --%>
     <c:set var="appName"    value="Contrast-Finder"/>
@@ -22,14 +22,15 @@
 
     <%-- Canonical URL --%>
     <c:set var="prefixURL" value="https://app.contrast-finder.org/"/>
-    <c:choose>
-        <c:when test="${lang == 'en'}">
-            <c:set var="canonicalURL" value="${prefixURL}"/>
-        </c:when>
-        <c:otherwise>
-            <c:set var="canonicalURL" value="${prefixURL}?lang=${lang}"/>
-        </c:otherwise>
-    </c:choose>
+    <c:set var="canonicalURL" value="${prefixURL}?lang=${lang}"/>
+        <%-- <c:choose>
+                <c:when test="${lang == 'en'}">
+                    <c:set var="canonicalURL" value="${prefixURL}"/>
+                </c:when>
+                <c:otherwise>
+                    <c:set var="canonicalURL" value="${prefixURL}?lang=${lang}"/>
+                </c:otherwise>
+            </c:choose> --%>
 
     <%-- TITLE tag --%>
     <c:choose>
