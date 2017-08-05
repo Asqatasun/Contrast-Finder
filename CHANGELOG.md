@@ -1,36 +1,13 @@
 # CHANGELOG
 
-Contrast-Finder 0.8.1, 2017-08-xx
+Contrast-Finder 0.8.1, 2017-08-05
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
-### New Feature
-none
-
-### Security
-none
-
-### Outdated dependencies
-none
-
-### Bug
-none
-
 ### Improvement 
-none
-
-### Refactoring
-none
-
-### Configuration 
-none
-
-### Documentation
-none
-
-### Task
-none
+- [#90 - Added <link rel="alternate" hreflang=""> ](https://github.com/Asqatasun/Contrast-Finder/issues/90)
+- [#88 - Added missing Korean translations](https://github.com/Asqatasun/Contrast-Finder/issues/88)
 
 
 Contrast-Finder 0.8.0, 2017-08-03
