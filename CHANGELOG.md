@@ -1,6 +1,6 @@
 # CHANGELOG
 
-Contrast-Finder 0.8.2, 2017-08-xx
+Contrast-Finder 0.8.2, 2017-09-xx
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
@@ -12,7 +12,7 @@ none
 none
 
 ### Outdated dependencies
-none
+- [#93 - Upgraded maven-compiler-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/93) 
 
 ### Bug
 none
