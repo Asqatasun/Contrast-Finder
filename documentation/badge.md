@@ -1,12 +1,13 @@
 # Badges
 
 
-## Travis build status
-### master
-[![Build Status](https://api.travis-ci.org/Asqatasun/Contrast-Finder.svg?branch=master)](https://travis-ci.org/Asqatasun/Contrast-Finder/branches)
+## Dependency status
+[![Dependency Status](https://www.versioneye.com/user/projects/59405a130fb24f004de09e90/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/59405a130fb24f004de09e90)
 
-### develop
-[![Build Status](https://api.travis-ci.org/Asqatasun/Contrast-Finder.svg?branch=develop)](https://travis-ci.org/Asqatasun/Contrast-Finder/branches)
+## Travis build status
+
+* master  [![Build Status](https://api.travis-ci.org/Asqatasun/Contrast-Finder.svg?branch=master)](https://travis-ci.org/Asqatasun/Contrast-Finder/branches)
+* develop [![Build Status](https://api.travis-ci.org/Asqatasun/Contrast-Finder.svg?branch=develop)](https://travis-ci.org/Asqatasun/Contrast-Finder/branches)
 
 ## Docker build status
 [![Docker Build Status](https://img.shields.io/docker/build/asqatasun/contrast-finder.svg?style=flat-square)](https://hub.docker.com/r/asqatasun/contrast-finder/)
@@ -32,6 +33,9 @@ Issues older than 6 months are also ignored.
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/asqatasun/contrast-finder.svg)](http://isitmaintained.com/project/asqatasun/contrast-finder "Percentage of issues still open")
 
 Some issues are ignored based on their labels (example of ignored labels: "enhancement", "feature"…). 
+
+## monitors code quality
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c3374c9913d24a9c91e91552f1796672)](https://www.codacy.com/app/Asqatasun/Contrast-Finder)
 
 ## Release
 [![Release](https://img.shields.io/github/release/asqatasun/contrast-finder.svg)](https://github.com/Asqatasun/Contrast-Finder/releases/latest)

@@ -13,7 +13,7 @@ none
 
 ### Outdated dependencies
 - [#93 - Upgraded maven-*-plugin (dependency, surefire and compiler)](https://github.com/Asqatasun/Contrast-Finder/issues/93) 
-- [#94 - Upgraded SpringFramework (4.3.11 instead of 4.3.10)](https://github.com/Asqatasun/Contrast-Finder/issues/94) 
+- [#94 - Upgraded SpringFramework (4.3.12 instead of 4.3.10)](https://github.com/Asqatasun/Contrast-Finder/issues/94) 
 
 ### Bug
 none
