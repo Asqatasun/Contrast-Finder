@@ -209,6 +209,9 @@
                         <exclude>**/*min.css</exclude>
                         <exclude>*_src/*.css</exclude>
                     </excludes>
+                    <jswarn>false</jswarn> <!-- skip all warnings because these warnings
+                                                are far too many and are not be relevant.
+                                                     use: jshint-maven-plugin     -->
                     <failOnWarning>false</failOnWarning>
                     <aggregations>
                         <aggregation>
