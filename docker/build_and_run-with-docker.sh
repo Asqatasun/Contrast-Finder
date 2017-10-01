@@ -275,7 +275,7 @@ function do_build() {
 # copy TAR.GZ to docker dir
 function do_copy_targz() {
     display_step_msg "Copy ${BOLD}${GREEN}tar.gz${NORM} to the docker directory"
-    cp "${SOURCE_DIR}/${TGZ_BASENAME}"*"${TGZ_EXT}" "${SOURCE_DIR}/${DOCKER_DIR}/" ||
+    cp -vf "${SOURCE_DIR}/${TGZ_BASENAME}"*"${TGZ_EXT}" "${SOURCE_DIR}/${DOCKER_DIR}/" ||
         fail "Error copying ${SOURCE_DIR}/${TGZ_BASENAME}"
 }
 
@@ -317,7 +317,7 @@ function do_maven_log_processing() {
         fi
         echo " -------------------------------------------------------"
         cat "${LOG_DIR}/log_maven.log" | grep "<<< FAILURE! -" | tee "${LOG_DIR}/log_maven-FAIL.log" ;
-        cat "${LOG_DIR}/log_maven.log" | grep "WARN"               > "${LOG_DIR}/log_maven-WARM.log" ;
+        cat "${LOG_DIR}/log_maven.log" | grep "WARN"           | tee "${LOG_DIR}/log_maven-WARM.log" > "/dev/null" ;
         FAIL=`cat "${LOG_DIR}/log_maven-FAIL.log" | wc -l` ;
         WARM=`cat "${LOG_DIR}/log_maven-WARM.log" | wc -l` ;
         echo " maven FAILURE ... ${FAIL} ";
