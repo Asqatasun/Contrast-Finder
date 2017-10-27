@@ -1,6 +1,6 @@
 # CHANGELOG
 
-Contrast-Finder 0.8.2, 2017-09-xx
+Contrast-Finder 0.8.2, 2017-11-xx
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
@@ -16,7 +16,9 @@ none
 - [#94 - Upgraded SpringFramework (4.3.12 instead of 4.3.10)](https://github.com/Asqatasun/Contrast-Finder/issues/94) 
 
 ### Bug
-none
+- `build_and_run-with-docker.sh` script:
+   - [#97, log_processing() fails when there is no WARNING](https://github.com/Asqatasun/Contrast-Finder/issues/97) 
+   - [#95, "-t" option is used 2 times](https://github.com/Asqatasun/Contrast-Finder/issues/95) 
 
 ### Improvement 
 none
