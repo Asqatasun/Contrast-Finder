@@ -16,9 +16,9 @@ none
 - [#94 - Upgraded SpringFramework (4.3.12 instead of 4.3.10)](https://github.com/Asqatasun/Contrast-Finder/issues/94) 
 
 ### Bug
-- `build_and_run-with-docker.sh` script:
-   - [#97, log_processing() fails when there is no WARNING](https://github.com/Asqatasun/Contrast-Finder/issues/97) 
-   - [#95, "-t" option is used 2 times](https://github.com/Asqatasun/Contrast-Finder/issues/95) 
+- fixed `build_and_run-with-docker.sh` script:
+     - [#97, log_processing() fails when there is no WARNING](https://github.com/Asqatasun/Contrast-Finder/issues/97) 
+     - [#95, "-t" option is used 2 times](https://github.com/Asqatasun/Contrast-Finder/issues/95) 
 
 ### Improvement 
 none
@@ -30,7 +30,7 @@ none
 none
 
 ### Documentation
-none
+- refactor build documentation
 
 ### Task
 none
