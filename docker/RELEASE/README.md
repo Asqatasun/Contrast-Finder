@@ -7,7 +7,7 @@ Tool to provide color combination for a good (accessible, WCAG-compliant) contra
 Supported tags and respective `Dockerfile` links :
 
 * [pre-requisites_from-Ubuntu](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_from-Ubuntu/Dockerfile)
-* [v0.8.2-SNAPSHOT, latest](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/RELEASE/Dockerfile)
+* [v0.8.2, latest](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/RELEASE/Dockerfile)
 * [v0.8.1](https://github.com/Asqatasun/Contrast-Finder/blob/v0.8.1/docker/RELEASE/Dockerfile)
 * [v0.8.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.8.0/docker/RELEASE/Dockerfile)
 * [v0.7.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.7.0/docker/RELEASE/Dockerfile)
