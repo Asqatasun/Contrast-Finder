@@ -10,6 +10,7 @@ You should have already [check pre-requisites](webapp_Pre-requisites.md)
 Once you've built, let say you have Tomcat 7 (change the number if you have Tomcat 8 or more):
 
 ```bash
+cd /tmp
 wget https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.4.5/contrast-finder_0.4.5.i386.tar.gz
 tar -xzvf contrast-finder*.tar.gz  
 cd        contrast-finder_*.i386/
