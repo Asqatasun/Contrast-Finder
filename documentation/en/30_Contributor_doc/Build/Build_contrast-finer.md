@@ -22,6 +22,6 @@ git  clone https://github.com/Asqatasun/Contrast-Finder
 cd   Contrast-finder
 git  checkout develop
 mvn  clean install
-cp   contrast-finder-webapp/target/contrast-finder_*.SNAPSHOT.i386.tar.gz /tmp
+cp   contrast-finder-webapp/target/contrast-finder_*-SNAPSHOT.i386.tar.gz /tmp
 cd   /tmp
 ```

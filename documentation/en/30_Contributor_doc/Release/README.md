@@ -23,7 +23,7 @@ because these dependencies need Jdk 8 and do not work on our tomcat 7 for the of
 
 ### Prepare a Release
 ```bash
-# 1. change version ("x.y.z.SNAPSHOT" to "x.y.z.RELEASE")
+# 1. change version ("x.y.z-SNAPSHOT" to "x.y.z")
     # */pom.xml
     # */Dockerfile
     # CHANGELOG
@@ -32,7 +32,7 @@ because these dependencies need Jdk 8 and do not work on our tomcat 7 for the of
 git checkout develop
 
 # for pom.xml files
-mvn versions:set -DnewVersion=x.y.z.RELEASE
+mvn versions:set -DnewVersion=x.y.z
 mvn versions:commit  # remove pom.xml.versionsBackup files
 
 # for these following files
@@ -44,7 +44,7 @@ mvn versions:commit  # remove pom.xml.versionsBackup files
 
 # 2. commit 
 git add .
-git commit -m  "set version to x.y.z.RELEASE"  
+git commit -m  "set version to x.y.z"  
 
 # 3. Merge and commit 
 git checkout master

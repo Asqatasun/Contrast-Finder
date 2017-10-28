@@ -33,7 +33,7 @@ none
 - refactor build documentation
 
 ### Task
-- [fixed #99 / pom.xml file: replaced "-dev" by ".SNAPSHOT"](https://github.com/Asqatasun/Contrast-Finder/issues/99)  
+- [fixed #99 / pom.xml file: replaced "-dev" by "-SNAPSHOT"](https://github.com/Asqatasun/Contrast-Finder/issues/99)  
 
 
 Contrast-Finder 0.8.1, 2017-08-05

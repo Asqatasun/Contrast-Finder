@@ -1,7 +1,7 @@
 FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                            \
       org.label-schema.name           = "Contrast-Finder - WebApp"                              \
-      org.label-schema.version        = "0.8.2.SNAPSHOT"                                             \
+      org.label-schema.version        = "0.8.2-SNAPSHOT"                                             \
       org.label-schema.url            = "https://contrast-finder.org"                           \
       org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"          \
       org.label-schema.docker.cmd     = "docker run -p 8087:8080 -d asqatasun/contrast-finder"  \
@@ -13,9 +13,9 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 #
 #   --- Building this docker image
 #   docker build -t asqatasun/contrast-finder  .
-#   docker build -t asqatasun/contrast-finder  --build-arg CONTRAST_FINDER_RELEASE=0.8.2.SNAPSHOT  .
-#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL_PREFIX=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.8.2.SNAPSHOT/   .
-#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.8.2.SNAPSHOT/contrast-finder_0.8.2.SNAPSHOT.i386.tar.gz   .
+#   docker build -t asqatasun/contrast-finder  --build-arg CONTRAST_FINDER_RELEASE=0.8.2-SNAPSHOT  .
+#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL_PREFIX=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.8.2-SNAPSHOT/   .
+#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.8.2-SNAPSHOT/contrast-finder_0.8.2-SNAPSHOT.i386.tar.gz   .
 #
 #   --- Launch a container
 #   docker run -p 127.0.0.1:8087:8080 --name contrast.finder -d asqatasun/contrast-finder
@@ -36,7 +36,7 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 ###################################################################
 
 # build variables
-ARG CONTRAST_FINDER_RELEASE="0.8.2.SNAPSHOT"
+ARG CONTRAST_FINDER_RELEASE="0.8.2-SNAPSHOT"
 ARG SRC_URL_PREFIX="https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}"
 ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz"
 
