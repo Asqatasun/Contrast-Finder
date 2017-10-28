@@ -13,7 +13,7 @@ SCRIPT=`basename ${BASH_SOURCE[0]}`
     #Set fonts for Help
         BOLD=$(tput bold)
       # STOT=$(tput smso)
-        UNDR=$(tput smul)
+      # UNDR=$(tput smul)
         REV=$(tput rev)
         RED=$(tput setaf 1)
         GREEN=$(tput setaf 2)
@@ -21,7 +21,6 @@ SCRIPT=`basename ${BASH_SOURCE[0]}`
       # MAGENTA=$(tput setaf 5)
       # WHITE=$(tput setaf 7)
         NORM=$(tput sgr0)
-        NORMAL=$(tput sgr0)
 
 declare SOURCE_DIR
 declare DOCKER_DIR
@@ -316,10 +315,10 @@ function do_maven_log_processing() {
             mv  "${LOG_DIR_SRC}/log_maven.log" "${LOG_DIR}/"
         fi
         echo " -------------------------------------------------------"
-        cat "${LOG_DIR}/log_maven.log" | grep "<<< FAILURE! -" | tee "${LOG_DIR}/log_maven-FAIL.log" ;
-        cat "${LOG_DIR}/log_maven.log" | grep "WARN"           | tee "${LOG_DIR}/log_maven-WARM.log" > "/dev/null" ;
-        FAIL=`cat "${LOG_DIR}/log_maven-FAIL.log" | wc -l` ;
-        WARM=`cat "${LOG_DIR}/log_maven-WARM.log" | wc -l` ;
+        grep "<<< FAILURE! -" < "${LOG_DIR}/log_maven.log" | tee "${LOG_DIR}/log_maven-FAIL.log" ;
+        grep "WARN"           < "${LOG_DIR}/log_maven.log" | tee "${LOG_DIR}/log_maven-WARM.log" > "/dev/null" ;
+        FAIL=`wc -l < "${LOG_DIR}/log_maven-FAIL.log"` ;
+        WARM=`wc -l < "${LOG_DIR}/log_maven-WARM.log"` ;
         echo " maven FAILURE ... ${FAIL} ";
         echo " maven WARN ...... ${WARM} ";
     fi
