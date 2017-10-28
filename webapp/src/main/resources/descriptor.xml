@@ -13,7 +13,7 @@
                 <include>LICENSE</include>
             </includes>
             <fileMode>644</fileMode>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory>./</outputDirectory>
         </fileSet>
 
         <!-- html FILES -->
@@ -24,7 +24,7 @@
                 <include>CHANGELOG.html</include>
             </includes>
             <fileMode>644</fileMode>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory>./</outputDirectory>
         </fileSet>
 
         <!-- Install web-app conf -->
@@ -34,7 +34,7 @@
                 <include>contrast-finder.conf.dist</include>
             </includes>
             <fileMode>664</fileMode>
-            <outputDirectory>/install/etc/contrast-finder</outputDirectory>
+            <outputDirectory>install/etc/contrast-finder</outputDirectory>
         </fileSet>
         <!-- Install web-app conf -->
         <fileSet>
@@ -43,7 +43,7 @@
                 <include>contrast-finder.log</include>
             </includes>
             <fileMode>664</fileMode>
-            <outputDirectory>/install/var/log/contrast-finder</outputDirectory>
+            <outputDirectory>install/var/log/contrast-finder/</outputDirectory>
         </fileSet>
 
         <!-- WEB APP .deb -->
@@ -53,7 +53,7 @@
                 <include>*.deb</include>
             </includes>
             <fileMode>664</fileMode>
-            <outputDirectory>/install.deb/</outputDirectory>
+            <outputDirectory>install.deb/</outputDirectory>
         </fileSet>
         <fileSet>
             <directory>${basedir}/src/deb</directory>
@@ -61,7 +61,7 @@
                 <include>README.txt</include>
             </includes>
             <fileMode>664</fileMode>
-            <outputDirectory>/install.deb/</outputDirectory>
+            <outputDirectory>install.deb/</outputDirectory>
         </fileSet>
 
         <!-- WEB APP .war -->
@@ -71,7 +71,7 @@
                 <include>*.war</include>
             </includes>
             <fileMode>664</fileMode>
-            <outputDirectory>/install/</outputDirectory>
+            <outputDirectory>install/</outputDirectory>
         </fileSet>
         <!-- Docs .html -->
         <fileSet>
@@ -80,7 +80,7 @@
                 <include>**/*</include>
             </includes>
             <fileMode>644</fileMode>
-            <outputDirectory>/documentation</outputDirectory>
+            <outputDirectory>documentation</outputDirectory>
         </fileSet>
 
         <!-- Docs .md-->
@@ -95,7 +95,7 @@
                 <exclude>images/screenshot/Archive/</exclude>
             </excludes>
             <fileMode>644</fileMode>
-            <outputDirectory>/documentation</outputDirectory>
+            <outputDirectory>documentation</outputDirectory>
         </fileSet>    -->
     </fileSets>
 </assembly>

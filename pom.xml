@@ -4,7 +4,7 @@
     <groupId>org.asqatasun</groupId>
     <artifactId>contrast-finder</artifactId>
     <packaging>pom</packaging>
-    <version>0.8.1</version>
+    <version>0.8.2</version>
     <name>Contrast-Finder</name>
     <licenses>
         <license>
@@ -16,7 +16,7 @@
     <url>https://contrast-finder.org</url>
     <organization>
         <name>Asqatasun.org</name>
-        <url>http://asqatasun.org</url>
+        <url>https://asqatasun.org</url>
     </organization>
     <description>
         Finds correct color contrasts for web accessibility (a11y, WCAG)
@@ -28,12 +28,33 @@
         <module>webapp</module>
     </modules>
     <properties>
+        <!-- File Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+
+        <!-- JDK version -->
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-    </properties>
-    <prerequisites>         <!--    Maven 3.1 is required to use the following plugin:   -->
+
+        <!-- Dependency Versions -->
+        <commons-cli.version>1.4</commons-cli.version>
+        <commons-collections4.version>4.1</commons-collections4.version>
+        <commons-logging.version>1.2</commons-logging.version>
+        <commons-lang3.version>3.6</commons-lang3.version>
+        <junit.version>4.12</junit.version>
+        <logback-classic.version>1.2.3</logback-classic.version>
+        <markdown-page-generator-plugin.version>1.0.0</markdown-page-generator-plugin.version>
+
+        <!-- Plugin Versions -->
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+        <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
+        <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+        <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
+        <dependency-check-maven.version>1.4.5</dependency-check-maven.version>
+     </properties>
+     <prerequisites>         <!--    Maven 3.1 is required to use the following plugin:   -->
         <maven>3.1</maven>  <!--    ............  org.owasp:dependency-check-maven       -->
     </prerequisites>        <!--    The following command line indicates
                                     the minimum version of Maven for maven plugins
@@ -43,18 +64,19 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>${maven-compiler-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20</version>
+                <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <skipTests>false</skipTests>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <!--    <version>3.1</version>         -->
             </plugin>
 
     <!--    Generate standalone Javadocs
@@ -70,7 +92,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
+                <version>${maven-javadoc-plugin.version}</version>
                 <configuration>
                     <show>private</show>
                     <author>false</author>
@@ -98,7 +120,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.17</version>
+                <version>${maven-checkstyle-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>validate</id>
@@ -128,7 +150,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>1.4.5</version>
+                <version>${dependency-check-maven.version}</version>
         <!--    <configuration>
                     <failBuildOnCVSS>8</failBuildOnCVSS>
                 </configuration>
@@ -153,7 +175,7 @@
             <plugin>
                 <groupId>com.ruleoftech</groupId>
                 <artifactId>markdown-page-generator-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>${markdown-page-generator-plugin.version}</version>
                 <executions>
                     <execution>
                         <phase>process-sources</phase>
@@ -185,7 +207,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-              <!--  <version>2.9</version> -->
+                <version>${maven-project-info-reports-plugin}</version>
             </plugin>
 
     <!--    Checkstyle
@@ -198,7 +220,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.17</version>
+                <version>${maven-checkstyle-plugin.version}</version>
             </plugin>
 
     <!--    OWASP Dependency-Check
@@ -213,7 +235,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>1.4.5</version>
+                <version>${dependency-check-maven.version}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -233,7 +255,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
+                <version>${maven-javadoc-plugin.version}</version>
                 <configuration>
                     <show>public</show>
                     <author>false</author>
@@ -278,38 +300,38 @@
             <dependency>
                 <groupId>commons-cli</groupId>
                 <artifactId>commons-cli</artifactId>
-                <version>1.4</version>
+                <version>${commons-cli.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
-                <version>4.1</version>
+                <version>${commons-collections4.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-logging</groupId>
                 <artifactId>commons-logging</artifactId>
-                <version>1.2</version>
+                <version>${commons-logging.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.6</version>
+                <version>${commons-lang3.version}</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.12</version>
+                <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
-                <version>1.2.3</version>
+                <version>${logback-classic.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.ruleoftech</groupId>
                 <artifactId>markdown-page-generator-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>${markdown-page-generator-plugin.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -4,11 +4,11 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.2</version>
     </parent>
     <artifactId>documentation</artifactId>
     <packaging>pom</packaging>
-    <version>0.8.1</version>
+    <version>0.8.2</version>
     <name>contrast-finder-documentation</name>
     <licenses>
         <license>
@@ -20,7 +20,7 @@
     <url>https://contrast-finder.org</url>
     <organization>
         <name>Asqatasun.org</name>
-        <url>http://asqatasun.org</url>
+        <url>https://asqatasun.org</url>
     </organization>   
 
     <dependencies>

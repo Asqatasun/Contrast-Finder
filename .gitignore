@@ -16,6 +16,9 @@
 target
 *.log
 
+# maven (mvn versions:set)
+pom.xml.versionsBackup
+
 
 ##### GIT
 
