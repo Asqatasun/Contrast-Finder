@@ -22,7 +22,9 @@
 * http://www.visionaustralia.org/digital-access-determinator
 * http://a11yrocks.com/colorPalette/
 * http://colorsafe.co/
-  * https://github.com/donnieberg/accessible-color-palette/
+    * src: https://github.com/donnieberg/accessible-color-palette/
+* https://ryanhemphill.github.io/contrast-colorblind-colorpicker/
+    * src: https://github.com/ryanhemphill/contrast-colorblind-colorpicker
 * https://github.com/johnotander/get-contrast
 * http://www.randoma11y.com/
 * https://www.joedolson.com/tools/color-contrast-tester.php
