@@ -41,7 +41,7 @@
         <commons-cli.version>1.4</commons-cli.version>
         <commons-collections4.version>4.1</commons-collections4.version>
         <commons-logging.version>1.2</commons-logging.version>
-        <commons-lang3.version>3.6</commons-lang3.version>
+        <commons-lang3.version>3.7</commons-lang3.version>
         <junit.version>4.12</junit.version>
         <logback-classic.version>1.2.3</logback-classic.version>
         <markdown-page-generator-plugin.version>1.0.0</markdown-page-generator-plugin.version>
