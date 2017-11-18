@@ -12,7 +12,9 @@ none
 none
 
 ### Outdated dependencies
-none
+- [#101 - Upgraded commons-lang3 (3.7 instead of 3.6)](https://github.com/Asqatasun/Contrast-Finder/issues/101) 
+- [#102 - Upgraded markdown-page-generator-plugin (2.0.0 instead of 1.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/102) 
+- [#103 - Upgraded maven-javadoc-plugin (3.0.0-M1 instead of 2.10.4)](https://github.com/Asqatasun/Contrast-Finder/issues/103) 
 
 ### Bug
 none
@@ -30,7 +32,8 @@ none
 none
 
 ### Task
-none
+- [#104 - Added maven-jxr-plugin (needed for maven-checkstyle-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/104) 
+
 
 
 Contrast-Finder 0.8.2, 2017-10-28
