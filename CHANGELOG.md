@@ -15,6 +15,7 @@ none
 - [#101 - Upgraded commons-lang3 (3.7 instead of 3.6)](https://github.com/Asqatasun/Contrast-Finder/issues/101) 
 - [#102 - Upgraded markdown-page-generator-plugin (2.0.0 instead of 1.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/102) 
 - [#103 - Upgraded maven-javadoc-plugin (3.0.0-M1 instead of 2.10.4)](https://github.com/Asqatasun/Contrast-Finder/issues/103) 
+- [#105 - Upgraded org.owasp:dependency-check (3.0.2 instead of 1.4.5)](https://github.com/Asqatasun/Contrast-Finder/issues/105) 
 
 ### Bug
 none
