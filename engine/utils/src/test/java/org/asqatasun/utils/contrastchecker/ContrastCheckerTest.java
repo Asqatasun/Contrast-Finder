@@ -23,7 +23,7 @@ package org.asqatasun.utils.contrastchecker;
 import java.awt.Color;
 import java.text.DecimalFormat;
 import junit.framework.TestCase;
-import org.junit.Test; // Junit anotation @Test
+import org.junit.Test;  // Junit 4 anotation @Test
 
 /**
  *
@@ -43,60 +43,125 @@ public class ContrastCheckerTest extends TestCase {
         super.tearDown();
     }
 
+    ///////////////////////////////////////////////////////////////////
+    @Test
+    public void testisContrastValidWhiteBlack() {
+        Color colorA  = Color.WHITE;
+        Color colorB  = Color.BLACK;
+        float coef    = (float) 3.5;
+        System.out.println("ContrastChecker - isContrastValid WhiteBlack : [WHITE] and [BLACK] for ["+  coef  +"] = TRUE");
+        boolean result = ContrastChecker.isContrastValid(colorA, colorB, coef);
+        assertTrue(result);
+    }
+
+    @Test
+    public void testisContrastValidTwoGreenFail() {
+        Color colorA  = new Color(70, 136, 71);     // #468847
+        Color colorB  = new Color(223, 240, 216);   // #DFF0D8
+        float coef    = (float) 4;
+        System.out.println("ContrastChecker - isContrastValid TwoGreenFail : [#468847] and [#DFF0D8] for ["+  coef  +"] = FALSE");
+        boolean result = ContrastChecker.isContrastValid(colorA, colorB, coef);
+        assertFalse(result);
+    }
+
+    @Test
+    public void testisContrastValidTwoGreenPass() {
+        Color colorA  = new Color(70, 136, 71);     // #468847
+        Color colorB  = new Color(223, 240, 216);   // #DFF0D8
+        float coef    = (float) 3.5;
+        System.out.println("ContrastChecker - isContrastValid TwoGreenPass : [#468847] and [#DFF0D8] for ["+  coef  +"] = TRUE");
+        boolean result = ContrastChecker.isContrastValid(colorA, colorB, coef);
+        assertTrue(result);
+    }
+
+    ///////////////////////////////////////////////////////////////////
+    @Test
+    public void testgetConstrastRatio5DigitRound() {
+        Color colorA  = new Color(70, 136, 71);     // #468847
+        Color colorB  = new Color(223, 240, 216);   // #DFF0D8
+        double result = ContrastChecker.getConstrastRatio5DigitRound(colorA, colorB);
+        System.out.println("getConstrastRatio5DigitRound : [#468847] and [#DFF0D8] = ["+  result  +"] ");
+        assertEquals(3.61029, result, 0.00000001);
+
+        result = ContrastChecker.getConstrastRatio5DigitRound(colorB, colorA);
+        System.out.println("getConstrastRatio5DigitRound : [#DFF0D8] and [#468847] = ["+  result  +"] ");
+        assertEquals(3.61029, result, 0.00000001);
+    }
+    ///////////////////////////////////////////////////////////////////
+    @Test
+    public void testDistanceColor() {
+        Color colorA  = new Color(70, 136, 71); // #468847
+        Color colorB  = new Color(66, 118, 69); // #427645
+        float result = (float) ContrastChecker.distanceColor(colorA, colorB);
+        System.out.println("DistanceColor : [#468847] and [#DFF0D8] = ["+  result  +"] ");
+        assertEquals(18.547237, result, 0.000001);
+
+        result =  (float) ContrastChecker.distanceColor(colorB, colorA);
+        System.out.println("DistanceColor : [#468847] and [#DFF0D8] = ["+  result  +"] ");
+        assertEquals(18.547237, result, 0.000001);
+
+        colorA  = Color.WHITE;
+        colorB  = new Color(192,192,192); // Silver
+        result  =  (float) ContrastChecker.distanceColor(colorB, colorA);
+        System.out.println("DistanceColor : [WHITE] and [silver] = ["+  result  +"] ");
+        assertEquals(109.119201, result, 0.000001);
+
+        colorA  = Color.BLACK;
+        colorB  = Color.WHITE;
+        result  =  (float) ContrastChecker.distanceColor(colorB, colorA);
+        System.out.println("DistanceColor : [BLACK] and [WHITE] = ["+  result  +"] ");
+        assertEquals(441.672943, result, 0.000001);
+    }
+
+
     /**
      * Test of getConstrastRatio method, of class ContrastChecker.
      */
     @Test
     public void testGetConstrastRatio() {
-        System.out.println("getConstrastRatio");
-        
-        DecimalFormat df = new DecimalFormat("#.##");
-        
+        System.out.println("---- getConstrastRatio --------------");
+        DecimalFormat df = new DecimalFormat("#.####");
+        ///////////////////////////////////////////////////////////////////////
         Color fgColor = new Color(70, 136, 71);
         Color bgColor = new Color(223, 240, 216);
-//        ContrastChecker instance = new ContrastChecker();
-
-        
-        
         double result = ContrastChecker.getConstrastRatio(bgColor, fgColor);
         System.out.println("result :" + result);
-//        assertEquals("21", df.format(result));
-//        
-//        bgColor = new Color(255, 255, 255);
-//        fgColor = new Color(0, 0, 0);
-////        instance = new ContrastChecker();
-//
-//        result = ContrastChecker.getConstrastRatio(fgColor, bgColor);
-//        System.out.println("result :" + result);
-//        assertEquals("21", String.format("%.2g", result));
-//        
-//        fgColor = new Color(255, 53, 255);
-//        bgColor = new Color(18, 52, 95);
-//
-//        result = ContrastChecker.getConstrastRatio(fgColor, bgColor);
-//        System.out.println("result :" + result);
-//        assertEquals("4,28", df.format(result));
-//        
-//        bgColor = new Color(255, 53, 255);
-//        fgColor = new Color(18, 52, 95);
-//
-//        result = ContrastChecker.getConstrastRatio(fgColor, bgColor);
-//        System.out.println("result :" + result);
-//        assertEquals("4.28", String.format("%.3g", result));
-//        
-//        bgColor = new Color(255, 255, 255);
-//        fgColor = new Color(255, 255, 255);
-//
-//        result = ContrastChecker.getConstrastRatio(fgColor, bgColor);
-//        System.out.println("result :" + result);
-//        assertEquals("1.00", String.format("%.3g", result));
-//
-//        bgColor = new Color(53, 53, 53);
-//        fgColor = new Color(53, 53, 53);
-//
-//        result = ContrastChecker.getConstrastRatio(fgColor, bgColor);
-//        System.out.println("result :" + result);
-//        assertEquals("1.00", String.format("%.3g", result));
-        
+        assertEquals("3,6103", df.format(result));
+        ///////////////////////////////////////////////////////////////////////
+        fgColor = new Color(223, 240, 216);
+        bgColor = new Color(70, 136, 71);
+        result = ContrastChecker.getConstrastRatio(bgColor, fgColor);
+        System.out.println("result :" + result);
+        assertEquals("3,6103", df.format(result));
+        ///////////////////////////////////////////////////////////////////////
+        bgColor = new Color(255, 255, 255);
+        fgColor = new Color(0, 0, 0);
+        result = ContrastChecker.getConstrastRatio(fgColor, bgColor);
+        System.out.println("result :" + result);
+        assertEquals("21", String.format("%.2g", result));
+        ///////////////////////////////////////////////////////////////////////
+        fgColor = new Color(255, 53, 255);
+        bgColor = new Color(18, 52, 95);
+        result = ContrastChecker.getConstrastRatio(fgColor, bgColor);
+        System.out.println("result :" + result);
+        assertEquals("4,2833", df.format(result));
+        ///////////////////////////////////////////////////////////////////////
+        bgColor = new Color(255, 53, 255);
+        fgColor = new Color(18, 52, 95);
+        result = ContrastChecker.getConstrastRatio(fgColor, bgColor);
+        System.out.println("result :" + result);
+        assertEquals("4,28", String.format("%.3g", result));
+        ///////////////////////////////////////////////////////////////////////
+        bgColor = new Color(255, 255, 255);
+        fgColor = new Color(255, 255, 255);
+        result = ContrastChecker.getConstrastRatio(fgColor, bgColor);
+        System.out.println("result :" + result);
+        assertEquals("1,00", String.format("%.3g", result));
+        ///////////////////////////////////////////////////////////////////////
+        bgColor = new Color(53, 53, 53);
+        fgColor = new Color(53, 53, 53);
+        result = ContrastChecker.getConstrastRatio(fgColor, bgColor);
+        System.out.println("result :" + result);
+        assertEquals("1,00", String.format("%.3g", result));
     }
 }

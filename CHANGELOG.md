@@ -35,6 +35,7 @@ none
 ### Task
 - [#104 - Added maven-jxr-plugin (needed for maven-checkstyle-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/104) 
 - [#106 - Added unit tests coverage report (jacoco-maven-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/106) 
+- [#107 - Added missing unit tests for engine/utils/*](https://github.com/Asqatasun/Contrast-Finder/issues/107) 
 
 
 

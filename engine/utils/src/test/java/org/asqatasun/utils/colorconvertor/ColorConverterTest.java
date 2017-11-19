@@ -22,7 +22,7 @@ package org.asqatasun.utils.colorconvertor;
 
 import java.awt.Color;
 import junit.framework.TestCase;
-import org.junit.Test; // Junit anotation @Test
+import org.junit.Test;  // Junit 4 anotation @Test
 
 /**
  *
@@ -76,97 +76,212 @@ public class ColorConverterTest extends TestCase {
 //        fail("The test case is a prototype.");
 //    }
 //
-//    /**
-//     * Test of getBrightness method, of class ColorConverter.
-//     */
-//    @Test
-//    public void testGetBrightness() {
-//        System.out.println("getBrightness");
-//        Color bgColor = null;
-//        Float expResult = null;
-//        Float result = ColorConverter.getBrightness(bgColor);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of getSaturation method, of class ColorConverter.
-//     */
-//    @Test
-//    public void testGetSaturation() {
-//        System.out.println("getSaturation");
-//        Color bgColor = null;
-//        Float expResult = null;
-//        Float result = ColorConverter.getSaturation(bgColor);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+    /**
+     * Test of getBrightness method, of class ColorConverter.
+     */
+    @Test
+    public void testGetBrightness() {
+        System.out.println("---- getBrightness -----");
+
+        Color colorA    = Color.BLACK;
+        Float expResult = (float) 0.0;
+        Float result = ColorConverter.getBrightness(colorA);
+        System.out.println("BLACK - Brightness: ["+ result +"]");
+        assertEquals(expResult, result);
+
+        colorA    = Color.WHITE;
+        expResult = (float) 1.0;
+        result = ColorConverter.getBrightness(colorA);
+        System.out.println("WHITE - Brightness: ["+ result +"]");
+        assertEquals(expResult, result);
+
+        colorA    = new Color(70, 136, 71); // #468847 = rgb(70, 136, 71) = hsl(120, 32%, 40%)
+        expResult = (float) 0.53333336;
+        result = ColorConverter.getBrightness(colorA);
+        System.out.println("rgb(70, 136, 71) - Brightness: ["+ result +"]");
+        assertEquals(expResult, result);
+    }
+
+
+
+    /**
+     * Test of getSaturation method, of class ColorConverter.
+     */
+    @Test
+    public void testGetSaturation() {
+        System.out.println("---- getSaturation -----");
+
+        Color colorA    = Color.BLACK;
+        Float expResult = (float) 0.0;
+        Float result = ColorConverter.getSaturation(colorA);
+        System.out.println("BLACK - Saturation: ["+ result +"]");
+        assertEquals(expResult, result);
+
+        colorA    = Color.WHITE;
+        expResult = (float) 0.0;
+        result = ColorConverter.getSaturation(colorA);
+        System.out.println("WHITE - Saturation: ["+ result +"]");
+        assertEquals(expResult, result);
+
+        colorA    = new Color(70, 136, 71); // #468847 = rgb(70, 136, 71) = hsl(120, 32%, 40%)
+        expResult = (float) 0.4852941;
+        result = ColorConverter.getSaturation(colorA);
+        System.out.println("rgb(70, 136, 71) - Saturation: ["+ result +"]");
+        assertEquals(expResult, result);
+
+    }
 
     /**
      * Test of getHue method, of class ColorConverter.
      */
     @Test
     public void testGetHue() {
-        System.out.println("getHue");
-        Color bgColor = new Color(128, 127, 127);
-        Color result = ColorConverter.offsetHsbColor(bgColor, Float.valueOf(0.1f), Float.valueOf(0.0f), Float.valueOf(0.0f));
-        System.out.println(result.toString());
-        System.out.println("Hue : " + result);
+        System.out.println("---- getHue -----");
+
+        Color colorA    = Color.BLACK;
+        Float expResult = (float) 0.0;
+        Float result = ColorConverter.getHue(colorA);
+        System.out.println("BLACK - Hue: ["+ result +"]");
+        assertEquals(expResult, result);
+
+        colorA    = Color.WHITE;
+        expResult = (float) 0.0;
+        result = ColorConverter.getHue(colorA);
+        System.out.println("WHITE - Hue: ["+ result +"]");
+        assertEquals(expResult, result);
+
+        colorA    = new Color(70, 136, 71); // #468847 = rgb(70, 136, 71) = hsl(120, 32%, 40%)
+        expResult = (float) 0.33585858;
+        result = ColorConverter.getHue(colorA);
+        System.out.println("rgb(70, 136, 71) - Hue: ["+ result +"]");
+        assertEquals(expResult, result);
     }
-//
-//    /**
-//     * Test of offsetRgbColor method, of class ColorConverter.
-//     */
-//    @Test
-//    public void testOffsetRgbColor() {
-//        System.out.println("offsetRgbColor");
-//        Color bgColor = null;
-//        int offsetRed = 0;
-//        int offsetGreen = 0;
-//        int offsetBlue = 0;
-//        Color expResult = null;
-//        Color result = ColorConverter.offsetRgbColor(bgColor, offsetRed, offsetGreen, offsetBlue);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
+
+
     /**
-     * Test of hex2Rgb method, of class ColorConverter.
+     * Test of getHue method, of class ColorConverter.
      */
-//    @Test
-//    public void testHex2Rgb() {
-//        System.out.println("hex2Rgb");
-//        String colorStr = "";
-//        Color expResult = null;
-//        Color result = ColorConverter.hex2Rgb(colorStr);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+    @Test
+    public void testGetHue_old() {
+      //  System.out.println("getHue");
+      //  Color bgColor = new Color(128, 127, 127);
+      //  Color result = ColorConverter.offsetHsbColor(bgColor, Float.valueOf(0.1f), Float.valueOf(0.0f), Float.valueOf(0.0f));
+      //  System.out.println(result.toString());
+      //  System.out.println("Hue : " + result);
+    }
+
+    /**
+     * Test of offsetRgbColor method, of class ColorConverter.
+     */
+    @Test
+    public void testOffsetRgbColor() {
+        System.out.println("---------- offsetRgbColor ----------------");
+        Color colorA;
+        Color expResult;
+        Color result;
+        int   offsetRed;
+        int   offsetGreen;
+        int   offsetBlue;
+
+        colorA = Color.BLACK;
+        offsetRed   = 10;
+        offsetGreen = 20;
+        offsetBlue  = 30;
+        expResult   = new Color(10, 20, 30);
+        result      = ColorConverter.offsetRgbColor(colorA, offsetRed, offsetGreen, offsetBlue);
+        System.out.println("OffsetRgbColor BLACK   + ["+ offsetRed  +", "+ offsetGreen +", "+ offsetBlue +"] = " + result.toString());
+        assertEquals(expResult, result);
+
+        colorA = new Color(70, 136, 71); // #468847
+        offsetRed   = 100;
+        offsetGreen = 100;
+        offsetBlue  = 100;
+        expResult   = new Color(170, 236, 171);
+        result      = ColorConverter.offsetRgbColor(colorA, offsetRed, offsetGreen, offsetBlue);
+        System.out.println("OffsetRgbColor #468847 + ["+ offsetRed  +", "+ offsetGreen +", "+ offsetBlue +"] = " + result.toString());
+        assertEquals(expResult, result);
+
+        colorA = Color.WHITE;
+        offsetRed   = -10;
+        offsetGreen = -20;
+        offsetBlue  = -30;
+        expResult   = new Color(245,235,225);
+        result      = ColorConverter.offsetRgbColor(colorA, offsetRed, offsetGreen, offsetBlue);
+        System.out.println("OffsetRgbColor WHITE   + ["+ offsetRed  +", "+ offsetGreen +", "+ offsetBlue +"] = " + result.toString());
+        assertEquals(expResult, result);
+
+        colorA = Color.WHITE;
+        offsetRed   = 0;
+        offsetGreen = 0;
+        offsetBlue  = 0;
+        expResult   = new Color(255,255,255);
+        result      = ColorConverter.offsetRgbColor(colorA, offsetRed, offsetGreen, offsetBlue);
+        System.out.println("OffsetRgbColor WHITE   + ["+ offsetRed  +", "+ offsetGreen +", "+ offsetBlue +"] = " + result.toString());
+        assertEquals(expResult, result);
+
+        System.out.println("--------------------------");
+    }
+
+
+    /**
+     * Test of offsetRgbColor method, of class ColorConverter.
+     *
+     * @todo   check if offset* is valid for Color (ex: WHITE 255,255,255 with +10)
+     * @todo   check if color is not null
+     */
+    @Test
+    public void testOffsetRgbColor_badValue() {
+        System.out.println("---------- offsetRgbColor BAD Value ----------------");
+        System.out.println(" ------> @todo   check if offset* is valid for Color (ex: WHITE 255,255,255 with +10)");
+        System.out.println("------> @todo   check if color is not null");
+        Color colorA;
+
+        Color result;
+        int   offsetRed;
+        int   offsetGreen;
+        int   offsetBlue;
+
+        colorA = null;
+        offsetRed   = 10;
+        offsetGreen = 0;
+        offsetBlue  = 0;
+        // result      = ColorConverter.offsetRgbColor(colorA, offsetRed, offsetGreen, offsetBlue);
+        // ---------> java.lang.NullPointerException
+        //            ------> @todo   check if color is not null
+
+        colorA = Color.WHITE;
+        offsetRed   = 10;
+        offsetGreen = 0;
+        offsetBlue  = 0;
+        // result      = ColorConverter.offsetRgbColor(colorA, offsetRed, offsetGreen, offsetBlue);
+        // ---------> color parameter outside of expected range:
+        //            ------> @todo   check if offset* is valid for Color (ex: WHITE 255,255,255 with +10)
+
+        System.out.println("--------------------------");
+    }
+
+
 
 
 // formatColor()
 /////////////////////////////////////////////////////////////////////
     @Test
-    public void testFormatColorRgbLastParenthesisIsMissing() {
+    public void testFormatColorStrRgbLastParenthesisIsMissing() {
         String expResult = "rgb(255,255,255)";
         String colorStr  = "rgb(255,255,255"; // # must be added
-        System.out.println("formatColorRgblastParenthesisIsMissing ["+ colorStr  +"]");
+        System.out.println("formatColorStr - RgblastParenthesisIsMissing ["+ colorStr  +"]");
         String result    = ColorConverter.formatColorStr(colorStr);
         assertEquals(expResult, result);
 
         colorStr  = " rgb( 255, 255, 255  "; // # must be added
-        System.out.println("formatColorRgblastParenthesisIsMissing ["+ colorStr  +"]");
+        System.out.println("formatColorStr - RgblastParenthesisIsMissing ["+ colorStr  +"]");
         result    = ColorConverter.formatColorStr(colorStr);
         assertEquals(expResult, result);
     }
 
     @Test
-    public void testFormatColorRgbToLowerCase() {
-        System.out.println("formatColorRgbToLowerCase [RGB(255,255,255)]");
+    public void testFormatColorStrRgbToLowerCase() {
+        System.out.println("fformatColorStr - RgbToLowerCase [RGB(255,255,255)]");
         String colorStr  = "RGB(255,255,255)";
         String expResult = "rgb(255,255,255)";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -174,8 +289,8 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testFormatColorRgb() {
-        System.out.println("formatColorRgb [ rgb( 255, 255, 255 ) ]");
+    public void testFormatColorStrRgb() {
+        System.out.println("formatColorStr - Rgb [ rgb( 255, 255, 255 ) ]");
         String colorStr  = " rgb( 255, 255, 255 ) ";
         String expResult = "rgb(255,255,255)";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -184,8 +299,8 @@ public class ColorConverterTest extends TestCase {
 
 
     @Test
-    public void testFormatColorRgbShortWidthSpace() {
-        System.out.println("formatColorRgbShortWidthSpace [ 255, 255, 255  ]");
+    public void testFormatColorStrRgbShortWidthSpace() {
+        System.out.println("formatColorStr - RgbShortWidthSpace [ 255, 255, 255  ]");
         String colorStr  = " 255, 255, 255  ";
         String expResult = "rgb(255,255,255)";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -193,8 +308,8 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testFormatColorRgbShort() {
-        System.out.println("formatColorRgbShort [255,255,255]");
+    public void testFormatColorStrRgbShort() {
+        System.out.println("formatColorStr - RgbShort [255,255,255]");
         String colorStr  = "255,255,255";
         String expResult = "rgb(255,255,255)";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -202,8 +317,8 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testFormatColorNotValidHex() {
-        System.out.println("formatColorNotValidHex [Ff]");
+    public void testFormatColorStrNotValidHex() {
+        System.out.println("formatColorStr - NotValidHex [Ff]");
         String colorStr  = "Ff"; // # must be added
         String expResult = "Ff";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -211,8 +326,8 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testFormatColorNotValidHex2() {
-        System.out.println("formatColorNotValidHex2 [FfFf]");
+    public void testFormatColorStrNotValidHex2() {
+        System.out.println("formatColorStr - NotValidHex2 [FfFf]");
         String colorStr  = "FfFf"; // # must be added
         String expResult = "FfFf";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -220,8 +335,8 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testFormatColorNotValidHexLetter2() {
-        System.out.println("formatColorNotValidHexLetter2 [#ZzZ]");
+    public void testFormatColorStrNotValidHexLetter2() {
+        System.out.println("formatColorStr - NotValidHexLetter2 [#ZzZ]");
         String colorStr  = "#ZzZ"; // # must be added
         String expResult = "#ZzZ";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -229,8 +344,8 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testFormatColorNotValidHexLetter() {
-        System.out.println("formatColorNotValidHexLetter [ZzZ]");
+    public void testFormatColorStrNotValidHexLetter() {
+        System.out.println("formatColorStr - NotValidHexLetter [ZzZ]");
         String colorStr  = "ZzZ"; // # must be added
         String expResult = "ZzZ";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -238,8 +353,8 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testFormatColorHexAddHash() {
-        System.out.println("formatColorHexAddHash [000000]");
+    public void testFormatColorStrHexAddHash() {
+        System.out.println("formatColorStr - HexAddHash [000000]");
         String colorStr  = "000000"; // # must be added
         String expResult = "#000000";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -247,8 +362,8 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testFormatColorHexNotAddHash() {
-        System.out.println("formatColorHexNotAddHash [#000000]");
+    public void testFormatColorStrHexNotAddHash() {
+        System.out.println("formatColorStr - HexNotAddHash [#000000]");
         String colorStr  = "#000000"; // # must not be added
         String expResult = "#000000";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -256,8 +371,8 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testFormatColorHexTrim() {
-        System.out.println("formatColorHexTrim [ #000000 ]");
+    public void testFormatColorStrHexTrim() {
+        System.out.println("formatColorStr - HexTrim [ #000000 ]");
         String colorStr  = " #000000 ";
         String expResult = "#000000";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -265,8 +380,8 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testFormatColorHexToUpperCase() {
-        System.out.println("formatColorHexToUpperCase [#ffffff]");
+    public void testFormatColorStrHexToUpperCase() {
+        System.out.println("formatColorStr - HexToUpperCase [#ffffff]");
         String colorStr  = "#ffffff";
         String expResult = "#FFFFFF";
         String result    = ColorConverter.formatColorStr(colorStr);
@@ -274,16 +389,62 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testFormatColorHex() {
-        System.out.println("formatColorHex [ ffffff ]");
+    public void testFormatColorStrHex() {
+        System.out.println("formatColorStr - Hex [ ffffff ]");
         String colorStr  = " ffffff ";
         String expResult = "#FFFFFF";
         String result    = ColorConverter.formatColorStr(colorStr);
         assertEquals(expResult, result);
     }
 
+    @Test
+    public void testFormatColorStrNameBadCase() {
+        System.out.println("formatColorStr - Name [ wHite ]");
+        String colorStr  = " wHite ";
+        String expResult = "White";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testFormatColorStrNameWithSpace() {
+        System.out.println("formatColorStr - Name [ dark magenta ]");
+        String colorStr  = " dark magenta ";
+        String expResult = "DarkMagenta";
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testFormatColorStrBadName() {
+        System.out.println("formatColorStr - BadName [wHite_BadName]");
+        String colorStr  = "wHite_BadName";
+        String expResult = colorStr;
+        String result    = ColorConverter.formatColorStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+
 // Color  colorFromRgbStr()
 /////////////////////////////////////////////////////////////////////
+
+    @Test
+    public void testColorFromRgbStrBadFormat() {
+        String colorStr = "#255,0,0";
+        System.out.println("colorFromRgbStrBadRedValue ["+ colorStr +"]");
+        Color expResult = null;
+        Color result = ColorConverter.colorFromRgbStr(colorStr);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testColorFromRgbStrBadValue() {
+        String colorStr = "-1, 0, 0";
+        System.out.println("colorFromRgbStrBadValue ["+ colorStr +"]");
+        Color expResult = null;
+        Color result = ColorConverter.colorFromRgbStr(colorStr);
+        assertEquals(expResult, result);
+    }
 
     @Test
     public void testColorFromRgbStrBadRedValue() {
@@ -385,6 +546,117 @@ public class ColorConverterTest extends TestCase {
     }
 
 
+//  String hex2Rgb(Color color)
+/////////////////////////////////////////////////////////////////////
+
+    /**
+     * Test of hex2Rgb method, of class ColorConverter.
+     *      String hex2Rgb(Color color)
+     */
+    @Test
+    public void testHex2Rgb_color() {
+        System.out.println("---- Hex2Rgb_color --------------------");
+        Color  colorA;
+        String expResult;
+        String result;
+
+        colorA  = Color.WHITE;
+        System.out.println("hex2Rgb [Color.WHITE]");
+        expResult = "rgb(255, 255, 255)";
+        result    = ColorConverter.hex2Rgb(colorA);
+        assertEquals(expResult, result);
+
+        colorA  = Color.BLACK;
+        System.out.println("hex2Rgb [Color.BLACK]");
+        expResult = "rgb(0, 0, 0)";
+        result    = ColorConverter.hex2Rgb(colorA);
+        assertEquals(expResult, result);
+
+        System.out.println("--------------------------");
+    }
+
+
+//  Color hex2Rgb(String colorStr)
+/////////////////////////////////////////////////////////////////////
+
+    /**
+     * Test of hex2Rgb method, of class ColorConverter.
+     *      Color hex2Rgb(String colorStr)
+     */
+    @Test
+    public void testHex2Rgb_str() {
+        System.out.println("---- Hex2Rgb_str --------------------");
+        String colorStr = "FFFFFF";
+        System.out.println("hex2Rgb string ["+ colorStr +"]");
+        Color expResult = Color.WHITE;
+        Color result    = ColorConverter.hex2Rgb(colorStr);
+        assertEquals(expResult, result);
+
+        colorStr = "FFF";
+        System.out.println("hex2Rgb string ["+ colorStr +"]");
+        expResult = Color.WHITE;
+        result    = ColorConverter.hex2Rgb(colorStr);
+        assertEquals(expResult, result);
+
+        colorStr = "#FFFFFF";
+        System.out.println("hex2Rgb string ["+ colorStr +"]");
+        expResult = Color.WHITE;
+        result    = ColorConverter.hex2Rgb(colorStr);
+        assertEquals(expResult, result);
+
+        colorStr = "#FFF";
+        System.out.println("hex2Rgb string ["+ colorStr +"]");
+        expResult = Color.WHITE;
+        result    = ColorConverter.hex2Rgb(colorStr);
+        assertEquals(expResult, result);
+
+        System.out.println("--------------------------");
+    }
+
+    public void testHex2Rgb_strBadValue() {
+        System.out.println("---- Hex2Rgb_strBadValue --------------------");
+        String colorStr = "";
+        Color result    = null;
+
+        colorStr  = "";
+        System.out.println("hex2Rgb string ["+ colorStr +"]");
+        result    = ColorConverter.hex2Rgb(colorStr);
+        assertNull(result);
+
+        colorStr = "#ZZZ";
+        System.out.println("hex2Rgb string ["+ colorStr +"]");
+        result    = ColorConverter.hex2Rgb(colorStr);
+        assertNull(result);
+
+        colorStr = "ZZZ";
+        System.out.println("hex2Rgb string ["+ colorStr +"]");
+        result    = ColorConverter.hex2Rgb(colorStr);
+        assertNull(result);
+
+        colorStr = "#FF";
+        System.out.println("hex2Rgb string ["+ colorStr +"]");
+        result    = ColorConverter.hex2Rgb(colorStr);
+        assertNull(result);
+
+        colorStr = "FF";
+        System.out.println("hex2Rgb string ["+ colorStr +"]");
+        result    = ColorConverter.hex2Rgb(colorStr);
+        assertNull(result);
+
+        colorStr = "#FFFF";
+        System.out.println("hex2Rgb string ["+ colorStr +"]");
+        result    = ColorConverter.hex2Rgb(colorStr);
+        assertNull(result);
+
+        colorStr = "FFFF";
+        System.out.println("hex2Rgb string ["+ colorStr +"]");
+        result    = ColorConverter.hex2Rgb(colorStr);
+        assertNull(result);
+
+        System.out.println("--------------------------");
+    }
+
+
 
 // String   rgb2Hex()
 /////////////////////////////////////////////////////////////////////
@@ -415,5 +687,218 @@ public class ColorConverterTest extends TestCase {
         String result = ColorConverter.rgb2Hex(color);
         assertEquals(expResult, result);
     }
+
+// String   rgb2Hsl()
+/////////////////////////////////////////////////////////////////////
+
+    @Test
+    public void testRgb2Hsl() {
+        System.out.println("------------ rgb2Hsl ----------------");
+        Color  colorA;
+        String result;
+        String expResult;
+
+        colorA    = Color.BLACK;
+        result    = ColorConverter.rgb2Hsl(colorA);
+        expResult = "hsl(0, 0%, 0%)";
+        assertEquals(expResult, result);
+        System.out.println("rgb2Hsl BLACK   to ["+ expResult +"]");
+
+        colorA    = Color.WHITE;
+        result    = ColorConverter.rgb2Hsl(colorA);
+        expResult = "hsl(0, 0%, 100%)";
+        System.out.println("rgb2Hsl WHITE   to ["+ expResult +"]");
+        assertEquals(expResult, result);
+
+        colorA  = new Color(70, 136, 71); // #468847
+        result    = ColorConverter.rgb2Hsl(colorA);
+        expResult = "hsl(120, 32%, 40%)";
+        System.out.println("rgb2Hsl #468847 to ["+ expResult +"]");
+        assertEquals(expResult, result);
+
+        System.out.println("--------------------------");
+    }
+
+
+//   colorFromStr
+/////////////////////////////////////////////////////////////////////
+
+    @Test
+    public void testColorFromStr() {
+        System.out.println("------------ ColorFromStr ----------------");
+        String  colorStr;
+        Color   result;
+        Color   expResult;
+
+        colorStr  = "#FFF";
+        expResult = Color.WHITE;
+        result    = ColorConverter.colorFromStr(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromStr ["+ colorStr +"]");
+
+        colorStr  = "#FFFFFF";
+        expResult = Color.WHITE;
+        result    = ColorConverter.colorFromStr(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromStr ["+ colorStr +"]");
+
+        colorStr  = "FFF";
+        expResult = Color.WHITE;
+        result    = ColorConverter.colorFromStr(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromStr ["+ colorStr +"]");
+
+        colorStr  = "FFFFFF";
+        expResult = Color.WHITE;
+        result    = ColorConverter.colorFromStr(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromStr ["+ colorStr +"]");
+
+        colorStr  = "rgb(255,255,255)";
+        expResult = Color.WHITE;
+        result    = ColorConverter.colorFromStr(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromStr ["+ colorStr +"]");
+
+        colorStr  = "rgb(139,0,139";
+        expResult = new Color(139,0,139);
+        result    = ColorConverter.colorFromStr(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromStr ["+ colorStr +"]");
+
+        colorStr  = "139,0,139";
+        expResult = new Color(139,0,139);
+        result    = ColorConverter.colorFromStr(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromStr ["+ colorStr +"]");
+
+        colorStr  = " wHite   ";
+        expResult = Color.WHITE;
+        result    = ColorConverter.colorFromStr(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromStr ["+ colorStr +"]");
+
+        colorStr  = " BlaCK   ";
+        expResult = Color.BLACK;
+        result    = ColorConverter.colorFromStr(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromStr ["+ colorStr +"]");
+
+        colorStr  = "darkmagenta";
+        expResult = new Color(139,0,139);
+        result    = ColorConverter.colorFromStr(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromStr ["+ colorStr +"]");
+
+        System.out.println("--------------------------");
+    }
+
+    @Test
+    public void testColorFromStr_badValue() {
+        System.out.println("------------ ColorFromStr BAD value ----------------");
+        String  colorStr;
+        Color   result;
+        Color   expResult;
+
+        colorStr  = "256,0,0";
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertNull(result);
+        System.out.println("colorFromColorName BAD value ["+ colorStr +"]");
+
+        colorStr  = "rgb(256,0,0)";
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertNull(result);
+        System.out.println("colorFromColorName BAD value ["+ colorStr +"]");
+
+        colorStr  = "rgb(256,0,0";
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertNull(result);
+        System.out.println("colorFromColorName BAD value ["+ colorStr +"]");
+
+        colorStr  = "FF";
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertNull(result);
+        System.out.println("colorFromColorName BAD value ["+ colorStr +"]");
+
+        colorStr  = "FFFFFFFFFFFFF";
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertNull(result);
+        System.out.println("colorFromColorName BAD value ["+ colorStr +"]");
+
+        colorStr  = "#FF";
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertNull(result);
+        System.out.println("colorFromColorName BAD value ["+ colorStr +"]");
+
+        colorStr  = "#FFFFFFFFFFFFF";
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertNull(result);
+        System.out.println("colorFromColorName BAD value ["+ colorStr +"]");
+
+        colorStr  = "badColorName_WHITE";
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertNull(result);
+        System.out.println("colorFromColorName BAD value ["+ colorStr +"]");
+
+        colorStr  = "";
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertNull(result);
+        System.out.println("colorFromColorName BAD value ["+ colorStr +"]");
+
+        System.out.println("--------------------------");
+    }
+
+//   colorFromColorName()
+/////////////////////////////////////////////////////////////////////
+
+    @Test
+    public void testColorFromColorName() {
+        System.out.println("------------ colorFromColorName ----------------");
+        String  colorStr;
+        Color   result;
+        Color   expResult;
+
+        colorStr  = " wHite   ";
+        expResult = Color.WHITE;
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromColorName ["+ colorStr +"]");
+
+        colorStr  = " BlaCK   ";
+        expResult = Color.BLACK;
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromColorName ["+ colorStr +"]");
+
+        colorStr  = "darkmagenta";
+        expResult = new Color(139,0,139);
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertEquals(expResult, result);
+        System.out.println("colorFromColorName ["+ colorStr +"]");
+
+        System.out.println("--------------------------");
+    }
+
+    @Test
+    public void testColorFromColorName_badValue() {
+        System.out.println("------------ colorFromColorName BAD value----------------");
+        String  colorStr;
+        Color   result;
+
+        colorStr  = "badColorName_WHITE";
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertNull(result);
+        System.out.println("colorFromColorName BAD value ["+ colorStr +"]");
+
+        colorStr  = "";
+        result    = ColorConverter.colorFromColorName(colorStr);
+        assertNull(result);
+        System.out.println("colorFromColorName BAD value ["+ colorStr +"]");
+
+        System.out.println("--------------------------");
+    }
+
+
+
     
 }
