@@ -23,19 +23,12 @@
         <url>https://asqatasun.org</url>
     </organization>   
 
-    <dependencies>
-        <dependency>
-            <groupId>com.ruleoftech</groupId>
-            <artifactId>markdown-page-generator-plugin</artifactId>
-            <version>2.0.0</version>
-        </dependency>
-    </dependencies>
+
     <build>
         <plugins>
                <plugin>
                 <groupId>com.ruleoftech</groupId>
                 <artifactId>markdown-page-generator-plugin</artifactId>
-                <version>2.0.0</version>
                 <executions>
                     <execution>
                         <phase>process-sources</phase>
