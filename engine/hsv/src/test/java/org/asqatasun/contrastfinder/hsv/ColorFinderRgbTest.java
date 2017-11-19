@@ -8,7 +8,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import junit.framework.TestCase;
-import org.junit.Test; // Junit anotation @Test
+import org.junit.Test;  // Junit 4 anotation @Test
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

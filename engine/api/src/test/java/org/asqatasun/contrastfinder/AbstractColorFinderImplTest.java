@@ -6,7 +6,7 @@ package org.asqatasun.contrastfinder;
 
 import java.awt.Color;
 import junit.framework.TestCase;
-import org.junit.Test; // Junit anotation @Test
+import org.junit.Test;  // Junit 4 anotation @Test
 
 /**
  *
