@@ -22,6 +22,7 @@ package org.asqatasun.utils.colornamelookup;
 
 import java.awt.Color;
 import junit.framework.TestCase;
+import org.junit.Test; // Junit anotation @Test
 
 /**
  *
@@ -45,6 +46,7 @@ public class ColorNameLookupTest extends TestCase {
 
     // @@@TODO add test for getColorNameFromStr
 
+    @Test
     public void testGetColorFromNameWhite() {
         String colorStr = "white";
         System.out.println("GetColorFromNameWhite ["+ colorStr +"]");
@@ -54,6 +56,7 @@ public class ColorNameLookupTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testGetColorFromNameSilver() {
         String colorStr = "silver";
         System.out.println("GetColorFromNameSilver ["+ colorStr +"]");
@@ -63,6 +66,7 @@ public class ColorNameLookupTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testGetColorFromNameDarkMagenta() {
         String colorStr = "DarkMagenta";
         System.out.println("GetColorFromNameDarkMagenta ["+ colorStr +"]");
@@ -72,6 +76,7 @@ public class ColorNameLookupTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testGetColorFromNameBadCaseWidthSpaces() {
         String colorStr = " darkmagenta   ";
         System.out.println("GetColorFromNameBadCaseWidthSpaces ["+ colorStr +"]");

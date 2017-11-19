@@ -6,6 +6,7 @@ package org.asqatasun.contrastfinder;
 
 import java.awt.Color;
 import junit.framework.TestCase;
+import org.junit.Test; // Junit anotation @Test
 
 /**
  *
@@ -30,6 +31,7 @@ public class AbstractColorFinderImplTest extends TestCase {
     /**
      * Test of findColors method, of class AbstractColorFinderImpl.
      */
+    @Test
     public void testFindColorsWithValidContrastWithBackgroundTested() {
         System.out.println("findColorsWithValidContrastWithBackgroundTested");
         Color foregroundColor = null;
@@ -45,6 +47,7 @@ public class AbstractColorFinderImplTest extends TestCase {
     /**
      * Test of findColors method, of class AbstractColorFinderImpl.
      */
+    @Test
     public void testFindColorsWithValidContrastWithForegroundTested() {
         System.out.println("findColorsWithValidContrastWithForegroundTested");
         Color foregroundColor = null;
@@ -60,6 +63,7 @@ public class AbstractColorFinderImplTest extends TestCase {
     /**
      * Test of findColors method, of class AbstractColorFinderImpl.
      */
+    @Test
     public void testFindColorsWithInvalidContrastWithBackgroundTested() {
         System.out.println("findColorsWithInvalidContrastWithBackgroundTested");
         Color foregroundColor = null;
@@ -75,6 +79,7 @@ public class AbstractColorFinderImplTest extends TestCase {
     /**
      * Test of findColors method, of class AbstractColorFinderImpl.
      */
+    @Test
     public void testFindColorsWithInvalidContrastWithForegroundTested() {
         System.out.println("findColorsWithInvalidContrastWithForegroundTested");
         Color foregroundColor = null;

@@ -8,6 +8,8 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import junit.framework.TestCase;
+import org.junit.Test; // Junit anotation @Test
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.asqatasun.contrastfinder.result.ColorCombinaison;
@@ -34,6 +36,7 @@ public class ColorFinderRgbTest extends TestCase {
         super.tearDown();
     }
 
+    @Test
     public void testFindColorsNearColorOrange() {
         System.out.println("FindColorsNearColor");
         Color foregroundColor = new Color(255, 255, 255);
@@ -51,6 +54,7 @@ public class ColorFinderRgbTest extends TestCase {
     /**
      * Test of getColorFinderKey method, of class ColorFinderRgb.
      */
+    @Test
     public void testGetColorFinderKey() {
         System.out.println("Key");
         ColorFinderHsv instance = new ColorFinderHsv();

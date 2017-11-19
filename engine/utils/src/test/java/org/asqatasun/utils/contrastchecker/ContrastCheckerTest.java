@@ -23,6 +23,7 @@ package org.asqatasun.utils.contrastchecker;
 import java.awt.Color;
 import java.text.DecimalFormat;
 import junit.framework.TestCase;
+import org.junit.Test; // Junit anotation @Test
 
 /**
  *
@@ -45,6 +46,7 @@ public class ContrastCheckerTest extends TestCase {
     /**
      * Test of getConstrastRatio method, of class ContrastChecker.
      */
+    @Test
     public void testGetConstrastRatio() {
         System.out.println("getConstrastRatio");
         

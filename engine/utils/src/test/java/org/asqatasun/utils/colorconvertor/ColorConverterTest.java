@@ -22,6 +22,7 @@ package org.asqatasun.utils.colorconvertor;
 
 import java.awt.Color;
 import junit.framework.TestCase;
+import org.junit.Test; // Junit anotation @Test
 
 /**
  *
@@ -46,6 +47,7 @@ public class ColorConverterTest extends TestCase {
     /**
      * Test of offsetHsbColor method, of class ColorConverter.
      */
+//    @Test
 //    public void testOffsetHsbColor() {
 //        System.out.println("offsetHsbColor");
 //        Color bgColor = null;
@@ -62,6 +64,7 @@ public class ColorConverterTest extends TestCase {
 //    /**
 //     * Test of setBrightnessToColor method, of class ColorConverter.
 //     */
+//    @Test
 //    public void testSetBrightnessToColor() {
 //        System.out.println("setBrightnessToColor");
 //        Float Brightness = null;
@@ -76,6 +79,7 @@ public class ColorConverterTest extends TestCase {
 //    /**
 //     * Test of getBrightness method, of class ColorConverter.
 //     */
+//    @Test
 //    public void testGetBrightness() {
 //        System.out.println("getBrightness");
 //        Color bgColor = null;
@@ -89,6 +93,7 @@ public class ColorConverterTest extends TestCase {
 //    /**
 //     * Test of getSaturation method, of class ColorConverter.
 //     */
+//    @Test
 //    public void testGetSaturation() {
 //        System.out.println("getSaturation");
 //        Color bgColor = null;
@@ -102,6 +107,7 @@ public class ColorConverterTest extends TestCase {
     /**
      * Test of getHue method, of class ColorConverter.
      */
+    @Test
     public void testGetHue() {
         System.out.println("getHue");
         Color bgColor = new Color(128, 127, 127);
@@ -113,6 +119,7 @@ public class ColorConverterTest extends TestCase {
 //    /**
 //     * Test of offsetRgbColor method, of class ColorConverter.
 //     */
+//    @Test
 //    public void testOffsetRgbColor() {
 //        System.out.println("offsetRgbColor");
 //        Color bgColor = null;
@@ -129,6 +136,7 @@ public class ColorConverterTest extends TestCase {
     /**
      * Test of hex2Rgb method, of class ColorConverter.
      */
+//    @Test
 //    public void testHex2Rgb() {
 //        System.out.println("hex2Rgb");
 //        String colorStr = "";
@@ -142,6 +150,7 @@ public class ColorConverterTest extends TestCase {
 
 // formatColor()
 /////////////////////////////////////////////////////////////////////
+    @Test
     public void testFormatColorRgbLastParenthesisIsMissing() {
         String expResult = "rgb(255,255,255)";
         String colorStr  = "rgb(255,255,255"; // # must be added
@@ -155,6 +164,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testFormatColorRgbToLowerCase() {
         System.out.println("formatColorRgbToLowerCase [RGB(255,255,255)]");
         String colorStr  = "RGB(255,255,255)";
@@ -163,6 +173,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testFormatColorRgb() {
         System.out.println("formatColorRgb [ rgb( 255, 255, 255 ) ]");
         String colorStr  = " rgb( 255, 255, 255 ) ";
@@ -172,7 +183,7 @@ public class ColorConverterTest extends TestCase {
     }
 
 
-
+    @Test
     public void testFormatColorRgbShortWidthSpace() {
         System.out.println("formatColorRgbShortWidthSpace [ 255, 255, 255  ]");
         String colorStr  = " 255, 255, 255  ";
@@ -181,6 +192,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testFormatColorRgbShort() {
         System.out.println("formatColorRgbShort [255,255,255]");
         String colorStr  = "255,255,255";
@@ -189,7 +201,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
-
+    @Test
     public void testFormatColorNotValidHex() {
         System.out.println("formatColorNotValidHex [Ff]");
         String colorStr  = "Ff"; // # must be added
@@ -198,6 +210,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testFormatColorNotValidHex2() {
         System.out.println("formatColorNotValidHex2 [FfFf]");
         String colorStr  = "FfFf"; // # must be added
@@ -206,6 +219,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testFormatColorNotValidHexLetter2() {
         System.out.println("formatColorNotValidHexLetter2 [#ZzZ]");
         String colorStr  = "#ZzZ"; // # must be added
@@ -214,6 +228,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testFormatColorNotValidHexLetter() {
         System.out.println("formatColorNotValidHexLetter [ZzZ]");
         String colorStr  = "ZzZ"; // # must be added
@@ -222,6 +237,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testFormatColorHexAddHash() {
         System.out.println("formatColorHexAddHash [000000]");
         String colorStr  = "000000"; // # must be added
@@ -230,6 +246,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testFormatColorHexNotAddHash() {
         System.out.println("formatColorHexNotAddHash [#000000]");
         String colorStr  = "#000000"; // # must not be added
@@ -238,6 +255,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testFormatColorHexTrim() {
         System.out.println("formatColorHexTrim [ #000000 ]");
         String colorStr  = " #000000 ";
@@ -246,6 +264,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testFormatColorHexToUpperCase() {
         System.out.println("formatColorHexToUpperCase [#ffffff]");
         String colorStr  = "#ffffff";
@@ -254,7 +273,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
-
+    @Test
     public void testFormatColorHex() {
         System.out.println("formatColorHex [ ffffff ]");
         String colorStr  = " ffffff ";
@@ -266,7 +285,7 @@ public class ColorConverterTest extends TestCase {
 // Color  colorFromRgbStr()
 /////////////////////////////////////////////////////////////////////
 
-
+    @Test
     public void testColorFromRgbStrBadRedValue() {
         String colorStr = "256, 0, 0";
         System.out.println("colorFromRgbStrBadRedValue ["+ colorStr +"]");
@@ -275,6 +294,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testColorFromRgbStrBadGreenValue() {
         String colorStr = "0, 256, 0";
         System.out.println("colorFromRgbStrBadGreenValue ["+ colorStr +"]");
@@ -283,6 +303,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testColorFromRgbStrBadBlueValue() {
         String colorStr = "0, 0, 256";
         System.out.println("colorFromRgbStrBadBlueValue ["+ colorStr +"]");
@@ -291,6 +312,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testColorFromRgbStr() {
         String colorStr = " rgb(175, 175, 175) ";
         System.out.println("colorFromRgbStr ["+ colorStr +"]");
@@ -299,6 +321,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testColorFromRgbStrShort() {
         String colorStr = "175, 175, 175";
         System.out.println("colorFromRgbStrShort ["+ colorStr +"]");
@@ -307,6 +330,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testColorFromRgbStrBlack() {
         String colorStr = "rgb(0,0,0)";
         System.out.println("colorFromRgbStrBlack ["+ colorStr +"]");
@@ -315,6 +339,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testColorFromRgbStrWhite() {
         String colorStr = "rgb(255,255,255)";
         System.out.println("colorFromRgbStrWhite ["+ colorStr +"]");
@@ -323,6 +348,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testColorFromRgbStrPink() {
         String colorStr = "rgb(255,175,175)";
         System.out.println("colorFromRgbStrPink ["+ colorStr +"]");
@@ -331,7 +357,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
-
+    @Test
     public void testColorFromRgbStrBlackShort() {
         String colorStr = "0,0,0";
         System.out.println("colorFromRgbStrBlackShort ["+ colorStr +"]");
@@ -340,6 +366,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testColorFromRgbStrWhiteShort() {
         String colorStr = "255,255,255";
         System.out.println("colorFromRgbStrWhiteShort ["+ colorStr +"]");
@@ -348,6 +375,7 @@ public class ColorConverterTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testColorFromRgbStrPinkShort() {
         String colorStr = "255,175,175";
         System.out.println("colorFromRgbStrPinkShort ["+ colorStr +"]");
@@ -360,6 +388,8 @@ public class ColorConverterTest extends TestCase {
 
 // String   rgb2Hex()
 /////////////////////////////////////////////////////////////////////
+
+    @Test
     public void testRgb2hexBlack() {
         System.out.println("Rgb2hexBlack");
         Color color = Color.BLACK;
@@ -367,7 +397,8 @@ public class ColorConverterTest extends TestCase {
         String result = ColorConverter.rgb2Hex(color);
         assertEquals(expResult, result);
     }
-    
+
+    @Test
     public void testRgb2hexWhite() {
         System.out.println("Rgb2hexWhite");
         Color color = Color.WHITE;
@@ -375,7 +406,8 @@ public class ColorConverterTest extends TestCase {
         String result = ColorConverter.rgb2Hex(color);
         assertEquals(expResult, result);
     }
-    
+
+    @Test
     public void testRgb2hexPink() {
         System.out.println("Rgb2hexPink");
         Color color = Color.PINK;
