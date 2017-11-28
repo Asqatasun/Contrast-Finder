@@ -1,5 +1,38 @@
 # CHANGELOG
 
+Contrast-Finder 0.8.4, 2017-12-xx
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+### New Feature
+none
+
+### Security
+none
+
+### Outdated dependencies
+none
+
+### Bug
+none
+
+### Improvement 
+none
+
+### Refactoring
+none
+
+### Configuration 
+none
+
+### Documentation
+none
+
+### Task
+none
+
+
 Contrast-Finder 0.8.3, 2017-11-28
 ---------------------------------
 
@@ -16,7 +49,6 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 - [#104 - Added maven-jxr-plugin (needed for maven-checkstyle-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/104) 
 - [#106 - Added unit tests coverage report (jacoco-maven-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/106) 
 - [#107 - Added missing unit tests for engine/utils/*](https://github.com/Asqatasun/Contrast-Finder/issues/107) 
-
 
 
 Contrast-Finder 0.8.2, 2017-10-28

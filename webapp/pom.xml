@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.8.3</version>
+        <version>0.8.4-SNAPSHOT</version>
     </parent>
     <artifactId>webapp</artifactId>
-    <version>0.8.3</version>
+    <version>0.8.4-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>contrast-finder-webapp</name>
     <licenses>
