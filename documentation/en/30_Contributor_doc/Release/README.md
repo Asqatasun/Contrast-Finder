@@ -81,44 +81,33 @@ docker run -d -p 8080:8080 asqatasun/contrast-finder
 # docker hub : manage new build for asqatasun/asqa.mvn:contrast.finder_jdk*
 ```
  
+### Prepare develop branch for the next release
+```bash
+# 1. change version ("x.y.z" to "x.y.z+1-SNAPSHOT")
+    # */pom.xml
+    # */Dockerfile
+    # CHANGELOG
+    # Docker/REALESE/README
+    # (...)/template_variables.jspf    
+git checkout develop
+
+# for pom.xml files
+mvn versions:set -DnewVersion=x.y.z+1
+mvn versions:commit  # remove pom.xml.versionsBackup files
+
+# for these following files
+    # */Dockerfile
+    # CHANGELOG
+    # Docker/REALESE/README
+    # (...)/template_variables.jspf   
+(...)
+
+# 2. commit 
+git add .
+git commit -m  "set version to x.y.z+1-SNAPSHOT" 
+```
 
 ## Versioning
 
 We tend to follow the [semantic versioning](http://semver.org/) recommendations.
 
-## Changelog template
-
-```
-Contrast-Finder M.m.p, 2017-xx-xx
----------------------------------
-
-Upgrade-o-meter: just replace the .war file and restart Tomcat
-
-### New Feature
-none
-
-### Security
-none
-
-### Outdated dependencies
-none
-
-### Bug
-none
-
-### Improvement 
-none
-
-### Refactoring
-none
-
-### Configuration 
-none
-
-### Documentation
-none
-
-### Task
-none
-
-```
