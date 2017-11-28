@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import static junit.framework.Assert.assertEquals;
 import junit.framework.TestCase;
+import org.junit.Test;  // Junit 4 anotation @Test
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.asqatasun.contrastfinder.result.ColorCombinaison;
@@ -36,6 +38,7 @@ public class ColorFinderHsvPsychoTest extends TestCase {
         super.tearDown();
     }
 
+    @Test
     public void testFindColorsNearColorOrange() {
         System.out.println("FindColorsNearColor");
         Color foregroundColor = new Color(255, 165, 0);
@@ -69,7 +72,8 @@ public class ColorFinderHsvPsychoTest extends TestCase {
 //        }
 //        LOGGER.debug("Out of bound values " + counter );
     }
-    
+
+//    @Test
 //    public void testFindColorsNearColor() {
 //        System.out.println("FindColorsNearColor");
 //        Color foregroundColor = new Color(127, 127, 127);
@@ -89,6 +93,7 @@ public class ColorFinderHsvPsychoTest extends TestCase {
     /**
      * Test of getColorFinderKey method, of class ColorFinderHsvPsycho.
      */
+    @Test
     public void testGetColorFinderKey() {
         System.out.println("Key");
         ColorFinderHsv instance = new ColorFinderHsv();

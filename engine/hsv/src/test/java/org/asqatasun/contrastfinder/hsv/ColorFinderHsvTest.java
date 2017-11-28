@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 import static junit.framework.Assert.assertEquals;
 import junit.framework.TestCase;
+import org.junit.Test;  // Junit 4 anotation @Test
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.asqatasun.contrastfinder.result.ColorCombinaison;
@@ -53,6 +55,7 @@ public class ColorFinderHsvTest extends TestCase {
     /**
      * Test of findColors method, of class ColorFinderHsv.
      */
+    @Test
     public void testFindColorsWithFgAndBg() {
         System.out.println("FindColorsWithFgAndBg");
         Color foregroundColor = new Color(127, 127, 127);
@@ -74,6 +77,7 @@ public class ColorFinderHsvTest extends TestCase {
         assertEquals(endColor, colorCombinaison.get(sizeList - 1).getColor());
     }
 
+    @Test
     public void testFindColorsWithFgAndBg2() {
         System.out.println("FindColorsWithFgAndBg2");
         Color foregroundColor = new Color(127, 127, 127);
@@ -95,6 +99,7 @@ public class ColorFinderHsvTest extends TestCase {
         assertEquals(endColor, colorCombinaison.get(sizeList - 1).getColor());
     }
 
+    @Test
     public void testFindColorsBornBlack() {
         System.out.println("FindColorsBornBlack");
         Color foregroundColor = new Color(1, 1, 1);
@@ -111,6 +116,7 @@ public class ColorFinderHsvTest extends TestCase {
         assertEquals(firstColor, colorCombinaison.get(0).getColor());
     }
 
+    @Test
     public void testFindColorsBornBlack2() {
         System.out.println("FindColorsBornBlack2");
         Color foregroundColor = new Color(1, 1, 1);
@@ -127,6 +133,7 @@ public class ColorFinderHsvTest extends TestCase {
         assertEquals(firstColor, colorCombinaison.get(0).getColor());
     }
 
+    @Test
     public void testFindColorsBornWhite() {
         System.out.println("FindColorsBornWhite");
         Color foregroundColor = new Color(254, 254, 254);
@@ -148,6 +155,7 @@ public class ColorFinderHsvTest extends TestCase {
         assertEquals(endColor, colorCombinaison.get(sizeList - 1).getColor());
     }
 
+    @Test
     public void testFindColorsBornWhite2() {
         System.out.println("FindColorsBornWhite2");
         Color foregroundColor = new Color(254, 254, 254);
@@ -172,6 +180,7 @@ public class ColorFinderHsvTest extends TestCase {
     /**
      * Test of findColors method, of class ColorFinderHsv.
      */
+    @Test
     public void testFindColorsGreenAlert() {
         System.out.println("FindColorsGreenAlert");
         Color foregroundColor = new Color(70, 136, 71);
@@ -193,6 +202,7 @@ public class ColorFinderHsvTest extends TestCase {
         assertEquals(endColor, colorCombinaison.get(sizeList - 1).getColor());
     }
 
+    @Test
     public void testFindColorsGreenAlert2() {
         System.out.println("FindColorsGreenAlert2");
         Color foregroundColor = new Color(70, 136, 71);
@@ -214,6 +224,7 @@ public class ColorFinderHsvTest extends TestCase {
         assertEquals(endColor, colorCombinaison.get(sizeList - 1).getColor());
     }
 
+    @Test
     public void testFindColorsNearColor() {
         System.out.println("FindColorsNearColor");
         Color foregroundColor = new Color(1, 0, 1);
@@ -234,6 +245,7 @@ public class ColorFinderHsvTest extends TestCase {
         assertEquals(endColor, colorCombinaison.get(sizeList - 1).getColor());
     }
 
+    @Test
     public void testFindColorsNearColor2() {
         System.out.println("FindColorsNearColor2");
         Color foregroundColor = new Color(255, 165, 0);
@@ -249,6 +261,7 @@ public class ColorFinderHsvTest extends TestCase {
         }
     }
 
+    @Test
     public void testGetColorFinderKey() {
         System.out.println("Key");
         ColorFinderHsv instance = new ColorFinderHsv();

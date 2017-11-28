@@ -22,6 +22,7 @@ package org.asqatasun.utils.colornamelookup;
 
 import java.awt.Color;
 import junit.framework.TestCase;
+import org.junit.Test;  // Junit 4 anotation @Test
 
 /**
  *
@@ -45,6 +46,48 @@ public class ColorNameLookupTest extends TestCase {
 
     // @@@TODO add test for getColorNameFromStr
 
+    ///// getColorFromName ///////////////////////////////////////////////
+
+    @Test
+    public void testGetColorNameFromStrWhite() {
+        String colorStr = "white";
+        System.out.println("GetColorNameFromStr ["+ colorStr +"]");
+        ColorNameLookup c = new ColorNameLookup();
+        String result     = c.getColorNameFromStr(colorStr);
+        assertEquals("White", result);
+    }
+
+    @Test
+    public void testGetColorNameFromStrBadColorName() {
+        String colorStr = "BadColorName";
+        System.out.println("GetColorNameFromStr ["+ colorStr +"]");
+        ColorNameLookup c = new ColorNameLookup();
+        String result     = c.getColorNameFromStr(colorStr);
+        assertEquals("", result);
+    }
+
+    @Test
+    public void testGetColorNameFromStrBadCaseWidthSpaces() {
+        String colorStr = " darkmagenta   ";
+        System.out.println("GetColorNameFromStr ["+ colorStr +"]");
+        ColorNameLookup c = new ColorNameLookup();
+        String result     = c.getColorNameFromStr(colorStr);
+        assertEquals("DarkMagenta", result);
+    }
+
+
+    ///// getColorFromName ///////////////////////////////////////////////
+
+    @Test
+    public void testGetColorFromNameBadColorName() {
+        String colorStr = "BadColorName";
+        System.out.println("GetColorFromNameBadColorName ["+ colorStr +"]");
+        ColorNameLookup c = new ColorNameLookup();
+        Color result    = c.getColorFromName(colorStr);
+        assertNull(result);
+    }
+
+    @Test
     public void testGetColorFromNameWhite() {
         String colorStr = "white";
         System.out.println("GetColorFromNameWhite ["+ colorStr +"]");
@@ -54,6 +97,7 @@ public class ColorNameLookupTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testGetColorFromNameSilver() {
         String colorStr = "silver";
         System.out.println("GetColorFromNameSilver ["+ colorStr +"]");
@@ -63,6 +107,7 @@ public class ColorNameLookupTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testGetColorFromNameDarkMagenta() {
         String colorStr = "DarkMagenta";
         System.out.println("GetColorFromNameDarkMagenta ["+ colorStr +"]");
@@ -72,6 +117,7 @@ public class ColorNameLookupTest extends TestCase {
         assertEquals(expResult, result);
     }
 
+    @Test
     public void testGetColorFromNameBadCaseWidthSpaces() {
         String colorStr = " darkmagenta   ";
         System.out.println("GetColorFromNameBadCaseWidthSpaces ["+ colorStr +"]");
@@ -80,6 +126,5 @@ public class ColorNameLookupTest extends TestCase {
         Color result    = c.getColorFromName(colorStr);
         assertEquals(expResult, result);
     }
-
 
 }

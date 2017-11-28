@@ -80,7 +80,7 @@ public final class ColorConverter {
 
     /**
      * @param color
-     * @return the brightness of the given color
+     * @return the brightness (hsb) of the given color
      */
     public static Float getBrightness(Color color) {
         float[] hsbValues = new float[MAX_COMPONENT];
@@ -92,7 +92,7 @@ public final class ColorConverter {
 
     /**
      * @param color
-     * @return the saturation of the given color
+     * @return the saturation (hsb) of the given color
      */
     public static Float getSaturation(Color color) {
         float[] hsbValues = new float[MAX_COMPONENT];
@@ -104,7 +104,7 @@ public final class ColorConverter {
 
     /**
      * @param color
-     * @return the hue of the given color
+     * @return the hue (hsb) of the given color
      */
     public static Float getHue(Color color) {
         float[] hsbValues = new float[MAX_COMPONENT];
@@ -115,6 +115,9 @@ public final class ColorConverter {
     }
 
     /**
+     * @todo   check if offset* is valid for Color (ex: WHITE 255,255,255 with +10)
+     * @todo   check if color is not null
+     *
      * @param bgColor
      * @param offsetRed
      * @param offsetGreen
@@ -175,7 +178,7 @@ public final class ColorConverter {
 
 
     /**
-     * @param  colorStr ex: silver, red, SteelBlue, ...
+     * @param  colorStr color name (ex: silver, red, SteelBlue, ...)
      * @return Color object or NULL
      */
     public static Color colorFromColorName(String colorStr) {
@@ -213,20 +216,22 @@ public final class ColorConverter {
      * @return the RGB Color from hex Color
      */
     public static Color hex2Rgb(String colorStr) {
-        if (colorStr.charAt(0) == '#') {
-            String str = colorStr.substring(1);
-            if (str.matches(HEXADECIMAL_DICTIONNARY)
+        if(colorStr.length() > 0){
+            if (colorStr.charAt(0) == '#') {
+                String str = colorStr.substring(1);
+                if (str.matches(HEXADECIMAL_DICTIONNARY)
                     && str.length() == RGB_HEXA_LENGTH) {
-                return getNewColor(str);
-            } else if (str.matches(HEXADECIMAL_DICTIONNARY)
+                    return getNewColor(str);
+                } else if (str.matches(HEXADECIMAL_DICTIONNARY)
                     && str.length() == RGB_SHORT_HEXA_LENGTH) {
-                return getNewColorShortHexa(str);
-            }
-        } else if (colorStr.matches(HEXADECIMAL_DICTIONNARY)) {
-            if (colorStr.length() == RGB_HEXA_LENGTH) {
-                return getNewColor(colorStr);
-            } else if (colorStr.length() == RGB_SHORT_HEXA_LENGTH) {
-                return getNewColorShortHexa(colorStr);
+                    return getNewColorShortHexa(str);
+                }
+            } else if (colorStr.matches(HEXADECIMAL_DICTIONNARY)) {
+                if (colorStr.length() == RGB_HEXA_LENGTH) {
+                    return getNewColor(colorStr);
+                } else if (colorStr.length() == RGB_SHORT_HEXA_LENGTH) {
+                    return getNewColorShortHexa(colorStr);
+                }
             }
         }
         return null;

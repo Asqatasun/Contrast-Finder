@@ -19,7 +19,7 @@ FROM asqatasun/contrast-finder:pre-requisites_from-Ubuntu
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.8.2"
+ENV CONTRAST_FINDER_RELEASE="0.8.3"
 
 # Add contrast-finder .war
 ADD contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz  /root

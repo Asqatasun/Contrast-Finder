@@ -1,5 +1,24 @@
 # CHANGELOG
 
+Contrast-Finder 0.8.3, 2017-11-28
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+### Outdated dependencies
+- [#100 - Upgraded SpringFramework (4.3.13 instead of 4.3.12)](https://github.com/Asqatasun/Contrast-Finder/issues/100) 
+- [#101 - Upgraded commons-lang3 (3.7 instead of 3.6)](https://github.com/Asqatasun/Contrast-Finder/issues/101) 
+- [#102 - Upgraded markdown-page-generator-plugin (2.0.0 instead of 1.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/102) 
+- [#103 - Upgraded maven-javadoc-plugin (3.0.0-M1 instead of 2.10.4)](https://github.com/Asqatasun/Contrast-Finder/issues/103) 
+- [#105 - Upgraded org.owasp:dependency-check (3.0.2 instead of 1.4.5)](https://github.com/Asqatasun/Contrast-Finder/issues/105) 
+
+### Task
+- [#104 - Added maven-jxr-plugin (needed for maven-checkstyle-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/104) 
+- [#106 - Added unit tests coverage report (jacoco-maven-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/106) 
+- [#107 - Added missing unit tests for engine/utils/*](https://github.com/Asqatasun/Contrast-Finder/issues/107) 
+
+
+
 Contrast-Finder 0.8.2, 2017-10-28
 ---------------------------------
 

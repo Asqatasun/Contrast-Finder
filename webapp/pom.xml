@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.8.2</version>
+        <version>0.8.3</version>
     </parent>
     <artifactId>webapp</artifactId>
-    <version>0.8.2</version>
+    <version>0.8.3</version>
     <packaging>war</packaging>
     <name>contrast-finder-webapp</name>
     <licenses>
@@ -28,7 +28,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Dependency Versions -->
-        <spring.version>4.3.12.RELEASE</spring.version>
+        <spring.version>4.3.13.RELEASE</spring.version>
         <spring-security.version>4.2.3.RELEASE</spring-security.version>
         <htmlcompressor.version>1.5.2</htmlcompressor.version>
         <taglibs-standard-jstlel.version>1.2.5</taglibs-standard-jstlel.version>
