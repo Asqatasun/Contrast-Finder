@@ -15,7 +15,7 @@ FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
 #
 # #### FROM  ######################################################
 #   asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-14.04/Dockerfile
-#   |-- ubuntu:14.04                                       https://github.com/tianon/docker-brew-ubuntu-core/blob/dist/trusty/Dockerfile
+#   |-- ubuntu:14.04                                       https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/trusty/Dockerfile
 ###################################################################
 
 # environment variables

@@ -12,7 +12,7 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 #   docker build -t contrast-finder:pre-requisites_Ubuntu-16.04 .
 #
 # #### FROM  ######################################################
-#   ubuntu:16.04  https://github.com/tianon/docker-brew-ubuntu-core/blob/dist/trusty/Dockerfile
+#   ubuntu:16.04  https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/xenial/Dockerfile
 ###################################################################
 
 

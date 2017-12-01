@@ -1,4 +1,4 @@
-FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
+FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04
 
 # #### usage ######################################################
 #
@@ -14,8 +14,8 @@ FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
 #
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-14.04/Dockerfile
-#   |-- ubuntu:14.04                                       https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/trusty/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-16.04/Dockerfile
+#   |-- ubuntu:16.04                                       https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/xenial/Dockerfile
 ###################################################################
 
 # environment variables
@@ -29,25 +29,14 @@ RUN  cd      /root/contrast-*/install/                      && \
      mv -v   contrast-*.war contrast-finder.war             && \
      mv -v   contrast-*.war /var/lib/tomcat7/webapps        && \
      touch   /var/log/contrast-finder/contrast-finder.log   && \
-cat /etc/os-release               >> /var/log/contrast-finder/contrast-finder.log && \
-echo "---------------"            >> /var/log/contrast-finder/contrast-finder.log && \
-lsb_release -a                    >> /var/log/contrast-finder/contrast-finder.log && \
-echo "---------------"            >> /var/log/contrast-finder/contrast-finder.log && \
-/usr/share/tomcat7/bin/version.sh >> /var/log/contrast-finder/contrast-finder.log && \
-echo "---------------"            >> /var/log/contrast-finder/contrast-finder.log && \
      rm -rf  /root/contrast-*  && echo "-- Install: Ok"
-
-     # @@@TODO add the following command lines in pre-requisites
-     #      cat /etc/os-release
-     #      lsb_release -a
-     #      /usr/share/tomcat7/bin/version.sh
 
 # Health Check of the Docker Container
 # ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
 
 CMD  service tomcat7 start                                  ;      \
-     tail -f -n 50 /var/log/tomcat7/catalina.out                   \
-                   /var/log/contrast-finder/contrast-finder.log
+     tail -f /var/log/tomcat7/catalina.out                         \
+             /var/log/contrast-finder/contrast-finder.log
 
 
 
