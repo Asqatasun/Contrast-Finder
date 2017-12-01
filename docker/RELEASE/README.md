@@ -6,12 +6,10 @@ Tool to provide color combination for a good (accessible, WCAG-compliant) contra
 ## Supported tags 
 Supported tags and respective `Dockerfile` links :
 
-* [pre-requisites_from-Ubuntu](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_from-Ubuntu/Dockerfile)
+* [pre-requisites_Ubuntu-14.04](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-14.04/Dockerfile)
 * [v0.8.4-SNAPSHOT, latest](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/RELEASE/Dockerfile)
 * [v0.8.3](https://github.com/Asqatasun/Contrast-Finder/blob/v0.8.3/docker/RELEASE/Dockerfile), [v0.8.2](https://github.com/Asqatasun/Contrast-Finder/blob/v0.8.2/docker/RELEASE/Dockerfile), [v0.8.1](https://github.com/Asqatasun/Contrast-Finder/blob/v0.8.1/docker/RELEASE/Dockerfile), [v0.8.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.8.0/docker/RELEASE/Dockerfile)
-* [v0.7.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.7.0/docker/RELEASE/Dockerfile)
-* [v0.6.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.6.0/docker/RELEASE/Dockerfile)
-* [v0.5.2](https://github.com/Asqatasun/Contrast-Finder/blob/v0.5.2/docker/RELEASE/Dockerfile)
+* [v0.7.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.7.0/docker/RELEASE/Dockerfile), [v0.6.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.6.0/docker/RELEASE/Dockerfile), [v0.5.2](https://github.com/Asqatasun/Contrast-Finder/blob/v0.5.2/docker/RELEASE/Dockerfile)
 
 ## How to use this image
 `docker pull asqatasun/contrast-finder` 

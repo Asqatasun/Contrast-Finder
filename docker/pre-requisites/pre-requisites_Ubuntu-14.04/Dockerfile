@@ -9,7 +9,7 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 # #### usage ######################################################
 #
 #   --- Building this docker image
-#   docker build -t contrast-finder:pre-requisites_from-Ubuntu .
+#   docker build -t contrast-finder:pre-requisites_Ubuntu-14.04 .
 #
 # #### FROM  ######################################################
 #   ubuntu:14.04  https://github.com/tianon/docker-brew-ubuntu-core/blob/dist/trusty/Dockerfile
