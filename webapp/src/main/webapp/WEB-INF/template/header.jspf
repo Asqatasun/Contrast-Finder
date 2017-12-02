@@ -46,42 +46,41 @@
             <c:set var="ptUrl" scope="request" value="?lang=pt"/>
         </c:otherwise>
     </c:choose>
-    <nav id="lang-switcher">
+    <nav id="lang-switcher"  aria-label="<fmt:message key="nav.language-switch.aria-label"/>" role="navigation">
+        <ul>
         <c:choose>
             <c:when test="${lang == 'en'}">
-                <strong>english</strong>
+                <li><strong aria-current="page">english</strong></li>
             </c:when>
             <c:otherwise>
-                <a href="${enUrl}" title="Switch to english" lang="en">english</a>
+                <li lang="en"><a href="${enUrl}" hreflang="en" title="Switch to english">english</a></li>
             </c:otherwise>
         </c:choose>
-        &nbsp;
         <c:choose>
             <c:when test="${lang == 'fr'}">
-                <strong>français</strong>
+                <li><strong aria-current="page">français</strong></li>
             </c:when>
             <c:otherwise>
-                <a href="${frUrl}" title="Passer en français" lang="fr">français</a>
+                <li lang="fr"><a href="${frUrl}" hreflang="fr" title="Passer en français">français</a></li>
             </c:otherwise>
         </c:choose>
-        &nbsp;
         <c:choose>
             <c:when test="${lang == 'pt'}">
-                <strong>português</strong>
+                <li><strong aria-current="page">português</strong></li>
             </c:when>
             <c:otherwise>
-                <a href="${ptUrl}" title="em Português" lang="pt">português</a>
+                <li lang="pt"><a href="${ptUrl}" hreflang="pt" title="em Português">português</a></li>
             </c:otherwise>
         </c:choose>
-        &nbsp;
         <c:choose>
             <c:when test="${lang == 'ko'}">
-                <strong>한국어</strong>
+                <li><strong aria-current="page">한국어</strong></li>
             </c:when>
             <c:otherwise>
-                <a href="${koUrl}" title="한국어로 전환" lang="ko">한국어</a>
+                <li lang="ko"><a href="${koUrl}" hreflang="ko"title="한국어로 전환">한국어</a></li>
             </c:otherwise>
         </c:choose>
+        </ul>
     </nav>
 
     <div id="contrast-finder-logo">
