@@ -36,8 +36,7 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 ###################################################################
 
 # build variables
-# ARG CONTRAST_FINDER_RELEASE="0.8.4-SNAPSHOT"
-ARG CONTRAST_FINDER_RELEASE="0.8.3"
+ARG CONTRAST_FINDER_RELEASE="0.8.4-SNAPSHOT"
 ARG SRC_URL_PREFIX="https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}"
 ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz"
 
