@@ -41,14 +41,18 @@ ARG SRC_URL_PREFIX="https://github.com/Asqatasun/Contrast-Finder/releases/downlo
 ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz"
 
 # Install contrast-finder
-RUN  cd         /root/                                        && \
-     wget       ${SRC_URL}                                    && \
-     tar  -xzvf contrast-*.tar.gz                             && \
-     cd         /root/contrast-*/install/                     && \
-     mv   -v    contrast-*.war    contrast-finder.war         && \
-     mv   -v    contrast-*.war    /var/lib/tomcat7/webapps    && \
-     touch      /var/log/contrast-finder/contrast-finder.log  && \
-     rm   -rf   /root/contrast-*  && echo "-- Install: Ok"
+RUN  cd         /root/                                              && \
+     wget       ${SRC_URL}                                          && \
+     tar  -xzvf contrast-*.tar.gz                                   && \
+     cd         /root/contrast-*/install/                           && \
+     mv   -v    contrast-*.war    contrast-finder.war               && \
+     mv   -v    contrast-*.war    /var/lib/tomcat7/webapps          && \
+     rm   -rf  /root/contrast-*                                       && \
+     echo ${CONTRAST_FINDER_RELEASE}               >> ${INFO_FILE}  && \
+     echo "\n--- ${CONF_FILE} ---"                 >> ${INFO_FILE}  && \
+     cat  ${CONF_FILE}                             >> ${INFO_FILE}  && \
+     echo "\n--- Logs -----------"                 >> ${INFO_FILE}  && \
+     cat  ${INFO_FILE} > ${LOG_FILE} && echo "-- Install: Ok"
 
 # environment variables
 ENV CONTRAST_FINDER=${CONTRAST_FINDER_RELEASE}
@@ -58,8 +62,5 @@ ENV SRC=${SRC_URL}
 # ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
 
 CMD  service tomcat7 start                                  ;      \
-     tail -f /var/log/tomcat7/catalina.out                         \
-             /var/log/contrast-finder/contrast-finder.log
-
-
-
+     tail -f -n 50 /var/log/tomcat7/catalina.out                   \
+                   /var/log/contrast-finder/contrast-finder.log

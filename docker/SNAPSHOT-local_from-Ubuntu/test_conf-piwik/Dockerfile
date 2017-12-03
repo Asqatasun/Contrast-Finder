@@ -27,17 +27,21 @@ ENV PIWIK_URL="http://localhost/piwik/"
 ADD contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz  /root
 
 # Install contrast-finder
-RUN  cd      /root/contrast-*/install/                      && \
-     mv -v   contrast-*.war contrast-finder.war             && \
-     mv -v   contrast-*.war /var/lib/tomcat7/webapps        && \
-     touch   /var/log/contrast-finder/contrast-finder.log   && \
-     echo "piwik_analytics_key=${PIWIK_KEY}"     > /etc/contrast-finder/contrast-finder.conf  && \
-     echo "piwik_analytics_server=${PIWIK_URL}" >> /etc/contrast-finder/contrast-finder.conf  && \
-     rm -rf  /root/contrast-*  && echo "-- Install: Ok"
+RUN  cd      /root/contrast-*/install/                              && \
+     mv -v   contrast-*.war contrast-finder.war                     && \
+     mv -v   contrast-*.war /var/lib/tomcat7/webapps                && \
+     rm -rf  /root/contrast-*                                       && \
+echo "piwik_analytics_key=${PIWIK_KEY}"    >> ${CONF_FILE}          && \
+echo "piwik_analytics_server=${PIWIK_URL}" >> ${CONF_FILE}          && \
+     echo ${CONTRAST_FINDER_RELEASE}               >> ${INFO_FILE}  && \
+     echo "\n--- ${CONF_FILE} ---"                 >> ${INFO_FILE}  && \
+     cat  ${CONF_FILE}                             >> ${INFO_FILE}  && \
+     echo "\n--- Logs -----------"                 >> ${INFO_FILE}  && \
+     cat  ${INFO_FILE} > ${LOG_FILE} && echo "-- Install: Ok"
 
 CMD  service tomcat7 start                                  ;      \
-     tail -f /var/log/tomcat7/catalina.out                         \
-             /var/log/contrast-finder/contrast-finder.log
+     tail -f -n 50 /var/log/tomcat7/catalina.out                   \
+                   /var/log/contrast-finder/contrast-finder.log
 
 
 
