@@ -1,4 +1,4 @@
-FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
+FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04
 LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                            \
       org.label-schema.name           = "Contrast-Finder - WebApp"                              \
       org.label-schema.version        = "0.8.4-SNAPSHOT"                                             \
@@ -31,12 +31,13 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 #     could be overridden with  --build-arg SRC_URL=<url>
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-14.04/Dockerfile
-#   |-- ubuntu:14.04                                       https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/trusty/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-16.04/Dockerfile
+#   |-- ubuntu:16.04                                       https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/xenial/Dockerfile
 ###################################################################
 
 # build variables
-ARG CONTRAST_FINDER_RELEASE="0.8.4-SNAPSHOT"
+# ARG CONTRAST_FINDER_RELEASE="0.8.4-SNAPSHOT"
+ARG CONTRAST_FINDER_RELEASE="0.8.3"
 ARG SRC_URL_PREFIX="https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}"
 ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz"
 
@@ -47,7 +48,7 @@ RUN  cd         /root/                                              && \
      cd         /root/contrast-*/install/                           && \
      mv   -v    contrast-*.war    contrast-finder.war               && \
      mv   -v    contrast-*.war    /var/lib/tomcat7/webapps          && \
-     rm   -rf  /root/contrast-*                                       && \
+     rm   -rf  /root/contrast-*                                     && \
      echo ${CONTRAST_FINDER_RELEASE}               >> ${INFO_FILE}  && \
      echo "\n--- ${CONF_FILE} ---"                 >> ${INFO_FILE}  && \
      cat  ${CONF_FILE}                             >> ${INFO_FILE}  && \
@@ -59,7 +60,7 @@ ENV CONTRAST_FINDER=${CONTRAST_FINDER_RELEASE}
 ENV SRC=${SRC_URL}
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
+# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04
 
 CMD  service tomcat7 start                                  ;      \
      tail -f -n 50 /var/log/tomcat7/catalina.out                   \
