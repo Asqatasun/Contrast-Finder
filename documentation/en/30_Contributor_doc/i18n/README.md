@@ -12,6 +12,7 @@ form.resultNumber={0} {0,choice,1#resultado|1<resultados}
 form.resultNumber={0} {0,choice,1#개의 결과|1<개의 결과}
 ```
 
+
 ## Character encoding
 
 Java i18n files however must be ISO-8859-1.
@@ -38,3 +39,10 @@ Converts a file encoded in ISO-8859-1 with Unicode escapes to a file in UTF8 cha
 native2ascii -encoding utf8 -reverse example.propertie   example.reverse.utf8.txt
 ```
 
+## Tools and resources
+* **Transvision** is a tool used to search translations extracted from Mozilla products and websites.
+     * [transvision.mozfr.org](https://transvision.mozfr.org/)
+     * [example for "contrast ratio"](https://transvision.mozfr.org/?recherche=contrast+ratio&repo=gecko_strings&sourcelocale=en-US&locale=fr&search_type=strings)
+* **Pontoon** "enables localizers to translate web apps and web sites in place with context and spatial limitations right in front of them." (@@@TODO someone to test it ?) 
+    * https://pontoon.mozilla.org
+    * https://github.com/mozilla/pontoon
