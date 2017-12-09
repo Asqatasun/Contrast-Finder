@@ -30,7 +30,10 @@ none
 none
 
 ### Task
-none
+- [#111 -.travis.yml - Add openjdk8 in addition to openjdk7](https://github.com/Asqatasun/Contrast-Finder/issues/111)
+- [#110 - Added new docker image: ubuntu 16.04 (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/110) 
+- [#109 - Docker/pre-requisites/ - Added /etc/contrast-finder/softwares-version.txt](https://github.com/Asqatasun/Contrast-Finder/issues/109) 
+- [#106 - Added unit tests coverage report (cobertura-maven-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/106) 
 
 
 Contrast-Finder 0.8.3, 2017-11-28
