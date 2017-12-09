@@ -233,8 +233,9 @@
     <!--    Jacoco - Code coverage
                 http://www.jacoco.org/jacoco/
                 https://github.com/jacoco/jacoco/
-                report: target/site/jacoco
-                usage:  mvn clean install                     -->
+                usage:  mvn clean install
+                report: engine/*/target/site/jacoco
+                        no aggregate report (if you know how to do it…)     -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -255,6 +256,24 @@
                 </executions>
             </plugin>
 
+    <!--    Cobertura - Code coverage
+                http://www.mojohaus.org/cobertura-maven-plugin/
+                https://github.com/cobertura/cobertura
+                usage:  mvn cobertura:cobertura
+                report: engine/*/target/site/cobertura
+                        no aggregate report (if you know how to do it…) -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                    </formats>
+                </configuration>
+            </plugin>
+
+
         </plugins>
     </build>
 
@@ -267,6 +286,8 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>${maven-project-info-reports-plugin.version}</version>
             </plugin>
+
+
 
     <!--    JXR produces a cross-reference of the project's sources (needed for maven-checkstyle-plugin)
                 http://maven.apache.org/jxr/maven-jxr-plugin/

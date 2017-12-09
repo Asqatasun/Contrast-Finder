@@ -6,9 +6,9 @@
 -----
 * Checking for new dependency / plugin updates
 * OWASP Dependency-Check
+* Code coverage
 * Checkstyle
 * JavaDoc
-
 
 ## Checking for new dependency / plugin updates
 ```bash
@@ -59,6 +59,35 @@ mvn dependency-check:help -Ddetail=true -Dgoal=aggregate
 * http://jeremylong.github.io/DependencyCheck/
 * http://jeremylong.github.io/DependencyCheck/dependency-check-maven/
 
+## Code coverage
+
+no aggregate report (if you know how to do it…)
+
+### Jacoco
+
+#### Documentation
+* http://www.jacoco.org/jacoco/
+* https://github.com/jacoco/jacoco/
+
+#### Usage
+```bash
+mvn clean install
+     # report: engine/*/target/site/jacoco
+```
+
+### Cobertura 
+
+#### Documentation
+* http://www.mojohaus.org/cobertura-maven-plugin/
+* https://github.com/cobertura/cobertura
+
+#### Usage
+```bash
+mvn cobertura:cobertura
+     # report: engine/*/target/site/cobertura
+```
+                
+                        
 
 ## Checkstyle
 Scan Contrast-Finder to check the violations of a coding standard.
