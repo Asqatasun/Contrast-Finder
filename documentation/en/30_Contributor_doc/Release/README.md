@@ -11,7 +11,7 @@ As an end user, you won't need it, it is just for developers.
     mvn dependency-check:aggregate  
 
     # compile and test it
-    docker/build_and_run-with-docker.sh -l -s ${PWD} -d docker/SNAPSHOT-local_from-Ubuntu
+    docker/build_and_run-with-docker.sh -l -s ${PWD} -d docker/SNAPSHOT-local
 
 ```
 
@@ -63,7 +63,7 @@ Another plugin to do some of the work (not tested):
 ### Test it
 ```bash
 # compile and test it
-docker/build_and_run-with-docker.sh -l -s ${PWD} -d docker/SNAPSHOT-local_from-Ubuntu
+docker/build_and_run-with-docker.sh -l -s ${PWD} -d docker/SNAPSHOT-local
 ```
  
 ### Release

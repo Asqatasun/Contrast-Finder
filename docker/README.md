@@ -13,7 +13,7 @@ To enjoy it, do:
 git clone https://github.com/Asqatasun/Contrast-Finder
 cd  Contrast-finder
 git checkout develop
-docker/build_and_run-with-docker.sh -l --source-dir ${PWD} --docker-dir docker/SNAPSHOT-local_from-Ubuntu
+docker/build_and_run-with-docker.sh -l --source-dir ${PWD} --docker-dir docker/SNAPSHOT-local
 ```
 In your browser, go to
 `http://127.0.0.1:8087/contrast-finder/`

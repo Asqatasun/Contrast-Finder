@@ -24,7 +24,7 @@ To enjoy it, do:
 git clone https://github.com/Asqatasun/Contrast-Finder
 cd  Contrast-finder
 git checkout develop
-docker/build_and_run-with-docker.sh --source-dir ${PWD} --docker-dir docker/SNAPSHOT-local_from-Ubuntu
+docker/build_and_run-with-docker.sh --source-dir ${PWD} --docker-dir docker/SNAPSHOT-local
 ```
 
 In your browser, go to
@@ -42,7 +42,7 @@ Example of output:
   maven WARN ...... 12 
   -------------------------------------------------------
   Container ... contrast.finder
-  Dockerfile .. docker/SNAPSHOT-local_from-Ubuntu
+  Dockerfile .. docker/SNAPSHOT-local
   Image ....... asqatasun/contrast-finder:2017-09-30
   CMD ......... docker run -p 8087:8080 --name contrast.finder -d asqatasun/contrast-finder:2017-09-30
   -------------------------------------------------------
@@ -84,13 +84,13 @@ In the meantime, enjoy your coffee break :)
 ### 3. Copy Contrast-finder tar.gz to the suitable Docker directory
 
 ```shell
-cp -v contrast-finder-webapp/target/*.tar.gz docker/SNAPSHOT-local_from-Ubuntu
+cp -v contrast-finder-webapp/target/*.tar.gz docker/SNAPSHOT-local
 ```
 
 ### 4. Build the Docker Image
 
 ```shell
-cd docker/SNAPSHOT-local_from-Ubuntu 
+cd docker/SNAPSHOT-local 
 docker build -t asqatasun/contrast-finder:SNAPSHOT . 
 ```
 
