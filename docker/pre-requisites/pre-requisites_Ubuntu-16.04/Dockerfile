@@ -20,23 +20,26 @@ ARG LOG_DIR="/var/log/contrast-finder/"
 ARG CONF_DIR="/etc/contrast-finder/"
 
 # environment variables
-ENV     LOG_FILE="${LOG_DIR}contrast-finder.log" \
-        INFO_FILE="${CONF_DIR}softwares-version.txt"  \
-        CONF_FILE="${CONF_DIR}contrast-finder.conf"   \
+ENV     TOMCAT_LOG="/var/log/tomcat7/catalina.out"      \
+        LOG_FILE="${LOG_DIR}contrast-finder.log"        \
+        CONF_FILE="${CONF_DIR}contrast-finder.conf"     \
+        INFO_FILE="/softwares-version.txt"              \
         WWWPORT="8080"
 EXPOSE  $WWWPORT
 
 # build
 RUN  apt-get update                                         && \
-     apt-get -y --no-install-recommends                             \
-             install wget                                           \
-                     curl                                           \
-                     ca-certificates                                \
-                     tomcat7                                        \
+     apt-get -y --no-install-recommends                 \
+             install wget                               \
+                     curl                               \
+                     ca-certificates                    \
+                     tomcat7                            \
                      libspring-instrument-java              && \
      apt-get clean                                          && \
      apt-get autoremove                                     && \
      rm      -rf /var/lib/apt/lists/*                       && \
+     rm      -rvf /usr/share/man/*                          && \
+     rm      -rvf /usr/share/doc/*                          && \
      mkdir   -p  ${LOG_DIR}                                 && \
      mkdir   -p  ${CONF_DIR}                                && \
      touch   ${LOG_FILE}                                    && \
@@ -48,8 +51,8 @@ RUN  apt-get update                                         && \
      echo "\n--- Tomcat ---------"     >> ${INFO_FILE}      && \
      /usr/share/tomcat7/bin/version.sh >> ${INFO_FILE}      && \
      echo "\n--- Contrast-Finder ---"  >> ${INFO_FILE}      && \
-     ln -s   /usr/share/java/spring3-instrument-tomcat.jar          \
-             /usr/share/tomcat7/lib/spring3-instrument-tomcat.jar
+     ln -s /usr/share/java/spring3-instrument-tomcat.jar           \
+           /usr/share/tomcat7/lib/spring3-instrument-tomcat.jar
 
 
 # Health Check of the Docker Container
@@ -63,7 +66,7 @@ HEALTHCHECK --timeout=3s    \
             # can be overridden at the command line 'docker run --health-cmd (...)'
             ######################################################################
 
-CMD  service tomcat7 start                      ;  \
-     tail -f /var/log/tomcat7/catalina.out
+CMD  service tomcat7 start   ;  \
+     tail -f ${TOMCAT_LOG}
 
 
