@@ -18,7 +18,9 @@ none
 none
 
 ### Improvement 
-none
+- [#110 - Added new docker image: ubuntu 16.04 (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/110) 
+- [#112 - Added new docker image: alpine 3.7 (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/112) 
+- [#109 - Docker/pre-requisites/ - Added /etc/contrast-finder/softwares-version.txt](https://github.com/Asqatasun/Contrast-Finder/issues/109) 
 
 ### Refactoring
 none
@@ -30,9 +32,7 @@ none
 none
 
 ### Task
-- [#111 -.travis.yml - Add openjdk8 in addition to openjdk7](https://github.com/Asqatasun/Contrast-Finder/issues/111)
-- [#110 - Added new docker image: ubuntu 16.04 (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/110) 
-- [#109 - Docker/pre-requisites/ - Added /etc/contrast-finder/softwares-version.txt](https://github.com/Asqatasun/Contrast-Finder/issues/109) 
+- [#111 -.travis.yml - Added openjdk8 in addition to openjdk7](https://github.com/Asqatasun/Contrast-Finder/issues/111)
 - [#106 - Added unit tests coverage report (cobertura-maven-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/106) 
 
 
