@@ -48,11 +48,22 @@ RUN  apt-get update                                         && \
      chown   -R tomcat7:tomcat7 ${CONF_DIR}                 && \
      echo "\n--- OS -------------"     >> ${INFO_FILE}      && \
      cat /etc/os-release               >> ${INFO_FILE}      && \
+     echo "\n--- Java -----------"     >> ${INFO_FILE}      && \
+     java -version                    2>> ${INFO_FILE}      && \
      echo "\n--- Tomcat ---------"     >> ${INFO_FILE}      && \
      /usr/share/tomcat7/bin/version.sh >> ${INFO_FILE}      && \
      echo "\n--- Contrast-Finder ---"  >> ${INFO_FILE}      && \
      ln -s /usr/share/java/spring3-instrument-tomcat.jar           \
            /usr/share/tomcat7/lib/spring3-instrument-tomcat.jar
+
+        #######################################################################################
+        # The command line "java -version" returns the output data
+        # at the STDERR stream (2 : error messages) rather than STDOUT (1).
+        # -----> java -version 2> tmp.txt
+        #
+        # https://stackoverflow.com/questions/21453774/redirect-java-version-to-file-or-variable
+        # https://stackoverflow.com/questions/39619087/how-to-write-output-of-java-version-to-a-text-file
+        #######################################################################################
 
 
 # Health Check of the Docker Container
