@@ -1,8 +1,9 @@
 <%@page pageEncoding="UTF-8"%>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>${titleTag}</title>
     <link rel="stylesheet" type="text/css"         href="<c:url value="Css/_contrast-finder.all.min.css?v=${appVersion}"/>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <!--    <link rel="stylesheet" type="text/css" href="<c:url value="Css/10-bootstrap.min.css?v=${appVersion}"/>">
             <link rel="stylesheet" type="text/css" href="<c:url value="Css/20-bootstrap-theme.min.css?v=${appVersion}"/>">
             <link rel="stylesheet" type="text/css" href="<c:url value="Css/30-contrast-finder-min.css?v=${appVersion}"/>">
@@ -15,7 +16,7 @@
     <link rel="icon"    type="image/png"    href="<c:url value="Images/logo/favicon/favicon-194x194.png?v=${appVersion}"/>"        sizes="194x194">
     <link rel="icon"    type="image/png"    href="<c:url value="Images/logo/favicon/android-chrome-192x192.png?v=${appVersion}"/>" sizes="192x192">
     <link rel="icon"    type="image/png"    href="<c:url value="Images/logo/favicon/favicon-16x16.png?v=${appVersion}"/>"          sizes="16x16">
-    <link rel="manifest"                    href="<c:url value="Images/logo/favicon/manifest.json?v=${appVersion}"/>">
+    <link rel="manifest"                    href="<c:url value="Images/logo/favicon/manifest.webmanifest?v=${appVersion}"/>">
     <link rel="mask-icon"                   href="<c:url value="Images/logo/favicon/safari-pinned-tab.svg?v=${appVersion}"/>">
 <!--<link rel="shortcut icon"               href="<c:url value="Images/logo/favicon/favicon.ico?v=${appVersion}"/>"> -->
     <link rel="shortcut icon" type="image/x-icon"  href="<c:url value="Images/logo/favicon/favicon.ico?v=${appVersion}"/>" >
@@ -54,5 +55,4 @@
     <meta name="twitter:title"       content="<fmt:message key="home.titleTag"/>" />
     <meta name="twitter:description" content="<fmt:message key="home.metaDescription"/>" />
     <meta name="twitter:image:src"   content="https://app.contrast-finder.org/Images/logo/contrast-finder_logo_1051x1053.png?v=${appVersion}" />
-
 </head>
