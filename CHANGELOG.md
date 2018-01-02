@@ -12,7 +12,7 @@ none
 none
 
 ### Outdated dependencies
-none
+- [#113 - Upgraded markdown-page-generator-plugin (2.0.1 instead of 2.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/113)
 
 ### Bug
 none
