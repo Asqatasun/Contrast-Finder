@@ -15,7 +15,7 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 #   docker build -t asqatasun/contrast-finder  .
 #   docker build -t asqatasun/contrast-finder  --build-arg CONTRAST_FINDER_RELEASE=0.8.4-SNAPSHOT  .
 #   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL_PREFIX=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.8.4-SNAPSHOT/   .
-#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.8.4-SNAPSHOT/contrast-finder_0.8.4-SNAPSHOT.i386.tar.gz   .
+#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.8.4-SNAPSHOT/contrast-finder-webapp_0.8.4-SNAPSHOT.tar.gz   .
 #
 #   --- Launch a container
 #   docker run -p 127.0.0.1:8087:8080 --name contrast.finder -d asqatasun/contrast-finder
@@ -26,7 +26,7 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 #   docker logs -f contrast.finder
 #
 # #### source code  ###############################################
-#   https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}/contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz
+#   https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}/contrast-finder-webapp_${CONTRAST_FINDER_RELEASE}.tar.gz
 #     could be overridden with  --build-arg CONTRAST_FINDER_RELEASE=<release>
 #     could be overridden with  --build-arg SRC_URL_PREFIX=<url_prefix>
 #     could be overridden with  --build-arg SRC_URL=<url>
@@ -41,7 +41,7 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 # build variables
 ARG CONTRAST_FINDER_RELEASE="0.8.4-SNAPSHOT"
 ARG SRC_URL_PREFIX="https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}"
-ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz"
+ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder-webapp_${CONTRAST_FINDER_RELEASE}.tar.gz"
 
 # Install contrast-finder
 RUN  cd         /root/                                              && \

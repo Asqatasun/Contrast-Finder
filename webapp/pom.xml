@@ -47,7 +47,7 @@
         <jdeb.version>1.5</jdeb.version>
     </properties>
     <build>
-        <finalName>contrast-finder-webapp-${project.version}</finalName>
+        <finalName>contrast-finder-webapp_${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -161,7 +161,7 @@
                         <descriptor>src/main/resources/descriptor.xml</descriptor>
                     </descriptors>
                     <outputDirectory>target</outputDirectory>
-                    <finalName>contrast-finder_${project.version}.i386</finalName>
+                    <finalName>contrast-finder-webapp_${project.version}</finalName>
                     <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
                 <executions>
@@ -186,7 +186,7 @@
                             <goal>jdeb</goal>
                         </goals>
                         <configuration>
-                            <deb>${project.build.directory}/contrast-finder_${project.version}.deb</deb>
+                            <deb>${project.build.directory}/contrast-finder-webapp_${project.version}_tomcat7.deb</deb>
                             <verbose>true</verbose>
                             <controlDir>${project.basedir}/src/deb/control</controlDir>
                             <dataSet>
@@ -224,7 +224,7 @@
                                 </data>
                                 <data>
                                     <type>file</type>
-                                    <src>${project.build.directory}/contrast-finder-webapp-${project.version}.war</src>
+                                    <src>${project.build.directory}/contrast-finder-webapp_${project.version}.war</src>
                                     <dst>contrast-finder.war</dst>
                                     <mapper>
                                         <type>perm</type>

@@ -23,13 +23,13 @@ none
 - [#109 - Docker/pre-requisites/ - Added /etc/contrast-finder/softwares-version.txt](https://github.com/Asqatasun/Contrast-Finder/issues/109) 
 
 ### Refactoring
-none
+- [#114 - Updated webapp/pom.xml - new name for .war, .tar.gz and .deb](https://github.com/Asqatasun/Contrast-Finder/issues/114)
 
 ### Configuration 
 none
 
 ### Documentation
-none
+- [#114 - Updated documentation - new name for .war, .tar.gz and .deb](https://github.com/Asqatasun/Contrast-Finder/issues/114)
 
 ### Task
 - [#111 -.travis.yml - Added openjdk8 in addition to openjdk7](https://github.com/Asqatasun/Contrast-Finder/issues/111)

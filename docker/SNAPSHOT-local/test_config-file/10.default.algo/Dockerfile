@@ -26,7 +26,7 @@ ENV CONF_DEFAULT_ALGO="Rgb"
     # ENV CONF_DEFAULT_ALGO="Bad_Algo"
 
 # Add contrast-finder .war
-ADD contrast-finder_${CONTRAST_FINDER_RELEASE}.i386.tar.gz  /root
+ADD contrast-finder-webapp_${CONTRAST_FINDER_RELEASE}.tar.gz  /root
 
 # Install contrast-finder
 RUN  cd      /root/contrast-*/install/                              && \
