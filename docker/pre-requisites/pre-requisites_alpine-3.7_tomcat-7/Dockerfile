@@ -22,18 +22,9 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 # build variables
 ARG LOG_DIR="/var/log/contrast-finder/"
 ARG CONF_DIR="/etc/contrast-finder/"
-ARG URL_FOR_SPRING_INSTRUMENT_JAR="https://repo.spring.io/release/org/springframework/spring-instrument-tomcat/4.3.13.RELEASE/spring-instrument-tomcat-4.3.13.RELEASE.jar"
-
-    ##################################################################################################
-    # https://repo.spring.io/release/org/springframework/spring-instrument-tomcat/
-    # LAST  https://repo.spring.io/release/org/springframework/spring-instrument-tomcat/4.3.13.RELEASE/
-    #       JAR   spring-instrument-tomcat-4.3.13.RELEASE.jar
-    #       SHA1  spring-instrument-tomcat-4.3.13.RELEASE.jar.sha1
-    ##################################################################################################
 
 # environment variables
-ENV     SPRING_INSTRUMENT_SRC="${URL_FOR_SPRING_INSTRUMENT_JAR}"     \
-        TOMCAT_DIR="/usr/local/tomcat/"                              \
+ENV     TOMCAT_DIR="/usr/local/tomcat/"                              \
         LOG_FILE="${LOG_DIR}contrast-finder.log"                     \
         CONF_FILE="${CONF_DIR}contrast-finder.conf"                  \
         INFO_FILE="/softwares-version.txt"                           \
@@ -41,9 +32,7 @@ ENV     SPRING_INSTRUMENT_SRC="${URL_FOR_SPRING_INSTRUMENT_JAR}"     \
 EXPOSE  $WWWPORT
 
 # build
-RUN  cd      ${TOMCAT_DIR}lib/                              && \
-     wget    ${SPRING_INSTRUMENT_SRC}                       && \
-     apk add --no-cache curl                                && \
+RUN  apk add --no-cache curl                                && \
      mkdir   -p  ${LOG_DIR}                                 && \
      mkdir   -p  ${CONF_DIR}                                && \
      touch   ${LOG_FILE}                                    && \

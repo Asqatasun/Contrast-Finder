@@ -42,8 +42,6 @@ EXPOSE  $WWWPORT
 
 # build
 RUN  apt-get update                                         && \
-     apt-get -y --no-install-recommends                             \
-             install libspring-instrument-java              && \
      apt-get clean                                          && \
      apt-get autoremove                                     && \
      rm      -rf /var/lib/apt/lists/*                       && \
@@ -59,9 +57,7 @@ RUN  apt-get update                                         && \
      java -version                    2>> ${INFO_FILE}      && \
      echo "\n--- Tomcat ---------"     >> ${INFO_FILE}      && \
      ${TOMCAT_DIR}bin/version.sh       >> ${INFO_FILE}      && \
-     echo "\n--- Contrast-Finder ---"  >> ${INFO_FILE}      && \
-     ln -s   /usr/share/java/spring3-instrument-tomcat.jar          \
-             ${TOMCAT_DIR}lib/spring3-instrument-tomcat.jar
+     echo "\n--- Contrast-Finder ---"  >> ${INFO_FILE}
 
         #######################################################################################
         # The command line "java -version" returns the output data

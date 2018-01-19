@@ -24,11 +24,13 @@ none
 
 ### Refactoring
 - [#114 - Updated webapp/pom.xml - new name for .war, .tar.gz and .deb](https://github.com/Asqatasun/Contrast-Finder/issues/114)
+- [#115 - Updated prerequisites : libspring-instrument-java is not needed](https://github.com/Asqatasun/Contrast-Finder/issues/115)
 
 ### Configuration 
 none
 
 ### Documentation
+- [#115 - Updated prerequisites documentation](https://github.com/Asqatasun/Contrast-Finder/issues/115)
 - [#114 - Updated documentation - new name for .war, .tar.gz and .deb](https://github.com/Asqatasun/Contrast-Finder/issues/114)
 
 ### Task

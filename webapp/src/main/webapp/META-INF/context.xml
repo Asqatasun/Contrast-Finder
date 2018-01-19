@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context useHttpOnly="true" antiJARLocking="true" path="/color-finder">
-    <Loader loaderClass="org.springframework.instrument.classloading.tomcat.TomcatInstrumentableClassLoader" useSystemClassLoaderAsParent="false"/>
-</Context>
+<Context useHttpOnly="true"
+         antiJARLocking="true"
+         path="/color-finder" />

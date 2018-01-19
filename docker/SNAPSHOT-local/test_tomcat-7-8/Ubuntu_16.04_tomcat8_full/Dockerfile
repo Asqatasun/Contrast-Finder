@@ -33,8 +33,7 @@ RUN  apt-get update                                         && \
              install wget                               \
                      curl                               \
                      ca-certificates                    \
-                     tomcat8                            \
-                     libspring-instrument-java              && \
+                     tomcat8                                && \
      apt-get clean                                          && \
      apt-get autoremove                                     && \
      rm      -rf /var/lib/apt/lists/*                       && \
@@ -52,9 +51,7 @@ RUN  apt-get update                                         && \
      java -version                    2>> ${INFO_FILE}      && \
      echo "\n--- Tomcat ---------"     >> ${INFO_FILE}      && \
      /usr/share/tomcat8/bin/version.sh >> ${INFO_FILE}      && \
-     echo "\n--- Contrast-Finder ---"  >> ${INFO_FILE}      && \
-     ln -s /usr/share/java/spring3-instrument-tomcat.jar           \
-           /usr/share/tomcat8/lib/spring3-instrument-tomcat.jar
+     echo "\n--- Contrast-Finder ---"  >> ${INFO_FILE}
 
         #######################################################################################
         # The command line "java -version" returns the output data
