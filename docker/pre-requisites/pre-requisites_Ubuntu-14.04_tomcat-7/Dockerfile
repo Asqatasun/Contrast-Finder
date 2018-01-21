@@ -1,6 +1,6 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                                         \
-      org.label-schema.name           = "Contrast-Finder - WebApp pre-requisites (Ubuntu 16.04 - Tomcat 7)"  \
+      org.label-schema.name           = "Contrast-Finder - WebApp pre-requisites (Ubuntu 14.04 - Tomcat 7)"  \
       org.label-schema.url            = "https://contrast-finder.org"                                        \
       org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"                       \
       org.label-schema.version        = "0.8.4-SNAPSHOT"
@@ -9,10 +9,10 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 # #### usage ######################################################
 #
 #   --- Building this docker image
-#   docker build -t contrast-finder:pre-requisites_Ubuntu-16.04 .
+#   docker build -t contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7 .
 #
 # #### FROM  ######################################################
-#   ubuntu:16.04  https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/xenial/Dockerfile
+#   ubuntu:14.04  https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/trusty/Dockerfile
 ###################################################################
 
 # build variables
@@ -63,6 +63,7 @@ RUN  apt-get update                                         && \
         #######################################################################################
 
 
+
 # Health Check of the Docker Container
 HEALTHCHECK --timeout=3s    \
             CMD curl --fail http://localhost:8080/contrast-finder/ || exit 1
@@ -76,5 +77,4 @@ HEALTHCHECK --timeout=3s    \
 
 CMD  service tomcat7 start   ;  \
      tail -f ${TOMCAT_LOG}
-
 

@@ -1,4 +1,4 @@
-FROM asqatasun/contrast-finder:pre-requisites_alpine-3.7_tomcat-7
+FROM asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7
 LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                                                \
       org.label-schema.name           = "Contrast-Finder - WebApp (tomcat7 < jdk7 < alpine 3.7)"                    \
       org.label-schema.version        = "0.8.4-SNAPSHOT"                                                            \
@@ -32,10 +32,10 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 #     could be overridden with  --build-arg SRC_URL=<url>
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_alpine-3.7_tomcat-7  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/contrast-finder:pre-requisites_alpine-3.7_tomcat-7/Dockerfile
-#   |-- tomcat:7-jre7-alpine                                      https://github.com/docker-library/tomcat/blob/master/7/jre7-alpine/Dockerfile
-#       |-- openjdk:7-jre-alpine                                  https://github.com/docker-library/openjdk/blob/master/7-jre/alpine/Dockerfile
-#           |-- alpine:3.7                                        https://github.com/gliderlabs/docker-alpine/blob/master/versions/library-3.7/x86_64/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Alpine_tomcat-7/Dockerfile
+#   |-- tomcat:7-jre7-alpine                                  https://github.com/docker-library/tomcat/blob/master/7/jre7-alpine/Dockerfile
+#       |-- openjdk:7-jre-alpine                              https://github.com/docker-library/openjdk/blob/master/7-jre/alpine/Dockerfile
+#           |-- alpine:3.7                                    https://github.com/gliderlabs/docker-alpine/blob/master/versions/library-3.7/x86_64/Dockerfile
 ###################################################################
 
 # build variables
@@ -68,7 +68,7 @@ ENV SRC=${SRC_URL}
 
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_(...)
+# ----> see asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7
 
 
 ###### don't work ############################

@@ -1,4 +1,4 @@
-FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
+FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7
 LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                            \
       org.label-schema.name           = "Contrast-Finder - WebApp (Ubuntu 14.04 - Tomcat 7)"    \
       org.label-schema.version        = "0.8.4-SNAPSHOT"                                        \
@@ -32,8 +32,8 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 #     could be overridden with  --build-arg SRC_URL=<url>
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-14.04/Dockerfile
-#   |-- ubuntu:14.04                                       https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/trusty/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-14.04_tomcat-7/Dockerfile
+#   |-- ubuntu:14.04                                                https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/trusty/Dockerfile
 ###################################################################
 
 # build variables
@@ -63,7 +63,7 @@ ENV CONTRAST_FINDER=${CONTRAST_FINDER_RELEASE}
 ENV SRC=${SRC_URL}
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
+# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7
 
 CMD  service tomcat7 start        ; \
      tail -f -n 50 ${TOMCAT_LOG}    \

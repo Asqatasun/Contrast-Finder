@@ -1,4 +1,4 @@
-FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04
+FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-7
 
 # #### usage ######################################################
 #
@@ -14,8 +14,8 @@ FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04
 #   docker logs -f contrast.finder
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-16.04/Dockerfile
-#   |-- ubuntu:16.04                                       https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/xenial/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-7  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-16.04_tomcat-7/Dockerfile
+#   |-- ubuntu:16.04                                                https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/xenial/Dockerfile
 ###################################################################
 
 # environment variables
@@ -40,7 +40,7 @@ RUN  cd      /root/contrast-*/install/                              && \
 
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04
+# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-7
 
 CMD  service tomcat7 start        ; \
      tail -f -n 50 ${TOMCAT_LOG}    \

@@ -1,4 +1,4 @@
-FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
+FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7
 
 # #### usage ######################################################
 #
@@ -14,8 +14,8 @@ FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
 #   docker logs -f contrast.finder
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-14.04/Dockerfile
-#   |-- ubuntu:14.04                                       https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/trusty/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-14.04_tomcat-7/Dockerfile
+#   |-- ubuntu:14.04                                                https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/trusty/Dockerfile
 ###################################################################
 
 # environment variables
@@ -43,7 +43,7 @@ echo "piwik_analytics_server=${PIWIK_URL}" >> ${CONF_FILE}          && \
      cat  ${INFO_FILE} > ${LOG_FILE} && echo "-- Install: Ok"
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04
+# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7
 
 CMD  service tomcat7 start        ; \
      tail -f -n 50 ${TOMCAT_LOG}    \

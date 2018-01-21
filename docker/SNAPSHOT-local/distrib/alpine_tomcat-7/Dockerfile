@@ -1,4 +1,4 @@
-FROM asqatasun/contrast-finder:pre-requisites_alpine-3.7_tomcat-7
+FROM asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7
 
 # #### usage ######################################################
 #
@@ -14,10 +14,10 @@ FROM asqatasun/contrast-finder:pre-requisites_alpine-3.7_tomcat-7
 #   docker logs -f contrast.finder
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_alpine-3.7_tomcat-7  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/contrast-finder:pre-requisites_alpine-3.7_tomcat-7/Dockerfile
-#   |-- tomcat:7-jre7-alpine                                      https://github.com/docker-library/tomcat/blob/master/7/jre7-alpine/Dockerfile
-#       |-- openjdk:7-jre-alpine                                  https://github.com/docker-library/openjdk/blob/master/7-jre/alpine/Dockerfile
-#           |-- alpine:3.7                                        https://github.com/gliderlabs/docker-alpine/blob/master/versions/library-3.7/x86_64/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Alpine_tomcat-7/Dockerfile
+#   |-- tomcat:7-jre7-alpine                                  https://github.com/docker-library/tomcat/blob/master/7/jre7-alpine/Dockerfile
+#       |-- openjdk:7-jre-alpine                              https://github.com/docker-library/openjdk/blob/master/7-jre/alpine/Dockerfile
+#           |-- alpine:3.7                                    https://github.com/gliderlabs/docker-alpine/blob/master/versions/library-3.7/x86_64/Dockerfile
 ###################################################################
 
 # environment variables
@@ -44,7 +44,7 @@ RUN  cd      /root/contrast-*/install/                              && \
 
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_(...)
+# ----> see asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7
 
 
 ###### don't work ############################

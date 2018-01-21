@@ -100,7 +100,7 @@ RUN  cd      /root/contrast-*/install/                              && \
 
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04
+# ----> see asqatasun/contrast-finder:pre-requisites_*
 
 CMD  service tomcat8 start        ; \
      tail -f -n 600 ${TOMCAT_LOG}    \
