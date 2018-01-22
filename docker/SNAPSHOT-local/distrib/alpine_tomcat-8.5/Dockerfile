@@ -1,4 +1,4 @@
-FROM asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7
+FROM asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-8.5
 
 # #### usage ######################################################
 #
@@ -14,11 +14,12 @@ FROM asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7
 #   docker logs -f contrast.finder
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Alpine_tomcat-7/Dockerfile
-#   |-- tomcat:7-jre7-alpine                                  https://github.com/docker-library/tomcat/blob/master/7/jre7-alpine/Dockerfile
-#       |-- openjdk:7-jre-alpine                              https://github.com/docker-library/openjdk/blob/master/7-jre/alpine/Dockerfile
-#           |-- alpine:3.7                                    https://github.com/gliderlabs/docker-alpine/blob/master/versions/library-3.7/x86_64/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-8.5  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Alpine_tomcat-8.5/Dockerfile
+#   |-- tomcat:8.5-jre8-alpine     https://github.com/docker-library/tomcat/blob/master/8.5/jre8-alpine/Dockerfile
+#       |-- openjdk:8-jre-alpine   https://github.com/docker-library/openjdk/blob/master/8-jre/alpine/Dockerfile
+#           |-- alpine:3.7         https://github.com/gliderlabs/docker-alpine/blob/master/versions/library-3.7/x86_64/Dockerfile
 ###################################################################
+
 
 # environment variables
 ENV CONTRAST_FINDER_RELEASE="0.8.4-SNAPSHOT"
@@ -44,7 +45,7 @@ RUN  cd      /root/contrast-*/install/                              && \
 
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7
+# ----> see asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-8.5
 
 
 ###### don't work ############################
@@ -53,5 +54,5 @@ RUN  cd      /root/contrast-*/install/                              && \
 #                    ${LOG_FILE}
 ###################################################
 
-    # in "tomcat:7-jre7-alpine" DockerFile
+    # in "tomcat:8.5-jre8-alpine" DockerFile
     #     CMD ["catalina.sh", "run"]

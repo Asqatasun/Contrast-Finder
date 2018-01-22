@@ -19,8 +19,10 @@ none
 
 ### Improvement 
 - [#110 - Added new docker image: ubuntu 16.04 (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/110) 
-- [#112 - Added new docker image: alpine 3.7 (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/112) 
-- [#109 - Docker/pre-requisites/ - Added /etc/contrast-finder/softwares-version.txt](https://github.com/Asqatasun/Contrast-Finder/issues/109) 
+- [#112 - Added new docker image: alpine (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/112)
+- [#116 - Added new docker image: alpine (tomcat-8.5)](https://github.com/Asqatasun/Contrast-Finder/issues/116)
+- [#117 - Added some new pre-requisites_* Docker images (debian 9, ubuntu 18.04)](https://github.com/Asqatasun/Contrast-Finder/issues/117)
+- [#109 - Docker/pre-requisites/ - Added /softwares-version.txt](https://github.com/Asqatasun/Contrast-Finder/issues/109)
 
 ### Refactoring
 - [#114 - Updated webapp/pom.xml - new name for .war, .tar.gz and .deb](https://github.com/Asqatasun/Contrast-Finder/issues/114)

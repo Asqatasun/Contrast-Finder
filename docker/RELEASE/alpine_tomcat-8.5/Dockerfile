@@ -1,6 +1,6 @@
-FROM asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7
+FROM asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-8.5
 LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                                                \
-      org.label-schema.name           = "Contrast-Finder - WebApp (tomcat7 < jdk7 < alpine 3.7)"                    \
+      org.label-schema.name           = "Contrast-Finder - WebApp (tomcat 8.5 < jdk 8 < alpine 3.7)"                    \
       org.label-schema.version        = "0.8.4-SNAPSHOT"                                                            \
       org.label-schema.url            = "https://contrast-finder.org"                                               \
       org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"                              \
@@ -32,10 +32,10 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 #     could be overridden with  --build-arg SRC_URL=<url>
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Alpine_tomcat-7/Dockerfile
-#   |-- tomcat:7-jre7-alpine                                  https://github.com/docker-library/tomcat/blob/master/7/jre7-alpine/Dockerfile
-#       |-- openjdk:7-jre-alpine                              https://github.com/docker-library/openjdk/blob/master/7-jre/alpine/Dockerfile
-#           |-- alpine:3.7                                    https://github.com/gliderlabs/docker-alpine/blob/master/versions/library-3.7/x86_64/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-8.5  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Alpine_tomcat-8.5/Dockerfile
+#   |-- tomcat:8.5-jre8-alpine     https://github.com/docker-library/tomcat/blob/master/8.5/jre8-alpine/Dockerfile
+#       |-- openjdk:8-jre-alpine   https://github.com/docker-library/openjdk/blob/master/8-jre/alpine/Dockerfile
+#           |-- alpine:3.7         https://github.com/gliderlabs/docker-alpine/blob/master/versions/library-3.7/x86_64/Dockerfile
 ###################################################################
 
 # build variables
@@ -68,7 +68,7 @@ ENV SRC=${SRC_URL}
 
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-7
+# ----> see asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-8.5
 
 
 ###### don't work ############################
@@ -77,6 +77,6 @@ ENV SRC=${SRC_URL}
 #                    ${LOG_FILE}
 ###################################################
 
-    # in "tomcat:7-jre7-alpine" DockerFile
+    # in "tomcat:8.5-jre8-alpine" DockerFile
     #     CMD ["catalina.sh", "run"]
 
