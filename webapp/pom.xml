@@ -44,7 +44,7 @@
         <maven-dependency-plugin.version>3.0.2</maven-dependency-plugin.version>
         <native2ascii-maven-plugin.version>1.0-beta-1</native2ascii-maven-plugin.version>
         <yuicompressor-maven-plugin.version>1.5.1</yuicompressor-maven-plugin.version>
-        <jdeb.version>1.5</jdeb.version>
+        <jdeb.version>1.6</jdeb.version>
     </properties>
     <build>
         <finalName>contrast-finder-webapp_${project.version}</finalName>
@@ -175,6 +175,8 @@
                 </executions>
             </plugin>
 
+       <!-- jdeb: maven plugin to create Debian packages from Java build
+                  https://github.com/tcurdt/jdeb                    -->
             <plugin>
                 <groupId>org.vafer</groupId>
                 <artifactId>jdeb</artifactId>
