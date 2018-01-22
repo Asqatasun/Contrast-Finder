@@ -14,6 +14,7 @@ none
 ### Outdated dependencies
 - [#113 - Upgraded markdown-page-generator-plugin (2.0.1 instead of 2.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/113)
 - [#118 - Upgraded jdeb maven plugin (1.6 instead of 1.5)](https://github.com/Asqatasun/Contrast-Finder/issues/118)
+- [#119 - Upgraded maven-javadoc-plugin  (3.0.0 instead of 3.0.0-M1)](https://github.com/Asqatasun/Contrast-Finder/issues/119)
 
 ### Bug
 none
