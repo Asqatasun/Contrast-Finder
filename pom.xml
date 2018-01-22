@@ -83,7 +83,7 @@
         <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
         <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
         <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
-        <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
         <dependency-check-maven.version>3.0.2</dependency-check-maven.version>
         <jacoco-maven-plugin.version>0.8.0</jacoco-maven-plugin.version>
      </properties>
