@@ -75,9 +75,9 @@ For a full and exhaustive understanding of how to interpret text size, one shoul
 
 All details about the contrast ratio :
 
-* http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
-* http://www.w3.org/TR/WCAG20/#contrast-ratiodef
-* http://www.w3.org/TR/WCAG20/relative-luminance.xml
+* https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+* https://www.w3.org/TR/WCAG20/#contrast-ratiodef
+* https://www.w3.org/TR/WCAG20/relative-luminance.xml
 
 ##  The algorithms
 
