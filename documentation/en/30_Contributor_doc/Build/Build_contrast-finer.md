@@ -2,7 +2,7 @@
 
 ## Prerequesites
 
-* JDK-7 (at least) is required
+* JDK-8 (at least) is required
 * Maven 3.1 (at least) is required
 * Git
 

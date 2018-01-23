@@ -13,11 +13,12 @@ none
 
 ### Outdated dependencies
 - [#113 - Upgraded markdown-page-generator-plugin (2.0.1 instead of 2.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/113)
-- [#118 - Upgraded jdeb maven plugin (1.6 instead of 1.5)](https://github.com/Asqatasun/Contrast-Finder/issues/118)
 - [#119 - Upgraded maven-javadoc-plugin  (3.0.0 instead of 3.0.0-M1)](https://github.com/Asqatasun/Contrast-Finder/issues/119)
 - [#120 - Upgraded jacoco-maven-plugin (0.8.0 instead of 0.7.9)](https://github.com/Asqatasun/Contrast-Finder/issues/120)
 - [#121 - Upgraded maven-checkstyle-plugin (3.0.0 instead of 2.17)](https://github.com/Asqatasun/Contrast-Finder/issues/121)
 - [#123 - Upgraded native2ascii-maven-plugin (2.0.0 instead of 1.0-beta-1)](https://github.com/Asqatasun/Contrast-Finder/issues/123)
+- [#118 - Upgraded jdeb maven plugin (1.6 instead of 1.5)](https://github.com/Asqatasun/Contrast-Finder/issues/118)
+   - [#125 - Contrast-Finder build need openjdk 8 (prerequisite jdeb)](https://github.com/Asqatasun/Contrast-Finder/issues/125)
 
 ### Bug
 none
@@ -43,7 +44,7 @@ none
 - [#114 - Updated documentation - new name for .war, .tar.gz and .deb](https://github.com/Asqatasun/Contrast-Finder/issues/114)
 
 ### Task
-- [#111 -.travis.yml - Added openjdk8 in addition to openjdk7](https://github.com/Asqatasun/Contrast-Finder/issues/111)
+- /!\ see #125 - [#111 -.travis.yml - Added openjdk8 in addition to openjdk7](https://github.com/Asqatasun/Contrast-Finder/issues/111)
 - [#106 - Added unit tests coverage report (cobertura-maven-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/106) 
 
 
