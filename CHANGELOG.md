@@ -28,6 +28,8 @@ none
 - [#116 - Added new docker image: alpine (tomcat-8.5)](https://github.com/Asqatasun/Contrast-Finder/issues/116)
 - [#117 - Added some new pre-requisites_* Docker images (debian 9, ubuntu 18.04)](https://github.com/Asqatasun/Contrast-Finder/issues/117)
 - [#109 - Docker/pre-requisites/ - Added /softwares-version.txt](https://github.com/Asqatasun/Contrast-Finder/issues/109)
+- [#124 - Create 2 Debian packages (.deb) at the maven build for tomcat7 and tomcat8](https://github.com/Asqatasun/Contrast-Finder/issues/124)
+
 
 ### Refactoring
 - [#114 - Updated webapp/pom.xml - new name for .war, .tar.gz and .deb](https://github.com/Asqatasun/Contrast-Finder/issues/114)

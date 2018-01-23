@@ -185,6 +185,7 @@
                 <version>${jdeb.version}</version>
                 <executions>
                     <execution>
+                        <id>jdeb_tomcat7</id>
                         <phase>package</phase>
                         <goals>
                             <goal>jdeb</goal>
@@ -192,7 +193,7 @@
                         <configuration>
                             <deb>${project.build.directory}/contrast-finder-webapp_${project.version}_tomcat7.deb</deb>
                             <verbose>true</verbose>
-                            <controlDir>${project.basedir}/src/deb/control</controlDir>
+                            <controlDir>${project.basedir}/src/deb/tomcat7/control</controlDir>
                             <dataSet>
                                 <data>
                                     <type>template</type>
@@ -201,20 +202,14 @@
                                         <path>/var/log/contrast-finder</path>
                                     </paths>
                                 </data>
-                                <data> <!-- symlink-should-be-relative -->
-                                    <type>link</type>
-                                    <symlink>true</symlink>
-                                    <linkName>/usr/share/tomcat7/lib/spring3-instrument-tomcat.jar</linkName>
-                                    <linkTarget>../../java/spring3-instrument-tomcat.jar</linkTarget>
-                                </data>
                                 <data>
                                     <conffile>true</conffile>
                                     <type>file</type>
                                     <src>${project.basedir}/src/main/resources/conf/contrast-finder.conf.dist</src>
                                     <dst>/etc/contrast-finder/contrast-finder.conf.dist</dst>
                                     <mapper>
-                                      <type>perm</type>
-                                      <user>tomcat7</user>
+                                        <type>perm</type>
+                                        <user>tomcat7</user>
                                     </mapper>
                                 </data>
                                 <data>
@@ -238,7 +233,62 @@
                                 </data>
                                 <data>
                                     <type>file</type>
-                                    <src>${project.basedir}/src/deb/copyright</src>
+                                    <src>${project.basedir}/src/deb/tomcat7/copyright</src>
+                                    <dst>/usr/share/doc/contrast-finder-webapp/copyright</dst>
+                                </data>
+                            </dataSet>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>jdeb_tomcat8</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jdeb</goal>
+                        </goals>
+                        <configuration>
+                            <deb>${project.build.directory}/contrast-finder-webapp_${project.version}_tomcat8.deb</deb>
+                            <verbose>true</verbose>
+                            <controlDir>${project.basedir}/src/deb/tomcat8/control</controlDir>
+                            <dataSet>
+                                <data>
+                                    <type>template</type>
+                                    <paths>
+                                        <path>/etc/contrast-finder</path>
+                                        <path>/var/log/contrast-finder</path>
+                                    </paths>
+                                </data>
+                                <data>
+                                    <conffile>true</conffile>
+                                    <type>file</type>
+                                    <src>${project.basedir}/src/main/resources/conf/contrast-finder.conf.dist</src>
+                                    <dst>/etc/contrast-finder/contrast-finder.conf.dist</dst>
+                                    <mapper>
+                                      <type>perm</type>
+                                      <user>tomcat8</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>${project.basedir}/src/main/resources/conf/contrast-finder.log</src>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/var/log/contrast-finder</prefix>
+                                        <user>tomcat8</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>${project.build.directory}/contrast-finder-webapp_${project.version}.war</src>
+                                    <dst>contrast-finder.war</dst>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/var/lib/tomcat8/webapps</prefix>
+                                        <user>tomcat8</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>${project.basedir}/src/deb/tomcat8/copyright</src>
                                     <dst>/usr/share/doc/contrast-finder-webapp/copyright</dst>
                                 </data>
                             </dataSet>

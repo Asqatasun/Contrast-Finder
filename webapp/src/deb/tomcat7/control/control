@@ -6,7 +6,7 @@ Priority: optional
 Maintainer: contrast-finder.org  <package-debian@contrast-finder.org>
 Architecture: all
 Build-Depends: debhelper (>=9)
-Depends: tomcat7, libspring-instrument-java
+Depends: tomcat7
 Standards-Version: 3.9.6
 Homepage: [[url]]
 Vcs-Git: git://github.com:Asqatasun/Contrast-Finder.git
