@@ -42,7 +42,7 @@
         <!-- Plugin Versions -->
         <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
         <maven-dependency-plugin.version>3.0.2</maven-dependency-plugin.version>
-        <native2ascii-maven-plugin.version>1.0-beta-1</native2ascii-maven-plugin.version>
+        <native2ascii-maven-plugin.version>2.0.0</native2ascii-maven-plugin.version>
         <yuicompressor-maven-plugin.version>1.5.1</yuicompressor-maven-plugin.version>
         <jdeb.version>1.6</jdeb.version>
     </properties>
@@ -98,11 +98,13 @@
                     <execution>
                         <id>native2ascii-utf8-properties</id>
                         <goals>
-                            <goal>native2ascii</goal>
+                            <goal>resources</goal>
                         </goals>
+                        <phase>process-resources</phase><!-- default -->
                         <configuration>
                             <encoding>UTF8</encoding>
-                            <src>src/main/resources</src>
+                      <!--  <encoding>${project.build.sourceEncoding}</encoding> --> <!-- default -->
+                            <srcDir>src/main/resources</srcDir>
                             <includes>
                                 <include>**/*_utf8*.properties</include>
                             </includes>

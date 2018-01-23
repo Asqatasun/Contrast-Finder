@@ -17,8 +17,7 @@ none
 - [#119 - Upgraded maven-javadoc-plugin  (3.0.0 instead of 3.0.0-M1)](https://github.com/Asqatasun/Contrast-Finder/issues/119)
 - [#120 - Upgraded jacoco-maven-plugin (0.8.0 instead of 0.7.9)](https://github.com/Asqatasun/Contrast-Finder/issues/120)
 - [#121 - Upgraded maven-checkstyle-plugin (3.0.0 instead of 2.17)](https://github.com/Asqatasun/Contrast-Finder/issues/121)
-
-
+- [#123 - Upgraded native2ascii-maven-plugin (2.0.0 instead of 1.0-beta-1)](https://github.com/Asqatasun/Contrast-Finder/issues/123)
 
 ### Bug
 none
