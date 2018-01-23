@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8" />
     <title>${titleTag}</title>
-    <link rel="stylesheet" type="text/css"         href="<c:url value="Css/_contrast-finder.all.min.css?v=${appVersion}"/>">
+    <link rel="stylesheet" type="text/css"         href="<c:url value="Css/_contrast-finder_${appVersion}.all.min.css"/>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <!--    <link rel="stylesheet" type="text/css" href="<c:url value="Css/10-bootstrap.min.css?v=${appVersion}"/>">
             <link rel="stylesheet" type="text/css" href="<c:url value="Css/20-bootstrap-theme.min.css?v=${appVersion}"/>">

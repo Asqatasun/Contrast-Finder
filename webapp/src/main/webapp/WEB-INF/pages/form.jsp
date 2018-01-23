@@ -443,7 +443,7 @@
             <%@include file='/WEB-INF/template/footer.jspf' %>
 
             <!-- Javascript - Webapp -->
-            <script src="<c:url value="Js/_contrast-finder.all.min.js?v=${appVersion}"/>"></script>
+            <script src="<c:url value="Js/_contrast-finder_${appVersion}.all.min.js"/>"></script>
                <!-- <script src="<c:url value="Js/10-jquery.min.js?v=${appVersion}"/>"></script>
                     <c:if test="${colorResult.numberOfSuggestedColors > 0}">
                         <script src="<c:url value="Js/20-jquery.tablesorter.min.js?v=${appVersion}"/>"></script>
