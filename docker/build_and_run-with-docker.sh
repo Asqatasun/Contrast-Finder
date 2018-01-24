@@ -346,6 +346,7 @@ function view_build_summary () {
     echo " Image ....... ${IMAGE_NAME}:${TAG_NAME}"
     echo " CMD ......... ${DOCKER_RUN}"
     echo " -------------------------------------------------------"
+    echo " Info ........ ${SUDO}docker exec -ti ${CONTAINER_NAME} /bin/cat /softwares-version.txt"
     echo " Shell ....... ${SUDO}docker exec -ti ${CONTAINER_NAME} /bin/bash"
     echo " Log ......... ${SUDO}docker logs -f  ${CONTAINER_NAME}"
     echo " URL ......... ${BOLD}${GREEN}${URL_APP}${NORM}"

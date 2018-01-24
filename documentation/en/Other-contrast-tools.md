@@ -2,7 +2,7 @@
 
 ## Contrast tools we love:
 
-* [Contrast-A](http://www.dasplankton.de/ContrastA/)
+* [Contrast-A](http://www.dasplankton.de/ContrastA/) (legacy / flash needed)
 * [WCAG Contrast Checker (firefox addon) v1.2](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/versions/?page=1#version-1.2) Especially v1.2 because you can select a given text (functionnality has disappeared in further versions)
 * [Color Contrast Tool (snook.ca)](http://snook.ca/technical/colour_contrast/colour.html)
 * [Accessible-colors.com](http://accessible-colors.com/)
@@ -21,6 +21,8 @@
 
 ### Other contrast tools 
 
+* http://www.aremycolorsaccessible.com/
+* https://developer.paciellogroup.com/resources/contrastanalyser/
 * http://www.visionaustralia.org/digital-access-determinator
 * http://a11yrocks.com/colorPalette/
 * http://colorsafe.co/

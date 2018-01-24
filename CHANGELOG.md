@@ -1,5 +1,41 @@
 # CHANGELOG
 
+Contrast-Finder 0.8.4, 2018-01-24
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+### Outdated dependencies
+- [#108 - Upgraded SpringFramework (4.3.14 instead of 4.3.13)](https://github.com/Asqatasun/Contrast-Finder/issues/108)
+- [#113 - Upgraded markdown-page-generator-plugin (2.0.1 instead of 2.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/113)
+- [#119 - Upgraded maven-javadoc-plugin  (3.0.0 instead of 3.0.0-M1)](https://github.com/Asqatasun/Contrast-Finder/issues/119)
+- [#120 - Upgraded jacoco-maven-plugin (0.8.0 instead of 0.7.9)](https://github.com/Asqatasun/Contrast-Finder/issues/120)
+- [#121 - Upgraded maven-checkstyle-plugin (3.0.0 instead of 2.17)](https://github.com/Asqatasun/Contrast-Finder/issues/121)
+- [#123 - Upgraded native2ascii-maven-plugin (2.0.0 instead of 1.0-beta-1)](https://github.com/Asqatasun/Contrast-Finder/issues/123)
+- [#118 - Upgraded jdeb maven plugin (1.6 instead of 1.5)](https://github.com/Asqatasun/Contrast-Finder/issues/118)
+   - [#125 - Contrast-Finder build need openjdk 8 (prerequisite jdeb)](https://github.com/Asqatasun/Contrast-Finder/issues/125)
+
+### Improvement
+- [#110 - Added new docker image: ubuntu 16.04 (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/110) 
+- [#112 - Added new docker image: alpine (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/112)
+- [#116 - Added new docker image: alpine (tomcat-8.5)](https://github.com/Asqatasun/Contrast-Finder/issues/116)
+- [#117 - Added some new pre-requisites_* Docker images (debian 9, ubuntu 18.04)](https://github.com/Asqatasun/Contrast-Finder/issues/117)
+- [#109 - Docker/pre-requisites/ - Added /softwares-version.txt](https://github.com/Asqatasun/Contrast-Finder/issues/109)
+- [#124 - Create 2 Debian packages (.deb) at the maven build for tomcat7 and tomcat8](https://github.com/Asqatasun/Contrast-Finder/issues/124)
+
+### Refactoring
+- [#114 - Updated webapp/pom.xml - new name for .war, .tar.gz and .deb](https://github.com/Asqatasun/Contrast-Finder/issues/114)
+- [#115 - Updated prerequisites : libspring-instrument-java is not needed](https://github.com/Asqatasun/Contrast-Finder/issues/115)
+
+### Documentation
+- [#114 - Updated documentation - new name for .war, .tar.gz and .deb](https://github.com/Asqatasun/Contrast-Finder/issues/114)
+- [#115 - Updated prerequisites documentation](https://github.com/Asqatasun/Contrast-Finder/issues/115)
+
+### Task
+- [#106 - Added unit tests coverage report (cobertura-maven-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/106)
+- /!\ see #125 - [#111 -.travis.yml - Added openjdk8 in addition to openjdk7](https://github.com/Asqatasun/Contrast-Finder/issues/111)
+
+
 Contrast-Finder 0.8.3, 2017-11-28
 ---------------------------------
 
@@ -16,7 +52,6 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 - [#104 - Added maven-jxr-plugin (needed for maven-checkstyle-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/104) 
 - [#106 - Added unit tests coverage report (jacoco-maven-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/106) 
 - [#107 - Added missing unit tests for engine/utils/*](https://github.com/Asqatasun/Contrast-Finder/issues/107) 
-
 
 
 Contrast-Finder 0.8.2, 2017-10-28

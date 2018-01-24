@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.8.3</version>
+        <version>0.8.4</version>
     </parent>
     <artifactId>webapp</artifactId>
-    <version>0.8.3</version>
+    <version>0.8.4</version>
     <packaging>war</packaging>
     <name>contrast-finder-webapp</name>
     <licenses>
@@ -28,7 +28,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Dependency Versions -->
-        <spring.version>4.3.13.RELEASE</spring.version>
+        <spring.version>4.3.14.RELEASE</spring.version>
         <spring-security.version>4.2.3.RELEASE</spring-security.version>
         <htmlcompressor.version>1.5.2</htmlcompressor.version>
         <taglibs-standard-jstlel.version>1.2.5</taglibs-standard-jstlel.version>
@@ -42,12 +42,12 @@
         <!-- Plugin Versions -->
         <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
         <maven-dependency-plugin.version>3.0.2</maven-dependency-plugin.version>
-        <native2ascii-maven-plugin.version>1.0-beta-1</native2ascii-maven-plugin.version>
+        <native2ascii-maven-plugin.version>2.0.0</native2ascii-maven-plugin.version>
         <yuicompressor-maven-plugin.version>1.5.1</yuicompressor-maven-plugin.version>
-        <jdeb.version>1.5</jdeb.version>
+        <jdeb.version>1.6</jdeb.version>
     </properties>
     <build>
-        <finalName>contrast-finder-webapp-${project.version}</finalName>
+        <finalName>contrast-finder-webapp_${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -98,11 +98,13 @@
                     <execution>
                         <id>native2ascii-utf8-properties</id>
                         <goals>
-                            <goal>native2ascii</goal>
+                            <goal>resources</goal>
                         </goals>
+                        <phase>process-resources</phase><!-- default -->
                         <configuration>
                             <encoding>UTF8</encoding>
-                            <src>src/main/resources</src>
+                      <!--  <encoding>${project.build.sourceEncoding}</encoding> --> <!-- default -->
+                            <srcDir>src/main/resources</srcDir>
                             <includes>
                                 <include>**/*_utf8*.properties</include>
                             </includes>
@@ -134,14 +136,14 @@
                     <aggregations>
                         <aggregation>
                             <insertNewLine>true</insertNewLine>
-                            <output>${project.build.directory}/${project.build.finalName}/Js/_contrast-finder.all.min.js</output>
+                            <output>${project.build.directory}/${project.build.finalName}/Js/_contrast-finder_${project.version}.all.min.js</output>
                             <includes>
                                 <include>**/*min.js</include>
                             </includes>
                         </aggregation>
                         <aggregation>
                             <insertNewLine>true</insertNewLine>
-                            <output>${project.build.directory}/${project.build.finalName}/Css/_contrast-finder.all.min.css</output>
+                            <output>${project.build.directory}/${project.build.finalName}/Css/_contrast-finder_${project.version}.all.min.css</output>
                             <includes>
                                 <include>**/*min.css</include>
                             </includes>
@@ -161,7 +163,7 @@
                         <descriptor>src/main/resources/descriptor.xml</descriptor>
                     </descriptors>
                     <outputDirectory>target</outputDirectory>
-                    <finalName>contrast-finder_${project.version}.i386</finalName>
+                    <finalName>contrast-finder-webapp_${project.version}</finalName>
                     <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
                 <executions>
@@ -175,20 +177,23 @@
                 </executions>
             </plugin>
 
+       <!-- jdeb: maven plugin to create Debian packages from Java build
+                  https://github.com/tcurdt/jdeb                    -->
             <plugin>
                 <groupId>org.vafer</groupId>
                 <artifactId>jdeb</artifactId>
                 <version>${jdeb.version}</version>
                 <executions>
                     <execution>
+                        <id>jdeb_tomcat7</id>
                         <phase>package</phase>
                         <goals>
                             <goal>jdeb</goal>
                         </goals>
                         <configuration>
-                            <deb>${project.build.directory}/contrast-finder_${project.version}.deb</deb>
+                            <deb>${project.build.directory}/contrast-finder-webapp_${project.version}_tomcat7.deb</deb>
                             <verbose>true</verbose>
-                            <controlDir>${project.basedir}/src/deb/control</controlDir>
+                            <controlDir>${project.basedir}/src/deb/tomcat7/control</controlDir>
                             <dataSet>
                                 <data>
                                     <type>template</type>
@@ -197,20 +202,14 @@
                                         <path>/var/log/contrast-finder</path>
                                     </paths>
                                 </data>
-                                <data> <!-- symlink-should-be-relative -->
-                                    <type>link</type>
-                                    <symlink>true</symlink>
-                                    <linkName>/usr/share/tomcat7/lib/spring3-instrument-tomcat.jar</linkName>
-                                    <linkTarget>../../java/spring3-instrument-tomcat.jar</linkTarget>
-                                </data>
                                 <data>
                                     <conffile>true</conffile>
                                     <type>file</type>
                                     <src>${project.basedir}/src/main/resources/conf/contrast-finder.conf.dist</src>
                                     <dst>/etc/contrast-finder/contrast-finder.conf.dist</dst>
                                     <mapper>
-                                      <type>perm</type>
-                                      <user>tomcat7</user>
+                                        <type>perm</type>
+                                        <user>tomcat7</user>
                                     </mapper>
                                 </data>
                                 <data>
@@ -224,7 +223,7 @@
                                 </data>
                                 <data>
                                     <type>file</type>
-                                    <src>${project.build.directory}/contrast-finder-webapp-${project.version}.war</src>
+                                    <src>${project.build.directory}/contrast-finder-webapp_${project.version}.war</src>
                                     <dst>contrast-finder.war</dst>
                                     <mapper>
                                         <type>perm</type>
@@ -234,7 +233,62 @@
                                 </data>
                                 <data>
                                     <type>file</type>
-                                    <src>${project.basedir}/src/deb/copyright</src>
+                                    <src>${project.basedir}/src/deb/tomcat7/copyright</src>
+                                    <dst>/usr/share/doc/contrast-finder-webapp/copyright</dst>
+                                </data>
+                            </dataSet>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>jdeb_tomcat8</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jdeb</goal>
+                        </goals>
+                        <configuration>
+                            <deb>${project.build.directory}/contrast-finder-webapp_${project.version}_tomcat8.deb</deb>
+                            <verbose>true</verbose>
+                            <controlDir>${project.basedir}/src/deb/tomcat8/control</controlDir>
+                            <dataSet>
+                                <data>
+                                    <type>template</type>
+                                    <paths>
+                                        <path>/etc/contrast-finder</path>
+                                        <path>/var/log/contrast-finder</path>
+                                    </paths>
+                                </data>
+                                <data>
+                                    <conffile>true</conffile>
+                                    <type>file</type>
+                                    <src>${project.basedir}/src/main/resources/conf/contrast-finder.conf.dist</src>
+                                    <dst>/etc/contrast-finder/contrast-finder.conf.dist</dst>
+                                    <mapper>
+                                      <type>perm</type>
+                                      <user>tomcat8</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>${project.basedir}/src/main/resources/conf/contrast-finder.log</src>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/var/log/contrast-finder</prefix>
+                                        <user>tomcat8</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>${project.build.directory}/contrast-finder-webapp_${project.version}.war</src>
+                                    <dst>contrast-finder.war</dst>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/var/lib/tomcat8/webapps</prefix>
+                                        <user>tomcat8</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>${project.basedir}/src/deb/tomcat8/copyright</src>
                                     <dst>/usr/share/doc/contrast-finder-webapp/copyright</dst>
                                 </data>
                             </dataSet>

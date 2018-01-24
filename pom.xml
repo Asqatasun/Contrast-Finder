@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--    This file is part of Contrast Finder.
-        Copyright (C) 2008-2017   Asqatasun.org
+        Copyright (C) 2008-2018   Asqatasun.org
 
         This program is free software: you can redistribute it and/or modify
         it under the terms of the GNU Affero General Public License as
@@ -20,7 +20,7 @@
     <groupId>org.asqatasun</groupId>
     <artifactId>contrast-finder</artifactId>
     <packaging>pom</packaging>
-    <version>0.8.3</version>
+    <version>0.8.4</version>
     <name>Contrast-Finder</name>
     <licenses>
         <license>
@@ -75,17 +75,17 @@
         <commons-lang3.version>3.7</commons-lang3.version>
         <junit.version>4.12</junit.version>
         <logback-classic.version>1.2.3</logback-classic.version>
-        <markdown-page-generator-plugin.version>2.0.0</markdown-page-generator-plugin.version>
+        <markdown-page-generator-plugin.version>2.0.1</markdown-page-generator-plugin.version>
 
         <!-- Plugin Versions -->
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
         <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
-        <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
         <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
-        <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
         <dependency-check-maven.version>3.0.2</dependency-check-maven.version>
-        <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.0</jacoco-maven-plugin.version>
      </properties>
      <prerequisites>         <!--    Maven 3.1 is required to use the following plugin:   -->
         <maven>3.1</maven>  <!--    ............  org.owasp:dependency-check-maven       -->
@@ -233,8 +233,9 @@
     <!--    Jacoco - Code coverage
                 http://www.jacoco.org/jacoco/
                 https://github.com/jacoco/jacoco/
-                report: target/site/jacoco
-                usage:  mvn clean install                     -->
+                usage:  mvn clean install
+                report: engine/*/target/site/jacoco
+                        no aggregate report (if you know how to do it…)     -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -255,6 +256,24 @@
                 </executions>
             </plugin>
 
+    <!--    Cobertura - Code coverage
+                http://www.mojohaus.org/cobertura-maven-plugin/
+                https://github.com/cobertura/cobertura
+                usage:  mvn cobertura:cobertura
+                report: engine/*/target/site/cobertura
+                        no aggregate report (if you know how to do it…) -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                    </formats>
+                </configuration>
+            </plugin>
+
+
         </plugins>
     </build>
 
@@ -267,6 +286,8 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>${maven-project-info-reports-plugin.version}</version>
             </plugin>
+
+
 
     <!--    JXR produces a cross-reference of the project's sources (needed for maven-checkstyle-plugin)
                 http://maven.apache.org/jxr/maven-jxr-plugin/

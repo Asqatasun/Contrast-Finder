@@ -11,10 +11,10 @@ Once you've built, let say you have Tomcat 7 (change the number if you have Tomc
 
 ```bash
 cd /tmp
-wget https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.4.5/contrast-finder_0.4.5.i386.tar.gz
-tar -xzvf contrast-finder*.tar.gz  
-cd        contrast-finder_*.i386/
-mv  -v    install/contrast-*.war contrast-finder.war
+wget https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.8.4/contrast-finder-webapp_0.8.4.tar.gz
+tar -xzvf contrast-finder-webapp_*.tar.gz
+cd        contrast-finder-webapp_*/
+mv  -v    install/contrast-finder-webapp_*.war contrast-finder.war
 
 sudo cp -v     contrast-finder.war               /var/lib/tomcat7/webapps/
 sudo cp -rv    install/var/log/contrast-finder/  /var/log/
@@ -29,8 +29,8 @@ Contrast-finder should be available at `http://localhost:8080/contrast-finder/`
 #### Optional contract-finder.conf file 
 
 ```bash
-tar -xzvf      contrast-finder*.tar.gz  
-cd             contrast-finder_*.i386/
+tar -xzvf contrast-finder-webapp_*.tar.gz
+cd        contrast-finder-webapp_*/
 sudo cp -rv    install/etc/contrast-finder/      /etc/
 
 cd             /etc/contrast-finder/
