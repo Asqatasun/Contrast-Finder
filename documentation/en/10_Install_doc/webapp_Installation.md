@@ -11,7 +11,7 @@ Once you've built, let say you have Tomcat 7 (change the number if you have Tomc
 
 ```bash
 cd /tmp
-wget https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.8.4/contrast-finder-webapp_0.8.4.tar.gz
+wget https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.8.5-SNAPSHOT/contrast-finder-webapp_0.8.5-SNAPSHOT.tar.gz
 tar -xzvf contrast-finder-webapp_*.tar.gz
 cd        contrast-finder-webapp_*/
 mv  -v    install/contrast-finder-webapp_*.war contrast-finder.war

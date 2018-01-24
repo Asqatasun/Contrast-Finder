@@ -3,7 +3,7 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
       org.label-schema.name           = "Contrast-Finder - WebApp pre-requisites (Ubuntu 18.04 - Tomcat 8)"  \
       org.label-schema.url            = "https://contrast-finder.org"                                        \
       org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"                       \
-      org.label-schema.version        = "0.8.4"
+      org.label-schema.version        = "0.8.5-SNAPSHOT"
           # ----> documentation  http://label-schema.org/
 
 # #### usage ######################################################
@@ -79,7 +79,7 @@ HEALTHCHECK --timeout=3s    \
             ######################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.8.4"
+ENV CONTRAST_FINDER_RELEASE="0.8.5-SNAPSHOT"
 
 # Add contrast-finder .war
 ADD contrast-finder-webapp_${CONTRAST_FINDER_RELEASE}.tar.gz  /root

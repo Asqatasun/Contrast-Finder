@@ -1,4 +1,4 @@
-FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-8.0
+FROM asqatasun/contrast-finder:pre-requisites_Fedora-27_tomcat-8.0
 
 # #### usage ######################################################
 #
@@ -14,8 +14,8 @@ FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-8.0
 #   docker logs -f contrast.finder
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-8.0 https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-16.04_tomcat-8.0/Dockerfile
-#   |-- ubuntu:16.04                                                 https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/xenial/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Fedora-27_tomcat-8.0 https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Fedora-27_tomcat-8.0/Dockerfile
+#   |-- fedora:27                                                 https://github.com/fedora-cloud/docker-brew-fedora/blob/27/x86_64/Dockerfile
 ###################################################################
 
 # environment variables
@@ -27,12 +27,12 @@ ADD contrast-finder-webapp_${CONTRAST_FINDER_RELEASE}.tar.gz  /root
 # Install contrast-finder
 RUN  cd      /root/contrast-*/install/                              && \
      mv -v   contrast-*.war contrast-finder.war                     && \
-     mv -v   contrast-*.war /var/lib/tomcat8/webapps                && \
+     mv -v   contrast-*.war /var/lib/tomcat/webapps                 && \
      rm -rf  /root/contrast-*                                       && \
      echo ${CONTRAST_FINDER_RELEASE}               >> ${INFO_FILE}  && \
-     echo "\n--- ${CONF_FILE} ---"                 >> ${INFO_FILE}  && \
+     echo "--- ${CONF_FILE} ---"                   >> ${INFO_FILE}  && \
      cat  ${CONF_FILE}                             >> ${INFO_FILE}  && \
-     echo "\n--- Logs -----------"                 >> ${INFO_FILE}  && \
+     echo "--- Logs -----------"                   >> ${INFO_FILE}  && \
      echo "${TOMCAT_LOG}"                          >> ${INFO_FILE}  && \
      echo "${LOG_FILE}"                            >> ${INFO_FILE}  && \
      echo "--------------------"                   >> ${INFO_FILE}  && \
@@ -40,8 +40,12 @@ RUN  cd      /root/contrast-*/install/                              && \
 
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-8.0
+# ----> see asqatasun/contrast-finder:pre-requisites_Fedora-27_tomcat-8.0
 
-CMD  service tomcat8 start        ; \
+# /usr/sbin/tomcat start  ;      \
+
+
+CMD  echo "BANCO" ;                 \
+     systemctl start tomcat  ;      \
      tail -f -n 50 ${TOMCAT_LOG}    \
                    ${LOG_FILE}
