@@ -77,7 +77,7 @@
                 <li><strong aria-current="page">한국어</strong></li>
             </c:when>
             <c:otherwise>
-                <li lang="ko"><a href="${koUrl}" hreflang="ko"title="한국어로 전환">한국어</a></li>
+                <li lang="ko"><a href="${koUrl}" hreflang="ko" title="한국어로 전환">한국어</a></li>
             </c:otherwise>
         </c:choose>
         </ul>
