@@ -29,7 +29,63 @@
 * Web perf
     * [Yellowlab](http://yellowlab.tools)
     * [Webpagetest](https://www.webpagetest.org/)
-    * [Sitespeed.io](https://www.sitespeed.io/) (npm or docker is needed)
+    * [Test a single asset from 14 locations](https://tools.keycdn.com/performance?url=https://app.contrast-finder.org) `*`
+* HTTP/2
+    * [Http2.pro](https://http2.pro/check?url=https://app.contrast-finder.org) `*` (check server HTTP/2, ALPN, and Server-push support)
 * Global tools (webperf, accessibility, security, ...)
-    * [Dareboost](https://www.dareboost.com)
+    * [Dareboost](https://www.dareboost.com)  (free trial)
     * [Sonarwhal](https://sonarwhal.com/scanner/)
+
+* Social networks
+  * [Twitter card validator](https://cards-dev.twitter.com/validator)
+* structured data (JSON-LD, rdf, schema.org, microformats.org, ...)
+  * [Google structured data testing tool](https://search.google.com/structured-data/testing-tool#url=https://app.contrast-finder.org/)  `*`
+  * [Yandex structured data testing tool](https://webmaster.yandex.com/tools/microtest/)
+  * [Structured Data Linter](http://linter.structured-data.org/?url=https://app.contrast-finder.org)  `*`
+  * [Microdata Parser](http://tools.seomoves.org/microdata/)
+* Google image
+  * [images used on the website](https://www.google.fr/search?tbm=isch&q=site:app.contrast-finder.org)  `*`  (site:app.contrast-finder.org)
+  * [images used on the website but hosted on other domains](https://www.google.fr/search?tbm=isch&q=site:app.contrast-finder.org+-src:app.contrast-finder.org) `*`  (site:app.contrast-finder.org -src:app.contrast-finder.org)
+  * [images hosted on the domain name](https://www.google.fr/search?tbm=isch&q=src:app.contrast-finder.org)  `*`    (src:app.contrast-finder.org)
+  * [images hosted on the domain name and used by other domain names (hotlinks)](https://www.google.fr/search?tbm=isch&q=src:app.contrast-finder.org+-site:app.contrast-finder.org)  `*`   (src:app.contrast-finder.org -site:app.contrast-finder.org)
+
+## Open-source softwares
+
+* [W3C tools](https://w3c.github.io/developers/tools/#tools)
+* Security
+    * [Arachni](https://github.com/Arachni/arachni) (web application security scanner framework)
+    * Content-Security-Policy (CSP)
+        * [salvation](https://github.com/shapesecurity/salvation) (Java parser, warn about policy errors)
+    * Mozilla Observatory
+        * [CLI client for Mozilla Observatory](https://github.com/mozilla/observatory-cli)
+        * [HTTP Observatory](https://github.com/mozilla/http-observatory) (local scanner : CLI and CI)
+* Web accessibility
+    * Asqatasun
+        * [Asqatsun Docker image](https://hub.docker.com/r/asqatasun/asqatasun/)
+        * [Install Asqatasun on a server](https://doc.asqatasun.org/en/10_Install_doc/Asqatasun/)
+* Web perf
+    * Webpagetest
+    * [Yellowlab](https://github.com/gmetais/YellowLabTools/) (API, npm CLI, Grunt task, ...)
+    * [Sitespeed.io](https://www.sitespeed.io/) (npm or docker is needed)
+* Global tools
+    * [Sonarwhal](https://github.com/sonarwhal/sonarwhal) (Node.js v8)
+
+## Audit history
+
+### 0.8.3
+* Security
+   * https://www.hardenize.com/report/app.contrast-finder.org/1516756341
+* Web perf
+   * https://www.webpagetest.org/result/180124_KC_d6495475e9d7beed0e79583dd9e207b2/
+   * http://yellowlab.tools/result/exn8ef7di1
+* Global tools (webperf, accessibility, security, ...)
+    * https://www.dareboost.com/fr/report/5a66a3fe0cf2b528a73e562a
+    * https://sonarwhal.com/scanner/6699688c-0363-4d0b-a636-add8a2f9d909
+
+
+
+
+
+
+
+    
