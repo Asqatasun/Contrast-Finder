@@ -18,7 +18,7 @@ none
 none
 
 ### Improvement
-none
+- [#127 - Webapp: added contribute.json file](https://github.com/Asqatasun/Contrast-Finder/issues/127)
 
 ### Refactoring
 none

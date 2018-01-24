@@ -1,0 +1,35 @@
+{
+    "name":         "Contrast Finder",
+    "description":  "Contrast-Finder finds correct color contrasts for web accessibility.",
+    "repository": {
+        "license":  "AGPL v3",
+        "type":     "git",
+        "url":      "https://github.com/Asqatasun/Contrast-Finder",
+        "clone":    "https://github.com/Asqatasun/Contrast-Finder.git",
+        "tests":    "https://travis-ci.org/Asqatasun/Contrast-Finder"
+    },
+    "bugs": {
+       "list":      "https://github.com/Asqatasun/Contrast-Finder/issues",
+       "report":    "https://github.com/Asqatasun/Contrast-Finder/issues/new"
+    },
+    "participate": {
+        "docs":     "https://github.com/Asqatasun/Contrast-Finder/tree/develop/documentation/en",
+        "home":     "https://contrast-finder.org/"
+    },
+    "urls": {
+        "prod":     "https://app.contrast-finder.org/"
+    },
+    "keywords": [   "a11y",
+                    "accessibility",
+                    "color",
+                    "color contrast",
+                    "contrast",
+                    "wcag",
+                    "java",
+                    "spring",
+                    "web accessibility",
+                    "colour contrast",
+                    "colour"
+    ]
+}
+
