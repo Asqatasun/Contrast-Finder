@@ -15,7 +15,7 @@ none
 none
 
 ### Bug
-none
+- [#128 - Webapp: added "charset=UTF-8" HTTP header  for css, js, txt, json and xml files](https://github.com/Asqatasun/Contrast-Finder/issues/128)
 
 ### Improvement
 - [#127 - Webapp: added contribute.json file](https://github.com/Asqatasun/Contrast-Finder/issues/127)

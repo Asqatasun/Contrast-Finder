@@ -27,6 +27,33 @@
     </filter-mapping>
 
     <!--
+      add the HTTP header [ charset=UTF-8 ]
+      for css, js, txt, json and xml files
+           - but not for images files (png, jpeg)
+           - .jsp use <%@page pageEncoding="UTF-8"%>
+    -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>*.css</url-pattern>
+        <url-pattern>*.js</url-pattern>
+        <url-pattern>*.json</url-pattern>    <!-- contribute.json -->
+        <url-pattern>*.txt</url-pattern>     <!-- robots.txt, .well-known/security.txt -->
+        <url-pattern>*.xml</url-pattern>     <!-- */favicon/browserconfig.xml          -->
+    </filter-mapping>
+
+    <!--
       - Loads the root application context of this web app at startup.
       - The application context is then available via
       - WebApplicationContextUtils.getWebApplicationContext(servletContext).
