@@ -79,7 +79,7 @@
    * https://www.webpagetest.org/result/180124_KC_d6495475e9d7beed0e79583dd9e207b2/
    * http://yellowlab.tools/result/exn8ef7di1
 * Global tools (webperf, accessibility, security, ...)
-    * https://www.dareboost.com/fr/report/5a66a3fe0cf2b528a73e562a
+    * https://www.dareboost.com/en/report/5a67f2c60cf2b528a73f6dde
     * https://sonarwhal.com/scanner/6699688c-0363-4d0b-a636-add8a2f9d909
 
 

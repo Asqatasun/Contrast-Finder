@@ -19,7 +19,7 @@ FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.8.4-SNAPSHOT"
+ENV CONTRAST_FINDER_RELEASE="0.8.4"
 ENV CONF_ENV="debug"
 
 # Add contrast-finder .war

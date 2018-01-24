@@ -1,15 +1,9 @@
 # CHANGELOG
 
-Contrast-Finder 0.8.4, 2018-01-2x
+Contrast-Finder 0.8.4, 2018-01-24
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
-
-### New Feature
-none
-
-### Security
-none
 
 ### Outdated dependencies
 - [#108 - Upgraded SpringFramework (4.3.14 instead of 4.3.13)](https://github.com/Asqatasun/Contrast-Finder/issues/108)
@@ -21,10 +15,7 @@ none
 - [#118 - Upgraded jdeb maven plugin (1.6 instead of 1.5)](https://github.com/Asqatasun/Contrast-Finder/issues/118)
    - [#125 - Contrast-Finder build need openjdk 8 (prerequisite jdeb)](https://github.com/Asqatasun/Contrast-Finder/issues/125)
 
-### Bug
-none
-
-### Improvement 
+### Improvement
 - [#110 - Added new docker image: ubuntu 16.04 (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/110) 
 - [#112 - Added new docker image: alpine (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/112)
 - [#116 - Added new docker image: alpine (tomcat-8.5)](https://github.com/Asqatasun/Contrast-Finder/issues/116)
@@ -32,17 +23,13 @@ none
 - [#109 - Docker/pre-requisites/ - Added /softwares-version.txt](https://github.com/Asqatasun/Contrast-Finder/issues/109)
 - [#124 - Create 2 Debian packages (.deb) at the maven build for tomcat7 and tomcat8](https://github.com/Asqatasun/Contrast-Finder/issues/124)
 
-
 ### Refactoring
 - [#114 - Updated webapp/pom.xml - new name for .war, .tar.gz and .deb](https://github.com/Asqatasun/Contrast-Finder/issues/114)
 - [#115 - Updated prerequisites : libspring-instrument-java is not needed](https://github.com/Asqatasun/Contrast-Finder/issues/115)
 
-### Configuration 
-none
-
 ### Documentation
-- [#115 - Updated prerequisites documentation](https://github.com/Asqatasun/Contrast-Finder/issues/115)
 - [#114 - Updated documentation - new name for .war, .tar.gz and .deb](https://github.com/Asqatasun/Contrast-Finder/issues/114)
+- [#115 - Updated prerequisites documentation](https://github.com/Asqatasun/Contrast-Finder/issues/115)
 
 ### Task
 - [#106 - Added unit tests coverage report (cobertura-maven-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/106)
