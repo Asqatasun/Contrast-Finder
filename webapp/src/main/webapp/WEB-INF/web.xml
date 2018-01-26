@@ -46,6 +46,7 @@
     </filter>
     <filter-mapping>
         <filter-name>encodingFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
         <url-pattern>*.css</url-pattern>
         <url-pattern>*.js</url-pattern>
         <url-pattern>*.json</url-pattern>    <!-- contribute.json -->
@@ -88,75 +89,75 @@
     <welcome-file-list>
         <welcome-file>form.html</welcome-file>
     </welcome-file-list>
-<!--
+
+    <!-- Custom error pages -->
     <error-page>
         <error-code>400</error-code>
-        <location>/access-denied.html</location>
+        <location>/error/error_4xx.html</location>
     </error-page>
     <error-page>
         <error-code>401</error-code>
-        <location>/access-denied.html</location>
+        <location>/error/error_4xx.html</location>
     </error-page>
     <error-page>
         <error-code>403</error-code>
-        <location>/access-denied.html</location>
+        <location>/error/error_4xx.html</location>
     </error-page>
     <error-page>
         <error-code>404</error-code>
-        <location>/access-denied.html</location>
+        <location>/error/error_4xx.html</location>
     </error-page>
     <error-page>
         <error-code>405</error-code>
-        <location>/access-denied.html</location>
+        <location>/error/error_4xx.html</location>
     </error-page>
     <error-page>
         <error-code>500</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>501</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>502</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>503</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>504</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>505</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>506</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>507</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>508</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>509</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>510</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>520</error-code>
-        <location>/oups.html</location>
+        <location>/error/error_5xx.html</location>
     </error-page>
- -->
 
 </web-app>

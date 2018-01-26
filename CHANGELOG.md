@@ -1,6 +1,6 @@
 # CHANGELOG
 
-Contrast-Finder 0.8.5, 2018-xx-xx
+Contrast-Finder 0.8.5, 2018-02-xx
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
@@ -15,7 +15,8 @@ none
 none
 
 ### Bug
-- [#128 - Webapp: added "charset=UTF-8" HTTP header  for css, js, txt, json and xml files](https://github.com/Asqatasun/Contrast-Finder/issues/128)
+- [#128 - Webapp: added "charset=UTF-8" HTTP header for css, js, txt, json and xml files](https://github.com/Asqatasun/Contrast-Finder/issues/128)
+- [#129 - Webapp: added custom HTTP error pages instead of Tomcat default pages](https://github.com/Asqatasun/Contrast-Finder/issues/129)
 
 ### Improvement
 - [#127 - Webapp: added contribute.json file](https://github.com/Asqatasun/Contrast-Finder/issues/127)
@@ -31,6 +32,7 @@ none
 
 ### Task
 none
+
 
 Contrast-Finder 0.8.4, 2018-01-24
 ---------------------------------
