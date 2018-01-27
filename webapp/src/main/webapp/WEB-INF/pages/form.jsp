@@ -37,7 +37,7 @@
                         <c:set var="actionUrl">
                             <c:url value="result.html"></c:url>
                         </c:set>
-                        <form:form class="form-horizontal" name="formulaire" commandName="colorModel" method="GET"  action="${actionUrl}">
+                        <form:form class="form-horizontal" name="formulaire" modelAttribute="colorModel" method="GET"  action="${actionUrl}">
 
                             <%-- Foregound --%>
                             <c:set var="foregroundOnError">

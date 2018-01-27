@@ -12,7 +12,7 @@ none
 none
 
 ### Outdated dependencies
-none
+- [#130 - .jsp file, form tag: use "modelAttribute" instead of deprecated "commandName"](https://github.com/Asqatasun/Contrast-Finder/issues/130)
 
 ### Bug
 - [#128 - Webapp: added "charset=UTF-8" HTTP header for css, js, txt, json and xml files](https://github.com/Asqatasun/Contrast-Finder/issues/128)
