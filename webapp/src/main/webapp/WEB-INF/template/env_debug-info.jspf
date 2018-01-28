@@ -1,0 +1,21 @@
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page pageEncoding="UTF-8" %>
+
+<c:set var="debugJavaVersion"><%= System.getProperty("java.version") %></c:set>
+<c:set var="debugTomcatVersion"><%= application.getServerInfo() %></c:set>
+<c:set var="debugServletVersion"><%= application.getMajorVersion() %>.<%= application.getMinorVersion() %></c:set>
+<c:set var="debugJspVersion"><%=JspFactory.getDefaultFactory().getEngineInfo().getSpecificationVersion() %></c:set>
+<div style="background-color:pink; padding: 0.4em;display: flex;justify-content: space-between">
+    <p>
+        env              <strong> ${env}                        </strong> <br>
+        defaultAlgorithm <strong> ${defaultAlgorithm}           </strong> <br>
+        cookie.algo      <strong> ${cookie.algo.value}          </strong> <br>
+        algo             <strong> ${algo}                       </strong>
+    </p>
+    <p>
+        Java                    <strong> ${debugJavaVersion}    </strong> <br>
+        Tomcat :                <strong> ${debugTomcatVersion}  </strong> <br>
+        Servlet specification : <strong> ${debugServletVersion} </strong> <br>
+        JSP :                   <strong> ${debugJspVersion}     </strong> <br>
+    </p>
+</div>

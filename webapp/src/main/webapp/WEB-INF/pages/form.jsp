@@ -21,14 +21,8 @@
 
                 <%-- DEBUG   contrast-finder.conf  --%>
                 <c:if test="${env == 'debug'}">
-                    <div style="background-color:pink; padding: 0.4em;">
-                        env              <strong> ${env}                        </strong> <br>
-                        defaultAlgorithm <strong> ${defaultAlgorithm}           </strong> <br>
-                        cookie.algo      <strong> ${cookie.algo.value}          </strong> <br>
-                        algo             <strong> ${algo}                       </strong> <br>
-                    </div>
+                    <%@include file='/WEB-INF/template/env_debug-info.jspf' %>
                 </c:if>
-
 
                 <%-- ===== FORM ========================================================================================= --%>
                 <div id="set-up-form" class="row">
