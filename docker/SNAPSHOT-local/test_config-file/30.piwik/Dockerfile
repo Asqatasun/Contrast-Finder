@@ -1,4 +1,4 @@
-FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7
+FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-7
 
 # #### usage ######################################################
 #

@@ -1,1 +1,1 @@
-distrib/ubuntu-14.04_tomcat-7/Dockerfile
+distrib/ubuntu-16.04_tomcat-7/Dockerfile
