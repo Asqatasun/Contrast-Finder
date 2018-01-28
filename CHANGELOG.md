@@ -19,6 +19,7 @@ none
 - [#129 - Webapp: added custom HTTP error pages instead of Tomcat default pages](https://github.com/Asqatasun/Contrast-Finder/issues/129)
 
 ### Improvement
+- [#132 - Added new Docker image: pre-requisites_Alpine_tomcat-9)](https://github.com/Asqatasun/Contrast-Finder/issues/132)
 - [#127 - Webapp: added contribute.json file](https://github.com/Asqatasun/Contrast-Finder/issues/127)
 
 ### Refactoring
