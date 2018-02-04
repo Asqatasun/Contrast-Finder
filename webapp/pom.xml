@@ -395,5 +395,14 @@
             <artifactId>htmlcompressor</artifactId>
             <version>${htmlcompressor.version}</version>
         </dependency>
+
+    <!-- URL rewrite filter
+         http://tuckey.org/urlrewrite/
+         https://github.com/paultuckey/urlrewritefilter  -->
+        <dependency>
+            <groupId>org.tuckey</groupId>
+            <artifactId>urlrewritefilter</artifactId>
+            <version>4.0.3</version>
+        </dependency>
     </dependencies>
 </project>

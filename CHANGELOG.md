@@ -21,6 +21,7 @@ none
 ### Improvement
 - [#132 - Added new Docker image: pre-requisites_Alpine_tomcat-9)](https://github.com/Asqatasun/Contrast-Finder/issues/132)
 - [#127 - Webapp: added contribute.json file](https://github.com/Asqatasun/Contrast-Finder/issues/127)
+- [#133 - Webapp: allowed the HTTP header "Cache-Control: immutable" for asset files (css, js, png)](https://github.com/Asqatasun/Contrast-Finder/issues/133)
 
 ### Refactoring
 none
