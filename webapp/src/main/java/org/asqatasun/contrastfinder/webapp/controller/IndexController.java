@@ -95,6 +95,18 @@ public class IndexController {
 
 
     /**
+     * Give crawlers instructions
+     *      searchEngineInclude = "yes"
+     *      searchEngineInclude = "no"   (default)
+     *          = disallow search engines from showing HTML pages in their results
+     *
+     *      can be override in the following file:
+     *      /etc/contrast-finder/contrast-finder.conf
+     */
+    @Value("${searchEngineInclude:no}")
+    private String searchEngineInclude;
+
+    /**
      * environment
      *      env = debug
      *      env = prod    (default)
@@ -146,6 +158,7 @@ public class IndexController {
         model.addAttribute("env",  env);
         model.addAttribute("piwikKey",    piwikAnalyticsKey);
         model.addAttribute("piwikServer", piwikAnalyticServer);
+        model.addAttribute("searchEngineInclude",  searchEngineInclude);
         model.addAttribute(commandName, colorModel);
         return mainPageView;
     }
@@ -169,6 +182,7 @@ public class IndexController {
         model.addAttribute("env",  env);
         model.addAttribute("piwikKey",    piwikAnalyticsKey);   /* Analytics Keys*/
         model.addAttribute("piwikServer", piwikAnalyticServer);
+        model.addAttribute("searchEngineInclude",  searchEngineInclude);
         model.addAttribute("defaultAlgorithm", defaultAlgorithm);
         model.addAttribute("algo", colorModel.getAlgo());
         if (result.hasErrors()) {

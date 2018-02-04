@@ -31,6 +31,9 @@
     <!--  Description / Canonical URL / alternate  -->
     <meta name="description" content="${metaDescription}">
     <link rel="canonical"    href="${canonicalURL}" />
+    <c:if test="${searchEngineInclude == 'no'}">
+        <meta name="robots" content="noindex">
+    </c:if>
     <link rel="alternate" hreflang="x-default" href="${prefixURL}" />
     <link rel="alternate" hreflang="en" href="${prefixURL}?lang=en" />
     <link rel="alternate" hreflang="fr" href="${prefixURL}?lang=fr" />
