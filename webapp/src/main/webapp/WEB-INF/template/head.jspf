@@ -58,4 +58,18 @@
     <meta name="twitter:title"       content="<fmt:message key="home.titleTag"/>" />
     <meta name="twitter:description" content="<fmt:message key="home.metaDescription"/>" />
     <meta name="twitter:image:src"   content="https://app.contrast-finder.org/public/images/logo/contrast-finder_logo_1051x1053.png" />
+
+    <!-- schema.org     http://schema.org/WebApplication  -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebApplication",
+        "name": "Contrast Finder",
+        "softwareVersion": "${appVersion}",
+        "license": "https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE",
+        "releaseNotes": "https://github.com/Asqatasun/Contrast-Finder/blob/master/CHANGELOG.md",
+        "screenshot":   "https://contrast-finder.org/public/media/images/screenshot/screenshot.EN_contrast-finder.v0.5.2_2017-07-27_grey_kraken.io-lossy.png",
+        "applicationCategory": "BusinessApplication"
+    }
+    </script>
 </head>

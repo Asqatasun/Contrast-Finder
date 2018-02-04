@@ -453,7 +453,7 @@
             <c:set var="piwikServerURL"  value="${piwikServer}"/>
             <c:if test="${not empty piwikSiteId and not empty piwikServerURL}">
                 <!-- Piwik code-->
-                <script type="text/javascript">
+                <script>
                     var _paq = _paq || [];
                     _paq.push(["setDomains", ["*.app.contrast-finder.org","*.app.contrast-finder.org"]]);
                     _paq.push(['trackPageView']);

@@ -29,8 +29,6 @@ none
 ### Configuration
 - [#131 - Changed default docker image: ubuntu-16.04_tomcat-7 instead of ubuntu-14.04_tomcat-7](https://github.com/Asqatasun/Contrast-Finder/issues/131)
 
-
-
 ### Documentation
 none
 
