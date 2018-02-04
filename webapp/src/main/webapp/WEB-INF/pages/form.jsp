@@ -216,13 +216,13 @@
                             </div>
                             <div class="row">
                                 <div class="result col-lg-12">
-                                    <img src="<c:url value="Images/good.jpg"/>" alt="Correct contrast"/>
+                                    <img src="<c:url value="public/images/good.jpg"/>" alt="Correct contrast"/>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12" id="image-reference">
                                     <a rel="nofollow" title="Creative Commons Attribution 3.0 License" href="https://creativecommons.org/licenses/by/3.0/">
-                                        <img src="<c:url value="Images/creative_common_logo.png"/>" alt="License"> </a>
+                                        <img src="<c:url value="public/images/creative_common_logo.png"/>" alt="License"> </a>
                                     <a rel="nofollow" title="Flickr: Galerie de Thomas Hawk" href="https://www.flickr.com/photos/thomashawk">Thomas Hawk</a>
                                 </div>
                             </div>
@@ -437,15 +437,15 @@
             <%@include file='/WEB-INF/template/footer.jspf' %>
 
             <!-- Javascript - Webapp -->
-            <script src="<c:url value="Js/_contrast-finder_${appVersion}.all.min.js"/>"></script>
-               <!-- <script src="<c:url value="Js/10-jquery.min.js?v=${appVersion}"/>"></script>
+            <script src="<c:url value="public/js/_contrast-finder_${appVersion}.all.min.js"/>"></script>
+               <!-- <script src="<c:url value="public/js/10-jquery.min.js?v=${appVersion}"/>"></script>
                     <c:if test="${colorResult.numberOfSuggestedColors > 0}">
-                        <script src="<c:url value="Js/20-jquery.tablesorter.min.js?v=${appVersion}"/>"></script>
-                        <script src="<c:url value="Js/25-accessible-min.js?v=${appVersion}"/>"></script>
+                        <script src="<c:url value="public/js/20-jquery.tablesorter.min.js?v=${appVersion}"/>"></script>
+                        <script src="<c:url value="public/js/25-accessible-min.js?v=${appVersion}"/>"></script>
                     </c:if>
-                    <script src="<c:url value="Js/30-bootstrap.min.js?v=${appVersion}"/>"></script>
-                    <script src="<c:url value="Js/35-affix.js?v=${appVersion}"/>"></script>
-                    <script src="<c:url value="Js/36-sample.color.js?v=${appVersion}"/>"></script>
+                    <script src="<c:url value="public/js/30-bootstrap.min.js?v=${appVersion}"/>"></script>
+                    <script src="<c:url value="public/js/35-affix.js?v=${appVersion}"/>"></script>
+                    <script src="<c:url value="public/js/36-sample.color.js?v=${appVersion}"/>"></script>
                -->
 
             <!-- Javascript - Web analytics -->

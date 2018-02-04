@@ -21,7 +21,7 @@ table.tablesorter .odd {
 	background-color: #6E6E6E;
 }
 table.tablesorter .header {
-	background-image: url(../Images/bg.png);
+	background-image: url(../images/bg.png);
 	background-repeat: no-repeat;
         background-position: 0 50%;
         padding-left: 18px;
@@ -33,11 +33,11 @@ table.tablesorter .header {
 	height: auto;*/
 }
 table.tablesorter .headerSortUp {
-	background-image: url(../Images/asc.png);
+	background-image: url(../images/asc.png);
 	background-repeat: no-repeat;
 }
 table.tablesorter .headerSortDown {
-	background-image: url(../Images/desc.png);
+	background-image: url(../images/desc.png);
 	background-repeat: no-repeat;
 }
 

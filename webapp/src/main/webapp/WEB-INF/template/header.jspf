@@ -86,12 +86,12 @@
     <div id="contrast-finder-logo">
         <c:choose>
             <c:when test="${empty colorResult && empty errorResult}">
-                <img src="Images/logo/contrast-finder_logo_1051x1053.png"
+                <img src="public/images/logo/contrast-finder_logo_1051x1053.png"
                      alt="" />
             </c:when>
             <c:otherwise>
                 <a title=" <fmt:message key="logo.link.title"/> " href="./?lang=${lang}">
-                    <img src="Images/logo/contrast-finder_logo_1051x1053.png"
+                    <img src="public/images/logo/contrast-finder_logo_1051x1053.png"
                          alt=" <fmt:message key="logo.link.title"/> " />
                 </a>
             </c:otherwise>

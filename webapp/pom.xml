@@ -136,14 +136,14 @@
                     <aggregations>
                         <aggregation>
                             <insertNewLine>true</insertNewLine>
-                            <output>${project.build.directory}/${project.build.finalName}/Js/_contrast-finder_${project.version}.all.min.js</output>
+                            <output>${project.build.directory}/${project.build.finalName}/public/js/_contrast-finder_${project.version}.all.min.js</output>
                             <includes>
                                 <include>**/*min.js</include>
                             </includes>
                         </aggregation>
                         <aggregation>
                             <insertNewLine>true</insertNewLine>
-                            <output>${project.build.directory}/${project.build.finalName}/Css/_contrast-finder_${project.version}.all.min.css</output>
+                            <output>${project.build.directory}/${project.build.finalName}/public/css/_contrast-finder_${project.version}.all.min.css</output>
                             <includes>
                                 <include>**/*min.css</include>
                             </includes>

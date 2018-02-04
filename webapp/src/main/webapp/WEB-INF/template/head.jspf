@@ -2,26 +2,26 @@
 <head>
     <meta charset="utf-8" />
     <title>${titleTag}</title>
-    <link rel="stylesheet" type="text/css"         href="<c:url value="Css/_contrast-finder_${appVersion}.all.min.css"/>">
+    <link rel="stylesheet" type="text/css"         href="<c:url value="public/css/_contrast-finder_${appVersion}.all.min.css"/>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <!--    <link rel="stylesheet" type="text/css" href="<c:url value="Css/10-bootstrap.min.css?v=${appVersion}"/>">
-            <link rel="stylesheet" type="text/css" href="<c:url value="Css/20-bootstrap-theme.min.css?v=${appVersion}"/>">
-            <link rel="stylesheet" type="text/css" href="<c:url value="Css/30-contrast-finder-min.css?v=${appVersion}"/>">
-            <link rel="stylesheet" type="text/css" href="<c:url value="Css/40-accessible-table-sorter-min.css?v=${appVersion}"/>">
+    <!--    <link rel="stylesheet" type="text/css" href="<c:url value="public/css/10-bootstrap.min.css?v=${appVersion}"/>">
+            <link rel="stylesheet" type="text/css" href="<c:url value="public/css/20-bootstrap-theme.min.css?v=${appVersion}"/>">
+            <link rel="stylesheet" type="text/css" href="<c:url value="public/css/30-contrast-finder-min.css?v=${appVersion}"/>">
+            <link rel="stylesheet" type="text/css" href="<c:url value="public/css/40-accessible-table-sorter-min.css?v=${appVersion}"/>">
     -->
 
     <!-- Favicon  -->
-    <link rel="apple-touch-icon"            href="<c:url value="Images/logo/favicon/apple-touch-icon.png?v=${appVersion}"/>"       sizes="180x180" >
-    <link rel="icon"    type="image/png"    href="<c:url value="Images/logo/favicon/favicon-32x32.png?v=${appVersion}"/>"          sizes="32x32">
-    <link rel="icon"    type="image/png"    href="<c:url value="Images/logo/favicon/favicon-194x194.png?v=${appVersion}"/>"        sizes="194x194">
-    <link rel="icon"    type="image/png"    href="<c:url value="Images/logo/favicon/android-chrome-192x192.png?v=${appVersion}"/>" sizes="192x192">
-    <link rel="icon"    type="image/png"    href="<c:url value="Images/logo/favicon/favicon-16x16.png?v=${appVersion}"/>"          sizes="16x16">
-    <link rel="manifest"                    href="<c:url value="Images/logo/favicon/manifest.webmanifest?v=${appVersion}"/>">
-    <link rel="mask-icon"                   href="<c:url value="Images/logo/favicon/safari-pinned-tab.svg?v=${appVersion}"/>">
-<!--<link rel="shortcut icon"               href="<c:url value="Images/logo/favicon/favicon.ico?v=${appVersion}"/>"> -->
-    <link rel="shortcut icon" type="image/x-icon"  href="<c:url value="Images/logo/favicon/favicon.ico?v=${appVersion}"/>" >
-    <meta name="msapplication-TileImage"    content="<c:url value="Images/logo/favicon/mstile-144x144.png?v=${appVersion}"/>">
-    <meta name="msapplication-config"       content="<c:url value="Images/logo/favicon/browserconfig.xml?v=${appVersion}"/>">
+    <link rel="apple-touch-icon"            href="<c:url value="public/images/logo/favicon/apple-touch-icon.png?v=${appVersion}"/>"       sizes="180x180" >
+    <link rel="icon"    type="image/png"    href="<c:url value="public/images/logo/favicon/favicon-32x32.png?v=${appVersion}"/>"          sizes="32x32">
+    <link rel="icon"    type="image/png"    href="<c:url value="public/images/logo/favicon/favicon-194x194.png?v=${appVersion}"/>"        sizes="194x194">
+    <link rel="icon"    type="image/png"    href="<c:url value="public/images/logo/favicon/android-chrome-192x192.png?v=${appVersion}"/>" sizes="192x192">
+    <link rel="icon"    type="image/png"    href="<c:url value="public/images/logo/favicon/favicon-16x16.png?v=${appVersion}"/>"          sizes="16x16">
+    <link rel="manifest"                    href="<c:url value="public/images/logo/favicon/manifest.webmanifest?v=${appVersion}"/>">
+    <link rel="mask-icon"                   href="<c:url value="public/images/logo/favicon/safari-pinned-tab.svg?v=${appVersion}"/>">
+<!--<link rel="shortcut icon"               href="<c:url value="public/images/logo/favicon/favicon.ico?v=${appVersion}"/>"> -->
+    <link rel="shortcut icon" type="image/x-icon"  href="<c:url value="public/images/logo/favicon/favicon.ico?v=${appVersion}"/>" >
+    <meta name="msapplication-TileImage"    content="<c:url value="public/images/logo/favicon/mstile-144x144.png?v=${appVersion}"/>">
+    <meta name="msapplication-config"       content="<c:url value="public/images/logo/favicon/browserconfig.xml?v=${appVersion}"/>">
     <meta name="msapplication-TileColor"    content="#2d89ef">
     <meta name="theme-color"                content="#ffffff">
     <meta name="apple-mobile-web-app-title" content="Contrast Finder">
@@ -44,7 +44,7 @@
     <meta property="og:title"       content="<fmt:message key="home.titleTag"/>" />
     <meta property="og:description" content="<fmt:message key="home.metaDescription"/>" />
     <meta property="og:url"         content="${canonicalURL}" />
-    <meta property="og:image"       content="https://app.contrast-finder.org/Images/logo/contrast-finder_logo_1051x1053.png?v=${appVersion}" />
+    <meta property="og:image"       content="https://app.contrast-finder.org/public/images/logo/contrast-finder_logo_1051x1053.png?v=${appVersion}" />
 
     <!-- Social network - Twitter -->
     <meta name="twitter:card"        content="summary">
@@ -54,5 +54,5 @@
     <meta name="twitter:creator"     content="@Contrast_Finder">
     <meta name="twitter:title"       content="<fmt:message key="home.titleTag"/>" />
     <meta name="twitter:description" content="<fmt:message key="home.metaDescription"/>" />
-    <meta name="twitter:image:src"   content="https://app.contrast-finder.org/Images/logo/contrast-finder_logo_1051x1053.png?v=${appVersion}" />
+    <meta name="twitter:image:src"   content="https://app.contrast-finder.org/public/images/logo/contrast-finder_logo_1051x1053.png?v=${appVersion}" />
 </head>
