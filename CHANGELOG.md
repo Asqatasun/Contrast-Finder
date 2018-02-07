@@ -19,8 +19,8 @@ none
 - [#129 - Webapp: added custom HTTP error pages instead of Tomcat default pages](https://github.com/Asqatasun/Contrast-Finder/issues/129)
 
 ### Improvement
-- [#132 - Added new Docker image: pre-requisites_Alpine_tomcat-9)](https://github.com/Asqatasun/Contrast-Finder/issues/132)
-- [#134 - Added new Docker image: pre-requisites_Debian_tomcat-9_jre9)](https://github.com/Asqatasun/Contrast-Finder/issues/134)
+- [#132 - Added new Docker image: pre-requisites_Alpine_tomcat-9](https://github.com/Asqatasun/Contrast-Finder/issues/132)
+- [#134 - Added new Docker image: pre-requisites_Debian_tomcat-9_jre9](https://github.com/Asqatasun/Contrast-Finder/issues/134)
 - [#127 - Webapp: added contribute.json file](https://github.com/Asqatasun/Contrast-Finder/issues/127)
 - [#133 - Webapp: allowed the HTTP header "Cache-Control: immutable" for asset files (css, js, png)](https://github.com/Asqatasun/Contrast-Finder/issues/133)
 
