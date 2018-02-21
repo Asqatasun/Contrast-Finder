@@ -21,14 +21,8 @@
 
                 <%-- DEBUG   contrast-finder.conf  --%>
                 <c:if test="${env == 'debug'}">
-                    <div style="background-color:pink; padding: 0.4em;">
-                        env              <strong> ${env}                        </strong> <br>
-                        defaultAlgorithm <strong> ${defaultAlgorithm}           </strong> <br>
-                        cookie.algo      <strong> ${cookie.algo.value}          </strong> <br>
-                        algo             <strong> ${algo}                       </strong> <br>
-                    </div>
+                    <%@include file='/WEB-INF/template/env_debug-info.jspf' %>
                 </c:if>
-
 
                 <%-- ===== FORM ========================================================================================= --%>
                 <div id="set-up-form" class="row">
@@ -37,7 +31,7 @@
                         <c:set var="actionUrl">
                             <c:url value="result.html"></c:url>
                         </c:set>
-                        <form:form class="form-horizontal" name="formulaire" commandName="colorModel" method="GET"  action="${actionUrl}">
+                        <form:form class="form-horizontal" name="formulaire" modelAttribute="colorModel" method="GET"  action="${actionUrl}">
 
                             <%-- Foregound --%>
                             <c:set var="foregroundOnError">
@@ -222,13 +216,13 @@
                             </div>
                             <div class="row">
                                 <div class="result col-lg-12">
-                                    <img src="<c:url value="Images/good.jpg"/>" alt="Correct contrast"/>
+                                    <img src="<c:url value="public/${appVersion}/images/good.jpg"/>" alt="Correct contrast"/>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12" id="image-reference">
                                     <a rel="nofollow" title="Creative Commons Attribution 3.0 License" href="https://creativecommons.org/licenses/by/3.0/">
-                                        <img src="<c:url value="Images/creative_common_logo.png"/>" alt="License"> </a>
+                                        <img src="<c:url value="public/${appVersion}/images/creative_common_logo.png"/>" alt="License"> </a>
                                     <a rel="nofollow" title="Flickr: Galerie de Thomas Hawk" href="https://www.flickr.com/photos/thomashawk">Thomas Hawk</a>
                                 </div>
                             </div>
@@ -443,15 +437,15 @@
             <%@include file='/WEB-INF/template/footer.jspf' %>
 
             <!-- Javascript - Webapp -->
-            <script src="<c:url value="Js/_contrast-finder_${appVersion}.all.min.js"/>"></script>
-               <!-- <script src="<c:url value="Js/10-jquery.min.js?v=${appVersion}"/>"></script>
+            <script src="<c:url value="public/${appVersion}/js/_contrast-finder_${appVersion}.all.min.js"/>"></script>
+               <!-- <script src="<c:url value="public/${appVersion}/js/10-jquery.min.js"/>"></script>
                     <c:if test="${colorResult.numberOfSuggestedColors > 0}">
-                        <script src="<c:url value="Js/20-jquery.tablesorter.min.js?v=${appVersion}"/>"></script>
-                        <script src="<c:url value="Js/25-accessible-min.js?v=${appVersion}"/>"></script>
+                        <script src="<c:url value="public/${appVersion}/js/20-jquery.tablesorter.min.js"/>"></script>
+                        <script src="<c:url value="public/${appVersion}/js/25-accessible-min.js"/>"></script>
                     </c:if>
-                    <script src="<c:url value="Js/30-bootstrap.min.js?v=${appVersion}"/>"></script>
-                    <script src="<c:url value="Js/35-affix.js?v=${appVersion}"/>"></script>
-                    <script src="<c:url value="Js/36-sample.color.js?v=${appVersion}"/>"></script>
+                    <script src="<c:url value="public/${appVersion}/js/30-bootstrap.min.js"/>"></script>
+                    <script src="<c:url value="public/${appVersion}/js/35-affix.js"/>"></script>
+                    <script src="<c:url value="public/${appVersion}/js/36-sample.color.js"/>"></script>
                -->
 
             <!-- Javascript - Web analytics -->
@@ -459,7 +453,7 @@
             <c:set var="piwikServerURL"  value="${piwikServer}"/>
             <c:if test="${not empty piwikSiteId and not empty piwikServerURL}">
                 <!-- Piwik code-->
-                <script type="text/javascript">
+                <script>
                     var _paq = _paq || [];
                     _paq.push(["setDomains", ["*.app.contrast-finder.org","*.app.contrast-finder.org"]]);
                     _paq.push(['trackPageView']);

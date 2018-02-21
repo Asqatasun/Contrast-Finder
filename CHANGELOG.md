@@ -1,5 +1,34 @@
 # CHANGELOG
 
+Contrast-Finder 0.8.5, 2018-02-21
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+### Outdated dependencies
+- [#130 - Updated .jsp file, form tag: use "modelAttribute" instead of deprecated "commandName"](https://github.com/Asqatasun/Contrast-Finder/issues/130)
+- [#138 - Upgraded markdown-page-generator-plugin (2.1.0 instead of 2.0.1)](https://github.com/Asqatasun/Contrast-Finder/issues/138)
+- [#135 - Upgraded owasp:dependency-check (3.1.1 instead of 3.0.2)](https://github.com/Asqatasun/Contrast-Finder/issues/135)
+- [#137 - Upgraded spring-security (4.2.4 instead of 4.2.3)](https://github.com/Asqatasun/Contrast-Finder/issues/137)
+- [#139 - Upgraded javaee-web-api (8.0 instead of 7.0)](https://github.com/Asqatasun/Contrast-Finder/issues/139)
+
+### Bug
+- [#128 - Webapp: added "charset=UTF-8" HTTP header for css, js, txt, json and xml files](https://github.com/Asqatasun/Contrast-Finder/issues/128)
+- [#129 - Webapp: added custom HTTP error pages instead of Tomcat default pages](https://github.com/Asqatasun/Contrast-Finder/issues/129)
+
+### Improvement
+- [#132 - Added new Docker image: pre-requisites_Alpine_tomcat-9](https://github.com/Asqatasun/Contrast-Finder/issues/132)
+- [#134 - Added new Docker image: pre-requisites_Debian_tomcat-9_jre9](https://github.com/Asqatasun/Contrast-Finder/issues/134)
+- [#127 - Webapp: added contribute.json file](https://github.com/Asqatasun/Contrast-Finder/issues/127)
+- [#133 - Webapp: allowed the HTTP header "Cache-Control: immutable" for asset files (css, js, png)](https://github.com/Asqatasun/Contrast-Finder/issues/133)
+
+### Configuration
+- [#131 - Changed default docker image: ubuntu-16.04_tomcat-7 instead of ubuntu-14.04_tomcat-7](https://github.com/Asqatasun/Contrast-Finder/issues/131)
+
+### Documentation
+- Updated prerequisites and install documentation
+
+
 Contrast-Finder 0.8.4, 2018-01-24
 ---------------------------------
 

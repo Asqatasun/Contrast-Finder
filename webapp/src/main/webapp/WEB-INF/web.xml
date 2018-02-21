@@ -27,6 +27,34 @@
     </filter-mapping>
 
     <!--
+      add the HTTP header [ charset=UTF-8 ]
+      for css, js, txt, json and xml files
+           - but not for images files (png, jpeg)
+           - .jsp use <%@page pageEncoding="UTF-8"%>
+    -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+        <url-pattern>*.css</url-pattern>
+        <url-pattern>*.js</url-pattern>
+        <url-pattern>*.json</url-pattern>    <!-- contribute.json -->
+        <url-pattern>*.txt</url-pattern>     <!-- robots.txt, .well-known/security.txt -->
+        <url-pattern>*.xml</url-pattern>     <!-- */favicon/browserconfig.xml          -->
+    </filter-mapping>
+
+    <!--
       - Loads the root application context of this web app at startup.
       - The application context is then available via
       - WebApplicationContextUtils.getWebApplicationContext(servletContext).
@@ -61,75 +89,98 @@
     <welcome-file-list>
         <welcome-file>form.html</welcome-file>
     </welcome-file-list>
-<!--
+
+    <!-- URL rewrite filter for asset files (css, js, png, jpg, ...)
+         http://tuckey.org/urlrewrite/
+         https://github.com/paultuckey/urlrewritefilter    -->
+    <filter>
+        <filter-name>UrlRewriteFilter</filter-name>
+        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+        <init-param>
+            <param-name>modRewriteConfText</param-name>
+            <param-value>
+                <!-- used public/css/     insteaf of  public/<version>/css/
+                     used public/js/      insteaf of  public/<version>/js/
+                     used public/images/  insteaf of  public/<version>/images/           -->
+                RewriteRule public/([0-9]{1,2}).([0-9]{1,2}).([0-9]{1,2})(|-SNAPSHOT)/(.+).(css|js|png|jpg|jpeg|xml|webmanifest|json)$ public/$5.$6 [L]
+            </param-value>
+        </init-param>
+    </filter>
+  <filter-mapping>
+       <filter-name>UrlRewriteFilter</filter-name>
+       <url-pattern>/public/*</url-pattern>
+       <dispatcher>REQUEST</dispatcher>
+       <dispatcher>FORWARD</dispatcher>
+   </filter-mapping>
+
+   <!-- Custom error pages -->
     <error-page>
         <error-code>400</error-code>
-        <location>/access-denied.html</location>
+        <location>/WEB-INF/pages/error/error_4xx.html</location>
     </error-page>
     <error-page>
         <error-code>401</error-code>
-        <location>/access-denied.html</location>
+        <location>/WEB-INF/pages/error/error_4xx.html</location>
     </error-page>
     <error-page>
         <error-code>403</error-code>
-        <location>/access-denied.html</location>
+        <location>/WEB-INF/pages/error/error_4xx.html</location>
     </error-page>
     <error-page>
         <error-code>404</error-code>
-        <location>/access-denied.html</location>
+        <location>/WEB-INF/pages/error/error_4xx.html</location>
     </error-page>
     <error-page>
         <error-code>405</error-code>
-        <location>/access-denied.html</location>
+        <location>/WEB-INF/pages/error/error_4xx.html</location>
     </error-page>
     <error-page>
         <error-code>500</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>501</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>502</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>503</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>504</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>505</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>506</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>507</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>508</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>509</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>510</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
     <error-page>
         <error-code>520</error-code>
-        <location>/oups.html</location>
+        <location>/WEB-INF/pages/error/error_5xx.html</location>
     </error-page>
- -->
 
 </web-app>

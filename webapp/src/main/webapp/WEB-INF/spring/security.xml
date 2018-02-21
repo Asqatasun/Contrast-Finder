@@ -51,9 +51,9 @@
             </user-service>
             ___________________________________________________
             // works with HTTP headers (X-FRAME, ...) but added no-cache HTTP headers
-            // Css/Js/image  : not added HTTP headers / 304 for repeat view
-            <http security="none" pattern="/Css/**"/>
-            <http security="none" pattern="/Js/**"/>
+            // CSS, JS and  Image  : not added HTTP headers / 304 for repeat view
+            <http security="none" pattern="/public/css/**"/>
+            <http security="none" pattern="/public/js/**"/>
             <http security="none" pattern="/Image/**"/>
             <http>
                 <form-login />
