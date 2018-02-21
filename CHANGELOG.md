@@ -16,6 +16,7 @@ none
 - [#138 - Upgraded markdown-page-generator-plugin (2.1.0 instead of 2.0.1)](https://github.com/Asqatasun/Contrast-Finder/issues/138)
 - [#135 - Upgraded owasp:dependency-check (3.1.1 instead of 3.0.2)](https://github.com/Asqatasun/Contrast-Finder/issues/135)
 - [#137 - Upgraded spring-security (4.2.4 instead of 4.2.3)](https://github.com/Asqatasun/Contrast-Finder/issues/137)
+- [#139 - Upgraded javaee-web-api (8.0 instead of 7.0)](https://github.com/Asqatasun/Contrast-Finder/issues/139)
 
 ### Bug
 - [#128 - Webapp: added "charset=UTF-8" HTTP header for css, js, txt, json and xml files](https://github.com/Asqatasun/Contrast-Finder/issues/128)

@@ -32,19 +32,17 @@
         <spring-security.version>4.2.4.RELEASE</spring-security.version>
         <htmlcompressor.version>1.5.2</htmlcompressor.version>
         <taglibs-standard-jstlel.version>1.2.5</taglibs-standard-jstlel.version>
-        <javaee-web-api.version>7.0</javaee-web-api.version>
+        <javaee-web-api.version>8.0</javaee-web-api.version> <!-- need Maven with Jdk-8  -->
         <validation-api.version>1.1.0.Final</validation-api.version>
-        <!-- <javaee-web-api.version>8.0</javaee-web-api.version>
-             not valid for maven width Jdk-7 (like Travis Jdk-7) -->
         <!-- <validation-api.version>2.0.0.Final</validation-api.version>
-             not valid for Tomcat-7 width Jdk-7                  -->
+             not valid for Tomcat-7 with Jdk-7                  -->
 
         <!-- Plugin Versions -->
         <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
         <maven-dependency-plugin.version>3.0.2</maven-dependency-plugin.version>
         <native2ascii-maven-plugin.version>2.0.0</native2ascii-maven-plugin.version>
         <yuicompressor-maven-plugin.version>1.5.1</yuicompressor-maven-plugin.version>
-        <jdeb.version>1.6</jdeb.version>
+        <jdeb.version>1.6</jdeb.version> <!-- need Maven with Jdk-8  -->
     </properties>
     <build>
         <finalName>contrast-finder-webapp_${project.version}</finalName>
