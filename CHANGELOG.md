@@ -13,6 +13,8 @@ none
 
 ### Outdated dependencies
 - [#130 - Updated .jsp file, form tag: use "modelAttribute" instead of deprecated "commandName"](https://github.com/Asqatasun/Contrast-Finder/issues/130)
+- [#135 - Upgraded org.owasp:dependency-check (3.1.1 instead of 3.0.2)](https://github.com/Asqatasun/Contrast-Finder/issues/135)
+- [#138 - Upgraded markdown-page-generator-plugin (2.1.0 instead of 2.0.1)](https://github.com/Asqatasun/Contrast-Finder/issues/138)
 
 ### Bug
 - [#128 - Webapp: added "charset=UTF-8" HTTP header for css, js, txt, json and xml files](https://github.com/Asqatasun/Contrast-Finder/issues/128)
