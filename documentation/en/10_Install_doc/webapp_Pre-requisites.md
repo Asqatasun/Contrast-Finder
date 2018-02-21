@@ -2,17 +2,20 @@
 
 ## Prerequesites
 
-* Tomcat 7 or Tomcat 8
+* Tomcat 7 (Jdk-7 or Jdk-8), Tomcat 8 or Tomcat 9
 
+### Linux
 
-### Linux Ubuntu 14.04 and 16.04 
+#### Tomcat 8 - Debian 9, Ubuntu 16.04 or Ubuntu 18.04  (next LTS)
+
+```bash
+apt-get --no-install-recommends install  tomcat8
+```
+
+#### Tomcat 7 - Ubuntu 14.04 or Ubuntu 16.04
 
 ```bash
 apt-get --no-install-recommends install  tomcat7
 ```
 
-### Linux Ubuntu 16.04
 
-```bash
-apt-get --no-install-recommends install  tomcat8
-```

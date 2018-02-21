@@ -3,11 +3,14 @@
 You should have already [check pre-requisites](webapp_Pre-requisites.md)
 
 
-## How to install
+## How to install (Linux)
 
-### Linux Ubuntu 14.04 and 16.04 
+### Tomcat 8 - Debian 9, Ubuntu 16.04 or Ubuntu 18.04  (next LTS)
 
-Once you've built, let say you have Tomcat 7 (change the number if you have Tomcat 8 or more):
+You just need to replace `tomcat7` with `tomcat8` in the following command lines.
+
+
+### Tomcat 7 - Ubuntu 14.04 or Ubuntu 16.04
 
 ```bash
 cd /tmp
@@ -40,3 +43,6 @@ sudo vim       contrast-finder.conf
 sudo chown -Rv tomcat7 /etc/contrast-finder/
 sudo service   tomcat7 restart
 ```
+
+
+
