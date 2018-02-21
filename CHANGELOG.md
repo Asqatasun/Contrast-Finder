@@ -1,15 +1,9 @@
 # CHANGELOG
 
-Contrast-Finder 0.8.5, 2018-02-xx
+Contrast-Finder 0.8.5, 2018-02-21
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
-
-### New Feature
-none
-
-### Security
-none
 
 ### Outdated dependencies
 - [#130 - Updated .jsp file, form tag: use "modelAttribute" instead of deprecated "commandName"](https://github.com/Asqatasun/Contrast-Finder/issues/130)
@@ -28,17 +22,11 @@ none
 - [#127 - Webapp: added contribute.json file](https://github.com/Asqatasun/Contrast-Finder/issues/127)
 - [#133 - Webapp: allowed the HTTP header "Cache-Control: immutable" for asset files (css, js, png)](https://github.com/Asqatasun/Contrast-Finder/issues/133)
 
-### Refactoring
-none
-
 ### Configuration
 - [#131 - Changed default docker image: ubuntu-16.04_tomcat-7 instead of ubuntu-14.04_tomcat-7](https://github.com/Asqatasun/Contrast-Finder/issues/131)
 
 ### Documentation
 - Updated prerequisites and install documentation
-
-### Task
-none
 
 
 Contrast-Finder 0.8.4, 2018-01-24
