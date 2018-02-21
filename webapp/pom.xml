@@ -29,7 +29,7 @@
 
         <!-- Dependency Versions -->
         <spring.version>4.3.14.RELEASE</spring.version>
-        <spring-security.version>4.2.3.RELEASE</spring-security.version>
+        <spring-security.version>4.2.4.RELEASE</spring-security.version>
         <htmlcompressor.version>1.5.2</htmlcompressor.version>
         <taglibs-standard-jstlel.version>1.2.5</taglibs-standard-jstlel.version>
         <javaee-web-api.version>7.0</javaee-web-api.version>
