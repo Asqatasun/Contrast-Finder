@@ -5,6 +5,8 @@ Contrast-Finder 0.8.6, 2018-03-xx
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
+Thanks to @ArnaudDelafosse for #142
+
 ### New Feature
 none
 
@@ -27,7 +29,7 @@ none
 none
 
 ### Documentation
-none
+- [#142 - Howto-use.md improvements (syntax corrections, match titles to application labels)](https://github.com/Asqatasun/Contrast-Finder/issues/142)
 
 ### Task
 none
@@ -142,6 +144,8 @@ Contrast-Finder 0.8.1, 2017-08-05
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
+Thanks to @miname for #88
+
 ### Improvement 
 - [#90 - Added `<link rel="alternate" hreflang="">`](https://github.com/Asqatasun/Contrast-Finder/issues/90)
 - [#88 - Added missing Korean translations](https://github.com/Asqatasun/Contrast-Finder/issues/88)
@@ -151,6 +155,8 @@ Contrast-Finder 0.8.0, 2017-08-03
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+Thanks to @miname for #85
 
 ### New Feature
 - [#85 - Added Korean translation](https://github.com/Asqatasun/Contrast-Finder/issues/85)
@@ -185,6 +191,8 @@ Contrast-Finder 0.6.0, 2017-07-21
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+Thanks to @Rui20 and @Kaths31 for #80
 
 ### New Feature
 - [#80 - i18n: added portuguese](https://github.com/Asqatasun/Contrast-Finder/issues/80)
