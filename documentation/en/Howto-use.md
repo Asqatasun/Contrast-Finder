@@ -1,45 +1,38 @@
 
 # Howto use
 
-## What is Contrast Finder ?
+## What is Contrast Finder?
 
 * Contrast Finder is a tool which computes the contrast between two colors (background, foreground) and checks if the contrast is valid.
 * When the contrast is not valid, the main target is to suggest some correct colors contrasts.
 
-Contrast finder is designed to be used by webdesigner, webdeveloppers or e-accessibility professionals.
+Contrast finder is designed to be used by webdesigners, webdeveloppers or e-accessibility professionals.
 
-## How to use this tool ?
+## How to use this tool?
 
 The interface is a form, with five fields.
 ![Screenshot - Contrast-Finder v0.5.2](images/screenshot/screenshot.EN_contrast-finder.v0.5.2_2017-07-27_grey_kraken.io-lossy.png)
 
-## The foreground
+## Text color
 
-It is the text color. You can fill in this field with an hexadecimal value.
+It is the foreground color. You can fill in this field with an hexadecimal value.
 i.e. #AABBCC color (Note that #ABC works also, we automatically complete the field with #AABBCC).
 You can also use this field without the '#'character, so FFF or FFFFFF works perfectly.
 The input value is then previewed on the right of the field.
 
-## The background
+## Background color
 
-It is the background color.
-This field works as the foreground fields.
+This field works just like the text color field.
 
-## Component to edit
-
-It is either the foreground or the background. Default is foreground.
-The component you choose will be modified until we find a valid color.
-The other color won't change.
-
-## The ratio
+## Minimum ratio
 
 Three possible values 3, 4.5 and 7.
 
-How to choose a ratio ? It depends on the following elements:
+How to choose a ratio? It depends on the following elements:
 
 * Level of accessibility wanted: AA or AAA.
 * Size of the text.
-* Is the text bold or not.
+* Is the text bold or not?
 
 ### Level AA
 
@@ -52,10 +45,10 @@ Two elements (size and bold) gives four combinations:
 
 ### Level AAA
 
-For level AAA the logic is the same one, only the ratio increases in the the following way:
+For level AAA the logic is the same, only the ratios increase in the the following way:
 
-* 4.5 ratio become 7
-* 3 ratio become 4.5
+* 4.5 ratio becomes 7
+* 3 ratio becomes 4.5
 
 Which gives extensively the following:
 
@@ -73,19 +66,25 @@ For a full and exhaustive understanding of how to interpret text size, one shoul
 
 ### Other info
 
-All details about the contrast ratio :
+All details about the contrast ratio:
 
 * https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
 * https://www.w3.org/TR/WCAG20/#contrast-ratiodef
 * https://www.w3.org/TR/WCAG20/relative-luminance.xml
 
-##  The algorithms
+## Color to edit
 
-The first one is "valid colors". The result is a wide range of colors.
-This algorithm is very helpful if you are not sure about the hue of your initial color.
+It is either the text or background color. Default is text color.
+The component you choose will be modified until we find a valid color.
+The other color won't change.
 
-The second one is "valid colors and very close to initial color". The result is a list of colors close to the original color. The aim is to have a valid color with a contrast as close to the selected ratio as possible (At the 0.001 range). 
+##  Gimme/The algorithms
 
-More informations about  [the algorithms](The-algorithms.md) here.
+The first value is "Valid colors and very close to initial color". The result is a list of colors close to the original color. The aim is to have a valid color with a contrast as close to the selected ratio as possible (At the 0.001 range).
+
+The second value is "A range of valid colors". The result is a wide range of colors.
+This algorithm is very helpful if you are not sure about the hue of your initial color. 
+
+More informations about [the algorithms](The-algorithms.md) here.
 
 
