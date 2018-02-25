@@ -15,7 +15,7 @@ none
 none
 
 ### Bug
-none
+- [#141 - Webapp: allowed favicon/*.ico and *.svg files (fixed url rewrite)](https://github.com/Asqatasun/Contrast-Finder/issues/141)
 
 ### Improvement
 none
