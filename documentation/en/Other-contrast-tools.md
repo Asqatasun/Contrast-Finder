@@ -11,7 +11,7 @@
 ## Other contrast tools (which are actually good, but it appears we don't them)
 
 * http://webaim.org/resources/contrastchecker/
-* http://contrastchecker.com/
+* https://contrastchecker.com/
 * http://leaverou.github.io/contrast-ratio/
     * src: https://github.com/LeaVerou/contrast-ratio
 * http://juicystudio.com/services/luminositycontrastratio.php
@@ -29,6 +29,8 @@
     * src: https://github.com/donnieberg/accessible-color-palette/
 * https://ryanhemphill.github.io/contrast-colorblind-colorpicker/
     * src: https://github.com/ryanhemphill/contrast-colorblind-colorpicker
+* [Accessible Color Spaces](https://github.com/KevinGutowski/KevinGutowski.github.io)
+    * src: http://kevingutowski.github.io/color.html
 * https://github.com/johnotander/get-contrast
 * http://www.randoma11y.com/
 * https://www.joedolson.com/tools/color-contrast-tester.php
@@ -44,6 +46,13 @@
     * http://jxnblk.com/colorable/demos/matrix/
     * http://www.aremycoloursaccessible.com/
 * [Sass Contrast Functions](https://codepen.io/giana/project/full/ZWbGzD)
+* [**Color Contrast Analyzer** extension for Chrome](https://chrome.google.com/webstore/detail/color-contrast-analyzer/dagdlcijhfbmgkjokkjicnnfimlebcll) (analyse a screenshot / works for text images)
+    * src: https://github.com/gdkraus/color-contrast-chrome
+* [**WCAG Contrast checker** extension for Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)
+* [**WCAG Contrast checker** extension for Chrome](https://chrome.google.com/webstore/detail/wcag-contrast-checker/plnahcmalebffmaghcpcmpaciebdhgdf)
+    * src: https://github.com/rumoroso/colorChecker
+
+
 
 ### Color scheme generation
 
@@ -52,6 +61,10 @@
 
 ### Vision simulation
 
+* NoCoffee 
+  - src: https://github.com/eeejay/NoCoffee
+  - [**NoCoffee** extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/nocoffee/)
+  - [**NoCoffee** extension for Chrome](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl)
 * http://paletton.com/ very popular but n real option for accessibility (as of 2016), and not opensource
 * http://carlosrafaelgn.com.br/Aula/Cores.html (not opensource, in Portuguese)
 * http://www.getstark.co/
