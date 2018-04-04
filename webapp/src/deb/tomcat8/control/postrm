@@ -21,11 +21,11 @@ echo "-----------------------------------"
 echo "----> postrm script for contrast-finder-webapp"
 case "$1" in
   purge)
-    echo "----> nothing to do for \`$1'" 
+    echo "----> nothing to do for \`$1'"
   ;;
 
   remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
-    echo "----> nothing to do for \`$1'" 
+    echo "----> nothing to do for \`$1'"
   ;;
 
   *)

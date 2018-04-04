@@ -13,16 +13,16 @@ import org.junit.Test;  // Junit 4 anotation @Test
  * @author alingua
  */
 public class AbstractColorFinderImplTest extends TestCase {
-    
+
     public AbstractColorFinderImplTest(String testName) {
         super(testName);
     }
-    
+
     @Override
     protected void setUp() throws Exception {
         super.setUp();
     }
-    
+
     @Override
     protected void tearDown() throws Exception {
         super.tearDown();
@@ -91,16 +91,16 @@ public class AbstractColorFinderImplTest extends TestCase {
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
-    
+
 
     /**
-     * 
-     * 
+     *
+     *
      */
     public class AbstractColorFinderImplImpl extends AbstractColorFinder {
 
         private boolean isFindColorsCalled = false;
-        
+
         public AbstractColorFinderImplImpl() {
             super(null, null);
         }
@@ -111,7 +111,7 @@ public class AbstractColorFinderImplTest extends TestCase {
 
         @Override
         public String getColorFinderKey() {
-            throw new UnsupportedOperationException("Not supported yet."); 
+            throw new UnsupportedOperationException("Not supported yet.");
         }
     }
 }

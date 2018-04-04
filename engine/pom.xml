@@ -21,7 +21,7 @@
     <organization>
         <name>Asqatasun.org</name>
         <url>https://asqatasun.org</url>
-    </organization>   
+    </organization>
 
     <modules>
         <module>api</module>

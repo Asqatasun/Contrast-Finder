@@ -3,13 +3,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context-4.3.xsd">
- 
+
     <!-- Les balises suivantes permettent de préciser que la configuration passe par les annotations  -->
-    <context:annotation-config/> 
+    <context:annotation-config/>
     <context:component-scan base-package= "org.asqatasun" />
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
@@ -18,11 +18,11 @@
         <property name="ignoreResourceNotFound"         value="true" />
         <property name="ignoreUnresolvablePlaceholders" value="true" />
     </bean>
-    
+
     <import resource="conf/mvc/cf-beans-resolver.xml"/>
     <import resource="conf/mvc/cf-beans-controller.xml"/>
     <import resource="conf/mvc/cf-beans-i18n.xml"/>
     <import resource="conf/mvc/cf-beans-model.xml"/>
     <import resource="conf/mvc/cf-beans-locale.xml"/>
-    
+
 </beans>

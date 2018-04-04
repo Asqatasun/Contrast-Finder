@@ -43,7 +43,7 @@ public class ColorFinderHsvPsycho extends AbstractColorFinder {
     public static final float DEFAULT_MAX_COEFFICIENT = 0.001f;
     public static final float DEFAULT_HUE_BOUNDER = 10.0f;
     public static final float DEFAULT_COLOR_COMPONENT_BOUNDER = 40.0f;
-    
+
     private float hueBounder = DEFAULT_HUE_BOUNDER;
     private float maxMoveHue = UNITARY_STEP_HUE * hueBounder;
     private float maxCoefficient = DEFAULT_MAX_COEFFICIENT;

@@ -85,7 +85,7 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
    - [#125 - Contrast-Finder build need openjdk 8 (prerequisite jdeb)](https://github.com/Asqatasun/Contrast-Finder/issues/125)
 
 ### Improvement
-- [#110 - Added new docker image: ubuntu 16.04 (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/110) 
+- [#110 - Added new docker image: ubuntu 16.04 (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/110)
 - [#112 - Added new docker image: alpine (tomcat-7)](https://github.com/Asqatasun/Contrast-Finder/issues/112)
 - [#116 - Added new docker image: alpine (tomcat-8.5)](https://github.com/Asqatasun/Contrast-Finder/issues/116)
 - [#117 - Added some new pre-requisites_* Docker images (debian 9, ubuntu 18.04)](https://github.com/Asqatasun/Contrast-Finder/issues/117)
@@ -111,16 +111,16 @@ Contrast-Finder 0.8.3, 2017-11-28
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 ### Outdated dependencies
-- [#100 - Upgraded SpringFramework (4.3.13 instead of 4.3.12)](https://github.com/Asqatasun/Contrast-Finder/issues/100) 
-- [#101 - Upgraded commons-lang3 (3.7 instead of 3.6)](https://github.com/Asqatasun/Contrast-Finder/issues/101) 
-- [#102 - Upgraded markdown-page-generator-plugin (2.0.0 instead of 1.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/102) 
-- [#103 - Upgraded maven-javadoc-plugin (3.0.0-M1 instead of 2.10.4)](https://github.com/Asqatasun/Contrast-Finder/issues/103) 
-- [#105 - Upgraded org.owasp:dependency-check (3.0.2 instead of 1.4.5)](https://github.com/Asqatasun/Contrast-Finder/issues/105) 
+- [#100 - Upgraded SpringFramework (4.3.13 instead of 4.3.12)](https://github.com/Asqatasun/Contrast-Finder/issues/100)
+- [#101 - Upgraded commons-lang3 (3.7 instead of 3.6)](https://github.com/Asqatasun/Contrast-Finder/issues/101)
+- [#102 - Upgraded markdown-page-generator-plugin (2.0.0 instead of 1.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/102)
+- [#103 - Upgraded maven-javadoc-plugin (3.0.0-M1 instead of 2.10.4)](https://github.com/Asqatasun/Contrast-Finder/issues/103)
+- [#105 - Upgraded org.owasp:dependency-check (3.0.2 instead of 1.4.5)](https://github.com/Asqatasun/Contrast-Finder/issues/105)
 
 ### Task
-- [#104 - Added maven-jxr-plugin (needed for maven-checkstyle-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/104) 
-- [#106 - Added unit tests coverage report (jacoco-maven-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/106) 
-- [#107 - Added missing unit tests for engine/utils/*](https://github.com/Asqatasun/Contrast-Finder/issues/107) 
+- [#104 - Added maven-jxr-plugin (needed for maven-checkstyle-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/104)
+- [#106 - Added unit tests coverage report (jacoco-maven-plugin)](https://github.com/Asqatasun/Contrast-Finder/issues/106)
+- [#107 - Added missing unit tests for engine/utils/*](https://github.com/Asqatasun/Contrast-Finder/issues/107)
 
 
 Contrast-Finder 0.8.2, 2017-10-28
@@ -129,19 +129,19 @@ Contrast-Finder 0.8.2, 2017-10-28
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 ### Outdated dependencies
-- [#93 - Upgraded maven-*-plugin (compiler, dependency, surefire and war)](https://github.com/Asqatasun/Contrast-Finder/issues/93) 
-- [#94 - Upgraded SpringFramework (4.3.12 instead of 4.3.10)](https://github.com/Asqatasun/Contrast-Finder/issues/94) 
+- [#93 - Upgraded maven-*-plugin (compiler, dependency, surefire and war)](https://github.com/Asqatasun/Contrast-Finder/issues/93)
+- [#94 - Upgraded SpringFramework (4.3.12 instead of 4.3.10)](https://github.com/Asqatasun/Contrast-Finder/issues/94)
 
 ### Bugs
 - fixed `build_and_run-with-docker.sh` script:
-     - [#97, log_processing() fails when there is no WARNING](https://github.com/Asqatasun/Contrast-Finder/issues/97) 
-     - [#95, "-t" option is used 2 times](https://github.com/Asqatasun/Contrast-Finder/issues/95) 
+     - [#97, log_processing() fails when there is no WARNING](https://github.com/Asqatasun/Contrast-Finder/issues/97)
+     - [#95, "-t" option is used 2 times](https://github.com/Asqatasun/Contrast-Finder/issues/95)
 
 ### Documentation
 - refactor build documentation
 
 ### Task
-- [fixed #99 / pom.xml file: replaced "-dev" by "-SNAPSHOT"](https://github.com/Asqatasun/Contrast-Finder/issues/99)  
+- [fixed #99 / pom.xml file: replaced "-dev" by "-SNAPSHOT"](https://github.com/Asqatasun/Contrast-Finder/issues/99)
 
 
 Contrast-Finder 0.8.1, 2017-08-05
@@ -151,7 +151,7 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 Thanks to @miname for PR #88
 
-### Improvement 
+### Improvement
 - [#90 - Added `<link rel="alternate" hreflang="">`](https://github.com/Asqatasun/Contrast-Finder/issues/90)
 - [#88 - Added missing Korean translations](https://github.com/Asqatasun/Contrast-Finder/issues/88)
 
@@ -169,7 +169,7 @@ Thanks to @miname for PR #85
 ### Bug
 - [#83 - i18n: fixed spelling error](https://github.com/Asqatasun/Contrast-Finder/issues/#83)
 
-### Improvement 
+### Improvement
 - [#87 - build_and_run-with-docker.sh - Added new option (--log-build)](https://github.com/Asqatasun/Contrast-Finder/issues/#87)
 
 ### Documentation
@@ -206,10 +206,10 @@ Thanks to @Rui20 and @Kaths31 for PR #80
 - [#59 - Upgraded SpringFramework to v4.3.10](https://github.com/Asqatasun/Contrast-Finder/issues/59)
 
 ### Refactoring
-- [#76 - i18n files in UTF8 character encoding](https://github.com/Asqatasun/Contrast-Finder/issues/76) 
+- [#76 - i18n files in UTF8 character encoding](https://github.com/Asqatasun/Contrast-Finder/issues/76)
 
 ### Task
-- [#79 - Pom.xml: added maven-checkstyle-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/79) 
+- [#79 - Pom.xml: added maven-checkstyle-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/79)
 
 
 Contrast-Finder 0.5.2, 2017-07-04
@@ -218,22 +218,22 @@ Contrast-Finder 0.5.2, 2017-07-04
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 ### Security
-- [#70 - Upgraded commons-lang3: 3.6 instead of 3.5](https://github.com/Asqatasun/Contrast-Finder/issues/70) 
+- [#70 - Upgraded commons-lang3: 3.6 instead of 3.5](https://github.com/Asqatasun/Contrast-Finder/issues/70)
 
 ### Bug
-- [#74 - Javascript: allowed only valid RGB values](https://github.com/Asqatasun/Contrast-Finder/issues/74) 
+- [#74 - Javascript: allowed only valid RGB values](https://github.com/Asqatasun/Contrast-Finder/issues/74)
 
-### Improvement 
-- [#72 - UI, used the CSS "user-select:all" property for color result](https://github.com/Asqatasun/Contrast-Finder/issues/72) 
-- [#67 - UI, replaced radio button by drop-down list for algo](https://github.com/Asqatasun/Contrast-Finder/issues/67) 
-- [#73 - UI, improved color sample when user use the color field](https://github.com/Asqatasun/Contrast-Finder/issues/73) 
+### Improvement
+- [#72 - UI, used the CSS "user-select:all" property for color result](https://github.com/Asqatasun/Contrast-Finder/issues/72)
+- [#67 - UI, replaced radio button by drop-down list for algo](https://github.com/Asqatasun/Contrast-Finder/issues/67)
+- [#73 - UI, improved color sample when user use the color field](https://github.com/Asqatasun/Contrast-Finder/issues/73)
 
 ### Refactoring
-- [#75 - Remove unused dependencies: httpclient + json](https://github.com/Asqatasun/Contrast-Finder/issues/75)  
+- [#75 - Remove unused dependencies: httpclient + json](https://github.com/Asqatasun/Contrast-Finder/issues/75)
 
 ### Task
-- [#68 - tar.gz - Changelog and readme files in html format](https://github.com/Asqatasun/Contrast-Finder/issues/68) 
-- [#69 - tar.gz - Documentation files in html format](https://github.com/Asqatasun/Contrast-Finder/issues/69) 
+- [#68 - tar.gz - Changelog and readme files in html format](https://github.com/Asqatasun/Contrast-Finder/issues/68)
+- [#69 - tar.gz - Documentation files in html format](https://github.com/Asqatasun/Contrast-Finder/issues/69)
 
 
 Contrast-Finder 0.5.1, 2017-06-14
@@ -242,16 +242,16 @@ Contrast-Finder 0.5.1, 2017-06-14
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 ### Security
-- [#65 - Upgraded spring-security to v4.2.3](https://github.com/Asqatasun/Contrast-Finder/issues/65) 
+- [#65 - Upgraded spring-security to v4.2.3](https://github.com/Asqatasun/Contrast-Finder/issues/65)
 
 ### Bug
 - [#61 - Added missing color names (*Grey + RebeccaPurple)](https://github.com/Asqatasun/Contrast-Finder/issues/61)
 - [#63 - Allowed "rgb(255,255,255" value for "rgb(255,255,255)" in the form](https://github.com/Asqatasun/Contrast-Finder/issues/63)
-- Fixed some codacy "error prone" + "code style" 
+- Fixed some codacy "error prone" + "code style"
 
 ### Refactoring
-- [#66 - Modified project directories](https://github.com/Asqatasun/Contrast-Finder/issues/66)  
-- [#64 - Moved contrast-finder.log|.conf files into webapp directory](https://github.com/Asqatasun/Contrast-Finder/issues/64) 
+- [#66 - Modified project directories](https://github.com/Asqatasun/Contrast-Finder/issues/66)
+- [#64 - Moved contrast-finder.log|.conf files into webapp directory](https://github.com/Asqatasun/Contrast-Finder/issues/64)
 
 
 Contrast-Finder 0.5.0, 2017-06-09
@@ -272,7 +272,7 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 - [#58 - Associated the user tips with the color fields](https://github.com/Asqatasun/Contrast-Finder/issues/58)
 - [#60 - Added the "required" attribute to the color fields](https://github.com/Asqatasun/Contrast-Finder/issues/60)
 
-### Configuration 
+### Configuration
 - [#52 - contrast-finder.conf: added option for debugging](https://github.com/Asqatasun/Contrast-Finder/issues/52)
 
 
@@ -291,14 +291,14 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 - [#45 - Fixed docker/pre-requisites: syntax error](https://github.com/Asqatasun/Contrast-Finder/issues/45)
 - [#46 - Fixed maven warnings: 'version' contains an expression but should be a constant](https://github.com/Asqatasun/Contrast-Finder/issues/46)
 
-### Configuration 
-- [#50 - contrast-finder.conf: added option to override the default algorithm](https://github.com/Asqatasun/Contrast-Finder/issues/50) 
-- [#47 - Added prerequisites for maven (version 3.1)](https://github.com/Asqatasun/Contrast-Finder/issues/47) 
-- [#49 - Dockerfile: added HEALTHCHECK instruction](https://github.com/Asqatasun/Contrast-Finder/issues/49) 
+### Configuration
+- [#50 - contrast-finder.conf: added option to override the default algorithm](https://github.com/Asqatasun/Contrast-Finder/issues/50)
+- [#47 - Added prerequisites for maven (version 3.1)](https://github.com/Asqatasun/Contrast-Finder/issues/47)
+- [#49 - Dockerfile: added HEALTHCHECK instruction](https://github.com/Asqatasun/Contrast-Finder/issues/49)
 
 ### Documentation
-- [#42 - Fixed Javadoc warnings](https://github.com/Asqatasun/Contrast-Finder/issues/42) 
-- [#12 - Added documentation for releasing a new version](https://github.com/Asqatasun/Contrast-Finder/issues/12) 
+- [#42 - Fixed Javadoc warnings](https://github.com/Asqatasun/Contrast-Finder/issues/42)
+- [#12 - Added documentation for releasing a new version](https://github.com/Asqatasun/Contrast-Finder/issues/12)
 
 
 Contrast-Finder 0.4.6, 2017-04-12
@@ -309,11 +309,11 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 ### Security
 - [#35 - Added HTTP security headers without HTTP no-cache headers](https://github.com/Asqatasun/Contrast-Finder/issues/35)
 - [#36 - Added the maven plugin "OWASP Dependency-Check"](https://github.com/Asqatasun/Contrast-Finder/issues/36)
-- [#38 - Upgraded maven-compiler-plugin and maven-surefire-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/38) 
-- [#41 - Upgraded the outdated dependencies](https://github.com/Asqatasun/Contrast-Finder/issues/41) 
+- [#38 - Upgraded maven-compiler-plugin and maven-surefire-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/38)
+- [#41 - Upgraded the outdated dependencies](https://github.com/Asqatasun/Contrast-Finder/issues/41)
 
 ### Bug
-- [#43 - contrast-finder.conf is not required](https://github.com/Asqatasun/Contrast-Finder/issues/43) 
+- [#43 - contrast-finder.conf is not required](https://github.com/Asqatasun/Contrast-Finder/issues/43)
 
 ### Configuration
 - [#37 - Added maven-javadoc-plugin](https://github.com/Asqatasun/Contrast-Finder/issues/37)
@@ -440,10 +440,10 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 ### Bug
 - [#7 Paths to CSS files should be relative](https://github.com/Asqatasun/Contrast-Finder/issues/7)
-- Added locally JQuery & JQuery-UI 
+- Added locally JQuery & JQuery-UI
 
 ### Documentation
-- Updated install doc 
+- Updated install doc
 
 
 Fork from Tanaguru/Contrast-Finder

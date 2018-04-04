@@ -16,10 +16,10 @@
     * src: https://github.com/LeaVerou/contrast-ratio
 * http://juicystudio.com/services/luminositycontrastratio.php
 * http://vanisoft.pl/~lopuszanski/public/colors/
-* http://www.brandwood.com/a11y/ 
+* http://www.brandwood.com/a11y/
     * src: https://github.com/andrewbrandwood/a11y-image-text
 
-### Other contrast tools 
+### Other contrast tools
 
 * http://www.aremycolorsaccessible.com/
 * https://developer.paciellogroup.com/resources/contrastanalyser/
@@ -61,7 +61,7 @@
 
 ### Vision simulation
 
-* NoCoffee 
+* NoCoffee
   - src: https://github.com/eeejay/NoCoffee
   - [**NoCoffee** extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/nocoffee/)
   - [**NoCoffee** extension for Chrome](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl)

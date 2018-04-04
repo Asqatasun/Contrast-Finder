@@ -22,14 +22,14 @@ echo "----> postinst script for contrast-finder-webapp"
 case "$1" in
 
   configure)
-    echo "----> nothing to do for \`$1'" 
+    echo "----> nothing to do for \`$1'"
     echo ""
     echo "default URL: "
     echo "http://localhost:8080/contrast-finder/"
   ;;
 
   abort-upgrade|abort-remove|abort-deconfigure)
-    echo "----> nothing to do for \`$1'" 
+    echo "----> nothing to do for \`$1'"
   ;;
 
   *)

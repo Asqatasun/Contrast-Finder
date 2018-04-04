@@ -51,7 +51,7 @@ D <meter value="7.0" min="0" max="10" low="3" optimum="4.5" ></meter>
           value 7.0 - min 0 - max 10 - low 3 - optimun 4.5 <br>
 E <meter value="9.0" min="0" max="10" low="3" optimum="4.5" ></meter>
           value 9.0 - min 0 - max 10 - low 3 - optimun 4.5 <br>
- 
+
 <hr>
 <h1>  min 1 / max 21 / optimum 4.5 / low 3 </h1>
 A <meter value="2.9" min="1" max="21" low="3" optimum="4.5" ></meter>
@@ -140,7 +140,7 @@ D <meter value="7.0" min="0" max="10" low="3" high="4.5" ></meter>
           value 7.0 - min 0 - max 10 - low 3 - optimun 4.5 <br>
 E <meter value="9.0" min="0" max="10" low="3" high="4.5" ></meter>
           value 9.0 - min 0 - max 10 - low 3 - optimun 4.5 <br>
- 
+
 <hr>
 <h1>  min 1 / max 21 / high 4.5 / low 3 </h1>
 A <meter value="2.9" min="1" max="21" low="3" high="4.5" ></meter>

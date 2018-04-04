@@ -3,7 +3,7 @@
 
 ## Valid colors
 
-It is based on the HSV (hue, saturation, value) color's components. 
+It is based on the HSV (hue, saturation, value) color's components.
 The hue value ranges from 0 to 360. The saturation and brightness range from 0 to 100 percent.
 
 Every component is modified of more or less 10 percent.
@@ -51,7 +51,7 @@ Color varyBrightnessAndTestColor(Color modifiedColor, int variation) {
 ```
 
 
-Each component is modified until a valid contrast is found. 
+Each component is modified until a valid contrast is found.
 
 For example : a color with this components : Hue (36), Saturation (32%), Brightness (45%), can be modify to obtain : Hue (72), Saturation (42%), Brightness (55%) or Hue (0), Saturation (22%), Brightness (35%), etc.
 
@@ -66,7 +66,7 @@ The red, green and blue values must be between 0 and 255.
 
 For this algorithm, the principle is similar to the first one. After many tests, we have identified the following constraints :
 * The component's step in one loop. We have decided to step the component values one by one.
-* The max shift for one component. We have decided to limit the maximum shift : 
+* The max shift for one component. We have decided to limit the maximum shift :
    - to 60 when the gap between initial contrast ratio and the choosen contrast ratio is between 0 and 1
    - to 80 when the gap between initial contrast ratio and the choosen contrast ratio is between 1 and 2
    - to 110 when the gap between initial contrast ratio and the choosen contrast ratio is between 2 and 3

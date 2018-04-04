@@ -17,11 +17,11 @@ echo "-----------------------------------"
 echo "----> preinst script for contrast-finder-webapp"
 case "$1" in
     install|upgrade)
-        echo "----> nothing to do for \`$1'" 
+        echo "----> nothing to do for \`$1'"
     ;;
 
     abort-upgrade)
-        echo "----> nothing to do for \`$1'" 
+        echo "----> nothing to do for \`$1'"
     ;;
 
     *)

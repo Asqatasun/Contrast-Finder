@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
-    
+
     <bean name="colorFinderHsvFactory"
           class="org.asqatasun.contrastfinder.factory.ColorFinderHsvFactory"/>
 
@@ -29,7 +29,7 @@
             </map>
         </property>
     </bean>
-    
+
     <bean name="colorFinderFactory"
           class="org.asqatasun.contrastfinder.factory.ColorFinderFactoryImpl">
         <property name="colorFinderMap">
@@ -38,26 +38,26 @@
                 <entry key="Psycho" value-ref="colorFinderHsvPsychoFactory"/>
                 <entry key="Rgb" value-ref="colorFinderRgbFactory"/>
             </map>
-            
+
         </property>
     </bean>
-    
+
     <bean name="boundaryFrom0To1"
           class="org.asqatasun.contrastfinder.hsv.Boundary">
         <property name="minValue" value="0"/>
         <property name="maxValue" value="1"/>
     </bean>
-    
+
     <bean name="boundaryFrom1To2"
           class="org.asqatasun.contrastfinder.hsv.Boundary">
         <property name="minValue" value="1"/>
         <property name="maxValue" value="2"/>
     </bean>
-    
+
     <bean name="boundaryFrom2To3"
           class="org.asqatasun.contrastfinder.hsv.Boundary">
         <property name="minValue" value="2"/>
         <property name="maxValue" value="3"/>
     </bean>
-    
+
 </beans>

@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Contact us by mail: asqatasun AT asqatasun DOT org
- */ 
+ */
 package org.asqatasun.contrastfinder;
 
 import java.awt.Color;
@@ -35,16 +35,16 @@ public interface ColorFinder {
      * @param coefficientLevel
      */
     void findColors (
-            Color foregroundColor, 
-            Color backgroundColor, 
-            boolean isBackgroundTested, 
+            Color foregroundColor,
+            Color backgroundColor,
+            boolean isBackgroundTested,
             Float coefficientLevel);
 
     /**
      * @return ColorResult object
      */
     ColorResult getColorResult();
-    
+
     /**
      * @return a key that represents the colorFinder
      */

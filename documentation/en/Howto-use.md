@@ -83,7 +83,7 @@ The other color won't change.
 The first value is "Valid colors and very close to initial color". The result is a list of colors close to the original color. The aim is to have a valid color with a contrast as close to the selected ratio as possible (At the 0.001 range).
 
 The second value is "A range of valid colors". The result is a wide range of colors.
-This algorithm is very helpful if you are not sure about the hue of your initial color. 
+This algorithm is very helpful if you are not sure about the hue of your initial color.
 
 More informations about [the algorithms](The-algorithms.md) here.
 

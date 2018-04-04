@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Contact us by mail: asqatasun AT asqatasun DOT org
- */ 
+ */
 
 package org.asqatasun.contrastfinder.result;
 
@@ -24,17 +24,17 @@ import java.awt.Color;
 
 /**
  * Interface that defines a couple of colour and its resulting contrast
- * 
+ *
  * @author alingua
  */
 public interface ColorCombinaison {
-    
-    
+
+
     /**
      * @return Gap
      */
     Float getGap();
-    
+
     /**
      * @return Color object
      */
@@ -49,27 +49,27 @@ public interface ColorCombinaison {
      * @return contrast
      */
     Double getContrast();
-    
+
     /**
      * @param distance from initial color
      */
     void setDistanceFromInitialColor(Double distance);
-    
+
     /**
      * @return distance
      */
     Double getDistance();
-    
+
     /**
      * @param threshold
      */
     void setThreshold(Double threshold);
-    
+
     /**
      * @return threshold
      */
     Double getThreshold();
-    
+
     /**
      * @return true if is valid contrast
      */
@@ -84,23 +84,23 @@ public interface ColorCombinaison {
      * @param color
      */
     void setComparisonColor(Color color);
-    
+
     /**
      * @return color in hexadecimal format, example: #FFFFFF
      */
     String getHexaColor();
-    
+
     /**
-     * 
+     *
      * @return color in HSL format, example: hsl(0, 0%, 100%)
      */
     String getHslColor();
-    
+
     /**
      * @return color in hexadecimal format, example: #FFFFFF
      */
     String getHexaColorComp();
-    
+
     /**
      * @return color in HSL format, example: hsl(0, 0%, 100%)
      */

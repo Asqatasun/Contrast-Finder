@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Contact us by mail: asqatasun AT asqatasun DOT org
- */ 
+ */
 
 package org.asqatasun.contrastfinder.result.factory;
 
@@ -25,7 +25,7 @@ import org.asqatasun.contrastfinder.result.ColorCombinaison;
 import org.asqatasun.contrastfinder.result.ColorCombinaisonImpl;
 
 /**
- * 
+ *
  * @author alingua
  */
 public class ColorCombinaisonFactoryImpl implements ColorCombinaisonFactory {

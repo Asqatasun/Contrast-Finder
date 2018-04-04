@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Contact us by mail: asqatasun AT asqatasun DOT org
- */ 
+ */
 
 package org.asqatasun.contrastfinder.factory;
 
@@ -35,7 +35,7 @@ public class ColorFinderHsvPsychoFactory implements ColorFinderFactory {
     private float maxGreen = ColorFinderHsvPsycho.DEFAULT_COLOR_COMPONENT_BOUNDER;
     private float maxBlue = ColorFinderHsvPsycho.DEFAULT_COLOR_COMPONENT_BOUNDER;
     private float maxRed = ColorFinderHsvPsycho.DEFAULT_COLOR_COMPONENT_BOUNDER;
-    
+
     public void setMaxRed(String maxRed) {
         this.maxRed = Float.valueOf(maxRed);
     }
@@ -55,7 +55,7 @@ public class ColorFinderHsvPsychoFactory implements ColorFinderFactory {
     public void setMaxCoefficient(String maxCoefficient) {
         this.maxCoefficient = Float.valueOf(maxCoefficient);
     }
-    
+
     @Override
     public ColorFinder getColorFinder() {
         ColorFinderHsvPsycho colorFinder = new ColorFinderHsvPsycho();

@@ -21,7 +21,7 @@
     <organization>
         <name>Asqatasun.org</name>
         <url>https://asqatasun.org</url>
-    </organization>  
+    </organization>
 
     <build>
         <plugins>
@@ -40,7 +40,7 @@
                     <instrumentation>
                         <includes>
                             <include>**/*.class</include>
-                        </includes>                 
+                        </includes>
                     </instrumentation>
                     <formats>
                         <format>xml</format>

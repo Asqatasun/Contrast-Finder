@@ -16,27 +16,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Contact us by mail: asqatasun AT asqatasun DOT org
- */ 
+ */
 
 package org.asqatasun.contrastfinder.factory;
 import org.asqatasun.contrastfinder.ColorFinder;
 
 /**
- * 
+ *
  * @author alingua
  */
 public interface ColorFinderFactory {
-    
+
     /**
-     * 
+     *
      * @return a colorFinder instance regarding a given type
      */
      ColorFinder getColorFinder(String colorFinderKey);
-     
+
     /**
-     * 
+     *
      * @return a colorFinder instance regarding a given type
      */
      ColorFinder getColorFinder();
-     
+
 }

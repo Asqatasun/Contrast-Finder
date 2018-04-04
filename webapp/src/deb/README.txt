@@ -44,17 +44,17 @@
             # or
             # uninstall contrast-finder + dependencies
             dpkg  --purge   contrast-finder-webapp
-            apt-get remove tomcat8 libspring-instrument-java 
+            apt-get remove tomcat8 libspring-instrument-java
             apt-get autoremove
 
 
     # See package information
-    dpkg -l contrast-finder-webapp tomcat8 libspring-instrument-java 
+    dpkg -l contrast-finder-webapp tomcat8 libspring-instrument-java
 
     # Check directories and files
     ls -l /var/lib/tomcat8/webapps
     ls -l /etc/contrast-finder
     ls -l /var/log/contrast-finder/
-    ls -l /usr/share/tomcat8/lib/spring3-instrument-tomcat* 
+    ls -l /usr/share/tomcat8/lib/spring3-instrument-tomcat*
 
 

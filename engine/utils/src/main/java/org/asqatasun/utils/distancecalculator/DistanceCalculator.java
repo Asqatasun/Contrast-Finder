@@ -26,16 +26,16 @@ public final class DistanceCalculator {
 
     private static final int CUBIC = 3;
     private static final int ROUND_VALUE = 100;
-    
+
     private DistanceCalculator() {
     }
 
     /**
-     * 
+     *
      * @param colorToChange
      * @param colorToKeep
-     * @return the calculated distance between 2 colors regarding the 
-     * distance definition that can be found here 
+     * @return the calculated distance between 2 colors regarding the
+     * distance definition that can be found here
      * http://en.wikipedia.org/wiki/Euclidean_distance#Three_dimensions
      */
     public static double calculate(Color colorToChange, Color colorToKeep) {

@@ -15,8 +15,8 @@ pre-requisites_from-Ubuntu          141 MB  ---> 138 MB
 
     test:
         - Build-Jdk: 1.8  @@@ IN PROGRESSS
-        - Build-Jdk: 1.7  @@@ TODO 
-    check log @@@ TODO 
+        - Build-Jdk: 1.7  @@@ TODO
+    check log @@@ TODO
 
 
 Build-Jdk: 1.8.0_151

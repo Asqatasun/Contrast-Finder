@@ -20,11 +20,11 @@ echo "-----------------------------------"
 echo "----> prerm script for contrast-finder-webapp"
 case "$1" in
   remove|upgrade|deconfigure)
-    echo "----> nothing to do for \`$1'" 
+    echo "----> nothing to do for \`$1'"
   ;;
 
   failed-upgrade)
-    echo "----> nothing to do for \`$1'" 
+    echo "----> nothing to do for \`$1'"
   ;;
 
   *)
