@@ -18,6 +18,7 @@ none
 
 ### Outdated dependencies
 - [#126 - Upgraded SpringFramework (4.3.15 instead of 4.3.14)](https://github.com/Asqatasun/Contrast-Finder/issues/126)
+- [#150 - Upgraded owasp:dependency-check (3.1.2 instead of 3.1.1)](https://github.com/Asqatasun/Contrast-Finder/issues/150)
 
 ### Bug
 - [#141 - Webapp: fixed url rewriting (allowed favicon/*.ico and *.svg files)](https://github.com/Asqatasun/Contrast-Finder/issues/141)
