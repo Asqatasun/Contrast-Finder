@@ -196,8 +196,8 @@ public final class ColorConverter {
         Color  color = null;
         String str   = colorStr.toLowerCase().replaceAll("\\s", ""); // replace ' ', \t, \n, ...
         if (str.matches(RGB_DICTIONNARY) | str.matches(SHORT_RGB_DICTIONNARY)){  // ex: rgb(255,255,255) or 255,255,255
-            str = str.replaceAll("rgb\\(","");
-            str = str.replaceAll("\\)","");
+            str = str.replaceAll("rgb\\(", "");
+            str = str.replaceAll("\\)", "");
             String[] strList = str.split(",");
             int r = Integer.parseInt(strList[0]);
             int g = Integer.parseInt(strList[1]);
