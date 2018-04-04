@@ -1,7 +1,7 @@
 # CHANGELOG
 
-Contrast-Finder 0.8.6, 2018-03-xx
--------------------------------------
+Contrast-Finder 0.8.6, 2018-04-0x
+---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
@@ -17,10 +17,10 @@ none
 none
 
 ### Outdated dependencies
-none
+- [#126 - Upgraded SpringFramework (4.3.15 instead of 4.3.14)](https://github.com/Asqatasun/Contrast-Finder/issues/126)
 
 ### Bug
-- [#141 - Webapp: fixed url rewrite (allowed favicon/*.ico and *.svg files)](https://github.com/Asqatasun/Contrast-Finder/issues/141)
+- [#141 - Webapp: fixed url rewriting (allowed favicon/*.ico and *.svg files)](https://github.com/Asqatasun/Contrast-Finder/issues/141)
 
 ### Improvement
 - [#144 - Updated Korean i18n file to the latest)](https://github.com/Asqatasun/Contrast-Finder/issues/144)
