@@ -1,6 +1,6 @@
 # CHANGELOG
 
-Contrast-Finder 0.8.6, 2018-04-0x
+Contrast-Finder 0.8.6, 2018-04-1x
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
@@ -13,12 +13,14 @@ Thanks to:
 ### New Feature
 none
 
-### Security
-none
-
 ### Outdated dependencies
-- [#126 - Upgraded SpringFramework (4.3.15 instead of 4.3.14)](https://github.com/Asqatasun/Contrast-Finder/issues/126)
+- [#156 - Upgraded native2ascii-maven-plugin (2.0.1 instead of 2.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/156)
+- [#155 - Upgraded maven-dependency-plugin (3.1.0 instead of 3.0.2)](https://github.com/Asqatasun/Contrast-Finder/issues/155)
+- [#154 - Upgraded maven-surefire-plugin (2.21.0 instead of 2.20.1)](https://github.com/Asqatasun/Contrast-Finder/issues/154)
+- [#153 - Upgraded jacoco-maven-plugin (0.8.1 instead of 0.8.0)](https://github.com/Asqatasun/Contrast-Finder/issues/153)
+- [#151 - Upgraded spring--security (4.2.5 instead of 4.2.4)](https://github.com/Asqatasun/Contrast-Finder/issues/151)
 - [#150 - Upgraded owasp:dependency-check (3.1.2 instead of 3.1.1)](https://github.com/Asqatasun/Contrast-Finder/issues/150)
+- [#149 - Upgraded SpringFramework (4.3.16 instead of 4.3.14)](https://github.com/Asqatasun/Contrast-Finder/issues/149)
 
 ### Bug
 - [#141 - Webapp: fixed url rewriting (allowed favicon/*.ico and *.svg files)](https://github.com/Asqatasun/Contrast-Finder/issues/141)
@@ -27,17 +29,9 @@ none
 - [#144 - Updated Korean i18n file to the latest)](https://github.com/Asqatasun/Contrast-Finder/issues/144)
 - [#147 - Updated Portuguese i18n file)](https://github.com/Asqatasun/Contrast-Finder/issues/147)
 
-### Refactoring
-none
-
-### Configuration
-none
-
 ### Documentation
 - [#142 - Howto-use.md improvements (syntax corrections, match titles to application labels)](https://github.com/Asqatasun/Contrast-Finder/issues/142)
 
-### Task
-none
 
 
 Contrast-Finder 0.8.5, 2018-02-21
