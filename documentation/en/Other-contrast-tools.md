@@ -59,13 +59,18 @@
 * [Palat](https://dobtco.github.io/palat/) generate accessible color scheme
     * Ruby gem - https://github.com/dobtco/palat/
 
+### Data visualizations
+* http://projects.susielu.com/viz-palette Picking colors for data visualizations with a vision simulation option. Not opensource. 
+* http://colorbrewer2.org  Color advice for cartography with a colorblind safe option.
+  * https://github.com/axismaps/colorbrewer/
+
 ### Vision simulation
 
 * NoCoffee
   - src: https://github.com/eeejay/NoCoffee
   - [**NoCoffee** extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/nocoffee/)
   - [**NoCoffee** extension for Chrome](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl)
-* http://paletton.com/ very popular but n real option for accessibility (as of 2016), and not opensource
+* http://paletton.com/ very popular but n real option for accessibility (as of 2016), and not opensource.
 * http://carlosrafaelgn.com.br/Aula/Cores.html (not opensource, in Portuguese)
 * http://www.getstark.co/
     * https://github.com/stark-contrast/stark-sketch-plugin
