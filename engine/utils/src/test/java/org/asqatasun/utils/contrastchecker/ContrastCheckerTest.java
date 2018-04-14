@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Contact us by mail: asqatasun AT asqatasun DOT org
- */ 
+ */
 
 package org.asqatasun.utils.contrastchecker;
 
@@ -29,15 +29,15 @@ import org.junit.Test;  // Junit 4 anotation @Test
  * @author alingua
  */
 public class ContrastCheckerTest extends TestCase {
-    
+
     public ContrastCheckerTest(String testName) {
         super(testName);
     }
-    
+
     protected void setUp() throws Exception {
         super.setUp();
     }
-    
+
     protected void tearDown() throws Exception {
         super.tearDown();
     }

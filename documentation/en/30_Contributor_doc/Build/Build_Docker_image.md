@@ -7,7 +7,7 @@ The following sofware are required :
 
 * JDK **8** (at least)
 * Maven **3.1** (at least)
-* [Docker **1.12** (at least)](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/) 
+* [Docker **1.12** (at least)](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
 
 
 ## Build with our automated script (recommended)
@@ -38,8 +38,8 @@ Example of output:
   -------------------------------------------------------
   Contrast-Finder is now running ........ HTTP code = 200
   -------------------------------------------------------
-  maven FAILURE ... 0 
-  maven WARN ...... 12 
+  maven FAILURE ... 0
+  maven WARN ...... 12
   -------------------------------------------------------
   Container ... contrast.finder
   Dockerfile .. docker/SNAPSHOT-local
@@ -49,12 +49,12 @@ Example of output:
   Shell ....... docker exec -ti contrast.finder /bin/bash
   Log ......... docker logs -f  contrast.finder
   URL ......... http://localhost:8087/contrast-finder/
-  ------------------------------------------------------- 
+  -------------------------------------------------------
 ```
 
-A lot of useful options are also available to speed up the process 
+A lot of useful options are also available to speed up the process
 when you want to build / test / iterate.
- 
+
 You may run `./docker/build_and_run-with-docker.sh -h` to see them.
 
 
@@ -79,7 +79,7 @@ git checkout develop  # Please always work on develop, see CONTRIBUTING.md
 mvn clean install
 ```
 Internet connection needed the very first time to download Maven dependencies.
-In the meantime, enjoy your coffee break :) 
+In the meantime, enjoy your coffee break :)
 
 ### 3. Copy Contrast-finder tar.gz to the suitable Docker directory
 
@@ -90,8 +90,8 @@ cp -v contrast-finder-webapp/target/*.tar.gz docker/SNAPSHOT-local
 ### 4. Build the Docker Image
 
 ```shell
-cd docker/SNAPSHOT-local 
-docker build -t asqatasun/contrast-finder:SNAPSHOT . 
+cd docker/SNAPSHOT-local
+docker build -t asqatasun/contrast-finder:SNAPSHOT .
 ```
 
 Verify the image is actually built
@@ -113,7 +113,7 @@ asqatasun/contrast-finder    SNAPSHOT            84a5bf7bb437        2 minutes a
 In case you had older containers, just wipe them (so backup before if you want to keep your data)
 
 ```shell
-docker stop contrast.finder 
+docker stop contrast.finder
 docker rm   contrast.finder
 ```
 
@@ -133,10 +133,10 @@ In your browser, go to
 docker logs -f  contrast.finder
 ```
 
-or 
+or
 ```shell
 docker exec -ti contrast.finder /bin/bash
-cat /var/log/tomcat7/catalina.out 
+cat /var/log/tomcat7/catalina.out
 cat /var/log/contrast-finder/contrast-finder.log
 ```
 

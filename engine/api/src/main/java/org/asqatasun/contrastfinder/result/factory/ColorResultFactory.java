@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Contact us by mail: asqatasun AT asqatasun DOT org
- */ 
+ */
 
 package org.asqatasun.contrastfinder.result.factory;
 
@@ -32,5 +32,5 @@ public interface ColorResultFactory {
      * @return ColorResult object
      */
     ColorResult getColorResult();
-    
+
 }

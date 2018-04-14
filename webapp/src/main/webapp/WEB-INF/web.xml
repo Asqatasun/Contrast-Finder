@@ -90,7 +90,7 @@
         <welcome-file>form.html</welcome-file>
     </welcome-file-list>
 
-    <!-- URL rewrite filter for asset files (css, js, png, jpg, ...)
+    <!-- URL rewrite filter for asset files (css|js|png|jpg|jpeg|svg|ico|xml|webmanifest|json)
          http://tuckey.org/urlrewrite/
          https://github.com/paultuckey/urlrewritefilter    -->
     <filter>
@@ -102,7 +102,7 @@
                 <!-- used public/css/     insteaf of  public/<version>/css/
                      used public/js/      insteaf of  public/<version>/js/
                      used public/images/  insteaf of  public/<version>/images/           -->
-                RewriteRule public/([0-9]{1,2}).([0-9]{1,2}).([0-9]{1,2})(|-SNAPSHOT)/(.+).(css|js|png|jpg|jpeg|xml|webmanifest|json)$ public/$5.$6 [L]
+                RewriteRule public/([0-9]{1,2}).([0-9]{1,2}).([0-9]{1,2})(|-SNAPSHOT)/(.+).(css|js|png|jpg|jpeg|svg|ico|xml|webmanifest|json)$ public/$5.$6 [L]
             </param-value>
         </init-param>
     </filter>

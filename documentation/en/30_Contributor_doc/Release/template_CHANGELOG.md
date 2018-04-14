@@ -24,13 +24,13 @@ none
 ### Bug
 none
 
-### Improvement 
+### Improvement
 none
 
 ### Refactoring
 none
 
-### Configuration 
+### Configuration
 none
 
 ### Documentation

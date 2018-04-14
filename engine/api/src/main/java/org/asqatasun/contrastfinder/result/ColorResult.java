@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Contact us by mail: asqatasun AT asqatasun DOT org
- */ 
+ */
 
 package org.asqatasun.contrastfinder.result;
 
@@ -32,41 +32,41 @@ public interface ColorResult {
     /**
      * @param foreground
      * @param backgroud
-     * @param threashold 
+     * @param threashold
      */
     void setSubmittedColors(Color foreground, Color backgroud, Float threashold);
-    
+
     /**
      * @return ColorCombinaison object
      */
     ColorCombinaison getSubmittedCombinaisonColor();
-    
+
     /**
      * @return true if is valid combinaison
      */
     boolean isCombinaisonValid();
-    
+
     /**
      *
      * @return Collection object of ColorCombinaison objects
      */
     Collection<ColorCombinaison> getSuggestedColors();
-    
+
     /**
      * @return the number of suggested colors
      */
     int getNumberOfSuggestedColors();
-    
+
     /**
      * @param combinaison
      */
     void addSuggestedColor(ColorCombinaison combinaison);
-    
+
     /**
      * @return Threashold
      */
     Float getThreashold();
-    
+
     /**
      * @return the number of tested colors
      */

@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>engine</artifactId>
-        <version>0.8.5</version>
+        <version>0.8.6</version>
     </parent>
     <artifactId>contrast-finder-impl</artifactId>
-    <version>0.8.5</version>
+    <version>0.8.6</version>
     <packaging>jar</packaging>
     <name>impl</name>
     <licenses>
@@ -21,7 +21,7 @@
     <organization>
         <name>Asqatasun.org</name>
         <url>https://asqatasun.org</url>
-    </organization>  
+    </organization>
 
     <dependencies>
         <dependency>

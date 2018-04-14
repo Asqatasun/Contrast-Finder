@@ -1,7 +1,7 @@
-#  Developer documentation 
+#  Developer documentation
 
 * [Building Contrast-Finder](Build/README.md)
-* [Release a version of Contrast-Finder](Release/README.md) 
+* [Release a version of Contrast-Finder](Release/README.md)
 
 -----
 * Checking for new dependency / plugin updates
@@ -13,13 +13,13 @@
 ## Checking for new dependency / plugin updates
 ```bash
 # Checking for new dependency updates
-mvn versions:display-dependency-updates 
+mvn versions:display-dependency-updates
 
 # Checking for new plugin updates
-mvn versions:display-plugin-updates  
+mvn versions:display-plugin-updates
 
 # Checking for new property-linked updates
-mvn versions:display-property-updates 
+mvn versions:display-property-updates
 ```
 
 ### Documentation
@@ -29,7 +29,7 @@ mvn versions:display-property-updates
 
 
 ##  OWASP Dependency-Check
-Scan Contrast-Finder to identify the use of known vulnerable components. 
+Scan Contrast-Finder to identify the use of known vulnerable components.
 
 ```bash
 git clone https://github.com/Asqatasun/Contrast-Finder
@@ -45,13 +45,13 @@ mvn site
 
 The dependencies report is available in this file:
 ```bash
-target/dependency-check-report.html 
+target/dependency-check-report.html
 ```
 
 Others command lines:
 ```bash
 mvn dependency-check:help
-mvn dependency-check:help -Ddetail=true -Dgoal=aggregate 
+mvn dependency-check:help -Ddetail=true -Dgoal=aggregate
 ```
 
 ### Documentation
@@ -75,7 +75,7 @@ mvn clean install
      # report: engine/*/target/site/jacoco
 ```
 
-### Cobertura 
+### Cobertura
 
 #### Documentation
 * http://www.mojohaus.org/cobertura-maven-plugin/
@@ -86,8 +86,8 @@ mvn clean install
 mvn cobertura:cobertura
      # report: engine/*/target/site/cobertura
 ```
-                
-                        
+
+
 
 ## Checkstyle
 Scan Contrast-Finder to check the violations of a coding standard.
@@ -105,18 +105,18 @@ cd Contrast-finder
 # to the console, potentially failing the build.
 mvn checkstyle:check
 
-# A reporting task that performs Checkstyle analysis 
+# A reporting task that performs Checkstyle analysis
 # and generates an HTML report for each module
 mvn checkstyle:checkstyle
 
 # a reporting task that performs Checkstyle analysis
-# and generates an aggregate HTML report 
+# and generates an aggregate HTML report
 mvn checkstyle:checkstyle-aggregate
 mvn site
 
 # Checking for violations as part of the Build
-mvn clean install 
-    # Before, remove comments 
+mvn clean install
+    # Before, remove comments
     # around <goal>check</goal> in pom.xml file
 ```
 
@@ -124,7 +124,7 @@ mvn clean install
 ```bash
 apt-get install checkstyle
 git clone https://github.com/Asqatasun/Contrast-Finder
-checkstyle  -c checkstyle.xml Contrast-Finder/**/*.java 
+checkstyle  -c checkstyle.xml Contrast-Finder/**/*.java
 ```
 
 
@@ -145,7 +145,7 @@ One of the following command lines:
 mvn javadoc:javadoc
 mvn javadoc:aggregate
 mvn javadoc:test-javadoc
-mvn javadoc:test-aggregate 
+mvn javadoc:test-aggregate
 mvn site
 ```
 

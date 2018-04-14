@@ -12,7 +12,7 @@ FAIL /test_tomcat-7-8/Ubuntu_18.04_tomcat8_full
 
 ---------------------------------------------------------------------
 
-UBUNTU 18.04 Tomcat 8.5   
+UBUNTU 18.04 Tomcat 8.5
 -----------------------------
 docker/build_and_run-with-docker.sh -l --source-dir ${PWD} --docker-dir docker/SNAPSHOT-local/test_tomcat-7-8/Ubuntu_18.04_tomcat8_full/ --log-build
 docker exec -ti contrast.finder /bin/cat /softwares-version.txt
@@ -29,7 +29,7 @@ docker exec -ti contrast.finder /bin/bash
         vs  https://packages.ubuntu.com/xenial/all/libspring-instrument-java/filelist
     ----------------------------------------------------------------------------------
 
-UBUNTU 16.04 Tomcat 8.0  
+UBUNTU 16.04 Tomcat 8.0
 -----------------------------
 docker/build_and_run-with-docker.sh -l --source-dir ${PWD} --docker-dir docker/SNAPSHOT-local/test_tomcat-7-8/Ubuntu_16.04_tomcat8_full/ --log-build
 docker exec -ti contrast.finder /bin/cat /softwares-version.txt
@@ -40,7 +40,7 @@ docker exec -ti contrast.finder /bin/bash
     cat /var/lib/tomcat8/webapps/contrast-finder/META-INF/context.xml
     cat /var/lib/tomcat8/webapps/contrast-finder/META-INF/MANIFEST.MF
 
-UBUNTU 16.04 Tomcat 7   
+UBUNTU 16.04 Tomcat 7
 -----------------------------
 docker/build_and_run-with-docker.sh -l --source-dir ${PWD} --docker-dir docker/SNAPSHOT-local/test_tomcat-7-8/Ubuntu_16.04_tomcat7_full/ --log-build
 docker exec -ti contrast.finder /bin/cat /softwares-version.txt
@@ -51,7 +51,7 @@ docker exec -ti contrast.finder /bin/bash
     cat /var/lib/tomcat7/webapps/contrast-finder/META-INF/context.xml
     cat /var/lib/tomcat7/webapps/contrast-finder/META-INF/MANIFEST.MF
 
-UBUNTU 14.04 Tomcat 7   
+UBUNTU 14.04 Tomcat 7
 -----------------------------
 docker/build_and_run-with-docker.sh -l --source-dir ${PWD} --docker-dir docker/SNAPSHOT-local/test_tomcat-7-8/Ubuntu_14.04_tomcat7_full --log-build
 docker exec -ti contrast.finder /bin/cat /softwares-version.txt

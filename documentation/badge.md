@@ -25,14 +25,14 @@
 
 The resolution time is the median time an issue or pull request stays open.
 
-Some issues are ignored based on their labels (example of ignored labels: "enhancement", "feature"…). 
-Issues older than 6 months are also ignored. 
+Some issues are ignored based on their labels (example of ignored labels: "enhancement", "feature"…).
+Issues older than 6 months are also ignored.
 
 
 ## Percentage of issues still open
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/asqatasun/contrast-finder.svg)](http://isitmaintained.com/project/asqatasun/contrast-finder "Percentage of issues still open")
 
-Some issues are ignored based on their labels (example of ignored labels: "enhancement", "feature"…). 
+Some issues are ignored based on their labels (example of ignored labels: "enhancement", "feature"…).
 
 ## monitors code quality
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c3374c9913d24a9c91e91552f1796672)](https://www.codacy.com/app/Asqatasun/Contrast-Finder)

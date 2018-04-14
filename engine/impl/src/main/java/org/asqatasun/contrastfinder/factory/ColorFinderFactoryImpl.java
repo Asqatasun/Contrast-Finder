@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Contact us by mail: asqatasun AT asqatasun DOT org
- */ 
+ */
 
 package org.asqatasun.contrastfinder.factory;
 
@@ -29,14 +29,14 @@ import org.asqatasun.contrastfinder.ColorFinder;
  * @author alingua
  */
 public class ColorFinderFactoryImpl implements ColorFinderFactory {
-    
-    private Map<String, ColorFinderFactory> colorFinderMap = 
+
+    private Map<String, ColorFinderFactory> colorFinderMap =
             new HashMap<String, ColorFinderFactory>();
 
     public void setColorFinderMap(Map<String, ColorFinderFactory> colorFinderMap) {
         this.colorFinderMap = colorFinderMap;
     }
-    
+
     @Override
     public ColorFinder getColorFinder(String colorFinderKey) {
         if (colorFinderMap.containsKey(colorFinderKey)) {
@@ -48,7 +48,7 @@ public class ColorFinderFactoryImpl implements ColorFinderFactory {
     @Override
     public ColorFinder getColorFinder() {
         // not supposed to be called, just to provide an implementation
-        return colorFinderMap.entrySet().iterator().next().getValue().getColorFinder(); 
+        return colorFinderMap.entrySet().iterator().next().getValue().getColorFinder();
     }
 
 }

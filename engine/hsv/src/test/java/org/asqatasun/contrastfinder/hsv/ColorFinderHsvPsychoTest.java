@@ -23,7 +23,7 @@ import org.asqatasun.utils.colorconvertor.ColorConverter;
 public class ColorFinderHsvPsychoTest extends TestCase {
     private static final float STEP_HUE = (1.0f/360.0f);
     private static final Logger LOGGER = LoggerFactory.getLogger(ColorFinderHsvPsychoTest.class);
-    
+
     public ColorFinderHsvPsychoTest(String testName) {
         super(testName);
     }

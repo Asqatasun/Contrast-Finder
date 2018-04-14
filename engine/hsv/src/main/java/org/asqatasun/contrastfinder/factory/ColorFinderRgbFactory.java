@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Contact us by mail: asqatasun AT asqatasun DOT org
- */ 
+ */
 
 package org.asqatasun.contrastfinder.factory;
 
@@ -42,7 +42,7 @@ public class ColorFinderRgbFactory implements ColorFinderFactory {
     public void setThreasholdVariator(Map<Integer, Boundary> threasholdVariator) {
         this.threasholdVariator = threasholdVariator;
     }
-    
+
     public void setMaxMove(int maxMove) {
         this.maxMove = maxMove;
     }
@@ -54,7 +54,7 @@ public class ColorFinderRgbFactory implements ColorFinderFactory {
     public void setHueBounder(float hueBounder) {
         this.hueBounder = hueBounder;
     }
-    
+
     @Override
     public ColorFinder getColorFinder() {
         ColorFinderRgb colorFinder = new ColorFinderRgb();

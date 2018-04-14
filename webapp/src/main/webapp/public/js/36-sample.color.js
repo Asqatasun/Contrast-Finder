@@ -22,7 +22,87 @@ if ("ab".substr(-1) !== "b") {
     }(String.prototype.substr));
 }
 
+function precisionRound(number, precision) {
+    var factor = Math.pow(10, precision);
+    return Math.round(number * factor) / factor;
+}
+
+
 var colorType = ""; // rgb, hex, name
+
+
+
+
+/********************************************************************/
+// Compute the contrast ratio functions
+/********************************************************************/
+
+function getContrastRatio(fgColor, bgColor) {
+    var fgLuminosity = getLuminosity(fgColor);
+    var bgLuminosity = getLuminosity(bgColor);
+    if (fgLuminosity > bgLuminosity) {
+        return computeContrast(fgLuminosity, bgLuminosity);
+    } else {
+        return computeContrast(bgLuminosity, fgLuminosity);
+    }
+}
+
+function getLuminosity(color) {
+    var digits = /(.*?)rgb\((\d+),(\d+),(\d+)\)/.exec(color);
+    var red   = parseInt(digits[2]);
+    var green = parseInt(digits[3]);
+    var blue  = parseInt(digits[4]);
+    var luminosity =
+        getComposantValue(red)  * 0.2126
+        + getComposantValue(green) * 0.7152
+        + getComposantValue(blue) * 0.0722;
+    return luminosity;
+}
+
+function getComposantValue(composant) {
+    var rsgb = composant / 255;
+    if (rsgb <= 0.03928) {
+        return rsgb / 12.92;
+    } else {
+        return Math.pow(((rsgb + 0.055) / 1.055), 2.4);
+    }
+}
+
+function computeContrast(lighter, darker) {
+    return ((lighter + 0.05) / (darker + 0.05));
+}
+
+
+/********************************************************************/
+// Color validator
+/********************************************************************/
+
+
+
+/**
+ * convert hex to rgb
+ *      before, use isValidateColorHex()
+ * @param str  example: #FFFFFF
+ * @returns {string}   rgb(255,255,255)
+ */
+function hexToRgb(str) {
+    // see https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+    if( str.match(/^#?[a-f0-9]{3}$/i) !== null){ // ex: #FFF, #CCC #ABC
+        var resultShort = /^#?([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i.exec(str);
+        str =   resultShort[1] + resultShort[1]
+              + resultShort[2] + resultShort[2]
+              + resultShort[3] + resultShort[3];
+    }
+
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(str); // ex: #FFFFFF, #CCC
+    return 'rgb(' + parseInt(result[1], 16)
+            + ',' + parseInt(result[2], 16)
+            + ',' + parseInt(result[3], 16) + ')';
+            /*  return result ? {   r: parseInt(result[1], 16),
+                                    g: parseInt(result[2], 16),
+                                    b: parseInt(result[3], 16)
+                                } : null;       */
+}
 
 /**
  * convert rgb to hex
@@ -141,6 +221,63 @@ function isValidateColor(str) {
     return color;
 }
 
+/********************************************************************/
+// UI
+/********************************************************************/
+
+function checkConstrast(showError){
+    var checkRatioUI  = document.getElementById("help-block-colors");
+    // var selectRatio   = document.getElementById("ratio");
+    var inputFg       = document.getElementById("foreground-input");
+    var inputBg       = document.getElementById("background-input");
+
+    var select   = document.getElementById("ratio");
+    var choice   = select.selectedIndex;
+    var minRatio = select.options[choice].value;
+
+    var colorFg = inputFg.value.toLowerCase();
+    var colorBg = inputBg.value.toLowerCase();
+    colorFg     = colorFg.toString().replace(/\s/g,""); // replace ' ', \t, \n, ...
+    colorBg     = colorBg.toString().replace(/\s/g,""); // replace ' ', \t, \n, ...
+
+    colorFg     = isValidateColor(colorFg.toString());
+    if (colorFg !== false) {
+        if(colorType === "hex"){
+            colorFg = hexToRgb(colorFg);
+        }
+        else if(colorType === "name"){
+            colorFg = hexToRgb(ColorNameToHex(colorFg));
+        }
+
+        colorBg = isValidateColor(colorBg.toString());
+        if (colorBg !== false) {
+            if(colorType === "hex"){
+                colorBg = hexToRgb(colorBg);
+            }
+            else if(colorType === "name"){
+                colorBg = hexToRgb(ColorNameToHex(colorBg));
+            }
+            var ratio = getContrastRatio(colorBg,colorFg);
+            ratio     = precisionRound(ratio, 2);
+            var txtResult = 'Ok';
+            if(ratio < minRatio ){
+                checkRatioUI.classList.add("error");
+                txtResult = 'Fail';
+            }
+            checkRatioUI.innerHTML = 'Ratio : '+ ratio +  ' ---> ' + txtResult;
+            console.log(txtResult + ' : min ratio' + minRatio + ' vs ratio '+ ratio
+                        + ' --- '+ colorBg +' / '+ colorFg );
+            return true;
+        }
+    }
+
+    if(showError === true) {
+        sample.innerHTML = '';
+    }
+    return false;
+}
+
+
 function changeColorSample(colorPrefix, showError) {
     var input = document.getElementById(colorPrefix + "-input");
     var color = input.value.toLowerCase();
@@ -163,7 +300,6 @@ function changeColorSample(colorPrefix, showError) {
         var colorPicker = document.getElementById(colorPrefix + "_imputColorPicker");
         colorPicker.value = colorHEX;
         document.getElementById(colorPrefix + "_ColorPicker").style.display    = "inherit";
-
     }
     else if(showError === true) {
         sample.style.backgroundColor = "rgba(0,0,0,0)";
@@ -194,33 +330,45 @@ function changeColorPicker(colorPrefix) {
 }
 
 
+
 $(document).ready(function() {
 
     // Color picker
     document.getElementById("background_imputColorPicker").onchange = function() {
         changeColorPicker("background");
+        checkConstrast(false); // don't show error
     };
     document.getElementById("foreground_imputColorPicker").onchange = function() {
         changeColorPicker("foreground");
+        checkConstrast(false); // don't show error
     };
 
     // when the color inputs lost focus
     document.getElementById("foreground-input").onchange = function() {
         changeColorSample("foreground",true); // show error
+        checkConstrast(true); // show error
     };
     document.getElementById("background-input").onchange = function() {
         changeColorSample("background",true); // show error
+        checkConstrast(true); // show error
+    };
+
+    // when the user change the ratio min
+    document.getElementById("ratio").onchange = function() {
+        checkConstrast(true); // show error
     };
 
     // when the user change the value of color inputs
     $("#foreground-input").on("paste keyup", function() {
         changeColorSample("foreground",false); // don't show error
+        checkConstrast(false); // don't show error
     });
     $("#background-input").on("paste keyup", function() {
         changeColorSample("background",false); // don't show error
+        checkConstrast(false); // don't show error
     });
 
     // changeColorSample("foreground",true); // show error
     // changeColorSample("background",true); // show error
-
+    // checkConstrast(true); // show error
 });

@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Contact us by mail: asqatasun AT asqatasun DOT org
- */ 
+ */
 package org.asqatasun.contrastfinder.result.factory;
 
 import java.awt.Color;
@@ -27,14 +27,14 @@ import org.asqatasun.contrastfinder.result.ColorCombinaison;
  * @author alingua
  */
 public interface ColorCombinaisonFactory {
-    
+
     /**
-     * 
+     *
      * @param color1
      * @param color2
      * @param threashold
      * @return a ColorCombinaison instance
      */
     ColorCombinaison getColorCombinaison(Color color1, Color color2, Double threashold);
-    
+
 }

@@ -338,19 +338,19 @@
                                                                     <fmt:message key="form.sampleText"/>
                                                                     <span style="font-weight:bold;"><fmt:message key="form.sampleTextBold"/></span>
                                                                     <fmt:message key="form.sampleText2"/>
-                                                                </p> 
+                                                                </p>
                                                             </td>
                                                             <td class="col03">
                                                                 ${result.contrast}
                                                             </td>
                                                             <td class="col05">
                                                                 ${result.distance}
-                                                            </td>                                                    
+                                                            </td>
                                                         </tr>
-                                                    </c:forEach>    
+                                                    </c:forEach>
                                                 </c:if>
                                                 <c:if test="${!colorModel.isBackgroundTested}">
-                                                    <c:forEach var="result" items="${colorResult.suggestedColors}"> 
+                                                    <c:forEach var="result" items="${colorResult.suggestedColors}">
                                                         <tr>
                                                             <td class="col01">
                                                                 <div class="cercle" style="background-color:rgb(${result.color.red}, ${result.color.green}, ${result.color.blue})"></div>
@@ -379,14 +379,14 @@
                                                                     <fmt:message key="form.sampleText"/>
                                                                     <span style="font-weight:bold;"> <fmt:message key="form.sampleTextBold"/> </span>
                                                                     <fmt:message key="form.sampleText2"/>
-                                                                </p> 
+                                                                </p>
                                                             </td>
                                                             <td class="col03">
                                                                 ${result.contrast}
                                                             </td>
                                                             <td class="col05">
                                                                 ${result.distance}
-                                                            </td>      
+                                                            </td>
                                                         </tr>
                                                     </c:forEach>
                                                 </c:if>
@@ -421,7 +421,7 @@
                                     </div><!-- /col-lg-12 -->
                                 </div><!-- /row -->
                             </c:otherwise>
-                        </c:choose>        
+                        </c:choose>
                     </c:if>
 
                 <%-- ===== USER HELP ========================================================================================= --%>

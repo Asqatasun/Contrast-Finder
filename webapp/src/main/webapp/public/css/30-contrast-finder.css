@@ -1,4 +1,4 @@
-/* HTML componants override */ 
+/* HTML componants override */
 body {
     background-color: #F6F6F6;
 }
@@ -31,7 +31,7 @@ code {
     color: #5A5151; /* AAA */
 }
 .alert-warning {
-    color: #6c4a1e; 
+    color: #6c4a1e;
 }
 .alert-warning .alert-link {
     color: #6b4b0a;
@@ -203,7 +203,7 @@ legend.control-fieldset  {
 @media screen and (min-width:1200px) {
     #image-reference {
         margin-left: 36.333333%;
-    }   
+    }
 }
 @media (max-width: 992px) {
     #image-reference {

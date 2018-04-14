@@ -18,8 +18,8 @@ docker/build_and_run-with-docker.sh -l --source-dir ${PWD} --docker-dir docker/S
 In your browser, go to
 `http://127.0.0.1:8087/contrast-finder/`
 
-A lot of useful options are also available to speed up the process 
+A lot of useful options are also available to speed up the process
 when you want to build / test / iterate.
- 
+
 You may run `./docker/build_and_run-with-docker.sh -h` to see them.
 
