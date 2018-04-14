@@ -20,7 +20,7 @@
     <groupId>org.asqatasun</groupId>
     <artifactId>contrast-finder</artifactId>
     <packaging>pom</packaging>
-    <version>0.8.6</version>
+    <version>0.8.7-SNAPSHOT</version>
     <name>Contrast-Finder</name>
     <licenses>
         <license>
