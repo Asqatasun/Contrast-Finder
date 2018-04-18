@@ -427,7 +427,32 @@
                 <%-- ===== USER HELP ========================================================================================= --%>
                 <div class="help"> <%-- only on HomePage --%>
                     <c:if test="${empty colorResult}">
-                        <fmt:message key="home.noResultTxt"/>
+                        <h2 id="what-is-contrast-finder"><fmt:message key="info.about.title"/></h2>
+                        <fmt:message key="info.about"/>
+
+                        <h2 id="user-help-contrast-finder"><fmt:message key="help.title"/></h2>
+                            <fmt:message key="help.head"/>
+
+                            <h3 id="user-help_text-color"><fmt:message key="help.txt-color.title"/></h3>
+                            <fmt:message key="help.txt-color"/>
+
+                            <h3 id="user-help_background-color"><fmt:message key="help.bg-color.title"/></h3>
+                            <fmt:message key="help.bg-color"/>
+
+                            <h3 id="user-help_minimum-ratio"><fmt:message key="help.ratio.title"/></h3>
+                            <fmt:message key="help.ratio"/>
+
+                            <h3 id="user-help_color-to-edit"><fmt:message key="help.color-to-edit.title"/></h3>
+                            <fmt:message key="help.color-to-edit"/>
+
+                            <h3 id="user-help_gimme-algorithms"><fmt:message key="help.algo.title"/></h3>
+                            <fmt:message key="help.algo"/>
+
+                        <h2><fmt:message key="info.feedback.title"/></h2>
+                        <fmt:message key="info.feedback"/>
+
+                        <h2><fmt:message key="info.contribute.title"/></h2>
+                        <fmt:message key="info.contribute"/>
                     </c:if>
                 </div>
             </div>  <!-- class="container' -->
