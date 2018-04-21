@@ -261,6 +261,7 @@ function checkConstrast(){
                 document.getElementById("isValidRatio_Passed").classList.remove("hidden");
             }
             checkRatioUI.innerHTML = ratio;
+            document.getElementById("currentRatio").classList.remove("hidden");
             console.log(txtResult + ': current ratio '      + ratio
                                   + ' vs minimum ratio '    + minRatio
                                   + ' -- '+ colorBg + ' / ' + colorFg );
@@ -292,6 +293,7 @@ function changeColorSample(colorPrefix, showError) {
         var colorPicker = document.getElementById(colorPrefix + "_imputColorPicker");
         colorPicker.value = colorHEX;
         document.getElementById(colorPrefix + "_ColorPicker").style.display    = "inherit";
+        checkConstrast();
     }
     else if(showError === true) {
         sample.style.backgroundColor = "rgba(0,0,0,0)";
@@ -300,6 +302,7 @@ function changeColorSample(colorPrefix, showError) {
         document.getElementById(colorPrefix + "_ColorPicker").style.display = "none";
         document.getElementById(colorPrefix + "-sample-invalid").style.display = "inherit";
         input.classList.add("error");
+        document.getElementById("currentRatio").classList.add("hidden");
     }
 }
 
@@ -317,6 +320,7 @@ function changeColorPicker(colorPrefix) {
         sample.classList.add("sample-bordered");
         document.getElementById(colorPrefix + "-sample-invalid").style.display = "none";
         input.classList.remove("error");
+        checkConstrast();
     }
 }
 
@@ -326,37 +330,31 @@ $(document).ready(function() {
     // Color picker
     document.getElementById("background_imputColorPicker").onchange = function() {
         changeColorPicker("background");
-        checkConstrast(false); // don't show error
     };
     document.getElementById("foreground_imputColorPicker").onchange = function() {
         changeColorPicker("foreground");
-        checkConstrast(false); // don't show error
     };
+
+    // when the user change the value of color inputs
+    $("#foreground-input").on("paste keyup", function() {
+        changeColorSample("foreground",false); // don't show error
+    });
+    $("#background-input").on("paste keyup", function() {
+        changeColorSample("background",false); // don't show error
+    });
 
     // when the color inputs lost focus
     document.getElementById("foreground-input").onchange = function() {
         changeColorSample("foreground",true); // show error
-        checkConstrast();
     };
     document.getElementById("background-input").onchange = function() {
         changeColorSample("background",true); // show error
-        checkConstrast();
     };
 
     // when the user change the ratio min
     document.getElementById("ratio").onchange = function() {
         checkConstrast();
     };
-
-    // when the user change the value of color inputs
-    $("#foreground-input").on("paste keyup", function() {
-        changeColorSample("foreground",false); // don't show error
-        checkConstrast();
-    });
-    $("#background-input").on("paste keyup", function() {
-        changeColorSample("background",false); // don't show error
-        checkConstrast();
-    });
 
     // changeColorSample("foreground",true); // show error
     // changeColorSample("background",true); // show error

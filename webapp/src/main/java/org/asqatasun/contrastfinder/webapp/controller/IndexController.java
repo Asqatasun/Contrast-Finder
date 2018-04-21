@@ -151,14 +151,9 @@ public class IndexController {
         Color backgroundColor = ColorConverter.colorFromStr(colorModel.getBackground());
 
         /* Preparing the data and populating the model before returning the view */
-        model.addAttribute("formCurrentMinRatio",
-            colorModel.getRatio());
-        model.addAttribute("formCurrentIsValidContrast",
-            ContrastChecker.isContrastValid(foregroundColor,
-                backgroundColor,
-                Float.parseFloat(colorModel.getRatio())));
-        model.addAttribute("formCurrrentRatio",
-                ContrastChecker.getConstrastRatio2DigitRound(foregroundColor, backgroundColor));
+        model.addAttribute("formCurrrentRatio",   "");
+        model.addAttribute("formCurrentMinRatio", "");
+        model.addAttribute("formCurrentIsValidContrast",false);
         model.addAttribute("backgroundHEX", ColorConverter.rgb2Hex(backgroundColor));
         model.addAttribute("foregroundHEX", ColorConverter.rgb2Hex(foregroundColor));
         model.addAttribute("defaultAlgorithm", defaultAlgorithm);

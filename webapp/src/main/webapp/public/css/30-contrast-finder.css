@@ -141,11 +141,6 @@ legend.control-fieldset  {
     padding-top:10px;
 }
 
-.color-codes {
-    font-size:0.95em;
-    list-style: none;
-    padding: 0;
-}
 .invalid-color {
     color : #b94a48;
     display : none;
@@ -232,6 +227,15 @@ legend.control-fieldset  {
 .col03 {width:6%;}
 .col05 {width:8%;}
 .text-sample p {margin:0}
+
+    .color-codes {
+        font-size:0.95em;
+        list-style: none;
+        padding: 0;
+    }
+        .color-codes li {
+            /* white-space: nowrap; */
+        }
 
 #image-reference {
     margin-left: 43.833333%;
