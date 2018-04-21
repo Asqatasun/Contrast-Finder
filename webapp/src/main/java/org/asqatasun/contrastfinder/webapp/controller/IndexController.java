@@ -151,6 +151,14 @@ public class IndexController {
         Color backgroundColor = ColorConverter.colorFromStr(colorModel.getBackground());
 
         /* Preparing the data and populating the model before returning the view */
+        model.addAttribute("formCurrentMinRatio",
+            colorModel.getRatio());
+        model.addAttribute("formCurrentIsValidContrast",
+            ContrastChecker.isContrastValid(foregroundColor,
+                backgroundColor,
+                Float.parseFloat(colorModel.getRatio())));
+        model.addAttribute("formCurrrentRatio",
+                ContrastChecker.getConstrastRatio2DigitRound(foregroundColor, backgroundColor));
         model.addAttribute("backgroundHEX", ColorConverter.rgb2Hex(backgroundColor));
         model.addAttribute("foregroundHEX", ColorConverter.rgb2Hex(foregroundColor));
         model.addAttribute("defaultAlgorithm", defaultAlgorithm);
@@ -225,6 +233,14 @@ public class IndexController {
                     ColorConverter.rgb2Hsl(foregroundColor));
             model.addAttribute("resultNumber",
                     colorResult.getNumberOfSuggestedColors());
+            model.addAttribute("formCurrentMinRatio",
+                    colorModel.getRatio());
+            model.addAttribute("formCurrentIsValidContrast",
+                    ContrastChecker.isContrastValid(foregroundColor,
+                                                    backgroundColor,
+                                                    Float.parseFloat(colorModel.getRatio())));
+            model.addAttribute("formCurrrentRatio",
+                    ContrastChecker.getConstrastRatio2DigitRound(foregroundColor, backgroundColor));
             model.addAttribute("oldContrast",
                     ContrastChecker.getConstrastRatio5DigitRound(foregroundColor, backgroundColor));
             model.addAttribute("oldDistance",

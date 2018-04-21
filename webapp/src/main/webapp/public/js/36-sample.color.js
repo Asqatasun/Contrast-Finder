@@ -225,9 +225,8 @@ function isValidateColor(str) {
 // UI
 /********************************************************************/
 
-function checkConstrast(showError){
-    var checkRatioUI  = document.getElementById("help-block-colors");
-    // var selectRatio   = document.getElementById("ratio");
+function checkConstrast(){
+    var checkRatioUI  = document.getElementById("currentRatioData");
     var inputFg       = document.getElementById("foreground-input");
     var inputBg       = document.getElementById("background-input");
 
@@ -259,20 +258,22 @@ function checkConstrast(showError){
             }
             var ratio = getContrastRatio(colorBg,colorFg);
             ratio     = precisionRound(ratio, 2);
-            var txtResult = 'Ok';
+            var txtResult = 'Passed';
             if(ratio < minRatio ){
-                checkRatioUI.classList.add("error");
-                txtResult = 'Fail';
+                txtResult = 'Failed';
+                document.getElementById("isValidRatio_Passed").classList.add("hidden");
+                document.getElementById("isValidRatio_Failed").classList.remove("hidden");
             }
-            checkRatioUI.innerHTML = 'Ratio : '+ ratio +  ' ---> ' + txtResult;
-            console.log(txtResult + ' : min ratio' + minRatio + ' vs ratio '+ ratio
-                        + ' --- '+ colorBg +' / '+ colorFg );
+            else {
+                document.getElementById("isValidRatio_Failed").classList.add("hidden");
+                document.getElementById("isValidRatio_Passed").classList.remove("hidden");
+            }
+            checkRatioUI.innerHTML = ratio;
+            console.log(txtResult + ': current ratio '      + ratio
+                                  + ' vs minimum ratio '    + minRatio
+                                  + ' -- '+ colorBg + ' / ' + colorFg );
             return true;
         }
-    }
-
-    if(showError === true) {
-        sample.innerHTML = '';
     }
     return false;
 }
@@ -346,29 +347,29 @@ $(document).ready(function() {
     // when the color inputs lost focus
     document.getElementById("foreground-input").onchange = function() {
         changeColorSample("foreground",true); // show error
-        checkConstrast(true); // show error
+        checkConstrast();
     };
     document.getElementById("background-input").onchange = function() {
         changeColorSample("background",true); // show error
-        checkConstrast(true); // show error
+        checkConstrast();
     };
 
     // when the user change the ratio min
     document.getElementById("ratio").onchange = function() {
-        checkConstrast(true); // show error
+        checkConstrast();
     };
 
     // when the user change the value of color inputs
     $("#foreground-input").on("paste keyup", function() {
         changeColorSample("foreground",false); // don't show error
-        checkConstrast(false); // don't show error
+        checkConstrast();
     });
     $("#background-input").on("paste keyup", function() {
         changeColorSample("background",false); // don't show error
-        checkConstrast(false); // don't show error
+        checkConstrast();
     });
 
     // changeColorSample("foreground",true); // show error
     // changeColorSample("background",true); // show error
-    // checkConstrast(true); // show error
+    // checkConstrast();
 });

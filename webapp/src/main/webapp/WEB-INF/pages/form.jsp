@@ -149,9 +149,49 @@
                                     </form:select>
                                     <form:errors path="ratio" cssClass="help-block"/>
                                 </div>
-                            </div>
-                            <!-- /col-lg-4 -->
+                                <!-- /col-lg-4 -->
 
+                                <div id="currentRatio"
+                                     aria-live="off"
+                                     class="col-lg-1">
+                                <!--    aria-live="off"     ?
+                                        aria-live="polite"  ?
+                                        role="status"       ?
+                                        role="marquee"  have an implicit aria-live value of off.
+                                        https://www.w3.org/TR/wai-aria/#status
+                                        https://www.w3.org/TR/wai-aria/#marquee
+                                        http://ideance.net/publications/live-regions/explications.html
+                                        https://developer.paciellogroup.com/blog/2014/03/screen-reader-support-aria-live-regions/
+                                -->
+                                    <c:set var="formCurrentIsValidContrastClass"    value=""/>
+                                    <c:set var="formCurrentIsNotValidContrastClass" value=""/>
+                                    <c:choose>
+                                        <c:when test="${formCurrentIsValidContrast}">
+                                            <c:set var="formCurrentIsNotValidContrastClass" value="hidden"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <c:set var="formCurrentIsValidContrastClass" value="hidden"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <div id="isValidRatio">
+                                        <img id="isValidRatio_Passed"
+                                             src="<c:url value="public/${appVersion}/images/ico-passed-m.png"/>"
+                                             alt="<fmt:message key="form.currentRatio.alt.valid"/>"
+                                             class="${formCurrentIsValidContrastClass}">
+                                        <img id="isValidRatio_Failed"
+                                             src="<c:url value="public/${appVersion}/images/ico-failed-m.png"/>"
+                                             alt="<fmt:message key="form.currentRatio.alt.fail"/>"
+                                             class="${formCurrentIsNotValidContrastClass}">
+                                    </div>
+                                    <div id="currentRatioTxt">
+                                        <span class="sr-only"><fmt:message key="form.currentRatio"/></span>
+                                        <output form="colorModel"
+                                                for="ratio background-input foreground-input"
+                                                name="currentRatioData"
+                                                id="currentRatioData">${formCurrrentRatio}</output>
+                                    </div>
+                                </div>
+                            </div>
 
                             <%-- Component to modify --%>
                             <div class="form-group">
