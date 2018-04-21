@@ -5,6 +5,10 @@ Contrast-Finder 0.8.7, 2018-0x-xx
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
+Thanks to:
+- @ffoodd - Feature request #148
+
+
 ### New Feature
 none
 
@@ -18,7 +22,7 @@ none
 none
 
 ### Improvement
-none
+- [#148 - Contrast calculation is visible without scrolling)](https://github.com/Asqatasun/Contrast-Finder/issues/148)
 
 ### Refactoring
 none

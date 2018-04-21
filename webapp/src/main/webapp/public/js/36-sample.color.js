@@ -1,5 +1,4 @@
 
-
 // only run when the substr() function is broken
 //      Microsoft's JScript does not support negative values for the start index.
 //      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr
@@ -27,10 +26,7 @@ function precisionRound(number, precision) {
     return Math.round(number * factor) / factor;
 }
 
-
 var colorType = ""; // rgb, hex, name
-
-
 
 
 /********************************************************************/
@@ -76,8 +72,6 @@ function computeContrast(lighter, darker) {
 /********************************************************************/
 // Color validator
 /********************************************************************/
-
-
 
 /**
  * convert hex to rgb
@@ -129,7 +123,6 @@ function ColorNameToHex(str) {
     document.body.removeChild(e);
     return (colors.length >= 3) ? '#' + (((1 << 24) + (colors[0] << 16) + (colors[1] << 8) + colors[2]).toString(16).substr(1)) : false;
 }
-
 
 function isValidateColorName(str) {
     // source: https://gist.github.com/bobspace/2712980
@@ -192,7 +185,6 @@ function isValidateColorHex(str) {
     }
     return false;
 }
-
 
 function isValidateColor(str) {
     str = str.trim();
@@ -278,7 +270,6 @@ function checkConstrast(){
     return false;
 }
 
-
 function changeColorSample(colorPrefix, showError) {
     var input = document.getElementById(colorPrefix + "-input");
     var color = input.value.toLowerCase();
@@ -312,7 +303,6 @@ function changeColorSample(colorPrefix, showError) {
     }
 }
 
-
 function changeColorPicker(colorPrefix) {
     var input       = document.getElementById(colorPrefix + "-input");
     var sample      = document.getElementById(colorPrefix + "-sample");
@@ -329,7 +319,6 @@ function changeColorPicker(colorPrefix) {
         input.classList.remove("error");
     }
 }
-
 
 
 $(document).ready(function() {
