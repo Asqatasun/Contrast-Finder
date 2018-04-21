@@ -49,6 +49,8 @@ public final class ContrastChecker {
     private static final double LUMINANCE_EXP = 2.4;
     /* */
     private static final int ROUND_VALUE = 100000;
+    /* */
+    private static final int ROUND_VALUE_2DIGIT = 100;
 
     /**
      *
@@ -111,6 +113,21 @@ public final class ContrastChecker {
             return (double) Math.round(computeContrast(fgLuminosity, bgLuminosity) * ROUND_VALUE) / ROUND_VALUE;
         } else {
             return (double) Math.round(computeContrast(bgLuminosity, fgLuminosity) * ROUND_VALUE) / ROUND_VALUE;
+        }
+    }
+
+    /**
+     * @param fgColor
+     * @param bgColor
+     * @return the contrast ratio between the 2 colors, rounded to 2 digits
+     */
+    public static double getConstrastRatio2DigitRound(final Color fgColor, final Color bgColor) {
+        double fgLuminosity = getLuminosity(fgColor);
+        double bgLuminosity = getLuminosity(bgColor);
+        if (fgLuminosity > bgLuminosity) {
+            return (double) Math.round(computeContrast(fgLuminosity, bgLuminosity) * ROUND_VALUE_2DIGIT) / ROUND_VALUE_2DIGIT;
+        } else {
+            return (double) Math.round(computeContrast(bgLuminosity, fgLuminosity) * ROUND_VALUE_2DIGIT) / ROUND_VALUE_2DIGIT;
         }
     }
 
