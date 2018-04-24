@@ -1,6 +1,6 @@
 # CHANGELOG
 
-Contrast-Finder 0.8.7, 2018-0x-xx
+Contrast-Finder 0.9.0, 2018-0x-xx
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
@@ -8,9 +8,11 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 Thanks to:
 - @ffoodd          - Feature request #148
 - @ArnaudDelafosse - Issue #136 and PR #143
+- @davidjr82       - PR #157
 
 ### New Feature
-none
+- [#157 - i18n: added Spanish](https://github.com/Asqatasun/Contrast-Finder/issues/157)
+- [#148 - Contrast calculation is visible without scrolling)](https://github.com/Asqatasun/Contrast-Finder/issues/148)
 
 ### Security
 none
@@ -22,7 +24,7 @@ none
 - [#136 - Webapp: fixed pt => px conversion ("Help" > "Text size understanding")](https://github.com/Asqatasun/Contrast-Finder/issues/136)
 
 ### Improvement
-- [#148 - Contrast calculation is visible without scrolling)](https://github.com/Asqatasun/Contrast-Finder/issues/148)
+none
 
 ### Refactoring
 none
@@ -31,7 +33,7 @@ none
 none
 
 ### Documentation
-none
+- [#136 - Fixed pt => px conversion ("Help" > "Text size understanding")](https://github.com/Asqatasun/Contrast-Finder/issues/136)
 
 ### Task
 none
