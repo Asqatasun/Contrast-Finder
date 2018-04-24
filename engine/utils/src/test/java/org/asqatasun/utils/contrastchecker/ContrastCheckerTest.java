@@ -78,6 +78,8 @@ public class ContrastCheckerTest extends TestCase {
     public void testgetConstrastRatio5DigitRound() {
         Color colorA  = new Color(70, 136, 71);     // #468847
         Color colorB  = new Color(223, 240, 216);   // #DFF0D8
+        Color colorC  = new Color(138, 157, 138);   // #8A9D8A
+        Color colorD  = new Color(156, 239, 123);   // #9CEF7B
         double result = ContrastChecker.getConstrastRatio5DigitRound(colorA, colorB);
         System.out.println("getConstrastRatio5DigitRound : [#468847] and [#DFF0D8] = ["+  result  +"] ");
         assertEquals(3.61029, result, 0.00000001);
@@ -85,6 +87,39 @@ public class ContrastCheckerTest extends TestCase {
         result = ContrastChecker.getConstrastRatio5DigitRound(colorB, colorA);
         System.out.println("getConstrastRatio5DigitRound : [#DFF0D8] and [#468847] = ["+  result  +"] ");
         assertEquals(3.61029, result, 0.00000001);
+
+        result = ContrastChecker.getConstrastRatio5DigitRound(colorC, colorD);
+        System.out.println("getConstrastRatio5DigitRound : [#8A9D8A] and [#9CEF7B] = ["+  result  +"] ");
+        assertEquals(2.0695, result, 0.00000001);  // 2.0695032962424893
+
+        result = ContrastChecker.getConstrastRatio5DigitRound(colorD, colorC);
+        System.out.println("getConstrastRatio5DigitRound : [#9CEF7B] and [#8A9D8A] = ["+  result  +"] ");
+        assertEquals(2.06950, result, 0.00000001); // 2.0695032962424893
+    }
+
+    @Test
+    public void testgetConstrastRatio2DigitRound() {
+        Color colorA  = new Color(70, 136, 71);     // #468847
+        Color colorB  = new Color(223, 240, 216);   // #DFF0D8
+        Color colorC  = new Color(138, 157, 138);   // #8A9D8A
+        Color colorD  = new Color(156, 239, 123);   // #9CEF7B
+        double result = ContrastChecker.getConstrastRatio2DigitRound(colorA, colorB);
+        System.out.println("getConstrastRatio2DigitRound : [#468847] and [#DFF0D8] = ["+  result  +"] ");
+        assertEquals(3.61, result, 0.00000001);
+
+        result = ContrastChecker.getConstrastRatio2DigitRound(colorB, colorA);
+        System.out.println("getConstrastRatio2DigitRound : [#DFF0D8] and [#468847] = ["+  result  +"] ");
+        assertEquals(3.61, result, 0.00000001);
+
+        result = ContrastChecker.getConstrastRatio2DigitRound(colorC, colorD);
+        System.out.println("getConstrastRatio2DigitRound : [#8A9D8A] and [#9CEF7B] = ["+  result  +"] ");
+        assertEquals(2.07, result, 0.00000001); // 2.0695032962424893
+
+        result = ContrastChecker.getConstrastRatio2DigitRound(colorD, colorC);
+        System.out.println("getConstrastRatio2DigitRound : [#9CEF7B] and [#8A9D8A] = ["+  result  +"] ");
+        assertEquals(2.07, result, 0.00000001); // 2.0695032962424893
+
+
     }
     ///////////////////////////////////////////////////////////////////
     @Test

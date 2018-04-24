@@ -149,9 +149,52 @@
                                     </form:select>
                                     <form:errors path="ratio" cssClass="help-block"/>
                                 </div>
-                            </div>
-                            <!-- /col-lg-4 -->
+                                <!-- /col-lg-4 -->
 
+                                <%-- Current ratio (updated by Javascript) --%>
+                                <c:if test="${empty colorResult}"> <%-- hidden for default page--%>
+                                    <c:set var="formCurrentRatioClass" value="hidden"/>
+                                </c:if>
+                                <div class="col-lg-1 ${formCurrentRatioClass}"
+                                     id="currentRatio"
+                                     aria-live="off">
+                                        <%-- https://www.w3.org/TR/wai-aria/#status
+                                             https://www.w3.org/TR/wai-aria/#marquee
+                                             http://ideance.net/publications/live-regions/explications.html
+                                             https://developer.paciellogroup.com/blog/2014/03/screen-reader-support-aria-live-regions/
+                                             aria-live="off"     ?
+                                             aria-live="polite"  ?
+                                             role="status"       ?
+                                             role="marquee"  have an implicit aria-live value of off.   --%>
+                                    <c:set var="formCurrentIsValidContrastClass"    value=""/>
+                                    <c:set var="formCurrentIsNotValidContrastClass" value=""/>
+                                    <c:choose>
+                                        <c:when test="${formCurrentIsValidContrast}">
+                                            <c:set var="formCurrentIsNotValidContrastClass" value="hidden"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <c:set var="formCurrentIsValidContrastClass" value="hidden"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <div id="isValidRatio">
+                                        <img id="isValidRatio_Passed"
+                                             src="<c:url value="public/${appVersion}/images/ico-passed-m.png"/>"
+                                             alt="<fmt:message key="form.currentRatio.alt.valid"/>"
+                                             class="${formCurrentIsValidContrastClass}">
+                                        <img id="isValidRatio_Failed"
+                                             src="<c:url value="public/${appVersion}/images/ico-failed-m.png"/>"
+                                             alt="<fmt:message key="form.currentRatio.alt.fail"/>"
+                                             class="${formCurrentIsNotValidContrastClass}">
+                                    </div>
+                                    <div id="currentRatioTxt">
+                                        <span class="sr-only"><fmt:message key="form.currentRatio"/></span>
+                                        <output form="colorModel"
+                                                for="ratio background-input foreground-input"
+                                                name="currentRatioData"
+                                                id="currentRatioData">${formCurrrentRatio}</output>
+                                    </div>
+                                </div>
+                            </div>
 
                             <%-- Component to modify --%>
                             <div class="form-group">
@@ -427,7 +470,32 @@
                 <%-- ===== USER HELP ========================================================================================= --%>
                 <div class="help"> <%-- only on HomePage --%>
                     <c:if test="${empty colorResult}">
-                        <fmt:message key="home.noResultTxt"/>
+                        <h2 id="what-is-contrast-finder"><fmt:message key="info.about.title"/></h2>
+                        <fmt:message key="info.about"/>
+
+                        <h2 id="user-help-contrast-finder"><fmt:message key="help.title"/></h2>
+                            <fmt:message key="help.head"/>
+
+                            <h3 id="user-help_text-color"><fmt:message key="help.txt-color.title"/></h3>
+                            <fmt:message key="help.txt-color"/>
+
+                            <h3 id="user-help_background-color"><fmt:message key="help.bg-color.title"/></h3>
+                            <fmt:message key="help.bg-color"/>
+
+                            <h3 id="user-help_minimum-ratio"><fmt:message key="help.ratio.title"/></h3>
+                            <fmt:message key="help.ratio"/>
+
+                            <h3 id="user-help_color-to-edit"><fmt:message key="help.color-to-edit.title"/></h3>
+                            <fmt:message key="help.color-to-edit"/>
+
+                            <h3 id="user-help_gimme-algorithms"><fmt:message key="help.algo.title"/></h3>
+                            <fmt:message key="help.algo"/>
+
+                        <h2><fmt:message key="info.feedback.title"/></h2>
+                        <fmt:message key="info.feedback"/>
+
+                        <h2><fmt:message key="info.contribute.title"/></h2>
+                        <fmt:message key="info.contribute"/>
                     </c:if>
                 </div>
             </div>  <!-- class="container' -->

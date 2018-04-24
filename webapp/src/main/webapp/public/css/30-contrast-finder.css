@@ -36,8 +36,31 @@ code {
 .alert-warning .alert-link {
     color: #6b4b0a;
 }
-/* Form view*/
 
+
+/* Screen readers only */
+    /* Bootstrap  */
+    /* .sr-only{  position: absolute;
+                  width:    1px;
+                  height:   1px;
+                  padding:  0;
+                  margin:   -1px;
+                  overflow: hidden;
+                  clip:     rect(0 0 0 0);
+                  border:   0;    } */
+    /* https://www.ffoodd.fr/cache-cache-css/  */
+    /* .sr-only{  -webkit-clip-path: inset(50%)         !important;
+                  border:      0                        !important;
+                  clip:        rect(1px, 1px, 1px, 1px) !important;
+                  clip-path:   inset(50%)               !important;
+                  height:      1px                      !important;
+                  overflow:    hidden                   !important;
+                  padding:     0                        !important;
+                  position:    absolute                 !important;
+                  width:       1px                      !important;
+                  white-space: nowrap                   !important;   }   */
+
+/* Form view*/
 .color-value-hsl,
 .color-value-rgb,
 .color-value-hexa {
@@ -118,11 +141,6 @@ legend.control-fieldset  {
     padding-top:10px;
 }
 
-.color-codes {
-    font-size:0.95em;
-    list-style: none;
-    padding: 0;
-}
 .invalid-color {
     color : #b94a48;
     display : none;
@@ -139,6 +157,19 @@ legend.control-fieldset  {
     /* font: 150% Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace; */
     font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
 }
+#currentRatio {
+    display: flex;
+}
+    #isValidRatio {
+        display: flex;
+        flex-direction: column; /* direction d'affichage verticale */
+        justify-content: center; /* alignement vertical */
+        margin-right: 0.6em;
+    }
+    #currentRatioData {
+        font-size: 150%;
+    }
+
 #submit-button {
     padding-left: 25px;
     padding-right: 25px;
@@ -196,6 +227,15 @@ legend.control-fieldset  {
 .col03 {width:6%;}
 .col05 {width:8%;}
 .text-sample p {margin:0}
+
+    .color-codes {
+        font-size:0.95em;
+        list-style: none;
+        padding: 0;
+    }
+        .color-codes li {
+            /* white-space: nowrap; */
+        }
 
 #image-reference {
     margin-left: 43.833333%;

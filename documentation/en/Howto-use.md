@@ -36,12 +36,12 @@ How to choose a ratio? It depends on the following elements:
 
 ### Level AA
 
-Two elements (size and bold) gives four combinations:
+Contrast ratios should be at least:
 
-* Text not bold + text size < 18px => ratio = 4.5
-* Text bold + text size < 14px => ratio = 4.5
-* Text not bold + text size > 18px => ratio = 3
-* Text bold + text size > 14px => ratio = 3
+* 4.5 for body copy,
+* 3 for text in bold with a font-size of at least (equivalent to) 18.5px or 120% of body copy,
+* 3 for large text with a font-size of at least (equivalent to) 24px or 150% of body copy.
+
 
 ### Level AAA
 
@@ -50,19 +50,28 @@ For level AAA the logic is the same, only the ratios increase in the the followi
 * 4.5 ratio becomes 7
 * 3 ratio becomes 4.5
 
-Which gives extensively the following:
+Which means contrast ratios should be at least:
 
-* Text not bold + text size < 18px => ratio = 7
-* Text bold + text size < 14px => ratio = 7
-* Text not bold + text size > 18px => ratio = 4.5
-* Text bold + text size > 14px => ratio = 4.5
+* 7 for body copy,
+* 4.5 for text in bold with a font-size of at least (equivalent to) 18.5px or 120% of body copy,
+* 4.5 for large text with a font-size of at least (equivalent to) 24px or 150% of body copy.
 
 ### Text size understanding
 
-* The 14px criteria can be understood as equivalent of 14pt or 120% or 1.2em
-* The 18px criteria can be understood as equivalent of 18pt or 150% or 1.5em
+According to the W3C, 
+> The ratio between sizes in points and CSS pixels is 1pt = 1.333px, therefore 14pt and 18pt are equivalent to approximately 18.5px and 24px.
 
-For a full and exhaustive understanding of how to interpret text size, one should read the [defintion of large-scale text from WCAG](https://www.w3.org/TR/WCAG20/#larger-scaledef)
+Source: "Note 1" section in [Contrast (Minimum) Understanding SC 1.4.3](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
+
+So for a given default font-size of (equivalent to) 16px with the following CSS rules
+```
+body { font-size: 100%; }
+p { font-size: 1rem; }
+```
+* the 14pt criteria can be understood as (equivalent to) 18.5px ...or 1.2em or 120% of the default size for body text,
+* and the 18pt criteria can be understood as (equivalent to) 24px ...or 1.5em or 150% of the default size for body text.
+
+**Please note** that these are pixel equivalences. In order to let users resize your text content, you should **never use fixed px unit** but relative units like **rem, em or %** to set your font sizes. Use your browser's Inspector/DevTools to check the calculated font size.
 
 ### Other info
 

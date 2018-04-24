@@ -1,14 +1,35 @@
 # CHANGELOG
 
+Contrast-Finder 0.9.0, 2018-04-24
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+Thanks to:
+- @ffoodd          - Feature request #148
+- @ArnaudDelafosse - Issue #136 and PR #143
+- @davidjr82       - PR #157
+
+### New Feature
+- [#157 - i18n: added Spanish](https://github.com/Asqatasun/Contrast-Finder/issues/157)
+- [#148 - Contrast calculation is visible without scrolling)](https://github.com/Asqatasun/Contrast-Finder/issues/148)
+
+### Bug
+- [#136 - Webapp: fixed pt => px conversion ("Help" > "Text size understanding")](https://github.com/Asqatasun/Contrast-Finder/issues/136)
+
+### Documentation
+- [#136 - Fixed pt => px conversion ("Help" > "Text size understanding")](https://github.com/Asqatasun/Contrast-Finder/issues/136)
+
+
 Contrast-Finder 0.8.6, 2018-04-14
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 Thanks to:
-- @ArnaudDelafosse for PR #142
-- @Kaths31         for PR #147
-- @miname          for PR #144 and PR #145
+- @ArnaudDelafosse - PR #142
+- @Kaths31         - PR #147
+- @miname          - PR #144 and #145
 
 ### Outdated dependencies
 - [#156 - Upgraded native2ascii-maven-plugin (2.0.1 instead of 2.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/156)
@@ -28,7 +49,6 @@ Thanks to:
 
 ### Documentation
 - [#142 - Howto-use.md improvements (syntax corrections, match titles to application labels)](https://github.com/Asqatasun/Contrast-Finder/issues/142)
-
 
 
 Contrast-Finder 0.8.5, 2018-02-21
