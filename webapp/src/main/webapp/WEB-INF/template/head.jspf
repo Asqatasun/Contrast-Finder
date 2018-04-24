@@ -66,10 +66,21 @@
         "@type": "WebApplication",
         "name": "Contrast Finder",
         "softwareVersion": "${appVersion}",
-        "license": "https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE",
+        "license":      "https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE",
         "releaseNotes": "https://github.com/Asqatasun/Contrast-Finder/blob/master/CHANGELOG.md",
+        "downloadUrl":  "https://github.com/Asqatasun/Contrast-Finder/releases",
         "screenshot":   "https://contrast-finder.org/public/media/images/screenshot/screenshot.EN_contrast-finder.v0.5.2_2017-07-27_grey_kraken.io-lossy.png",
-        "applicationCategory": "BusinessApplication"
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "WebApplication",
+        "operatingSystem": "any",
+        "availableLanguage": {
+            "@type": "Language",
+            "name": ["English","French","Korean","Portuguese","Spanish"]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "reviewCount": "0"
+        }
     }
     </script>
 </head>

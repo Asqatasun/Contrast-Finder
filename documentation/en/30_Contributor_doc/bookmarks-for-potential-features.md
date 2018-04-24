@@ -10,7 +10,12 @@
     * src: http://kevingutowski.github.io/color.html
 
 ## schema.org
+- https://www.w3.org/wiki/WebSchemas/Accessibility
 - http://schema.org/accessibilityAPI
+- http://schema.org/accessibilityHazard
+- http://schema.org/accessibilityControl
+- http://schema.org/accessMode
+- http://schema.org/accessModeSufficient
 
 ## Ansible
 
