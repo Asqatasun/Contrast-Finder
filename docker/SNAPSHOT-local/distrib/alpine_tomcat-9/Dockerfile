@@ -22,7 +22,7 @@ FROM asqatasun/contrast-finder:pre-requisites_Alpine_tomcat-9
 
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.8.7-SNAPSHOT"
+ENV CONTRAST_FINDER_RELEASE="0.9.0"
 
 # Add contrast-finder .war
 ADD contrast-finder-webapp_${CONTRAST_FINDER_RELEASE}.tar.gz  /root
