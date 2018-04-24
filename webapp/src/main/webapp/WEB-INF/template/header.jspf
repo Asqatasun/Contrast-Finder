@@ -59,7 +59,7 @@
             <c:set var="ptUrl" scope="request" value="?lang=pt"/>
         </c:otherwise>
     </c:choose>
-    <nav id="lang-switcher"  aria-label="<fmt:message key="nav.language-switch.aria-label"/>" role="navigation">
+    <nav id="lang-switcher"  aria-label="<fmt:message key="nav.language-switching.aria-label"/>" role="navigation">
         <ul>
         <c:choose>
             <c:when test="${lang == 'en'}">
