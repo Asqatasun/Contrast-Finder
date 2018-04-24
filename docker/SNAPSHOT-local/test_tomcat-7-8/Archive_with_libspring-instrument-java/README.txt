@@ -2,7 +2,7 @@
 
 ----- with libspring-instrument-java ---------------------------------------
 
-    commit 527be04da1385e05940051de27e2c356d9cedc5d
+    commit 527be04da1385e0.9.1-SNAPSHOT051de27e2c356d9cedc5d
 
 OK   /distrib/debian-8_tomcat-7_legacy-debian
 OK   /test_tomcat-7-8/Ubuntu_14.04_tomcat7_full
