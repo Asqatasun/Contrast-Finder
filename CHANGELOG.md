@@ -5,6 +5,9 @@ Contrast-Finder 0.9.1, 2018-05-xx
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
+Thanks to:
+- @davidjr82       - PR #158
+
 ### New Feature
 none
 
@@ -18,7 +21,7 @@ none
 none
 
 ### Improvement
-none
+- [#158 - Update Spanish i18n file and title attribute in language menu](https://github.com/Asqatasun/Contrast-Finder/issues/158)
 
 ### Refactoring
 none
@@ -30,7 +33,7 @@ none
 none
 
 ### Task
-none
+- Delete old DockerFiles
 
 
 Contrast-Finder 0.9.0, 2018-04-24
