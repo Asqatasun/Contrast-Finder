@@ -74,7 +74,7 @@
                 <li><strong aria-current="page">español</strong></li>
             </c:when>
             <c:otherwise>
-                <li lang="es"><a href="${esUrl}" hreflang="es" title="Switch to Español @@@TODO i18n">español</a></li>
+                <li lang="es"><a href="${esUrl}" hreflang="es" title="Cambiar a español">español</a></li>
             </c:otherwise>
         </c:choose>
         <c:choose>
