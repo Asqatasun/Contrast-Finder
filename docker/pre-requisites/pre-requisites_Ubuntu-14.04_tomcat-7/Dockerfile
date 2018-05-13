@@ -3,7 +3,7 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
       org.label-schema.name           = "Contrast-Finder - WebApp pre-requisites (Ubuntu 14.04 - Tomcat 7)"  \
       org.label-schema.url            = "https://contrast-finder.org"                                        \
       org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"                       \
-      org.label-schema.version        = "0.9.1"
+      org.label-schema.version        = "0.9.2-SNAPSHOT"
           # ----> documentation  http://label-schema.org/
 
 # #### usage ######################################################
