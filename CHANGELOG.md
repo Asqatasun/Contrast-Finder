@@ -1,6 +1,6 @@
 # CHANGELOG
 
-Contrast-Finder 0.9.1, 2018-05-xx
+Contrast-Finder 0.9.1, 2018-05-13
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
@@ -8,29 +8,15 @@ Upgrade-o-meter: just replace the .war file and restart Tomcat
 Thanks to:
 - @davidjr82       - PR #158
 
-### New Feature
-none
-
 ### Security
-none
-
-### Outdated dependencies
-none
-
-### Bug
-none
+- [#152 - Upgraded SpringFramework (4.3.17 instead of 4.3.16)](https://github.com/Asqatasun/Contrast-Finder/issues/152)
+- [#160 - Upgraded spring--security (4.2.6 instead of 4.2.5)](https://github.com/Asqatasun/Contrast-Finder/issues/160)
 
 ### Improvement
 - [#158 - Update Spanish i18n file and title attribute in language menu](https://github.com/Asqatasun/Contrast-Finder/issues/158)
 
-### Refactoring
-none
-
 ### Configuration
 - [#159 - Changed default docker image: ubuntu-18.04_tomcat-8.5 instead of ubuntu-16.04_tomcat-7](https://github.com/Asqatasun/Contrast-Finder/issues/159)
-
-### Documentation
-none
 
 ### Task
 - Delete old DockerFiles
