@@ -6,6 +6,7 @@
 -----
 * Checking for new dependency / plugin updates
 * OWASP Dependency-Check
+* SonarQube report
 * Code coverage
 * Checkstyle
 * JavaDoc
@@ -58,6 +59,19 @@ mvn dependency-check:help -Ddetail=true -Dgoal=aggregate
 * https://www.owasp.org/index.php/OWASP_Dependency_Check
 * http://jeremylong.github.io/DependencyCheck/
 * http://jeremylong.github.io/DependencyCheck/dependency-check-maven/
+
+## SonarQube report
+
+```bash
+sudo docker run -d --name sonarqube -p 9004:9000 -p 9092:9092 sonarqube
+git clone https://github.com/Asqatasun/Contrast-Finder
+cd Contrast-finder
+mvn clean install
+mvn sonar:sonar -Dsonar.host.url=http://localhost:9004
+```
+
+SonarQube report is available on the following URL: `http://localhost:9004`
+
 
 ## Code coverage
 
@@ -159,4 +173,3 @@ target/site/testapidocs
 * [Apache Maven Javadoc Plugin](https://maven.apache.org/plugins/maven-javadoc-plugin/)
 * [Generate Javadocs](https://maven.apache.org/plugins/maven-javadoc-plugin/usage.html)
 * [Javadoc Plugin Documentation](https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html)
-

@@ -1,10 +1,10 @@
-FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-7
-LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                            \
-      org.label-schema.name           = "Contrast-Finder - WebApp (Ubuntu 16.04 - Tomcat 7)"    \
-      org.label-schema.version        = "0.9.1"                                        \
-      org.label-schema.url            = "https://contrast-finder.org"                           \
-      org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"          \
-      org.label-schema.docker.cmd     = "docker run -p 8087:8080 -d asqatasun/contrast-finder"  \
+FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04_tomcat-8.5
+LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                                     \
+      org.label-schema.name           = "Contrast-Finder - WebApp (Ubuntu 18.04 - Tomcat 8.5, Java 10)"  \
+      org.label-schema.version        = "0.9.1"                                                 \
+      org.label-schema.url            = "https://contrast-finder.org"                                    \
+      org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"                   \
+      org.label-schema.docker.cmd     = "docker run -p 8087:8080 -d asqatasun/contrast-finder"           \
       org.label-schema.usage          = "https://github.com/Asqatasun/Contrast-Finder/tree/develop/documentation/"  \
       org.label-schema.description    = "Contrast-Finder finds correct color contrasts for web accessibility."
           # ----> documentation  http://label-schema.org/
@@ -32,8 +32,8 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 #     could be overridden with  --build-arg SRC_URL=<url>
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-7  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-16.04_tomcat-7/Dockerfile
-#   |-- ubuntu:16.04                                                https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/xenial/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04_tomcat-8.5  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-18.04_tomcat-8.5/Dockerfile
+#   |-- ubuntu:18.04                                                  https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/bionic/Dockerfile
 ###################################################################
 
 # build variables
@@ -47,7 +47,7 @@ RUN  cd         /root/                                              && \
      tar  -xzvf contrast-*.tar.gz                                   && \
      cd         /root/contrast-*/install/                           && \
      mv   -v    contrast-*.war    contrast-finder.war               && \
-     mv   -v    contrast-*.war    /var/lib/tomcat7/webapps          && \
+     mv   -v    contrast-*.war    /var/lib/tomcat8/webapps          && \
      rm   -rf  /root/contrast-*                                     && \
      echo ${CONTRAST_FINDER_RELEASE}               >> ${INFO_FILE}  && \
      echo "\n--- ${CONF_FILE} ---"                 >> ${INFO_FILE}  && \
@@ -63,9 +63,9 @@ ENV CONTRAST_FINDER=${CONTRAST_FINDER_RELEASE}
 ENV SRC=${SRC_URL}
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-7
+# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04_tomcat-8.5
 
-CMD  service tomcat7 start        ; \
+CMD  service tomcat8 start        ; \
      tail -f -n 50 ${TOMCAT_LOG}    \
                    ${LOG_FILE}
 

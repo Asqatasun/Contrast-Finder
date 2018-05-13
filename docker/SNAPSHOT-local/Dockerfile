@@ -1,1 +1,1 @@
-distrib/ubuntu-16.04_tomcat-7/Dockerfile
+distrib/ubuntu-18.04_tomcat-8.5/Dockerfile

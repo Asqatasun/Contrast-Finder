@@ -72,6 +72,14 @@
 
 ## Audit history
 
+### 0.9.0
+* Web perf
+    * https://www.webpagetest.org/result/180513_JQ_6968f5fe020e3ae88c8078c4fc620995/
+    * https://yellowlab.tools/result/f1066yvsyi
+* Global tools (webperf, accessibility, security, ...)
+    * https://www.dareboost.com/fr/report/5af8684be96790618ff331da
+    * https://sonarwhal.com/scanner/8f0ca246-a8ac-420e-8737-6405d3ba8d59
+
 ### 0.8.6
 * Web perf
     * https://www.webpagetest.org/result/180416_FA_7dffb8d4b1e9b1b8c5db99750de7248f/
@@ -103,11 +111,3 @@
 * Global tools (webperf, accessibility, security, ...)
     * https://www.dareboost.com/en/report/5a67f2c60cf2b528a73f6dde
     * https://sonarwhal.com/scanner/6699688c-0363-4d0b-a636-add8a2f9d909
-
-
-
-
-
-
-
-    

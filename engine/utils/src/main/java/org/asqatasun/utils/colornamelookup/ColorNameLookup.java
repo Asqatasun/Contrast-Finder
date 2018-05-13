@@ -222,8 +222,8 @@ public class ColorNameLookup {
      * SubClass of ColorNameLookup
      */
     public class ColorName {
-        public int r, g, b;
-        public String name;
+        private int r, g, b;
+        private String name;
         public ColorName(String name, int r, int g, int b) {
             this.r = r;
             this.g = g;

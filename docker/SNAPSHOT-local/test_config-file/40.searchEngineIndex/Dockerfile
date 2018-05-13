@@ -1,4 +1,4 @@
-FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-7
+FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04_tomcat-8.5
 
 # #### usage ######################################################
 #
@@ -14,12 +14,12 @@ FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-16.04_tomcat-7
 #   docker logs -f contrast.finder
 #
 # #### FROM  ######################################################
-#   asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-14.04_tomcat-7/Dockerfile
-#   |-- ubuntu:16.04                                                https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/xenial/Dockerfile
+#   asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04_tomcat-8.5  https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Ubuntu-18.04_tomcat-8.5/Dockerfile
+#   |-- ubuntu:18.04                                                  https://github.com/tianon/docker-brew-ubuntu-core/blob/dist-amd64/bionic/Dockerfile
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.9.0"
+ENV CONTRAST_FINDER_RELEASE="0.9.1"
 ENV SEARCH_ENGINGE="yes"
 
 # Add contrast-finder .war
@@ -28,7 +28,7 @@ ADD contrast-finder-webapp_${CONTRAST_FINDER_RELEASE}.tar.gz  /root
 # Install contrast-finder
 RUN  cd      /root/contrast-*/install/                              && \
      mv -v   contrast-*.war contrast-finder.war                     && \
-     mv -v   contrast-*.war /var/lib/tomcat7/webapps                && \
+     mv -v   contrast-*.war /var/lib/tomcat8/webapps                && \
      rm -rf  /root/contrast-*                                       && \
 echo "searchEngineInclude=${SEARCH_ENGINGE}" >> ${CONF_FILE}        && \
      echo ${CONTRAST_FINDER_RELEASE}               >> ${INFO_FILE}  && \
@@ -41,9 +41,9 @@ echo "searchEngineInclude=${SEARCH_ENGINGE}" >> ${CONF_FILE}        && \
      cat  ${INFO_FILE} > ${LOG_FILE} && echo "-- Install: Ok"
 
 # Health Check of the Docker Container
-# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7
+# ----> see asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04_tomcat-8.5
 
-CMD  service tomcat7 start        ; \
+CMD  service tomcat8 start        ; \
      tail -f -n 50 ${TOMCAT_LOG}    \
                    ${LOG_FILE}
 

@@ -41,7 +41,19 @@
   - [RGB to HSL converter](https://www.rapidtables.com/convert/color/rgb-to-hsl.html)
   - [RGB to HSV converter](https://www.rapidtables.com/convert/color/rgb-to-hsv.html)
 
-# tag <meter>
+
+# Sorts tables
+
+- seems to be accessible but uses Jquery
+  - https://assets.cms.gov/resources/framework/2.0/Pages/datatables.html
+  - https://dequeuniversity.com/library/aria/tables/sf-sortable-grid
+- does not use Jquery but not accessible
+  - http://www.trucsweb.com/tutoriels/javascript/tableau-tri/
+  - https://kryogenix.org/code/browser/sorttable/
+  - https://github.com/tofsjonas/sortable/
+
+
+# tag `<meter>`
 - https://caniuse.com/#search=meter
 - some tests : https://codepen.io/anon/pen/JLRZqZ?editors=1100
 ```html
@@ -220,4 +232,3 @@ D <meter value="7.0" min="1" max="7" low="7.0" high="7" ></meter>
 E <meter value="9.0" min="1" max="7" low="7.0" high="7" ></meter>
           value 9.0 - min 1 - max 7 - low 7.0 - optimun 7  <br>
 ```
-

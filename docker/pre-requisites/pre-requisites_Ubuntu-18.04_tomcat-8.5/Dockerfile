@@ -1,9 +1,9 @@
 FROM ubuntu:18.04
-LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                                           \
-      org.label-schema.name           = "Contrast-Finder - WebApp pre-requisites (Ubuntu 18.04 - Tomcat 8.5)"  \
-      org.label-schema.url            = "https://contrast-finder.org"                                          \
-      org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"                         \
-      org.label-schema.version        = "0.9.0"
+LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                                                    \
+      org.label-schema.name           = "Contrast-Finder - WebApp pre-requisites (Ubuntu 18.04 - Tomcat 8.5, Java 10)"  \
+      org.label-schema.url            = "https://contrast-finder.org"                                                   \
+      org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"                                  \
+      org.label-schema.version        = "0.9.1"
           # ----> documentation  http://label-schema.org/
 
 # #### usage ######################################################

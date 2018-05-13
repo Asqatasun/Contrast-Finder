@@ -20,6 +20,9 @@
 [![GitHub issues](https://img.shields.io/github/issues/asqatasun/contrast-finder.svg?style=flat-square)](https://github.com/Asqatasun/Contrast-Finder/issues)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/asqatasun/contrast-finder.svg?style=flat-square)](https://github.com/Asqatasun/Contrast-Finder/issues?q=is%3Aissue+is%3Aclosed)
 
+## Commits
+[![Commits](https://img.shields.io/github/commit-activity/y/asqatasun/contrast-finder.svg)](https://github.com/Asqatasun/Contrast-Finder/commits/develop)
+
 ## Average time to resolve an issue / PR
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/asqatasun/contrast-finder.svg)](http://isitmaintained.com/project/asqatasun/contrast-finder "Average time to resolve an issue")
 
@@ -51,6 +54,9 @@ Some issues are ignored based on their labels (example of ignored labels: "enhan
 
 ## Code of Conduct
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square)](https://github.com/Asqatasun/Contrast-Finder/blob/develop/CODE_OF_CONDUCT.md)
+
+## GitHub contributors
+[![GitHub contributors](https://img.shields.io/github/contributors/asqatasun/contrast-finder.svg)](https://github.com/Asqatasun/Contrast-Finder/graphs/contributors)
 
 ---
 http://shields.io/
