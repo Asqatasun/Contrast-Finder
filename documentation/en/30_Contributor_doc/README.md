@@ -66,6 +66,7 @@ mvn dependency-check:help -Ddetail=true -Dgoal=aggregate
 sudo docker run -d --name sonarqube -p 9004:9000 -p 9092:9092 sonarqube
 git clone https://github.com/Asqatasun/Contrast-Finder
 cd Contrast-finder
+mvn clean install
 mvn sonar:sonar -Dsonar.host.url=http://localhost:9004
 ```
 
