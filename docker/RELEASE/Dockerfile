@@ -1,1 +1,1 @@
-ubuntu-16.04_tomcat-7/Dockerfile
+ubuntu-18.04_tomcat-8.5/Dockerfile

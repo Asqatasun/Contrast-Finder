@@ -27,7 +27,7 @@ none
 none
 
 ### Configuration
-none
+- [#159 - Changed default docker image: ubuntu-18.04_tomcat-8.5 instead of ubuntu-16.04_tomcat-7](https://github.com/Asqatasun/Contrast-Finder/issues/159)
 
 ### Documentation
 none
