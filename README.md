@@ -1,7 +1,6 @@
 [![License : AGPL v3](https://img.shields.io/badge/License-AGPL3-blue.svg)](https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/Asqatasun/Contrast-Finder.svg)](https://travis-ci.org/Asqatasun/Contrast-Finder)
 [![Release](https://img.shields.io/github/release/asqatasun/Contrast-Finder.svg)](https://github.com/Asqatasun/Contrast-Finder/releases/latest)
-[![Dependency Status](https://www.versioneye.com/user/projects/59405a130fb24f004de09e90/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/59405a130fb24f004de09e90)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c3374c9913d24a9c91e91552f1796672)](https://www.codacy.com/app/Asqatasun/Contrast-Finder)
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square)](https://github.com/Asqatasun/Contrast-Finder/blob/develop/CODE_OF_CONDUCT.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/Asqatasun/Contrast-Finder/blob/develop/CONTRIBUTING.md)

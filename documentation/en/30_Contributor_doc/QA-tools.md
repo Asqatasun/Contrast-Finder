@@ -72,12 +72,12 @@
 
 ## Audit history
 
-### 0.9.0
+### 0.9.0 / 0.9.1
 * Web perf
     * https://www.webpagetest.org/result/180513_JQ_6968f5fe020e3ae88c8078c4fc620995/
     * https://yellowlab.tools/result/f1066yvsyi
 * Global tools (webperf, accessibility, security, ...)
-    * https://www.dareboost.com/fr/report/5af8684be96790618ff331da
+    * https://www.dareboost.com/fr/report/5af8b7c9e96790618ff385c5
     * https://sonarwhal.com/scanner/8f0ca246-a8ac-420e-8737-6405d3ba8d59
 
 ### 0.8.6

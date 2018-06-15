@@ -2,7 +2,7 @@
 
 
 ## Dependency status
-[![Dependency Status](https://www.versioneye.com/user/projects/59405a130fb24f004de09e90/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/59405a130fb24f004de09e90)
+?
 
 ## Travis build status
 

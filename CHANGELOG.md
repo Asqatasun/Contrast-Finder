@@ -12,7 +12,8 @@ none
 none
 
 ### Outdated dependencies
-none
+- [#163 - Upgraded SpringFramework (4.3.18 instead of 4.3.17)](https://github.com/Asqatasun/Contrast-Finder/issues/163)
+- [#162 - Upgraded spring--security (4.2.7 instead of 4.2.6)](https://github.com/Asqatasun/Contrast-Finder/issues/162)
 
 ### Bug
 none
