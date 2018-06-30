@@ -1,0 +1,140 @@
+  _____            _                 _      ______ _           _
+ / ____|          | |               | |    |  ____(_)         | |
+| |     ___  _ __ | |_ _ __ __ _ ___| |_   | |__   _ _ __   __| | ___ _ __
+| |    / _ \| '_ \| __| '__/ _` / __| __|  |  __| | | '_ \ / _` |/ _ \ '__|
+| |___| (_) | | | | |_| | | (_| \__ \ |_   | |    | | | | | (_| |  __/ |
+ \_____\___/|_| |_|\__|_|  \__,_|___/\__|  |_|    |_|_| |_|\__,_|\___|_|
+
+    Contrast-Finder : opensource software for web accessibility.
+
+
+# CONTRAST-FINDER
+
+Contrast-Finder finds correct color contrasts for web accessibility.
+
+     twitter : @Contrast_Finder
+     website : contrast-finder.org
+
+     webapp  : https://app.contrast-finder.org
+     source  : https://github.com/Asqatasun/Contrast-Finder
+     forum   : https://forum.asqatasun.org
+
+
+# TEAM
+
+Creator     : Matthieu Faure
+    Twitter : @mfaure
+    From    : Montpellier, France
+
+Maintainer  : Fabrice Gangler
+    Twitter : @fabricegangler
+    From    : Montpellier, France
+
+Java Guru   : Jérôme Kowalczyk
+    From    : France
+
+
+# PAST TEAM MEMBERS
+
+Developer   : Anthony Lingua
+    From    : Montpellier, France
+
+
+# THANKS ♥
+
+KO translator (한국어):
+              HungJae Lee
+    Twitter : @miname
+    From    : Seoul, Korea
+
+ES translator (Español):
+              David Jiménez
+    Twitter : @davidjr82
+    From    : Madrid, Spain
+
+PT translators (Português):
+              Kath and Rui
+    From    : Montpellier, France
+
+Text size understanding fixup:
+              Arnaud Delafosse
+    Twitter : @arnauddelafosse
+    From    : Paris, France
+
+Feature request:
+              Gaël Poupard
+    Twitter:  @ffoodd_fr
+    From    : Nantes, France
+
+Feature requests + Accessibility feedbacks:
+              Sébastien Delorme
+    Twitter : @sebcbien
+    From    : Paris, France
+
+
+# SITE
+    Languages :  English / Español / Français / Português / 한국어
+    Standards :  HTML5, WCAG
+    Softwares :  Spring Framework, Maven, Tomcat, Apache
+    Tools     :  Asqatasun, Docker, Hardenize, Mozilla Observatory,
+                 OWASP Dependency-Check, Webpagetest, W3C tools
+
+
+#######################################################
+# Sources of inspiration:   http://humanstxt.org/
+#                           we are people, not machines
+#######################################################
+
+                                    *//****
+                                    *//****
+                                    *//****
+                                    *//****
+                                    *//****
+            ***                                                 ***
+          //*****               ,****      ///*               *******
+          //*******        **********      ///******        //*******
+            *******     *************      ///*********.    //*****
+              ***    ****************      ///************    ***
+                   ************                    *********
+                 //********,                       ***********
+                ///******                          ************
+               ////****              (((//////******************
+              /////***               (((//////*******************
+             (/////**                (((//////* accessibility ****
+            ((/////*                 (((//////*********************
+            ((/////                  (((//////********** color ****
+//*******   ((/////                           *********************,  (//******
+//*******  (((/////                           **********************  (//******
+//*******  (((/////                           **********************  (//******
+//*******  *((/////                           ** background *******,  (//******
+            ((/////                  (((//////*********************
+            ((/////*                 (((/3////*********************
+             (/////*,                (((//////**** contrast ******
+              /////**,               (((/4.5//****** finder *****,
+              /////****              (((//////*******************
+                ///******            (((///7//*****************,
+                 //********          (((//////** wcag ********
+                   ***********,      (((//////**************
+              ***    ****************      ///************    ***
+            ******,    **************      ///**********    //*****
+          //*******       ***********      ///*******       //*******
+          //*****              ******      ///**              *******
+            ***                                                 ***
+                                     (/*****
+                                     (/*****
+                                     (/*****
+                                     (/*****
+                                     (/*****
+
+
+
+ ██████╗ ██████╗ ███╗   ██╗████████╗██████╗  █████╗ ███████╗████████╗   ███████╗██╗███╗   ██╗██████╗ ███████╗██████╗
+██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔══██╗██╔══██╗██╔════╝╚══██╔══╝   ██╔════╝██║████╗  ██║██╔══██╗██╔════╝██╔══██╗
+██║     ██║   ██║██╔██╗ ██║   ██║   ██████╔╝███████║███████╗   ██║      █████╗  ██║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
+██║     ██║   ██║██║╚██╗██║   ██║   ██╔══██╗██╔══██║╚════██║   ██║      ██╔══╝  ██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗
+╚██████╗╚██████╔╝██║ ╚████║   ██║   ██║  ██║██║  ██║███████║   ██║      ██║     ██║██║ ╚████║██████╔╝███████╗██║  ██║
+ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝      ╚═╝     ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+01000011 01101111 01101110 01110100 01110010 01100001 01110011 01110100 00101101 01000110 01101001 01101110 01100100 01100101 01110010
+
+    ♥ 43 6f 6e 74 72 61 73 74 2d 46 69 6e 64 65 72 ♥
+♡

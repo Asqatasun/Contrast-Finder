@@ -41,23 +41,61 @@
   - [RGB to HSL converter](https://www.rapidtables.com/convert/color/rgb-to-hsl.html)
   - [RGB to HSV converter](https://www.rapidtables.com/convert/color/rgb-to-hsv.html)
 
+# Javascript
+- Converting jQuery to JavaScript
+    - https://github.com/jackocnr/intl-tel-input/wiki/Converting-jQuery-to-JavaScript
+    - http://sharedfil.es/js-48hIfQE4XK.html
+    - http://youmightnotneedjquery.com/
+    - http://putaindecode.io/fr/articles/js/de-jquery-a-vanillajs/
+- http://mathjs.org math library for JavaScript
+- key code
+    - https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
+    - https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
 
-# Sorts tables
+## JS - Sorts tables
 
-- seems to be accessible but uses Jquery
-  - https://assets.cms.gov/resources/framework/2.0/Pages/datatables.html
-  - https://dequeuniversity.com/library/aria/tables/sf-sortable-grid
-- does not use Jquery but not accessible
-  - http://www.trucsweb.com/tutoriels/javascript/tableau-tri/
-  - https://kryogenix.org/code/browser/sorttable/
-  - https://github.com/tofsjonas/sortable/
+### Seems to be accessible but uses Jquery
+- https://dequeuniversity.com/library/aria/tables/sf-sortable-grid
+    - sorting rows with space key not works
+- https://www.datatables.net/
+    - sorting rows with space key not works
+    - https://assets.cms.gov/resources/framework/2.0/Pages/datatables.html
+        - use an older version of datatables.net
+        - sorting rows with space key work correctly
+- http://examples.simplyaccessible.com/table-sort/accessible.php
+    - fixes **TabSorter** plugin accessibility
+    - the demo page does not seem to work well
+    - currently used by _Contrast-Finder_
+        - works better on _Contrast-Finder_ than on the demo page
+          for focusing headers cells and sorting rows with enter key
+        - sorting rows with space key not works
+- https://mottie.github.io/tablesorter/
+    - fork of the TabSorter plugin
+    - seems to have integrated accessibility issues
+      (sorting columns with keyboard, role="row", "aria-sort", ...)
+    - sorting rows with space key not works
+
+
+### does not use Jquery but not accessible
+- http://www.trucsweb.com/tutoriels/javascript/tableau-tri/
+- https://kryogenix.org/code/browser/sorttable/
+- https://github.com/tofsjonas/sortable/
 
 
 # tag `<meter>`
 - https://caniuse.com/#search=meter
-- some tests : https://codepen.io/anon/pen/JLRZqZ?editors=1100
+- https://css-tricks.com/html5-meter-element/
+- some tests : https://codepen.io/anon/pen/eKPwpG?editors=1000
 ```html
-<h1> min 0 / max 10 / optimum 4.5 / low 3</h1>
+<style> body{
+           font-family: Verdana, Geneva, sans-serif;
+        }
+        h1 {
+          margin-top: 1.5em;
+          font-size: 100%
+        }
+</style>
+<h1> I) min 0 / max 10 / optimum 4.5 / low 3</h1>
 A <meter value="2.9" min="0" max="10" low="3" optimum="4.5" ></meter>
           value 2.9 - min 0 - max 10 - low 3 - optimun 4.5 <br>
 B <meter value="3.3" min="0" max="10" low="3" optimum="4.5" ></meter>
@@ -70,7 +108,7 @@ E <meter value="9.0" min="0" max="10" low="3" optimum="4.5" ></meter>
           value 9.0 - min 0 - max 10 - low 3 - optimun 4.5 <br>
 
 <hr>
-<h1>  min 1 / max 21 / optimum 4.5 / low 3 </h1>
+<h1> II) min 1 / max 21 / optimum 4.5 / low 3 </h1>
 A <meter value="2.9" min="1" max="21" low="3" optimum="4.5" ></meter>
           value 2.9 - min 1 - max 21 - low 3 - optimun 4.5  <br>
 B <meter value="3.3" min="1" max="21" low="3" optimum="4.5" ></meter>
@@ -82,7 +120,7 @@ E <meter value="7.0" min="1" max="21" low="3" optimum="4.5" ></meter>
 F <meter value="9.0" min="1" max="21" low="3" optimum="4.5" ></meter>
           value 9.0 - min 1 - max 21 - low 3 - optimun 4.5  <br>
 
-<h1>  min 1 / max 21 / optimum 7 / low 4.5 </h1>
+<h1> III) min 1 / max 21 / optimum 7 / low 4.5 </h1>
 A <meter value="2.9" min="1" max="21" low="4.5" optimum="7" ></meter>
           value 2.9 - min 1 - max 21 - low 4.5 - optimun 7  <br>
 B <meter value="3.3" min="1" max="21" low="4.5" optimum="7" ></meter>
@@ -94,7 +132,7 @@ E <meter value="7.0" min="1" max="21" low="4.5" optimum="7" ></meter>
 F <meter value="9.0" min="1" max="21" low="4.5" optimum="7" ></meter>
           value 9.0 - min 1 - max 21 - low 4.5 - optimun 7  <br>
 
-<h1>  min 1 / max 21 / optimum 7 / low 7 </h1>
+<h1> IV) min 1 / max 21 / optimum 7 / low 7 </h1>
 A <meter value="2.9" min="1" max="21" low="7" optimum="7" ></meter>
           value 2.9 - min 1 - max 21 - low 7 - optimun 7  <br>
 B <meter value="3.3" min="1" max="21" low="7" optimum="7" ></meter>
@@ -107,7 +145,7 @@ F <meter value="9.0" min="1" max="21" low="7" optimum="7" ></meter>
           value 9.0 - min 1 - max 21 - low 7 - optimun 7  <br>
 
 <hr>
-<h1> min 1 / max 7 / optimum 4.5 / low 3 </h1>
+<h1> V) min 1 / max 7 / optimum 4.5 / low 3 </h1>
 A <meter value="2.9" min="1" max="7" low="3" optimum="4.5" ></meter>
           value 2.9 - min 1 - max 7 - low 3 - optimun 4.5  <br>
 B <meter value="3.3" min="1" max="7" low="3" optimum="4.5" ></meter>
@@ -119,7 +157,7 @@ E <meter value="7.0" min="1" max="7" low="3" optimum="4.5" ></meter>
 F <meter value="9.0" min="1" max="7" low="3" optimum="4.5" ></meter>
           value 9.0 - min 1 - max 7 - low 3 - optimun 4.5  <br>
 
-<h1> min 1 / max 7 / optimum 7 / low 4.5 </h1>
+<h1> VI) min 1 / max 7 / optimum 7 / low 4.5 </h1>
 A <meter value="2.9" min="1" max="7" low="4.5" optimum="7" ></meter>
           value 2.9 - min 1 - max 7 - low 4.5 - optimun 7  <br>
 B <meter value="3.3" min="1" max="7" low="4.5" optimum="7" ></meter>
@@ -131,7 +169,7 @@ D <meter value="7.0" min="1" max="7" low="4.5" optimum="7" ></meter>
 E <meter value="9.0" min="1" max="7" low="4.5" optimum="7" ></meter>
           value 9.0 - min 1 - max 7 - low 4.5 - optimun 7  <br>
 
-<h1> min 1 / max 7 / optimum 7 / low 7 </h1>
+<h1> VII) min 1 / max 7 / optimum 7 / low 7 </h1>
 A <meter value="2.9" min="1" max="7" low="7.0" optimum="7" ></meter>
           value 2.9 - min 1 - max 7 - low 7.0 - optimun 7  <br>
 B <meter value="3.3" min="1" max="7" low="7.0" optimum="7" ></meter>
@@ -146,89 +184,91 @@ E <meter value="9.0" min="1" max="7" low="7.0" optimum="7" ></meter>
 <hr>
 <br>
 
-<h1> min 0 / max 10 / high 4.5 / low 3</h1>
+<h1> VIII) min 0 / max 10 / high 4.5 / low 3</h1>
 A <meter value="2.9" min="0" max="10" low="3" high="4.5" ></meter>
-          value 2.9 - min 0 - max 10 - low 3 - optimun 4.5 <br>
+          value 2.9 - min 0 - max 10 - low 3 - high 4.5  <br>
 B <meter value="3.3" min="0" max="10" low="3" high="4.5" ></meter>
-          value 3.3 - min 0 - max 10 - low 3 - optimun 4.5 <br>
+          value 3.3 - min 0 - max 10 - low 3 - high 4.5  <br>
 C <meter value="4.6" min="0" max="10" low="3" high="4.5" ></meter>
-          value 4.6 - min 0 - max 10 - low 3 - optimun 4.5 <br>
+          value 4.6 - min 0 - max 10 - low 3 - high 4.5  <br>
 D <meter value="7.0" min="0" max="10" low="3" high="4.5" ></meter>
-          value 7.0 - min 0 - max 10 - low 3 - optimun 4.5 <br>
+          value 7.0 - min 0 - max 10 - low 3 - high 4.5  <br>
 E <meter value="9.0" min="0" max="10" low="3" high="4.5" ></meter>
-          value 9.0 - min 0 - max 10 - low 3 - optimun 4.5 <br>
+          value 9.0 - min 0 - max 10 - low 3 - high 4.5  <br>
 
 <hr>
-<h1>  min 1 / max 21 / high 4.5 / low 3 </h1>
+<h1> IX) min 1 / max 21 / high 4.5 / low 3 </h1>
 A <meter value="2.9" min="1" max="21" low="3" high="4.5" ></meter>
-          value 2.9 - min 1 - max 21 - low 3 - optimun 4.5  <br>
+          value 2.9 - min 1 - max 21 - low 3 - high 4.5  <br>
 B <meter value="3.3" min="1" max="21" low="3" high="4.5" ></meter>
-          value 3.3 - min 1 - max 21 - low 3 - optimun 4.5 <br>
+          value 3.3 - min 1 - max 21 - low 3 - high 4.5  <br>
 D <meter value="4.6" min="1" max="21" low="3" high="4.5" ></meter>
-          value 4.6 - min 1 - max 21 - low 3 - optimun 4.5  <br>
+          value 4.6 - min 1 - max 21 - low 3 - high 4.5  <br>
 E <meter value="7.0" min="1" max="21" low="3" high="4.5" ></meter>
-          value 7.0 - min 1 - max 21 - low 3 - optimun 4.5  <br>
+          value 7.0 - min 1 - max 21 - low 3 - high 4.5  <br>
 F <meter value="9.0" min="1" max="21" low="3" high="4.5" ></meter>
-          value 9.0 - min 1 - max 21 - low 3 - optimun 4.5  <br>
+          value 9.0 - min 1 - max 21 - low 3 - high 4.5  <br>
 
-<h1>  min 1 / max 21 / high 7 / low 4.5 </h1>
+<h1> X) min 1 / max 21 / high 7 / low 4.5 </h1>
 A <meter value="2.9" min="1" max="21" low="4.5" high="7" ></meter>
-          value 2.9 - min 1 - max 21 - low 4.5 - optimun 7  <br>
+          value 2.9 - min 1 - max 21 - low 4.5 - high 7  <br>
 B <meter value="3.3" min="1" max="21" low="4.5" high="7" ></meter>
-          value 3.3 - min 1 - max 21 - low 4.5 - optimun 7  <br>
+          value 3.3 - min 1 - max 21 - low 4.5 - high 7  <br>
 D <meter value="4.6" min="1" max="21" low="4.5" high="7" ></meter>
-          value 4.6 - min 1 - max 21 - low 4.5 - optimun 7  <br>
+          value 4.6 - min 1 - max 21 - low 4.5 - high 7  <br>
 E <meter value="7.0" min="1" max="21" low="4.5" high="7" ></meter>
-          value 7.0 - min 1 - max 21 - low 4.5 - optimun 7  <br>
+          value 7.0 - min 1 - max 21 - low 4.5 - high 7  <br>
 F <meter value="9.0" min="1" max="21" low="4.5" high="7" ></meter>
-          value 9.0 - min 1 - max 21 - low 4.5 - optimun 7  <br>
+          value 9.0 - min 1 - max 21 - low 4.5 - high 7  <br>
 
-<h1>  min 1 / max 21 / high 7 / low 7 </h1>
+<h1> XI) min 1 / max 21 / high 7 / low 7 </h1>
 A <meter value="2.9" min="1" max="21" low="7" high="7" ></meter>
-          value 2.9 - min 1 - max 21 - low 7 - optimun 7  <br>
+          value 2.9 - min 1 - max 21 - low 7 - high 7  <br>
 B <meter value="3.3" min="1" max="21" low="7" high="7" ></meter>
-          value 3.3 - min 1 - max 21 - low 7 - optimun 7  <br>
+          value 3.3 - min 1 - max 21 - low 7 - high 7  <br>
 D <meter value="4.6" min="1" max="21" low="7" high="7" ></meter>
-          value 4.6 - min 1 - max 21 - low 7 - optimun 7  <br>
+          value 4.6 - min 1 - max 21 - low 7 - high 7  <br>
 E <meter value="7.0" min="1" max="21" low="7" high="7" ></meter>
-          value 7.0 - min 1 - max 21 - low 7 - optimun 7  <br>
+          value 7.0 - min 1 - max 21 - low 7 - high 7  <br>
 F <meter value="9.0" min="1" max="21" low="7" high="7" ></meter>
-          value 9.0 - min 1 - max 21 - low 7 - optimun 7  <br>
+          value 9.0 - min 1 - max 21 - low 7 - high 7  <br>
 
 <hr>
-<h1> min 1 / max 7 / high 4.5 / low 3 </h1>
+<h1> XII) min 1 / max 7 / high 4.5 / low 3</h1>
 A <meter value="2.9" min="1" max="7" low="3" high="4.5" ></meter>
-          value 2.9 - min 1 - max 7 - low 3 - optimun 4.5  <br>
+          value 2.9 - min 1 - max 7 - low 3 - high 4.5  <br>
 B <meter value="3.3" min="1" max="7" low="3" high="4.5" ></meter>
-          value 3.3 - min 1 - max 7 - low 3 - optimun 4.5 <br>
+          value 3.3 - min 1 - max 7 - low 3 - high 4.5  <br>
 C <meter value="4.6" min="1" max="7" low="3" high="4.5" ></meter>
-          value 4.6 - min 1 - max 7 - low 3 - optimun 4.5 <br>
+          value 4.6 - min 1 - max 7 - low 3 - high 4.5  <br>
 E <meter value="7.0" min="1" max="7" low="3" high="4.5" ></meter>
-          value 7.0 - min 1 - max 7 - low 3 - optimun 4.5  <br>
+          value 7.0 - min 1 - max 7 - low 3 - high 4.5  <br>
 F <meter value="9.0" min="1" max="7" low="3" high="4.5" ></meter>
-          value 9.0 - min 1 - max 7 - low 3 - optimun 4.5  <br>
+          value 9.0 - min 1 - max 7 - low 3 - high 4.5  <br>
 
-<h1> min 1 / max 7 / high 7 / low 4.5 </h1>
+<h1> XIII) min 1 / max 7 / high 7 / low 4.5  </h1>
 A <meter value="2.9" min="1" max="7" low="4.5" high="7" ></meter>
-          value 2.9 - min 1 - max 7 - low 4.5 - optimun 7  <br>
+          value 2.9 - min 1 - max 7 - low 4.5 - high 7  <br>
 B <meter value="3.3" min="1" max="7" low="4.5" high="7" ></meter>
-          value 3.3 - min 1 - max 7 - low 4.5 - optimun 7 <br>
+          value 3.3 - min 1 - max 7 - low 4.5 - high 7  <br>
 C <meter value="4.6" min="1" max="7" low="4.5" high="7" ></meter>
-          value 4.6 - min 1 - max 7 - low 4.5 - optimun 7  <br>
+          value 4.6 - min 1 - max 7 - low 4.5 - high 7  <br>
 D <meter value="7.0" min="1" max="7" low="4.5" high="7" ></meter>
-          value 7.0 - min 1 - max 7 - low 4.5 - optimun 7  <br>
+          value 7.0 - min 1 - max 7 - low 4.5 - high 7  <br>
 E <meter value="9.0" min="1" max="7" low="4.5" high="7" ></meter>
-          value 9.0 - min 1 - max 7 - low 4.5 - optimun 7  <br>
+          value 9.0 - min 1 - max 7 - low 4.5 - high 7  <br>
 
-<h1> min 1 / max 7 / high 7 / low 7 </h1>
+<h1> XIV) min 1 / max 7 / high 7 / low 7 </h1>
 A <meter value="2.9" min="1" max="7" low="7.0" high="7" ></meter>
-          value 2.9 - min 1 - max 7 - low 7.0 - optimun 7  <br>
+          value 2.9 - min 1 - max 7 - low 7.0 - high 7  <br>
 B <meter value="3.3" min="1" max="7" low="7.0" high="7" ></meter>
-          value 3.3 - min 1 - max 7 - low 7.0 - optimun 7 <br>
+          value 3.3 - min 1 - max 7 - low 7.0 - high 7  <br>
 C <meter value="4.6" min="1" max="7" low="7.0" high="7" ></meter>
-          value 4.6 - min 1 - max 7 - low 7.0 - optimun 7  <br>
+          value 4.6 - min 1 - max 7 - low 7.0 - high 7  <br>
 D <meter value="7.0" min="1" max="7" low="7.0" high="7" ></meter>
-          value 7.0 - min 1 - max 7 - low 7.0 - optimun 7  <br>
+          value 7.0 - min 1 - max 7 - low 7.0 - high 7  <br>
 E <meter value="9.0" min="1" max="7" low="7.0" high="7" ></meter>
-          value 9.0 - min 1 - max 7 - low 7.0 - optimun 7  <br>
+          value 9.0 - min 1 - max 7 - low 7.0 - high 7  <br>
+
+
 ```
