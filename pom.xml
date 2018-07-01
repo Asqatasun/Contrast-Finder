@@ -57,7 +57,7 @@
         <module>documentation</module>
         <module>engine</module>
         <module>webapp</module>
-        <module>dist./debian_package</module>
+        <module>dist.</module>
     </modules>
     <properties>
         <!-- Used in MANIFEST.MF files-->
@@ -82,6 +82,7 @@
         <markdown-page-generator-plugin.version>2.1.0</markdown-page-generator-plugin.version>
 
         <!-- Plugin Versions -->
+        <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
         <maven-war-plugin.version>3.2.2</maven-war-plugin.version>
@@ -296,6 +297,13 @@
                             <a href="https://constrast-finder.org">Constrast-Finder.org<a>
                         ]]>
                     </bottom>
+                    <tags>
+                        <tag>
+                            <name>todo</name>
+                            <placement>a</placement>  <!-- todo tag for all places -->
+                            <head>To do something:</head>
+                        </tag>
+                    </tags>
                 </configuration>
             </plugin>
 
@@ -437,6 +445,13 @@
      http://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_reporting_Tag_VS_build_Tag -->
     <reporting> <!-- usage: mvn site  -->
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven-site-plugin.version}</version>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
@@ -527,6 +542,13 @@
                             <a href="https://contrast-finder.org">Contrast-Finder.org<a>
                         ]]>
                     </bottom>
+                    <tags>
+                        <tag>
+                            <name>todo</name>
+                            <placement>a</placement>  <!-- todo tag for all places -->
+                            <head>To do something:</head>
+                        </tag>
+                    </tags>
                 </configuration>
             </plugin>
         </plugins>

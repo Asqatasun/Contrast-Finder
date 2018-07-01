@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.asqatasun</groupId>
-        <artifactId>contrast-finder-dist</artifactId>
+        <artifactId>dist</artifactId>
         <version>0.9.2-SNAPSHOT</version>
     </parent>
     <artifactId>contrast-finder-dist_debian-packages</artifactId>
@@ -35,6 +35,15 @@
     <build>
         <finalName>contrast-finder-webapp_${project.version}</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven-site-plugin.version}</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+
        <!-- jdeb: maven plugin to create Debian packages from Java build
                   https://github.com/tcurdt/jdeb                    -->
             <plugin>
