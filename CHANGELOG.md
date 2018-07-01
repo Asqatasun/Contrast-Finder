@@ -16,7 +16,7 @@ none
 - [#162 - Upgraded spring--security (4.2.7 instead of 4.2.6)](https://github.com/Asqatasun/Contrast-Finder/issues/162)
 
 ### Bug
-none
+- [#166 - Used an independent subproject for jdeb (debian packages creation)](https://github.com/Asqatasun/Contrast-Finder/issues/166)
 
 ### Improvement
 - [#165 - Added some information to the MANIFEST.MF files : commit, buid timestamp](https://github.com/Asqatasun/Contrast-Finder/issues/165)

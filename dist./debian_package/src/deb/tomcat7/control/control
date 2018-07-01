@@ -1,0 +1,21 @@
+Source: [[name]]
+Package: Contrast-Finder_webapp-for-tomcat7
+Version: [[version]]
+Section: web
+Priority: optional
+Maintainer: contrast-finder.org  <package-debian@contrast-finder.org>
+Architecture: all
+Build-Depends: debhelper (>=9)
+Depends: tomcat7
+Standards-Version: 3.9.6
+Homepage: [[url]]
+Vcs-Git: git://github.com:Asqatasun/Contrast-Finder.git
+Vcs-Browser: https://github.com/Asqatasun/Contrast-Finder
+Description: [[description]]
+ Contrast-Finder is a tool which computes the contrast between two colors.
+ .
+ (background, foreground) and checks if the contrast is valid. When the
+ .
+ contrast is not valid, the main target is to suggest some correct colors
+ .
+ contrasts.
