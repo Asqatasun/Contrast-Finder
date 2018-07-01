@@ -14,6 +14,10 @@ none
 ### Outdated dependencies
 - [#163 - Upgraded SpringFramework (4.3.18 instead of 4.3.17)](https://github.com/Asqatasun/Contrast-Finder/issues/163)
 - [#162 - Upgraded spring--security (4.2.7 instead of 4.2.6)](https://github.com/Asqatasun/Contrast-Finder/issues/162)
+- [#167 - Upgraded maven-javadoc-plugin (3.0.1 instead of 3.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/167)
+- [#168 - Upgraded maven-surefire-plugin (2.22.0 instead of 2.21.0)](https://github.com/Asqatasun/Contrast-Finder/issues/168)
+- [#169 - Upgraded maven-dependency-plugin (3.1.1 instead of 3.1.0)](https://github.com/Asqatasun/Contrast-Finder/issues/169)
+- [#170 - Upgraded owasp:dependency-check (3.2.1 instead of 3.1.2)](https://github.com/Asqatasun/Contrast-Finder/issues/170)
 
 ### Bug
 - [#166 - Used an independent subproject for jdeb (debian packages creation)](https://github.com/Asqatasun/Contrast-Finder/issues/166)
@@ -31,7 +35,8 @@ none
 none
 
 ### Task
-none
+- [#171 - Webapp: added humans.txt file](https://github.com/Asqatasun/Contrast-Finder/issues/171)
+
 
 
 Contrast-Finder 0.9.1, 2018-05-13
