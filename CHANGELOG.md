@@ -24,6 +24,7 @@ none
 
 ### Improvement
 - [#165 - Added some information to the MANIFEST.MF files : commit, buid timestamp](https://github.com/Asqatasun/Contrast-Finder/issues/165)
+- [#172 - All maven plugins have their version specified](https://github.com/Asqatasun/Contrast-Finder/issues/172)
 
 ### Refactoring
 none
