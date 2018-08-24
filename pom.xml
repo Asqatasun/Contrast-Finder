@@ -108,205 +108,171 @@
                                     the minimum version of Maven for maven plugins
                                     ............  mvn versions:display-plugin-updates     -->
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin.version}</version>
-                    <configuration>
-                        <source>1.7</source>
-                        <target>1.7</target>
-                        <encoding>UTF-8</encoding>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${maven-surefire-plugin.version}</version>
-                    <configuration>
-                        <skipTests>false</skipTests>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>${maven-clean-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>${maven-deploy-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-install-plugin</artifactId>
-                    <version>${maven-install-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>${maven-resources-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>${maven-site-plugin.version}</version>
-                </plugin>
-                <!--
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-assembly-plugin</artifactId>
-                        <version>${maven-assembly-plugin.version}</version>
-                    </plugin>
-                -->
-
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>${maven-jar-plugin.version}</version>
-                    <configuration>
-                        <archive> <!-- - adds some information to the MANIFEST.MF files
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <skipTests>false</skipTests>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <!--    <version>3.1</version>         -->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <archive> <!-- - adds some information to the MANIFEST.MF files
                                    - uses build-helper-maven-plugin + buildnumber-maven-plugin
                                    - same as maven-war-plugin -->
-                            <!--<manifest>
-                                    <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                                    <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                                </manifest>   -->
-                            <manifestEntries>
-                                <Project>${project.name}</Project>
-                                <Built-By>${project.organization.name}</Built-By>
-                                <!-- overwritting default value (user name) -->
-                            </manifestEntries>
-                            <manifestSections>
-                                <manifestSection>
-                                    <name>Build</name>
-                                    <manifestEntries>
-                                        <Build-Release>${project.version}</Build-Release>
-                                        <Build-Timestamp>${timestamp}</Build-Timestamp>
-                                        <Build-Date>${current.date}</Build-Date>
-                                        <Build-Id>${project.version}.${buildNumber}.${timestamp}</Build-Id>
-                                    </manifestEntries>
-                                </manifestSection>
-                                <manifestSection>
-                                    <name>Git</name>
-                                    <manifestEntries>
-                                        <git-branch>${scmBranch}</git-branch>
-                                        <git-url>${commitUrlPrefix}${buildNumber}</git-url>
-                                        <git-commit>${buildNumber}</git-commit>
-                                    </manifestEntries>
-                                </manifestSection>
-                                <manifestSection>
-                                    <name>Build-Information</name>
-                                    <manifestEntries>
-                                        <Maven-Version>${maven.version}</Maven-Version>
-                                        <Java-Version>${java.version}</Java-Version>
-                                        <Os-Name>${os.name}</Os-Name>
-                                        <Os-Arch>${os.arch}</Os-Arch>
-                                    </manifestEntries>
-                                </manifestSection>
-                            </manifestSections>
-                        </archive>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>${maven-war-plugin.version}</version>
-                    <configuration>
-                        <archive> <!-- - adds some information to the MANIFEST.MF files
+                        <!--<manifest>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>   -->
+                        <manifestEntries>
+                            <Project>${project.name}</Project>
+                            <Built-By>${project.organization.name}</Built-By>
+                            <!-- overwritting default value (user name) -->
+                        </manifestEntries>
+                        <manifestSections>
+                            <manifestSection>
+                                <name>Build</name>
+                                <manifestEntries>
+                                    <Build-Release>${project.version}</Build-Release>
+                                    <Build-Timestamp>${timestamp}</Build-Timestamp>
+                                    <Build-Date>${current.date}</Build-Date>
+                                    <Build-Id>${project.version}.${buildNumber}.${timestamp}</Build-Id>
+                                </manifestEntries>
+                            </manifestSection>
+                            <manifestSection>
+                                <name>Git</name>
+                                <manifestEntries>
+                                    <git-branch>${scmBranch}</git-branch>
+                                    <git-url>${commitUrlPrefix}${buildNumber}</git-url>
+                                    <git-commit>${buildNumber}</git-commit>
+                                </manifestEntries>
+                            </manifestSection>
+                            <manifestSection>
+                                <name>Build-Information</name>
+                                <manifestEntries>
+                                    <Maven-Version>${maven.version}</Maven-Version>
+                                    <Java-Version>${java.version}</Java-Version>
+                                    <Os-Name>${os.name}</Os-Name>
+                                    <Os-Arch>${os.arch}</Os-Arch>
+                                </manifestEntries>
+                            </manifestSection>
+                        </manifestSections>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin.version}</version>
+                <configuration>
+                    <archive> <!-- - adds some information to the MANIFEST.MF files
                                    - uses build-helper-maven-plugin + buildnumber-maven-plugin
                                    - same as maven-jar-plugin -->
-                            <!--<manifest>
-                                    <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                                    <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                                </manifest>   -->
-                            <manifestEntries>
-                                <Project>${project.name}</Project>
-                                <Built-By>${project.organization.name}</Built-By>
-                                <!-- overwritting default value (user name) -->
-                            </manifestEntries>
-                            <manifestSections>
-                                <manifestSection>
-                                    <name>Build</name>
-                                    <manifestEntries>
-                                        <Build-Release>${project.version}</Build-Release>
-                                        <Build-Timestamp>${timestamp}</Build-Timestamp>
-                                        <Build-Date>${current.date}</Build-Date>
-                                        <Build-Id>${project.version}.${buildNumber}.${timestamp}</Build-Id>
-                                    </manifestEntries>
-                                </manifestSection>
-                                <manifestSection>
-                                    <name>Git</name>
-                                    <manifestEntries>
-                                        <git-branch>${scmBranch}</git-branch>
-                                        <git-url>${commitUrlPrefix}${buildNumber}</git-url>
-                                        <git-commit>${buildNumber}</git-commit>
-                                    </manifestEntries>
-                                </manifestSection>
-                                <manifestSection>
-                                    <name>Build-Information</name>
-                                    <manifestEntries>
-                                        <Maven-Version>${maven.version}</Maven-Version>
-                                        <Java-Version>${java.version}</Java-Version>
-                                        <Os-Name>${os.name}</Os-Name>
-                                        <Os-Arch>${os.arch}</Os-Arch>
-                                    </manifestEntries>
-                                </manifestSection>
-                            </manifestSections>
-                        </archive>
-                    </configuration>
-                </plugin>
-                <plugin><!-- used by maven-jar-plugin
+                        <!--<manifest>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>   -->
+                        <manifestEntries>
+                            <Project>${project.name}</Project>
+                            <Built-By>${project.organization.name}</Built-By>
+                            <!-- overwritting default value (user name) -->
+                        </manifestEntries>
+                        <manifestSections>
+                            <manifestSection>
+                                <name>Build</name>
+                                <manifestEntries>
+                                    <Build-Release>${project.version}</Build-Release>
+                                    <Build-Timestamp>${timestamp}</Build-Timestamp>
+                                    <Build-Date>${current.date}</Build-Date>
+                                    <Build-Id>${project.version}.${buildNumber}.${timestamp}</Build-Id>
+                                </manifestEntries>
+                            </manifestSection>
+                            <manifestSection>
+                                <name>Git</name>
+                                <manifestEntries>
+                                    <git-branch>${scmBranch}</git-branch>
+                                    <git-url>${commitUrlPrefix}${buildNumber}</git-url>
+                                    <git-commit>${buildNumber}</git-commit>
+                                </manifestEntries>
+                            </manifestSection>
+                            <manifestSection>
+                                <name>Build-Information</name>
+                                <manifestEntries>
+                                    <Maven-Version>${maven.version}</Maven-Version>
+                                    <Java-Version>${java.version}</Java-Version>
+                                    <Os-Name>${os.name}</Os-Name>
+                                    <Os-Arch>${os.arch}</Os-Arch>
+                                </manifestEntries>
+                            </manifestSection>
+                        </manifestSections>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin><!-- used by maven-jar-plugin
                                  maven-war-plugin
 
                          https://www.mojohaus.org/build-helper-maven-plugin
                          https://github.com/mojohaus/build-helper-maven-plugin  -->
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>${build-helper-maven-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>timestamp-property</id>
-                            <goals>
-                                <goal>timestamp-property</goal>
-                            </goals>
-                            <phase>validate</phase>
-                            <configuration>
-                                <name>current.date</name>
-                                <pattern>yyyy-MM-dd'T'HH:mm:ssZ</pattern>
-                                <timeZone>UTC</timeZone>
-                                <locale>en,US</locale>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin><!-- used by maven-jar-plugin
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>${build-helper-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>timestamp-property</id>
+                        <goals>
+                            <goal>timestamp-property</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <name>current.date</name>
+                            <pattern>yyyy-MM-dd'T'HH:mm:ssZ</pattern>
+                            <timeZone>UTC</timeZone>
+                            <locale>en,US</locale>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin><!-- used by maven-jar-plugin
                                  maven-war-plugin
 
                          https://www.mojohaus.org/buildnumber-maven-plugin
                          https://github.com/mojohaus/buildnumber-maven-plugin  -->
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>buildnumber-maven-plugin</artifactId>
-                    <version>${buildnumber-maven-plugin.version}</version>
-                    <configuration>
-                        <!-- <timestampFormat>{0,date,yyyy-MM-dd-HH-mm-ss}</timestampFormat> -->
-                        <shortRevisionLength>7</shortRevisionLength>
-                        <revisionOnScmFailure>no-commit-ID</revisionOnScmFailure>
-                        <!-- Provide this ${buildNumber} value if .git directory is missing-->
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>create</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-        <plugins>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>${buildnumber-maven-plugin.version}</version>
+                <configuration>
+                    <!-- <timestampFormat>{0,date,yyyy-MM-dd-HH-mm-ss}</timestampFormat> -->
+                    <shortRevisionLength>7</shortRevisionLength>
+                    <revisionOnScmFailure>no-commit-ID</revisionOnScmFailure>
+                    <!-- Provide this ${buildNumber} value if .git directory is missing-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
 
     <!--    Generate standalone Javadocs
