@@ -29,6 +29,7 @@
 * Web perf
     * [Yellowlab](http://yellowlab.tools)
     * [Webpagetest](https://www.webpagetest.org/)
+    * [Image Analysis Tool (by Cloudinary)](https://webspeedtest.cloudinary.com/)
     * [Test a single asset from 14 locations](https://tools.keycdn.com/performance?url=https://app.contrast-finder.org) `*`
 * HTTP/2
     * [Http2.pro](https://http2.pro/check?url=https://app.contrast-finder.org) `*` (check server HTTP/2, ALPN, and Server-push support)
