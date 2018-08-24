@@ -17,14 +17,18 @@ none
 - [#167 - Upgraded maven-javadoc-plugin (3.0.1 instead of 3.0.0)](https://github.com/Asqatasun/Contrast-Finder/issues/167)
 - [#168 - Upgraded maven-surefire-plugin (2.22.0 instead of 2.21.0)](https://github.com/Asqatasun/Contrast-Finder/issues/168)
 - [#169 - Upgraded maven-dependency-plugin (3.1.1 instead of 3.1.0)](https://github.com/Asqatasun/Contrast-Finder/issues/169)
-- [#170 - Upgraded owasp:dependency-check (3.2.1 instead of 3.1.2)](https://github.com/Asqatasun/Contrast-Finder/issues/170)
+- [#170 - Upgraded owasp:dependency-check (3.3.1 instead of 3.1.2)](https://github.com/Asqatasun/Contrast-Finder/issues/170)
+- [#173 - Upgraded maven-compiler-plugin (3.8.0 instead of 3.7.0)](https://github.com/Asqatasun/Contrast-Finder/issues/173)
+- [#174 - Upgraded maven-project-info-reports-plugin (3.0.0 instead of 2.9)](https://github.com/Asqatasun/Contrast-Finder/issues/174)
+- [#175 - Upgraded jacoco-maven-plugin (0.8.2 instead of 0.8.1)](https://github.com/Asqatasun/Contrast-Finder/issues/175)
+- [#176 - Upgraded commons-collections4 (4.2 instead of 4.1)](https://github.com/Asqatasun/Contrast-Finder/issues/176)
+- [#177 - Upgraded commons-lang3 (3.8 instead of 3.7)](https://github.com/Asqatasun/Contrast-Finder/issues/177)
 
 ### Bug
 - [#166 - Used an independent subproject for jdeb (debian packages creation)](https://github.com/Asqatasun/Contrast-Finder/issues/166)
 
 ### Improvement
 - [#165 - Added some information to the MANIFEST.MF files : commit, buid timestamp](https://github.com/Asqatasun/Contrast-Finder/issues/165)
-- [#172 - All maven plugins have their version specified](https://github.com/Asqatasun/Contrast-Finder/issues/172)
 
 ### Refactoring
 none
@@ -37,6 +41,7 @@ none
 
 ### Task
 - [#171 - Webapp: added humans.txt file](https://github.com/Asqatasun/Contrast-Finder/issues/171)
+- [#172 - All maven plugins have their version specified](https://github.com/Asqatasun/Contrast-Finder/issues/172)
 
 
 
