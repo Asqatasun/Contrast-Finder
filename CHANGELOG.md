@@ -41,7 +41,7 @@ none
 
 ### Task
 - [#171 - Webapp: added humans.txt file](https://github.com/Asqatasun/Contrast-Finder/issues/171)
-- [#172 - All maven plugins have their version specified](https://github.com/Asqatasun/Contrast-Finder/issues/172)
+- [@@@Fixme #172 - All maven plugins have their version specified](https://github.com/Asqatasun/Contrast-Finder/issues/172)
 
 
 
