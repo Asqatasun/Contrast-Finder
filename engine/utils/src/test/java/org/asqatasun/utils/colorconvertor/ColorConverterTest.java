@@ -162,7 +162,7 @@ public class ColorConverterTest extends TestCase {
      * Test of getHue method, of class ColorConverter.
      */
     @Test
-    public void testGetHue_old() {
+    public void testGetHueOld() {
       //  System.out.println("getHue");
       //  Color bgColor = new Color(128, 127, 127);
       //  Color result = ColorConverter.offsetHsbColor(bgColor, Float.valueOf(0.1f), Float.valueOf(0.0f), Float.valueOf(0.0f));
@@ -230,7 +230,7 @@ public class ColorConverterTest extends TestCase {
      * @todo   check if color is not null
      */
     @Test
-    public void testOffsetRgbColor_badValue() {
+    public void testOffsetRgbColorBadValue() {
         System.out.println("---------- offsetRgbColor BAD Value ----------------");
         System.out.println(" ------> @todo   check if offset* is valid for Color (ex: WHITE 255,255,255 with +10)");
         System.out.println("------> @todo   check if color is not null");
@@ -554,7 +554,7 @@ public class ColorConverterTest extends TestCase {
      *      String hex2Rgb(Color color)
      */
     @Test
-    public void testHex2Rgb_color() {
+    public void testHex2RgbColor() {
         System.out.println("---- Hex2Rgb_color --------------------");
         Color  colorA;
         String expResult;
@@ -584,8 +584,8 @@ public class ColorConverterTest extends TestCase {
      *      Color hex2Rgb(String colorStr)
      */
     @Test
-    public void testHex2Rgb_str() {
-        System.out.println("---- Hex2Rgb_str --------------------");
+    public void testHex2RgbStr() {
+        System.out.println("---- Hex2RgbStr --------------------");
         String colorStr = "FFFFFF";
         System.out.println("hex2Rgb string ["+ colorStr +"]");
         Color expResult = Color.WHITE;
@@ -613,8 +613,8 @@ public class ColorConverterTest extends TestCase {
         System.out.println("--------------------------");
     }
 
-    public void testHex2Rgb_strBadValue() {
-        System.out.println("---- Hex2Rgb_strBadValue --------------------");
+    public void testHex2RgbStrBadValue() {
+        System.out.println("---- Hex2RgbStrBadValue --------------------");
         String colorStr = "";
         Color result    = null;
 
@@ -794,7 +794,7 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testColorFromStr_badValue() {
+    public void testColorFromStrBadValue() {
         System.out.println("------------ ColorFromStr BAD value ----------------");
         String  colorStr;
         Color   result;
@@ -880,7 +880,7 @@ public class ColorConverterTest extends TestCase {
     }
 
     @Test
-    public void testColorFromColorName_badValue() {
+    public void testColorFromColorNameBadValue() {
         System.out.println("------------ colorFromColorName BAD value----------------");
         String  colorStr;
         Color   result;
