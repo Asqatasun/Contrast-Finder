@@ -5,7 +5,7 @@ You should have already [check pre-requisites](webapp_Pre-requisites.md)
 
 ## How to install (Linux)
 
-### Tomcat 8 - Debian 9, Ubuntu 16.04 or Ubuntu 18.04  (next LTS)
+### Tomcat 8 - Debian 9, Ubuntu 16.04 or Ubuntu 18.04
 
 You just need to replace `tomcat7` with `tomcat8` in the following command lines.
 

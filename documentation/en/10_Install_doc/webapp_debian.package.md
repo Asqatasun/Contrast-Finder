@@ -10,6 +10,10 @@ mvn  clean install
 cd   dist./debian_package/target
 ```
 
+
+## Pre-requisites
+You should have already [check pre-requisites](webapp_Pre-requisites.md)
+
 ## Tomcat 7
 
 ### Install Contrast-Finder webapp  + dependencies
