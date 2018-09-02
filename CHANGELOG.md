@@ -1,15 +1,9 @@
 # CHANGELOG
 
-Contrast-Finder 0.9.2, 2018-09-xx
+Contrast-Finder 0.9.2, 2018-09-03
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
-
-### New Feature
-none
-
-### Security
-none
 
 ### Outdated dependencies
 - [#163 - Upgraded SpringFramework (4.3.18 instead of 4.3.17)](https://github.com/Asqatasun/Contrast-Finder/issues/163)
@@ -30,12 +24,6 @@ none
 ### Improvement
 - [#165 - Added some information to the MANIFEST.MF files : commit, buid timestamp](https://github.com/Asqatasun/Contrast-Finder/issues/165)
 - [#172 - All maven plugins have their version specified](https://github.com/Asqatasun/Contrast-Finder/issues/172)
-
-### Refactoring
-none
-
-### Configuration
-none
 
 ### Documentation
 - [#179 - Transformed Debian packages documentation into markdown file](https://github.com/Asqatasun/Contrast-Finder/issues/179)
