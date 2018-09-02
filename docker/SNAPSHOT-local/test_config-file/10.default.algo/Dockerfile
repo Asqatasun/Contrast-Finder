@@ -19,7 +19,7 @@ FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04_tomcat-8.5
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.9.2"
+ENV CONTRAST_FINDER_RELEASE="0.9.3-SNAPSHOT"
 ENV CONF_DEFAULT_ALGO="Rgb"
     # ENV CONF_DEFAULT_ALGO="Rgb"
     # ENV CONF_DEFAULT_ALGO="HSV"

@@ -1,5 +1,38 @@
 # CHANGELOG
 
+Contrast-Finder 0.9.3, 2018-xx-xx
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+### New Feature
+none
+
+### Security
+none
+
+### Outdated dependencies
+none
+
+### Bug
+none
+
+### Improvement
+none
+
+### Refactoring
+none
+
+### Configuration
+none
+
+### Documentation
+none
+
+### Task
+none
+
+
 Contrast-Finder 0.9.2, 2018-09-03
 ---------------------------------
 
