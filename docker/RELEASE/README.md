@@ -34,7 +34,7 @@ In your browser, go to `http://localhost:8080/contrast-finder/`
 * More information on the website [Contrast-Finder.org](https://contrast-finder.org)
 * Demo : https://app.contrast-finder.org
 
-![Screenshot - Contrast-Finder v0.5.2](https://raw.githubusercontent.com/Asqatasun/Contrast-Finder/develop/documentation/en/images/screenshot/screenshot.EN_contrast-finder.v0.5.2_2017-07-27_grey_kraken.io-lossy.png)
+![Screenshot - Contrast-Finder v0.9.1](https://raw.githubusercontent.com/Asqatasun/Contrast-Finder/develop/documentation/en/images/screenshot/screenshot.EN_contrast-finder.v0.9.1_2018-09-27_grey_kraken.io-lossy.png)
 
 ## Tips and tricks
 ### Container available only on 127.0.0.1 (Linux users) ####
