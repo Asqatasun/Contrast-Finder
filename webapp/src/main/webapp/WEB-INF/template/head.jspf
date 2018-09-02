@@ -59,6 +59,9 @@
     <meta name="twitter:description" content="<fmt:message key="home.metaDescription"/>" />
     <meta name="twitter:image:src"   content="https://app.contrast-finder.org/public/images/logo/contrast-finder_logo_1051x1053.png" />
 
+    <!-- humans.txt file -->
+    <link rel="author" href="${prefixURL}humans.txt" />
+
     <!-- schema.org     http://schema.org/WebApplication  -->
     <script type="application/ld+json">
     {
@@ -71,7 +74,7 @@
         "license":          "https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE",
         "releaseNotes":     "https://github.com/Asqatasun/Contrast-Finder/blob/master/CHANGELOG.md",
         "downloadUrl":      "https://github.com/Asqatasun/Contrast-Finder/releases",
-        "screenshot":       "https://contrast-finder.org/public/media/images/screenshot/screenshot.EN_contrast-finder.v0.5.2_2017-07-27_grey_kraken.io-lossy.png",
+        "screenshot":       "https://contrast-finder.org/public/media/images/screenshot/screenshot.EN_contrast-finder.v0.9.1_2018-09-27_grey_kraken.io-lossy.png",
         "applicationCategory":    "BusinessApplication",
         "applicationSubCategory": "WebApplication",
         "operatingSystem":        "any",

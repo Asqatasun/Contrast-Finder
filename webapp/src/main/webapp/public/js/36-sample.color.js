@@ -33,13 +33,16 @@ var colorType = ""; // rgb, hex, name
 // Compute the contrast ratio functions
 /********************************************************************/
 
-function getContrastRatio(fgColor, bgColor) {
-    var fgLuminosity = getLuminosity(fgColor);
-    var bgLuminosity = getLuminosity(bgColor);
-    if (fgLuminosity > bgLuminosity) {
-        return computeContrast(fgLuminosity, bgLuminosity);
+function computeContrast(lighter, darker) {
+    return ((lighter + 0.05) / (darker + 0.05));
+}
+
+function getComposantValue(composant) {
+    var rsgb = composant / 255;
+    if (rsgb <= 0.03928) {
+        return rsgb / 12.92;
     } else {
-        return computeContrast(bgLuminosity, fgLuminosity);
+        return Math.pow(((rsgb + 0.055) / 1.055), 2.4);
     }
 }
 
@@ -55,18 +58,16 @@ function getLuminosity(color) {
     return luminosity;
 }
 
-function getComposantValue(composant) {
-    var rsgb = composant / 255;
-    if (rsgb <= 0.03928) {
-        return rsgb / 12.92;
+function getContrastRatio(fgColor, bgColor) {
+    var fgLuminosity = getLuminosity(fgColor);
+    var bgLuminosity = getLuminosity(bgColor);
+    if (fgLuminosity > bgLuminosity) {
+        return computeContrast(fgLuminosity, bgLuminosity);
     } else {
-        return Math.pow(((rsgb + 0.055) / 1.055), 2.4);
+        return computeContrast(bgLuminosity, fgLuminosity);
     }
 }
 
-function computeContrast(lighter, darker) {
-    return ((lighter + 0.05) / (darker + 0.05));
-}
 
 
 /********************************************************************/
@@ -89,9 +90,9 @@ function hexToRgb(str) {
     }
 
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(str); // ex: #FFFFFF, #CCC
-    return 'rgb(' + parseInt(result[1], 16)
-            + ',' + parseInt(result[2], 16)
-            + ',' + parseInt(result[3], 16) + ')';
+    return "rgb(" + parseInt(result[1], 16)
+            + "," + parseInt(result[2], 16)
+            + "," + parseInt(result[3], 16) + ")";
             /*  return result ? {   r: parseInt(result[1], 16),
                                     g: parseInt(result[2], 16),
                                     b: parseInt(result[3], 16)
@@ -105,8 +106,8 @@ function hexToRgb(str) {
  * @returns {string}
  */
 function rgbToHex(str){
-    a = str.replace(/[^\d,]/g,"").split(",");
-    return "#"+((1<<24)+(+a[0]<<16)+(+a[1]<<8)+ +a[2]).toString(16).slice(1)
+    var a = str.replace(/[^\d,]/g,"").split(",");
+    return "#"+((1<<24)+(+a[0]<<16)+(+a[1]<<8)+ +a[2]).toString(16).slice(1);
 }
 
 /**
@@ -115,13 +116,13 @@ function rgbToHex(str){
  * @param colorStr  color name
  * @returns {string}   example: #FFFFFF
  */
-function ColorNameToHex(str) {
+function colorNameToHex(str) {
     str = str.trim().toLowerCase();
-    var e = document.createElement('div');
+    var e = document.createElement("div");
     e.style.color = str;
     var colors = window.getComputedStyle( document.body.appendChild(e) ).color.match(/\d+/g).map(function(e){ return parseInt(e,10); });
     document.body.removeChild(e);
-    return (colors.length >= 3) ? '#' + (((1 << 24) + (colors[0] << 16) + (colors[1] << 8) + colors[2]).toString(16).substr(1)) : false;
+    return (colors.length >= 3) ? "#" + (((1 << 24) + (colors[0] << 16) + (colors[1] << 8) + colors[2]).toString(16).substr(1)) : false;
 }
 
 function isValidateColorName(str) {
@@ -203,7 +204,7 @@ function isValidateColor(str) {
         if( color !== false) {
             colorType = "hex";
         }
-        else  {
+        else {
             color = isValidateColorName(str); // FALSE or color name
             if( color !== false) {
                 colorType = "name";
@@ -237,7 +238,7 @@ function checkConstrast(){
             colorFg = hexToRgb(colorFg);
         }
         else if(colorType === "name"){
-            colorFg = hexToRgb(ColorNameToHex(colorFg));
+            colorFg = hexToRgb(colorNameToHex(colorFg));
         }
 
         colorBg = isValidateColor(colorBg.toString());
@@ -246,13 +247,13 @@ function checkConstrast(){
                 colorBg = hexToRgb(colorBg);
             }
             else if(colorType === "name"){
-                colorBg = hexToRgb(ColorNameToHex(colorBg));
+                colorBg = hexToRgb(colorNameToHex(colorBg));
             }
             var ratio = getContrastRatio(colorBg,colorFg);
             ratio     = precisionRound(ratio, 2);
-            var txtResult = 'Passed';
+            var txtResult = "Passed";
             if(ratio < minRatio ){
-                txtResult = 'Failed';
+                txtResult = "Failed";
                 document.getElementById("isValidRatio_Passed").classList.add("hidden");
                 document.getElementById("isValidRatio_Failed").classList.remove("hidden");
             }
@@ -262,9 +263,9 @@ function checkConstrast(){
             }
             checkRatioUI.innerHTML = ratio;
             document.getElementById("currentRatio").classList.remove("hidden");
-            console.log(txtResult + ': current ratio '      + ratio
-                                  + ' vs minimum ratio '    + minRatio
-                                  + ' -- '+ colorBg + ' / ' + colorFg );
+            console.log(txtResult + ": current ratio "      + ratio
+                                  + " vs minimum ratio "    + minRatio
+                                  + " -- "+ colorBg + " / " + colorFg );
             return true;
         }
     }
@@ -288,7 +289,7 @@ function changeColorSample(colorPrefix, showError) {
             colorHEX = rgbToHex(color);
         }
         else if(colorType === "name"){
-            colorHEX = ColorNameToHex(color);
+            colorHEX = colorNameToHex(color);
         }
         var colorPicker = document.getElementById(colorPrefix + "_imputColorPicker");
         colorPicker.value = colorHEX;

@@ -50,7 +50,7 @@
         <url-pattern>*.css</url-pattern>
         <url-pattern>*.js</url-pattern>
         <url-pattern>*.json</url-pattern>    <!-- contribute.json -->
-        <url-pattern>*.txt</url-pattern>     <!-- robots.txt, .well-known/security.txt -->
+        <url-pattern>*.txt</url-pattern>     <!-- robots.txt, humans.txt, .well-known/security.txt -->
         <url-pattern>*.xml</url-pattern>     <!-- */favicon/browserconfig.xml          -->
     </filter-mapping>
 

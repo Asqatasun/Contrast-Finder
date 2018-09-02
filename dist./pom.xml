@@ -6,10 +6,10 @@
         <artifactId>contrast-finder</artifactId>
         <version>0.9.2</version>
     </parent>
-    <artifactId>engine</artifactId>
+    <artifactId>dist</artifactId>
     <version>0.9.2</version>
     <packaging>pom</packaging>
-    <name>contrast-finder-engine</name>
+    <name>contrast-finder-dist</name>
     <licenses>
         <license>
             <name>GNU Affero General Public License v3.0</name>
@@ -24,9 +24,6 @@
     </organization>
 
     <modules>
-        <module>api</module>
-        <module>utils</module>
-        <module>hsv</module>
-        <module>impl</module>
+        <module>debian_package</module>
     </modules>
 </project>

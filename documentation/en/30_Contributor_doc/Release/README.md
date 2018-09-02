@@ -16,7 +16,7 @@ As an end user, you won't need it, it is just for developers.
 ```
 
 outdated dependencies:
-https://www.versioneye.com/user/projects/58fb3e17c2ef423822580804?child=summary#tab-dependencies
+https://snyk.io/
 
 Some dependencies must not be updated with the latest release (SpringFramework 5.xx, ...)
 because these dependencies need Jdk 8 and do not work on our tomcat 7 for the official demo.

@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>engine</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2</version>
     </parent>
     <artifactId>contrast-finder-hsv</artifactId>
-    <version>0.9.1</version>
+    <version>0.9.2</version>
     <packaging>jar</packaging>
     <name>hsv</name>
     <licenses>

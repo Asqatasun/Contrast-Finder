@@ -6,7 +6,7 @@
 
 ### Linux
 
-#### Tomcat 8 - Debian 9, Ubuntu 16.04 or Ubuntu 18.04  (next LTS)
+#### Tomcat 8 - Debian 9, Ubuntu 16.04 or Ubuntu 18.04
 
 ```bash
 apt-get --no-install-recommends install  tomcat8

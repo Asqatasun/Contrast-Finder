@@ -29,6 +29,7 @@
 * Web perf
     * [Yellowlab](http://yellowlab.tools)
     * [Webpagetest](https://www.webpagetest.org/)
+    * [Image Analysis Tool (by Cloudinary)](https://webspeedtest.cloudinary.com/)
     * [Test a single asset from 14 locations](https://tools.keycdn.com/performance?url=https://app.contrast-finder.org) `*`
 * HTTP/2
     * [Http2.pro](https://http2.pro/check?url=https://app.contrast-finder.org) `*` (check server HTTP/2, ALPN, and Server-push support)
@@ -72,12 +73,12 @@
 
 ## Audit history
 
-### 0.9.0
+### 0.9.0 / 0.9.1
 * Web perf
     * https://www.webpagetest.org/result/180513_JQ_6968f5fe020e3ae88c8078c4fc620995/
     * https://yellowlab.tools/result/f1066yvsyi
 * Global tools (webperf, accessibility, security, ...)
-    * https://www.dareboost.com/fr/report/5af8684be96790618ff331da
+    * https://www.dareboost.com/fr/report/5af8b7c9e96790618ff385c5
     * https://sonarwhal.com/scanner/8f0ca246-a8ac-420e-8737-6405d3ba8d59
 
 ### 0.8.6

@@ -5,7 +5,7 @@ You should have already [check pre-requisites](webapp_Pre-requisites.md)
 
 ## How to install (Linux)
 
-### Tomcat 8 - Debian 9, Ubuntu 16.04 or Ubuntu 18.04  (next LTS)
+### Tomcat 8 - Debian 9, Ubuntu 16.04 or Ubuntu 18.04
 
 You just need to replace `tomcat7` with `tomcat8` in the following command lines.
 
@@ -14,7 +14,7 @@ You just need to replace `tomcat7` with `tomcat8` in the following command lines
 
 ```bash
 cd /tmp
-wget https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.9.1/contrast-finder-webapp_0.9.1.tar.gz
+wget https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.9.2/contrast-finder-webapp_0.9.2.tar.gz
 tar -xzvf contrast-finder-webapp_*.tar.gz
 cd        contrast-finder-webapp_*/
 mv  -v    install/contrast-finder-webapp_*.war contrast-finder.war
