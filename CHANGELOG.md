@@ -12,7 +12,9 @@ none
 none
 
 ### Outdated dependencies
-none
+- [#180 - Upgraded commons-lang3 (3.8.1 instead of 3.8)](https://github.com/Asqatasun/Contrast-Finder/issues/180)
+- [#181 - Upgraded SpringFramework (4.3.19 instead of 4.3.18)](https://github.com/Asqatasun/Contrast-Finder/issues/181)
+- [#182 - Upgraded spring-security (4.2.8 instead of 4.2.7)](https://github.com/Asqatasun/Contrast-Finder/issues/182)
 
 ### Bug
 none
