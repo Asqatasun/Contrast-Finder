@@ -74,10 +74,10 @@ Feature requests + Accessibility feedbacks:
 
 # SITE
     Languages :  English / Español / Français / Português / 한국어
-    Standards :  HTML5, WCAG
+    Standards :  HTML5, WCAG, RGAA
     Softwares :  Spring Framework, Maven, Tomcat, Apache
     Tools     :  Asqatasun, Docker, Hardenize, Mozilla Observatory,
-                 OWASP Dependency-Check, Webpagetest, W3C tools
+                 OWASP Dependency-Check, Webpagetest, Dareboost, W3C tools
 
 
 #######################################################

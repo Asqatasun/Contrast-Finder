@@ -29,7 +29,7 @@ none
 none
 
 ### Documentation
-none
+- Fixed some external links ('Sonarwhal' become 'Webhint')
 
 ### Task
 none
