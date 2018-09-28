@@ -1,7 +1,7 @@
 # Other contrast tools
 
 ## Contrast tools we love:
-
+* [Link Contrast Checker (webaim.org)](https://webaim.org/resources/linkcontrastchecker/) + API
 * [Contrast-A](http://www.dasplankton.de/ContrastA/) (legacy / flash needed)
 * [WCAG Contrast Checker (firefox addon) v1.2](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/versions/?page=1#version-1.2) Especially v1.2 because you can select a given text (functionnality has disappeared in further versions)
 * [Color Contrast Tool (snook.ca)](http://snook.ca/technical/colour_contrast/colour.html)
@@ -10,7 +10,7 @@
 
 ## Other contrast tools (which are actually good, but it appears we don't them)
 
-* http://webaim.org/resources/contrastchecker/
+* [Color Contrast Checker (webaim.org)](http://webaim.org/resources/contrastchecker/)
 * https://contrastchecker.com/
 * http://leaverou.github.io/contrast-ratio/
     * src: https://github.com/LeaVerou/contrast-ratio
