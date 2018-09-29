@@ -14,6 +14,7 @@
 
 # maven
 target
+buildNumber.properties
 *.log
 
 # maven (mvn versions:set)
