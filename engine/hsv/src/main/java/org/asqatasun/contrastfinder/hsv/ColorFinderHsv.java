@@ -52,7 +52,7 @@ public class ColorFinderHsv extends AbstractColorFinder {
      */
     public ColorFinderHsv() {
         super(new ColorResultFactoryImpl(), new ColorCombinaisonFactoryImpl());
-        LOGGER.info("instanciation of ColorFinderHsv class");
+        LOGGER.debug("instanciation of ColorFinderHsv class");
     }
 
     /**
@@ -62,7 +62,7 @@ public class ColorFinderHsv extends AbstractColorFinder {
      */
     @Override
     protected void findColors() {
-        LOGGER.info("Appel de findColors, couleurs : " + getColorToKeep() + getColorResult().getSubmittedCombinaisonColor().getColor() + getColorResult().getNumberOfSuggestedColors());
+        LOGGER.debug("call findColors, colors : " + getColorToKeep() + getColorResult().getSubmittedCombinaisonColor().getColor() + getColorResult().getNumberOfSuggestedColors());
         testedColorsFromHueRound = new HashSet<Color>();
 
         Color colorToModify = getColorResult().getSubmittedCombinaisonColor().getColor();
