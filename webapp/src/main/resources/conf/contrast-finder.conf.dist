@@ -7,12 +7,21 @@
 # default_algorithm=HSV
 # default_algorithm=Rgb
 
-# environment
+# logging colors results
+#       compact = log message on 1 line
+#       full    = log message on several lines
+#       no      = no logging     (default)
+###############################################
+# loggingColorsResult=compact
+# loggingColorsResult=full
+# loggingColorsResult=no
+
+# environment : prod (default) or debug
 ###############################################
 # env=debug
+# env=prod
 
 # Web analytics Piwik
 ###############################################
 # piwik_analytics_server=
 # piwik_analytics_key=
-

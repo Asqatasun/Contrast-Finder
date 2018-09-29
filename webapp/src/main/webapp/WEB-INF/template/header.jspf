@@ -106,7 +106,8 @@
 
     <div id="contrast-finder-logo">
         <c:choose>
-            <c:when test="${empty colorResult && empty errorResult}">
+      <%--  <c:when test="${empty colorResult && empty errorResult}"> --%>
+            <c:when test="${pageName == 'page-home'}">
                 <img src="public/${appVersion}/images/logo/contrast-finder_logo_1051x1053.png"
                      alt="" />
             </c:when>

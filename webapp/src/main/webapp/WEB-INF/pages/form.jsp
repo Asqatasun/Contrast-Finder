@@ -469,7 +469,8 @@
 
                 <%-- ===== USER HELP ========================================================================================= --%>
                 <div class="help"> <%-- only on HomePage --%>
-                    <c:if test="${empty colorResult}">
+              <%--  <c:if test="${empty colorResult}">  --%>
+                    <c:if test="${pageName == 'page-home'}">
                         <h2 id="what-is-contrast-finder"><fmt:message key="info.about.title"/></h2>
                         <fmt:message key="info.about"/>
 
@@ -503,42 +504,6 @@
 
             <%-- ===== FOOTER ========================================================================================= --%>
             <%@include file='/WEB-INF/template/footer.jspf' %>
-
-            <!-- Javascript - Webapp -->
-            <script src="<c:url value="public/${appVersion}/js/_contrast-finder_${appVersion}.all.min.js"/>"></script>
-               <!-- <script src="<c:url value="public/${appVersion}/js/10-jquery.min.js"/>"></script>
-                    <c:if test="${colorResult.numberOfSuggestedColors > 0}">
-                        <script src="<c:url value="public/${appVersion}/js/20-jquery.tablesorter.min.js"/>"></script>
-                        <script src="<c:url value="public/${appVersion}/js/25-accessible-min.js"/>"></script>
-                    </c:if>
-                    <script src="<c:url value="public/${appVersion}/js/30-bootstrap.min.js"/>"></script>
-                    <script src="<c:url value="public/${appVersion}/js/35-affix.js"/>"></script>
-                    <script src="<c:url value="public/${appVersion}/js/36-sample.color.js"/>"></script>
-               -->
-
-            <!-- Javascript - Web analytics -->
-            <c:set var="piwikSiteId"     value="${piwikKey}"/>
-            <c:set var="piwikServerURL"  value="${piwikServer}"/>
-            <c:if test="${not empty piwikSiteId and not empty piwikServerURL}">
-                <!-- Piwik code-->
-                <script>
-                    var _paq = _paq || [];
-                    _paq.push(["setDomains", ["*.app.contrast-finder.org","*.app.contrast-finder.org"]]);
-                    _paq.push(['trackPageView']);
-                    _paq.push(['enableLinkTracking']);
-                    function loadPiwikAfterOnload(){
-                        var u='${piwikServerURL}';
-                        _paq.push(['setTrackerUrl', u+'piwik.php']);
-                        _paq.push(['setSiteId', '${piwikSiteId}']);
-                        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-                    }
-                    if (window.addEventListener){ window.addEventListener("load", loadPiwikAfterOnload, false); }
-                    else if (window.attachEvent){ window.attachEvent("onload", loadPiwikAfterOnload);           }
-                    else                        { window.onload = loadPiwikAfterOnload();                       }
-                </script><noscript><img src="${piwikServerURL}piwik.php?idsite=${piwikSiteId}" style="border:0;" alt="" /></noscript>
-                <!-- End Piwik code -->
-            </c:if>
         </body>
     </html>
 </compress:html>

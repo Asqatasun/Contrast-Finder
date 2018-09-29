@@ -17,10 +17,12 @@ none
 - [#182 - Upgraded spring-security (4.2.8 instead of 4.2.7)](https://github.com/Asqatasun/Contrast-Finder/issues/182)
 
 ### Bug
-none
+- [#184 - Webapp: modify the title tag when the form is on error to inform the user](https://github.com/Asqatasun/Contrast-Finder/issues/184)
 
 ### Improvement
-none
+- [#183 - Added config. informations in the logs when starting the webapp](https://github.com/Asqatasun/Contrast-Finder/issues/183)
+- [#185 - Added new configuration option for logging colors results](https://github.com/Asqatasun/Contrast-Finder/issues/185)
+- [#186 - Webapp: added new page to provide build ID (commit hash)](https://github.com/Asqatasun/Contrast-Finder/issues/186)
 
 ### Refactoring
 none

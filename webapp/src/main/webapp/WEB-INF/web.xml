@@ -85,6 +85,10 @@
         <servlet-name>contrast-finder</servlet-name>
         <url-pattern>/result.html</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>contrast-finder</servlet-name>
+        <url-pattern>/about.html</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>form.html</welcome-file>
