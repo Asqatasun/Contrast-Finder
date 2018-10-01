@@ -24,7 +24,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 /**
  * abstract controller
@@ -43,9 +47,22 @@ public abstract class AbstractController {
 
 
     /**
-     * main view name
+     * adding config to logs at the launch of servlet
      */
-    protected String mainPageView;
+    private boolean addConfigToLogs;
+
+    /**
+     * available languages
+     * see: this.languages
+     */
+    private Map<String, String> availableLanguages;
+
+
+    /**
+     * ordered languages list
+     * see: this.languages
+     */
+    private List<String> orderedLanguagesList;
 
     /**
      * piwik analytics key
@@ -80,6 +97,29 @@ public abstract class AbstractController {
  // @Value("${default_algorithm:HSV}")
  // @Value("${default_algorithm:Rgb}")
     protected String defaultAlgorithm;
+
+
+    /**
+     * list of languages available in the webapp
+     * - comma-separated language codes (ISO 639-1: two-letter codes)
+     * - order will be the same in the webapp menu
+     *
+     *      currently : "en,fr,es,pt,ko"
+     *      can be override in the following file:
+     *      /etc/contrast-finder/contrast-finder.conf
+     */
+    @Value("${languages:en,fr,es,pt,ko}")
+    private String languages;
+
+    /**
+     * default Language  (ISO 639-1: two-letter codes)
+     *
+     *      currently : "en"
+     *      can be override in the following file:
+     *      /etc/contrast-finder/contrast-finder.conf
+     */
+    @Value("${defaultLanguage:en}")
+    private String defaultLanguage;
 
 
     /**
@@ -121,29 +161,17 @@ public abstract class AbstractController {
     protected String loggingColorsResult;
 
 
-
-    public AbstractController() {}
-
-
-    /**
-     * - set main view name (this.mainPageView)
-     * - log the config values
-     *
-     * notice: called at the launch of servlet
+    /*
+     * notice: called only at the launch of servlet
      */
-    public void setMainPageView(String formView) {
-        this.mainPageView = formView;
-        LOGGER.info("config  env                 : " + env                 );
-        LOGGER.info("config  piwikKey            : " + piwikAnalyticsKey   );
-        LOGGER.info("config  piwikServer         : " + piwikAnalyticServer );
-        LOGGER.info("config  defaultAlgorithm    : " + defaultAlgorithm    );
-        LOGGER.info("config  searchEngineInclude : " + searchEngineInclude );
-        LOGGER.info("config  loggingColorsResult : " + loggingColorsResult );
+    public AbstractController() {
+        LOGGER.debug("calling AbstractController()");
     }
 
     /**
      * Preparing the common data and populating the model before returning the view
      * @param  model     model of the page
+     * @param  pageName  name of the page (ex: page-home) using by jsp, css and js
      */
     protected void addCommonViewData(final Model model, String pageName) {
         model.addAttribute("env",                   env);
@@ -151,7 +179,79 @@ public abstract class AbstractController {
         model.addAttribute("piwikServer",           piwikAnalyticServer);
         model.addAttribute("searchEngineInclude",   searchEngineInclude);
         model.addAttribute("defaultAlgorithm",      defaultAlgorithm);
+        model.addAttribute("availableLanguages",    availableLanguages);
+        model.addAttribute("orderedLanguagesList",  orderedLanguagesList);
+        model.addAttribute("defaultLanguage",       defaultLanguage);
         model.addAttribute("pageName",              pageName);
+    }
+
+    /**
+     * adds the following configuration options to the log :
+     *      - env
+     *      - piwikKey
+     *      - piwikServer
+     *      - defaultAlgorithm
+     *      - searchEngineInclude
+     *      - loggingColorsResult
+     *      - defaultLanguage
+     *      - languages
+     *
+     * see: /etc/contrast-finder/contrast-finder.conf
+     */
+    protected void addConfigToLogs(){
+        LOGGER.debug("calling addConfigToLogs()");
+        LOGGER.info("config  env                 : " + env                 );
+        LOGGER.info("config  piwikKey            : " + piwikAnalyticsKey   );
+        LOGGER.info("config  piwikServer         : " + piwikAnalyticServer );
+        LOGGER.info("config  defaultAlgorithm    : " + defaultAlgorithm    );
+        LOGGER.info("config  searchEngineInclude : " + searchEngineInclude );
+        LOGGER.info("config  loggingColorsResult : " + loggingColorsResult );
+        LOGGER.info("config  defaultLanguage     : " + defaultLanguage     );
+        LOGGER.info("config  languages           : " + languages           );
+    }
+
+    /**
+     * set this.addConfigToLogs
+     * and calling addConfigToLogs() for adding config to the logs
+     *
+     * notice: called only at the launch of servlet after the contructor
+     * see:    webapp/src/main/webapp/WEB-INF/conf/mvc/cf-beans-controller.xml
+     */
+    public void setAddConfigToLogs(String addConfigToLogs) {
+     // LOGGER.debug("calling setAddConfigToLogs()");
+        if( "true".equals(addConfigToLogs)){
+            this.addConfigToLogs = true;
+            addConfigToLogs();
+        }
+        else {
+            this.addConfigToLogs = false;
+        }
+    }
+
+
+    /**
+     * set this.availableLanguages
+     *
+     * notice: called only at the launch of servlet after the contructor
+     * see:    webapp/src/main/webapp/WEB-INF/conf/mvc/cf-beans-controller.xml
+     */
+    public void setLoadAvailableLanguages(String loadAvailableLanguages) {
+        // LOGGER.debug("calling setLoadAvailableLanguages()");
+        List<String>        languagesList;
+        Map<String, String> languagesMap = new HashMap<>();
+        languagesList = Arrays.asList(languages.split(","));
+        for(String lang : languagesList) {
+            Locale locale = new Locale(lang);
+            languagesMap.put(locale.getLanguage(), locale.getDisplayLanguage(locale));
+            // LOGGER.debug("locale                           : " + locale);
+            // LOGGER.debug("locale.getLanguage()             : " + locale.getLanguage());
+            // LOGGER.debug("locale.getDisplayLanguage()      : " + locale.getDisplayLanguage());
+            // LOGGER.debug("locale.getDisplayLanguage(locale): " + locale.getDisplayLanguage(locale));
+        }
+        this.availableLanguages   = languagesMap;
+        this.orderedLanguagesList = languagesList;
+        LOGGER.debug(availableLanguages.toString());
+        LOGGER.debug(orderedLanguagesList.toString());
     }
 
 }

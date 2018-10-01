@@ -21,7 +21,17 @@
 # env=debug
 # env=prod
 
-# Web analytics Piwik
+# web analytics Piwik
 ###############################################
 # piwik_analytics_server=
 # piwik_analytics_key=
+
+# default language
+###############################################
+# defaultLanguage=en
+
+# languages available in the webapp
+# - comma-separated language codes (ISO 639-1: two-letter codes)
+# - order will be the same in the webapp menu
+###############################################
+# languages=en,fr,es,pt,ko

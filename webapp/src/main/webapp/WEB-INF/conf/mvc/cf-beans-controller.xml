@@ -7,7 +7,14 @@
     <bean name="indexController"
           class="org.asqatasun.contrastfinder.webapp.controller.IndexController">
         <property name="mainPageView" value="pages/form" />
-        <property name="commandName" value="colorModel" />
+        <property name="commandName"  value="colorModel" />
+
+        <!-- needed to adding the config options
+             to the logs  at the launch of servlet -->
+        <property name="addConfigToLogs"    value="true" />
+
+        <!-- MANDATORY for language management -->
+        <property name="loadAvailableLanguages" value="true" />
     </bean>
 
 </beans>

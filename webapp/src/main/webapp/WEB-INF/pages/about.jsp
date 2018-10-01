@@ -67,6 +67,18 @@
                             </ul>
                         </li>
                     </ul>
+
+                    <hr>
+                    <c:forEach var="langCode" items="${orderedLanguagesList}">
+                        ${langCode} -
+                        ${availableLanguages[langCode]}
+                        <br>
+                    </c:forEach>
+                    <hr>
+                    <c:forEach items="${availableLanguages}" var="entry">
+                        ${entry.key} - ${entry.value}<br>
+                    </c:forEach>
+
                 </div>
             </div>  <!-- class="container' -->
 

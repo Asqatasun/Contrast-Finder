@@ -50,6 +50,13 @@ import java.awt.Color;
 @Controller
 public class IndexController  extends AbstractController {
 
+
+    /**
+     * main view name
+     */
+    private String mainPageView;
+
+
     /**
      * model name
      */
@@ -60,6 +67,14 @@ public class IndexController  extends AbstractController {
 
     @Autowired
     private ColorFinderFactory colorFinderFactory;
+
+
+    /*
+     * notice: called only at the launch of servlet
+     */
+    public IndexController() {
+        LOGGER.debug("calling IndexController()");
+    }
 
     /**
      * Validator initialisation
@@ -256,11 +271,27 @@ public class IndexController  extends AbstractController {
         return colorFinder;
     }
 
+
     /**
-     * Setter sur le nom du modèle
+     * set modele name  (this.commandName)
+     *
+     * notice: called only at the launch of servlet
+     * see:    webapp/src/main/webapp/WEB-INF/conf/mvc/cf-beans-controller.xml
      */
     public void setCommandName(String commandName) {
+     // LOGGER.debug("calling setCommandName()");
         this.commandName = commandName;
+    }
+
+    /**
+     * set main view name (this.mainPageView)
+     *
+     * notice: called only at the launch of servlet after the contructor
+     * see:    webapp/src/main/webapp/WEB-INF/conf/mvc/cf-beans-controller.xml
+     */
+    public void setMainPageView(String formView) {
+     // LOGGER.debug("calling setMainPageView()");
+        this.mainPageView = formView;
     }
 
 }
