@@ -34,4 +34,4 @@
 # - comma-separated language codes (ISO 639-1: two-letter codes)
 # - order will be the same in the webapp menu
 ###############################################
-# languages=en,fr,es,pt,ko
+# languages=en,es,fr,pt,ko

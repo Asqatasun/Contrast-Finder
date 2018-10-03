@@ -21,12 +21,48 @@
                 <div class="help">
                     <h1><fmt:message key="page.about.title"/></h1>
 
-                    <h2><fmt:message key="page.about.fileList.title"/></h2>
+<%-- TEST language code is not available --%>
+<c:set var="isAvalaibleLanguage" value="false"     scope="page" />
+<c:forEach var="langCode" items="${orderedLanguagesList}">
+    <c:choose>
+        <c:when test="${lang == langCode}">
+            <c:set var="isAvalaibleLanguage" value="true" scope="page" />
+        </c:when>
+    </c:choose>
+</c:forEach>
+<c:choose>
+    <c:when test="${isAvalaibleLanguage == 'false'}">
+        <%-- <hr>NOT avalaible language <hr> --%>
+        <%-- <c:redirect url="/?lang=${defaultLanguage}"/>--%>
+        <%--        <%
+                response.setStatus(301);
+                response.setHeader( "Location", "./?lang=en" );
+                response.setHeader( "Connection", "close" );
+                %> --%>
+    </c:when>
+</c:choose>
+
+
+
+                    <h2><fmt:message key="page.about.availableLanguages"/></h2>
                     <ul>
-                        <li><a href="humans.txt">humans.txt</a> </li>
-                        <li><a href="contribute.json">contribute.json</a> </li>
-                        <li><a href=".well-known/security.txt">security.txt</a> </li>
+                        <c:forEach var="langCode" items="${orderedLanguagesList}">
+                            <li lang="${langCode}">
+                                <a hreflang="${langCode}"
+                                   title="Contrast-Finder in english"
+                                   href="./?lang=${langCode}">${langCode} - ${fn:toLowerCase(availableLanguages[langCode])}</a>
+                            </li>
+                        </c:forEach>
                     </ul>
+                        <%--    <c:forEach var="langCode" items="${orderedLanguagesList}">
+                                    ${langCode} - ${availableLanguages[langCode]} <br>
+                                </c:forEach>  <hr> --%>
+                        <%--    <c:forEach items="${availableLanguages}" var="entry">
+                                    ${entry.key} - ${entry.value}   <br>
+                                </c:forEach>  <hr> --%>
+
+
+
                     <%  //Get version of application
                         java.util.Properties prop = new java.util.Properties();
                         prop.load(getServletContext().getResourceAsStream("/META-INF/MANIFEST.MF"));
@@ -54,7 +90,7 @@
 
                     <h2><fmt:message key="page.about.build.title"/></h2>
                     <ul>
-                        <li>version: <%=appliVersion%> </li>
+                        <li>version: <strong><%=appliVersion%></strong> </li>
                         <li>git branch: <%=gitBranch%>     </li>
                         <li>git commit: <a href="<%=gitURL%>"><%=gitCommit%></a> </li>
                         <li>Build:
@@ -62,22 +98,20 @@
                                 <li>date: <%=appliBuildDate%> </li>
                                 <li>ID: <%=appliBuildID%> </li>
                                 <li>Platform: <%=appliBuildOs%> <%=appliBuildArch%>,
-                                    Java <%=appliBuildJava%>,
-                                    Maven <%=appliBuildMaven%>  </li>
+                                              Java <%=appliBuildJava%>,
+                                              Maven <strong><%=appliBuildMaven%></strong>
+                                </li>
                             </ul>
                         </li>
                     </ul>
 
-                    <hr>
-                    <c:forEach var="langCode" items="${orderedLanguagesList}">
-                        ${langCode} -
-                        ${availableLanguages[langCode]}
-                        <br>
-                    </c:forEach>
-                    <hr>
-                    <c:forEach items="${availableLanguages}" var="entry">
-                        ${entry.key} - ${entry.value}<br>
-                    </c:forEach>
+                    <h2><fmt:message key="page.about.fileList.title"/></h2>
+                    <ul>
+                        <li><a href="contribute.json">contribute.json</a> </li>
+                        <li><a href="humans.txt">humans.txt</a> </li>
+                        <li><a href="robots.txt">robots.txt</a> </li>
+                        <li><a href=".well-known/security.txt">security.txt</a> </li>
+                    </ul>
 
                 </div>
             </div>  <!-- class="container' -->

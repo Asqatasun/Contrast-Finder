@@ -52,17 +52,21 @@ public abstract class AbstractController {
     private boolean addConfigToLogs;
 
     /**
+     * ordered languages list
+     * see: this.languages
+     */
+    private List<String> orderedLanguagesList;
+
+    /**
      * available languages
      * see: this.languages
      */
     private Map<String, String> availableLanguages;
 
-
     /**
-     * ordered languages list
-     * see: this.languages
+     * texts of switch in language target
      */
-    private List<String> orderedLanguagesList;
+    private Map<String, String> textsOfSwitchLanguage;
 
     /**
      * piwik analytics key
@@ -104,11 +108,11 @@ public abstract class AbstractController {
      * - comma-separated language codes (ISO 639-1: two-letter codes)
      * - order will be the same in the webapp menu
      *
-     *      currently : "en,fr,es,pt,ko"
+     *      currently : "en,es,fr,pt,ko"
      *      can be override in the following file:
      *      /etc/contrast-finder/contrast-finder.conf
      */
-    @Value("${languages:en,fr,es,pt,ko}")
+    @Value("${languages:en,es,fr,pt,ko}")
     private String languages;
 
     /**
@@ -181,6 +185,7 @@ public abstract class AbstractController {
         model.addAttribute("defaultAlgorithm",      defaultAlgorithm);
         model.addAttribute("availableLanguages",    availableLanguages);
         model.addAttribute("orderedLanguagesList",  orderedLanguagesList);
+        model.addAttribute("textsOfSwitchLanguage", textsOfSwitchLanguage);
         model.addAttribute("defaultLanguage",       defaultLanguage);
         model.addAttribute("pageName",              pageName);
     }
@@ -248,8 +253,19 @@ public abstract class AbstractController {
             // LOGGER.debug("locale.getDisplayLanguage()      : " + locale.getDisplayLanguage());
             // LOGGER.debug("locale.getDisplayLanguage(locale): " + locale.getDisplayLanguage(locale));
         }
-        this.availableLanguages   = languagesMap;
-        this.orderedLanguagesList = languagesList;
+
+        // @@@TODO  using .properties file
+        Map<String, String> switchLang = new HashMap<>();
+        switchLang.put("en", "Switch to english");
+        switchLang.put("es", "Cambiar a español");
+        switchLang.put("fr", "Passer en français");
+        switchLang.put("pt", "em Português");
+        switchLang.put("ko", "한국어로 전환");
+
+        this.textsOfSwitchLanguage   = switchLang;
+        this.availableLanguages      = languagesMap;
+        this.orderedLanguagesList    = languagesList;
+    //  LOGGER.debug(textsOfSwitchLanguage.toString());
         LOGGER.debug(availableLanguages.toString());
         LOGGER.debug(orderedLanguagesList.toString());
     }

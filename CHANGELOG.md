@@ -23,6 +23,7 @@ none
 - [#183 - Added config. informations in the logs when starting the webapp](https://github.com/Asqatasun/Contrast-Finder/issues/183)
 - [#185 - Added new configuration option for logging colors results](https://github.com/Asqatasun/Contrast-Finder/issues/185)
 - [#187 - Added new configuration options: available languages and default language](https://github.com/Asqatasun/Contrast-Finder/issues/187)
+- [#188 - Webapp: languages switcher now depends on the configuration options](https://github.com/Asqatasun/Contrast-Finder/issues/188)
 - [#186 - Webapp: added new page to provide build ID (commit hash)](https://github.com/Asqatasun/Contrast-Finder/issues/186)
 
 ### Refactoring
