@@ -21,7 +21,7 @@
 ---
 
 * More informations about the [algorithms](The-algorithms.md) here.
-* [Other contrast tools](Other-contrast-tools.md)
+* [Other contrast tools](90_Resources/Other-contrast-tools.md)
 
 
 ## Screenshots

@@ -35,9 +35,10 @@
 * http://www.randoma11y.com/
 * https://www.joedolson.com/tools/color-contrast-tester.php
 * https://www.joedolson.com/tools/color-contrast.php
+* http://www.checkmycolours.com/ (not opensource, checking foreground and background of all DOM elements)
 * https://github.com/toolness/accessible-color-matrix
     * https://toolness.github.io/accessible-color-matrix/
-* https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/
+* https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/
 * https://hexnaw.com/
 * http://jxnblk.com/colorable/
     * https://colorable.jxnblk.com/
@@ -72,6 +73,7 @@
   - [**NoCoffee** extension for Chrome](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl)
 * http://paletton.com/ very popular but n real option for accessibility (as of 2016), and not opensource.
 * http://carlosrafaelgn.com.br/Aula/Cores.html (not opensource, in Portuguese)
+* [Toptal colorblind web page filter](https://www.toptal.com/designers/colorfilter) (not opensource)
 * http://www.getstark.co/
     * https://github.com/stark-contrast/stark-sketch-plugin
 
