@@ -29,8 +29,8 @@
     * src: https://github.com/donnieberg/accessible-color-palette/
 * https://ryanhemphill.github.io/contrast-colorblind-colorpicker/
     * src: https://github.com/ryanhemphill/contrast-colorblind-colorpicker
-* [Accessible Color Spaces](https://github.com/KevinGutowski/KevinGutowski.github.io)
-    * src: http://kevingutowski.github.io/color.html
+* [Accessible Color Spaces](http://kevingutowski.github.io/color.html)
+    * src: https://github.com/KevinGutowski/KevinGutowski.github.io
 * https://github.com/johnotander/get-contrast
 * http://www.randoma11y.com/
 * https://www.joedolson.com/tools/color-contrast-tester.php
@@ -76,5 +76,19 @@
 * [Toptal colorblind web page filter](https://www.toptal.com/designers/colorfilter) (not opensource)
 * http://www.getstark.co/
     * https://github.com/stark-contrast/stark-sketch-plugin
+
+### no tested tools
+* https://chrome.google.com/webstore/detail/i-want-to-see-like-the-co/jebeedfnielkcjlcokhiobodkjjpbjia
+* https://chrome.google.com/webstore/detail/colorblinding/dgbgleaofjainknadoffbjkclicbbgaa
+* https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb
+* https://chrome.google.com/webstore/detail/colorblind-dalton-for-goo/afcafnelafcgjinkaeohkalmfececool
+* https://michelf.ca/projects/sim-daltonism/ color blindness simulator for Mac and iOS
+  * https://github.com/michelf/sim-daltonism
+* http://colororacle.org/  color blindness simulator for Linux, Mac and Windows)
+  * https://github.com/nvkelso/color-oracle-java
+* http://www.rgblind.se/ (open-source)
+  * https://github.com/interaktivarum/rgblind (web toolkit)
+  * http://www.rgblind.se/url (online color blindness simulator for URLs)
+
 
 

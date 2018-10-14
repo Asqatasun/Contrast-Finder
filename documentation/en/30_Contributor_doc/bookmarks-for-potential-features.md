@@ -6,8 +6,9 @@
 * https://github.com/moby/moby/blob/master/CONTRIBUTING.md
 
 ## UI / UX examples
-* [Accessible Color Spaces](https://github.com/KevinGutowski/KevinGutowski.github.io)
-    * src: http://kevingutowski.github.io/color.html
+* https://www.colorbox.io/ (color tool to produce color sets)
+* [Accessible Color Spaces](http://kevingutowski.github.io/color.html)
+    * src: https://github.com/KevinGutowski/KevinGutowski.github.io
 
 ## schema.org
 - https://www.w3.org/wiki/WebSchemas/Accessibility
