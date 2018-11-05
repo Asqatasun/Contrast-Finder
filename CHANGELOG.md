@@ -13,8 +13,8 @@ none
 
 ### Outdated dependencies
 - [#180 - Upgraded commons-lang3 (3.8.1 instead of 3.8)](https://github.com/Asqatasun/Contrast-Finder/issues/180)
-- [#192 - Upgraded SpringFramework (4.3.20 instead of 4.3.19)](https://github.com/Asqatasun/Contrast-Finder/issues/192)
-- [#191 - Upgraded spring-security (4.2.9 instead of 4.2.8)](https://github.com/Asqatasun/Contrast-Finder/issues/191)
+- [#192 - Upgraded SpringFramework (4.3.20 instead of 4.3.18)](https://github.com/Asqatasun/Contrast-Finder/issues/192)
+- [#191 - Upgraded spring-security (4.2.9 instead of 4.2.7)](https://github.com/Asqatasun/Contrast-Finder/issues/191)
 - [#190 - Upgraded maven-surefire-plugin (2.22.1 instead of 2.22.0)](https://github.com/Asqatasun/Contrast-Finder/issues/190)
 
 ### Bug
