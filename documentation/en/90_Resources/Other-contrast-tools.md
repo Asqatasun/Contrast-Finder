@@ -21,6 +21,7 @@
 
 ### Other contrast tools
 
+* [Grid for analysing the contrasts of a graphic charter (in French / Atalan.fr)](https://blog.atalan.fr/grille-contrastes-accessibilite-charte-graphique/)
 * http://www.aremycolorsaccessible.com/
 * https://developer.paciellogroup.com/resources/contrastanalyser/
 * http://www.visionaustralia.org/digital-access-determinator
@@ -66,11 +67,13 @@
   * https://github.com/axismaps/colorbrewer/
 
 ### Vision simulation
-
+* Colorblindly (Chrome extension)
+    * https://chrome.google.com/webstore/detail/colorblindly/floniaahmccleoclneebhhmnjgdfijgg/related
+    * https://github.com/oftheheadland/Colorblindly
 * NoCoffee
-  - src: https://github.com/eeejay/NoCoffee
-  - [**NoCoffee** extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/nocoffee/)
-  - [**NoCoffee** extension for Chrome](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl)
+    * src: https://github.com/eeejay/NoCoffee
+    * [**NoCoffee** extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/nocoffee/)
+    * [**NoCoffee** extension for Chrome](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl)
 * http://paletton.com/ very popular but n real option for accessibility (as of 2016), and not opensource.
 * http://carlosrafaelgn.com.br/Aula/Cores.html (not opensource, in Portuguese)
 * [Toptal colorblind web page filter](https://www.toptal.com/designers/colorfilter) (not opensource)
