@@ -18,6 +18,7 @@ none
 
 ### Bug
 - [#184 - Webapp: modify the title tag when the form is on error to inform the user](https://github.com/Asqatasun/Contrast-Finder/issues/184)
+- [#189 - Maven Surefire plugin: temporary fix until a new version (after 2.22.1)](https://github.com/Asqatasun/Contrast-Finder/issues/189)
 
 ### Improvement
 - [#183 - Added config. informations in the logs when starting the webapp](https://github.com/Asqatasun/Contrast-Finder/issues/183)

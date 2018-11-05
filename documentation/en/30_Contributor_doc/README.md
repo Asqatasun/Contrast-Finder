@@ -21,6 +21,9 @@ mvn versions:display-plugin-updates
 
 # Checking for new property-linked updates
 mvn versions:display-property-updates
+
+# Resolving conflicts using the dependency tree
+mvn dependency::tree
 ```
 
 ### Documentation
