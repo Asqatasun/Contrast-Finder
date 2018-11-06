@@ -20,7 +20,8 @@ FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04_tomcat-8.5
 
 # environment variables
 ENV CONTRAST_FINDER_RELEASE="0.9.3"
-ENV SEARCH_ENGINGE="yes"
+ENV LOGGING="full"
+    # loggingColorsResult = compact | full | no (default)
 
 # Add contrast-finder .war
 ADD contrast-finder-webapp_${CONTRAST_FINDER_RELEASE}.tar.gz  /root
@@ -30,7 +31,7 @@ RUN  cd      /root/contrast-*/install/                              && \
      mv -v   contrast-*.war contrast-finder.war                     && \
      mv -v   contrast-*.war /var/lib/tomcat8/webapps                && \
      rm -rf  /root/contrast-*                                       && \
-echo "searchEngineInclude=${SEARCH_ENGINGE}" >> ${CONF_FILE}        && \
+echo "loggingColorsResult=${LOGGING}"              >> ${CONF_FILE}  && \
      echo ${CONTRAST_FINDER_RELEASE}               >> ${INFO_FILE}  && \
      echo "\n--- ${CONF_FILE} ---"                 >> ${INFO_FILE}  && \
      cat  ${CONF_FILE}                             >> ${INFO_FILE}  && \

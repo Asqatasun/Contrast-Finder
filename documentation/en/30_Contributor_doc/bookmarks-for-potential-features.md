@@ -6,8 +6,9 @@
 * https://github.com/moby/moby/blob/master/CONTRIBUTING.md
 
 ## UI / UX examples
-* [Accessible Color Spaces](https://github.com/KevinGutowski/KevinGutowski.github.io)
-    * src: http://kevingutowski.github.io/color.html
+* https://www.colorbox.io/ (color tool to produce color sets)
+* [Accessible Color Spaces](http://kevingutowski.github.io/color.html)
+    * src: https://github.com/KevinGutowski/KevinGutowski.github.io
 
 ## schema.org
 - https://www.w3.org/wiki/WebSchemas/Accessibility
@@ -81,6 +82,22 @@
 - https://kryogenix.org/code/browser/sorttable/
 - https://github.com/tofsjonas/sortable/
 
+# Java - i18n / URL
+- https://stackoverflow.com/questions/45357121/spring-mvc-requestmapping-with-i18n-path-parts
+- https://coderanch.com/t/625363/frameworks/URL-Locale-Spring-MVC
+- http://www.oracle.com/us/technologies/java/locale-140624.html
+- https://stackoverflow.com/questions/34628714/url-path-for-multi-language
+- https://www.boraji.com/spring-mvc-5-internationalization-example
+- https://www.mkyong.com/spring-mvc/spring-mvc-internationalization-example/
+- https://memorynotfound.com/spring-mvc-internationalization-i18n-example/
+- https://gokan-ekinci.developpez.com/tutoriels/java/spring-mvc-exception/
+
+# Java - Build number
+- https://raymondhlee.wordpress.com/2014/10/25/using-maven-build-number-plugin-to-load-code-revision-details/
+- https://blog.jayway.com/2012/04/07/continuous-deployment-versioning-and-git/
+- https://stackoverflow.com/questions/6947827/maven-build-number-plugin-how-to-save-the-build-number-in-a-file
+- https://www.javacodegeeks.com/2012/10/maven-build-number-plugin-sample-usage.html
+- https://github.com/ktoso/maven-git-commit-id-plugin
 
 # tag `<meter>`
 - https://caniuse.com/#search=meter

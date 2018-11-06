@@ -2,7 +2,7 @@
 <%@ page pageEncoding="UTF-8" %>
 
     <%-- APP version --%>
-    <c:set var="appVersion"    value="0.9.2"/>
+    <c:set var="appVersion"    value="0.9.3"/>
 
     <%-- APP Name --%>
     <c:set var="appName"    value="Contrast-Finder"/>
@@ -34,11 +34,20 @@
 
     <%-- TITLE tag --%>
     <c:choose>
-        <c:when test="${empty colorResult}">
+        <c:when test="${pageName == 'page-home'}">
             <c:set var="titleTag"><fmt:message key="home.titleTag"/></c:set>
             <c:set var="metaDescription"><fmt:message key="home.metaDescription"/></c:set>
         </c:when>
-        <c:otherwise>
+        <c:when test="${pageName == 'page-about'}">
+            <c:set var="titleTag"><fmt:message key="page.about.titleTag"/></c:set>
+            <c:set var="metaDescription"><fmt:message key="page.about.metaDescription"/></c:set>
+       <%-- <c:set var="canonicalURL" value="${prefixURL}about.html?lang=${lang}"/> --%>
+        </c:when>
+        <c:when test="${pageName == 'page-result-error'}">
+            <c:set var="titleTag">${appName_v2} - <fmt:message key="page.result-error.titleTag"/></c:set>
+            <c:set var="metaDescription"></c:set>
+        </c:when>
+        <c:when test="${pageName == 'page-result'}">
             <c:set var="titleTag">
                 ${appName_v2},
                 <fmt:message key="result.title.minRation"/> ${colorModel.ratio},
@@ -67,16 +76,21 @@
                     <c:otherwise>
                         <fmt:message key="form.initialContrastCaption"/>
                         <c:if test="${colorModel.isBackgroundTested}">
-                           - is background tested
+                            - is background tested
                         </c:if>
                         -   <fmt:message key="form.resultNumber">
-                                <fmt:param value="${colorResult.numberOfSuggestedColors}"/>
-                            </fmt:message>
+                        <fmt:param value="${colorResult.numberOfSuggestedColors}"/>
+                    </fmt:message>
                         / <fmt:formatNumber value="${colorResult.numberOfTestedColors}"/>
-                          <fmt:message key="form.testedColors"/>
+                        <fmt:message key="form.testedColors"/>
                     </c:otherwise>
                 </c:choose>
             </c:set>
+        </c:when>
+        <c:otherwise>
+            <c:set var="titleTag">${appName_v2}</c:set>
+            <c:set var="metaDescription"></c:set>
+        </c:otherwise>
             <%--
                 FR   Contrast Finder : couleur du texte #468847, couleur du fond #DFF0D8, Ratio minimum 4.5
                 FR   Contrast Finder, ratio min 4.5, couleurs : texte #468847, fond #DFF0D8
@@ -116,7 +130,6 @@
                     </c:choose>
                 </c:set>
            --%>
-        </c:otherwise>
     </c:choose>
 
 

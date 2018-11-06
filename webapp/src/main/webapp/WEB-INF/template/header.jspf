@@ -3,110 +3,59 @@
 <%@page pageEncoding="UTF-8"%>
 
 <header id="header" class="page-header">
-    <c:set var="properQueryString" scope="page" value="${fn:replace(pageContext.request.queryString, '&', '&amp;')}"/>
-    <c:choose>
-        <c:when test="${not empty pageContext.request.queryString}">
-            <c:choose>
-                <c:when test="${fn:contains(pageContext.request.queryString, 'lang=en')}">
-                    <c:set var="frUrl" scope="request" value="?${fn:replace(properQueryString,'lang=en','lang=fr')}" />
-                    <c:set var="enUrl" scope="request" value="?${properQueryString}"/>
-                    <c:set var="esUrl" scope="request" value="?${fn:replace(properQueryString,'lang=en','lang=es')}" />
-                    <c:set var="koUrl" scope="request" value="?${fn:replace(properQueryString,'lang=en','lang=ko')}" />
-                    <c:set var="ptUrl" scope="request" value="?${fn:replace(properQueryString,'lang=en','lang=pt')}" />
-                </c:when>
-                <c:when test="${fn:contains(pageContext.request.queryString, 'lang=es')}">
-                    <c:set var="frUrl" scope="request" value="?${fn:replace(properQueryString,'lang=es','lang=fr')}" />
-                    <c:set var="enUrl" scope="request" value="?${fn:replace(properQueryString,'lang=es','lang=en')}" />
-                    <c:set var="esUrl" scope="request" value="?${properQueryString}"/>
-                    <c:set var="koUrl" scope="request" value="?${fn:replace(properQueryString,'lang=es','lang=ko')}" />
-                    <c:set var="ptUrl" scope="request" value="?${fn:replace(properQueryString,'lang=es','lang=pt')}" />
-                </c:when>
-                <c:when test="${fn:contains(pageContext.request.queryString, 'lang=fr')}">
-                    <c:set var="frUrl" scope="request" value="?${properQueryString}"/>
-                    <c:set var="enUrl" scope="request" value="?${fn:replace(properQueryString,'lang=fr','lang=en')}" />
-                    <c:set var="esUrl" scope="request" value="?${fn:replace(properQueryString,'lang=fr','lang=es')}" />
-                    <c:set var="koUrl" scope="request" value="?${fn:replace(properQueryString,'lang=fr','lang=ko')}" />
-                    <c:set var="ptUrl" scope="request" value="?${fn:replace(properQueryString,'lang=fr','lang=pt')}" />
-                </c:when>
-                <c:when test="${fn:contains(pageContext.request.queryString, 'lang=ko')}">
-                    <c:set var="frUrl" scope="request" value="?${fn:replace(properQueryString,'lang=ko','lang=fr')}" />
-                    <c:set var="enUrl" scope="request" value="?${fn:replace(properQueryString,'lang=ko','lang=en')}" />
-                    <c:set var="esUrl" scope="request" value="?${fn:replace(properQueryString,'lang=ko','lang=es')}" />
-                    <c:set var="koUrl" scope="request" value="?${properQueryString}"/>
-                    <c:set var="ptUrl" scope="request" value="?${fn:replace(properQueryString,'lang=ko','lang=pt')}" />
-                </c:when>
-                <c:when test="${fn:contains(pageContext.request.queryString, 'lang=pt')}">
-                    <c:set var="frUrl" scope="request" value="?${fn:replace(properQueryString,'lang=pt','lang=fr')}" />
-                    <c:set var="enUrl" scope="request" value="?${fn:replace(properQueryString,'lang=pt','lang=en')}" />
-                    <c:set var="esUrl" scope="request" value="?${fn:replace(properQueryString,'lang=pt','lang=es')}" />
-                    <c:set var="koUrl" scope="request" value="?${fn:replace(properQueryString,'lang=pt','lang=ko')}" />
-                    <c:set var="ptUrl" scope="request" value="?${properQueryString}"/>
-                </c:when>
-                <c:otherwise>
-                    <c:set var="frUrl" scope="request" value="?${properQueryString}&amp;lang=fr"/>
-                    <c:set var="enUrl" scope="request" value="?${properQueryString}&amp;lang=en"/>
-                    <c:set var="esUrl" scope="request" value="?${properQueryString}&amp;lang=es"/>
-                    <c:set var="koUrl" scope="request" value="?${properQueryString}&amp;lang=ko"/>
-                    <c:set var="ptUrl" scope="request" value="?${properQueryString}&amp;lang=pt"/>
-                </c:otherwise>
-            </c:choose>
-        </c:when>
-        <c:otherwise>
-            <c:set var="frUrl" scope="request" value="?lang=fr"/>
-            <c:set var="enUrl" scope="request" value="?lang=en"/>
-            <c:set var="esUrl" scope="request" value="?lang=es"/>
-            <c:set var="koUrl" scope="request" value="?lang=ko"/>
-            <c:set var="ptUrl" scope="request" value="?lang=pt"/>
-        </c:otherwise>
-    </c:choose>
-    <nav id="lang-switcher"  aria-label="<fmt:message key="nav.language-switching.aria-label"/>" role="navigation">
+    <c:set scope="page"
+           var="properQueryString"
+           value="${fn:replace(pageContext.request.queryString, '&', '&amp;')}"/>
+    <nav aria-label="<fmt:message key="nav.language-switching.aria-label"/>"
+         role="navigation"
+         id="lang-switcher">
         <ul>
-        <c:choose>
-            <c:when test="${lang == 'en'}">
-                <li><strong aria-current="page">english</strong></li>
-            </c:when>
-            <c:otherwise>
-                <li lang="en"><a href="${enUrl}" hreflang="en" title="Switch to english">english</a></li>
-            </c:otherwise>
-        </c:choose>
-        <c:choose>
-            <c:when test="${lang == 'es'}">
-                <li><strong aria-current="page">español</strong></li>
-            </c:when>
-            <c:otherwise>
-                <li lang="es"><a href="${esUrl}" hreflang="es" title="Cambiar a español">español</a></li>
-            </c:otherwise>
-        </c:choose>
-        <c:choose>
-            <c:when test="${lang == 'fr'}">
-                <li><strong aria-current="page">français</strong></li>
-            </c:when>
-            <c:otherwise>
-                <li lang="fr"><a href="${frUrl}" hreflang="fr" title="Passer en français">français</a></li>
-            </c:otherwise>
-        </c:choose>
-        <c:choose>
-            <c:when test="${lang == 'pt'}">
-                <li><strong aria-current="page">português</strong></li>
-            </c:when>
-            <c:otherwise>
-                <li lang="pt"><a href="${ptUrl}" hreflang="pt" title="em Português">português</a></li>
-            </c:otherwise>
-        </c:choose>
-        <c:choose>
-            <c:when test="${lang == 'ko'}">
-                <li><strong aria-current="page">한국어</strong></li>
-            </c:when>
-            <c:otherwise>
-                <li lang="ko"><a href="${koUrl}" hreflang="ko" title="한국어로 전환">한국어</a></li>
-            </c:otherwise>
-        </c:choose>
+            <c:forEach var="langCode" items="${orderedLanguagesList}">
+                <%--compute the URL of the menu item --%>
+                <c:choose>
+                    <c:when test="${empty pageContext.request.queryString}">
+                        <c:set var="langURL" value="?lang=${langCode}" scope="page" />
+                    </c:when>
+                    <c:otherwise>
+                        <c:choose>
+                            <c:when test="${fn:contains(pageContext.request.queryString, 'lang=')}">
+                                <c:set var="newLang"     value="lang=${langCode}" scope="page" />
+                                <c:set var="currentLang" value="lang=${lang}"     scope="page" />
+                                <c:set var="langURL" scope="page"
+                                       value="?${fn:replace(properQueryString, currentLang, newLang)}"/>
+                            </c:when>
+                            <c:otherwise>
+                                <c:set var="langURL" scope="page"
+                                       value="?${properQueryString}&amp;lang=${langCode}"/>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:otherwise>
+                </c:choose>
+
+                <%-- display the menu item --%>
+                <c:choose>
+                    <c:when test="${lang == langCode}">
+                        <li><strong aria-current="page">
+                                ${fn:toLowerCase(availableLanguages[langCode])}
+                        </strong>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <li lang="${langCode}">
+                            <a hreflang="${langCode}"
+                               title="${textsOfSwitchLanguage[langCode]}"
+                               href="${langURL}">${fn:toLowerCase(availableLanguages[langCode])}</a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
         </ul>
     </nav>
 
     <div id="contrast-finder-logo">
         <c:choose>
-            <c:when test="${empty colorResult && empty errorResult}">
+      <%--  <c:when test="${empty colorResult && empty errorResult}"> --%>
+            <c:when test="${pageName == 'page-home'}">
                 <img src="public/${appVersion}/images/logo/contrast-finder_logo_1051x1053.png"
                      alt="" />
             </c:when>

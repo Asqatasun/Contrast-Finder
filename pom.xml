@@ -20,7 +20,7 @@
     <groupId>org.asqatasun</groupId>
     <artifactId>contrast-finder</artifactId>
     <packaging>pom</packaging>
-    <version>0.9.2</version>
+    <version>0.9.3</version>
     <name>Contrast-Finder</name>
     <licenses>
         <license>
@@ -76,7 +76,7 @@
         <commons-cli.version>1.4</commons-cli.version>
         <commons-collections4.version>4.2</commons-collections4.version>
         <commons-logging.version>1.2</commons-logging.version>
-        <commons-lang3.version>3.8</commons-lang3.version>
+        <commons-lang3.version>3.8.1</commons-lang3.version>
         <junit.version>4.12</junit.version>
         <logback-classic.version>1.2.3</logback-classic.version>
         <markdown-page-generator-plugin.version>2.1.0</markdown-page-generator-plugin.version>
@@ -91,7 +91,7 @@
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
         <maven-war-plugin.version>3.2.2</maven-war-plugin.version>
-        <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
         <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
         <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
         <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
@@ -126,6 +126,12 @@
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
                         <skipTests>false</skipTests>
+
+                    <!-- Fixes a surefire-plugin bug which will be solved
+                         in next version (after 2.22.1) then this can be removed
+                         see:   https://github.com/Asqatasun/Contrast-Finder/issues/189
+                                https://issues.apache.org/jira/browse/SUREFIRE-1588     -->
+                        <useSystemClassLoader>false</useSystemClassLoader>
                     </configuration>
                 </plugin>
                 <plugin>

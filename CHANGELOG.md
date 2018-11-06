@@ -1,5 +1,32 @@
 # CHANGELOG
 
+Contrast-Finder 0.9.3, 2018-11-06
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+### Outdated dependencies
+- [#180 - Upgraded commons-lang3 (3.8.1 instead of 3.8)](https://github.com/Asqatasun/Contrast-Finder/issues/180)
+- [#192 - Upgraded SpringFramework (4.3.20 instead of 4.3.18)](https://github.com/Asqatasun/Contrast-Finder/issues/192)
+- [#191 - Upgraded spring-security (4.2.9 instead of 4.2.7)](https://github.com/Asqatasun/Contrast-Finder/issues/191)
+- [#190 - Upgraded maven-surefire-plugin (2.22.1 instead of 2.22.0)](https://github.com/Asqatasun/Contrast-Finder/issues/190)
+
+### Bug
+- [#184 - Webapp: modify the title tag when the form is on error to inform the user](https://github.com/Asqatasun/Contrast-Finder/issues/184)
+- [#189 - Maven Surefire plugin: temporary fix until a new version (after 2.22.1)](https://github.com/Asqatasun/Contrast-Finder/issues/189)
+
+### Improvement
+- [#183 - Added config. informations in the logs when starting the webapp](https://github.com/Asqatasun/Contrast-Finder/issues/183)
+- [#185 - Added new configuration option for logging colors results](https://github.com/Asqatasun/Contrast-Finder/issues/185)
+- [#187 - Added new configuration options: available languages and default language](https://github.com/Asqatasun/Contrast-Finder/issues/187)
+- [#188 - Webapp: languages switcher now depends on the configuration options](https://github.com/Asqatasun/Contrast-Finder/issues/188)
+- [#186 - Webapp: added new page to provide build ID (commit hash)](https://github.com/Asqatasun/Contrast-Finder/issues/186)
+
+### Documentation
+- Fixed some external links ('Sonarwhal' become 'Webhint')
+
+
+
 Contrast-Finder 0.9.2, 2018-09-03
 ---------------------------------
 

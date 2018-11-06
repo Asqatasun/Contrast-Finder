@@ -48,78 +48,33 @@ import java.awt.Color;
  * @author alingua
  */
 @Controller
-public class IndexController {
+public class IndexController  extends AbstractController {
+
+
+    /**
+     * main view name
+     */
+    private String mainPageView;
+
 
     /**
      * model name
      */
     private String commandName;
-    /**
-     * View containing the form
-     */
-    private String mainPageView;
-
-    /**
-     * piwik analytics key
-     *      default is ''
-     *      can be override in the following file:
-     *      /etc/contrast-finder/contrast-finder.conf
-     */
-    @Value("${piwik_analytics_key:}")
-    private String piwikAnalyticsKey;
-
-    /**
-     * piwik analytics server URL
-     *      default is ''
-     *      can be override in the following file:
-     *      /etc/contrast-finder/contrast-finder.conf
-     */
-    @Value("${piwik_analytics_server:}")
-    private String piwikAnalyticServer;
-
-    /**
-     * default algorithm  ("HSV")
-     * used only in this.initAccueil()
-     *      HSV = a range of valid colors
-     *      Rgb = valid colors and very close to initial color
-     *
-     *      can be override in the following file:
-     *      /etc/contrast-finder/contrast-finder.conf
-     *
-     *      a bad value is fixed by the default algo ("HSV") in ColorModel class
-     */
-    @Value("${default_algorithm:HSV}")
-    // @Value("${default_algorithm:HSV}")
-    // @Value("${default_algorithm:Rgb}")
-    private String defaultAlgorithm;
 
 
-    /**
-     * Give crawlers instructions
-     *      searchEngineInclude = "yes"
-     *      searchEngineInclude = "no"   (default)
-     *          = disallow search engines from showing HTML pages in their results
-     *
-     *      can be override in the following file:
-     *      /etc/contrast-finder/contrast-finder.conf
-     */
-    @Value("${searchEngineInclude:no}")
-    private String searchEngineInclude;
-
-    /**
-     * environment
-     *      env = debug
-     *      env = prod    (default)
-     *
-     *      can be override in the following file:
-     *      /etc/contrast-finder/contrast-finder.conf
-     */
-    @Value("${env:prod}")
-    private String env;
 
 
     @Autowired
     private ColorFinderFactory colorFinderFactory;
+
+
+    /*
+     * notice: called only at the launch of servlet
+     */
+    public IndexController() {
+        LOGGER.debug("calling IndexController()");
+    }
 
     /**
      * Validator initialisation
@@ -128,6 +83,18 @@ public class IndexController {
     protected void initBinder(WebDataBinder binder) {
         binder.setValidator(new ColorModelValidator());
     }
+
+    /**
+     * Page about.html
+     * @param model model of the page
+     * @return view name  like "page/form"
+     */
+    @RequestMapping(value = "about.html")
+    public String getPageAbout(final Model model) {
+        addCommonViewData(model, "page-about");
+        return "pages/about";
+    }
+
 
     /**
      * Form initialisation
@@ -156,13 +123,9 @@ public class IndexController {
         model.addAttribute("formCurrentIsValidContrast",false);
         model.addAttribute("backgroundHEX", ColorConverter.rgb2Hex(backgroundColor));
         model.addAttribute("foregroundHEX", ColorConverter.rgb2Hex(foregroundColor));
-        model.addAttribute("defaultAlgorithm", defaultAlgorithm);
         model.addAttribute("algo", colorModel.getAlgo());
-        model.addAttribute("env",  env);
-        model.addAttribute("piwikKey",    piwikAnalyticsKey);
-        model.addAttribute("piwikServer", piwikAnalyticServer);
-        model.addAttribute("searchEngineInclude",  searchEngineInclude);
         model.addAttribute(commandName, colorModel);
+        addCommonViewData(model, "page-home");
         return mainPageView;
     }
 
@@ -182,14 +145,10 @@ public class IndexController {
                                         @CookieValue(value = "algo", defaultValue = "") String algoCookie,
                                         HttpServletRequest request,
                                         HttpServletResponse response) {
-        model.addAttribute("env",  env);
-        model.addAttribute("piwikKey",    piwikAnalyticsKey);   /* Analytics Keys*/
-        model.addAttribute("piwikServer", piwikAnalyticServer);
-        model.addAttribute("searchEngineInclude",  searchEngineInclude);
-        model.addAttribute("defaultAlgorithm", defaultAlgorithm);
         model.addAttribute("algo", colorModel.getAlgo());
         if (result.hasErrors()) {
             model.addAttribute("errorResult", "result.hasErrors");
+            addCommonViewData(model, "page-result-error");
             return mainPageView;
         } else {
 
@@ -242,6 +201,31 @@ public class IndexController {
                     colorResult.getSubmittedCombinaisonColor().getDistance());
             // model.addAttribute("algo", colorModel.getAlgo());
             model.addAttribute("otherAlgo", getOppositeAlgo(colorModel.getAlgo()));
+
+            // Logging color results
+            if("full".equals(loggingColorsResult) | "debug".equals(env)){
+                LOGGER.info("---------------------");
+                LOGGER.info("get  TXT       : " + colorModel.getForeground()               );
+                LOGGER.info("get  BG        : " + colorModel.getBackground()               );
+                LOGGER.info("get  ratio     : " + colorModel.getRatio()                    );
+                LOGGER.info("get  algo      : " + colorModel.getAlgo()                     );
+                LOGGER.info("get  BG tested : " + colorModel.getIsBackgroundTested()       );
+                LOGGER.info("tested         : " + colorResult.getNumberOfTestedColors()    );
+                LOGGER.info("result         : " + colorResult.getNumberOfSuggestedColors() );
+                LOGGER.info("ratio          : " + ContrastChecker.getConstrastRatio2DigitRound(foregroundColor, backgroundColor) );
+            }
+            else if("compact".equals(loggingColorsResult)){
+                LOGGER.info("START|" + colorModel.getForeground()
+                               + "|" + colorModel.getBackground()
+                               + "|" + colorModel.getRatio()
+                               + "|" + colorModel.getAlgo()
+                               + "|" + colorModel.getIsBackgroundTested()
+                               + "|" + colorResult.getNumberOfTestedColors()
+                               + "|" + colorResult.getNumberOfSuggestedColors()
+                               + "|" + ContrastChecker.getConstrastRatio2DigitRound(foregroundColor, backgroundColor)
+                               + "|END");
+            }
+            addCommonViewData(model, "page-result");
             return mainPageView;
         }
 
@@ -287,17 +271,27 @@ public class IndexController {
         return colorFinder;
     }
 
+
     /**
-     * Setter sur le nom du modèle
+     * set modele name  (this.commandName)
+     *
+     * notice: called only at the launch of servlet
+     * see:    webapp/src/main/webapp/WEB-INF/conf/mvc/cf-beans-controller.xml
      */
     public void setCommandName(String commandName) {
+     // LOGGER.debug("calling setCommandName()");
         this.commandName = commandName;
     }
 
     /**
-     * Setter du nom de la formView
+     * set main view name (this.mainPageView)
+     *
+     * notice: called only at the launch of servlet after the contructor
+     * see:    webapp/src/main/webapp/WEB-INF/conf/mvc/cf-beans-controller.xml
      */
     public void setMainPageView(String formView) {
+     // LOGGER.debug("calling setMainPageView()");
         this.mainPageView = formView;
     }
+
 }
