@@ -20,6 +20,8 @@
                 <%-- ===== CONTENT ========================================================================================= --%>
                 <div class="help">
                     <h1><fmt:message key="page.about.title"/></h1>
+                    <p> <fmt:message key="page.about.text"/> </p>
+                        <fmt:message key="page.about.links"/>
 
 <%-- TEST language code is not available --%>
 <c:set var="isAvalaibleLanguage" value="false"     scope="page" />
