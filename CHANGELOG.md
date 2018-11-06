@@ -1,15 +1,9 @@
 # CHANGELOG
 
-Contrast-Finder 0.9.3, 2018-xx-xx
+Contrast-Finder 0.9.3, 2018-11-06
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
-
-### New Feature
-none
-
-### Security
-none
 
 ### Outdated dependencies
 - [#180 - Upgraded commons-lang3 (3.8.1 instead of 3.8)](https://github.com/Asqatasun/Contrast-Finder/issues/180)
@@ -28,17 +22,9 @@ none
 - [#188 - Webapp: languages switcher now depends on the configuration options](https://github.com/Asqatasun/Contrast-Finder/issues/188)
 - [#186 - Webapp: added new page to provide build ID (commit hash)](https://github.com/Asqatasun/Contrast-Finder/issues/186)
 
-### Refactoring
-none
-
-### Configuration
-none
-
 ### Documentation
 - Fixed some external links ('Sonarwhal' become 'Webhint')
 
-### Task
-none
 
 
 Contrast-Finder 0.9.2, 2018-09-03
