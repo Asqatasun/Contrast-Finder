@@ -22,7 +22,7 @@ FROM asqatasun/contrast-finder:pre-requisites_Debian_tomcat-9_jre9
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.9.3"
+ENV CONTRAST_FINDER_RELEASE="0.9.4-SNAPSHOT"
 ENV CONF_ENV="debug"
 
 # Add contrast-finder .war

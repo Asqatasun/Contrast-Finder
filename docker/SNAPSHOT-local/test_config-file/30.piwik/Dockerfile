@@ -19,7 +19,7 @@ FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04_tomcat-8.5
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.9.3"
+ENV CONTRAST_FINDER_RELEASE="0.9.4-SNAPSHOT"
 ENV PIWIK_KEY="9"
 ENV PIWIK_URL="http://localhost/piwik/"
 
