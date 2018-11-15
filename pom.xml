@@ -126,12 +126,6 @@
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
                         <skipTests>false</skipTests>
-
-                    <!-- Fixes a surefire-plugin bug which will be solved
-                         in next version (after 2.22.1) then this can be removed
-                         see:   https://github.com/Asqatasun/Contrast-Finder/issues/189
-                                https://issues.apache.org/jira/browse/SUREFIRE-1588     -->
-                        <useSystemClassLoader>false</useSystemClassLoader>
                     </configuration>
                 </plugin>
                 <plugin>
