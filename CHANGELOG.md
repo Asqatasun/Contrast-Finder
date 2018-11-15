@@ -12,7 +12,12 @@ none
 none
 
 ### Outdated dependencies
-none
+- [#193 - Upgraded maven-deploy-plugin (3.0.0-M1 instead of 2.8.2)](https://github.com/Asqatasun/Contrast-Finder/issues/193)
+- [#194 - Upgraded maven-install-plugin  (3.0.0-M1 instead of 2.5.2)](https://github.com/Asqatasun/Contrast-Finder/issues/194)
+- [#195 - Upgraded maven-jxr-plugin (3.0.0 instead of 2.5)](https://github.com/Asqatasun/Contrast-Finder/issues/195)
+- [#196 - Upgraded maven-surefire-plugin (3.0.0-M1 instead of 2.22.1)](https://github.com/Asqatasun/Contrast-Finder/issues/196)
+- [#197 - Upgraded org.owasp:dependency-check-maven (3.3.4 instead of 3.3.1)](https://github.com/Asqatasun/Contrast-Finder/issues/197)
+- [#198 - Upgraded jdeb (1.7 instead of 1.6)](https://github.com/Asqatasun/Contrast-Finder/issues/198)
 
 ### Bug
 none
@@ -27,7 +32,7 @@ none
 none
 
 ### Documentation
-none
+- [#199 - Build: Maven 3.3.9 (at least)  is required](https://github.com/Asqatasun/Contrast-Finder/issues/199)
 
 ### Task
 none

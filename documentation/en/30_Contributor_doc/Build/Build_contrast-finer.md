@@ -3,7 +3,7 @@
 ## Prerequesites
 
 * JDK-8 (at least) is required
-* Maven 3.1 (at least) is required
+* Maven 3.3.9 (at least) is required
 * Git
 
 ## Builds Contrast-Finder and runs with Tomcat

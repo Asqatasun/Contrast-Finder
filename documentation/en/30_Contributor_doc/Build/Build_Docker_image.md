@@ -6,7 +6,7 @@
 The following sofware are required :
 
 * JDK **8** (at least)
-* Maven **3.1** (at least)
+* Maven **3.3.9** (at least)
 * [Docker **1.12** (at least)](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
 
 
