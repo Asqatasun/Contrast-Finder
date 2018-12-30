@@ -1,5 +1,30 @@
 # CHANGELOG
 
+Contrast-Finder 0.9.4, 2018-12-30
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+### Outdated dependencies
+- [#193 - Upgraded maven-deploy-plugin (3.0.0-M1 instead of 2.8.2)](https://github.com/Asqatasun/Contrast-Finder/issues/193)
+- [#194 - Upgraded maven-install-plugin  (3.0.0-M1 instead of 2.5.2)](https://github.com/Asqatasun/Contrast-Finder/issues/194)
+- [#195 - Upgraded maven-jxr-plugin (3.0.0 instead of 2.5)](https://github.com/Asqatasun/Contrast-Finder/issues/195)
+- [#196 - Upgraded maven-surefire-plugin (3.0.0-M1 instead of 2.22.1)](https://github.com/Asqatasun/Contrast-Finder/issues/196)
+- [#197 - Upgraded org.owasp:dependency-check-maven (3.3.4 instead of 3.3.1)](https://github.com/Asqatasun/Contrast-Finder/issues/197)
+- [#198 - Upgraded jdeb (1.7 instead of 1.6)](https://github.com/Asqatasun/Contrast-Finder/issues/198)
+- [#200 - Upgraded SpringFramework (4.3.21 instead of 4.3.20)](https://github.com/Asqatasun/Contrast-Finder/issues/200)
+- [#201 - Upgraded spring-security (4.2.10 instead of 4.2.9)](https://github.com/Asqatasun/Contrast-Finder/issues/201)
+
+### Bug
+- revert [#189 - Maven Surefire plugin: temporary fix until a new version (after 2.22.1)](https://github.com/Asqatasun/Contrast-Finder/issues/189)
+
+### Documentation
+- [#199 - Build: Maven 3.3.9 (at least)  is required](https://github.com/Asqatasun/Contrast-Finder/issues/199)
+
+### Task
+- [#202 - Splits up the current issue_template into 5 issue templates](https://github.com/Asqatasun/Contrast-Finder/issues/202)
+
+
 Contrast-Finder 0.9.3, 2018-11-06
 ---------------------------------
 
