@@ -2,7 +2,7 @@
 name: 💬 Request For Comment (RFC)
 about: Feature discussion
 title: ''
-labels: ''
+labels: 'rfc'
 assignees: ''
 ---
 <!-- Thanks for filing an issue 😄 !
@@ -10,7 +10,7 @@ Before you submit, please read the following:
 search open/closed issues before submitting since someone might have asked the same thing before! -->
 
 
-# RFC
+# Request For Comment (RFC)
 <!--- Provide a detailed summary of the issue here. -->
 
 ## Context
