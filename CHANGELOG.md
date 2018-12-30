@@ -12,6 +12,8 @@ none
 none
 
 ### Outdated dependencies
+- [#201 - Upgraded spring-security (4.2.10 instead of 4.2.9)](https://github.com/Asqatasun/Contrast-Finder/issues/201)
+- [#200 - Upgraded SpringFramework (4.3.21 instead of 4.3.20)](https://github.com/Asqatasun/Contrast-Finder/issues/200)
 - [#193 - Upgraded maven-deploy-plugin (3.0.0-M1 instead of 2.8.2)](https://github.com/Asqatasun/Contrast-Finder/issues/193)
 - [#194 - Upgraded maven-install-plugin  (3.0.0-M1 instead of 2.5.2)](https://github.com/Asqatasun/Contrast-Finder/issues/194)
 - [#195 - Upgraded maven-jxr-plugin (3.0.0 instead of 2.5)](https://github.com/Asqatasun/Contrast-Finder/issues/195)
