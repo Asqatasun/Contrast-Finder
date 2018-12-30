@@ -37,7 +37,8 @@ none
 - [#199 - Build: Maven 3.3.9 (at least)  is required](https://github.com/Asqatasun/Contrast-Finder/issues/199)
 
 ### Task
-none
+-  [#202 - Splits up the current issue_template into 5 issue templates](https://github.com/Asqatasun/Contrast-Finder/issues/202)
+
 
 Contrast-Finder 0.9.3, 2018-11-06
 ---------------------------------
