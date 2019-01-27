@@ -12,7 +12,8 @@ none
 none
 
 ### Outdated dependencies
-none
+- [#203 - Upgraded spring-security (4.2.11 instead of 4.2.10)](https://github.com/Asqatasun/Contrast-Finder/issues/203)
+- [#204 - Upgraded SpringFramework (4.3.22 instead of 4.3.21)](https://github.com/Asqatasun/Contrast-Finder/issues/204)
 
 ### Bug
 none
