@@ -1,6 +1,6 @@
 # CHANGELOG
 
-Contrast-Finder 0.9.5, 2019-01-xx
+Contrast-Finder 0.9.5, 2019-04-xx
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
@@ -20,7 +20,7 @@ none
 - [#210 - Upgraded maven-javadoc-plugin (3.1.0 instead of 3.0.1)](https://github.com/Asqatasun/Contrast-Finder/issues/210) 
 - [#211 - Upgraded maven-surefire-plugin (3.0.0-M3 instead of 3.0.0-M1)](https://github.com/Asqatasun/Contrast-Finder/issues/211) 
 - [#212 - Upgraded maven-jar-plugin (3.1.1 instead of 3.1.0)](https://github.com/Asqatasun/Contrast-Finder/issues/212) 
-- [#214 - Upgraded commons-collections4 (4.3 instead of 4.3)](https://github.com/Asqatasun/Contrast-Finder/issues/214) 
+- [#214 - Upgraded commons-collections4 (4.3 instead of 4.2)](https://github.com/Asqatasun/Contrast-Finder/issues/214) 
 
 ### Bug
 none
