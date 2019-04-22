@@ -74,7 +74,7 @@
 
         <!-- Dependency Versions -->
         <commons-cli.version>1.4</commons-cli.version>
-        <commons-collections4.version>4.2</commons-collections4.version>
+        <commons-collections4.version>4.3</commons-collections4.version>
         <commons-logging.version>1.2</commons-logging.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
         <junit.version>4.12</junit.version>
@@ -89,18 +89,18 @@
         <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
         <maven-assembly-plugin.version>3.1</maven-assembly-plugin.version>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-        <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
+        <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
         <maven-war-plugin.version>3.2.2</maven-war-plugin.version>
-        <maven-surefire-plugin.version>3.0.0-M1</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
         <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
         <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
-        <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.1.0</maven-javadoc-plugin.version>
         <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
         <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
-        <dependency-check-maven.version>3.3.4</dependency-check-maven.version>
-        <jacoco-maven-plugin.version>0.8.2</jacoco-maven-plugin.version>
+        <dependency-check-maven.version>5.0.0-M2</dependency-check-maven.version>
+        <jacoco-maven-plugin.version>0.8.3</jacoco-maven-plugin.version>
      </properties>
      <prerequisites>          <!--    Maven 3.3.9 is required to use the following plugin:   -->
         <maven>3.3.9</maven>  <!--    ............  jacoco-maven-plugin >= 0.8.2     -->
