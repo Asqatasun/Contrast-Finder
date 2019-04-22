@@ -12,8 +12,9 @@ none
 none
 
 ### Outdated dependencies
-- [#203 - Upgraded spring-security (4.2.11 instead of 4.2.10)](https://github.com/Asqatasun/Contrast-Finder/issues/203)
-- [#204 - Upgraded SpringFramework (4.3.22 instead of 4.3.21)](https://github.com/Asqatasun/Contrast-Finder/issues/204)
+- [#205 - Upgraded SpringFramework (4.3.23 instead of 4.3.21)](https://github.com/Asqatasun/Contrast-Finder/issues/205)
+- [#206 - Upgraded spring-security (4.2.12 instead of 4.2.10)](https://github.com/Asqatasun/Contrast-Finder/issues/206)
+- [#207 - Upgraded javaee-web-api (8.0.1 instead of 8.0)](https://github.com/Asqatasun/Contrast-Finder/issues/207)
 
 ### Bug
 none
