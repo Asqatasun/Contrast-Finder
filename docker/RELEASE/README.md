@@ -14,8 +14,8 @@ Supported tags and respective `Dockerfile` links :
 * [pre-requisites_Alpine_tomcat-8.5](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/pre-requisites/pre-requisites_Alpine_tomcat-8.5/Dockerfile)
 
 ### Releases
-* [latest, v0.9.5-SNAPSHOT, ubuntu-18.04](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/RELEASE/ubuntu-18.04_tomcat-8.5/Dockerfile)
-* [alpine, v0.9.5-SNAPSHOT_alpine, alpine_tomcat-8.5](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/RELEASE/alpine_tomcat-8.5/Dockerfile)
+* [latest, v0.9.5, ubuntu-18.04](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/RELEASE/ubuntu-18.04_tomcat-8.5/Dockerfile)
+* [alpine, v0.9.5_alpine, alpine_tomcat-8.5](https://github.com/Asqatasun/Contrast-Finder/blob/master/docker/RELEASE/alpine_tomcat-8.5/Dockerfile)
 * [v0.9.4](https://github.com/Asqatasun/Contrast-Finder/blob/v0.9.4/docker/RELEASE/Dockerfile), [v0.9.3](https://github.com/Asqatasun/Contrast-Finder/blob/v0.9.3/docker/RELEASE/Dockerfile), [v0.9.2](https://github.com/Asqatasun/Contrast-Finder/blob/v0.9.2/docker/RELEASE/Dockerfile), [v0.9.1](https://github.com/Asqatasun/Contrast-Finder/blob/v0.9.1/docker/RELEASE/Dockerfile), [v0.9.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.9.0/docker/RELEASE/Dockerfile),
 * [v0.8.6](https://github.com/Asqatasun/Contrast-Finder/blob/v0.8.6/docker/RELEASE/Dockerfile), [v0.7.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.7.0/docker/RELEASE/Dockerfile), [v0.6.0](https://github.com/Asqatasun/Contrast-Finder/blob/v0.6.0/docker/RELEASE/Dockerfile), [v0.5.2](https://github.com/Asqatasun/Contrast-Finder/blob/v0.5.2/docker/RELEASE/Dockerfile)
 

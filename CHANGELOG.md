@@ -1,15 +1,9 @@
 # CHANGELOG
 
-Contrast-Finder 0.9.5, 2019-05-xx
+Contrast-Finder 0.9.5, 2019-05-01
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
-
-### New Feature
-none
-
-### Security
-none
 
 ### Outdated dependencies
 - [#205 - Upgraded SpringFramework (4.3.23 instead of 4.3.21)](https://github.com/Asqatasun/Contrast-Finder/issues/205)
@@ -22,20 +16,8 @@ none
 - [#212 - Upgraded maven-jar-plugin (3.1.1 instead of 3.1.0)](https://github.com/Asqatasun/Contrast-Finder/issues/212) 
 - [#214 - Upgraded commons-collections4 (4.3 instead of 4.2)](https://github.com/Asqatasun/Contrast-Finder/issues/214) 
 
-### Bug
-none
-
 ### Improvement
 - [#215 - Added informations in browser's debugging console](https://github.com/Asqatasun/Contrast-Finder/issues/215) 
-
-### Refactoring
-none
-
-### Configuration
-none
-
-### Documentation
-none
 
 ### Task
 - updated the copyright date (.java and pom.xml files)

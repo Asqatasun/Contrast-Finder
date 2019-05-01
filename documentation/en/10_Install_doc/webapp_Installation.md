@@ -14,7 +14,7 @@ You just need to replace `tomcat7` with `tomcat8` in the following command lines
 
 ```bash
 cd /tmp
-wget https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.9.5-SNAPSHOT/contrast-finder-webapp_0.9.5-SNAPSHOT.tar.gz
+wget https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.9.5/contrast-finder-webapp_0.9.5.tar.gz
 tar -xzvf contrast-finder-webapp_*.tar.gz
 cd        contrast-finder-webapp_*/
 mv  -v    install/contrast-finder-webapp_*.war contrast-finder.war
