@@ -63,7 +63,11 @@
                                     ${entry.key} - ${entry.value}   <br>
                                 </c:forEach>  <hr> --%>
 
+                    <h2><fmt:message key="info.contribute.title"/></h2>
+                    <fmt:message key="info.contribute"/>
 
+                    <h2><fmt:message key="info.feedback.title"/></h2>
+                    <fmt:message key="info.feedback"/>
 
                     <%  //Get version of application
                         java.util.Properties prop = new java.util.Properties();
@@ -88,24 +92,26 @@
                                 Build :     <%=appliBuildMaven%>    <br>
                                 Build :     <%=appliBuildJava%>     <br>
                                 Build :     <%=appliBuildOs%>       <br>
-                                Build :     <%=appliBuildArch%>     <br>    --%>
+                                Build :     <%=appliBuildArch%>     <br>
+                                 --%>
 
                     <h2><fmt:message key="page.about.build.title"/></h2>
                     <ul>
-                        <li>version: <strong><%=appliVersion%></strong> </li>
-                        <li>git branch: <%=gitBranch%>     </li>
-                        <li>git commit: <a href="<%=gitURL%>"><%=gitCommit%></a> </li>
-                        <li>Build:
+                        <li><fmt:message key="page.about.build.version"/>   <strong><%=appliVersion%></strong> </li>
+                        <li><fmt:message key="page.about.build.gitBranch"/> <%=gitBranch%>     </li>
+                        <li><fmt:message key="page.about.build.gitCommit"/> <a href="<%=gitURL%>"><%=gitCommit%></a> </li>
+                        <li><fmt:message key="page.about.build.build"/>
                             <ul>
-                                <li>date: <%=appliBuildDate%> </li>
-                                <li>ID: <%=appliBuildID%> </li>
-                                <li>Platform: <%=appliBuildOs%> <%=appliBuildArch%>,
+                                <li><fmt:message key="page.about.build.date"/>      <%=appliBuildDate%> </li>
+                                <li><fmt:message key="page.about.build.id"/>        <%=appliBuildID%> </li>
+                                <li><fmt:message key="page.about.build.platform"/>  <%=appliBuildOs%> <%=appliBuildArch%>,
                                               Java <%=appliBuildJava%>,
                                               Maven <strong><%=appliBuildMaven%></strong>
                                 </li>
                             </ul>
                         </li>
                     </ul>
+
 
                     <h2><fmt:message key="page.about.fileList.title"/></h2>
                     <ul>

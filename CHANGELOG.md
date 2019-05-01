@@ -1,5 +1,29 @@
 # CHANGELOG
 
+Contrast-Finder 0.9.5, 2019-05-01
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+### Outdated dependencies
+- [#205 - Upgraded SpringFramework (4.3.23 instead of 4.3.21)](https://github.com/Asqatasun/Contrast-Finder/issues/205)
+- [#206 - Upgraded spring-security (4.2.12 instead of 4.2.10)](https://github.com/Asqatasun/Contrast-Finder/issues/206)
+- [#207 - Upgraded javaee-web-api (8.0.1 instead of 8.0)](https://github.com/Asqatasun/Contrast-Finder/issues/207)
+- [#208 - Upgraded jacoco-maven-plugin (0.8.3 instead of 0.8.2)](https://github.com/Asqatasun/Contrast-Finder/issues/208)
+- [#209 - Upgraded owasp dependency-check (5.0.0-M2 instead of 3.3.4)](https://github.com/Asqatasun/Contrast-Finder/issues/209)
+- [#210 - Upgraded maven-javadoc-plugin (3.1.0 instead of 3.0.1)](https://github.com/Asqatasun/Contrast-Finder/issues/210) 
+- [#211 - Upgraded maven-surefire-plugin (3.0.0-M3 instead of 3.0.0-M1)](https://github.com/Asqatasun/Contrast-Finder/issues/211) 
+- [#212 - Upgraded maven-jar-plugin (3.1.1 instead of 3.1.0)](https://github.com/Asqatasun/Contrast-Finder/issues/212) 
+- [#214 - Upgraded commons-collections4 (4.3 instead of 4.2)](https://github.com/Asqatasun/Contrast-Finder/issues/214) 
+
+### Improvement
+- [#215 - Added informations in browser's debugging console](https://github.com/Asqatasun/Contrast-Finder/issues/215) 
+
+### Task
+- updated the copyright date (.java and pom.xml files)
+- updated xml files: adding license header + some missing xml declaration
+
+
 Contrast-Finder 0.9.4, 2018-12-30
 ---------------------------------
 

@@ -1,13 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--    This file is part of Contrast Finder.
+        Copyright (C) 2008-2019   Contrast-Finder.org
+
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU Affero General Public License as
+        published by the Free Software Foundation, either version 3 of the
+        License, or (at your option) any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        See the GNU Affero General Public License for more details.
+
+        You should have received a copy of the GNU Affero General Public License
+        along with this program. If not, see http://www.gnu.org/licenses/           -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>contrast-finder</artifactId>
-        <version>0.9.4</version>
+        <version>0.9.5</version>
     </parent>
     <artifactId>webapp</artifactId>
-    <version>0.9.4</version>
+    <version>0.9.5</version>
     <packaging>war</packaging>
     <name>contrast-finder-webapp</name>
     <licenses>
@@ -28,12 +45,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Dependency Versions -->
-        <spring.version>4.3.21.RELEASE</spring.version>
-        <spring-security.version>4.2.10.RELEASE</spring-security.version>
+        <spring.version>4.3.23.RELEASE</spring.version>
+        <spring-security.version>4.2.12.RELEASE</spring-security.version>
         <htmlcompressor.version>1.5.2</htmlcompressor.version>
         <urlrewritefilter.version>4.0.4</urlrewritefilter.version>
         <taglibs-standard-jstlel.version>1.2.5</taglibs-standard-jstlel.version>
-        <javaee-web-api.version>8.0</javaee-web-api.version> <!-- need Maven with Jdk-8  -->
+        <javaee-web-api.version>8.0.1</javaee-web-api.version> <!-- need Maven with Jdk-8  -->
         <validation-api.version>1.1.0.Final</validation-api.version>
         <!-- <validation-api.version>2.0.0.Final</validation-api.version>
              not valid for Tomcat-7 with Jdk-7                  -->

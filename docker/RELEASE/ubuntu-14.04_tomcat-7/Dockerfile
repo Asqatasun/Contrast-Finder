@@ -1,7 +1,7 @@
 FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-14.04_tomcat-7
 LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                            \
       org.label-schema.name           = "Contrast-Finder - WebApp (Ubuntu 14.04 - Tomcat 7)"    \
-      org.label-schema.version        = "0.9.4"                                        \
+      org.label-schema.version        = "0.9.5"                                        \
       org.label-schema.url            = "https://contrast-finder.org"                           \
       org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"          \
       org.label-schema.docker.cmd     = "docker run -p 8087:8080 -d asqatasun/contrast-finder"  \
@@ -13,9 +13,9 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 #
 #   --- Building this docker image
 #   docker build -t asqatasun/contrast-finder  .
-#   docker build -t asqatasun/contrast-finder  --build-arg CONTRAST_FINDER_RELEASE=0.9.4  .
-#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL_PREFIX=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.9.4/   .
-#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.9.4/contrast-finder-webapp_0.9.4.tar.gz   .
+#   docker build -t asqatasun/contrast-finder  --build-arg CONTRAST_FINDER_RELEASE=0.9.5  .
+#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL_PREFIX=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.9.5/   .
+#   docker build -t asqatasun/contrast-finder  --build-arg SRC_URL=https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.9.5/contrast-finder-webapp_0.9.5.tar.gz   .
 #
 #   --- Launch a container
 #   docker run -p 127.0.0.1:8087:8080 --name contrast.finder -d asqatasun/contrast-finder
@@ -37,7 +37,7 @@ LABEL org.label-schema.schema-version = "1.0.0-rc.1"                            
 ###################################################################
 
 # build variables
-ARG CONTRAST_FINDER_RELEASE="0.9.4"
+ARG CONTRAST_FINDER_RELEASE="0.9.5"
 ARG SRC_URL_PREFIX="https://github.com/Asqatasun/Contrast-Finder/releases/download/v${CONTRAST_FINDER_RELEASE}"
 ARG SRC_URL="${SRC_URL_PREFIX}/contrast-finder-webapp_${CONTRAST_FINDER_RELEASE}.tar.gz"
 

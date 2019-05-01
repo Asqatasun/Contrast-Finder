@@ -22,6 +22,7 @@
 ### Other contrast tools
 
 * [Grid for analysing the contrasts of a graphic charter (in French / Atalan.fr)](https://blog.atalan.fr/grille-contrastes-accessibilite-charte-graphique/)
+* https://cloudflare.design/color/
 * http://www.aremycolorsaccessible.com/
 * https://developer.paciellogroup.com/resources/contrastanalyser/
 * http://www.visionaustralia.org/digital-access-determinator
@@ -47,7 +48,9 @@
     * http://jxnblk.com/colorable/demos/text/
     * http://jxnblk.com/colorable/demos/matrix/
     * http://www.aremycoloursaccessible.com/
+* [Article : "Using Sass to automatically pick text colors"](https://medium.com/dev-channel/using-sass-to-automatically-pick-text-colors-4ba7645d2796)
 * [Sass Contrast Functions](https://codepen.io/giana/project/full/ZWbGzD)
+    * demo : https://codepen.io/giana/pen/mmrebM
 * [**Color Contrast Analyzer** extension for Chrome](https://chrome.google.com/webstore/detail/color-contrast-analyzer/dagdlcijhfbmgkjokkjicnnfimlebcll) (analyse a screenshot / works for text images)
     * src: https://github.com/gdkraus/color-contrast-chrome
 * [**WCAG Contrast checker** extension for Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)

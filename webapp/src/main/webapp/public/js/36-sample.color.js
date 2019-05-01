@@ -1,5 +1,5 @@
 
-// only run when the substr() function is broken
+// Polyfill - Only run when the substr() function is broken
 //      Microsoft's JScript does not support negative values for the start index.
 //      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr
 if ("ab".substr(-1) !== "b") {
@@ -21,6 +21,38 @@ if ("ab".substr(-1) !== "b") {
     }(String.prototype.substr));
 }
 
+// Polyfill str.padEnd() if it's not natively available
+//      https://github.com/uxitten/polyfill/blob/master/string.polyfill.js
+//      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd
+if (!String.prototype.padEnd) {
+    String.prototype.padEnd = function padEnd(targetLength,padString) {
+        targetLength = targetLength>>0; //floor if number or convert non-number to 0;
+        padString = String((typeof padString !== 'undefined' ? padString : ' '));
+        if (this.length > targetLength) {
+            return String(this);
+        }
+        else {
+            targetLength = targetLength-this.length;
+            if (targetLength > padString.length) {
+                padString += padString.repeat(targetLength/padString.length); //append to original to ensure we are longer than needed
+            }
+            return String(this) + padString.slice(0,targetLength);
+        }
+    };
+}
+
+// IE fallback because 'console' and 'console.log()' are only available after
+// you have opened the Developer Tools (F12).
+if (typeof console === "undefined" || typeof console.log === "undefined") {
+    console     = {};
+    console.log = function() {};
+}
+
+/**
+ * @param number
+ * @param precision
+ * @returns {number}
+ */
 function precisionRound(number, precision) {
     var factor = Math.pow(10, precision);
     return Math.round(number * factor) / factor;
@@ -32,11 +64,20 @@ var colorType = ""; // rgb, hex, name
 /********************************************************************/
 // Compute the contrast ratio functions
 /********************************************************************/
-
+/**
+ *
+ * @param   {number} lighter
+ * @param   {number} darker
+ * @returns {number}
+ */
 function computeContrast(lighter, darker) {
     return ((lighter + 0.05) / (darker + 0.05));
 }
 
+/**
+ * @param   {number} composant
+ * @returns {number}
+ */
 function getComposantValue(composant) {
     var rsgb = composant / 255;
     if (rsgb <= 0.03928) {
@@ -46,18 +87,26 @@ function getComposantValue(composant) {
     }
 }
 
+/**
+ * @param   {string} color   example: rgb(255,255,255)
+ * @returns {number}
+ */
 function getLuminosity(color) {
     var digits = /(.*?)rgb\((\d+),(\d+),(\d+)\)/.exec(color);
     var red   = parseInt(digits[2]);
     var green = parseInt(digits[3]);
     var blue  = parseInt(digits[4]);
-    var luminosity =
-        getComposantValue(red)  * 0.2126
-        + getComposantValue(green) * 0.7152
-        + getComposantValue(blue) * 0.0722;
+    var luminosity =  getComposantValue(red)   * 0.2126
+                    + getComposantValue(green) * 0.7152
+                    + getComposantValue(blue)  * 0.0722;
     return luminosity;
 }
 
+/**
+ * @param {string} fgColor    example: rgb(255,255,255)
+ * @param {string} bgColor    example: rgb(255,255,255)
+ * @returns {number}
+ */
 function getContrastRatio(fgColor, bgColor) {
     var fgLuminosity = getLuminosity(fgColor);
     var bgLuminosity = getLuminosity(bgColor);
@@ -77,8 +126,8 @@ function getContrastRatio(fgColor, bgColor) {
 /**
  * convert hex to rgb
  *      before, use isValidateColorHex()
- * @param str  example: #FFFFFF
- * @returns {string}   rgb(255,255,255)
+ * @param   {string}  str  example: #FFFFFF
+ * @returns {string}       example: rgb(255,255,255)
  */
 function hexToRgb(str) {
     // see https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
@@ -102,7 +151,7 @@ function hexToRgb(str) {
 /**
  * convert rgb to hex
  *      before, use isValidateColorRgb()
- * @param str  example: rgb(255,255,255)
+ * @param   {string}  str  example: rgb(255,255,255)
  * @returns {string}
  */
 function rgbToHex(str){
@@ -112,9 +161,9 @@ function rgbToHex(str){
 
 /**
  * convert color name to hex
- *      before, use isValidateColorName()  *
- * @param colorStr  color name
- * @returns {string}   example: #FFFFFF
+ *      before, use isValidateColorName()
+ * @param   {string}  colorStr  color name
+ * @returns {string}            example: #FFFFFF
  */
 function colorNameToHex(str) {
     str = str.trim().toLowerCase();
@@ -125,6 +174,10 @@ function colorNameToHex(str) {
     return (colors.length >= 3) ? "#" + (((1 << 24) + (colors[0] << 16) + (colors[1] << 8) + colors[2]).toString(16).substr(1)) : false;
 }
 
+/**
+ * @param   {string}  str
+ * @returns {string|boolean}
+ */
 function isValidateColorName(str) {
     // source: https://gist.github.com/bobspace/2712980
     var CssColorNames = ["AliceBlue","AntiqueWhite","Aqua","Aquamarine","Azure","Beige","Bisque","Black","BlanchedAlmond","Blue","BlueViolet","Brown","BurlyWood","CadetBlue","Chartreuse","Chocolate","Coral","CornflowerBlue","Cornsilk","Crimson","Cyan","DarkBlue","DarkCyan","DarkGoldenRod","DarkGray","DarkGrey","DarkGreen","DarkKhaki","DarkMagenta","DarkOliveGreen","DarkOrange","DarkOrchid","DarkRed","DarkSalmon","DarkSeaGreen","DarkSlateBlue","DarkSlateGray","DarkSlateGrey","DarkTurquoise","DarkViolet","DeepPink","DeepSkyBlue","DimGray","DimGrey","DodgerBlue","FireBrick","FloralWhite","ForestGreen","Fuchsia","Gainsboro","GhostWhite","Gold","GoldenRod","Gray","Grey","Green","GreenYellow","HoneyDew","HotPink","IndianRed","Indigo","Ivory","Khaki","Lavender","LavenderBlush","LawnGreen","LemonChiffon","LightBlue","LightCoral","LightCyan","LightGoldenRodYellow","LightGray","LightGrey","LightGreen","LightPink","LightSalmon","LightSeaGreen","LightSkyBlue","LightSlateGray","LightSlateGrey","LightSteelBlue","LightYellow","Lime","LimeGreen","Linen","Magenta","Maroon","MediumAquaMarine","MediumBlue","MediumOrchid","MediumPurple","MediumSeaGreen","MediumSlateBlue","MediumSpringGreen","MediumTurquoise","MediumVioletRed","MidnightBlue","MintCream","MistyRose","Moccasin","NavajoWhite","Navy","OldLace","Olive","OliveDrab","Orange","OrangeRed","Orchid","PaleGoldenRod","PaleGreen","PaleTurquoise","PaleVioletRed","PapayaWhip","PeachPuff","Peru","Pink","Plum","PowderBlue","Purple","Red","RosyBrown","RoyalBlue","SaddleBrown","Salmon","SandyBrown","SeaGreen","SeaShell","Sienna","Silver","SkyBlue","SlateBlue","SlateGray","SlateGrey","Snow","SpringGreen","SteelBlue","Tan","Teal","Thistle","Tomato","Turquoise","Violet","Wheat","White",
@@ -143,6 +196,10 @@ function isValidateColorName(str) {
     return false;
 }
 
+/**
+ * @param   {string}  str
+ * @returns {boolean}
+ */
 function isValideRgbMaxValue(str) {
     var numbers = str.match(/(\d{1,3})/g);
     if(numbers !== null){
@@ -157,6 +214,10 @@ function isValideRgbMaxValue(str) {
     return false;
 }
 
+/**
+ * @param   {string}  str       example: rgb(255,255,255)
+ * @returns {string|boolean}
+ */
 function isValidateColorRgb(str) {
     str = str.trim();
     if(str.match(/^rgb\((\d{1,3}),(\d{1,3}),(\d{1,3})\)?$/i) !== null){ // "rbg(x,x,x)" or "rgb(x,x,x"
@@ -175,6 +236,10 @@ function isValidateColorRgb(str) {
     return false;
 }
 
+/**
+ * @param   {string}  str
+ * @returns {string|boolean}
+ */
 function isValidateColorHex(str) {
     str = str.trim();
     if (   str.match(/^#?[a-f0-9]{6}$/i) !== null
@@ -187,6 +252,10 @@ function isValidateColorHex(str) {
     return false;
 }
 
+/**
+ * @param   {string}  str
+ * @returns {boolean}
+ */
 function isValidateColor(str) {
     str = str.trim();
     var checkCommas = str.match(/,/g);
@@ -218,7 +287,12 @@ function isValidateColor(str) {
 // UI
 /********************************************************************/
 
-function checkConstrast(){
+
+/**
+ * @param   {boolean} updateUI
+ * @returns {boolean}
+ */
+function checkConstrast(updateUI){
     var checkRatioUI  = document.getElementById("currentRatioData");
     var inputFg       = document.getElementById("foreground-input");
     var inputBg       = document.getElementById("background-input");
@@ -251,27 +325,62 @@ function checkConstrast(){
             }
             var ratio = getContrastRatio(colorBg,colorFg);
             ratio     = precisionRound(ratio, 2);
-            var txtResult = "Passed";
+
+            // Update UI
+            if(updateUI === true){
+                if(ratio < minRatio ){
+                    document.getElementById("isValidRatio_Passed").classList.add("hidden");
+                    document.getElementById("isValidRatio_Failed").classList.remove("hidden");
+                }
+                else {
+                    document.getElementById("isValidRatio_Failed").classList.add("hidden");
+                    document.getElementById("isValidRatio_Passed").classList.remove("hidden");
+                }
+                checkRatioUI.innerHTML = ratio;
+                document.getElementById("currentRatio").classList.remove("hidden");
+            }
+
+            // Update console ----> @TODO refactor
+            var txtResult   = "Passed";
+            var colorResult = "green";
             if(ratio < minRatio ){
                 txtResult = "Failed";
-                document.getElementById("isValidRatio_Passed").classList.add("hidden");
-                document.getElementById("isValidRatio_Failed").classList.remove("hidden");
+                colorResult = "red";
             }
-            else {
-                document.getElementById("isValidRatio_Failed").classList.add("hidden");
-                document.getElementById("isValidRatio_Passed").classList.remove("hidden");
+            var txtMinRatio = minRatio;
+            if(txtMinRatio.length === 1){ // @TODO refactor for: "21", "12.22", "4.32", "4"
+                txtMinRatio = minRatio + "  ";
             }
-            checkRatioUI.innerHTML = ratio;
-            document.getElementById("currentRatio").classList.remove("hidden");
-            console.log(txtResult + ": current ratio "      + ratio
-                                  + " vs minimum ratio "    + minRatio
-                                  + " -- "+ colorBg + " / " + colorFg );
+            var txtRatio = ratio.toString();
+            if(txtRatio.length === 1){
+                txtRatio = ratio.toString() + "   ";
+            }
+            var txtColorFg = colorFg;
+            if(txtRatio.length < 16){ // ex: rgb(255,255,255) = 16
+                txtColorFg = colorFg.padEnd(16);
+            }
+            var txtColorBg = colorBg;
+            if(txtRatio.length < 16){ // ex: rgb(255,255,255) = 16
+                txtColorBg = colorBg.padEnd(16);
+            }
+            console.log('%c ' + txtResult + " %c - Ratio %c" + txtRatio
+                             + "%c vs minimum ratio %c"  + txtMinRatio
+                             + "%c  %c  %c "+ txtColorBg + " %c  %c " + txtColorFg,
+                        'background:'+  colorResult +'; color: white;'  ,
+                        '', 'font-weight:600',
+                        '', 'font-weight:600', '',
+                        'border: 1px solid silver; background:'+ colorBg, '',
+                        'border: 1px solid silver; background:'+ colorFg, '');
             return true;
         }
     }
     return false;
 }
 
+/**
+ * @param {string}  colorPrefix
+ * @param {boolean} showError
+ */
 function changeColorSample(colorPrefix, showError) {
     var input = document.getElementById(colorPrefix + "-input");
     var color = input.value.toLowerCase();
@@ -294,7 +403,7 @@ function changeColorSample(colorPrefix, showError) {
         var colorPicker = document.getElementById(colorPrefix + "_imputColorPicker");
         colorPicker.value = colorHEX;
         document.getElementById(colorPrefix + "_ColorPicker").style.display    = "inherit";
-        checkConstrast();
+        checkConstrast(true); // update UI + update console
     }
     else if(showError === true) {
         sample.style.backgroundColor = "rgba(0,0,0,0)";
@@ -307,6 +416,9 @@ function changeColorSample(colorPrefix, showError) {
     }
 }
 
+/**
+ * @param {string}  colorPrefix
+ */
 function changeColorPicker(colorPrefix) {
     var input       = document.getElementById(colorPrefix + "-input");
     var sample      = document.getElementById(colorPrefix + "-sample");
@@ -321,12 +433,13 @@ function changeColorPicker(colorPrefix) {
         sample.classList.add("sample-bordered");
         document.getElementById(colorPrefix + "-sample-invalid").style.display = "none";
         input.classList.remove("error");
-        checkConstrast();
+        checkConstrast(true); // update UI + update console
     }
 }
 
 
-$(document).ready(function() {
+
+$(document).ready(function() { //  @TODO remove Jquery
 
     // Color picker
     document.getElementById("background_imputColorPicker").onchange = function() {
@@ -336,7 +449,7 @@ $(document).ready(function() {
         changeColorPicker("foreground");
     };
 
-    // when the user change the value of color inputs
+    // when the user change the value of color inputs  //  @TODO remove Jquery
     $("#foreground-input").on("paste keyup", function() {
         changeColorSample("foreground",false); // don't show error
     });
@@ -354,10 +467,21 @@ $(document).ready(function() {
 
     // when the user change the ratio min
     document.getElementById("ratio").onchange = function() {
-        checkConstrast();
+        checkConstrast(true); // update UI + update console
     };
 
-    // changeColorSample("foreground",true); // show error
-    // changeColorSample("background",true); // show error
-    // checkConstrast();
+    // provide software information in browser's debugging console
+    console.log('------------------------------------------------------------- ');
+    console.log('%cContrast-Finder%c, opensource software for %cweb accessibility ', 'font-weight: 600', '', 'font-weight: 600');
+    console.log('------------------------------------------------------------- ');
+    console.log('source  :  https://github.com/Asqatasun/Contrast-Finder ');
+    console.log('twitter :  https://twitter.com/contrast_finder ');
+    console.log('website :  https://contrast-finder.org ');
+    console.log('------------------------------------------------------------- ');
+    console.log('All contributions are warmly welcome ! ');
+    console.log('translation, correction, bug report or new feature ');
+    console.log('------------------------------------------------------------- ');
+    checkConstrast(false); // update console only
+ // changeColorSample("foreground",true); // show error
+ // changeColorSample("background",true); // show error
 });
