@@ -1,6 +1,6 @@
 # CHANGELOG
 
-Contrast-Finder 0.9.5, 2019-04-xx
+Contrast-Finder 0.9.5, 2019-05-xx
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
@@ -26,7 +26,7 @@ none
 none
 
 ### Improvement
-none
+- [#215 - Added informations in browser's debugging console](https://github.com/Asqatasun/Contrast-Finder/issues/215) 
 
 ### Refactoring
 none
