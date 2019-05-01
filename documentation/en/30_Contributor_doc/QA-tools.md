@@ -75,6 +75,14 @@
 
 ## Audit history
 
+### 0.9.4
+* Web perf
+    * https://www.webpagetest.org/result/190501_FT_3ff3e86b0f97f3a6b4f565589f51d062/
+    * https://yellowlab.tools/result/fbt8wphhar
+* Global tools (webperf, accessibility, security, ...)
+    * https://www.dareboost.com/fr/report/d_5cc9b74de9679058df72a3e1
+    * https://webhint.io/scanner/4b5163df-d1b9-446a-bbe7-c0460c269d2a
+
 ### 0.9.2
 * Web perf
     * https://www.webpagetest.org/result/180902_G8_c788cf1c418ac6fb9f9d9b17835ab180/
