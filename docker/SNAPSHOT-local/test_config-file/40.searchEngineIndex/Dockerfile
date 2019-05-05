@@ -19,7 +19,7 @@ FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04_tomcat-8.5
 ###################################################################
 
 # environment variables
-ENV CONTRAST_FINDER_RELEASE="0.9.5"
+ENV CONTRAST_FINDER_RELEASE="0.9.6-SNAPSHOT"
 ENV SEARCH_ENGINGE="yes"
 
 # Add contrast-finder .war
