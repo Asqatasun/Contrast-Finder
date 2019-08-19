@@ -108,11 +108,11 @@ public abstract class AbstractController {
      * - comma-separated language codes (ISO 639-1: two-letter codes)
      * - order will be the same in the webapp menu
      *
-     *      currently : "en,es,fr,pt,ko"
+     *      currently : "en,es,fr,pl,pt,ko"
      *      can be override in the following file:
      *      /etc/contrast-finder/contrast-finder.conf
      */
-    @Value("${languages:en,es,fr,pt,ko}")
+    @Value("${languages:en,es,fr,pl,pt,ko}")
     private String languages;
 
     /**
@@ -259,6 +259,7 @@ public abstract class AbstractController {
         switchLang.put("en", "Switch to english");
         switchLang.put("es", "Cambiar a español");
         switchLang.put("fr", "Passer en français");
+        switchLang.put("pl", "Przełącz na polski");
         switchLang.put("pt", "em Português");
         switchLang.put("ko", "한국어로 전환");
 
