@@ -2,7 +2,7 @@
 
 * [Building Contrast-Finder](Build/README.md)
 * [Release a version of Contrast-Finder](Release/README.md)
-
+* [Internationalization (i18n): add a new language, correct a sentence...](i18n/README.md)
 -----
 * Checking for new dependency / plugin updates
 * OWASP Dependency-Check
