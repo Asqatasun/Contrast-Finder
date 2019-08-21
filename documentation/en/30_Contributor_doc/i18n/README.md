@@ -60,20 +60,20 @@ Some cases:
 2. `str=L''audit du site`
     appears like this: `L''audit du site`
     
-    In this case, it is necessary to use one of the following elements
-    -`str=L’audit du site`
-    -`str=L'audit du site`
-    -`str=L&apos;audit du site`
-    -`str=L&#39;audit  du site`
+    In this case, it is necessary to use one of the following elements:
+    `str=L’audit du site`,
+    `str=L'audit du site`,
+    `str=L&apos;audit du site` or
+    `str=L&#39;audit  du site`
 
 3. `str=L'audit {0} du site et d'une page`
     appears like this: `Laudit {0} du site et dune page`
     
     In this case, it is necessary to use one of the following elements:
-    -`str=L’audit {0} du site et d’une page`
-    -`str=L''audit {0} du site et d''une page`
-    -`str=L&apos;audit {0} du site et d&apos;une page`
-    -`str=L&#39;audit {0} du site et d&#39;une page`
+    `str=L’audit {0} du site et d’une page`,
+    `str=L''audit {0} du site et d''une page`,
+    `str=L&apos;audit {0} du site et d&apos;une page` or
+    `str=L&#39;audit {0} du site et d&#39;une page`
 
 
 ## Tools and resources
@@ -127,10 +127,10 @@ For convert all files in a i18n directory:
 ```
 # convert all UTF8 files to ASCII with Unicode escapes
 mkdir ../i18n_backup/
-cp -v ./*.properties
+cp -v ./*.properties ../i18n_backup/
 mkdir ../newFiles/
 find -name "*.properties" -type f -exec bash -c "uni2ascii -q -a U  {} > ../newFiles/{}" \;
-cp -v  ../newFiles/* ./
+cp -v ../newFiles/* ./
 rm -r ../newFiles/
 ```
 
