@@ -52,6 +52,10 @@ ES translator (Español):
     Twitter : @davidjr82
     From    : Madrid, Spain
 
+PL translator (Polski):
+              Stefan Wajda
+    From    : Polska
+
 PT translators (Português):
               Kath and Rui
     From    : Montpellier, France
@@ -73,7 +77,7 @@ Feature requests + Accessibility feedbacks:
 
 
 # SITE
-    Languages :  English / Español / Français / Português / 한국어
+    Languages :  English / Español / Français / Polski / Português / 한국어
     Standards :  HTML5, WCAG, RGAA
     Softwares :  Spring Framework, Maven, Tomcat, Apache
     Tools     :  Asqatasun, Docker, Hardenize, Mozilla Observatory,
