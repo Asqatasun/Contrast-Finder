@@ -1,12 +1,15 @@
 # CHANGELOG
 
-Contrast-Finder 0.9.6, 2018-05-xx  (unreleased)
+Contrast-Finder 0.9.6, 2020-0x-xx  (unreleased)
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
+Thanks to:
+- @zwiastunsw       - PR #220
+
 ### New Feature
-none
+- [#220 - i18n: add Polish](https://github.com/Asqatasun/Contrast-Finder/issues/220)
 
 ### Security
 none
