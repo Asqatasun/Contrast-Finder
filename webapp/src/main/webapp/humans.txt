@@ -60,6 +60,10 @@ PT translators (Português):
               Kath and Rui
     From    : Montpellier, France
 
+OC translators (Occitan):
+              Quentin PAGÈS 
+    From    : Toulouse, France    
+
 Text size understanding fixup:
               Arnaud Delafosse
     Twitter : @arnauddelafosse
