@@ -74,7 +74,7 @@
 
         <!-- Dependency Versions -->
         <commons-cli.version>1.4</commons-cli.version>
-        <commons-collections4.version>4.3</commons-collections4.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
         <commons-logging.version>1.2</commons-logging.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
 <!--    <commons-lang3.version>3.9</commons-lang3.version> --> <!-- Tomcat JDK8 is required  -->
