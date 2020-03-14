@@ -46,7 +46,7 @@
 
         <!-- Dependency Versions -->
         <spring.version>4.3.26.RELEASE</spring.version>
-        <spring-security.version>4.2.12.RELEASE</spring-security.version>
+        <spring-security.version>4.2.14.RELEASE</spring-security.version>
         <htmlcompressor.version>1.5.2</htmlcompressor.version>
         <urlrewritefilter.version>4.0.4</urlrewritefilter.version>
         <taglibs-standard-jstlel.version>1.2.5</taglibs-standard-jstlel.version>
