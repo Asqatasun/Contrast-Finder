@@ -27,7 +27,7 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 
         <!-- Plugin Versions -->
-        <jdeb.version>1.7</jdeb.version> <!-- need Maven with Jdk-8  -->
+        <jdeb.version>1.8</jdeb.version> <!-- need Maven with Jdk-8  -->
     </properties>
 
 
