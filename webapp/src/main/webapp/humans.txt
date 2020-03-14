@@ -52,6 +52,10 @@ ES translator (Español):
     Twitter : @davidjr82
     From    : Madrid, Spain
 
+OC translator (Occitan):
+              Quentin PAGÈS 
+    From    : Toulouse, France  
+
 PL translator (Polski):
               Stefan Wajda
     From    : Polska
@@ -59,10 +63,6 @@ PL translator (Polski):
 PT translators (Português):
               Kath and Rui
     From    : Montpellier, France
-
-OC translators (Occitan):
-              Quentin PAGÈS 
-    From    : Toulouse, France    
 
 Text size understanding fixup:
               Arnaud Delafosse
