@@ -56,7 +56,7 @@
              not valid for Tomcat-7 with Jdk-7                  -->
 
         <!-- Plugin Versions -->
-        <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
+        <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
         <native2ascii-maven-plugin.version>2.0.1</native2ascii-maven-plugin.version>
         <yuicompressor-maven-plugin.version>1.5.1</yuicompressor-maven-plugin.version>
     </properties>
