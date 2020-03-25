@@ -20,7 +20,7 @@
     <groupId>org.asqatasun</groupId>
     <artifactId>contrast-finder</artifactId>
     <packaging>pom</packaging>
-    <version>0.9.5</version>
+    <version>0.10.0</version>
     <name>Contrast-Finder</name>
     <licenses>
         <license>
@@ -74,34 +74,33 @@
 
         <!-- Dependency Versions -->
         <commons-cli.version>1.4</commons-cli.version>
-        <commons-collections4.version>4.3</commons-collections4.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
         <commons-logging.version>1.2</commons-logging.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
 <!--    <commons-lang3.version>3.9</commons-lang3.version> --> <!-- Tomcat JDK8 is required  -->
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13</junit.version>
         <logback-classic.version>1.2.3</logback-classic.version>
-        <markdown-page-generator-plugin.version>2.1.0</markdown-page-generator-plugin.version>
+        <markdown-page-generator-plugin.version>2.2.0</markdown-page-generator-plugin.version>
 
         <!-- Plugin Versions -->
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
         <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-        <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
+        <maven-site-plugin.version>3.8.2</maven-site-plugin.version>
         <maven-assembly-plugin.version>3.1</maven-assembly-plugin.version>
-        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-        <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
-        <maven-war-plugin.version>3.2.2</maven-war-plugin.version>
-        <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
+        <maven-war-plugin.version>3.2.3</maven-war-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
         <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
-        <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
-        <maven-javadoc-plugin.version>3.1.0</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
         <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
-        <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
-        <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
+        <maven-checkstyle-plugin.version>3.1.1</maven-checkstyle-plugin.version>
+        <build-helper-maven-plugin.version>3.1.0</build-helper-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
-        <dependency-check-maven.version>5.0.0-M2</dependency-check-maven.version>
-        <jacoco-maven-plugin.version>0.8.3</jacoco-maven-plugin.version>
+        <dependency-check-maven.version>5.3.1</dependency-check-maven.version>
+        <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
      </properties>
      <prerequisites>          <!--    Maven 3.3.9 is required to use the following plugin:   -->
         <maven>3.3.9</maven>  <!--    ............  jacoco-maven-plugin >= 0.8.2     -->

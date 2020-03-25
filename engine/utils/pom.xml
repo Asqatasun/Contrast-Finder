@@ -21,10 +21,10 @@
     <parent>
         <groupId>org.asqatasun</groupId>
         <artifactId>engine</artifactId>
-        <version>0.9.5</version>
+        <version>0.10.0</version>
     </parent>
     <artifactId>contrast-finder-utils</artifactId>
-    <version>0.9.5</version>
+    <version>0.10.0</version>
     <packaging>jar</packaging>
     <name>utils</name>
     <licenses>

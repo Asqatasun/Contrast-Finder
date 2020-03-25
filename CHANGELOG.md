@@ -1,5 +1,38 @@
 # CHANGELOG
 
+Contrast-Finder 0.10.0, 2020-03-25
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+Thanks to:
+- @Quenty31     PR #223 Polish translation
+- @zwiastunsw   PR #220 Occitan translation
+
+### New Feature
+- [#220 - i18n: add Polish](https://github.com/Asqatasun/Contrast-Finder/issues/220)
+- [#223 - i18n: add Occitan](https://github.com/Asqatasun/Contrast-Finder/issues/223)
+
+### Outdated dependencies
+- [#241 - Upgraded maven-site-plugin (3.7.1 --> 3.8.2)](https://github.com/Asqatasun/Contrast-Finder/issues/241)
+- [#240 - Upgraded maven-compiler-plugin (3.8.0 --> 3.8.1)](https://github.com/Asqatasun/Contrast-Finder/issues/240)
+- [#239 - Upgraded maven-jar-plugin (3.1.1 --> 3.2.0)](https://github.com/Asqatasun/Contrast-Finder/issues/239)
+- [#238 - Upgraded maven-javadoc-plugin (3.1.0  ---> 3.1.1)](https://github.com/Asqatasun/Contrast-Finder/issues/238)
+- [#237 - Upgraded maven-surefire-plugin (3.0.0-M3 ---> 3.0.0-M4)](https://github.com/Asqatasun/Contrast-Finder/issues/237)
+- [#236 - Upgraded maven-war-plugin (3.2.2 --> 3.2.3)](https://github.com/Asqatasun/Contrast-Finder/issues/236)
+- [#235 - Upgraded build-helper-maven-plugin (3.0.0 ---> 3.1.0)](https://github.com/Asqatasun/Contrast-Finder/issues/235)
+- [#234 - Upgraded jacoco-maven-plugin (0.8.3  -->  0.8.5)](https://github.com/Asqatasun/Contrast-Finder/issues/234)
+- [#233 - Upgraded dependency-check-maven (5.0.0-M2 ---> 5.3.1)](https://github.com/Asqatasun/Contrast-Finder/issues/233)
+- [#232 - Upgraded maven-checkstyle-plugin  (3.0.0 --> 3.1.1)](https://github.com/Asqatasun/Contrast-Finder/issues/232)
+- [#231 - Upgraded maven-dependency-plugin (3.1.1 --> 3.1.2)](https://github.com/Asqatasun/Contrast-Finder/issues/231)
+- [#230 - Upgraded jdeb (1.7 --> 1.8)](https://github.com/Asqatasun/Contrast-Finder/issues/230)
+- [#229 - Upgraded spring-security (4.2.12 --> 4.2.14)](https://github.com/Asqatasun/Contrast-Finder/issues/229)
+- [#228 - Upgraded spring (4.3.23 --> 4.3.26)](https://github.com/Asqatasun/Contrast-Finder/issues/228)
+- [#227 - Upgraded markdown-page-generator-plugin  (2.1.0 ---> 2.2.0)](https://github.com/Asqatasun/Contrast-Finder/issues/27)
+- [#226 - Upgraded junit (4.12 --> 4.13)](https://github.com/Asqatasun/Contrast-Finder/issues/26)
+- [#225 - Upgraded commons-collections4 (4.3 --> 4.4)](https://github.com/Asqatasun/Contrast-Finder/issues/25)
+
+
 Contrast-Finder 0.9.5, 2019-05-01
 ---------------------------------
 
