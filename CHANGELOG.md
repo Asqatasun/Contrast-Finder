@@ -42,8 +42,8 @@ Contrast-Finder 0.10.1-SNAPSHOT, 2020-03-25
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 Thanks to:
-- @Quenty31     PR #223 Polish translation
-- @zwiastunsw   PR #220 Occitan translation
+- @Quenty31     PR #223 Occitan translation
+- @zwiastunsw   PR #220 Polish translation
 
 ### New Feature
 - [#220 - i18n: add Polish](https://github.com/Asqatasun/Contrast-Finder/issues/220)
