@@ -1,6 +1,42 @@
 # CHANGELOG
 
-Contrast-Finder 0.10.0, 2020-03-25
+Contrast-Finder 0.10.1, 2020-0x-xx     (unreleased)
+---------------------------------
+
+Upgrade-o-meter: just replace the .war file and restart Tomcat
+
+Thanks to:
+- @Quenty31     PR #243 Update Occitan i18n file
+
+### New Feature
+none
+
+### Security
+none
+
+### Outdated dependencies
+none
+
+### Bug
+none
+
+### Improvement
+- [#243 - Update Occitan i18n file](https://github.com/Asqatasun/Contrast-Finder/issues/243)
+
+### Refactoring
+none
+
+### Configuration
+none
+
+### Documentation
+none
+
+### Task
+none
+
+
+Contrast-Finder 0.10.1-SNAPSHOT, 2020-03-25
 ---------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
