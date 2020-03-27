@@ -238,6 +238,9 @@
                                            value="${validateButton}"/>
                                 </div>
                             </div>
+
+                            <%-- User language --%>
+                            <input type="hidden" name="lang"  value="${lang}">
                         </form:form>
                     </div><!-- class="col-lg-12' -->
                 </div><!-- class="row' -->
