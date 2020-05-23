@@ -79,6 +79,11 @@ Some cases:
 ## Tools and resources
 - [Unicode character symbols table with escape sequences & HTML codes](https://www.rapidtables.com/code/text/unicode-characters.html)
 
+### Online Translators / Dictionaries
+- [deepl.com](https://www.deepl.com/translator)
+- [linguee.com](https://www.linguee.com/)
+- Korean dictionary [naver.com](https://en.dict.naver.com/)
+
 ### Translate Tools
 * **Transvision** is a tool used to search translations extracted from Mozilla products and websites.
      * [transvision.mozfr.org](https://transvision.mozfr.org/)
