@@ -1,43 +1,29 @@
 # CHANGELOG
 
-Contrast-Finder 0.10.1, 2020-0x-xx     (unreleased)
----------------------------------
+Contrast-Finder 0.10.1, 2020-05-23
+----------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
 Thanks to:
-- @Quenty31     PR #243 Update Occitan i18n file
-
-### New Feature
-none
-
-### Security
-none
+- @Quenty31   PR #243 Update Occitan i18n file
+- @davidjr82  PR #244 Update Spanish i18n file
+- @miname     PR #245 Update Korean i18n file
 
 ### Outdated dependencies
-none
-
-### Bug
-none
+- [#250  - Upgraded markdown-page-generator (2.3.0 instead of 2.2.0)](https://github.com/Asqatasun/Contrast-Finder/issues/250)
+- [#252  - Upgraded owasp:dependency-check (5.3.2 instead of 5.3.1)](https://github.com/Asqatasun/Contrast-Finder/issues/252)
+- [#253  - Upgraded springFramework (4.3.27 instead of 4.3.26)](https://github.com/Asqatasun/Contrast-Finder/issues/253)
+- [#254  - Upgraded spring-security (4.2.16 instead of 4.2.14)](https://github.com/Asqatasun/Contrast-Finder/issues/254)
 
 ### Improvement
 - [#243 - Update Occitan i18n file](https://github.com/Asqatasun/Contrast-Finder/issues/243)
-
-### Refactoring
-none
-
-### Configuration
-none
-
-### Documentation
-none
-
-### Task
-none
+- [#244 - Update Spanish i18n file](https://github.com/Asqatasun/Contrast-Finder/issues/244)
+- [#245 - Update Korean i18n file](https://github.com/Asqatasun/Contrast-Finder/issues/245)
 
 
-Contrast-Finder 0.10.1-SNAPSHOT, 2020-03-25
----------------------------------
+Contrast-Finder 0.10.0, 2020-03-25
+----------------------------------
 
 Upgrade-o-meter: just replace the .war file and restart Tomcat
 
