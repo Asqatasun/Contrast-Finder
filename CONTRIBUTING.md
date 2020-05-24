@@ -28,6 +28,10 @@ Please always work on `develop` branch.
 `Master` is meant to be directly usable in production,
 thus only contains tagged releases.
 
+### Styleguides
+
+- [Git Commit message](documentation/en/30_Contributor_doc/GIT_CONVENTION.md)
+
 ### Builds and runs a Docker container
 
 - builds Contrast-Finder from sources,
