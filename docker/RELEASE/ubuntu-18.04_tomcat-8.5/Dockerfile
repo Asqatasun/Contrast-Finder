@@ -1,6 +1,6 @@
 FROM asqatasun/contrast-finder:pre-requisites_Ubuntu-18.04_tomcat-8.5
 LABEL org.label-schema.schema-version = "1.0.0-rc.1"                                                     \
-      org.label-schema.name           = "Contrast-Finder - WebApp (Ubuntu 18.04 - Tomcat 8.5, Java 10)"  \
+      org.label-schema.name           = "Contrast-Finder - WebApp (Ubuntu 18.04 - Tomcat 8.5, Java 11)"  \
       org.label-schema.version        = "1.0.0-SNAPSHOT"                                                 \
       org.label-schema.url            = "https://contrast-finder.org"                                    \
       org.label-schema.vcs-url        = "https://github.com/Asqatasun/Contrast-Finder"                   \
