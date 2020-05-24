@@ -1,9 +1,10 @@
 [![License : AGPL v3](https://img.shields.io/badge/License-AGPL3-blue.svg)](https://github.com/Asqatasun/Contrast-Finder/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/Asqatasun/Contrast-Finder.svg)](https://travis-ci.org/Asqatasun/Contrast-Finder)
-[![Release](https://img.shields.io/github/release/asqatasun/Contrast-Finder.svg)](https://github.com/Asqatasun/Contrast-Finder/releases/latest)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c3374c9913d24a9c91e91552f1796672)](https://www.codacy.com/app/Asqatasun/Contrast-Finder)
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square)](https://github.com/Asqatasun/Contrast-Finder/blob/develop/CODE_OF_CONDUCT.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/Asqatasun/Contrast-Finder/blob/develop/CONTRIBUTING.md)
+[![Release](https://img.shields.io/github/release/asqatasun/Contrast-Finder.svg)](https://github.com/Asqatasun/Contrast-Finder/releases/latest)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c3374c9913d24a9c91e91552f1796672)](https://www.codacy.com/app/Asqatasun/Contrast-Finder)
+[![Travis CI](https://travis-ci.org/Asqatasun/Contrast-Finder.svg)](https://travis-ci.org/Asqatasun/Contrast-Finder)
+[![Github Java CI with Maven](https://github.com/Asqatasun/Contrast-Finder/workflows/Java%20CI%20with%20Maven/badge.svg?branch=develop)](https://github.com/Asqatasun/Contrast-Finder/actions)
 
 # Contrast-Finder
 ![Contrast-Finder logo](https://raw.githubusercontent.com/Asqatasun/Contrast-Finder/develop/documentation/en/images/logo_contrast-finder/contrast-finder_logo_250x250.png)
