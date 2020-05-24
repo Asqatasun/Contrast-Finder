@@ -1,2 +1,3 @@
+dist: bionic
 language: java
-jdk:      openjdk8
+jdk:      openjdk11
