@@ -5,25 +5,20 @@ You should have already [check pre-requisites](webapp_Pre-requisites.md)
 
 ## How to install (Linux)
 
-### Tomcat 8 - Debian 9, Ubuntu 16.04 or Ubuntu 18.04
-
-You just need to replace `tomcat7` with `tomcat8` in the following command lines.
-
-
-### Tomcat 7 - Ubuntu 14.04 or Ubuntu 16.04
+### Tomcat 8 - Ubuntu 18.04
 
 ```bash
 cd /tmp
-wget https://github.com/Asqatasun/Contrast-Finder/releases/download/v0.9.5/contrast-finder-webapp_0.9.5.tar.gz
+wget https://github.com/Asqatasun/Contrast-Finder/releases/download/v1.0.0/contrast-finder-webapp_v1.0.0.tar.gz
 tar -xzvf contrast-finder-webapp_*.tar.gz
 cd        contrast-finder-webapp_*/
 mv  -v    install/contrast-finder-webapp_*.war contrast-finder.war
 
-sudo cp -v     contrast-finder.war               /var/lib/tomcat7/webapps/
+sudo cp -v     contrast-finder.war               /var/lib/tomcat8/webapps
 sudo cp -rv    install/var/log/contrast-finder/  /var/log/
 
-sudo chown -Rv tomcat7 /var/log/contrast-finder/
-sudo service   tomcat7 restart
+sudo chown -Rv tomcat8:tomcat8 /var/log/contrast-finder/
+sudo service   tomcat8 restart
 ```
 
 Contrast-finder should be available at `http://localhost:8080/contrast-finder/`
@@ -40,8 +35,8 @@ cd             /etc/contrast-finder/
 sudo cp -v     contrast-finder.conf.dist  contrast-finder.conf
 sudo vim       contrast-finder.conf
     (...)
-sudo chown -Rv tomcat7 /etc/contrast-finder/
-sudo service   tomcat7 restart
+sudo chown -Rv tomcat8:tomcat8 /etc/contrast-finder/
+sudo service   tomcat8 restart
 ```
 
 
