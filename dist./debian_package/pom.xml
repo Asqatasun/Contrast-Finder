@@ -52,15 +52,15 @@
                 <version>${jdeb.version}</version>
                 <executions>
                     <execution>
-                        <id>jdeb_tomcat8</id>
+                        <id>jdeb_ubuntu.18.04</id>
                         <phase>package</phase>
                         <goals>
                             <goal>jdeb</goal>
                         </goals>
                         <configuration>
-                            <deb>${project.build.directory}/contrast-finder-webapp_${project.version}_tomcat8.deb</deb>
+                            <deb>${project.build.directory}/contrast-finder-webapp_${project.version}_ubuntu.18.04.deb</deb>
                             <verbose>true</verbose>
-                            <controlDir>${project.basedir}/src/deb/tomcat8/control</controlDir>
+                            <controlDir>${project.basedir}/src/deb/ubuntu.18.04/control</controlDir>
                             <dataSet>
                                 <data>
                                     <type>template</type>
@@ -100,7 +100,117 @@
                                 </data>
                                 <data>
                                     <type>file</type>
-                                    <src>${project.basedir}/src/deb/tomcat8/copyright</src>
+                                    <src>${project.basedir}/src/deb/ubuntu.18.04/copyright</src>
+                                    <dst>/usr/share/doc/contrast-finder-webapp/copyright</dst>
+                                </data>
+                            </dataSet>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>jdeb_ubuntu.20.04</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jdeb</goal>
+                        </goals>
+                        <configuration>
+                            <deb>${project.build.directory}/contrast-finder-webapp_${project.version}_ubuntu.20.04.deb</deb>
+                            <verbose>true</verbose>
+                            <controlDir>${project.basedir}/src/deb/ubuntu.20.04/control</controlDir>
+                            <dataSet>
+                                <data>
+                                    <type>template</type>
+                                    <paths>
+                                        <path>/etc/contrast-finder</path>
+                                        <path>/var/log/contrast-finder</path>
+                                    </paths>
+                                </data>
+                                <data>
+                                    <conffile>true</conffile>
+                                    <type>file</type>
+                                    <src>../../webapp/src/main/resources/conf/contrast-finder.conf.dist</src>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/etc/contrast-finder</prefix>
+                                        <user>tomcat</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>../../webapp/src/main/resources/conf/contrast-finder.log</src>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/var/log/contrast-finder</prefix>
+                                        <user>tomcat</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>../../webapp/target/contrast-finder-webapp_${project.version}.war</src>
+                                    <dst>contrast-finder.war</dst>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/var/lib/tomcat9/webapps</prefix>
+                                        <user>tomcat</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>${project.basedir}/src/deb/ubuntu.20.04/copyright</src>
+                                    <dst>/usr/share/doc/contrast-finder-webapp/copyright</dst>
+                                </data>
+                            </dataSet>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>jdeb_debian.10</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jdeb</goal>
+                        </goals>
+                        <configuration>
+                            <deb>${project.build.directory}/contrast-finder-webapp_${project.version}_debian.10.deb</deb>
+                            <verbose>true</verbose>
+                            <controlDir>${project.basedir}/src/deb/debian.10/control</controlDir>
+                            <dataSet>
+                                <data>
+                                    <type>template</type>
+                                    <paths>
+                                        <path>/etc/contrast-finder</path>
+                                        <path>/var/log/contrast-finder</path>
+                                    </paths>
+                                </data>
+                                <data>
+                                    <conffile>true</conffile>
+                                    <type>file</type>
+                                    <src>../../webapp/src/main/resources/conf/contrast-finder.conf.dist</src>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/etc/contrast-finder</prefix>
+                                        <user>tomcat</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>../../webapp/src/main/resources/conf/contrast-finder.log</src>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/var/log/contrast-finder</prefix>
+                                        <user>tomcat</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>../../webapp/target/contrast-finder-webapp_${project.version}.war</src>
+                                    <dst>contrast-finder.war</dst>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/var/lib/tomcat9/webapps</prefix>
+                                        <user>tomcat</user>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>file</type>
+                                    <src>${project.basedir}/src/deb/debian.10/copyright</src>
                                     <dst>/usr/share/doc/contrast-finder-webapp/copyright</dst>
                                 </data>
                             </dataSet>

@@ -1,12 +1,12 @@
 Source: [[name]]
-Package: Contrast-Finder_webapp-for-tomcat8
+Package: Contrast-Finder_webapp-for-Debian.10
 Version: [[version]]
 Section: web
 Priority: optional
 Maintainer: contrast-finder.org  <package-debian@contrast-finder.org>
 Architecture: all
 Build-Depends: debhelper (>=9)
-Depends: tomcat8
+Depends: tomcat9
 Standards-Version: 3.9.6
 Homepage: [[url]]
 Vcs-Git: git://github.com:Asqatasun/Contrast-Finder.git
