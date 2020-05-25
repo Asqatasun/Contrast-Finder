@@ -1,0 +1,43 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV["LC_ALL"] = "en_US.UTF-8"
+Vagrant.configure("2") do |config|
+
+  # Vagrant box
+  config.vm.box = "ubuntu/bionic64" # Ubuntu 18.04
+
+  # Host name of the VM
+  config.vm.hostname = "contrast-finder"
+
+  # Provider-specific configuration for VirtualBox:
+  config.vm.provider "virtualbox" do |vb|
+    # Virtual Machine Name
+    vb.name = "Constrast.Finder_Ubuntu.18.04"
+  end
+
+  # Provisioning with a shell script
+  config.vm.provision :shell, path: "bootstrap.sh"
+
+  # Network configution
+  config.vm.network "forwarded_port", id: 'WebServer',  guest: 8080,   host: 8787, auto_correct: true, host_ip: "127.0.0.1"
+
+  # Message to show after vagrant up
+  ###############################################################################################
+  config.vm.post_up_message = <<-MESSAGE
+
+  All done!
+  ------------------------------------------------
+
+  # To see log:
+  vagrant ssh -c 'tail -f /var/log/contrast-finder/contrast-finder.log'
+
+  ------------------------------------------------
+  Use 'vagrant port' command line to see port mapping.
+  Default :    8080 (guest) --> 8787 (host)   Web server port
+  ------------------------------------------------
+  URL webapp ......... http://localhost:8787/contrast-finder/  (default)
+  ------------------------------------------------
+  MESSAGE
+  ###############################################################################################
+end
